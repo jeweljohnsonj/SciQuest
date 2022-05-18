@@ -1,12 +1,17 @@
 ---
-title: "one-carat-blog"
-listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
-page-layout: full
-title-block-banner: true
+pagetitle: "one-carat-blog"
+section-divs: false
+toc: false
+css: index.css
+editor: source
 ---
+
+## Welcome to One Carat Blog
+
+My name is Jewel Johnson and I am the founder of this blog. I write articles mostly related to R programming. The blog was first made using the `distill` package in R. Eventually the blog was remade using the new `quarto` package. If you are a beginner and wants to learn R programming, check out my **R tutorials** section in the navigation bar. Hope you enjoy the blog.
+
+<!-- BEGIN: Powered by Supercounters.com -->
+<center><script type="text/javascript" src="//widget.supercounters.com/ssl/flag.js"></script><script type="text/javascript">sc_flag(1636744,"000000","ffffff","7a6f7a",5,25,0,0)</script><br><noscript><a href="http://www.supercounters.com/">Flag Counter</a></noscript>
+</center>
+<!-- END: Powered by Supercounters.com -->
+

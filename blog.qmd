@@ -1,5 +1,5 @@
 ---
-title: "one-carat-blog"
+title: "Blog posts"
 listing:
   contents: posts
   sort: "date desc"

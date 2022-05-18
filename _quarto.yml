@@ -6,14 +6,21 @@ website:
   title: "one-carat-blog"
   navbar:
     right:
-      - about.qmd
+      - text: "Blog"
+        href: blog.qmd
+      - text: "R tutorials"
+        menu:
+          - text: "Data visualization"
+          - text: "Chapter 1: Data visualization using ggplot2"
+      - text: "About me"
+        href: https://jeweljohnsonj.github.io/jewel_resume/
       - icon: github
-        href: https://github.com/
+        href: https://github.com/jeweljohnsonj/one-carat-blog
       - icon: twitter
-        href: https://twitter.com
+        href: https://twitter.com/jeweljohnsonj
 format:
   html:
-    theme: cosmo
+    theme: slate
     css: styles.css
 
 editor: visual
