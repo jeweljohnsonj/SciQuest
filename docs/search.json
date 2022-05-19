@@ -21,13 +21,6 @@
     "text": "1 + 1\n\n[1] 2"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "one-carat-blog",
-    "section": "",
-    "text": "Image 01\n\n\nAsian honey bee\n\n\n\n\nImage 02\n\n\nJungle babbler\n\n\n\n\nImage 03\n\n\nBonnet macaque\n\n\n\n\nImage 04\n\n\nIndian peafowl\n\n\n\n\nImage 05\n\n\nNilgiri tahr\n\n\n\n\nImage 06\n\n\nBlue tailed bee eater"
-  },
-  {
     "objectID": "project1.html",
     "href": "project1.html",
     "title": "Chapter 1: Data visualization using ggplot2",
@@ -60,13 +53,20 @@
     "href": "project1.html#references",
     "title": "Chapter 1: Data visualization using ggplot2",
     "section": "\n5 References",
-    "text": "5 References\n\nH. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016. Read more about ggplot2 here. You can also look at the cheat sheet for all the syntax used in ggplot2. Also check this out.\nHorst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/. doi: 10.5281/zenodo.3960218.\n\nLast updated on\n\n\n[1] \"2022-05-19 11:56:07 IST\""
+    "text": "5 References\n\nH. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016. Read more about ggplot2 here. You can also look at the cheat sheet for all the syntax used in ggplot2. Also check this out.\nHorst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/. doi: 10.5281/zenodo.3960218.\n\nLast updated on\n\n\n[1] \"2022-05-19 13:11:37 IST\""
   },
   {
-    "objectID": "project1.html#last-updated-on",
-    "href": "project1.html#last-updated-on",
-    "title": "Chapter 1: Data visualization using ggplot2",
-    "section": "Last updated on",
-    "text": "Last updated on\n\n\n[1] \"2022-05-19 11:48:29 IST\""
+    "objectID": "project2.html",
+    "href": "project2.html",
+    "title": "Chapter 2: Customizing graphs in ggplot2",
+    "section": "",
+    "text": "So let us plot a graph from scratch and learn how to use different aesthetics available. #### Last updated on {.unnumbered .unlisted}\n\n\n[1] \"2022-05-19 13:11:45 IST\"\n\n\n\n\n\nCitationBibTeX citation:@online{johnson2021,\n  author = {Jewel Johnson},\n  title = {Chapter 2: {Customizing} Graphs in Ggplot2},\n  date = {02/14/2021},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nJewel Johnson. 2AD–14AD. “Chapter 2: Customizing Graphs in\nGgplot2.” 2AD–14AD."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "one-carat-blog",
+    "section": "",
+    "text": "Image 01\n\n\nAsian honey bee\n\n\n\n\nImage 02\n\n\nJungle babbler\n\n\n\n\nImage 03\n\n\nBonnet macaque\n\n\n\n\nImage 04\n\n\nIndian peafowl\n\n\n\n\nImage 05\n\n\nNilgiri tahr\n\n\n\n\nImage 06\n\n\nBlue tailed bee eater"
   }
 ]

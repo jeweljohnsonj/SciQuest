@@ -1,9 +1,17 @@
 project:
   type: website
   output-dir: docs
-
 website:
   title: "one-carat-blog"
+  sidebar:
+  - id: rtutorials
+    style: "docked"
+    search: true
+    contents:
+      - section: "Chapters"
+        contents:
+          - project1.qmd
+          - project2.qmd
   navbar:
     right:
       - text: "Blog"
@@ -11,7 +19,7 @@ website:
       - text: "R tutorials"
         menu:
           - text: "Data visualization"
-          - text: "Chapter 1: Data visualization using ggplot2"
+            href: project1.qmd
       - text: "About me"
         href: https://jeweljohnsonj.github.io/jewel_resume/
       - icon: github
