@@ -3,29 +3,38 @@ project:
   output-dir: docs
 website:
   title: "one-carat-blog"
-  sidebar:
-  - id: rtutorials
-    style: "docked"
-    search: true
-    contents:
-      - section: "Chapters"
-        contents:
-          - project1.qmd
-          - project2.qmd
+  page-navigation: true
+  page-footer: "Copyright 2022, Jewel Johnson"
+          
   navbar:
     right:
       - text: "Blog"
         href: blog.qmd
-      - text: "R tutorials"
+      - text: "R Tutorials"
         menu:
-          - text: "Data visualization"
-            href: project1.qmd
+        - text: "Data visualization"
+        - text: "Chapter 1: Data visualization using ggplot2"
+          href: project1.qmd
+        - text: "Chapter 2: Customizing graphs in ggplot2"
+          href: project2.qmd
+        - text: "Chapter 3: Even more customizations in ggplot2"
+          href: project3.qmd
+        - text: "Chapter 4: Publication ready plots using ggpubr"
+          href: project4.qmd
+        - text: "Data manipulation"
+        - text: "Chapter 1: Data tidying using tidyr"
+          href: project5.qmd
+        - text: "Chapter 2: Data manipulation using dplyr (part 1)"
+          href: project6.qmd
+        - text: "Chapter 3: Data manipulation using dplyr (part 2)"
+          href: project7.qmd
       - text: "About me"
         href: https://jeweljohnsonj.github.io/jewel_resume/
       - icon: github
         href: https://github.com/jeweljohnsonj/one-carat-blog
       - icon: twitter
         href: https://twitter.com/jeweljohnsonj
+        
 format:
   html:
     theme: slate

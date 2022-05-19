@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.426">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="Jewel Johnson">
+<meta name="dcterms.date" content="2022-01-06">
+<title>one-carat-blog - Chapter 4: Publication ready plots using ggpubr</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+<script src="site_libs/quarto-nav/quarto-nav.js"></script><script src="site_libs/quarto-nav/headroom.min.js"></script><script src="site_libs/clipboard/clipboard.min.js"></script><meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script><script src="site_libs/quarto-search/fuse.min.js"></script><script src="site_libs/quarto-search/quarto-search.js"></script><script src="site_libs/quarto-html/quarto.js"></script><script src="site_libs/quarto-html/popper.min.js"></script><script src="site_libs/quarto-html/tippy.umd.min.js"></script><script src="site_libs/quarto-html/anchor.min.js"></script><link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script><link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script><style>html{ scroll-behavior: smooth; }</style>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">one-carat-blog</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item">
+    <a class="nav-link" href="./blog.html">Blog</a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-r-tutorials" role="button" data-bs-toggle="dropdown" aria-expanded="false">R Tutorials</a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-r-tutorials">
+<li class="dropdown-header">Data visualization</li>
+        <li>
+    <a class="dropdown-item" href="./project1.html">
+ <span class="dropdown-text">Chapter 1: Data visualization using ggplot2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./project2.html">
+ <span class="dropdown-text">Chapter 2: Customizing graphs in ggplot2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./project3.html">
+ <span class="dropdown-text">Chapter 3: Even more customizations in ggplot2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./project4.html">
+ <span class="dropdown-text">Chapter 4: Publication ready plots using ggpubr</span></a>
+  </li>  
+        <li class="dropdown-header">Data manipulation</li>
+        <li>
+    <a class="dropdown-item" href="./project5.qmd">
+ <span class="dropdown-text">Chapter 1: Data tidying using tidyr</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./project6.qmd">
+ <span class="dropdown-text">Chapter 2: Data manipulation using dplyr (part 1)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./project7.qmd">
+ <span class="dropdown-text">Chapter 3: Data manipulation using dplyr (part 2)</span></a>
+  </li>  
+    </ul>
+</li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://jeweljohnsonj.github.io/jewel_resume/">About me</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jeweljohnsonj/one-carat-blog"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/jeweljohnsonj"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+<div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#introduction-to-ggpubr-package" id="toc-introduction-to-ggpubr-package" class="nav-link active" data-scroll-target="#introduction-to-ggpubr-package"> <span class="header-section-number">1</span> Introduction to ggpubr package</a></li>
+  <li>
+<a href="#plots-in-ggpubr-package" id="toc-plots-in-ggpubr-package" class="nav-link" data-scroll-target="#plots-in-ggpubr-package"> <span class="header-section-number">2</span> Plots in ggpubr package</a>
+  <ul class="collapse">
+<li><a href="#balloon-plot" id="toc-balloon-plot" class="nav-link" data-scroll-target="#balloon-plot"> <span class="header-section-number">2.1</span> Balloon plot</a></li>
+  <li><a href="#bar-plot" id="toc-bar-plot" class="nav-link" data-scroll-target="#bar-plot"> <span class="header-section-number">2.2</span> Bar plot</a></li>
+  <li><a href="#box-plot" id="toc-box-plot" class="nav-link" data-scroll-target="#box-plot"> <span class="header-section-number">2.3</span> Box plot</a></li>
+  <li><a href="#violin-plot" id="toc-violin-plot" class="nav-link" data-scroll-target="#violin-plot"> <span class="header-section-number">2.4</span> Violin plot</a></li>
+  <li><a href="#density-plot" id="toc-density-plot" class="nav-link" data-scroll-target="#density-plot"> <span class="header-section-number">2.5</span> Density plot</a></li>
+  <li><a href="#donut-chart" id="toc-donut-chart" class="nav-link" data-scroll-target="#donut-chart"> <span class="header-section-number">2.6</span> Donut chart</a></li>
+  <li><a href="#pie-chart" id="toc-pie-chart" class="nav-link" data-scroll-target="#pie-chart"> <span class="header-section-number">2.7</span> Pie chart</a></li>
+  <li><a href="#dot-chart" id="toc-dot-chart" class="nav-link" data-scroll-target="#dot-chart"> <span class="header-section-number">2.8</span> Dot chart</a></li>
+  <li><a href="#dot-plot" id="toc-dot-plot" class="nav-link" data-scroll-target="#dot-plot"> <span class="header-section-number">2.9</span> Dot plot</a></li>
+  <li><a href="#histogram-plot" id="toc-histogram-plot" class="nav-link" data-scroll-target="#histogram-plot"> <span class="header-section-number">2.10</span> Histogram plot</a></li>
+  <li><a href="#line-plot" id="toc-line-plot" class="nav-link" data-scroll-target="#line-plot"> <span class="header-section-number">2.11</span> Line plot</a></li>
+  <li><a href="#plotting-paired-data" id="toc-plotting-paired-data" class="nav-link" data-scroll-target="#plotting-paired-data"> <span class="header-section-number">2.12</span> Plotting paired data</a></li>
+  <li><a href="#quantile-quantile-plot" id="toc-quantile-quantile-plot" class="nav-link" data-scroll-target="#quantile-quantile-plot"> <span class="header-section-number">2.13</span> Quantile-Quantile plot</a></li>
+  <li><a href="#scatter-plot" id="toc-scatter-plot" class="nav-link" data-scroll-target="#scatter-plot"> <span class="header-section-number">2.14</span> Scatter plot</a></li>
+  <li><a href="#scatter-plot-with-marginal-histograms" id="toc-scatter-plot-with-marginal-histograms" class="nav-link" data-scroll-target="#scatter-plot-with-marginal-histograms"> <span class="header-section-number">2.15</span> Scatter plot with marginal histograms</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#other-functions-in-ggpubr-package" id="toc-other-functions-in-ggpubr-package" class="nav-link" data-scroll-target="#other-functions-in-ggpubr-package"> <span class="header-section-number">3</span> Other functions in ggpubr package</a>
+  <ul class="collapse">
+<li><a href="#statistical-tests" id="toc-statistical-tests" class="nav-link" data-scroll-target="#statistical-tests"> <span class="header-section-number">3.1</span> Statistical tests</a></li>
+  <li><a href="#descriptive-statistics-by-groups" id="toc-descriptive-statistics-by-groups" class="nav-link" data-scroll-target="#descriptive-statistics-by-groups"> <span class="header-section-number">3.2</span> Descriptive statistics by groups</a></li>
+  <li><a href="#showing-p-values-and-statistical-results-within-plots" id="toc-showing-p-values-and-statistical-results-within-plots" class="nav-link" data-scroll-target="#showing-p-values-and-statistical-results-within-plots"> <span class="header-section-number">3.3</span> 3. Showing p-values and statistical results within plots</a></li>
+  <li><a href="#faceting-plots-into-grids" id="toc-faceting-plots-into-grids" class="nav-link" data-scroll-target="#faceting-plots-into-grids"> <span class="header-section-number">3.4</span> Faceting plots into grids</a></li>
+  <li><a href="#adding-paragraph" id="toc-adding-paragraph" class="nav-link" data-scroll-target="#adding-paragraph"> <span class="header-section-number">3.5</span> Adding paragraph</a></li>
+  <li><a href="#having-plots-adjacent-to-each-other" id="toc-having-plots-adjacent-to-each-other" class="nav-link" data-scroll-target="#having-plots-adjacent-to-each-other"> <span class="header-section-number">3.6</span> Having plots adjacent to each other</a></li>
+  </ul>
+</li>
+  <li><a href="#saving-your-plot" id="toc-saving-your-plot" class="nav-link" data-scroll-target="#saving-your-plot"> <span class="header-section-number">4</span> Saving your plot</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"> <span class="header-section-number">5</span> Summary</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">6</span> References</a></li>
+  </ul></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">Chapter 4: Publication ready plots using ggpubr</h1>
+<p class="subtitle lead"></p>
+<p>Learn how to make publication ready plots and perform statistical tests using the ggpubr package.</p>
+</div>
+
+
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jewel Johnson </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 6, 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header><section id="introduction-to-ggpubr-package" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="introduction-to-ggpubr-package">
+<span class="header-section-number">1</span> Introduction to ggpubr package</h2>
+<p>If you are a researcher who wants to have publication-ready plots but does not want to get hassled by the <a href="https://ggplot2.tidyverse.org">ggplot2</a> package, then let me introduce you to the<a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a> package. Using this package you can make publication grade plots without spending too much time modifying things. Even if you are a beginner in R programming and does not know how to use the<a href="https://ggplot2.tidyverse.org">ggplot2</a> package, you will still be able to plot graphs using the <a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a> package because of how easy the syntax is. But having prior knowledge of the <a href="https://ggplot2.tidyverse.org">ggplot2</a> package will surely make things easier, and an experienced person will know that any plot which can be plotted using <a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a> can also be plotted using <a href="https://ggplot2.tidyverse.org">ggplot2</a>. So let us start.</p>
+<p>First things first, install the <code>ggpubr</code> package and load it in the library.</p>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"ggpubr"</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let us see what all plots can be plotted.</p>
+</section><section id="plots-in-ggpubr-package" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="plots-in-ggpubr-package">
+<span class="header-section-number">2</span> Plots in ggpubr package</h2>
+<section id="balloon-plot" class="level3" data-number="2.1"><h3 data-number="2.1" class="anchored" data-anchor-id="balloon-plot">
+<span class="header-section-number">2.1</span> Balloon plot</h3>
+<p>The balloon plot is similar to bar plots as it is used to represent a large categorical dataset. The size and colour of the dot can be attributed to different values in the dataset.</p>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://sjmgarnier.github.io/viridis/">viridis</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+
+<span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggballoonplot.html">ggballoonplot</a></span><span class="op">(</span><span class="va">mtcars</span>, fill <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://sjmgarnier.github.io/viridis/reference/scale_viridis.html">scale_fill_viridis</a></span><span class="op">(</span>option <span class="op">=</span> <span class="st">"turbo"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section><section id="bar-plot" class="level3" data-number="2.2"><h3 data-number="2.2" class="anchored" data-anchor-id="bar-plot">
+<span class="header-section-number">2.2</span> Bar plot</h3>
+<p>A simple bar graph which is used for representing categorical data. By using the <code>add</code> function inside the main plot function, you can easily display summary statistics like mean, median etc. and various types of errors like standard error, standard deviation and various others. You can view the whole list of features <a href="https://rpkgs.datanovia.com/ggpubr/reference/ggbarplot.html">here</a>.</p>
+<div class="cell">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># install.packages("palmerpenguins")</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
+
+<span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggbarplot.html">ggbarplot</a></span><span class="op">(</span><span class="va">penguins</span>,
+          x <span class="op">=</span> <span class="st">"species"</span>,
+          y <span class="op">=</span> <span class="st">"bill_length_mm"</span>,
+          add <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"mean_sd"</span><span class="op">)</span>,
+          fill <span class="op">=</span> <span class="st">"species"</span>,
+          label <span class="op">=</span> <span class="cn">TRUE</span>,
+          lab.nb.digits <span class="op">=</span> <span class="fl">2</span>,
+          lab.vjust <span class="op">=</span> <span class="op">-</span><span class="fl">2.2</span>,
+          lab.col <span class="op">=</span> <span class="st">"red"</span>,
+          title <span class="op">=</span> <span class="st">"Mean bill length of penguins"</span>,
+          subtitle <span class="op">=</span> <span class="st">"Error bars shows standard deviation"</span>,
+          xlab <span class="op">=</span> <span class="st">"Species of penguins"</span>,
+          ylab <span class="op">=</span> <span class="st">"Bill length (mm)"</span>,
+          ylim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">60</span><span class="op">)</span>,
+          palette <span class="op">=</span> <span class="st">"npg"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section><section id="box-plot" class="level3" data-number="2.3"><h3 data-number="2.3" class="anchored" data-anchor-id="box-plot">
+<span class="header-section-number">2.3</span> Box plot</h3>
+<p>Standard box plot graph. Like in the previous graph you can specify colour palettes from the scientific journal palettes featured in the <code>ggsci</code> R package.</p>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># install.packages("palmerpenguins")</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+
+<span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggboxplot.html">ggboxplot</a></span><span class="op">(</span><span class="va">penguins</span> ,
+          x <span class="op">=</span> <span class="st">"species"</span>,
+          y <span class="op">=</span> <span class="st">"bill_depth_mm"</span>,
+          title <span class="op">=</span> <span class="st">"Mean bill depth of penguins"</span>,
+          xlab <span class="op">=</span> <span class="st">"Species of penguins"</span>,
+          ylab <span class="op">=</span> <span class="st">"Bill depth (mm)"</span>,
+          color <span class="op">=</span> <span class="st">"species"</span>,
+          palette <span class="op">=</span> <span class="st">"futurama"</span>,
+          add <span class="op">=</span> <span class="st">"jitter"</span>,
+          shape <span class="op">=</span> <span class="st">"species"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section><section id="violin-plot" class="level3" data-number="2.4"><h3 data-number="2.4" class="anchored" data-anchor-id="violin-plot">
+<span class="header-section-number">2.4</span> Violin plot</h3>
+<p>A simple violin plot.</p>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+
+<span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggviolin.html">ggviolin</a></span><span class="op">(</span><span class="va">penguins</span> ,
+          x <span class="op">=</span> <span class="st">"species"</span>,
+          y <span class="op">=</span> <span class="st">"bill_depth_mm"</span>,
+          title <span class="op">=</span> <span class="st">"Mean bill depth of penguins"</span>,
+          xlab <span class="op">=</span> <span class="st">"Species of penguins"</span>,
+          ylab <span class="op">=</span> <span class="st">"Bill depth (mm)"</span>,
+          fill <span class="op">=</span> <span class="st">"species"</span>,
+          palette <span class="op">=</span> <span class="st">"npg"</span>,
+          add <span class="op">=</span> <span class="st">"boxplot"</span>,
+          shape <span class="op">=</span> <span class="st">"species"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section><section id="density-plot" class="level3" data-number="2.5"><h3 data-number="2.5" class="anchored" data-anchor-id="density-plot">
+<span class="header-section-number">2.5</span> Density plot</h3>
+<p>Standard density plot.</p>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+
+<span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggdensity.html">ggdensity</a></span><span class="op">(</span><span class="va">penguins</span>,
+          x <span class="op">=</span> <span class="st">"body_mass_g"</span>,
+          color <span class="op">=</span> <span class="st">"species"</span>,
+          rug <span class="op">=</span> <span class="cn">TRUE</span>,
+          fill <span class="op">=</span> <span class="st">"species"</span>,
+          add <span class="op">=</span> <span class="st">"mean"</span>,
+          title <span class="op">=</span> <span class="st">"Mean body mass of penguins"</span>,
+          xlab <span class="op">=</span> <span class="st">"Body mass (g)"</span>,
+          palette <span class="op">=</span> <span class="st">"lancet"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section><section id="donut-chart" class="level3" data-number="2.6"><h3 data-number="2.6" class="anchored" data-anchor-id="donut-chart">
+<span class="header-section-number">2.6</span> Donut chart</h3>
+<p>Similar to a pie diagram. Also please note that you don’t have to explicitly mention x and y parameters in the command. You can simply just type the column names, the first column name will be shown on the x-axis and the second on the y axis.</p>
+<div class="cell">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span>
+
+<span class="va">penguins_freq</span> <span class="op">&lt;-</span> <span class="va">penguins</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/tidyr/man/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>frequency <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span><span class="op">)</span>
+
+<span class="va">labs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">penguins_freq</span><span class="op">$</span><span class="va">species</span>, <span class="st">" ("</span>, <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="op">(</span><span class="va">penguins_freq</span><span class="op">$</span><span class="va">frequency</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">penguins_freq</span><span class="op">$</span><span class="va">frequency</span><span class="op">)</span><span class="op">)</span><span class="op">*</span><span class="fl">100</span>, digits <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>, <span class="st">"%)"</span><span class="op">)</span>
+
+<span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggdonutchart.html">ggdonutchart</a></span><span class="op">(</span><span class="va">penguins_freq</span>,
+             <span class="st">"frequency"</span>,
+             label <span class="op">=</span> <span class="va">labs</span>,
+             fill <span class="op">=</span> <span class="st">"species"</span>,
+             palette <span class="op">=</span> <span class="st">"ucscgb"</span>,
+             lab.pos <span class="op">=</span> <span class="st">"in"</span>,
+             title <span class="op">=</span> <span class="st">"Frequency of penguins"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section><section id="pie-chart" class="level3" data-number="2.7"><h3 data-number="2.7" class="anchored" data-anchor-id="pie-chart">
+<span class="header-section-number">2.7</span> Pie chart</h3>
+<p>Simple pie chart.</p>
+<div class="cell">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span>
+
+<span class="va">penguins_freq</span> <span class="op">&lt;-</span> <span class="va">penguins</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/tidyr/man/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>frequency <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span><span class="op">)</span>
+
+<span class="va">labs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">penguins_freq</span><span class="op">$</span><span class="va">species</span>, <span class="st">" ("</span>, <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="op">(</span><span class="va">penguins_freq</span><span class="op">$</span><span class="va">frequency</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">penguins_freq</span><span class="op">$</span><span class="va">frequency</span><span class="op">)</span><span class="op">)</span><span class="op">*</span><span class="fl">100</span>, digits <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>, <span class="st">"%)"</span><span class="op">)</span>
+
+<span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggpie.html">ggpie</a></span><span class="op">(</span><span class="va">penguins_freq</span>,
+             <span class="st">"frequency"</span>,
+             label <span class="op">=</span> <span class="va">labs</span>,
+             fill <span class="op">=</span> <span class="st">"species"</span>,
+             palette <span class="op">=</span> <span class="st">"futurama"</span>,
+             lab.pos <span class="op">=</span> <span class="st">"in"</span>,
+             title <span class="op">=</span> <span class="st">"Frequency of penguins"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section><section id="dot-chart" class="level3" data-number="2.8"><h3 data-number="2.8" class="anchored" data-anchor-id="dot-chart">
+<span class="header-section-number">2.8</span> Dot chart</h3>
+<p>This is an upgrade from bar charts where the data is displayed with minimum clutter in the form of dots. This allows the readers to not get bothered about things like the slope of a line in case of line plots, or width of bars in case of bar charts or any other confusing aesthetics of a plot. You can read more about this graph <a href="https://doi.org/10.2307/2288400">here</a>. It is also called “Cleveland dot plots” named after the founder of this plot.</p>
+<div class="cell">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tibble.tidyverse.org/">tibble</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span>
+
+<span class="va">mtcars</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/rownames.html">rownames_to_column</a></span><span class="op">(</span>var <span class="op">=</span> <span class="st">"car_names"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>cyl <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggdotchart.html">ggdotchart</a></span><span class="op">(</span><span class="st">"car_names"</span>,
+             <span class="st">"mpg"</span>,
+             color <span class="op">=</span> <span class="st">"cyl"</span>,
+             palette <span class="op">=</span> <span class="st">"aaas"</span>,
+             sorting <span class="op">=</span> <span class="st">"ascending"</span>,
+             rotate <span class="op">=</span> <span class="cn">TRUE</span>,
+             y.text.col <span class="op">=</span> <span class="cn">TRUE</span>,
+             dot.size <span class="op">=</span> <span class="fl">2</span>,
+             ylab <span class="op">=</span> <span class="st">"Miles per gallon of fuel"</span>,
+             title <span class="op">=</span> <span class="st">"Mileage of different cars"</span>,
+             ggtheme <span class="op">=</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/theme_pubr.html">theme_pubr</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggdotchart.html">theme_cleveland</a></span><span class="op">(</span><span class="op">)</span> </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section><section id="dot-plot" class="level3" data-number="2.9"><h3 data-number="2.9" class="anchored" data-anchor-id="dot-plot">
+<span class="header-section-number">2.9</span> Dot plot</h3>
+<p>Simple dot plot. Similar to a box plot. You can also overlay a box plot or a violin plot over the dot plot using the <code>add</code> function inside the main function.</p>
+<div class="cell">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+
+<span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggdotplot.html">ggdotplot</a></span><span class="op">(</span><span class="va">penguins</span> ,
+          x <span class="op">=</span> <span class="st">"species"</span>,
+          y <span class="op">=</span> <span class="st">"bill_depth_mm"</span>,
+          title <span class="op">=</span> <span class="st">"Mean bill depth of penguins"</span>,
+          subtitle <span class="op">=</span> <span class="st">"Error bars shows standard deviation"</span>,
+          xlab <span class="op">=</span> <span class="st">"Species of penguins"</span>,
+          ylab <span class="op">=</span> <span class="st">"Bill depth (mm)"</span>,
+          fill <span class="op">=</span> <span class="st">"species"</span>,
+          add <span class="op">=</span> <span class="st">"mean_sd"</span>,
+          palette <span class="op">=</span> <span class="st">"locuszoom"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section><section id="histogram-plot" class="level3" data-number="2.10"><h3 data-number="2.10" class="anchored" data-anchor-id="histogram-plot">
+<span class="header-section-number">2.10</span> Histogram plot</h3>
+<p>The same function as that of a density plot but the data is represented in bars.</p>
+<div class="cell">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+
+<span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/gghistogram.html">gghistogram</a></span><span class="op">(</span><span class="va">penguins</span>,
+            x <span class="op">=</span> <span class="st">"body_mass_g"</span>,
+            add <span class="op">=</span> <span class="st">"mean"</span>,
+            fill <span class="op">=</span> <span class="st">"species"</span>,
+            rug <span class="op">=</span> <span class="cn">TRUE</span>,
+            title <span class="op">=</span> <span class="st">"Body mass of penguins"</span>,
+            xlab <span class="op">=</span> <span class="st">"Body mass (g)"</span>,
+            ylab <span class="op">=</span> <span class="st">"Frequency"</span>,
+            palette <span class="op">=</span> <span class="st">"startrek"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section><section id="line-plot" class="level3" data-number="2.11"><h3 data-number="2.11" class="anchored" data-anchor-id="line-plot">
+<span class="header-section-number">2.11</span> Line plot</h3>
+<p>A simple line plot.</p>
+<div class="cell">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+
+<span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggline.html">ggline</a></span><span class="op">(</span><span class="va">penguins</span>,
+      x <span class="op">=</span> <span class="st">"body_mass_g"</span>,
+      y <span class="op">=</span> <span class="st">"bill_depth_mm"</span>,
+      linetype <span class="op">=</span> <span class="st">"species"</span>,
+      shape <span class="op">=</span> <span class="st">"species"</span>,
+      color <span class="op">=</span> <span class="st">"species"</span>,
+      title <span class="op">=</span> <span class="st">"Body mass vs Bill depth"</span>,
+      xlab <span class="op">=</span> <span class="st">"Body mass (g)"</span>,
+      ylab <span class="op">=</span> <span class="st">"Bill depth (mm)"</span>,
+      palette <span class="op">=</span> <span class="st">"startrek"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section><section id="plotting-paired-data" class="level3" data-number="2.12"><h3 data-number="2.12" class="anchored" data-anchor-id="plotting-paired-data">
+<span class="header-section-number">2.12</span> Plotting paired data</h3>
+<p>This is essentially a box plot but for paired data. Widely used to represent treatment groups showing before and after results of the same sample. We will be using the Anorexia dataset from the <code>{PairedData}</code> package in R. It features weights of girls before and after treatment for Anorexia.</p>
+<div class="cell">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># install.packages("PairedData")</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">PairedData</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"Anorexia"</span><span class="op">)</span>
+
+<span class="va">Anorexia</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggpaired.html">ggpaired</a></span><span class="op">(</span>cond1 <span class="op">=</span> <span class="st">"Prior"</span>,
+           cond2 <span class="op">=</span> <span class="st">"Post"</span>,
+           title <span class="op">=</span> <span class="st">"Weights of girls before and after treatment for anorexia"</span>,
+           xlab <span class="op">=</span> <span class="st">"Condition"</span>,
+           ylab <span class="op">=</span> <span class="st">"Weight (lbs)"</span>,
+           fill <span class="op">=</span> <span class="st">"condition"</span>,
+           line.color <span class="op">=</span> <span class="st">"darkgreen"</span>,
+           line.size <span class="op">=</span> <span class="fl">0.2</span>,
+           palette <span class="op">=</span> <span class="st">"simpsons"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section><section id="quantile-quantile-plot" class="level3" data-number="2.13"><h3 data-number="2.13" class="anchored" data-anchor-id="quantile-quantile-plot">
+<span class="header-section-number">2.13</span> Quantile-Quantile plot</h3>
+<p>Quantile-Quantile plot or QQ plot is useful in assessing the distribution of a data. A data having normal distribution will be shown as a straight line of the formula ‘y=x’ in the QQ plot. Points outside the confidence interval are outliers in the data.</p>
+<div class="cell">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+
+<span class="va">penguins</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggqqplot.html">ggqqplot</a></span><span class="op">(</span><span class="st">"body_mass_g"</span>,
+                      color <span class="op">=</span> <span class="st">"species"</span>,
+                      palette <span class="op">=</span> <span class="st">"aaas"</span>,
+                      title <span class="op">=</span> <span class="st">"Quantile-Quantile plot"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section><section id="scatter-plot" class="level3" data-number="2.14"><h3 data-number="2.14" class="anchored" data-anchor-id="scatter-plot">
+<span class="header-section-number">2.14</span> Scatter plot</h3>
+<p>A simple scatter plot.</p>
+<div class="cell">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+
+<span class="va">penguins</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">species</span> <span class="op">==</span> <span class="st">"Chinstrap"</span><span class="op">)</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggscatter.html">ggscatter</a></span><span class="op">(</span><span class="st">"body_mass_g"</span>,
+            <span class="st">"bill_length_mm"</span>,
+            add <span class="op">=</span> <span class="st">"reg.line"</span>,
+            add.params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"darkred"</span>, fill <span class="op">=</span> <span class="st">"yellow"</span><span class="op">)</span>,
+            cor.coef <span class="op">=</span> <span class="cn">TRUE</span>,
+            cor.method <span class="op">=</span> <span class="st">"pearson"</span>,
+            conf.int <span class="op">=</span> <span class="cn">TRUE</span>,
+            title <span class="op">=</span> <span class="st">"Body mass distribution of Chinstrap penguins"</span>,
+            subtitle <span class="op">=</span> <span class="st">"Correlation method used was Pearson"</span>,
+            xlab <span class="op">=</span> <span class="st">"Body mass (g)"</span>,
+            ylab <span class="op">=</span> <span class="st">"Bill lenght (mm)"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>You can also use scatter plot for data having different categories. Using <code>ellipse=TRUE</code> you can group data to its category.</p>
+<div class="cell">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+
+<span class="va">penguins</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggscatter.html">ggscatter</a></span><span class="op">(</span><span class="st">"body_mass_g"</span>,
+            <span class="st">"bill_length_mm"</span>,
+            color <span class="op">=</span> <span class="st">"species"</span>,
+            alpha <span class="op">=</span> <span class="fl">0.5</span>,
+            palette <span class="op">=</span> <span class="st">"d3"</span>,
+            ellipse <span class="op">=</span> <span class="cn">TRUE</span>, <span class="co">#adds an ellipse to group data of different category</span>
+            title <span class="op">=</span> <span class="st">"Body mass vs Bill length"</span>,
+            xlab <span class="op">=</span> <span class="st">"Body mass (g)"</span>,
+            ylab <span class="op">=</span> <span class="st">"Bill length (mm)"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>You can also label points in the scatter plot using the <code>label</code> function.</p>
+<div class="cell">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+
+<span class="va">mtcars</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/rownames.html">rownames_to_column</a></span><span class="op">(</span>var <span class="op">=</span> <span class="st">"car_names"</span><span class="op">)</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>cyl <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggscatter.html">ggscatter</a></span><span class="op">(</span><span class="st">"wt"</span>,
+             <span class="st">"mpg"</span>,
+             color <span class="op">=</span> <span class="st">"cyl"</span>,
+             palette <span class="op">=</span> <span class="st">"nejm"</span>,
+             xlab <span class="op">=</span> <span class="st">"Weight (1000 lbs)"</span>,
+             ylab <span class="op">=</span> <span class="st">"Miles per gallon of fuel"</span>,
+             title <span class="op">=</span> <span class="st">"Mileage vs Weight of different cars"</span>,
+             label <span class="op">=</span> <span class="st">"car_names"</span>,
+             repel <span class="op">=</span> <span class="cn">TRUE</span>,
+             ggtheme <span class="op">=</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/theme_pubr.html">theme_pubr</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggdotchart.html">theme_cleveland</a></span><span class="op">(</span><span class="op">)</span> </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section><section id="scatter-plot-with-marginal-histograms" class="level3" data-number="2.15"><h3 data-number="2.15" class="anchored" data-anchor-id="scatter-plot-with-marginal-histograms">
+<span class="header-section-number">2.15</span> Scatter plot with marginal histograms</h3>
+<p>This is plot is a combination of scatter plot and histograms.</p>
+<div class="cell">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+
+<span class="va">penguins</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggscatterhist.html">ggscatterhist</a></span><span class="op">(</span><span class="st">"body_mass_g"</span>,
+            <span class="st">"bill_length_mm"</span>,
+            color <span class="op">=</span> <span class="st">"species"</span>,
+            alpha <span class="op">=</span> <span class="fl">0.5</span>, size <span class="op">=</span> <span class="fl">2</span>,
+            palette <span class="op">=</span> <span class="st">"futurama"</span>,
+            margin.params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"species"</span>, color <span class="op">=</span> <span class="st">"black"</span>, size <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span>,
+            title <span class="op">=</span> <span class="st">"Body mass distribution of penguins"</span>,
+            xlab <span class="op">=</span> <span class="st">"Body mass (g)"</span>,
+            ylab <span class="op">=</span> <span class="st">"Bill length (mm)"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>You can also choose to show box plots.</p>
+<div class="cell">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+
+<span class="va">penguins</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggscatterhist.html">ggscatterhist</a></span><span class="op">(</span><span class="st">"body_mass_g"</span>,
+            <span class="st">"bill_depth_mm"</span>,
+            color <span class="op">=</span> <span class="st">"species"</span>,
+            alpha <span class="op">=</span> <span class="fl">0.5</span>, size <span class="op">=</span> <span class="fl">2</span>,
+            palette <span class="op">=</span> <span class="st">"futurama"</span>,
+            margin.plot <span class="op">=</span> <span class="st">"boxplot"</span>,
+            title <span class="op">=</span> <span class="st">"Body mass vs Bill depth"</span>,
+            xlab <span class="op">=</span> <span class="st">"Body mass (g)"</span>,
+            ylab <span class="op">=</span> <span class="st">"Bill depth (mm)"</span>,
+            ggtheme <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section></section><section id="other-functions-in-ggpubr-package" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="other-functions-in-ggpubr-package">
+<span class="header-section-number">3</span> Other functions in ggpubr package</h2>
+<section id="statistical-tests" class="level3" data-number="3.1"><h3 data-number="3.1" class="anchored" data-anchor-id="statistical-tests">
+<span class="header-section-number">3.1</span> Statistical tests</h3>
+<p>You can do various statistical tests using the functions in the <a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a> package. We will be using the Anorexia dataset in the <code>PairedData</code> package in R. In the code given below, we are doing a Wilcoxon test to compare the mean weights of girls before treatment to the mean weights of girls post-treatment. Since the data is paired we will indicate it by the <code>paired = TRUE</code> function. A word of caution! Before starting to do statistical tests please ensure whether you can fulfil conditions for using parametric tests or not using or data. You can check whether your data is normally distributed using a QQ plot or by using any normality tests.</p>
+<p>PS: I use knitr::kable() just for illustrative purpose only. You can run the command inside the kable() argument and you will be fine.</p>
+<div class="cell">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># install.packages("PairedData")</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">PairedData</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span>
+
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"Anorexia"</span><span class="op">)</span>
+
+<span class="co"># tidying the data</span>
+<span class="va">Anorexia_new</span> <span class="op">&lt;-</span> <span class="va">Anorexia</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://rdrr.io/pkg/tidyr/man/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">Prior</span>, <span class="va">Post</span><span class="op">)</span>, names_to <span class="op">=</span> <span class="st">"condition"</span>, values_to <span class="op">=</span> <span class="st">"weight"</span><span class="op">)</span>
+<span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/compare_means.html">compare_means</a></span><span class="op">(</span><span class="va">weight</span> <span class="op">~</span> <span class="va">condition</span>, <span class="va">Anorexia_new</span>, paired <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 15%">
+<col style="width: 12%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 13%">
+</colgroup>
+<thead><tr class="header">
+<th style="text-align: left;">.y.</th>
+<th style="text-align: left;">group1</th>
+<th style="text-align: left;">group2</th>
+<th style="text-align: right;">p</th>
+<th style="text-align: right;">p.adj</th>
+<th style="text-align: left;">p.format</th>
+<th style="text-align: left;">p.signif</th>
+<th style="text-align: left;">method</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td style="text-align: left;">weight</td>
+<td style="text-align: left;">Prior</td>
+<td style="text-align: left;">Post</td>
+<td style="text-align: right;">0.0008392</td>
+<td style="text-align: right;">0.00084</td>
+<td style="text-align: left;">0.00084</td>
+<td style="text-align: left;">***</td>
+<td style="text-align: left;">Wilcoxon</td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<p>You can also do parametric tests like ANOVA and its non-parametric version; the Kruskal-Wallis test, which can be followed by multiple pairwise comparisons.</p>
+<div class="cell">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/compare_means.html">compare_means</a></span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">species</span>, <span class="va">penguins</span>, method <span class="op">=</span> <span class="st">"anova"</span><span class="op">)</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead><tr class="header">
+<th style="text-align: left;">.y.</th>
+<th style="text-align: right;">p</th>
+<th style="text-align: right;">p.adj</th>
+<th style="text-align: left;">p.format</th>
+<th style="text-align: left;">p.signif</th>
+<th style="text-align: left;">method</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td style="text-align: left;">body_mass_g</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">&lt;2e-16</td>
+<td style="text-align: left;">****</td>
+<td style="text-align: left;">Anova</td>
+</tr></tbody>
+</table>
+</div>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/compare_means.html">compare_means</a></span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">species</span>, <span class="va">penguins</span>, method <span class="op">=</span> <span class="st">"kruskal.test"</span><span class="op">)</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead><tr class="header">
+<th style="text-align: left;">.y.</th>
+<th style="text-align: right;">p</th>
+<th style="text-align: right;">p.adj</th>
+<th style="text-align: left;">p.format</th>
+<th style="text-align: left;">p.signif</th>
+<th style="text-align: left;">method</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td style="text-align: left;">body_mass_g</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">&lt;2e-16</td>
+<td style="text-align: left;">****</td>
+<td style="text-align: left;">Kruskal-Wallis</td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<p>Now doing pairwise comparisons</p>
+<div class="cell">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># multiple pairwise comparisons</span>
+<span class="co"># when there is more than two levels, the function automatically does pairwise comparisons</span>
+<span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/compare_means.html">compare_means</a></span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">species</span>, <span class="va">penguins</span><span class="op">)</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 8%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead><tr class="header">
+<th style="text-align: left;">.y.</th>
+<th style="text-align: left;">group1</th>
+<th style="text-align: left;">group2</th>
+<th style="text-align: right;">p</th>
+<th style="text-align: right;">p.adj</th>
+<th style="text-align: left;">p.format</th>
+<th style="text-align: left;">p.signif</th>
+<th style="text-align: left;">method</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">body_mass_g</td>
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: left;">Chinstrap</td>
+<td style="text-align: right;">0.4854773</td>
+<td style="text-align: right;">0.49</td>
+<td style="text-align: left;">0.49</td>
+<td style="text-align: left;">ns</td>
+<td style="text-align: left;">Wilcoxon</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">body_mass_g</td>
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: left;">Gentoo</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: left;">&lt;2e-16</td>
+<td style="text-align: left;">****</td>
+<td style="text-align: left;">Wilcoxon</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">body_mass_g</td>
+<td style="text-align: left;">Chinstrap</td>
+<td style="text-align: left;">Gentoo</td>
+<td style="text-align: right;">0.0000000</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: left;">&lt;2e-16</td>
+<td style="text-align: left;">****</td>
+<td style="text-align: left;">Wilcoxon</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section><section id="descriptive-statistics-by-groups" class="level3" data-number="3.2"><h3 data-number="3.2" class="anchored" data-anchor-id="descriptive-statistics-by-groups">
+<span class="header-section-number">3.2</span> Descriptive statistics by groups</h3>
+<p>Using the function <code><a href="https://rpkgs.datanovia.com/ggpubr/reference/desc_statby.html">desc_statby()</a></code> we can get the summary statistics of a dataset in the form of a data frame. Similar to the <code><a href="https://rdrr.io/pkg/PairedData/man/summary.html">summary()</a></code> function in base R.</p>
+<div class="cell">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/desc_statby.html">desc_statby</a></span><span class="op">(</span><span class="va">penguins</span>, measure.var <span class="op">=</span> <span class="st">"body_mass_g"</span>, grps <span class="op">=</span> <span class="st">"species"</span><span class="op">)</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 6%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 6%">
+<col style="width: 8%">
+<col style="width: 5%">
+<col style="width: 7%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 5%">
+<col style="width: 9%">
+<col style="width: 8%">
+</colgroup>
+<thead><tr class="header">
+<th style="text-align: left;">species</th>
+<th style="text-align: right;">length</th>
+<th style="text-align: right;">min</th>
+<th style="text-align: right;">max</th>
+<th style="text-align: right;">median</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">iqr</th>
+<th style="text-align: right;">mad</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: right;">se</th>
+<th style="text-align: right;">ci</th>
+<th style="text-align: right;">range</th>
+<th style="text-align: right;">cv</th>
+<th style="text-align: right;">var</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: right;">151</td>
+<td style="text-align: right;">2850</td>
+<td style="text-align: right;">4775</td>
+<td style="text-align: right;">3700</td>
+<td style="text-align: right;">3700.662</td>
+<td style="text-align: right;">650.0</td>
+<td style="text-align: right;">444.780</td>
+<td style="text-align: right;">458.5661</td>
+<td style="text-align: right;">37.31758</td>
+<td style="text-align: right;">73.73601</td>
+<td style="text-align: right;">1925</td>
+<td style="text-align: right;">0.1239146</td>
+<td style="text-align: right;">210282.9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Chinstrap</td>
+<td style="text-align: right;">68</td>
+<td style="text-align: right;">2700</td>
+<td style="text-align: right;">4800</td>
+<td style="text-align: right;">3700</td>
+<td style="text-align: right;">3733.088</td>
+<td style="text-align: right;">462.5</td>
+<td style="text-align: right;">370.650</td>
+<td style="text-align: right;">384.3351</td>
+<td style="text-align: right;">46.60747</td>
+<td style="text-align: right;">93.02891</td>
+<td style="text-align: right;">2100</td>
+<td style="text-align: right;">0.1029537</td>
+<td style="text-align: right;">147713.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Gentoo</td>
+<td style="text-align: right;">123</td>
+<td style="text-align: right;">3950</td>
+<td style="text-align: right;">6300</td>
+<td style="text-align: right;">5000</td>
+<td style="text-align: right;">5076.016</td>
+<td style="text-align: right;">800.0</td>
+<td style="text-align: right;">555.975</td>
+<td style="text-align: right;">504.1162</td>
+<td style="text-align: right;">45.45463</td>
+<td style="text-align: right;">89.98198</td>
+<td style="text-align: right;">2350</td>
+<td style="text-align: right;">0.0993134</td>
+<td style="text-align: right;">254133.2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>You can also show the data as a table using the <code><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggtexttable.html">ggtexttable()</a></code> function.</p>
+<div class="cell">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">summary</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/desc_statby.html">desc_statby</a></span><span class="op">(</span><span class="va">penguins</span>, measure.var <span class="op">=</span> <span class="st">"body_mass_g"</span>, grps <span class="op">=</span> <span class="st">"species"</span><span class="op">)</span>
+<span class="va">summary_short</span> <span class="op">&lt;-</span> <span class="va">summary</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">species</span>, <span class="va">mean</span>, <span class="va">median</span>, <span class="va">se</span>, <span class="va">sd</span><span class="op">)</span>
+<span class="va">summary_tbl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggtexttable.html">ggtexttable</a></span><span class="op">(</span><span class="va">summary_short</span>, rows <span class="op">=</span> <span class="cn">NULL</span>, theme <span class="op">=</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggtexttable.html">ttheme</a></span><span class="op">(</span><span class="st">"mRed"</span><span class="op">)</span><span class="op">)</span> <span class="co"># use ?ttheme to see more themes</span>
+<span class="va">summary_tbl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section><section id="showing-p-values-and-statistical-results-within-plots" class="level3" data-number="3.3"><h3 data-number="3.3" class="anchored" data-anchor-id="showing-p-values-and-statistical-results-within-plots">
+<span class="header-section-number">3.3</span> 3. Showing p-values and statistical results within plots</h3>
+<p>Using various functions you can show statistical outputs within the plots.</p>
+<p>Using Wilcoxon test for paired data.</p>
+<div class="cell">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># install.packages("PairedData")</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">PairedData</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"Anorexia"</span><span class="op">)</span>
+<span class="va">Anorexia</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggpaired.html">ggpaired</a></span><span class="op">(</span>cond1 <span class="op">=</span> <span class="st">"Prior"</span>,
+           cond2 <span class="op">=</span> <span class="st">"Post"</span>,
+           title <span class="op">=</span> <span class="st">"Weights of girls before and after treatment for anorexia"</span>,
+           xlab <span class="op">=</span> <span class="st">"Condition"</span>,
+           ylab <span class="op">=</span> <span class="st">"Weight (lbs)"</span>,
+           fill <span class="op">=</span> <span class="st">"condition"</span>,
+           line.color <span class="op">=</span> <span class="st">"darkgreen"</span>,
+           line.size <span class="op">=</span> <span class="fl">0.2</span>,
+           palette <span class="op">=</span> <span class="st">"simpsons"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/stat_compare_means.html">stat_compare_means</a></span><span class="op">(</span>paired <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Using t-test</p>
+<div class="cell">
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># install.packages("palmerpenguins")</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+
+<span class="va">penguins</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">species</span> <span class="op">==</span> <span class="st">"Adelie"</span> <span class="op">&amp;</span> <span class="va">island</span> <span class="op">==</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Biscoe"</span>,<span class="st">"Torgersen"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span>
+<span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggboxplot.html">ggboxplot</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"island"</span>,
+          y <span class="op">=</span> <span class="st">"bill_depth_mm"</span>,
+          title <span class="op">=</span> <span class="st">"Mean bill depth of penguins"</span>,
+          xlab <span class="op">=</span> <span class="st">"Island"</span>,
+          ylab <span class="op">=</span> <span class="st">"Bill depth (mm)"</span>,
+          color <span class="op">=</span> <span class="st">"island"</span>,
+          palette <span class="op">=</span> <span class="st">"futurama"</span>,
+          add <span class="op">=</span> <span class="st">"jitter"</span>,
+          shape <span class="op">=</span> <span class="st">"island"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/stat_compare_means.html">stat_compare_means</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"t.test"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Using ANOVA test and t-test as post hoc test. For pairwise comparison, we have to manually list out the pairwise comparisons that we want.</p>
+<div class="cell">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># install.packages("palmerpenguins")</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+
+<span class="co"># listing out pairwise comparisons </span>
+<span class="va">compare</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Adelie"</span>, <span class="st">"Chinstrap"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Adelie"</span>, <span class="st">"Gentoo"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Chinstrap"</span>, <span class="st">"Gentoo"</span><span class="op">)</span><span class="op">)</span>
+
+<span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggboxplot.html">ggboxplot</a></span><span class="op">(</span><span class="va">penguins</span> ,
+          x <span class="op">=</span> <span class="st">"species"</span>,
+          y <span class="op">=</span> <span class="st">"bill_depth_mm"</span>,
+          title <span class="op">=</span> <span class="st">"Mean bill depth of penguins"</span>,
+          xlab <span class="op">=</span> <span class="st">"Species of penguins"</span>,
+          ylab <span class="op">=</span> <span class="st">"Bill depth (mm)"</span>,
+          color <span class="op">=</span> <span class="st">"species"</span>,
+          palette <span class="op">=</span> <span class="st">"futurama"</span>,
+          add <span class="op">=</span> <span class="st">"jitter"</span>,
+          shape <span class="op">=</span> <span class="st">"species"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/stat_compare_means.html">stat_compare_means</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"anova"</span>, label.y <span class="op">=</span> <span class="fl">25</span><span class="op">)</span> <span class="op">+</span> <span class="co">#anova test</span>
+  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/stat_compare_means.html">stat_compare_means</a></span><span class="op">(</span>comparisons <span class="op">=</span> <span class="va">compare</span>, method <span class="op">=</span> <span class="st">"t.test"</span><span class="op">)</span> <span class="co"># post hoc test using t-test</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Using Kruskal-Wallis test and Wilcoxon test as post hoc test.</p>
+<div class="cell">
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># install.packages("palmerpenguins")</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+
+<span class="va">compare</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Adelie"</span>, <span class="st">"Chinstrap"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Adelie"</span>, <span class="st">"Gentoo"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Chinstrap"</span>, <span class="st">"Gentoo"</span><span class="op">)</span><span class="op">)</span>
+<span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggboxplot.html">ggboxplot</a></span><span class="op">(</span><span class="va">penguins</span> ,
+          x <span class="op">=</span> <span class="st">"species"</span>,
+          y <span class="op">=</span> <span class="st">"bill_depth_mm"</span>,
+          title <span class="op">=</span> <span class="st">"Mean bill depth of penguins"</span>,
+          xlab <span class="op">=</span> <span class="st">"Species of penguins"</span>,
+          ylab <span class="op">=</span> <span class="st">"Bill depth (mm)"</span>,
+          color <span class="op">=</span> <span class="st">"species"</span>,
+          palette <span class="op">=</span> <span class="st">"futurama"</span>,
+          add <span class="op">=</span> <span class="st">"jitter"</span>,
+          shape <span class="op">=</span> <span class="st">"species"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/stat_compare_means.html">stat_compare_means</a></span><span class="op">(</span>label.y <span class="op">=</span> <span class="fl">25</span><span class="op">)</span> <span class="op">+</span> <span class="co">#anova test</span>
+  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/stat_compare_means.html">stat_compare_means</a></span><span class="op">(</span>comparisons <span class="op">=</span> <span class="va">compare</span><span class="op">)</span> <span class="co"># post hoc test using t-test</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>You can also choose to show only asterisks as significance levels</p>
+<div class="cell">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># install.packages("palmerpenguins")</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+
+<span class="va">compare</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Adelie"</span>, <span class="st">"Chinstrap"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Adelie"</span>, <span class="st">"Gentoo"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Chinstrap"</span>, <span class="st">"Gentoo"</span><span class="op">)</span><span class="op">)</span>
+<span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggboxplot.html">ggboxplot</a></span><span class="op">(</span><span class="va">penguins</span> ,
+          x <span class="op">=</span> <span class="st">"species"</span>,
+          y <span class="op">=</span> <span class="st">"bill_depth_mm"</span>,
+          title <span class="op">=</span> <span class="st">"Mean bill depth of penguins"</span>,
+          xlab <span class="op">=</span> <span class="st">"Species of penguins"</span>,
+          ylab <span class="op">=</span> <span class="st">"Bill depth (mm)"</span>,
+          color <span class="op">=</span> <span class="st">"species"</span>,
+          palette <span class="op">=</span> <span class="st">"futurama"</span>,
+          add <span class="op">=</span> <span class="st">"jitter"</span>,
+          shape <span class="op">=</span> <span class="st">"species"</span><span class="op">)</span> <span class="op">+</span> 
+  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/stat_compare_means.html">stat_compare_means</a></span><span class="op">(</span>label.y <span class="op">=</span> <span class="fl">25</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/stat_compare_means.html">stat_compare_means</a></span><span class="op">(</span>comparisons <span class="op">=</span> <span class="va">compare</span>, label <span class="op">=</span> <span class="st">"p.signif"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>For illustrative purposes, I have used box plots for showing p-values and statistical test results, but you can do the same with most of the other types of graphs shown in this chapter.</p>
+</section><section id="faceting-plots-into-grids" class="level3" data-number="3.4"><h3 data-number="3.4" class="anchored" data-anchor-id="faceting-plots-into-grids">
+<span class="header-section-number">3.4</span> Faceting plots into grids</h3>
+<p>You can also facet different plots into grids using the function <code>facet.by</code>.</p>
+<div class="cell">
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># install.packages("palmerpenguins")</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+
+<span class="va">penguins</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/tidyr/man/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggscatter.html">ggscatter</a></span><span class="op">(</span><span class="st">"body_mass_g"</span>,
+            <span class="st">"bill_length_mm"</span>,
+            color <span class="op">=</span> <span class="st">"species"</span>,
+            alpha <span class="op">=</span> <span class="fl">0.5</span>,
+            palette <span class="op">=</span> <span class="st">"d3"</span>,
+            facet.by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"island"</span>, <span class="st">"sex"</span><span class="op">)</span>, <span class="co"># faceting graphs via island and sex categories</span>
+            title <span class="op">=</span> <span class="st">"Body mass vs Bill length"</span>,
+            xlab <span class="op">=</span> <span class="st">"Body mass (g)"</span>,
+            ylab <span class="op">=</span> <span class="st">"Bill length (mm)"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section><section id="adding-paragraph" class="level3" data-number="3.5"><h3 data-number="3.5" class="anchored" data-anchor-id="adding-paragraph">
+<span class="header-section-number">3.5</span> Adding paragraph</h3>
+<p>You can also add a paragraph beneath the plot of your interest using the <code><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggparagraph.html">ggparagraph()</a></code> and <code><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggarrange.html">ggarrange()</a></code> functions.</p>
+<div class="cell">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># install.packages("PairedData")</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">PairedData</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"Anorexia"</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+
+<span class="va">text</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"The above dataset shows the weight (in lbs) of 17 girls before"</span>,
+              <span class="st">"and after they got treatment for anorexia."</span>, sep <span class="op">=</span> <span class="st">" "</span><span class="op">)</span>
+
+<span class="va">text_plot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggparagraph.html">ggparagraph</a></span><span class="op">(</span><span class="va">text</span>, face <span class="op">=</span> <span class="st">"bold"</span>, size <span class="op">=</span> <span class="fl">12</span><span class="op">)</span>
+
+<span class="va">plot</span> <span class="op">&lt;-</span> <span class="va">Anorexia</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span> 
+  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggpaired.html">ggpaired</a></span><span class="op">(</span>cond1 <span class="op">=</span> <span class="st">"Prior"</span>,
+           cond2 <span class="op">=</span> <span class="st">"Post"</span>,
+           title <span class="op">=</span> <span class="st">"Weights of girls before and after treatment for anorexia"</span>,
+           xlab <span class="op">=</span> <span class="st">"Condition"</span>,
+           ylab <span class="op">=</span> <span class="st">"Weight (lbs)"</span>,
+           fill <span class="op">=</span> <span class="st">"condition"</span>,
+           line.color <span class="op">=</span> <span class="st">"darkgreen"</span>,
+           line.size <span class="op">=</span> <span class="fl">0.2</span>,
+           palette <span class="op">=</span> <span class="st">"simpsons"</span><span class="op">)</span>
+
+<span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggarrange.html">ggarrange</a></span><span class="op">(</span><span class="va">plot</span>, <span class="va">text_plot</span>,
+         ncol <span class="op">=</span> <span class="fl">1</span>, nrow <span class="op">=</span> <span class="fl">2</span>,
+         heights <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">0.3</span><span class="op">)</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section><section id="having-plots-adjacent-to-each-other" class="level3" data-number="3.6"><h3 data-number="3.6" class="anchored" data-anchor-id="having-plots-adjacent-to-each-other">
+<span class="header-section-number">3.6</span> Having plots adjacent to each other</h3>
+<p>You can use the <code><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggarrange.html">ggarrange()</a></code> function to place different plots together.</p>
+<div class="cell">
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># install.packages("palmerpenguins")</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+
+<span class="va">bar_plot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggbarplot.html">ggbarplot</a></span><span class="op">(</span><span class="va">penguins</span>,
+          x <span class="op">=</span> <span class="st">"species"</span>,
+          y <span class="op">=</span> <span class="st">"bill_length_mm"</span>,
+          add <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"mean_sd"</span><span class="op">)</span>,
+          fill <span class="op">=</span> <span class="st">"species"</span>,
+          label <span class="op">=</span> <span class="cn">TRUE</span>,
+          lab.nb.digits <span class="op">=</span> <span class="fl">2</span>,
+          lab.vjust <span class="op">=</span> <span class="op">-</span><span class="fl">2.2</span>,
+          lab.col <span class="op">=</span> <span class="st">"red"</span>,
+          title <span class="op">=</span> <span class="st">"Mean bill length of penguins"</span>,
+          subtitle <span class="op">=</span> <span class="st">"Error bars shows standard deviation"</span>,
+          xlab <span class="op">=</span> <span class="st">"Species of penguins"</span>,
+          ylab <span class="op">=</span> <span class="st">"Bill length (mm)"</span>,
+          ylim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">60</span><span class="op">)</span>,
+          palette <span class="op">=</span> <span class="st">"npg"</span><span class="op">)</span>
+
+<span class="va">histogram</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/gghistogram.html">gghistogram</a></span><span class="op">(</span><span class="va">penguins</span>,
+            x <span class="op">=</span> <span class="st">"body_mass_g"</span>,
+            add <span class="op">=</span> <span class="st">"mean"</span>,
+            fill <span class="op">=</span> <span class="st">"species"</span>,
+            rug <span class="op">=</span> <span class="cn">TRUE</span>,
+            title <span class="op">=</span> <span class="st">"Body mass of penguins"</span>,
+            xlab <span class="op">=</span> <span class="st">"Body mass (g)"</span>,
+            ylab <span class="op">=</span> <span class="st">"Frequency"</span>,
+            palette <span class="op">=</span> <span class="st">"startrek"</span><span class="op">)</span>
+
+<span class="va">summary</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/desc_statby.html">desc_statby</a></span><span class="op">(</span><span class="va">penguins</span>, measure.var <span class="op">=</span> <span class="st">"body_mass_g"</span>, grps <span class="op">=</span> <span class="st">"species"</span><span class="op">)</span>
+<span class="va">summary_short</span> <span class="op">&lt;-</span> <span class="va">summary</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">species</span>, <span class="va">mean</span>, <span class="va">median</span>, <span class="va">se</span>, <span class="va">sd</span><span class="op">)</span>
+<span class="va">summary_tbl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggtexttable.html">ggtexttable</a></span><span class="op">(</span><span class="va">summary_short</span>, rows <span class="op">=</span> <span class="cn">NULL</span>, theme <span class="op">=</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggtexttable.html">ttheme</a></span><span class="op">(</span><span class="st">"mRed"</span><span class="op">)</span><span class="op">)</span> <span class="co"># use ?ttheme to see more themes</span>
+
+<span class="co"># arranging plots together</span>
+<span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggarrange.html">ggarrange</a></span><span class="op">(</span><span class="va">bar_plot</span>, <span class="va">histogram</span>,
+         ncol <span class="op">=</span> <span class="fl">2</span>, nrow <span class="op">=</span> <span class="fl">2</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"A"</span>, <span class="st">"B"</span><span class="op">)</span>,
+         heights <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">0.3</span><span class="op">)</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>If you are arranging three graphs it is better to use the <code><a href="https://rdrr.io/pkg/gridExtra/man/arrangeGrob.html">grid.arrange()</a></code> function from the <code>{gridExtra}</code> package in R.</p>
+<div class="cell">
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># install.packages("palmerpenguins")</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+
+<span class="va">bar_plot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggbarplot.html">ggbarplot</a></span><span class="op">(</span><span class="va">penguins</span>,
+          x <span class="op">=</span> <span class="st">"species"</span>,
+          y <span class="op">=</span> <span class="st">"bill_length_mm"</span>,
+          add <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"mean_sd"</span><span class="op">)</span>,
+          fill <span class="op">=</span> <span class="st">"species"</span>,
+          label <span class="op">=</span> <span class="cn">TRUE</span>,
+          lab.nb.digits <span class="op">=</span> <span class="fl">2</span>,
+          lab.vjust <span class="op">=</span> <span class="op">-</span><span class="fl">2.2</span>,
+          lab.col <span class="op">=</span> <span class="st">"red"</span>,
+          title <span class="op">=</span> <span class="st">"Mean bill length of penguins"</span>,
+          subtitle <span class="op">=</span> <span class="st">"Error bars shows standard deviation"</span>,
+          xlab <span class="op">=</span> <span class="st">"Species of penguins"</span>,
+          ylab <span class="op">=</span> <span class="st">"Bill length (mm)"</span>,
+          ylim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">60</span><span class="op">)</span>,
+          palette <span class="op">=</span> <span class="st">"npg"</span><span class="op">)</span>
+
+<span class="va">histogram</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/gghistogram.html">gghistogram</a></span><span class="op">(</span><span class="va">penguins</span>,
+            x <span class="op">=</span> <span class="st">"body_mass_g"</span>,
+            add <span class="op">=</span> <span class="st">"mean"</span>,
+            fill <span class="op">=</span> <span class="st">"species"</span>,
+            rug <span class="op">=</span> <span class="cn">TRUE</span>,
+            title <span class="op">=</span> <span class="st">"Body mass of penguins"</span>,
+            xlab <span class="op">=</span> <span class="st">"Body mass (g)"</span>,
+            ylab <span class="op">=</span> <span class="st">"Frequency"</span>,
+            palette <span class="op">=</span> <span class="st">"startrek"</span><span class="op">)</span>
+
+<span class="va">summary</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/desc_statby.html">desc_statby</a></span><span class="op">(</span><span class="va">penguins</span>, measure.var <span class="op">=</span> <span class="st">"body_mass_g"</span>, grps <span class="op">=</span> <span class="st">"species"</span><span class="op">)</span>
+<span class="va">summary_short</span> <span class="op">&lt;-</span> <span class="va">summary</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">species</span>, <span class="va">mean</span>, <span class="va">median</span>, <span class="va">se</span>, <span class="va">sd</span><span class="op">)</span>
+<span class="va">summary_tbl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggtexttable.html">ggtexttable</a></span><span class="op">(</span><span class="va">summary_short</span>, rows <span class="op">=</span> <span class="cn">NULL</span>, theme <span class="op">=</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggtexttable.html">ttheme</a></span><span class="op">(</span><span class="st">"mRed"</span><span class="op">)</span><span class="op">)</span> <span class="co"># use ?ttheme to see more themes</span>
+
+<span class="co"># arranging three plots together</span>
+<span class="va">layout_matrix</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">4</span>, <span class="fl">3</span>, <span class="fl">3</span>, <span class="fl">4</span><span class="op">)</span>, nrow <span class="op">=</span> <span class="fl">2</span>, byrow <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">gridExtra</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/pkg/gridExtra/man/arrangeGrob.html">grid.arrange</a></span><span class="op">(</span><span class="va">bar_plot</span>, <span class="va">histogram</span>, <span class="va">summary_tbl</span>, layout_matrix <span class="op">=</span> <span class="va">layout_matrix</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="project4_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section></section><section id="saving-your-plot" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="saving-your-plot">
+<span class="header-section-number">4</span> Saving your plot</h2>
+<p>Using the function <code><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggexport.html">ggexport()</a></code> you can save your plot. Tweak width and height accordingly and also change the resolution to fit your needs.</p>
+<div class="cell">
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># install.packages("palmerpenguins")</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
+
+<span class="va">penguins</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggscatterhist.html">ggscatterhist</a></span><span class="op">(</span><span class="st">"body_mass_g"</span>,
+            <span class="st">"bill_length_mm"</span>,
+            color <span class="op">=</span> <span class="st">"species"</span>,
+            alpha <span class="op">=</span> <span class="fl">0.5</span>, size <span class="op">=</span> <span class="fl">2</span>,
+            palette <span class="op">=</span> <span class="st">"futurama"</span>,
+            margin.params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"species"</span>, color <span class="op">=</span> <span class="st">"black"</span>, size <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span>,
+            title <span class="op">=</span> <span class="st">"Body mass distribution of penguins"</span>,
+            xlab <span class="op">=</span> <span class="st">"Body mass (g)"</span>,
+            ylab <span class="op">=</span> <span class="st">"Bill length (mm)"</span><span class="op">)</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggexport.html">ggexport</a></span><span class="op">(</span>filename <span class="op">=</span> <span class="st">"my_plot.png"</span>, width <span class="op">=</span> <span class="fl">800</span>, height <span class="op">=</span> <span class="fl">600</span>, res <span class="op">=</span> <span class="fl">150</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="summary" class="level2" data-number="5"><h2 data-number="5" class="anchored" data-anchor-id="summary">
+<span class="header-section-number">5</span> Summary</h2>
+<p>In this chapter we learned how to plot publication standard graphs using the <a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a> package in R. Even with little to no experience in using the <a href="https://ggplot2.tidyverse.org">ggplot2</a> package in R, one can plot graphs with ease using the <a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a> package. To quickly recap, from this chapter we saw;</p>
+<ol type="1">
+<li>How to plot around 15 different types of graphs</li>
+<li>How to facet plots</li>
+<li>How to do basic statistical tests and visualize them within graphs</li>
+<li>How to add paragraph text under the graphs</li>
+<li>How to group different graphs into one single file</li>
+</ol>
+<p>I hope this chapter was useful to you. Check out the other chapter for more beginner content.</p>
+</section><section id="references" class="level2" data-number="6"><h2 data-number="6" class="anchored" data-anchor-id="references">
+<span class="header-section-number">6</span> References</h2>
+<ol type="1">
+<li><p>Alboukadel Kassambara (2020). ggpubr: ‘ggplot2’ Based Publication Ready Plots. R package version 0.4.0. https://CRAN.R-project.org/package=ggpubr</p></li>
+<li><p>Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</p></li>
+<li><p>Stephane Champely (2018). PairedData: Paired Data Analysis. R package version 1.1.1. https://CRAN.R-project.org/package=PairedData</p></li>
+<li><p>William S. Cleveland &amp; Robert McGill (1984) Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods, Journal of the American Statistical Association, 79:387, 531-554, DOI: 10.1080/01621459.1984.10478080</p></li>
+<li><p>Hadley Wickham, Romain François, Lionel Henry and Kirill Müller (2021). dplyr: A Grammar of Data Manipulation. R package version 1.0.7. https://CRAN.R-project.org/package=dplyr</p></li>
+<li><p>Hadley Wickham (2021). tidyr: Tidy Messy Data. R package version 1.1.4. https://CRAN.R-project.org/package=tidyr</p></li>
+<li><p>H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.</p></li>
+<li><p>Simon Garnier, Noam Ross, Robert Rudis, Antônio P. Camargo, Marco Sciaini, and Cédric Scherer (2021). Rvision - Colorblind-Friendly Color Maps for R. R package version 0.6.2.</p></li>
+</ol>
+<section id="last-updated-on" class="level4 unnumbered unlisted"><h4 class="unnumbered unlisted anchored" data-anchor-id="last-updated-on">Last updated on</h4>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "2022-05-19 20:51:02 IST"</code></pre>
+</div>
+</div>
+
+
+</section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{johnson2022,
+  author = {Jewel Johnson},
+  title = {Chapter 4: {Publication} Ready Plots Using Ggpubr},
+  date = {01/06/2022},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-johnson2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+Jewel Johnson. 1AD–6AD. <span>“Chapter 4: Publication Ready Plots Using
+Ggpubr.”</span> 1AD–6AD.
+</div></div></section></div></main><!-- /main --><script src="site_libs/quarto-html/zenscroll-min.js"></script><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+      <div class="nav-footer-center">Copyright 2022, Jewel Johnson</div>
+  </div>
+</footer>
+
+
+</body></html>

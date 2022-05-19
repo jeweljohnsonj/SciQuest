@@ -1,0 +1,93 @@
+---
+title: "Chapter 3: Data manipulation using dplyr (part 2)"
+subtitle: |
+  Learn how to manipulate your data with the dplyr package. In the continuation with the previous chapter.
+author: "Jewel Johnson"
+date: "12-13-2021"
+format:
+  html:
+    toc: true
+    toc-title: On this page
+    html-math-method: katex
+    css: styles.css
+    number-sections: true
+    smooth-scroll: true
+    highlight-style: github
+    code-link: true
+citation: true
+execute: 
+  warning: false
+image: "images/ggplot2.png"
+---
+
+## Continuation from the previous chapter
+
+In the [previous chapter](https://jeweljohnsonj.github.io/jeweljohnson.github.io/project5.html) we have seen quite a lot of functions from the `dplyr` package. In this chapter, we will see the rest of the functions where we learn how to handle row names, how to join columns and rows and different set operations in the `dplyr` package.
+
+```{r}
+#| eval: false
+# loading necessary packages
+library(dplyr)
+```
+
+### rownames_to_column() & column_to_rownames()
+
+Tidy data does not use row names. So use `rownames_to_column()` command to convert row names to a new column to the data. The function `column_to_rownames()` does the exact opposite of `rownames_to_column()` as it converts a column into rownames but make sure that the column you are converting into rownames does not contain `NA` values.
+
+```{r}
+#| eval: false
+# mtcars dataset contains rownames
+# creates new column called car_names which contains row names
+mtcars %>% rownames_to_column(var = "car_names")
+
+# returns the original mtcars dataset
+mtcars %>% rownames_to_column(var = "car_names") %>%
+  column_to_rownames(var = "car_names")
+```
+
+## Combine tables/columns
+
+### bind_cols()
+
+Joins columns with other columns. Similar function as that of `cbind()` from base R.
+
+```{r}
+#| eval: false
+df1 <- tidytable::data.table(x = letters[1:5], y = c(1:5))
+df2 <- tidytable::data.table(x = letters[3:7], y = c(6:10))
+bind_cols(df1,df2)
+
+#similar functionality
+cbind(df1,df2)
+```
+
+### bind_rows()
+
+Joins rows with other rows. Similar function as that of `rbind()` from base R.
+
+```{r}
+#| eval: false
+df1 <- tidytable::data.table(x = letters[1:5], y = c(1:5))
+df2 <- tidytable::data.table(x = letters[3:7], y = c(6:10))
+bind_rows(df1,df2)
+
+#similar functionality
+rbind(df1,df2)
+```
+
+The functions that are described below have the same functionality as that of `bind_cols()` but give you control over how the columns are joined.
+
+## Mutating joins and filtering joins
+
+Mutating joins include `left_join()`, `right_join()`, `inner_join()` and `full_join()` and filtering joins include `semi_join()` and `anti_join()`.
+
+
+
+
+
+#### Last updated on {.unnumbered .unlisted}
+
+```{r}
+#| echo: false
+Sys.time()
+```

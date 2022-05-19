@@ -273,6 +273,7 @@ I hope this tutorial helped you to get familiarized with the `ggplot2` commands.
 
 #### Last updated on {.unnumbered .unlisted}
 
-```{r, echo=FALSE}
+```{r}
+#| echo: false
 Sys.time()
 ```
