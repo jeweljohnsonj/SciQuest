@@ -82,7 +82,7 @@ colnames(treatment_data_tidy)[1] <- "treatment"
 paged_table(treatment_data_tidy)
 ```
 
-You can see each of the columns represent only one type of variable. In the first column, you have the types of treatments, followed by patient IDs and their efficacy values for each treatment. Also, note that each row represents only one observation. So this kind of data format is what we strive to achieve by using the `tidyr` package and they are called as 'long data'. So let us begin!
+You can see each of the columns represent only one type of variable. In the first column, you have the types of treatments, followed by patient IDs and their efficacy values for each treatment. Also, note that each row represents only one observation. So this kind of data format is what we strive to achieve by using the `{tidyr}` package and they are called as 'long data'. So let us begin!
 
 ## Reshaping dataset
 
@@ -480,7 +480,7 @@ complete("data name", "column names which you want to complete separated by comm
 
 ## Handling NAs or missing values
 
-Most data collection would often result in possible `NA` values. The `tidyr` package allows us to drop or convert `NA` values. We will resue the earlier example. Below tabs show before and removing `NA` values.
+Most data collection would often result in possible `NA` values. The `{tidyr}` package allows us to drop or convert `NA` values. We will reuse the earlier example. Below tabs show before and removing `NA` values.
 
 ### drop_na()
 

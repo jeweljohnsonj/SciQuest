@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.426">
+<meta name="generator" content="quarto-0.9.431">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jewel Johnson">
 <meta name="dcterms.date" content="2022-01-06">
@@ -141,15 +141,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>  
         <li class="dropdown-header">Data manipulation</li>
         <li>
-    <a class="dropdown-item" href="./project5.qmd">
+    <a class="dropdown-item" href="./project5.html">
  <span class="dropdown-text">Chapter 1: Data tidying using tidyr</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./project6.qmd">
+    <a class="dropdown-item" href="./project6.html">
  <span class="dropdown-text">Chapter 2: Data manipulation using dplyr (part 1)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./project7.qmd">
+    <a class="dropdown-item" href="./project7.html">
  <span class="dropdown-text">Chapter 3: Data manipulation using dplyr (part 2)</span></a>
   </li>  
     </ul>
@@ -224,8 +224,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-
-
 <div class="quarto-title-meta">
 
     <div>
@@ -248,7 +246,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header><section id="introduction-to-ggpubr-package" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="introduction-to-ggpubr-package">
 <span class="header-section-number">1</span> Introduction to ggpubr package</h2>
 <p>If you are a researcher who wants to have publication-ready plots but does not want to get hassled by the <a href="https://ggplot2.tidyverse.org">ggplot2</a> package, then let me introduce you to the<a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a> package. Using this package you can make publication grade plots without spending too much time modifying things. Even if you are a beginner in R programming and does not know how to use the<a href="https://ggplot2.tidyverse.org">ggplot2</a> package, you will still be able to plot graphs using the <a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a> package because of how easy the syntax is. But having prior knowledge of the <a href="https://ggplot2.tidyverse.org">ggplot2</a> package will surely make things easier, and an experienced person will know that any plot which can be plotted using <a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a> can also be plotted using <a href="https://ggplot2.tidyverse.org">ggplot2</a>. So let us start.</p>
-<p>First things first, install the <code>ggpubr</code> package and load it in the library.</p>
+<p>First things first, install the <a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a> package and load it in the library.</p>
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"ggpubr"</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -298,7 +296,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </section><section id="box-plot" class="level3" data-number="2.3"><h3 data-number="2.3" class="anchored" data-anchor-id="box-plot">
 <span class="header-section-number">2.3</span> Box plot</h3>
-<p>Standard box plot graph. Like in the previous graph you can specify colour palettes from the scientific journal palettes featured in the <code>ggsci</code> R package.</p>
+<p>Standard box plot graph. Like in the previous graph you can specify colour palettes from the scientific journal palettes featured in the <a href="https://nanx.me/ggsci/">ggsci</a> R package.</p>
 <div class="cell">
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># install.packages("palmerpenguins")</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
@@ -368,7 +366,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span>
 
-<span class="va">penguins_freq</span> <span class="op">&lt;-</span> <span class="va">penguins</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/tidyr/man/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span>
+<span class="va">penguins_freq</span> <span class="op">&lt;-</span> <span class="va">penguins</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>frequency <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span><span class="op">)</span>
 
@@ -394,7 +392,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span>
 
-<span class="va">penguins_freq</span> <span class="op">&lt;-</span> <span class="va">penguins</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/tidyr/man/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span>
+<span class="va">penguins_freq</span> <span class="op">&lt;-</span> <span class="va">penguins</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>frequency <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span><span class="op">)</span>
 
@@ -644,7 +642,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="header-section-number">3</span> Other functions in ggpubr package</h2>
 <section id="statistical-tests" class="level3" data-number="3.1"><h3 data-number="3.1" class="anchored" data-anchor-id="statistical-tests">
 <span class="header-section-number">3.1</span> Statistical tests</h3>
-<p>You can do various statistical tests using the functions in the <a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a> package. We will be using the Anorexia dataset in the <code>PairedData</code> package in R. In the code given below, we are doing a Wilcoxon test to compare the mean weights of girls before treatment to the mean weights of girls post-treatment. Since the data is paired we will indicate it by the <code>paired = TRUE</code> function. A word of caution! Before starting to do statistical tests please ensure whether you can fulfil conditions for using parametric tests or not using or data. You can check whether your data is normally distributed using a QQ plot or by using any normality tests.</p>
+<p>You can do various statistical tests using the functions in the <a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a> package. We will be using the Anorexia dataset in the <code>{PairedData}</code> package in R. In the code given below, we are doing a Wilcoxon test to compare the mean weights of girls before treatment to the mean weights of girls post-treatment. Since the data is paired we will indicate it by the <code>paired = TRUE</code> function. A word of caution! Before starting to do statistical tests please ensure whether you can fulfil conditions for using parametric tests or not using or data. You can check whether your data is normally distributed using a QQ plot or by using any normality tests.</p>
 <p>PS: I use knitr::kable() just for illustrative purpose only. You can run the command inside the kable() argument and you will be fine.</p>
 <div class="cell">
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># install.packages("PairedData")</span>
@@ -656,7 +654,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <span class="co"># tidying the data</span>
 <span class="va">Anorexia_new</span> <span class="op">&lt;-</span> <span class="va">Anorexia</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> 
-  <span class="fu"><a href="https://rdrr.io/pkg/tidyr/man/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">Prior</span>, <span class="va">Post</span><span class="op">)</span>, names_to <span class="op">=</span> <span class="st">"condition"</span>, values_to <span class="op">=</span> <span class="st">"weight"</span><span class="op">)</span>
+  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">Prior</span>, <span class="va">Post</span><span class="op">)</span>, names_to <span class="op">=</span> <span class="st">"condition"</span>, values_to <span class="op">=</span> <span class="st">"weight"</span><span class="op">)</span>
 <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/compare_means.html">compare_means</a></span><span class="op">(</span><span class="va">weight</span> <span class="op">~</span> <span class="va">condition</span>, <span class="va">Anorexia_new</span>, paired <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
@@ -1026,7 +1024,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>
 
-<span class="va">penguins</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/tidyr/man/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span>
+<span class="va">penguins</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://rpkgs.datanovia.com/ggpubr/reference/pipe.html">%&gt;%</a></span>
   <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggscatter.html">ggscatter</a></span><span class="op">(</span><span class="st">"body_mass_g"</span>,
             <span class="st">"bill_length_mm"</span>,
             color <span class="op">=</span> <span class="st">"species"</span>,
@@ -1208,7 +1206,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="last-updated-on" class="level4 unnumbered unlisted"><h4 class="unnumbered unlisted anchored" data-anchor-id="last-updated-on">Last updated on</h4>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-05-19 20:51:02 IST"</code></pre>
+<pre><code>[1] "2022-05-20 10:22:06 IST"</code></pre>
 </div>
 </div>
 

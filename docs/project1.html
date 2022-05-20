@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.426">
+<meta name="generator" content="quarto-0.9.431">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jewel Johnson">
 <meta name="dcterms.date" content="2021-02-12">
@@ -139,6 +139,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="dropdown-item" href="./project4.html">
  <span class="dropdown-text">Chapter 4: Publication ready plots using ggpubr</span></a>
   </li>  
+        <li class="dropdown-header">Data manipulation</li>
+        <li>
+    <a class="dropdown-item" href="./project5.html">
+ <span class="dropdown-text">Chapter 1: Data tidying using tidyr</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./project6.html">
+ <span class="dropdown-text">Chapter 2: Data manipulation using dplyr (part 1)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./project7.html">
+ <span class="dropdown-text">Chapter 3: Data manipulation using dplyr (part 2)</span></a>
+  </li>  
     </ul>
 </li>
   <li class="nav-item">
@@ -194,8 +207,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-
-
 <div class="quarto-title-meta">
 
     <div>
@@ -217,7 +228,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header><section id="introduction-to-ggplot2-package" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="introduction-to-ggplot2-package">
 <span class="header-section-number">1</span> Introduction to ggplot2 package</h2>
-<p>In this chapter we will be plotting different types of graphs using a package called <code>ggplot2</code> in R. The <strong>gg</strong>plot2 package is based on ‘<strong>grammar of graphics</strong> plot’ which provides a systematic way of doing data visualizations in R. With a few lines of code you can plot a simple graph and by adding more layers onto it you can create complex yet elegant data visualizations.</p>
+<p>In this chapter we will be plotting different types of graphs using a package called <a href="https://ggplot2.tidyverse.org">ggplot2</a> in R. The <strong>gg</strong>plot2 package is based on ‘<strong>grammar of graphics</strong> plot’ which provides a systematic way of doing data visualizations in R. With a few lines of code you can plot a simple graph and by adding more layers onto it you can create complex yet elegant data visualizations.</p>
 <p>A ggplot2 graph is made up of three components.</p>
 <ol type="1">
 <li>
@@ -230,18 +241,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>This tutorial is primarily focused on students who are beginners in R programming and wants to quickly plot their data without much of a hassle. So without further ado let’s plot some graphs!</p>
 </section><section id="setting-up-the-prerequisites" class="level2 page-columns page-full" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="setting-up-the-prerequisites">
 <span class="header-section-number">2</span> Setting up the prerequisites</h2>
-<p>First, we need to install the <code>ggplot2</code> package in R as it does not come in the standard distribution of R.</p>
+<p>First, we need to install the <a href="https://ggplot2.tidyverse.org">ggplot2</a> package in R as it does not come in the standard distribution of R.</p>
 <ul>
-<li>To install packages in R we use the command <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a></code> and to load packages we use the command <code><a href="https://rdrr.io/r/base/library.html">library()</a></code>. Therefore to install and load <code>ggplot2</code> package we use the following lines of command.</li>
+<li>To install packages in R we use the command <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a></code> and to load packages we use the command <code><a href="https://rdrr.io/r/base/library.html">library()</a></code>. Therefore to install and load <a href="https://ggplot2.tidyverse.org">ggplot2</a> package we use the following lines of command.</li>
 </ul>
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"ggplot2"</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>All right we have the <code>ggplot2</code> package loaded, now we just need some data to plot. Most R programming tutorials use the <code>iris</code> dataset as an example. But this tutorial won’t be like most tutorials. So let me introduce you to some lovely penguins from Palmer Station in Antarctica!</p>
-<p>For this tutorial, we will be installing the <code>palmerpenguins</code> package which showcases body measurements taken from three different species of penguins from Antarctica. This package was made possible by the efforts of <a href="https://www.allisonhorst.com/">Dr.&nbsp;Allison Horst</a>. The penguin data was collected and made available by <a href="https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php">Dr.&nbsp;Kristen Gorman</a> and the <a href="https://pal.lternet.edu/">Palmer Station, Antarctica LTER</a>.</p>
+<p>All right we have the <a href="https://ggplot2.tidyverse.org">ggplot2</a> package loaded, now we just need some data to plot. Most R programming tutorials use the <code>iris</code> dataset as an example. But this tutorial won’t be like most tutorials. So let me introduce you to some lovely penguins from Palmer Station in Antarctica!</p>
+<p>For this tutorial, we will be installing the <a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a> package which showcases body measurements taken from three different species of penguins from Antarctica. This package was made possible by the efforts of <a href="https://www.allisonhorst.com/">Dr.&nbsp;Allison Horst</a>. The penguin data was collected and made available by <a href="https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php">Dr.&nbsp;Kristen Gorman</a> and the <a href="https://pal.lternet.edu/">Palmer Station, Antarctica LTER</a>.</p>
 <ul>
-<li>Install the <code>palmerpenguins</code> package and load it in R.</li>
+<li>Install the <a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a> package and load it in R.</li>
 </ul>
 <div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"palmerpenguins"</span><span class="op">)</span>
@@ -374,6 +385,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Body Mass (g)"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Frequency"</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Frequency of individuals for respective body mass"</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>bins <span class="op">=</span> <span class="fl">25</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 2 rows containing non-finite values (stat_bin).</code></pre>
+</div>
 <div class="cell-output-display">
 <p><img src="project1_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -386,7 +400,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Use the command <code><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line()</a></code> for plotting a line graph.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">bill_length_mm</span>, 
@@ -404,7 +418,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Use the command <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code> to plot a scatter plot.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_mass_g</span>, y <span class="op">=</span> <span class="va">flipper_length_mm</span>, 
@@ -422,7 +436,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Use the command <code><a href="https://ggplot2.tidyverse.org/reference/geom_density.html">geom_density()</a></code> to a density plot.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">body_mass_g</span>, fill <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
@@ -434,7 +448,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Since we plotted for all three species the graph looks clustered. Let us try plotting the same graph for only <em>gentoo</em> penguins. We will use the <code>dplyr</code> package to <code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> data for <em>gentoo</em> penguins alone. The <code>dplyr</code> package comes in-built with R so just load the <code>dplyr</code> package using the command <code><a href="https://rdrr.io/r/base/library.html">library()</a></code>.</p>
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
 
@@ -455,7 +469,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Use the command <code><a href="https://ggplot2.tidyverse.org/reference/geom_dotplot.html">geom_dotplot()</a></code> to plot a dot-plot.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">species</span>, y <span class="op">=</span> <span class="va">body_mass_g</span>, fill <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
@@ -473,7 +487,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Use the command <code><a href="https://ggplot2.tidyverse.org/reference/geom_rug.html">geom_rug()</a></code> to plot a rug-plot.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
 
@@ -494,7 +508,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Use the command <code><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot()</a></code> to plot a box-plot.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">species</span>, y <span class="op">=</span> <span class="va">body_mass_g</span>, colour <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
@@ -512,7 +526,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Use the command <code><a href="https://ggplot2.tidyverse.org/reference/geom_violin.html">geom_violin()</a></code> in conjunction with <code><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot()</a></code> to plot a violin plot.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">species</span>, y <span class="op">=</span> <span class="va">body_mass_g</span>, fill <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
@@ -530,7 +544,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Use the command <code><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave()</a></code> to save the graph locally. In the code below, ‘my_graph’ is the ggplot element containing your graph. The plot will be saved in your working directory.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
 
 <span class="va">my_graph</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">species</span>, y <span class="op">=</span> <span class="va">body_mass_g</span>,
@@ -547,7 +561,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </section><section id="summary" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="summary">
 <span class="header-section-number">4</span> Summary</h2>
-<p>I hope this tutorial helped you to get familiarized with the <code>ggplot2</code> commands. There are many more different types of graphs that you can plot using <code>ggplot2</code>. The tutorial only showed some of the commonly used ones. The best way to learn R is through actually doing it yourself. Try to recreate the examples given in this tutorial by yourself and then try what you learned with the different datasets available in R. Have a good day!</p>
+<p>I hope this tutorial helped you to get familiarized with the <a href="https://ggplot2.tidyverse.org">ggplot2</a> commands. There are many more different types of graphs that you can plot using <a href="https://ggplot2.tidyverse.org">ggplot2</a>. The tutorial only showed some of the commonly used ones. The best way to learn R is through actually doing it yourself. Try to recreate the examples given in this tutorial by yourself and then try what you learned with the different datasets available in R. Have a good day!</p>
 </section><section id="references" class="level2" data-number="5"><h2 data-number="5" class="anchored" data-anchor-id="references">
 <span class="header-section-number">5</span> References</h2>
 <ol type="1">
@@ -557,7 +571,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="last-updated-on" class="level4 unnumbered unlisted"><h4 class="unnumbered unlisted anchored" data-anchor-id="last-updated-on">Last updated on</h4>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-05-19 20:09:03 IST"</code></pre>
+<pre><code>[1] "2022-05-20 10:21:31 IST"</code></pre>
 </div>
 </div>
 

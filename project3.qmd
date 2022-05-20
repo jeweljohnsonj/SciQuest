@@ -18,30 +18,30 @@ citation: true
 image: "images/ggplot2.png"
 ---
 
-In this chapter, we will learn how to change the theme settings of a graph in ggplot2. The theme of a graph consists of non-data components present in your graph. This includes the different labels of the graph, fonts used, colour of axes, the background of the graph etc. By changing the theme we would not be changing or transforming how the data will look in the graph. Instead, we would only change the visual appearances in the graph and by doing so we can make it more aesthetically pleasing. Furthermore, we will see a few popular packages featuring ready to use themes. We will also learn about colour palettes and will see different packages associated with them.
+In this chapter, we will learn how to change the theme settings of a graph in `{ggplot2}` The theme of a graph consists of non-data components present in your graph. This includes the different labels of the graph, fonts used, colour of axes, the background of the graph etc. By changing the theme we would not be changing or transforming how the data will look in the graph. Instead, we would only change the visual appearances in the graph and by doing so we can make it more aesthetically pleasing. Furthermore, we will see a few popular packages featuring ready to use themes. We will also learn about colour palettes and will see different packages associated with them.
 
 ## Complete themes
 
-The `ggplot2` package features ready to use themes called 'complete themes'. So before we begin customizing themes, let us plot a few graphs and see how these themes look like. For the plots, I have used the `BirdNest` dataset from the `Stat2Data` package in R. The `BirdNest` dataset contains nest and species characteristics of North American passerines. The data was collected by Amy R. Moore, as a student at Grinnell College in 1999.
+The `{ggplot2}` package features ready to use themes called 'complete themes'. So before we begin customizing themes, let us plot a few graphs and see how these themes look like. For the plots, I have used the `BirdNest` dataset from the `{Stat2Data}` package in R. The `BirdNest` dataset contains nest and species characteristics of North American passerines. The data was collected by Amy R. Moore, as a student at Grinnell College in 1999.
 
 -   Getting the `BirdNest` dataset and viewing how the dataset is structured.
 
 ```{r}
 #| eval: false
-install.packages("Stat2Data") #for installing Stat2Data package
-install.packages("ggplot2") #for installing ggplot2 package
+install.packages("Stat2Data") # for installing Stat2Data package
+install.packages("ggplot2") # for installing ggplot2 package
 
-#load the packages
+# load the packages
 library(Stat2Data)
 library(ggplot2)
 
-data("BirdNest") #loading the BirdNest dataset
-str(BirdNest) #for viewing structure of the dataset
+data("BirdNest") # loading the BirdNest dataset
+str(BirdNest) # for viewing structure of the dataset
 ```
 
 So we have plenty of variables to play with. The tabs shown below are named according to the theme used in the plots.
 
-::: {.panel-tabset}
+::: panel-tabset
 ## theme_gray()
 
 ```{r}
@@ -199,7 +199,7 @@ ggplot(BirdNest, aes(Nesttype, Length, fill = Nesttype)) + geom_boxplot() +
 
 ## Themes from ggthemes package
 
-If you want even more pre-built themes then you can try the `ggthemes` package. This package was developed by [Dr. Jeffrey B. Arnold](https://jrnold.github.io/ggthemes/).
+If you want even more pre-built themes then you can try the `{ggthemes}` package. This package was developed by [Dr. Jeffrey B. Arnold](https://jrnold.github.io/ggthemes/).
 
 ```{r}
 #| eval: false
@@ -208,9 +208,9 @@ install.packages("ggthemes")
 library(ggthemes)
 ```
 
-The tabs shown below are named after the themes present in `ggthemes` package.
+The tabs shown below are named after the themes present in `{ggthemes}` package.
 
-::: {.panel-tabset}
+::: panel-tabset
 ## theme_base()
 
 ```{r}
@@ -560,14 +560,14 @@ Choosing a good colour palette is important as it helps us to represent data in 
 
 ### viridis package
 
-`viridis` package is a popularly used colour palette in R. It is aesthetically pleasing and well designed to improve readability for colour blind people. The `virids` package was developed by Bob Rudis, Noam Ross and Simon Garnier. There are eight different colour scales present in this package. The name of the tab denotes the colour scale present in this package.
+`{viridis}` package is a popularly used colour palette in R. It is aesthetically pleasing and well designed to improve readability for colour blind people. The `{virids}` package was developed by Bob Rudis, Noam Ross and Simon Garnier. There are eight different colour scales present in this package. The name of the tab denotes the colour scale present in this package.
 
 ```{r}
 #| eval: false
 library(viridis)
 ```
 
-::: {.panel-tabset}
+::: panel-tabset
 ## viridis
 
 ```{r}
@@ -708,7 +708,7 @@ ggplot(BirdNest, aes(Nesttype, Length, fill = Nesttype)) + geom_boxplot() +
 
 ### wesanderson package
 
-If you like your colours distinctive and narrative, just like how American film-maker [Mr. Wes Anderson](https://en.wikipedia.org/wiki/Wes_Anderson) would like it, then try the `wesanderson` package. Relive the *The Grand Budapest Hotel* moments through your graphs. The `wesandreson` package was developed by [Karthik Ram](https://github.com/karthik/wesanderson). There are a total of 19 colour palettes present in this package. We will see a subset of them. All colour scales in this package are available [here](https://github.com/karthik/wesanderson). The name of the tab denotes the colour scale used. The data used in this plot is the `penguin` dataset present in the package `palmerpenguins`.
+If you like your colours distinctive and narrative, just like how American film-maker [Mr. Wes Anderson](https://en.wikipedia.org/wiki/Wes_Anderson) would like it, then try the `{wesanderson}` package. Relive the *The Grand Budapest Hotel* moments through your graphs. The `{wesandreson}` package was developed by [Karthik Ram](https://github.com/karthik/wesanderson). There are a total of 19 colour palettes present in this package. We will see a subset of them. All colour scales in this package are available [here](https://github.com/karthik/wesanderson). The name of the tab denotes the colour scale used. The data used in this plot is the `penguin` dataset present in the package `{palmerpenguins}`.
 
 ```{r}
 #| eval: false
@@ -720,7 +720,7 @@ library(palmerpenguins)
 data("penguins") #load the penguins dataset
 ```
 
-::: {.panel-tabset}
+::: panel-tabset
 ## GrandBudapest1
 
 ```{r}
@@ -843,7 +843,7 @@ ggplot(data = penguins, aes(x = species, y = body_mass_g, fill = species)) +
 
 ### ggsci package
 
-If you want high-quality colour palettes reflecting scientific journal styles then you can try the `ggsci` package. The `ggsci` package was developed by [Dr. Nan Xiao](https://nanx.me/) and [Dr. Miaozhu Li](http://miaozhu.li/). All colour scales in this package are available in package [webpage](https://cran.r-project.org/web/packages/ggsci/vignettes/ggsci.html). The name of the tab denotes the colour scale used.
+If you want high-quality colour palettes reflecting scientific journal styles then you can try the `{ggsci}` package. The `{ggsci}` package was developed by [Dr. Nan Xiao](https://nanx.me/) and [Dr. Miaozhu Li](http://miaozhu.li/). All colour scales in this package are available in package [webpage](https://cran.r-project.org/web/packages/ggsci/vignettes/ggsci.html). The name of the tab denotes the colour scale used.
 
 ```{r}
 #| eval: false
@@ -852,7 +852,7 @@ install.packages("ggsci")
 library(ggsci)
 ```
 
-::: {.panel-tabset}
+::: panel-tabset
 ## npg
 
 ```{r}
@@ -1154,7 +1154,7 @@ element_text(
 
 We can modify each of these parameters to improve our plots as shown below in 'before' and 'after' the changes are made.
 
-::: {.panel-tabset}
+::: panel-tabset
 ## Before
 
 ```{r}
@@ -1219,7 +1219,7 @@ element_line(
 )
 ```
 
-::: {.panel-tabset}
+::: panel-tabset
 ## Before
 
 ```{r}
@@ -1278,7 +1278,8 @@ element_rect(
 )
 ```
 
-::: {.panel-tabset}
+::: panel-tabset
+
 ## Before
 
 ```{r}

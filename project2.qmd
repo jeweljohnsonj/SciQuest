@@ -20,15 +20,15 @@ citation: true
 image: "images/ggplot2.png"
 ---
 
-After [Chapter 1](https://jeweljohnsonj.github.io/one-carat-blog/project1.html) you must be familiar with the different types of graphs that you can plot using `ggplot2`. So for this tutorial, we will be learning how to customize those ggplot graphs to our liking. We will learn how to tweak the aesthetics, how to change labels and how to modify and change the axes in a graph.
+After [Chapter 1](https://jeweljohnsonj.github.io/one-carat-blog/project1.html) you must be familiar with the different types of graphs that you can plot using `{ggplot2}`. So for this tutorial, we will be learning how to customize those ggplot graphs to our liking. We will learn how to tweak the aesthetics, how to change labels and how to modify and change the axes in a graph.
 
 So let us plot a graph from scratch and learn how to use different aesthetics available.
 
 ## Setting up the prerequisites
 
-First, we need to install the `ggplot2` package in R as it does not come in the standard distribution of R. For the dataset, we will first download the `Stat2Data` package which houses a lot of cool datasets. For this tutorial let us use the `Hawks` dataset which showcases body measurements from three different species of Hawks. This data was collected by students and faculty at Cornell College in Mount Vernon and the dataset was made available by late Prof. Bob Black at Cornell College.
+First, we need to install the `{ggplot2}` package in R as it does not come in the standard distribution of R. For the dataset, we will first download the `{Stat2Data}` package which houses a lot of cool datasets. For this tutorial let us use the `Hawks` dataset which showcases body measurements from three different species of Hawks. This data was collected by students and faculty at Cornell College in Mount Vernon and the dataset was made available by late Prof. Bob Black at Cornell College.
 
--   To install packages in R we use the command `install.packages()` and to load packages we use the command `library()`. Therefore to install and load `ggplot2` and `Stats2Data` packages we use the following lines of command. Call the `Hawks` data using the `data()` command.
+-   To install packages in R we use the command `install.packages()` and to load packages we use the command `library()`. Therefore to install and load `{ggplot2}` and `{Stats2Data}` packages we use the following lines of command. Call the `Hawks` data using the `data()` command.
 
 ```{r}
 #| eval: false
@@ -99,7 +99,7 @@ Now, this graph is way better than the previous one.
 library(ggplot2)
 library(Stat2Data)
 
-ggplot(data = Hawks, aes(x = Weight, y = Wing, shape = Species)) + #instead of colour use shape.
+ggplot(data = Hawks, aes(x = Weight, y = Wing, shape = Species)) + # instead of colour use shape.
   geom_point() + theme_bw() 
 ```
 
@@ -373,7 +373,7 @@ ggplot(data = Hawks, aes(x = Weight, y = Wing, colour = Species)) +
 
 ## Summary
 
-In this tutorial, we learned how to modify aesthetic present for different geoms in ggplot2. Then we learned how to modify labels in a graph and finally, we learned how to modify and change the axes elements. This tutorial is in no way exhaustive of the different ways you can modify a graph as there many more methods which are not discussed here. Instead of trying to include everything, this tutorial tries to be a stepping stone to help students of R to learn the basics of tweaking a graph. Try to practice what is covered here using other datasets available in the r-package `Stat2Data`. Have a good day my friend!
+In this tutorial, we learned how to modify aesthetic present for different geoms in `{ggplot2}` Then we learned how to modify labels in a graph and finally, we learned how to modify and change the axes elements. This tutorial is in no way exhaustive of the different ways you can modify a graph as there many more methods which are not discussed here. Instead of trying to include everything, this tutorial tries to be a stepping stone to help students of R to learn the basics of tweaking a graph. Try to practice what is covered here using other datasets available in the r-package `{Stat2Data}`. Have a good day my friend!
 
 ## References
 

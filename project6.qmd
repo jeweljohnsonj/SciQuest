@@ -24,13 +24,13 @@ image: "images/dplyr.png"
 
 The `{dplyr}` package is a grammar of data manipulation just like how `{ggplot2}` is the grammar of data visualization. It helps us to apply a wide variety of functions such as;
 
-1. Summarising the dataset
-2. Applying selections and orderings as a function of a variable
-3. Creating new variables as a function of existing variables
+1.  Summarising the dataset
+2.  Applying selections and orderings as a function of a variable
+3.  Creating new variables as a function of existing variables
 
 We will see in-depth how to manipulate our data like a boss!
 
-## The pipe operator %>%
+## The pipe operator %\>%
 
 Perhaps the most amazing thing in making codes short and efficient is the pipe operator which is originally from the `{magrittr}` package which is made available for the `{dplyr}` package. The pipe operator helps you skip the intermediate steps of saving an object before you can use them in command. It does so by 'piping' together results from the first object to the function ahead of the pipe operator. The command `x %>% y %>% z` can be read as 'take the result of x and use it with function y and take that result and use it with function z'. This is the gist of what the pipe operator does. Allow me to demonstrate.
 
@@ -74,7 +74,7 @@ The command `group_by()` allows us to group the data via existing variables. It 
 
 ### summarise()
 
-The `summarise()` command allows you to get the summary statistics of a variable or a column in the dataset. The result is given as tabular data. Many types of summary statistics can be obtained using the `summarise()` function. Some of them are given below. To calculate average values it is necessary to drop `NA` values from the dataset. Use `drop_na()` command from the `tidyr` package. The comments denote what each summary statistic is.
+The `summarise()` command allows you to get the summary statistics of a variable or a column in the dataset. The result is given as tabular data. Many types of summary statistics can be obtained using the `summarise()` function. Some of them are given below. To calculate average values it is necessary to drop `NA` values from the dataset. Use `drop_na()` command from the `{tidyr}` package. The comments denote what each summary statistic is.
 
 ```{r}
 library(tidyr)
@@ -163,7 +163,7 @@ paged_table(penguins %>% group_by(species) %>% distinct(body_mass_g))
 
 ### slice()
 
-Use `slice()` to select rows by position. 
+Use `slice()` to select rows by position.
 
 ```{r}
 library(rmarkdown)
@@ -177,12 +177,11 @@ paged_table(penguins %>% slice(1:5)) # slice from first row to fifth row
 
 Use `slice_sample()` to randomly select rows from the dataset. Instead of `(n = )` you can also provide the proportion value (between 0 and 1) using `(prop = )`. For e.g. for a dataset with 10 rows, giving `(prop = 0.5)` will randomly sample 5 rows. Other related functions include;
 
-* `preserve` : Values include `TRUE` to preserve grouping in a grouped dataset and `FALSE` to not preserve grouping while sampling.
-* `weight_by` : Gives priority to a particular variable during sampling. An example is given below.
-* `replace` : Values include `TRUE` if you want sampling with replacement which can result in duplicate values, `FALSE` if you want sampling without replacement.
+-   `preserve` : Values include `TRUE` to preserve grouping in a grouped dataset and `FALSE` to not preserve grouping while sampling.
+-   `weight_by` : Gives priority to a particular variable during sampling. An example is given below.
+-   `replace` : Values include `TRUE` if you want sampling with replacement which can result in duplicate values, `FALSE` if you want sampling without replacement.
 
-::: {.panel-tabset}
-
+::: panel-tabset
 ## (n = 4)
 
 ```{r}
@@ -210,8 +209,7 @@ paged_table(penguins %>% drop_na() %>% slice_sample(n = 4, weight_by = body_mass
 
 Use `slice_min()` to extract rows containing least values and use `slice_max()` to extract rows with greatest values. The function `with_ties = FALSE` is included to avoid tie values.
 
-::: {.panel-tabset}
-
+::: panel-tabset
 ## slice_min()
 
 ```{r}
@@ -237,8 +235,7 @@ paged_table(penguins %>% slice_max(body_mass_g, n = 4,with_ties = FALSE))
 
 Use `slice_head()` to extract first set of rows and use `slice_tail()` to extract last set of rows.
 
-::: {.panel-tabset}
-
+::: panel-tabset
 ## slice_head()
 
 ```{r}
@@ -469,14 +466,11 @@ The `{dplyr}` package is the grammar of the data manipulation in R. It features 
 
 ## References
 
-1. Hadley Wickham, Romain François, Lionel Henry and Kirill Müller (2021). dplyr: A Grammar of Data Manipulation. R
-  package version 1.0.7. https://CRAN.R-project.org/package=dplyr
-  Here is the [link](https://github.com/rstudio/cheatsheets/blob/main/data-transformation.pdf) to the cheat sheet explaining each function in `{dplyr}`.
-  
-2. Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version
-  0.1.0. https://allisonhorst.github.io/palmerpenguins/
-  
-3. Hadley Wickham (2021). tidyr: Tidy Messy Data. R package version 1.1.4. https://CRAN.R-project.org/package=tidyr
+1.  Hadley Wickham, Romain François, Lionel Henry and Kirill Müller (2021). dplyr: A Grammar of Data Manipulation. R package version 1.0.7. https://CRAN.R-project.org/package=dplyr Here is the [link](https://github.com/rstudio/cheatsheets/blob/main/data-transformation.pdf) to the cheat sheet explaining each function in `{dplyr}`.
+
+2.  Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/
+
+3.  Hadley Wickham (2021). tidyr: Tidy Messy Data. R package version 1.1.4. https://CRAN.R-project.org/package=tidyr
 
 #### Last updated on {.unnumbered .unlisted}
 

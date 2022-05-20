@@ -24,7 +24,7 @@ image: "images/ggpubr.png"
 
 If you are a researcher who wants to have publication-ready plots but does not want to get hassled by the `{ggplot2}` package, then let me introduce you to the`{ggpubr}` package. Using this package you can make publication grade plots without spending too much time modifying things. Even if you are a beginner in R programming and does not know how to use the`{ggplot2}` package, you will still be able to plot graphs using the `{ggpubr}` package because of how easy the syntax is. But having prior knowledge of the `{ggplot2}` package will surely make things easier, and an experienced person will know that any plot which can be plotted using `{ggpubr}` can also be plotted using `{ggplot2}`. So let us start.
 
-First things first, install the `ggpubr` package and load it in the library.
+First things first, install the `{ggpubr}` package and load it in the library.
 
 ```{r}
 #| eval: false
@@ -76,7 +76,7 @@ ggbarplot(penguins,
 
 ### Box plot
 
-Standard box plot graph. Like in the previous graph you can specify colour palettes from the scientific journal palettes featured in the `ggsci` R package. 
+Standard box plot graph. Like in the previous graph you can specify colour palettes from the scientific journal palettes featured in the `{ggsci}` R package.
 
 ```{r}
 # install.packages("palmerpenguins")
@@ -186,7 +186,7 @@ ggpie(penguins_freq,
 
 ### Dot chart
 
-This is an upgrade from bar charts where the data is displayed with minimum clutter in the form of dots. This allows the readers to not get bothered about things like the slope of a line in case of line plots, or width of bars in case of bar charts or any other confusing aesthetics of a plot. You can read more about this graph [here](https://doi.org/10.2307/2288400). It is also called "Cleveland dot plots" named after the founder of this plot. 
+This is an upgrade from bar charts where the data is displayed with minimum clutter in the form of dots. This allows the readers to not get bothered about things like the slope of a line in case of line plots, or width of bars in case of bar charts or any other confusing aesthetics of a plot. You can read more about this graph [here](https://doi.org/10.2307/2288400). It is also called "Cleveland dot plots" named after the founder of this plot.
 
 ```{r}
 library(tibble)
@@ -406,7 +406,7 @@ penguins %>%
 
 ### Statistical tests
 
-You can do various statistical tests using the functions in the `{ggpubr}` package. We will be using the Anorexia dataset in the `PairedData` package in R. In the code given below, we are doing a Wilcoxon test to compare the mean weights of girls before treatment to the mean weights of girls post-treatment. Since the data is paired we will indicate it by the `paired = TRUE` function. A word of caution! Before starting to do statistical tests please ensure whether you can fulfil conditions for using parametric tests or not using or data. You can check whether your data is normally distributed using a QQ plot or by using any normality tests.
+You can do various statistical tests using the functions in the `{ggpubr}` package. We will be using the Anorexia dataset in the `{PairedData}` package in R. In the code given below, we are doing a Wilcoxon test to compare the mean weights of girls before treatment to the mean weights of girls post-treatment. Since the data is paired we will indicate it by the `paired = TRUE` function. A word of caution! Before starting to do statistical tests please ensure whether you can fulfil conditions for using parametric tests or not using or data. You can check whether your data is normally distributed using a QQ plot or by using any normality tests.
 
 PS: I use knitr::kable() just for illustrative purpose only. You can run the command inside the kable() argument and you will be fine.
 
@@ -736,36 +736,31 @@ penguins %>%
 
 In this chapter we learned how to plot publication standard graphs using the `{ggpubr}` package in R. Even with little to no experience in using the `{ggplot2}` package in R, one can plot graphs with ease using the `{ggpubr}` package. To quickly recap, from this chapter we saw;
 
-1. How to plot around 15 different types of graphs
-2. How to facet plots
-3. How to do basic statistical tests and visualize them within graphs
-4. How to add paragraph text under the graphs
-5. How to group different graphs into one single file
+1.  How to plot around 15 different types of graphs
+2.  How to facet plots
+3.  How to do basic statistical tests and visualize them within graphs
+4.  How to add paragraph text under the graphs
+5.  How to group different graphs into one single file
 
 I hope this chapter was useful to you. Check out the other chapter for more beginner content.
 
 ## References
 
-1. Alboukadel Kassambara (2020). ggpubr: 'ggplot2' Based Publication Ready Plots. R package version 0.4.0.
-  https://CRAN.R-project.org/package=ggpubr
+1.  Alboukadel Kassambara (2020). ggpubr: 'ggplot2' Based Publication Ready Plots. R package version 0.4.0. https://CRAN.R-project.org/package=ggpubr
 
-2. Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0.
-  https://allisonhorst.github.io/palmerpenguins/
-  
-3. Stephane Champely (2018). PairedData: Paired Data Analysis. R package version 1.1.1.
-  https://CRAN.R-project.org/package=PairedData
-  
-4. William S. Cleveland & Robert McGill (1984) Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods, Journal of the American Statistical Association, 79:387, 531-554, DOI: 10.1080/01621459.1984.10478080 
+2.  Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/
 
-5. Hadley Wickham, Romain François, Lionel Henry and Kirill Müller (2021). dplyr: A Grammar of Data Manipulation. R package
-  version 1.0.7. https://CRAN.R-project.org/package=dplyr
-  
-6. Hadley Wickham (2021). tidyr: Tidy Messy Data. R package version 1.1.4. https://CRAN.R-project.org/package=tidyr
+3.  Stephane Champely (2018). PairedData: Paired Data Analysis. R package version 1.1.1. https://CRAN.R-project.org/package=PairedData
 
-7. H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.
+4.  William S. Cleveland & Robert McGill (1984) Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods, Journal of the American Statistical Association, 79:387, 531-554, DOI: 10.1080/01621459.1984.10478080
 
-8. Simon Garnier, Noam Ross, Robert Rudis, Antônio P. Camargo, Marco Sciaini, and Cédric Scherer (2021). Rvision -
-  Colorblind-Friendly Color Maps for R. R package version 0.6.2.
+5.  Hadley Wickham, Romain François, Lionel Henry and Kirill Müller (2021). dplyr: A Grammar of Data Manipulation. R package version 1.0.7. https://CRAN.R-project.org/package=dplyr
+
+6.  Hadley Wickham (2021). tidyr: Tidy Messy Data. R package version 1.1.4. https://CRAN.R-project.org/package=tidyr
+
+7.  H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.
+
+8.  Simon Garnier, Noam Ross, Robert Rudis, Antônio P. Camargo, Marco Sciaini, and Cédric Scherer (2021). Rvision - Colorblind-Friendly Color Maps for R. R package version 0.6.2.
 
 #### Last updated on {.unnumbered .unlisted}
 

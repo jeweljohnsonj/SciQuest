@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.426">
+<meta name="generator" content="quarto-0.9.431">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jewel Johnson">
 <meta name="dcterms.date" content="2021-12-09">
@@ -145,11 +145,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="dropdown-text">Chapter 1: Data tidying using tidyr</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./project6.qmd">
+    <a class="dropdown-item" href="./project6.html">
  <span class="dropdown-text">Chapter 2: Data manipulation using dplyr (part 1)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./project7.qmd">
+    <a class="dropdown-item" href="./project7.html">
  <span class="dropdown-text">Chapter 3: Data manipulation using dplyr (part 2)</span></a>
   </li>  
     </ul>
@@ -209,8 +209,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-
-
 <div class="quarto-title-meta">
 
     <div>
@@ -230,23 +228,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </div>
   
 
-</header><p>In this chapter, we will learn how to change the theme settings of a graph in ggplot2. The theme of a graph consists of non-data components present in your graph. This includes the different labels of the graph, fonts used, colour of axes, the background of the graph etc. By changing the theme we would not be changing or transforming how the data will look in the graph. Instead, we would only change the visual appearances in the graph and by doing so we can make it more aesthetically pleasing. Furthermore, we will see a few popular packages featuring ready to use themes. We will also learn about colour palettes and will see different packages associated with them.</p>
+</header><p>In this chapter, we will learn how to change the theme settings of a graph in <a href="https://ggplot2.tidyverse.org">ggplot2</a> The theme of a graph consists of non-data components present in your graph. This includes the different labels of the graph, fonts used, colour of axes, the background of the graph etc. By changing the theme we would not be changing or transforming how the data will look in the graph. Instead, we would only change the visual appearances in the graph and by doing so we can make it more aesthetically pleasing. Furthermore, we will see a few popular packages featuring ready to use themes. We will also learn about colour palettes and will see different packages associated with them.</p>
 <section id="complete-themes" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="complete-themes">
 <span class="header-section-number">1</span> Complete themes</h2>
-<p>The <code>ggplot2</code> package features ready to use themes called ‘complete themes’. So before we begin customizing themes, let us plot a few graphs and see how these themes look like. For the plots, I have used the <code>BirdNest</code> dataset from the <code>Stat2Data</code> package in R. The <code>BirdNest</code> dataset contains nest and species characteristics of North American passerines. The data was collected by Amy R. Moore, as a student at Grinnell College in 1999.</p>
+<p>The <a href="https://ggplot2.tidyverse.org">ggplot2</a> package features ready to use themes called ‘complete themes’. So before we begin customizing themes, let us plot a few graphs and see how these themes look like. For the plots, I have used the <code>BirdNest</code> dataset from the <a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a> package in R. The <code>BirdNest</code> dataset contains nest and species characteristics of North American passerines. The data was collected by Amy R. Moore, as a student at Grinnell College in 1999.</p>
 <ul>
 <li>Getting the <code>BirdNest</code> dataset and viewing how the dataset is structured.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"Stat2Data"</span><span class="op">)</span> <span class="co">#for installing Stat2Data package</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"ggplot2"</span><span class="op">)</span> <span class="co">#for installing ggplot2 package</span>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"Stat2Data"</span><span class="op">)</span> <span class="co"># for installing Stat2Data package</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"ggplot2"</span><span class="op">)</span> <span class="co"># for installing ggplot2 package</span>
 
-<span class="co">#load the packages</span>
+<span class="co"># load the packages</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 
-<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"BirdNest"</span><span class="op">)</span> <span class="co">#loading the BirdNest dataset</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">BirdNest</span><span class="op">)</span> <span class="co">#for viewing structure of the dataset</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"BirdNest"</span><span class="op">)</span> <span class="co"># loading the BirdNest dataset</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">BirdNest</span><span class="op">)</span> <span class="co"># for viewing structure of the dataset</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>So we have plenty of variables to play with. The tabs shown below are named according to the theme used in the plots.</p>
 <div class="panel-tabset">
@@ -419,13 +417,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </section><section id="themes-from-ggthemes-package" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="themes-from-ggthemes-package">
 <span class="header-section-number">2</span> Themes from ggthemes package</h2>
-<p>If you want even more pre-built themes then you can try the <code>ggthemes</code> package. This package was developed by <a href="https://jrnold.github.io/ggthemes/">Dr.&nbsp;Jeffrey B. Arnold</a>.</p>
+<p>If you want even more pre-built themes then you can try the <a href="https://github.com/jrnold/ggthemes">ggthemes</a> package. This package was developed by <a href="https://jrnold.github.io/ggthemes/">Dr.&nbsp;Jeffrey B. Arnold</a>.</p>
 <div class="cell">
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># install and load ggthemes package</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"ggthemes"</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jrnold/ggthemes">ggthemes</a></span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The tabs shown below are named after the themes present in <code>ggthemes</code> package.</p>
+<p>The tabs shown below are named after the themes present in <a href="https://github.com/jrnold/ggthemes">ggthemes</a> package.</p>
 <div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist">
 <li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">theme_base()</a></li>
@@ -798,7 +796,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Choosing a good colour palette is important as it helps us to represent data in a better way and at the same time, it also makes the graph easier to read for people with colour blindness. Let us see a few popular colour palette packages used in R.</p>
 <section id="viridis-package" class="level3" data-number="3.1"><h3 data-number="3.1" class="anchored" data-anchor-id="viridis-package">
 <span class="header-section-number">3.1</span> viridis package</h3>
-<p><code>viridis</code> package is a popularly used colour palette in R. It is aesthetically pleasing and well designed to improve readability for colour blind people. The <code>virids</code> package was developed by Bob Rudis, Noam Ross and Simon Garnier. There are eight different colour scales present in this package. The name of the tab denotes the colour scale present in this package.</p>
+<p><a href="https://sjmgarnier.github.io/viridis/">viridis</a> package is a popularly used colour palette in R. It is aesthetically pleasing and well designed to improve readability for colour blind people. The <code>{virids}</code> package was developed by Bob Rudis, Noam Ross and Simon Garnier. There are eight different colour scales present in this package. The name of the tab denotes the colour scale present in this package.</p>
 <div class="cell">
 <div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://sjmgarnier.github.io/viridis/">viridis</a></span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -957,7 +955,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </section><section id="wesanderson-package" class="level3" data-number="3.2"><h3 data-number="3.2" class="anchored" data-anchor-id="wesanderson-package">
 <span class="header-section-number">3.2</span> wesanderson package</h3>
-<p>If you like your colours distinctive and narrative, just like how American film-maker <a href="https://en.wikipedia.org/wiki/Wes_Anderson">Mr.&nbsp;Wes Anderson</a> would like it, then try the <code>wesanderson</code> package. Relive the <em>The Grand Budapest Hotel</em> moments through your graphs. The <code>wesandreson</code> package was developed by <a href="https://github.com/karthik/wesanderson">Karthik Ram</a>. There are a total of 19 colour palettes present in this package. We will see a subset of them. All colour scales in this package are available <a href="https://github.com/karthik/wesanderson">here</a>. The name of the tab denotes the colour scale used. The data used in this plot is the <code>penguin</code> dataset present in the package <code>palmerpenguins</code>.</p>
+<p>If you like your colours distinctive and narrative, just like how American film-maker <a href="https://en.wikipedia.org/wiki/Wes_Anderson">Mr.&nbsp;Wes Anderson</a> would like it, then try the <a href="https://github.com/karthik/wesanderson">wesanderson</a> package. Relive the <em>The Grand Budapest Hotel</em> moments through your graphs. The <code>{wesandreson}</code> package was developed by <a href="https://github.com/karthik/wesanderson">Karthik Ram</a>. There are a total of 19 colour palettes present in this package. We will see a subset of them. All colour scales in this package are available <a href="https://github.com/karthik/wesanderson">here</a>. The name of the tab denotes the colour scale used. The data used in this plot is the <code>penguin</code> dataset present in the package <a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a>.</p>
 <div class="cell">
 <div class="sourceCode" id="cb43"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co">#install and load wesanderson and palmerpenguins package</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"wesanderson"</span><span class="op">)</span>
@@ -1121,7 +1119,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </section><section id="ggsci-package" class="level3" data-number="3.3"><h3 data-number="3.3" class="anchored" data-anchor-id="ggsci-package">
 <span class="header-section-number">3.3</span> ggsci package</h3>
-<p>If you want high-quality colour palettes reflecting scientific journal styles then you can try the <code>ggsci</code> package. The <code>ggsci</code> package was developed by <a href="https://nanx.me/">Dr.&nbsp;Nan Xiao</a> and <a href="http://miaozhu.li/">Dr.&nbsp;Miaozhu Li</a>. All colour scales in this package are available in package <a href="https://cran.r-project.org/web/packages/ggsci/vignettes/ggsci.html">webpage</a>. The name of the tab denotes the colour scale used.</p>
+<p>If you want high-quality colour palettes reflecting scientific journal styles then you can try the <a href="https://nanx.me/ggsci/">ggsci</a> package. The <a href="https://nanx.me/ggsci/">ggsci</a> package was developed by <a href="https://nanx.me/">Dr.&nbsp;Nan Xiao</a> and <a href="http://miaozhu.li/">Dr.&nbsp;Miaozhu Li</a>. All colour scales in this package are available in package <a href="https://cran.r-project.org/web/packages/ggsci/vignettes/ggsci.html">webpage</a>. The name of the tab denotes the colour scale used.</p>
 <div class="cell">
 <div class="sourceCode" id="cb58"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># load ggsci package</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"ggsci"</span><span class="op">)</span>
@@ -1645,7 +1643,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="last-updated-on" class="level4 unnumbered unlisted"><h4 class="unnumbered unlisted anchored" data-anchor-id="last-updated-on">Last updated on</h4>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-05-19 21:14:34 IST"</code></pre>
+<pre><code>[1] "2022-05-20 10:21:00 IST"</code></pre>
 </div>
 </div>
 
