@@ -1,11 +1,11 @@
 ---
-title: "The World Happiness Report 2021"
-description: "Plotting an interactive map using {leaflet}"
+title: "The World Happiness Report 2022"
+description: "Plotting an interactive map using the {leaflet} package in R"
 author: "Jewel Johnson"
 date: "05-20-2022"
 format:
   html:
-    toc: false
+    toc: true
     toc-title: On this page
     html-math-method: katex
     number-sections: false
