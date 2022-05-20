@@ -36,3 +36,11 @@ There are several well-explained tutorials which explain from scratch how one ca
 ## My great plan
 
 Since I will be applying for a PhD, I hope I can showcase my skills using this blog and make myself standout from the rest. Last time when I first made the blog, the initial enthusiasm died out after one month and I did not write any posts after it. So this time, to avoid that, I took it to myself to write at lest one post per month and get the blog going. with that said I welcome you reader to my blog and I hope you enjoy it with as much as fun that I had while making it.
+
+#### Last updated on {.unnumbered .unlisted}
+
+```{r}
+#| echo: false
+Sys.time()
+```
+
