@@ -64,9 +64,9 @@ ul.task-list{list-style: none;}
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -175,7 +175,7 @@ ul.task-list{list-style: none;}
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="analysis">analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(1)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(2)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ggstatsplot">ggstatsplot <span class="quarto-category-count">(1)</span></div><div class="category" data-category="leaflet">leaflet <span class="quarto-category-count">(1)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -188,7 +188,45 @@ ul.task-list{list-style: none;}
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="news" data-listing-date-sort="1652985000000" data-listing-file-modified-sort="1653041696205" data-listing-reading-time-sort="1.59">
+<div class="quarto-post image-right" data-index="0" data-categories="leaflet,ggstatsplot" data-listing-date-sort="1652985000000" data-listing-file-modified-sort="1653045955038" data-listing-reading-time-sort="3.61">
+<div class="thumbnail">
+<p><a href="./posts/word-happy-2022/index.html"> <img src="./posts/word-happy-2022/world.jpg" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/word-happy-2022/index.html">
+<h3 class="no-anchor listing-title">
+The World Happiness Report 2021
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('leaflet'); return false;">
+leaflet
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('ggstatsplot'); return false;">
+ggstatsplot
+</div>
+</div>
+<a href="./posts/word-happy-2022/index.html">
+<div class="listing-description">
+<p>Plotting an interactive map and more</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/word-happy-2022/index.html">
+<div class="listing-date">
+May 20, 2022
+</div>
+<div class="listing-author">
+Jewel Johnson
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="news" data-listing-date-sort="1652985000000" data-listing-file-modified-sort="1653045759142" data-listing-reading-time-sort="1.615">
 <div class="thumbnail">
 <p><a href="./posts/welcome/index.html"> <img src="./posts/welcome/happy.jpeg" class="thumnail-image"> </a></p>
 </div>
@@ -198,7 +236,7 @@ ul.task-list{list-style: none;}
 Welcome to my blog
 </h3>
 <div class="listing-subtitle">
-<p>My story about this blog</p>
+
 </div>
 </a>
 <div class="listing-categories">
@@ -208,7 +246,7 @@ news
 </div>
 <a href="./posts/welcome/index.html">
 <div class="listing-description">
-<img src="logo.png" class="img-fluid figure-img">
+<p>My story about this blog</p>
 </div>
 </a>
 </div>
@@ -219,47 +257,6 @@ May 20, 2022
 </div>
 <div class="listing-author">
 Jewel Johnson
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="news,code,analysis" data-listing-date-sort="1652812200000" data-listing-file-modified-sort="1652886343265" data-listing-reading-time-sort="0.045">
-<div class="thumbnail">
-<p><a href="./posts/post-with-code/index.html"> <img src="./posts/post-with-code/image.jpg" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/post-with-code/index.html">
-<h3 class="no-anchor listing-title">
-Post With Code
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
-news
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('analysis'); return false;">
-analysis
-</div>
-</div>
-<a href="./posts/post-with-code/index.html">
-<div class="listing-description">
-This is a post with executable code.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/post-with-code/index.html">
-<div class="listing-date">
-May 18, 2022
-</div>
-<div class="listing-author">
-Harlow Malloc
 </div>
 </a>
 </div>

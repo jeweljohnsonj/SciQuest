@@ -1,7 +1,6 @@
 ---
 title: "Welcome to my blog"
-subtitle: |
-  My story about this blog
+description: "My story about this blog"
 author: "Jewel Johnson"
 date: "05-20-2022"
 format:
@@ -9,7 +8,6 @@ format:
     toc: false
     toc-title: On this page
     html-math-method: katex
-    css: styles.css
     number-sections: false
     smooth-scroll: true
     highlight-style: github
@@ -31,15 +29,10 @@ Hello! my name is Jewel Johnson and I am the creator of this blog. The main reas
 
 There are several well-explained tutorials which explain from scratch how one can build a blog. If you are planning to use `{quarto}` for making your blog, then the quarto website itself features well written beginner friendly tutorials. Apart from that I found two other posts which also proved very useful while creating this blog. The links are given below.
 
-- [Quarto website](https://quarto.org/docs/get-started/)
-- [Porting from distill to quarto](https://blog.djnavarro.net/posts/2022-04-20_porting-to-quarto/)
-- [We don't talk about Quarto](https://www.apreshill.com/blog/2022-04-we-dont-talk-about-quarto/)
+-   [Quarto website](https://quarto.org/docs/get-started/)
+-   [Porting from distill to quarto](https://blog.djnavarro.net/posts/2022-04-20_porting-to-quarto/)
+-   [We don't talk about Quarto](https://www.apreshill.com/blog/2022-04-we-dont-talk-about-quarto/)
 
 ## My great plan
 
-Since I will be applying for a PhD, I hope I can showcase my skills using this blog and make myself standout from the rest. Last time when I first made the blog, the initial enthusiasm died out after one month and I did not write any posts after it. So this time, to avoid that, I took it to myself to write at lest one post per month and get the blog going. with that said I welcome you reader to my blog and I hope you enjoy it with as much as fun that I had while making it. 
-
-
-
-
-
+Since I will be applying for a PhD, I hope I can showcase my skills using this blog and make myself standout from the rest. Last time when I first made the blog, the initial enthusiasm died out after one month and I did not write any posts after it. So this time, to avoid that, I took it to myself to write at lest one post per month and get the blog going. with that said I welcome you reader to my blog and I hope you enjoy it with as much as fun that I had while making it.
