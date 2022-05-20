@@ -19,6 +19,8 @@ format:
 execute: 
   warning: false
 citation: true
+comments:
+  hypothesis: true
 image: "images/ggplot2.png"
 ---
 

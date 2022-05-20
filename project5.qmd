@@ -17,6 +17,8 @@ format:
     code-fold: true
     code-tools: true
 citation: true
+comments:
+  hypothesis: true
 execute: 
   warning: false
 image: "images/tidyr.png"

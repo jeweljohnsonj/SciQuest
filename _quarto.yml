@@ -5,6 +5,8 @@ website:
   title: "one-carat-blog"
   page-navigation: true
   page-footer: "© 2022, Jewel Johnson"
+  favicon: gems.png
+  twitter-card: true
           
   navbar:
     right:
