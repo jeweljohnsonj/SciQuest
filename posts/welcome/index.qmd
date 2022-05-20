@@ -1,12 +1,45 @@
 ---
-title: "Welcome To My Blog"
-author: "Tristan O'Malley"
-date: "2022-05-15"
+title: "Welcome to my blog"
+subtitle: |
+  My story about this blog
+author: "Jewel Johnson"
+date: "05-20-2022"
+format:
+  html:
+    toc: false
+    toc-title: On this page
+    html-math-method: katex
+    css: styles.css
+    number-sections: false
+    smooth-scroll: true
+    highlight-style: github
+    code-link: true
+citation: true
+execute: 
+  warning: false
+image: "happy.jpeg"
 categories: [news]
 ---
 
-This is the first post in a Quarto blog. Welcome!
+![Initial logo when blog was first made in {distill}](logo.png)
 
-![](thumbnail.jpg)
+## Making of one-carat-blog (second version)
 
-Since this post doesn't specify an explicit `image`, the first image in the post will be used in the listing page of posts.
+Hello! my name is Jewel Johnson and I am the creator of this blog. The main reason why I made this blog was to have a source of medium for me to write articles in science and share them with the world. This first version of this blog was made using the `{distill}` package in R and you can find the link to it [here](https://jeweljohnsonj.github.io/jeweljohnson.github.io/). From then I moved on and remade the blog using the latest `{quarto}` package in R. This new package proves to be an upgrade from `{distill}` and I am starting to love the new features of it. Since I am also fond of using R, I took it upon me to write a few tutorials focusing on beginners, which you can find in this blog.
+
+## How did I make this blog
+
+There are several well-explained tutorials which explain from scratch how one can build a blog. If you are planning to use `{quarto}` for making your blog, then the quarto website itself features well written beginner friendly tutorials. Apart from that I found two other posts which also proved very useful while creating this blog. The links are given below.
+
+- [Quarto website](https://quarto.org/docs/get-started/)
+- [Porting from distill to quarto](https://blog.djnavarro.net/posts/2022-04-20_porting-to-quarto/)
+- [We don't talk about Quarto](https://www.apreshill.com/blog/2022-04-we-dont-talk-about-quarto/)
+
+## My great plan
+
+Since I will be applying for a PhD, I hope I can showcase my skills using this blog and make myself standout from the rest. Last time when I first made the blog, the initial enthusiasm died out after one month and I did not write any posts after it. So this time, to avoid that, I took it to myself to write at lest one post per month and get the blog going. with that said I welcome you reader to my blog and I hope you enjoy it with as much as fun that I had while making it. 
+
+
+
+
+

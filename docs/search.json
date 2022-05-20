@@ -53,7 +53,7 @@
     "href": "blog.html",
     "title": "Blog posts",
     "section": "",
-    "text": "news\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nMay 18, 2022\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nMay 15, 2022\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "My story about this blog\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nMay 20, 2022\n\n\nJewel Johnson\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nMay 18, 2022\n\n\nHarlow Malloc\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "project5.html",
@@ -114,9 +114,9 @@
   {
     "objectID": "posts/welcome/index.html",
     "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "title": "Welcome to my blog",
     "section": "",
-    "text": "Since this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "Initial logo when blog was first made in {distill}"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -348,5 +348,26 @@
     "title": "one-carat-blog",
     "section": "",
     "text": "Image 01\n\n\nAsian honey bee\n\n\n\n\nImage 02\n\n\nJungle babbler\n\n\n\n\nImage 03\n\n\nBonnet macaque\n\n\n\n\nImage 04\n\n\nIndian peafowl\n\n\n\n\nImage 05\n\n\nNilgiri tahr\n\n\n\n\nImage 06\n\n\nBlue tailed bee eater"
+  },
+  {
+    "objectID": "posts/welcome/index.html#how-did-i-make-this-blog",
+    "href": "posts/welcome/index.html#how-did-i-make-this-blog",
+    "title": "Welcome to my blog",
+    "section": "How did I make this blog",
+    "text": "How did I make this blog\nThere are several well-explained tutorials which explain from scratch how one can build a blog. If you are planning to use {quarto} for making your blog, then the quarto website itself features well written beginner friendly tutorials. Apart from that I found two other posts which also proved very useful while creating this blog. The links are given below.\n\nQuarto website\nPorting from distill to quarto\nWe don’t talk about Quarto"
+  },
+  {
+    "objectID": "posts/welcome/index.html#my-great-plan",
+    "href": "posts/welcome/index.html#my-great-plan",
+    "title": "Welcome to my blog",
+    "section": "My great plan",
+    "text": "My great plan\nSince I will be applying for a PhD, I hope I can showcase my skills using this blog and make myself standout from the rest. Last time when I first made the blog, the initial enthusiasm died out after one month and I did not write any posts after it. So this time, to avoid that, I took it to myself to write at lest one post per month and get the blog going. with that said I welcome you reader to my blog and I hope you enjoy it with as much as fun that I had while making it."
+  },
+  {
+    "objectID": "posts/welcome/index.html#making-of-one-carat-blog-second-version",
+    "href": "posts/welcome/index.html#making-of-one-carat-blog-second-version",
+    "title": "Welcome to my blog",
+    "section": "Making of one-carat-blog (second version)",
+    "text": "Making of one-carat-blog (second version)\nHello! my name is Jewel Johnson and I am the creator of this blog. The main reason why I made this blog was to have a source of medium for me to write articles in science and share them with the world. This first version of this blog was made using the {distill} package in R and you can find the link to it here. From then I moved on and remade the blog using the latest {quarto} package in R. This new package proves to be an upgrade from {distill} and I am starting to love the new features of it. Since I am also fond of using R, I took it upon me to write a few tutorials focusing on beginners, which you can find in this blog."
   }
 ]

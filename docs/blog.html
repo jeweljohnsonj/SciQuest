@@ -64,9 +64,9 @@ ul.task-list{list-style: none;}
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -188,7 +188,42 @@ ul.task-list{list-style: none;}
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="news,code,analysis" data-listing-date-sort="1652812200000" data-listing-file-modified-sort="1652886343265" data-listing-reading-time-sort="0.045">
+<div class="quarto-post image-right" data-index="0" data-categories="news" data-listing-date-sort="1652985000000" data-listing-file-modified-sort="1653041696205" data-listing-reading-time-sort="1.59">
+<div class="thumbnail">
+<p><a href="./posts/welcome/index.html"> <img src="./posts/welcome/happy.jpeg" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/welcome/index.html">
+<h3 class="no-anchor listing-title">
+Welcome to my blog
+</h3>
+<div class="listing-subtitle">
+<p>My story about this blog</p>
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+news
+</div>
+</div>
+<a href="./posts/welcome/index.html">
+<div class="listing-description">
+<img src="logo.png" class="img-fluid figure-img">
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/welcome/index.html">
+<div class="listing-date">
+May 20, 2022
+</div>
+<div class="listing-author">
+Jewel Johnson
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="news,code,analysis" data-listing-date-sort="1652812200000" data-listing-file-modified-sort="1652886343265" data-listing-reading-time-sort="0.045">
 <div class="thumbnail">
 <p><a href="./posts/post-with-code/index.html"> <img src="./posts/post-with-code/image.jpg" class="thumnail-image"> </a></p>
 </div>
@@ -225,41 +260,6 @@ May 18, 2022
 </div>
 <div class="listing-author">
 Harlow Malloc
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="news" data-listing-date-sort="1652553000000" data-listing-file-modified-sort="1652886343262" data-listing-reading-time-sort="0.16">
-<div class="thumbnail">
-<p><a href="./posts/welcome/index.html"> <img src="./posts/welcome/thumbnail.jpg" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/welcome/index.html">
-<h3 class="no-anchor listing-title">
-Welcome To My Blog
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
-news
-</div>
-</div>
-<a href="./posts/welcome/index.html">
-<div class="listing-description">
-This is the first post in a Quarto blog. Welcome!
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/welcome/index.html">
-<div class="listing-date">
-May 15, 2022
-</div>
-<div class="listing-author">
-Tristan O’Malley
 </div>
 </a>
 </div>
@@ -351,7 +351,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center">Copyright 2022, Jewel Johnson</div>
+      <div class="nav-footer-center">© 2022, Jewel Johnson</div>
   </div>
 </footer>
 

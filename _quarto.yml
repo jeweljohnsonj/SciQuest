@@ -4,7 +4,7 @@ project:
 website:
   title: "one-carat-blog"
   page-navigation: true
-  page-footer: "Copyright 2022, Jewel Johnson"
+  page-footer: "© 2022, Jewel Johnson"
           
   navbar:
     right:
