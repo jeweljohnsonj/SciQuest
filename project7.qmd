@@ -19,6 +19,7 @@ comments:
   hypothesis: true
 execute: 
   warning: false
+  freeze: auto
 image: "images/dplyr.png"
 ---
 
@@ -282,3 +283,5 @@ Thus to conclude this chapter, we have now learned almost all functions in the d
 #| echo: false
 Sys.time()
 ```
+
+<a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>

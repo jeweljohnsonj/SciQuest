@@ -1,14 +1,25 @@
 project:
   type: website
   output-dir: docs
+
 website:
-  title: "one-carat-blog"
+  image: "banner.png"
+  title: "one carat blog"
   page-navigation: true
   page-footer: "© 2022, Jewel Johnson"
   favicon: gems.png
-  twitter-card: true
+  opengraph: true
+  site-url: https://jeweljohnsonj.github.io/one-carat-blog/
+  repo-url: https://github.com/jeweljohnsonj/one-carat-blog
+  twitter-card:
+    image: banner.png
+    title: One carat blog
+    description: Personal blog from Jewel Johnson
+    creator: "@jeweljohnson"
+    
           
   navbar:
+    logo: gems.png
     right:
       - text: "Blog"
         href: blog.qmd
@@ -39,7 +50,9 @@ website:
         
 format:
   html:
-    theme: slate
+    theme:
+      dark: slate
+      light: united
     css: styles.css
 
 editor: visual

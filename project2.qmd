@@ -18,6 +18,7 @@ format:
     code-tools: true
 execute: 
   warning: false
+  freeze: auto
 citation: true
 comments:
   hypothesis: true
@@ -391,3 +392,5 @@ In this tutorial, we learned how to modify aesthetic present for different geoms
 #| echo: false
 Sys.time()
 ```
+
+<a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
