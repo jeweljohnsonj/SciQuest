@@ -3,7 +3,7 @@ title: "Chapter 1: Data visualization using ggplot2"
 subtitle: |
   Learn how to plot different types of graphs using the ggplot2 package.
 author: "Jewel Johnson"
-date: "02-12-2021"
+date: "12-02-2021"
 format:
   html:
     toc: true
@@ -14,6 +14,8 @@ format:
     smooth-scroll: true
     highlight-style: github
     code-link: true
+    code-fold: true
+    code-tools: true
 citation: true
 execute: 
   warning: false

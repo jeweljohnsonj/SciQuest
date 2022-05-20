@@ -199,7 +199,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">Chapter 2: Customizing graphs in ggplot2</h1>
+<div class="quarto-title-block"><div><h1 class="title">Chapter 2: Customizing graphs in ggplot2</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 <p class="subtitle lead"></p>
 <p>Learn how to customize the aesthetics, labels and axes of a graph in ggplot2.</p>
 </div>
@@ -234,21 +234,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>To install packages in R we use the command <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a></code> and to load packages we use the command <code><a href="https://rdrr.io/r/base/library.html">library()</a></code>. Therefore to install and load <a href="https://ggplot2.tidyverse.org">ggplot2</a> and <code>{Stats2Data}</code> packages we use the following lines of command. Call the <code>Hawks</code> data using the <code><a href="https://rdrr.io/r/utils/data.html">data()</a></code> command.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"ggplot2"</span><span class="op">)</span>
+<details><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"ggplot2"</span><span class="op">)</span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"statmanrobin/Stat2Data"</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"Hawks"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <ul>
 <li>Let us look at how the dataset is structured. Use <code><a href="https://rdrr.io/r/utils/str.html">str()</a></code> command</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span>
+<details><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"Hawks"</span><span class="op">)</span>
 
 <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">Hawks</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+</details><div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   908 obs. of  19 variables:
  $ Month       : int  9 9 9 9 9 9 9 9 9 9 ...
  $ Day         : int  19 22 23 23 27 28 28 29 29 30 ...
@@ -276,22 +277,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="header-section-number">2</span> Building a plot</h2>
 <p>One thing to remember here is that how ggplot2 builds a graph is by adding layers. Let us start by plotting the basic layer first where the x-axis shows ‘weight of the hawks’ and the y-axis shows ‘wingspan of the hawks’.</p>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<details><summary>Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Hawks</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Weight</span>, y <span class="op">=</span> <span class="va">Wing</span><span class="op">)</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="project2_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Wait a sec! Where are my data points? So right now if we look at the syntax of the ggplot code we can see that we have not told ggplot2 which geometry we want. Do we want a scatter plot or a histogram or any other type of graph? So let us plot a scatter plot first. Use <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code> command. By adding <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code> to the <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> command is equivalent to adding an extra layer to the already existing layer that we got previously. Let us also use <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw()</a></code> for a nice looking theme.</p>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<details><summary>Code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Hawks</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Weight</span>, y <span class="op">=</span> <span class="va">Wing</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="project2_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
@@ -300,15 +301,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="changing-colour" class="level3" data-number="2.1"><h3 data-number="2.1" class="anchored" data-anchor-id="changing-colour">
 <span class="header-section-number">2.1</span> Changing colour</h3>
 <ul>
-<li>To change colour of the ‘element’ with respect to species, we have to add <code>colour = Species</code> within the <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> of the ggplot command. I use the general term ‘element’ here to emphasize that the same change in aesthetics will work for most of other types of geometries in ggplot2 (something which you have seen extensively in <a href="file:///home/jeweljohnson/Work/R_distill_github/jeweljohnson.github.io/docs/project1.html">Chapter 1</a>. Like for a line graph, the ‘element’ would be lines, here our ‘element’ is point.</li>
+<li>To change colour of the ‘element’ with respect to species, we have to add <code>colour = Species</code> within the <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> of the ggplot command. I use the general term ‘element’ here to emphasize that the same change in aesthetics will work for most of other types of geometries in ggplot2 (something which you have seen extensively in <a href="https://jeweljohnsonj.github.io/one-carat-blog/project1.html">Chapter 1</a>. Like for a line graph, the ‘element’ would be lines, here our ‘element’ is point.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<details><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Hawks</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Weight</span>, y <span class="op">=</span> <span class="va">Wing</span>, colour <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="project2_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
@@ -321,12 +322,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<details><summary>Code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Hawks</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Weight</span>, y <span class="op">=</span> <span class="va">Wing</span>, shape <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="co"># instead of colour use shape.</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="project2_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
@@ -335,46 +336,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Adding both <code>colour</code> and <code>shape</code> in aesthetics</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<details><summary>Code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Hawks</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Weight</span>, y <span class="op">=</span> <span class="va">Wing</span>, 
   colour <span class="op">=</span> <span class="va">Species</span>, shape <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="project2_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>This plot is much better than the previous one.</p>
 <p>Now let us try specifying <code>colour</code> within the <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> of the <code>geom()</code></p>
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<details><summary>Code</summary><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Hawks</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Weight</span>, y <span class="op">=</span> <span class="va">Wing</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="project2_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>We got the same graph as before! So what is the difference in specifying <code>colour</code> within <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> of <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> compared to the same but within <code>geom()</code>. Let us look at another example.</p>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<details><summary>Code</summary><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Hawks</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Weight</span>, y <span class="op">=</span> <span class="va">Wing</span>, colour <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="project2_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>I manually changed the colour of the points to red colour. Now let try specifying <code>colour</code> to the <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> within the <code>geom()</code></p>
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<details><summary>Code</summary><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Hawks</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Weight</span>, y <span class="op">=</span> <span class="va">Wing</span>, colour <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="project2_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
@@ -409,12 +410,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<details><summary>Code</summary><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Hawks</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Species</span>, y <span class="op">=</span> <span class="va">Hallux</span>, size <span class="op">=</span> <span class="va">Culmen</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="project2_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
@@ -424,7 +425,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Use <code><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_shape_manual()</a></code> for changing shape, similarly <code><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_color_manual()</a></code> for changing colour and <code><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_size_manual()</a></code> for changing size of the element.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<details><summary>Code</summary><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Hawks</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Weight</span>, y <span class="op">=</span> <span class="va">Hallux</span>, colour <span class="op">=</span> <span class="va">Species</span>,
@@ -433,7 +434,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_shape_manual</a></span><span class="op">(</span>values<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_color_manual</a></span><span class="op">(</span>values<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'red'</span>,<span class="st">'blue'</span>, <span class="st">'green'</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_size_manual</a></span><span class="op">(</span>values<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">5</span>,<span class="fl">10</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="project2_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
@@ -445,15 +446,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section><section id="changing-the-opcaity-of-the-elements" class="level3" data-number="2.5"><h3 data-number="2.5" class="anchored" data-anchor-id="changing-the-opcaity-of-the-elements">
 <span class="header-section-number">2.5</span> Changing the opcaity of the elements</h3>
 <ul>
-<li>Use <code><a href="https://scales.r-lib.org/reference/alpha.html">alpha()</a></code> within the <code>geom()</code> with a numeric value to change the opacity of the elements. This is useful for visualizing large datasets such as this.</li>
+<li>Use <code><a href="https://rdrr.io/pkg/scales/man/alpha.html">alpha()</a></code> within the <code>geom()</code> with a numeric value to change the opacity of the elements. This is useful for visualizing large datasets such as this.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<details><summary>Code</summary><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Hawks</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Weight</span>, y <span class="op">=</span> <span class="va">Wing</span>, colour <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">1</span><span class="op">/</span><span class="fl">5</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="project2_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
@@ -465,12 +466,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<details><summary>Code</summary><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Hawks</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Weight</span>, fill <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>bins <span class="op">=</span> <span class="fl">25</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="project2_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
@@ -478,13 +479,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Use <code><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual()</a></code> to manually change the colours.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<details><summary>Code</summary><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Hawks</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Weight</span>, fill <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>bins <span class="op">=</span> <span class="fl">25</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_fill_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"darkred"</span>, <span class="st">"darkblue"</span>, <span class="st">"darkgreen"</span><span class="op">)</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="project2_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
@@ -495,12 +496,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<details><summary>Code</summary><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Hawks</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Weight</span>, y <span class="op">=</span> <span class="va">Wing</span>, linetype <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="project2_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
@@ -509,14 +510,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<details><summary>Code</summary><div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Hawks</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Weight</span>, y <span class="op">=</span> <span class="va">Wing</span>, linetype <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> 
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_linetype_manual</a></span><span class="op">(</span>values<span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"twodash"</span>, <span class="st">"longdash"</span>, <span class="st">"dotdash"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="project2_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
@@ -532,14 +533,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Use <code><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab()</a></code> to change x-axis title, <code><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab()</a></code> to change y-axis title, <code><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle()</a></code> with <code>label</code> and <code>subtitle</code> to add title and subtitle respectively.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<details><summary>Code</summary><div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Hawks</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Weight</span>, y <span class="op">=</span> <span class="va">Wing</span>, colour <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Weight (gm)"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Wing (mm)"</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span>label <span class="op">=</span> <span class="st">"Weight vs Wing span in three different species of Hawks"</span>, 
           subtitle <span class="op">=</span> <span class="st">"CH=Cooper's, RT=Red-tailed, SS=Sharp-Shinned"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="project2_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
@@ -547,7 +548,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>The same result can be obtained by using <code><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs()</a></code> to specify each label in the graph. For renaming the legend title, the command will depend on what is there within the <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> or in other words what is the legend based on.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<details><summary>Code</summary><div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Hawks</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Weight</span>, y <span class="op">=</span> <span class="va">Wing</span>, colour <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
@@ -557,7 +558,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   caption <span class="op">=</span> <span class="st">"Source: Hawk dataset from Stat2Data r-package"</span>, <span class="co">#caption for the graph</span>
   colour <span class="op">=</span> <span class="st">"Hawk Species"</span>, <span class="co"># rename legend title</span>
   tag <span class="op">=</span> <span class="st">"A"</span><span class="op">)</span> <span class="co">#figure tag</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="project2_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
@@ -567,12 +568,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Use <code><a href="https://ggplot2.tidyverse.org/reference/lims.html">xlim()</a></code> and <code><a href="https://ggplot2.tidyverse.org/reference/lims.html">ylim()</a></code> for limiting x and y axes respectively.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<details><summary>Code</summary><div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Hawks</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Weight</span>, y <span class="op">=</span> <span class="va">Wing</span>, colour <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/lims.html">xlim</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">1000</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/lims.html">ylim</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">200</span>,<span class="fl">350</span><span class="op">)</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="project2_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
@@ -580,13 +581,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Use <code><a href="https://ggplot2.tidyverse.org/reference/coord_cartesian.html">coord_cartesian()</a></code> to zoom in on a particular area in the graph</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<details><summary>Code</summary><div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Hawks</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Weight</span>, y <span class="op">=</span> <span class="va">Wing</span>, colour <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_cartesian.html">coord_cartesian</a></span><span class="op">(</span>xlim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">1000</span><span class="op">)</span>,
                                                    ylim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">200</span>,<span class="fl">350</span><span class="op">)</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="project2_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
@@ -594,12 +595,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Use <code><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip()</a></code> to flip the x and y axes.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<details><summary>Code</summary><div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Hawks</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Weight</span>, y <span class="op">=</span> <span class="va">Wing</span>, colour <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html">coord_flip</a></span><span class="op">(</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="project2_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
@@ -631,12 +632,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Use <code><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_reverse()</a></code> to display the y values in the descending order. Same command applies to x-axis also.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
+<details><summary>Code</summary><div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span>
 
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Hawks</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Weight</span>, y <span class="op">=</span> <span class="va">Wing</span>, colour <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_reverse</a></span><span class="op">(</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="project2_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
@@ -652,10 +653,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="last-updated-on" class="level4 unnumbered unlisted"><h4 class="unnumbered unlisted anchored" data-anchor-id="last-updated-on">Last updated on</h4>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-05-20 10:22:34 IST"</code></pre>
+<pre><code>[1] "2022-05-20 15:08:50 IST"</code></pre>
 </div>
 </div>
 
+
+<!-- -->
 
 </section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{johnson2021,
   author = {Jewel Johnson},
@@ -696,6 +699,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
   function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
@@ -744,7 +798,400 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 });
-</script>
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb30" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Chapter 2: Customizing graphs in ggplot2"</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> |</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co">  Learn how to customize the aesthetics, labels and axes of a graph in ggplot2.</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Jewel Johnson"</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "12-04-2021"</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-title: On this page</span></span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: katex</span></span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a><span class="co">    css: styles.css</span></span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a><span class="co">    smooth-scroll: true</span></span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a><span class="co">    highlight-style: github</span></span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a><span class="co">    code-link: true</span></span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span><span class="co"> </span></span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a><span class="an">citation:</span><span class="co"> true</span></span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "images/ggplot2.png"</span></span>
+<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a>After <span class="co">[</span><span class="ot">Chapter 1</span><span class="co">](https://jeweljohnsonj.github.io/one-carat-blog/project1.html)</span> you must be familiar with the different types of graphs that you can plot using <span class="in">`{ggplot2}`</span>. So for this tutorial, we will be learning how to customize those ggplot graphs to our liking. We will learn how to tweak the aesthetics, how to change labels and how to modify and change the axes in a graph.</span>
+<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a>So let us plot a graph from scratch and learn how to use different aesthetics available.</span>
+<span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-29"><a href="#cb30-29" aria-hidden="true" tabindex="-1"></a><span class="fu">## Setting up the prerequisites</span></span>
+<span id="cb30-30"><a href="#cb30-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-31"><a href="#cb30-31" aria-hidden="true" tabindex="-1"></a>First, we need to install the <span class="in">`{ggplot2}`</span> package in R as it does not come in the standard distribution of R. For the dataset, we will first download the <span class="in">`{Stat2Data}`</span> package which houses a lot of cool datasets. For this tutorial let us use the <span class="in">`Hawks`</span> dataset which showcases body measurements from three different species of Hawks. This data was collected by students and faculty at Cornell College in Mount Vernon and the dataset was made available by late Prof. Bob Black at Cornell College.</span>
+<span id="cb30-32"><a href="#cb30-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-33"><a href="#cb30-33" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>To install packages in R we use the command <span class="in">`install.packages()`</span> and to load packages we use the command <span class="in">`library()`</span>. Therefore to install and load <span class="in">`{ggplot2}`</span> and <span class="in">`{Stats2Data}`</span> packages we use the following lines of command. Call the <span class="in">`Hawks`</span> data using the <span class="in">`data()`</span> command.</span>
+<span id="cb30-34"><a href="#cb30-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-37"><a href="#cb30-37" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-38"><a href="#cb30-38" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb30-39"><a href="#cb30-39" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb30-40"><a href="#cb30-40" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"statmanrobin/Stat2Data"</span>)</span>
+<span id="cb30-41"><a href="#cb30-41" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-42"><a href="#cb30-42" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-43"><a href="#cb30-43" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"Hawks"</span>)</span>
+<span id="cb30-44"><a href="#cb30-44" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-45"><a href="#cb30-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-46"><a href="#cb30-46" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Let us look at how the dataset is structured. Use <span class="in">`str()`</span> command</span>
+<span id="cb30-47"><a href="#cb30-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-50"><a href="#cb30-50" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-51"><a href="#cb30-51" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-52"><a href="#cb30-52" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"Hawks"</span>)</span>
+<span id="cb30-53"><a href="#cb30-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-54"><a href="#cb30-54" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Hawks)</span>
+<span id="cb30-55"><a href="#cb30-55" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-56"><a href="#cb30-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-57"><a href="#cb30-57" aria-hidden="true" tabindex="-1"></a>So there is a lot of information in the dataset which we can use for plotting. So let us try plotting them.</span>
+<span id="cb30-58"><a href="#cb30-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-59"><a href="#cb30-59" aria-hidden="true" tabindex="-1"></a><span class="fu">## Building a plot</span></span>
+<span id="cb30-60"><a href="#cb30-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-61"><a href="#cb30-61" aria-hidden="true" tabindex="-1"></a>One thing to remember here is that how ggplot2 builds a graph is by adding layers. Let us start by plotting the basic layer first where the x-axis shows 'weight of the hawks' and the y-axis shows 'wingspan of the hawks'.</span>
+<span id="cb30-62"><a href="#cb30-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-65"><a href="#cb30-65" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-66"><a href="#cb30-66" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-67"><a href="#cb30-67" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-68"><a href="#cb30-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-69"><a href="#cb30-69" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">y =</span> Wing))</span>
+<span id="cb30-70"><a href="#cb30-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-71"><a href="#cb30-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-72"><a href="#cb30-72" aria-hidden="true" tabindex="-1"></a>Wait a sec! Where are my data points? So right now if we look at the syntax of the ggplot code we can see that we have not told ggplot2 which geometry we want. Do we want a scatter plot or a histogram or any other type of graph? So let us plot a scatter plot first. Use <span class="in">`geom_point()`</span> command. By adding <span class="in">`geom_point()`</span> to the <span class="in">`ggplot()`</span> command is equivalent to adding an extra layer to the already existing layer that we got previously. Let us also use <span class="in">`theme_bw()`</span> for a nice looking theme.</span>
+<span id="cb30-73"><a href="#cb30-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-76"><a href="#cb30-76" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-77"><a href="#cb30-77" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-78"><a href="#cb30-78" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-79"><a href="#cb30-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-80"><a href="#cb30-80" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">y =</span> Wing)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb30-81"><a href="#cb30-81" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span>
+<span id="cb30-82"><a href="#cb30-82" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-83"><a href="#cb30-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-84"><a href="#cb30-84" aria-hidden="true" tabindex="-1"></a>We got the graph! but we also got a warning message. The warning message tells us that the dataset which we had used to plot the graph had 11 rows of NA values and which could not be plotted into the graph. In real-life cases, we can have datasets with NA values due to various reasons, so this is fine.</span>
+<span id="cb30-85"><a href="#cb30-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-86"><a href="#cb30-86" aria-hidden="true" tabindex="-1"></a>Now, this graph even though shows us data points we are not sure which point belongs to which species, as this dataset contains data for three species of Hawks. So let us try giving different colours to the points concerning the different species so that we are able to differentiate them.</span>
+<span id="cb30-87"><a href="#cb30-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-88"><a href="#cb30-88" aria-hidden="true" tabindex="-1"></a><span class="fu">### Changing colour</span></span>
+<span id="cb30-89"><a href="#cb30-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-90"><a href="#cb30-90" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>To change colour of the 'element' with respect to species, we have to add <span class="in">`colour = Species`</span> within the <span class="in">`aes()`</span> of the ggplot command. I use the general term 'element' here to emphasize that the same change in aesthetics will work for most of other types of geometries in ggplot2 (something which you have seen extensively in <span class="co">[</span><span class="ot">Chapter 1</span><span class="co">](https://jeweljohnsonj.github.io/one-carat-blog/project1.html)</span>. Like for a line graph, the 'element' would be lines, here our 'element' is point.</span>
+<span id="cb30-91"><a href="#cb30-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-94"><a href="#cb30-94" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-95"><a href="#cb30-95" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-96"><a href="#cb30-96" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-97"><a href="#cb30-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-98"><a href="#cb30-98" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">y =</span> Wing, <span class="at">colour =</span> Species)) <span class="sc">+</span></span>
+<span id="cb30-99"><a href="#cb30-99" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
+<span id="cb30-100"><a href="#cb30-100" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-101"><a href="#cb30-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-102"><a href="#cb30-102" aria-hidden="true" tabindex="-1"></a>The species abbreviations are the following: CH=Cooper's, RT=Red-tailed, SS=Sharp-Shinned.</span>
+<span id="cb30-103"><a href="#cb30-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-104"><a href="#cb30-104" aria-hidden="true" tabindex="-1"></a>Now, this graph is way better than the previous one.</span>
+<span id="cb30-105"><a href="#cb30-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-106"><a href="#cb30-106" aria-hidden="true" tabindex="-1"></a><span class="fu">### Changing point shape.</span></span>
+<span id="cb30-107"><a href="#cb30-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-108"><a href="#cb30-108" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Now instead of the colour let us change the shape of the point. Use <span class="in">`shape()`</span> command in <span class="in">`aes()`</span></span>
+<span id="cb30-109"><a href="#cb30-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-112"><a href="#cb30-112" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-113"><a href="#cb30-113" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-114"><a href="#cb30-114" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-115"><a href="#cb30-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-116"><a href="#cb30-116" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">y =</span> Wing, <span class="at">shape =</span> Species)) <span class="sc">+</span> <span class="co"># instead of colour use shape.</span></span>
+<span id="cb30-117"><a href="#cb30-117" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>() </span>
+<span id="cb30-118"><a href="#cb30-118" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-119"><a href="#cb30-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-120"><a href="#cb30-120" aria-hidden="true" tabindex="-1"></a>Now we did change the shape of points but it is still hard to make out the difference. Let us try specifying colour along with the shape</span>
+<span id="cb30-121"><a href="#cb30-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-122"><a href="#cb30-122" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Adding both <span class="in">`colour`</span> and <span class="in">`shape`</span> in aesthetics</span>
+<span id="cb30-123"><a href="#cb30-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-126"><a href="#cb30-126" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-127"><a href="#cb30-127" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-128"><a href="#cb30-128" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-129"><a href="#cb30-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-130"><a href="#cb30-130" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">y =</span> Wing, </span>
+<span id="cb30-131"><a href="#cb30-131" aria-hidden="true" tabindex="-1"></a>  <span class="at">colour =</span> Species, <span class="at">shape =</span> Species)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
+<span id="cb30-132"><a href="#cb30-132" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-133"><a href="#cb30-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-134"><a href="#cb30-134" aria-hidden="true" tabindex="-1"></a>This plot is much better than the previous one.</span>
+<span id="cb30-135"><a href="#cb30-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-136"><a href="#cb30-136" aria-hidden="true" tabindex="-1"></a>Now let us try specifying <span class="in">`colour`</span> within the <span class="in">`aes()`</span> of the <span class="in">`geom()`</span></span>
+<span id="cb30-137"><a href="#cb30-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-140"><a href="#cb30-140" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-141"><a href="#cb30-141" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-142"><a href="#cb30-142" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-143"><a href="#cb30-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-144"><a href="#cb30-144" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">y =</span> Wing)) <span class="sc">+</span> </span>
+<span id="cb30-145"><a href="#cb30-145" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> Species)) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
+<span id="cb30-146"><a href="#cb30-146" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-147"><a href="#cb30-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-148"><a href="#cb30-148" aria-hidden="true" tabindex="-1"></a>We got the same graph as before! So what is the difference in specifying <span class="in">`colour`</span> within <span class="in">`aes()`</span> of <span class="in">`ggplot()`</span> compared to the same but within <span class="in">`geom()`</span>. Let us look at another example.</span>
+<span id="cb30-149"><a href="#cb30-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-152"><a href="#cb30-152" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-153"><a href="#cb30-153" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-154"><a href="#cb30-154" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-155"><a href="#cb30-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-156"><a href="#cb30-156" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">y =</span> Wing, <span class="at">colour =</span> <span class="st">"red"</span>)) <span class="sc">+</span> </span>
+<span id="cb30-157"><a href="#cb30-157" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
+<span id="cb30-158"><a href="#cb30-158" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-159"><a href="#cb30-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-160"><a href="#cb30-160" aria-hidden="true" tabindex="-1"></a>I manually changed the colour of the points to red colour. Now let try specifying <span class="in">`colour`</span> to the <span class="in">`aes()`</span> within the <span class="in">`geom()`</span></span>
+<span id="cb30-161"><a href="#cb30-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-164"><a href="#cb30-164" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-165"><a href="#cb30-165" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-166"><a href="#cb30-166" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-167"><a href="#cb30-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-168"><a href="#cb30-168" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">y =</span> Wing, <span class="at">colour =</span> <span class="st">"red"</span>)) <span class="sc">+</span> </span>
+<span id="cb30-169"><a href="#cb30-169" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> Species)) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
+<span id="cb30-170"><a href="#cb30-170" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-171"><a href="#cb30-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-172"><a href="#cb30-172" aria-hidden="true" tabindex="-1"></a>You can see that the red colour is overridden by other colours. So the <span class="in">`aes()`</span> mapping (in this case <span class="in">`colour`</span>) within <span class="in">`geom()`</span> will override any <span class="in">`aes()`</span> mapping within <span class="in">`ggplot()`</span>. And whatever <span class="in">`aes()`</span> mapping we give within <span class="in">`ggplot()`</span> will be inherited by all <span class="in">`geom()`</span> layers that will be added along with the <span class="in">`ggplot()`</span> layer.</span>
+<span id="cb30-173"><a href="#cb30-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-174"><a href="#cb30-174" aria-hidden="true" tabindex="-1"></a>Let us see another case.</span>
+<span id="cb30-175"><a href="#cb30-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-178"><a href="#cb30-178" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-179"><a href="#cb30-179" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb30-180"><a href="#cb30-180" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-summary: "Show the code"</span></span>
+<span id="cb30-181"><a href="#cb30-181" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-182"><a href="#cb30-182" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-183"><a href="#cb30-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-184"><a href="#cb30-184" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">y =</span> Wing)) <span class="sc">+</span> </span>
+<span id="cb30-185"><a href="#cb30-185" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"darkred"</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
+<span id="cb30-186"><a href="#cb30-186" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-187"><a href="#cb30-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-190"><a href="#cb30-190" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-191"><a href="#cb30-191" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb30-192"><a href="#cb30-192" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-summary: "Show the code"</span></span>
+<span id="cb30-193"><a href="#cb30-193" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-194"><a href="#cb30-194" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-195"><a href="#cb30-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-196"><a href="#cb30-196" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">y =</span> Wing)) <span class="sc">+</span> </span>
+<span id="cb30-197"><a href="#cb30-197" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">colour =</span> <span class="st">"darkred"</span>)) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
+<span id="cb30-198"><a href="#cb30-198" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-199"><a href="#cb30-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-200"><a href="#cb30-200" aria-hidden="true" tabindex="-1"></a>If you compare both the codes, the only difference is that the <span class="in">`colour = "darkred"`</span> command was outside <span class="in">`aes()`</span> in the first code and inside <span class="in">`aes()`</span> in the second code. So why didn't the second graph have the same dark-red coloured points as the first one? The reason is that in the first code we are explicitly told to have all data points to be coloured dark-red but that is not the case with the second code. In the second code, since we have specified it inside <span class="in">`aes()`</span>, ggplot is trying to look for a variable called "darkred" inside the dataset and colour it accordingly. This is why the legend that appears in the second graph has listed "darkred" as a category. And ggplot fails to find the variable called "darkred" but it still recognizes the <span class="in">`colour`</span> command line and colour all the points in red. So the bottom line is that R has a pre-determined way of reading a code, so we users should well-understand what each line is expected to do and should not expect R to just fill it in accordingly to what we write.</span>
+<span id="cb30-201"><a href="#cb30-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-202"><a href="#cb30-202" aria-hidden="true" tabindex="-1"></a>Now let us try a few other examples;</span>
+<span id="cb30-203"><a href="#cb30-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-204"><a href="#cb30-204" aria-hidden="true" tabindex="-1"></a><span class="fu">### Changing size</span></span>
+<span id="cb30-205"><a href="#cb30-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-206"><a href="#cb30-206" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use <span class="in">`size()`</span> in <span class="in">`aes()`</span></span>
+<span id="cb30-207"><a href="#cb30-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-210"><a href="#cb30-210" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-211"><a href="#cb30-211" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-212"><a href="#cb30-212" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-213"><a href="#cb30-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-214"><a href="#cb30-214" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> Hallux, <span class="at">size =</span> Culmen)) <span class="sc">+</span> </span>
+<span id="cb30-215"><a href="#cb30-215" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
+<span id="cb30-216"><a href="#cb30-216" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-217"><a href="#cb30-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-218"><a href="#cb30-218" aria-hidden="true" tabindex="-1"></a><span class="fu">### Changing colour, shape and size manually</span></span>
+<span id="cb30-219"><a href="#cb30-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-220"><a href="#cb30-220" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use <span class="in">`scale_shape_manual()`</span> for changing shape, similarly <span class="in">`scale_color_manual()`</span> for changing colour and <span class="in">`scale_size_manual()`</span> for changing size of the element.</span>
+<span id="cb30-221"><a href="#cb30-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-224"><a href="#cb30-224" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-225"><a href="#cb30-225" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-226"><a href="#cb30-226" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-227"><a href="#cb30-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-228"><a href="#cb30-228" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">y =</span> Hallux, <span class="at">colour =</span> Species,</span>
+<span id="cb30-229"><a href="#cb30-229" aria-hidden="true" tabindex="-1"></a>                         <span class="at">shape =</span> Species, <span class="at">size =</span> Species)) <span class="sc">+</span> </span>
+<span id="cb30-230"><a href="#cb30-230" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb30-231"><a href="#cb30-231" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_shape_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)) <span class="sc">+</span></span>
+<span id="cb30-232"><a href="#cb30-232" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">'red'</span>,<span class="st">'blue'</span>, <span class="st">'green'</span>)) <span class="sc">+</span></span>
+<span id="cb30-233"><a href="#cb30-233" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">10</span>)) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
+<span id="cb30-234"><a href="#cb30-234" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-235"><a href="#cb30-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-238"><a href="#cb30-238" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-239"><a href="#cb30-239" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb30-240"><a href="#cb30-240" aria-hidden="true" tabindex="-1"></a>ggpubr<span class="sc">::</span><span class="fu">show_point_shapes</span>()</span>
+<span id="cb30-241"><a href="#cb30-241" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-242"><a href="#cb30-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-243"><a href="#cb30-243" aria-hidden="true" tabindex="-1"></a><span class="fu">### Changing the opcaity of the elements</span></span>
+<span id="cb30-244"><a href="#cb30-244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-245"><a href="#cb30-245" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use <span class="in">`alpha()`</span> within the <span class="in">`geom()`</span> with a numeric value to change the opacity of the elements. This is useful for visualizing large datasets such as this.</span>
+<span id="cb30-246"><a href="#cb30-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-249"><a href="#cb30-249" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-250"><a href="#cb30-250" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-251"><a href="#cb30-251" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-252"><a href="#cb30-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-253"><a href="#cb30-253" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">y =</span> Wing, <span class="at">colour =</span> Species)) <span class="sc">+</span></span>
+<span id="cb30-254"><a href="#cb30-254" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">5</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
+<span id="cb30-255"><a href="#cb30-255" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-256"><a href="#cb30-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-257"><a href="#cb30-257" aria-hidden="true" tabindex="-1"></a>The same commands also work for most of the other types of <span class="in">`geom()`</span>. Now let us see a few other aesthetics in other types of geoms.</span>
+<span id="cb30-258"><a href="#cb30-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-259"><a href="#cb30-259" aria-hidden="true" tabindex="-1"></a><span class="fu">### Changing fill colour</span></span>
+<span id="cb30-260"><a href="#cb30-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-261"><a href="#cb30-261" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use <span class="in">`fill()`</span> in <span class="in">`aes()`</span></span>
+<span id="cb30-262"><a href="#cb30-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-265"><a href="#cb30-265" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-266"><a href="#cb30-266" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-267"><a href="#cb30-267" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-268"><a href="#cb30-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-269"><a href="#cb30-269" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
+<span id="cb30-270"><a href="#cb30-270" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">25</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
+<span id="cb30-271"><a href="#cb30-271" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-272"><a href="#cb30-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-273"><a href="#cb30-273" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use <span class="in">`scale_fill_manual()`</span> to manually change the colours.</span>
+<span id="cb30-274"><a href="#cb30-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-277"><a href="#cb30-277" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-278"><a href="#cb30-278" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-279"><a href="#cb30-279" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-280"><a href="#cb30-280" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-281"><a href="#cb30-281" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
+<span id="cb30-282"><a href="#cb30-282" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">25</span>) <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb30-283"><a href="#cb30-283" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkred"</span>, <span class="st">"darkblue"</span>, <span class="st">"darkgreen"</span>))</span>
+<span id="cb30-284"><a href="#cb30-284" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-285"><a href="#cb30-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-286"><a href="#cb30-286" aria-hidden="true" tabindex="-1"></a><span class="fu">### Changing line type</span></span>
+<span id="cb30-287"><a href="#cb30-287" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-288"><a href="#cb30-288" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use <span class="in">`linetype`</span> in <span class="in">`aes()`</span></span>
+<span id="cb30-289"><a href="#cb30-289" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-292"><a href="#cb30-292" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-293"><a href="#cb30-293" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-294"><a href="#cb30-294" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-295"><a href="#cb30-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-296"><a href="#cb30-296" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">y =</span> Wing, <span class="at">linetype =</span> Species)) <span class="sc">+</span> </span>
+<span id="cb30-297"><a href="#cb30-297" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
+<span id="cb30-298"><a href="#cb30-298" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-299"><a href="#cb30-299" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-300"><a href="#cb30-300" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>You can manually change line types using <span class="in">`scale_linetype_manual()`</span></span>
+<span id="cb30-301"><a href="#cb30-301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-304"><a href="#cb30-304" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-305"><a href="#cb30-305" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-306"><a href="#cb30-306" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-307"><a href="#cb30-307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-308"><a href="#cb30-308" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">y =</span> Wing, <span class="at">linetype =</span> Species)) <span class="sc">+</span> </span>
+<span id="cb30-309"><a href="#cb30-309" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span> </span>
+<span id="cb30-310"><a href="#cb30-310" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values=</span> <span class="fu">c</span>(<span class="st">"twodash"</span>, <span class="st">"longdash"</span>, <span class="st">"dotdash"</span>)) <span class="sc">+</span></span>
+<span id="cb30-311"><a href="#cb30-311" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span>
+<span id="cb30-312"><a href="#cb30-312" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-313"><a href="#cb30-313" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-316"><a href="#cb30-316" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-317"><a href="#cb30-317" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb30-318"><a href="#cb30-318" aria-hidden="true" tabindex="-1"></a>ggpubr<span class="sc">::</span><span class="fu">show_line_types</span>()</span>
+<span id="cb30-319"><a href="#cb30-319" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-320"><a href="#cb30-320" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-321"><a href="#cb30-321" aria-hidden="true" tabindex="-1"></a>Now let us also see how to change the labels in a graph.</span>
+<span id="cb30-322"><a href="#cb30-322" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-323"><a href="#cb30-323" aria-hidden="true" tabindex="-1"></a><span class="fu">### Changing labels in the axes</span></span>
+<span id="cb30-324"><a href="#cb30-324" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-325"><a href="#cb30-325" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use <span class="in">`xlab()`</span> to change x-axis title, <span class="in">`ylab()`</span> to change y-axis title, <span class="in">`ggtitle()`</span> with <span class="in">`label`</span> and <span class="in">`subtitle`</span> to add title and subtitle respectively.</span>
+<span id="cb30-326"><a href="#cb30-326" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-329"><a href="#cb30-329" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-330"><a href="#cb30-330" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-331"><a href="#cb30-331" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-332"><a href="#cb30-332" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-333"><a href="#cb30-333" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">y =</span> Wing, <span class="at">colour =</span> Species)) <span class="sc">+</span></span>
+<span id="cb30-334"><a href="#cb30-334" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">"Weight (gm)"</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"Wing (mm)"</span>) <span class="sc">+</span></span>
+<span id="cb30-335"><a href="#cb30-335" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="at">label =</span> <span class="st">"Weight vs Wing span in three different species of Hawks"</span>, </span>
+<span id="cb30-336"><a href="#cb30-336" aria-hidden="true" tabindex="-1"></a>          <span class="at">subtitle =</span> <span class="st">"CH=Cooper's, RT=Red-tailed, SS=Sharp-Shinned"</span>)</span>
+<span id="cb30-337"><a href="#cb30-337" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-338"><a href="#cb30-338" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-339"><a href="#cb30-339" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>The same result can be obtained by using <span class="in">`labs()`</span> to specify each label in the graph. For renaming the legend title, the command will depend on what is there within the <span class="in">`aes()`</span> or in other words what is the legend based on.</span>
+<span id="cb30-340"><a href="#cb30-340" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-343"><a href="#cb30-343" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-344"><a href="#cb30-344" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-345"><a href="#cb30-345" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-346"><a href="#cb30-346" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-347"><a href="#cb30-347" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">y =</span> Wing, <span class="at">colour =</span> Species)) <span class="sc">+</span></span>
+<span id="cb30-348"><a href="#cb30-348" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Weight (gm)"</span>, <span class="at">y =</span> <span class="st">"Wing (mm)"</span>, </span>
+<span id="cb30-349"><a href="#cb30-349" aria-hidden="true" tabindex="-1"></a>  <span class="at">title=</span> <span class="st">"Weight vs Wing span in three different species of Hawks"</span>, </span>
+<span id="cb30-350"><a href="#cb30-350" aria-hidden="true" tabindex="-1"></a>  <span class="at">subtitle =</span> <span class="st">"CH=Cooper's, RT=Red-tailed, SS=Sharp-Shinned"</span>,</span>
+<span id="cb30-351"><a href="#cb30-351" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">"Source: Hawk dataset from Stat2Data r-package"</span>, <span class="co">#caption for the graph</span></span>
+<span id="cb30-352"><a href="#cb30-352" aria-hidden="true" tabindex="-1"></a>  <span class="at">colour =</span> <span class="st">"Hawk Species"</span>, <span class="co"># rename legend title</span></span>
+<span id="cb30-353"><a href="#cb30-353" aria-hidden="true" tabindex="-1"></a>  <span class="at">tag =</span> <span class="st">"A"</span>) <span class="co">#figure tag</span></span>
+<span id="cb30-354"><a href="#cb30-354" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-355"><a href="#cb30-355" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-356"><a href="#cb30-356" aria-hidden="true" tabindex="-1"></a><span class="fu">### Tweaking the axes</span></span>
+<span id="cb30-357"><a href="#cb30-357" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-358"><a href="#cb30-358" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use <span class="in">`xlim()`</span> and <span class="in">`ylim()`</span> for limiting x and y axes respectively.</span>
+<span id="cb30-359"><a href="#cb30-359" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-362"><a href="#cb30-362" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-363"><a href="#cb30-363" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-364"><a href="#cb30-364" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-365"><a href="#cb30-365" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-366"><a href="#cb30-366" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">y =</span> Wing, <span class="at">colour =</span> Species)) <span class="sc">+</span></span>
+<span id="cb30-367"><a href="#cb30-367" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">xlim</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1000</span>)) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">200</span>,<span class="dv">350</span>))</span>
+<span id="cb30-368"><a href="#cb30-368" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-369"><a href="#cb30-369" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-370"><a href="#cb30-370" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use <span class="in">`coord_cartesian()`</span> to zoom in on a particular area in the graph</span>
+<span id="cb30-371"><a href="#cb30-371" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-374"><a href="#cb30-374" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-375"><a href="#cb30-375" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-376"><a href="#cb30-376" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-377"><a href="#cb30-377" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-378"><a href="#cb30-378" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">y =</span> Wing, <span class="at">colour =</span> Species)) <span class="sc">+</span></span>
+<span id="cb30-379"><a href="#cb30-379" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">coord_cartesian</span>(<span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1000</span>),</span>
+<span id="cb30-380"><a href="#cb30-380" aria-hidden="true" tabindex="-1"></a>                                                   <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">200</span>,<span class="dv">350</span>))</span>
+<span id="cb30-381"><a href="#cb30-381" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-382"><a href="#cb30-382" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-383"><a href="#cb30-383" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use <span class="in">`coord_flip()`</span> to flip the x and y axes.</span>
+<span id="cb30-384"><a href="#cb30-384" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-387"><a href="#cb30-387" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-388"><a href="#cb30-388" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-389"><a href="#cb30-389" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-390"><a href="#cb30-390" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-391"><a href="#cb30-391" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">y =</span> Wing, <span class="at">colour =</span> Species)) <span class="sc">+</span></span>
+<span id="cb30-392"><a href="#cb30-392" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">coord_flip</span>()</span>
+<span id="cb30-393"><a href="#cb30-393" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-394"><a href="#cb30-394" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-395"><a href="#cb30-395" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use <span class="in">`scale_x_continuous()`</span> for tweaking the x-axis. The same command work for the y-axis also. You can include <span class="in">`label()`</span> inside the command to manually label the breaks of the axes.</span>
+<span id="cb30-396"><a href="#cb30-396" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-399"><a href="#cb30-399" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-400"><a href="#cb30-400" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb30-401"><a href="#cb30-401" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-summary: "Show the code"</span></span>
+<span id="cb30-402"><a href="#cb30-402" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-403"><a href="#cb30-403" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-404"><a href="#cb30-404" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-405"><a href="#cb30-405" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">y =</span> Wing, <span class="at">colour =</span> Species)) <span class="sc">+</span></span>
+<span id="cb30-406"><a href="#cb30-406" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1000</span>,<span class="dv">2000</span>))</span>
+<span id="cb30-407"><a href="#cb30-407" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-408"><a href="#cb30-408" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-411"><a href="#cb30-411" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-412"><a href="#cb30-412" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb30-413"><a href="#cb30-413" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-summary: "Show the code"</span></span>
+<span id="cb30-414"><a href="#cb30-414" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-415"><a href="#cb30-415" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-416"><a href="#cb30-416" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-417"><a href="#cb30-417" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">y =</span> Wing, <span class="at">colour =</span> Species)) <span class="sc">+</span></span>
+<span id="cb30-418"><a href="#cb30-418" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb30-419"><a href="#cb30-419" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1000</span>,<span class="dv">2000</span>),<span class="at">label =</span> <span class="fu">c</span>(<span class="st">"low"</span>, <span class="st">"medium"</span>, <span class="st">"high"</span>))</span>
+<span id="cb30-420"><a href="#cb30-420" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-421"><a href="#cb30-421" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-422"><a href="#cb30-422" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Use <span class="in">`scale_y_reverse()`</span> to display the y values in the descending order. Same command applies to x-axis also.</span>
+<span id="cb30-423"><a href="#cb30-423" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-426"><a href="#cb30-426" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-427"><a href="#cb30-427" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-428"><a href="#cb30-428" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb30-429"><a href="#cb30-429" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-430"><a href="#cb30-430" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">y =</span> Wing, <span class="at">colour =</span> Species)) <span class="sc">+</span></span>
+<span id="cb30-431"><a href="#cb30-431" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">scale_y_reverse</span>()</span>
+<span id="cb30-432"><a href="#cb30-432" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-433"><a href="#cb30-433" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-434"><a href="#cb30-434" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summary</span></span>
+<span id="cb30-435"><a href="#cb30-435" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-436"><a href="#cb30-436" aria-hidden="true" tabindex="-1"></a>In this tutorial, we learned how to modify aesthetic present for different geoms in <span class="in">`{ggplot2}`</span> Then we learned how to modify labels in a graph and finally, we learned how to modify and change the axes elements. This tutorial is in no way exhaustive of the different ways you can modify a graph as there many more methods which are not discussed here. Instead of trying to include everything, this tutorial tries to be a stepping stone to help students of R to learn the basics of tweaking a graph. Try to practice what is covered here using other datasets available in the r-package <span class="in">`{Stat2Data}`</span>. Have a good day my friend!</span>
+<span id="cb30-437"><a href="#cb30-437" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-438"><a href="#cb30-438" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
+<span id="cb30-439"><a href="#cb30-439" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-440"><a href="#cb30-440" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016. Read more about ggplot2 <span class="co">[</span><span class="ot">here</span><span class="co">](https://ggplot2.tidyverse.org/)</span>. You can also look at the <span class="co">[</span><span class="ot">cheat sheet</span><span class="co">](https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf)</span> for all the syntax used in <span class="in">`ggplot2`</span>. Also check this <span class="co">[</span><span class="ot">out</span><span class="co">](https://github.com/erikgahner/awesome-ggplot2)</span>.</span>
+<span id="cb30-441"><a href="#cb30-441" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-442"><a href="#cb30-442" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Ann Cannon, George Cobb, Bradley Hartlaub, Julie Legler, Robin Lock, Thomas Moore, Allan Rossman and Jeffrey Witmer (2019). Stat2Data: Datasets for Stat2. R package version 2.0.0. https://CRAN.R-project.org/package=Stat2Data</span>
+<span id="cb30-443"><a href="#cb30-443" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-444"><a href="#cb30-444" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Last updated on {.unnumbered .unlisted}</span></span>
+<span id="cb30-445"><a href="#cb30-445" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-448"><a href="#cb30-448" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-449"><a href="#cb30-449" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb30-450"><a href="#cb30-450" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span>
+<span id="cb30-451"><a href="#cb30-451" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
       <div class="nav-footer-center">Copyright 2022, Jewel Johnson</div>

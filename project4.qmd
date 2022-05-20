@@ -14,6 +14,8 @@ format:
     smooth-scroll: true
     highlight-style: github
     code-link: true
+    code-fold: true
+    code-tools: true
 citation: true
 execute: 
   warning: false
@@ -22,7 +24,7 @@ image: "images/ggpubr.png"
 
 ## Introduction to ggpubr package
 
-If you are a researcher who wants to have publication-ready plots but does not want to get hassled by the `{ggplot2}` package, then let me introduce you to the`{ggpubr}` package. Using this package you can make publication grade plots without spending too much time modifying things. Even if you are a beginner in R programming and does not know how to use the`{ggplot2}` package, you will still be able to plot graphs using the `{ggpubr}` package because of how easy the syntax is. But having prior knowledge of the `{ggplot2}` package will surely make things easier, and an experienced person will know that any plot which can be plotted using `{ggpubr}` can also be plotted using `{ggplot2}`. So let us start.
+If you are a researcher who wants to have publication-ready plots but does not want to get hassled by the `{ggplot2}` package, then let me introduce you to the `{ggpubr}` package. Using this package you can make publication grade plots without spending too much time modifying things. Even if you are a beginner in R programming and does not know how to use the`{ggplot2}` package, you will still be able to plot graphs using the `{ggpubr}` package because of how easy the syntax is. But having prior knowledge of the `{ggplot2}` package will surely make things easier, and an experienced person will know that any plot which can be plotted using `{ggpubr}` can also be plotted using `{ggplot2}`. So let us start!
 
 First things first, install the `{ggpubr}` package and load it in the library.
 
@@ -621,7 +623,7 @@ ggarrange(plot, text_plot,
          heights = c(1, 0.3))
 ```
 
-### Having plots adjacent to each other
+### Having plots placed adjacent to each other
 
 You can use the `ggarrange()` function to place different plots together.
 

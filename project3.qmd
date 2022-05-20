@@ -14,6 +14,8 @@ format:
     smooth-scroll: true
     highlight-style: github
     code-link: true
+    code-fold: true
+    code-tools: true
 citation: true
 image: "images/ggplot2.png"
 ---
@@ -160,23 +162,6 @@ ggplot(BirdNest, aes(Nesttype, Length, fill = Nesttype)) + geom_boxplot() +
        subtitle = "Data shown for 84 different species of North American passerines",
        caption= "DataSource: BridNest dataset in Stat2Data r-package") +
   theme_classic()
-```
-
-## theme_void()
-
-```{r}
-#| code-fold: true
-#| code-summary: "Show the code"
-library(Stat2Data)
-library(ggplot2)
-data("BirdNest")
-
-ggplot(BirdNest, aes(Nesttype, Length, fill = Nesttype)) + geom_boxplot() + 
-  labs(x= "Type of nest", y= "Mean body length for the species (in cm)",
-       fill= "Nest type", title= "Relationship between body length and nest types",
-       subtitle = "Data shown for 84 different species of North American passerines",
-       caption= "DataSource: BridNest dataset in Stat2Data r-package") +
-  theme_void()
 ```
 
 ## theme_void()
@@ -1279,7 +1264,6 @@ element_rect(
 ```
 
 ::: panel-tabset
-
 ## Before
 
 ```{r}

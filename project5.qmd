@@ -14,6 +14,8 @@ format:
     smooth-scroll: true
     highlight-style: github
     code-link: true
+    code-fold: true
+    code-tools: true
 citation: true
 execute: 
   warning: false
@@ -30,7 +32,6 @@ First, we need to understand what tidy data looks like. For that let us imagine 
 
 ```{r}
 #| echo: false
-library(rmarkdown)
 patient1 <- c(seq(1,5,1))
 patient2 <- c(seq(6,10,1))
 patient3 <- c(seq(11,15,1))
@@ -41,7 +42,7 @@ treatment_data <- cbind(patient1,patient2,patient3,patient4,patient5)
 trt <- c("treatment1", "treatment2","treatment3","treatment4","treatment5")
 treatment_data <- cbind(trt, treatment_data)
 treatment_data <- as.data.frame(treatment_data)
-paged_table(treatment_data)
+rmarkdown::paged_table(treatment_data)
 ```
 
 This is how often data is stored because it is easy to write it this way. In the first column, you can see the different treatments from one to five. And in the second column, you have the efficacy values of the treatments for patient 1 and it goes on for the other patients. Now, this is a good example of how a dataset should not look like! Surprised? Let us see what makes this dataset 'dirty'.
@@ -58,7 +59,6 @@ So let us see how the 'tidier' version of this data would look like.
 
 ```{r}
 #| echo: false
-library(rmarkdown)
 library(tidyr)
 library(dplyr)
 patient1 <- c(seq(1,5,1))
@@ -79,7 +79,7 @@ treatment_data_tidy <-treatment_data  %>%
                values_to = "efficacy")
 
 colnames(treatment_data_tidy)[1] <- "treatment"
-paged_table(treatment_data_tidy)
+rmarkdown::paged_table(treatment_data_tidy)
 ```
 
 You can see each of the columns represent only one type of variable. In the first column, you have the types of treatments, followed by patient IDs and their efficacy values for each treatment. Also, note that each row represents only one observation. So this kind of data format is what we strive to achieve by using the `{tidyr}` package and they are called as 'long data'. So let us begin!
@@ -99,8 +99,6 @@ library(tidyr)
 The `pivot_longer()` command converts a 'wide data' to a 'long data'. It does so by converting row names to a new column under a new variable name with its corresponding values moved into another column with another variable name. So let us see how it goes. We will take the earlier mentioned example and will see how to make it tidy. Now you don't have to be concerned with the codes I have used to make the dummy data. Just have your focus on the `pivot_longer()` syntax.
 
 ```{r}
-#| eval: false
-library(rmarkdown)
 library(tidyr)
 # making a dummy data
 # using sample function to pick random numbers in a sequence
@@ -121,7 +119,7 @@ trt_data <- as.data.frame(trt_data) # making it a data frame
 trt_data_tidy <- pivot_longer(trt_data,
                               c(patient1,patient2,patient3,patient4,patient5), 
                               names_to = "patient_ID", values_to = "efficacy")
-paged_table(trt_data_tidy)
+rmarkdown::paged_table(trt_data_tidy)
 ```
 
 Furthermore, you don't have to manually type in the column names as you can use `colnames()` to call the column names of the dataset. Another way of doing the same is by excluding the first column from the process. By doing so the command will automatically pivot all columns except the excluded ones, so in this way, we don't need to manually specify the column names. The codes given below will give you the same result as before.
@@ -130,7 +128,6 @@ Furthermore, you don't have to manually type in the column names as you can use 
 #| code-fold: true
 #| code-summary: "Show the code"
 #| eval: false
-library(rmarkdown)
 library(tidyr)
 patient1 <- c(seq(1,5,1))
 patient2 <- c(seq(6,10,1))
@@ -151,8 +148,7 @@ trt_data_tidy1 <- pivot_longer(trt_data,
 trt_data_tidy2 <- pivot_longer(trt_data, names_to = "patient_ID",
                                values_to = "efficacy", -treatment)
 # checking if both the tidy datasets are one and the same
-paged_table(as.data.frame(trt_data_tidy1 == trt_data_tidy2),
-            options = list(rows.print = 5))
+trt_data_tidy1 == trt_data_tidy2
 ```
 
 The syntax for `pivot_longer()` is given below with description
@@ -173,7 +169,6 @@ Here is a graphical representation
 The `pivot_wider()` does the exact opposite of what `pivot_longer()` does, which is to convert long data into wide data. We will use the previously given dummy data.
 
 ```{r}
-library(rmarkdown)
 library(tidyr)
 # making a dummy data
 # using sample function to pick random numbers in a sequence
@@ -201,12 +196,13 @@ trt_data_wider <- pivot_wider(trt_data_tidy, names_from = "patient_ID",
 
 # paged_Table() for viewing the dataset as a table, 
 # you can see that the dataset is same as before
-paged_table(as.data.frame(trt_data_wider))
+rmarkdown::paged_table(trt_data_wider)
 ```
 
 The syntax for `pivot_wider()` is given below with description
 
-```{r, eval=FALSE}
+```{r}
+#| eval: false
 pivot_longer("data", 
   names_from = "name of the column which contains your wide data columns",
   values_from = "name of the column where your corresponding wide data column values are")
@@ -230,13 +226,12 @@ In the data given below, let say we want to unite the century column and the yea
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
-library(rmarkdown)
 event <- c(letters[1:4])
 century <- c(rep(19:20, each = 2))
 year <- c(seq(10,16,2))
 data <- as.data.frame(cbind(event,century,year))
 
-paged_table(data)
+rmarkdown::paged_table(data)
 ```
 
 ## After
@@ -244,7 +239,6 @@ paged_table(data)
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
-library(rmarkdown)
 library(tidyr)
 # dummy data
 event <- c(letters[1:4])
@@ -255,7 +249,7 @@ data <- as.data.frame(cbind(event,century,year))
 # uniting columns century and year
 data_new <- unite(data, century, year, col = "event_year", sep = "")
 # viewing data as a table
-paged_table(data_new)
+rmarkdown::paged_table(data_new)
 ```
 :::
 
@@ -280,7 +274,6 @@ In the data given below, let say we want to split the 'area_perimeter' column in
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
-library(rmarkdown)
 # dummy data
 shapes <- c(letters[1:4])
 area <- c(paste0(10:13, "m^2"))
@@ -288,7 +281,7 @@ perimetre <- c(paste0(30:33, "m"))
 ratio <-as.data.frame(cbind(shapes,area,perimetre))
 data <- unite(ratio, area, perimetre, col = "area_perimetre", sep = "_")
 # viewing data as a table
-paged_table(data)
+rmarkdown::paged_table(data)
 ```
 
 ## After
@@ -296,7 +289,6 @@ paged_table(data)
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
-library(rmarkdown)
 library(tidyr)
 # dummy data
 shapes <- c(letters[1:4])
@@ -309,7 +301,7 @@ data <- unite(ratio, area, perimetre, col = "area_perimetre", sep = "_")
 data_new <- separate(data, area_perimetre, sep = "_",
                      into = c("area", "perimetre"))
 # viewing data as a table
-paged_table(data_new)
+rmarkdown::paged_table(data_new)
 ```
 :::
 
@@ -333,7 +325,6 @@ Similar to the above case, you can also separate column values into several rows
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
-library(rmarkdown)
 # dummy data
 shapes <- c(letters[1:4])
 area <- c(paste0(10:13, "m^2"))
@@ -341,7 +332,7 @@ perimetre <- c(paste0(30:33, "m"))
 ratio <-as.data.frame(cbind(shapes,area,perimetre))
 data <- unite(ratio, area, perimetre, col = "area_perimetre", sep = "_")
 # viewing data as a table
-paged_table(data)
+rmarkdown::paged_table(data)
 ```
 
 ## After
@@ -349,7 +340,6 @@ paged_table(data)
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
-library(rmarkdown)
 library(tidyr)
 # dummy data
 shapes <- c(letters[1:4])
@@ -361,13 +351,14 @@ data <- unite(ratio, area, perimetre, col = "area_perimetre", sep = "_")
 # separating column values into two several rows
 data_new <- separate_rows(data, area_perimetre, sep = "_")
 # viewing data as a table
-paged_table(data_new)
+rmarkdown::paged_table(data_new)
 ```
 :::
 
 The syntax of `separate_rows()` is as follows.
 
-```{r, eval=FALSE}
+```{r}
+#| eval: false
 separate_rows("data name",
          "column to separate",
          sep = "the separator element")
@@ -387,7 +378,6 @@ Using the `expand()` command we can expand our data with missing combinations fo
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
-library(rmarkdown)
 # dummy data
 brand <- c(letters[1:4])
 dress <- c("shirt", "pant", "jeans", "trousers")
@@ -395,7 +385,7 @@ size <- c("s", "m", "l", "xl")
 dress_data <- as.data.frame(cbind(brand,dress,size))
 
 # viewing data as a table
-paged_table(dress_data)
+rmarkdown::paged_table(dress_data)
 ```
 
 ## After
@@ -403,7 +393,6 @@ paged_table(dress_data)
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
-library(rmarkdown)
 library(tidyr)
 # dummy data
 brand <- c(letters[1:4])
@@ -415,13 +404,14 @@ dress_data <- as.data.frame(cbind(brand,dress,size))
 dress_data_expand <- expand(dress_data, brand, dress)
 
 # viewing data as a table
-paged_table(dress_data_expand)
+rmarkdown::paged_table(dress_data_expand)
 ```
 :::
 
 The syntax of `expand()` is as follows.
 
-```{r, eval=FALSE}
+```{r}
+#| eval: false
 expand("data name", "column names which you want to expand separated by commas")
 ```
 
@@ -435,7 +425,6 @@ The `complete()` command functions similar to the `expand()` command, but it als
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
-library(rmarkdown)
 library(tidyr)
 # dummy data
 brand <- c(letters[1:4])
@@ -447,7 +436,7 @@ dress_data <- as.data.frame(cbind(brand,dress,size))
 dress_data_expand <- expand(dress_data, brand, dress)
 
 # viewing data as a table
-paged_table(dress_data_expand)
+rmarkdown::paged_table(dress_data_expand)
 ```
 
 ## complete()
@@ -455,7 +444,6 @@ paged_table(dress_data_expand)
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
-library(rmarkdown)
 library(tidyr)
 # dummy data
 brand <- c(letters[1:4])
@@ -468,13 +456,14 @@ dress_data <- as.data.frame(cbind(brand,dress,size))
 dress_data_complete <- complete(dress_data,brand,dress)
 
 # viewing data as a table
-paged_table(dress_data_complete)
+rmarkdown::paged_table(dress_data_complete)
 ```
 :::
 
 The syntax of `complete()` is as follows.
 
-```{r, eval=FALSE}
+```{r}
+#| eval: false
 complete("data name", "column names which you want to complete separated by commas")
 ```
 
@@ -492,7 +481,6 @@ Use `drop_na()` to remove `NA` value containing rows from the dataset.
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
-library(rmarkdown)
 # dummy data
 brand <- c(letters[1:4])
 dress <- c("shirt", "pant", "jeans", "trousers")
@@ -502,7 +490,7 @@ dress_data <- as.data.frame(cbind(brand,dress,size))
 dress_data_complete <- complete(dress_data,brand,dress)
 
 # viewing data as a table
-paged_table(dress_data_complete)
+rmarkdown::paged_table(dress_data_complete)
 ```
 
 ## After
@@ -510,7 +498,6 @@ paged_table(dress_data_complete)
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
-library(rmarkdown)
 library(tidyr)
 # dummy data
 brand <- c(letters[1:4])
@@ -525,7 +512,7 @@ dress_data_complete <- complete(dress_data,brand,dress)
 dress_data_noNA <- drop_na(dress_data_complete)
 
 # viewing data as a table
-paged_table(dress_data_noNA)
+rmarkdown::paged_table(dress_data_noNA)
 ```
 :::
 
@@ -534,7 +521,6 @@ paged_table(dress_data_noNA)
 Use `fill()` to replace `NA` values by taking values from nearby cells. By default the `NA` values as replaced by whatever value that is above the cell containing the `NA` value. This can be changed by specifying the `.direction` value within `fill()`
 
 ```{r}
-library(rmarkdown)
 library(tidyr)
 # dummy data
 brand <- c(letters[1:4])
@@ -547,7 +533,7 @@ dress_data_complete <- complete(dress_data,brand,dress)
 dress_data_fill <- fill(dress_data_complete, size, .direction = "downup")
 
 # viewing data as a table
-paged_table(dress_data_fill)
+rmarkdown::paged_table(dress_data_fill)
 ```
 
 ### replace_na()
@@ -555,7 +541,6 @@ paged_table(dress_data_fill)
 Use `replace_na()` command to replace `NA` values to whatever value specified.
 
 ```{r}
-library(rmarkdown)
 library(tidyr)
 # dummy data
 brand <- c(letters[1:4])
@@ -570,7 +555,7 @@ dress_data_complete <- complete(dress_data,brand,dress)
 dress_data_zero <- replace_na(dress_data_complete, list(size = "unknown"))
 
 # viewing data as a table
-paged_table(dress_data_zero)
+rmarkdown::paged_table(dress_data_zero)
 ```
 
 ## Summary
