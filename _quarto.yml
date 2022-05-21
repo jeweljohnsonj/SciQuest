@@ -17,7 +17,6 @@ website:
     description: Personal blog from Jewel Johnson
     creator: "@jeweljohnson"
     
-          
   navbar:
     logo: gems.png
     right:
@@ -50,9 +49,7 @@ website:
         
 format:
   html:
-    theme:
-      dark: slate
-      light: united
+    theme: slate
     css: styles.css
 
 editor: visual
