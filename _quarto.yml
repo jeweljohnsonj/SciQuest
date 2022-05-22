@@ -4,6 +4,7 @@ project:
 
 website:
   title: "one carat blog"
+  image: preview.png
   page-navigation: true
   page-footer: "© 2022, Jewel Johnson"
   favicon: gems.png

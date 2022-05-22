@@ -200,7 +200,7 @@
     "href": "articles/stat/project3.html#standard-normal-distribution",
     "title": "Standard error and standard deviation",
     "section": "\n3 Standard normal distribution",
-    "text": "3 Standard normal distribution\nA normal distribution with mean(\\mu) = 1 and variance(\\sigma^{2}) = 1 is called as a standard normal distribution or a z-distribution. With the help of standard deviation, we can split the area under the curve of standard normal distribution into three parts. This partitioning of area is known as the 68–95–99.7 rule. What it means is that;\n\n68% of the data will lie within ±\\sigma from \\mu\n\n95% of the data will lie within ±2\\sigma from \\mu\n\n99.7% of the data will lie within ±3\\sigma from \\mu\n\n\n\n\nFig1: 68–95–99.7 rule. Credits: www.nagwa.com\n\n\nLike previously mentioned, the width of the curve and tell us about the variance/standard deviation of the data.\n\n\nFig2: Area under the curve for different standard deviations. Credits: www.varsitytutors.com\n\n\nLast updated on\n\n\n[1] \"2022-05-22 18:22:40 IST\""
+    "text": "3 Standard normal distribution\nA normal distribution with mean(\\mu) = 1 and variance(\\sigma^{2}) = 1 is called as a standard normal distribution or a z-distribution. With the help of standard deviation, we can split the area under the curve of standard normal distribution into three parts. This partitioning of area is known as the 68–95–99.7 rule. What it means is that;\n\n68% of the data will lie within ±\\sigma from \\mu\n\n95% of the data will lie within ±2\\sigma from \\mu\n\n99.7% of the data will lie within ±3\\sigma from \\mu\n\n\n\n\nFig1: 68–95–99.7 rule. Credits: www.nagwa.com\n\n\nLike previously mentioned, the width of the curve and tell us about the variance/standard deviation of the data.\n\n\nFig2: Area under the curve for different standard deviations. Credits: www.varsitytutors.com\n\n\nLast updated on\n\n\n[1] \"2022-05-22 19:19:12 IST\""
   },
   {
     "objectID": "articles/stat/project1.html",
@@ -221,7 +221,7 @@
     "href": "articles/stat/project1.html#inferential-statistics",
     "title": "Introduction to statistics with R",
     "section": "\n3 Inferential statistics",
-    "text": "3 Inferential statistics\nInferential statistics is used to understand patterns of a population using a sample data from it. Since collecting data for a population is tedious, we take a sample from that population, which acts as a true representative for the population. Through sampling methods and hypothesis testing, patterns seen within the sample can be extrapolated to the whole population. The characteristics used for sample data are called as statistics. Some of the inferential statistics include sample mean, standard deviation etc.\nLast updated on\n\n\n[1] \"2022-05-22 18:22:43 IST\""
+    "text": "3 Inferential statistics\nInferential statistics is used to understand patterns of a population using a sample data from it. Since collecting data for a population is tedious, we take a sample from that population, which acts as a true representative for the population. Through sampling methods and hypothesis testing, patterns seen within the sample can be extrapolated to the whole population. The characteristics used for sample data are called as statistics. Some of the inferential statistics include sample mean, standard deviation etc.\nLast updated on\n\n\n[1] \"2022-05-22 19:19:15 IST\""
   },
   {
     "objectID": "articles/stat/project2.html",
@@ -235,7 +235,7 @@
     "href": "articles/stat/project2.html#variance",
     "title": "Distribution and variance",
     "section": "\n2 Variance",
-    "text": "2 Variance\nVariance of a data is defined as the average of squared difference from the mean of the data. Basically it tell us how far each of our data points are from the mean value.\n\n\nFig2: Variance in distributions. Credits: https://access-excel.tips/\n\n\nThe formula for finding the variance is as follows;\ns^{2} = \\frac{\\sum (x_{i} - \\bar{x})^{2}}{N - 1}\nWhere s^{2} is variance, x_{i} is your data point, \\bar{x} is mean and N is the sample size.\nFor sufficiently large value of N, the equation for variance will become;\n\\sigma^{2} = \\frac{\\sum (x_{i} - \\bar{x})^{2}}{N} where \\sigma^{2} is called population variance.\nFurther more \\sigma is called as the standard deviation of the data which we will see in detail later.\nLast updated on\n\n\n[1] \"2022-05-22 18:22:52 IST\""
+    "text": "2 Variance\nVariance of a data is defined as the average of squared difference from the mean of the data. Basically it tell us how far each of our data points are from the mean value.\n\n\nFig2: Variance in distributions. Credits: https://access-excel.tips/\n\n\nThe formula for finding the variance is as follows;\ns^{2} = \\frac{\\sum (x_{i} - \\bar{x})^{2}}{N - 1}\nWhere s^{2} is variance, x_{i} is your data point, \\bar{x} is mean and N is the sample size.\nFor sufficiently large value of N, the equation for variance will become;\n\\sigma^{2} = \\frac{\\sum (x_{i} - \\bar{x})^{2}}{N} where \\sigma^{2} is called population variance.\nFurther more \\sigma is called as the standard deviation of the data which we will see in detail later.\nLast updated on\n\n\n[1] \"2022-05-22 19:19:23 IST\""
   },
   {
     "objectID": "project3.html",
