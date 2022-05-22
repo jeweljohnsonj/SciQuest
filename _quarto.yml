@@ -12,9 +12,9 @@ website:
   site-url: https://jeweljohnsonj.github.io/one-carat-blog/
   repo-url: https://github.com/jeweljohnsonj/one-carat-blog
   twitter-card:
-    image: banner.png
-    title: One carat blog
-    description: Personal blog from Jewel Johnson
+    image: "banner.png"
+    title: "one carat blog"
+    description: "Personal blog from Jewel Johnson"
     creator: "@jeweljohnson"
     
   navbar:
