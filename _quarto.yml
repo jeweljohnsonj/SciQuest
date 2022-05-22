@@ -40,9 +40,8 @@ website:
           href: project6.qmd
         - text: "Chapter 3: Data manipulation using dplyr (part 2)"
           href: project7.qmd
-      - text: "R Tutorials"
+      - text: "Statistics"
         menu:
-        - text: "Statistics"
         - text: "Introduction to statistics with R"
           href: articles/stat/project1.qmd
         - text: "Distribution and variance"
