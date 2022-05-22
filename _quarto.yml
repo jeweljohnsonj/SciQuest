@@ -40,6 +40,15 @@ website:
           href: project6.qmd
         - text: "Chapter 3: Data manipulation using dplyr (part 2)"
           href: project7.qmd
+      - text: "R Tutorials"
+        menu:
+        - text: "Statistics"
+        - text: "Introduction to statistics with R"
+          href: articles/stat/project1.qmd
+        - text: "Distribution and variance"
+          href: articles/stat/project2.qmd
+        - text: "Standard error and standard deviation"
+          href: articles/stat/project3.qmd
       - text: "About me"
         href: https://jeweljohnsonj.github.io/jewel_resume/
       - icon: github

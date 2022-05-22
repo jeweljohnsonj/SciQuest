@@ -1,0 +1,88 @@
+---
+title: "Standard error and standard deviation"
+subtitle: |
+  Learn about standard error and standard deviation
+author: "Jewel Johnson"
+date: "05-21-2022"
+format:
+  html:
+    toc: true
+    toc-title: On this page
+    html-math-method: katex
+    css: styles.css
+    number-sections: true
+    smooth-scroll: true
+    highlight-style: github
+    code-link: true
+    code-fold: true
+    code-tools: true
+citation: true
+comments:
+  hypothesis: true
+execute: 
+  warning: false
+image: "images/ggplot2.png"
+---
+
+```{r}
+#| include: false
+paged_print <- function(x, options) {
+  knitr::asis_output(
+    rmarkdown:::paged_table_html(x, options = attr(
+      x,
+      "options"
+    )),
+    meta = list(dependencies = rmarkdown::html_dependency_pagedtable())
+  )
+}
+
+registerS3method(
+  "knit_print", "data.frame", paged_print,
+  envir = asNamespace("knitr")
+)
+```
+
+## Standard error
+
+The standard error or more accurately called as the `standard error of mean` is measure of spread that calculates how far the sample mean is different the population mean. It basically calculates the error in a sample statistic compared to the corresponding population parameter.
+
+The formula to calculate standard error of mean is;
+
+$$\sigma_{\bar{X}} = \frac{s}{\sqrt{N}}$$
+
+where $\sigma_{\bar{X}}$ is standard error of mean, $s$ is sample standard deviation and $N$ is sample size.
+
+As you can see from the formula, if we increase our sampling size, the standard error of mean decreases and therefore our sample mean will closely resembling the population mean.
+
+## Standard deviation
+
+The equivalent of standard error, but for a sample in a population. Simply put, it tells us how much spread is there within a data, more precisely speaking, how much each of our data points are spread around the mean.
+
+The formula to calculate standard deviation of mean is;
+
+$$s = \sqrt{s^{2}} = \sqrt{\frac{\sum (x_{i} - \bar{x})^{2}}{N - 1}}$$ where $s$ is standard deviation, $\sqrt{s^{2}}$ is variance, $x_{i}$ is your data point, $\bar{x}$ is sample mean and $N$ is sample size.
+
+Standard deviation is generally constant across the population and is larger than the standard error of mean. Because of which sometimes researchers cheat out by using standard error of mean in the results, rather than using standard deviation to show a false idea that their measurements are accurate.
+
+## Standard normal distribution
+
+A normal distribution with mean($\mu$) = 1 and variance($\sigma^{2}$) = 1 is called as a `standard normal distribution` or a `z-distribution`. With the help of standard deviation, we can split the area under the curve of standard normal distribution into three parts. This partitioning of area is known as the `68–95–99.7 rule`. What it means is that;
+
+-   68% of the data will lie within $±\sigma$ from $\mu$
+-   95% of the data will lie within $±2\sigma$ from $\mu$
+-   99.7% of the data will lie within $±3\sigma$ from $\mu$
+
+[![Fig1: 68--95--99.7 rule. Credits: www.nagwa.com](https://images.nagwa.com/figures/explainers/378184608718/2.svg)](https://www.nagwa.com/en/explainers/378184608718/)
+
+Like previously mentioned, the width of the curve and tell us about the variance/standard deviation of the data.
+
+[![Fig2: Area under the curve for different standard deviations. Credits: www.varsitytutors.com](https://www.varsitytutors.com/assets/vt-hotmath-legacy/hotmath_help/topics/normal-distribution-of-data/normal-distribution-1.gif)](https://www.varsitytutors.com/hotmath/hotmath_help/topics/normal-distribution-of-data)
+
+#### Last updated on {.unnumbered .unlisted}
+
+```{r}
+#| echo: false
+Sys.time()
+```
+
+<a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>

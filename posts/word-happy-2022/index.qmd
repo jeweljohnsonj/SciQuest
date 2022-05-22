@@ -81,6 +81,7 @@ anti_join(hap, map_world,  by = c("country" = "region"))
 
 You can see that some country names are a mismatch with the map data. So we will attempt to fix it.
 
+::: {.column-page-inset}
 ```{r}
 # display all country names in the dataset
 # useful to locate correct country names
@@ -117,6 +118,7 @@ ggplot(world_hap, aes(long, lat)) + geom_polygon(aes(fill = score, group = group
        fill = "Score",
        caption = addline_format("Source: World Happiness Report 2022,Visualization by Jewel Johnson"))
 ```
+:::
 
 ## Plotting an interactive world map
 
