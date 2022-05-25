@@ -181,7 +181,7 @@ TukeyHSD(anova2)
 
 We got tot the same inference as last time.
 
-## two way ANOVA with dependent variable
+### two way ANOVA with dependent variable
 
 Now suppose that there is a synergistic effect between `species` and `sex` variable. Then in that case they are not independent with each other, nevertheless we can incorporate this factor by changing the addition sign `+` between the variables to an asterisk sign `*`.
 

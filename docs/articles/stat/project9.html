@@ -246,17 +246,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul class="collapse">
 <li><a href="#one-way-anova" id="toc-one-way-anova" class="nav-link" data-scroll-target="#one-way-anova"> <span class="header-section-number">3.1</span> one way ANOVA</a></li>
   <li><a href="#two-way-anova" id="toc-two-way-anova" class="nav-link" data-scroll-target="#two-way-anova"> <span class="header-section-number">3.2</span> two way ANOVA</a></li>
+  <li><a href="#two-way-anova-with-dependent-variable" id="toc-two-way-anova-with-dependent-variable" class="nav-link" data-scroll-target="#two-way-anova-with-dependent-variable"> <span class="header-section-number">3.3</span> two way ANOVA with dependent variable</a></li>
+  <li><a href="#anova-test-for-unbalanced-designs" id="toc-anova-test-for-unbalanced-designs" class="nav-link" data-scroll-target="#anova-test-for-unbalanced-designs"> <span class="header-section-number">3.4</span> ANOVA test for unbalanced designs</a></li>
+  <li><a href="#manova" id="toc-manova" class="nav-link" data-scroll-target="#manova"> <span class="header-section-number">3.5</span> MANOVA</a></li>
   </ul>
 </li>
-  <li>
-<a href="#two-way-anova-with-dependent-variable" id="toc-two-way-anova-with-dependent-variable" class="nav-link" data-scroll-target="#two-way-anova-with-dependent-variable"> <span class="header-section-number">4</span> two way ANOVA with dependent variable</a>
-  <ul class="collapse">
-<li><a href="#anova-test-for-unbalanced-designs" id="toc-anova-test-for-unbalanced-designs" class="nav-link" data-scroll-target="#anova-test-for-unbalanced-designs"> <span class="header-section-number">4.1</span> ANOVA test for unbalanced designs</a></li>
-  <li><a href="#manova" id="toc-manova" class="nav-link" data-scroll-target="#manova"> <span class="header-section-number">4.2</span> MANOVA</a></li>
-  </ul>
-</li>
-  <li><a href="#kruskal-wallis-test" id="toc-kruskal-wallis-test" class="nav-link" data-scroll-target="#kruskal-wallis-test"> <span class="header-section-number">5</span> Kruskal-Wallis Test</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">6</span> References</a></li>
+  <li><a href="#kruskal-wallis-test" id="toc-kruskal-wallis-test" class="nav-link" data-scroll-target="#kruskal-wallis-test"> <span class="header-section-number">4</span> Kruskal-Wallis Test</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">5</span> References</a></li>
   </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/edit/main/articles/stat/project9.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
@@ -441,8 +437,8 @@ Torgersen-Dream  11.251314 -170.2981 192.8007 0.9883345</code></pre>
 </div>
 </div>
 <p>We got tot the same inference as last time.</p>
-</section></section><section id="two-way-anova-with-dependent-variable" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="two-way-anova-with-dependent-variable">
-<span class="header-section-number">4</span> two way ANOVA with dependent variable</h2>
+</section><section id="two-way-anova-with-dependent-variable" class="level3" data-number="3.3"><h3 data-number="3.3" class="anchored" data-anchor-id="two-way-anova-with-dependent-variable">
+<span class="header-section-number">3.3</span> two way ANOVA with dependent variable</h3>
 <p>Now suppose that there is a synergistic effect between <code>species</code> and <code>sex</code> variable. Then in that case they are not independent with each other, nevertheless we can incorporate this factor by changing the addition sign <code>+</code> between the variables to an asterisk sign <code>*</code>.</p>
 <div class="cell">
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co">#install.packages("palmerpenguins")</span>
@@ -519,8 +515,8 @@ Gentoo:male-Chinstrap:male      1545.8655 1356.0392 1735.6917 0.0000000</code></
 </div>
 </div>
 <p>From the pairwise comparisons we can see that male and female penguins have significantly different body masses and also the Chinstrap penguins with respect to sex, have similar body mass to Adelie penguins.</p>
-<section id="anova-test-for-unbalanced-designs" class="level3" data-number="4.1"><h3 data-number="4.1" class="anchored" data-anchor-id="anova-test-for-unbalanced-designs">
-<span class="header-section-number">4.1</span> ANOVA test for unbalanced designs</h3>
+</section><section id="anova-test-for-unbalanced-designs" class="level3" data-number="3.4"><h3 data-number="3.4" class="anchored" data-anchor-id="anova-test-for-unbalanced-designs">
+<span class="header-section-number">3.4</span> ANOVA test for unbalanced designs</h3>
 <p>Now if the dataset has unequal sample sizes for each groups, then we can use the <code>ANOVA test for unbalanced designs</code>. To use the test we would require the <a href="https://r-forge.r-project.org/projects/car/">car</a> package in R.</p>
 <div class="cell">
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co">#install.packages("palmerpenguins")</span>
@@ -545,8 +541,8 @@ Gentoo:male-Chinstrap:male      1545.8655 1356.0392 1735.6917 0.0000000</code></
 </div>
 </div>
 </div>
-</section><section id="manova" class="level3" data-number="4.2"><h3 data-number="4.2" class="anchored" data-anchor-id="manova">
-<span class="header-section-number">4.2</span> MANOVA</h3>
+</section><section id="manova" class="level3" data-number="3.5"><h3 data-number="3.5" class="anchored" data-anchor-id="manova">
+<span class="header-section-number">3.5</span> MANOVA</h3>
 <p>If you have multiple dependent variables, then you can use <code>MANOVA</code>. Here our dependent variables are body mass and bill depth and independent variable is species. We want to see if body mass and bill depth is associated with different species of penguins.</p>
 <div class="cell">
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co">#install.packages("palmerpenguins")</span>
@@ -572,8 +568,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
 <p>From the result, we can see that, species statistically significant association with both combined body mass and bill depth variables.</p>
-</section></section><section id="kruskal-wallis-test" class="level2" data-number="5"><h2 data-number="5" class="anchored" data-anchor-id="kruskal-wallis-test">
-<span class="header-section-number">5</span> Kruskal-Wallis Test</h2>
+</section></section><section id="kruskal-wallis-test" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="kruskal-wallis-test">
+<span class="header-section-number">4</span> Kruskal-Wallis Test</h2>
 <p>The Kruskal-Wallis test is the non-parametric equivalent of ANOVA.</p>
 <div class="cell">
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co">#install.packages("palmerpenguins")</span>
@@ -618,8 +614,8 @@ P value adjustment method: BH </code></pre>
 </div>
 </div>
 <p>Here we can see that, Gentoo penguins have significantly different body masses compared to both Adelie and Chinstrap species.</p>
-</section><section id="references" class="level2" data-number="6"><h2 data-number="6" class="anchored" data-anchor-id="references">
-<span class="header-section-number">6</span> References</h2>
+</section><section id="references" class="level2" data-number="5"><h2 data-number="5" class="anchored" data-anchor-id="references">
+<span class="header-section-number">5</span> References</h2>
 <ol type="1">
 <li><p>Cardinal, R.N., &amp; Aitken, M.R.F. (2005). ANOVA for the Behavioral Sciences Researcher (1st ed.). Psychology Press. https://doi.org/10.4324/9780203763933 <a href="https://www.taylorfrancis.com/books/mono/10.4324/9780203763933/anova-behavioral-sciences-researcher-rudolf-cardinal-michael-aitken">Link</a></p></li>
 <li><p>Keselman HJ, Huberty CJ, Lix LM, et al.&nbsp;Statistical Practices of Educational Researchers: An Analysis of their ANOVA, MANOVA, and ANCOVA Analyses. Review of Educational Research. 1998;68(3):350-386. doi:10.3102/00346543068003350 <a href="https://journals.sagepub.com/doi/abs/10.3102/00346543068003350">Link</a></p></li>
@@ -627,7 +623,7 @@ P value adjustment method: BH </code></pre>
 <section id="last-updated-on" class="level4 unnumbered unlisted"><h4 class="unnumbered unlisted anchored" data-anchor-id="last-updated-on">Last updated on</h4>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-05-25 21:46:23 IST"</code></pre>
+<pre><code>[1] "2022-05-25 21:47:36 IST"</code></pre>
 </div>
 </div>
 <p><a hidden="" href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a></p>
@@ -958,7 +954,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb21-191"><a href="#cb21-191" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-192"><a href="#cb21-192" aria-hidden="true" tabindex="-1"></a>We got tot the same inference as last time.</span>
 <span id="cb21-193"><a href="#cb21-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-194"><a href="#cb21-194" aria-hidden="true" tabindex="-1"></a><span class="fu">## two way ANOVA with dependent variable</span></span>
+<span id="cb21-194"><a href="#cb21-194" aria-hidden="true" tabindex="-1"></a><span class="fu">### two way ANOVA with dependent variable</span></span>
 <span id="cb21-195"><a href="#cb21-195" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-196"><a href="#cb21-196" aria-hidden="true" tabindex="-1"></a>Now suppose that there is a synergistic effect between <span class="in">`species`</span> and <span class="in">`sex`</span> variable. Then in that case they are not independent with each other, nevertheless we can incorporate this factor by changing the addition sign <span class="in">`+`</span> between the variables to an asterisk sign <span class="in">`*`</span>.</span>
 <span id="cb21-197"><a href="#cb21-197" aria-hidden="true" tabindex="-1"></a></span>
