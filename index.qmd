@@ -8,9 +8,7 @@ editor: source
 <div class="main">
 ## Welcome to One Carat Blog
 
-My name is Jewel Johnson and I am the creator of this blog. The blog was first made using the `{distill}` package in R. Eventually the blog was remade using the new `{quarto}` package. If you are a beginner and wants to learn R programming, check out my **R tutorials** section in the navigation bar.
-
-Update: I am working on making tutorials on basic statistics and it is a work in progress. You can find the completed projects in the **Statistics** section in the navigation bar. Please report any errors or typos you find in the posts using the comment feature enabled via `hypothes` which can normally find on the top-right part of the page. Hope you enjoy the blog!
+My name is Jewel Johnson and I am the creator of this blog. The blog was first made using the `{distill}` package in R. Eventually the blog was remade using the new `{quarto}` package. I write science and R-programming articles, so check out my posts. 
 
 <center>        
 <a href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
