@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.440">
+<meta name="generator" content="quarto-0.9.449">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jewel Johnson">
 <meta name="dcterms.date" content="2022-05-21">
-<title>one carat blog - Distribution and variance</title>
+<title>one carat blog - Chapter 2: Distribution and variance</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -119,7 +119,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 <link rel="stylesheet" href="../../styles.css">
 <link rel="stylesheet" href="styles.css">
-<meta name="twitter:title" content="one carat blog - Distribution and variance">
+<meta name="twitter:title" content="one carat blog - Chapter 2: Distribution and variance">
 <meta name="twitter:image" content="https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/images/ggplot2.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -178,15 +178,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-statistics">
 <li>
     <a class="dropdown-item" href="../../articles/stat/project1.html">
- <span class="dropdown-text">Introduction to statistics with R</span></a>
+ <span class="dropdown-text">Chapter 1: Introduction to statistics with R</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../articles/stat/project2.html">
- <span class="dropdown-text">Distribution and variance</span></a>
+ <span class="dropdown-text">Chapter 2: Distribution and variance</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../articles/stat/project3.html">
- <span class="dropdown-text">Standard error and standard deviation</span></a>
+ <span class="dropdown-text">Chapter 3: Standard error and standard deviation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project4.html">
+ <span class="dropdown-text">Chapter 4: p-value and level of significance</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project5.html">
+ <span class="dropdown-text">Chapter 5: Type I and Type II errors</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project6.html">
+ <span class="dropdown-text">Chapter 6: Confidence interval and effect sizes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project7.html">
+ <span class="dropdown-text">Chapter 7: Parametric tests and assumptions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project8.html">
+ <span class="dropdown-text">Chapter 8: Non-parametric test and assumptions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project9.html">
+ <span class="dropdown-text">Chapter 9: Tests for multiple groups of data</span></a>
   </li>  
     </ul>
 </li>
@@ -216,13 +240,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
 <li><a href="#distribution-and-variance" id="toc-distribution-and-variance" class="nav-link active" data-scroll-target="#distribution-and-variance"> <span class="header-section-number">1</span> Distribution and variance</a></li>
   <li><a href="#variance" id="toc-variance" class="nav-link" data-scroll-target="#variance"> <span class="header-section-number">2</span> Variance</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">3</span> References</a></li>
   </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/edit/main/articles/stat/project2.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Distribution and variance</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Chapter 2: Distribution and variance</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 <p class="subtitle lead"></p>
-<p>Learn about distributions and variance</p>
+<p>Learn about normal, bimodal, skewed distributions and the variance</p>
 </div>
 
 
@@ -264,7 +289,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="project2_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>As you can see, the data distribution closely resembles a “bell-shaped” curve. This kind of distribution is known as a <code>normal distribution</code> or a <code>Gaussian distribution</code>. On closer look you can also see that the area under the curve is almost symmetrical to both sides and there is only a single peak present. We can also learn about the <code>variance</code> of the data by looking at the width of the curve. A wider curve means variance is higher and a narrower curve means variance in the data is smaller. Also for a normal distribution, there are no visible outliers present in the plot. The peak represents the <code>mean</code> of the data.</p>
+<p>As you can see, the data distribution closely resembles a “bell-shaped” curve. This kind of distribution is known as a <code>normal distribution</code> or a <code>Gaussian distribution</code>. On closer look, you can also see that the area under the curve is almost symmetrical to both sides and there is only a single peak present. We can also learn about the <code>variance</code> of the data by looking at the width of the curve. A wider curve means variance is higher and a narrower curve means variance in the data is smaller. Also for a normal distribution, there are no visible outliers present in the plot. The peak represents the <code>mean</code> of the data.</p>
 <div class="cell">
 <details><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
@@ -311,7 +336,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="project2_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>Unlike the previous curve this one clearly has two peaks. This kind of curve is an example of “bimodal distribution”. Now what caused these two peaks to form in this one but not in the first one? So we can guess that there is some hidden variable that is affecting the body mass distribution of Gentoo penguins. What about the ‘sex’ of the penguins? Will that have any effect? Let us try plotting the same plot but in terms of ‘sex’ of the penguins.</p>
+<p>Unlike the previous curve this one has two peaks. This kind of curve is an example for a “bimodal distribution”. Now what would have caused these two peaks to form in this one but not in the first one? So we can guess that there is some hidden variable that is affecting the body mass distribution of Gentoo penguins. What about the ‘sex’ of the penguins? Will that have any effect? Let us try plotting the same plot but in terms of the sex of the penguins.</p>
 <div class="cell">
 <details><summary>Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co">#install.packages("palmerpenguins")</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
@@ -344,7 +369,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="project2_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>This is an example of a “skewed distribution”. Moreover this is a “right-skewed distribution”, why is it called right-skewed? Look at the same plot below.</p>
+<p>This is an example of a “skewed distribution”. Moreover, this is a “right-skewed distribution”, why is it called right-skewed? Look at the same plot below.</p>
 <div class="cell">
 <details><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co">#install.packages("palmerpenguins")</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
@@ -372,30 +397,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="project2_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>I have plotted the mean, median and mode values for the plot and you can see that the mean value is more that the mode value. This is why the curve is indicated as right-skewed, as the mean is skewed towards the right side of the mode value. If it was the other way around then the curve will be called “left-skewed”. Also in this case if we had used mean value to represent the dataset it would have been a poor choice and you clearly see that median is better choice compared to mean. Therefore when the dataset is skewed, median is better choice to represent the dataset. Mode will be best suited for datasets with lot of repeated values.</p>
+<p>I have plotted the mean, median, and mode values for the plot and you can see that the mean value is more than the mode value. This is why the curve is indicated as right-skewed, as the mean is skewed towards the right side of the mode value. If it was the other way around then the curve will be called “left-skewed”. Also in this case, if we had used the mean value to represent the dataset it would have been a poor choice and you see that the median is a better choice compared to the mean. Therefore when the dataset is skewed, the median is the better choice to represent the dataset. The mode will be best suited for datasets with a lot of repeated values.</p>
 <div id="fig-anonymous-1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><a href="https://www.biologyforlife.com/uploads/2/2/3/9/22392738/c101b0da6ea1a0dab31f80d9963b0368_orig.png"><img src="https://www.biologyforlife.com/uploads/2/2/3/9/22392738/c101b0da6ea1a0dab31f80d9963b0368_orig.png" class="img-fluid figure-img"></a></p>
+<figure class="figure"><p><a href="https://www.biologyforlife.com/skew.html"><img src="https://www.biologyforlife.com/uploads/2/2/3/9/22392738/c101b0da6ea1a0dab31f80d9963b0368_orig.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Fig1: Types of distributions. Credits: biologyforlife.com</figcaption><p></p>
 </figure>
 </div>
 </section><section id="variance" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="variance">
 <span class="header-section-number">2</span> Variance</h2>
-<p>Variance of a data is defined as the average of squared difference from the mean of the data. Basically it tell us how far each of our data points are from the mean value.</p>
+<p>The variance of data is defined as the average squared difference from the mean of the data. It tells us how far each of our data points is from the mean value.</p>
 <div id="fig-anonymous-2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><a href="https://access-excel.tips/excel-range-variance-standard-deviation/"><img src="http://cdn-0.access-excel.tips/wp-content/uploads/2015/05/variability.gif" class="img-fluid figure-img"></a></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Fig2: Variance in distributions. Credits: https://access-excel.tips/</figcaption><p></p>
 </figure>
 </div>
 <p>The formula for finding the variance is as follows;</p>
-<p><span class="math display">s^{2} = \frac{\sum (x_{i} - \bar{x})^{2}}{N - 1}</span></p>
-<p>Where <span class="math inline">s^{2}</span> is <code>variance</code>, <span class="math inline">x_{i}</span> is your data point, <span class="math inline">\bar{x}</span> is mean and <span class="math inline">N</span> is the sample size.</p>
-<p>For sufficiently large value of <span class="math inline">N</span>, the equation for variance will become;</p>
-<p><span class="math display">\sigma^{2} = \frac{\sum (x_{i} - \bar{x})^{2}}{N}</span> where <span class="math inline">\sigma^{2}</span> is called <code>population variance</code>.</p>
-<p>Further more <span class="math inline">\sigma</span> is called as the <code>standard deviation</code> of the data which we will see in detail later.</p>
+<p><span class="math display">s^{2} = \frac{\sum (x_{i} - \bar{x})^{2}}{n - 1}</span></p>
+<p>Where <span class="math inline">s^{2}</span> is <code>sample variance</code>, <span class="math inline">x_{i}</span> is your data point, <span class="math inline">\bar{x}</span> is mean and <span class="math inline">n</span> is the sample size.</p>
+<p>For a sufficiently large value of <span class="math inline">n</span>, the equation for variance will become;</p>
+<p><span class="math display">\sigma^{2} = \frac{\sum (x_{i} - \bar{x})^{2}}{n}</span> where <span class="math inline">\sigma^{2}</span> is called <code>population variance</code>.</p>
+<p>Here <span class="math inline">\sigma</span> is called the <code>standard deviation</code> of the data which we will see in the next chapter.</p>
+<p>When we compare both equations, you can see that the sample variance has <span class="math inline">n-1</span> in the denominator when compared to just <span class="math inline">n</span> in population variance. The <span class="math inline">n-1</span> used in the formula is called the <code>Bessel's correction</code> which aims to improve the accuracy in determining the sample variance as close as the population variance.</p>
+</section><section id="references" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="references">
+<span class="header-section-number">3</span> References</h2>
+<ol type="1">
+<li><p>Notes on skewed data <a href="https://www.biologyforlife.com/skew.html">distributions</a>.</p></li>
+<li><p>More notes on <a href="https://access-excel.tips/excel-range-variance-standard-deviation/">variance</a>.</p></li>
+<li><p>More notes on Basel correction. <a href="https://web.mit.edu/18.06/www/Spring17/Statistics-and-PCA.pdf">1</a> and <a href="https://en.wikipedia.org/wiki/Bessel%27s_correction">2</a></p></li>
+</ol>
 <section id="last-updated-on" class="level4 unnumbered unlisted"><h4 class="unnumbered unlisted anchored" data-anchor-id="last-updated-on">Last updated on</h4>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-05-23 09:07:41 IST"</code></pre>
+<pre><code>[1] "2022-05-25 20:41:06 IST"</code></pre>
 </div>
 </div>
 <p><a hidden="" href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a></p>
@@ -405,14 +438,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{johnson2022,
   author = {Jewel Johnson},
-  title = {Distribution and Variance},
+  title = {Chapter 2: {Distribution} and Variance},
   date = {05/21/2022},
   url = {https://jeweljohnsonj.github.io/one-carat-blog//articles/stat/project2.html},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-johnson2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Jewel Johnson. 5AD–21AD. <span>“Distribution and Variance.”</span>
-5AD–21AD. <a href="https://jeweljohnsonj.github.io/one-carat-blog//articles/stat/project2.html">https://jeweljohnsonj.github.io/one-carat-blog//articles/stat/project2.html</a>.
+Jewel Johnson. 5AD–21AD. <span>“Chapter 2: Distribution and
+Variance.”</span> 5AD–21AD. <a href="https://jeweljohnsonj.github.io/one-carat-blog//articles/stat/project2.html">https://jeweljohnsonj.github.io/one-carat-blog//articles/stat/project2.html</a>.
 </div></div></section></div></main><!-- /main --><script src="../../site_libs/quarto-html/zenscroll-min.js"></script><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const icon = "";
@@ -544,9 +577,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb8" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Distribution and variance"</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Chapter 2: Distribution and variance"</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> |</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">  Learn about distributions and variance</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">  Learn about normal, bimodal, skewed distributions and the variance</span></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Jewel Johnson"</span></span>
 <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "05-21-2022"</span></span>
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
@@ -604,7 +637,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb8-63"><a href="#cb8-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span>
 <span id="cb8-64"><a href="#cb8-64" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a>As you can see, the data distribution closely resembles a "bell-shaped" curve. This kind of distribution is known as a <span class="in">`normal distribution`</span> or a <span class="in">`Gaussian distribution`</span>. On closer look you can also see that the area under the curve is almost symmetrical to both sides and there is only a single peak present. We can also learn about the <span class="in">`variance`</span> of the data by looking at the width of the curve. A wider curve means variance is higher and a narrower curve means variance in the data is smaller. Also for a normal distribution, there are no visible outliers present in the plot. The peak represents the <span class="in">`mean`</span> of the data.</span>
+<span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a>As you can see, the data distribution closely resembles a "bell-shaped" curve. This kind of distribution is known as a <span class="in">`normal distribution`</span> or a <span class="in">`Gaussian distribution`</span>. On closer look, you can also see that the area under the curve is almost symmetrical to both sides and there is only a single peak present. We can also learn about the <span class="in">`variance`</span> of the data by looking at the width of the curve. A wider curve means variance is higher and a narrower curve means variance in the data is smaller. Also for a normal distribution, there are no visible outliers present in the plot. The peak represents the <span class="in">`mean`</span> of the data.</span>
 <span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb8-71"><a href="#cb8-71" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -650,7 +683,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb8-113"><a href="#cb8-113" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span>
 <span id="cb8-114"><a href="#cb8-114" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb8-115"><a href="#cb8-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-116"><a href="#cb8-116" aria-hidden="true" tabindex="-1"></a>Unlike the previous curve this one clearly has two peaks. This kind of curve is an example of "bimodal distribution". Now what caused these two peaks to form in this one but not in the first one? So we can guess that there is some hidden variable that is affecting the body mass distribution of Gentoo penguins. What about the 'sex' of the penguins? Will that have any effect? Let us try plotting the same plot but in terms of 'sex' of the penguins.</span>
+<span id="cb8-116"><a href="#cb8-116" aria-hidden="true" tabindex="-1"></a>Unlike the previous curve this one has two peaks. This kind of curve is an example for a "bimodal distribution". Now what would have caused these two peaks to form in this one but not in the first one? So we can guess that there is some hidden variable that is affecting the body mass distribution of Gentoo penguins. What about the 'sex' of the penguins? Will that have any effect? Let us try plotting the same plot but in terms of the sex of the penguins.</span>
 <span id="cb8-117"><a href="#cb8-117" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-120"><a href="#cb8-120" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb8-121"><a href="#cb8-121" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("palmerpenguins")</span></span>
@@ -682,7 +715,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb8-149"><a href="#cb8-149" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span>
 <span id="cb8-150"><a href="#cb8-150" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb8-151"><a href="#cb8-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-152"><a href="#cb8-152" aria-hidden="true" tabindex="-1"></a>This is an example of a "skewed distribution". Moreover this is a "right-skewed distribution", why is it called right-skewed? Look at the same plot below.</span>
+<span id="cb8-152"><a href="#cb8-152" aria-hidden="true" tabindex="-1"></a>This is an example of a "skewed distribution". Moreover, this is a "right-skewed distribution", why is it called right-skewed? Look at the same plot below.</span>
 <span id="cb8-153"><a href="#cb8-153" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-156"><a href="#cb8-156" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb8-157"><a href="#cb8-157" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("palmerpenguins")</span></span>
@@ -709,36 +742,46 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb8-178"><a href="#cb8-178" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"none"</span>)</span>
 <span id="cb8-179"><a href="#cb8-179" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb8-180"><a href="#cb8-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-181"><a href="#cb8-181" aria-hidden="true" tabindex="-1"></a>I have plotted the mean, median and mode values for the plot and you can see that the mean value is more that the mode value. This is why the curve is indicated as right-skewed, as the mean is skewed towards the right side of the mode value. If it was the other way around then the curve will be called "left-skewed". Also in this case if we had used mean value to represent the dataset it would have been a poor choice and you clearly see that median is better choice compared to mean. Therefore when the dataset is skewed, median is better choice to represent the dataset. Mode will be best suited for datasets with lot of repeated values.</span>
+<span id="cb8-181"><a href="#cb8-181" aria-hidden="true" tabindex="-1"></a>I have plotted the mean, median, and mode values for the plot and you can see that the mean value is more than the mode value. This is why the curve is indicated as right-skewed, as the mean is skewed towards the right side of the mode value. If it was the other way around then the curve will be called "left-skewed". Also in this case, if we had used the mean value to represent the dataset it would have been a poor choice and you see that the median is a better choice compared to the mean. Therefore when the dataset is skewed, the median is the better choice to represent the dataset. The mode will be best suited for datasets with a lot of repeated values.</span>
 <span id="cb8-182"><a href="#cb8-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-183"><a href="#cb8-183" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Fig1: Types of distributions. Credits: biologyforlife.com](https://www.biologyforlife.com/uploads/2/2/3/9/22392738/c101b0da6ea1a0dab31f80d9963b0368_orig.png)</span><span class="co">](https://www.biologyforlife.com/uploads/2/2/3/9/22392738/c101b0da6ea1a0dab31f80d9963b0368_orig.png)</span></span>
+<span id="cb8-183"><a href="#cb8-183" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Fig1: Types of distributions. Credits: biologyforlife.com](https://www.biologyforlife.com/uploads/2/2/3/9/22392738/c101b0da6ea1a0dab31f80d9963b0368_orig.png)</span><span class="co">](https://www.biologyforlife.com/skew.html)</span></span>
 <span id="cb8-184"><a href="#cb8-184" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-185"><a href="#cb8-185" aria-hidden="true" tabindex="-1"></a><span class="fu">## Variance</span></span>
 <span id="cb8-186"><a href="#cb8-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-187"><a href="#cb8-187" aria-hidden="true" tabindex="-1"></a>Variance of a data is defined as the average of squared difference from the mean of the data. Basically it tell us how far each of our data points are from the mean value.</span>
+<span id="cb8-187"><a href="#cb8-187" aria-hidden="true" tabindex="-1"></a>The variance of data is defined as the average squared difference from the mean of the data. It tells us how far each of our data points is from the mean value.</span>
 <span id="cb8-188"><a href="#cb8-188" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-189"><a href="#cb8-189" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Fig2: Variance in distributions. Credits: https://access-excel.tips/](http://cdn-0.access-excel.tips/wp-content/uploads/2015/05/variability.gif)</span><span class="co">](https://access-excel.tips/excel-range-variance-standard-deviation/)</span></span>
 <span id="cb8-190"><a href="#cb8-190" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-191"><a href="#cb8-191" aria-hidden="true" tabindex="-1"></a>The formula for finding the variance is as follows;</span>
 <span id="cb8-192"><a href="#cb8-192" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-193"><a href="#cb8-193" aria-hidden="true" tabindex="-1"></a>$$s^{2} = \frac{\sum (x_{i} - \bar{x})^{2}}{N - 1}$$</span>
+<span id="cb8-193"><a href="#cb8-193" aria-hidden="true" tabindex="-1"></a>$$s^{2} = \frac{\sum (x_{i} - \bar{x})^{2}}{n - 1}$$</span>
 <span id="cb8-194"><a href="#cb8-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-195"><a href="#cb8-195" aria-hidden="true" tabindex="-1"></a>Where $s^{2}$ is <span class="in">`variance`</span>, $x_{i}$ is your data point, $\bar{x}$ is mean and $N$ is the sample size.</span>
+<span id="cb8-195"><a href="#cb8-195" aria-hidden="true" tabindex="-1"></a>Where $s^{2}$ is <span class="in">`sample variance`</span>, $x_{i}$ is your data point, $\bar{x}$ is mean and $n$ is the sample size.</span>
 <span id="cb8-196"><a href="#cb8-196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-197"><a href="#cb8-197" aria-hidden="true" tabindex="-1"></a>For sufficiently large value of $N$, the equation for variance will become;</span>
+<span id="cb8-197"><a href="#cb8-197" aria-hidden="true" tabindex="-1"></a>For a sufficiently large value of $n$, the equation for variance will become;</span>
 <span id="cb8-198"><a href="#cb8-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-199"><a href="#cb8-199" aria-hidden="true" tabindex="-1"></a>$$\sigma^{2} = \frac{\sum (x_{i} - \bar{x})^{2}}{N}$$ where $\sigma^{2}$ is called <span class="in">`population variance`</span>.</span>
+<span id="cb8-199"><a href="#cb8-199" aria-hidden="true" tabindex="-1"></a>$$\sigma^{2} = \frac{\sum (x_{i} - \bar{x})^{2}}{n}$$ where $\sigma^{2}$ is called <span class="in">`population variance`</span>.</span>
 <span id="cb8-200"><a href="#cb8-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-201"><a href="#cb8-201" aria-hidden="true" tabindex="-1"></a>Further more $\sigma$ is called as the <span class="in">`standard deviation`</span> of the data which we will see in detail later.</span>
+<span id="cb8-201"><a href="#cb8-201" aria-hidden="true" tabindex="-1"></a>Here $\sigma$ is called the <span class="in">`standard deviation`</span> of the data which we will see in the next chapter.</span>
 <span id="cb8-202"><a href="#cb8-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-203"><a href="#cb8-203" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Last updated on {.unnumbered .unlisted}</span></span>
+<span id="cb8-203"><a href="#cb8-203" aria-hidden="true" tabindex="-1"></a>When we compare both equations, you can see that the sample variance has $n-1$ in the denominator when compared to just $n$ in population variance. The $n-1$ used in the formula is called the <span class="in">`Bessel's correction`</span> which aims to improve the accuracy in determining the sample variance as close as the population variance.</span>
 <span id="cb8-204"><a href="#cb8-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-207"><a href="#cb8-207" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-208"><a href="#cb8-208" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb8-209"><a href="#cb8-209" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span>
-<span id="cb8-210"><a href="#cb8-210" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-211"><a href="#cb8-211" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-212"><a href="#cb8-212" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">hidden</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://info.flagcounter.com/ynrK"</span><span class="kw">&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"Flag Counter"</span> <span class="er">border</span><span class="ot">=</span><span class="st">"0"</span><span class="kw">/&gt;&lt;/a&gt;</span></span>
+<span id="cb8-205"><a href="#cb8-205" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
+<span id="cb8-206"><a href="#cb8-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-207"><a href="#cb8-207" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Notes on skewed data <span class="co">[</span><span class="ot">distributions</span><span class="co">](https://www.biologyforlife.com/skew.html)</span>.</span>
+<span id="cb8-208"><a href="#cb8-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-209"><a href="#cb8-209" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>More notes on <span class="co">[</span><span class="ot">variance</span><span class="co">](https://access-excel.tips/excel-range-variance-standard-deviation/)</span>.</span>
+<span id="cb8-210"><a href="#cb8-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-211"><a href="#cb8-211" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>More notes on Basel correction. <span class="co">[</span><span class="ot">1</span><span class="co">](https://web.mit.edu/18.06/www/Spring17/Statistics-and-PCA.pdf)</span> and <span class="co">[</span><span class="ot">2</span><span class="co">](https://en.wikipedia.org/wiki/Bessel%27s_correction)</span></span>
+<span id="cb8-212"><a href="#cb8-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-213"><a href="#cb8-213" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Last updated on {.unnumbered .unlisted}</span></span>
+<span id="cb8-214"><a href="#cb8-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-217"><a href="#cb8-217" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-218"><a href="#cb8-218" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb8-219"><a href="#cb8-219" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span>
+<span id="cb8-220"><a href="#cb8-220" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-221"><a href="#cb8-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-222"><a href="#cb8-222" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">hidden</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://info.flagcounter.com/ynrK"</span><span class="kw">&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"Flag Counter"</span> <span class="er">border</span><span class="ot">=</span><span class="st">"0"</span><span class="kw">/&gt;&lt;/a&gt;</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

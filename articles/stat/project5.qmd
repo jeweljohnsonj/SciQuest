@@ -1,5 +1,5 @@
 ---
-title: "Type I and Type II errors"
+title: "Chapter 5: Type I and Type II errors"
 subtitle: |
   Learn about type I and type II errors
 author: "Jewel Johnson"
@@ -45,13 +45,19 @@ registerS3method(
 
 ## Type I error
 
-Type I error happens when we fail to reject the null hypothesis when it is actually true. It is also called as 'false-positive'. The chance of type I error to occur is determined by the level of significance($\alpha$) that we set prior to our experiments. Generally $\alpha$ is set at a value of 0.05. Like previously mentioned, at this value, there is a 5% chance that the observed results or more extreme results to occur, given that the null hypothesis is true. At lower values of $\alpha$, the chance of type I error to occur reduces.
+Type I error happens when we fail to reject the null hypothesis when it is true. It is also called 'false-positive'. The chance of a type I error occurring is determined by the level of significance($\alpha$) that we set before our experiments. Generally, $\alpha$ is set at a value of 0.05. As previously mentioned, at this value, there is a 5% chance that the observed results or more extreme results to occur, given that the null hypothesis is true. At lower values of $\alpha$, the chance of type I error to occur reduces.
 
 [![Fig1: Type I error. Credits: www.scribbr.com](https://cdn.scribbr.com/wp-content/uploads/2021/01/type-i-error-rate.png)](https://www.scribbr.com/statistics/type-i-and-type-ii-errors/)
 
 ## Type II error
 
-Type II error happens when we fail to not reject null hypothesis when it is actually false. It is also called as 'false-negative'. The chance of type II error to occur is inversely proportional to the statistical power of the study.
+Type II error happens when we fail to not reject the null hypothesis when it is false. It is also called 'false-negative'. The chance of type II error occurring is inversely proportional to the statistical power of the study. The statistical power of a study depends on many factors. Two of those factors are the effect size and the sample size. The effect size describes how strong the relationship is between the variables that we are experimenting with. So studies having smaller effect sizes will lead to higher chances of committing type II error when the sample size is small. Since we cannot do anything about the effect size of a study all we can do is increase the sample size of the study. Another factor that affects the chance of causing type II error is the level of significance($\alpha$) we set. At lower levels of $\alpha$, there is less chance of type II error.
+
+In the later chapters, we will see how to calculate the effect size of a study using R.
+
+## References
+
+1.  Ioannidis JPA (2005) Why Most Published Research Findings Are False. PLOS Medicine 2(8): e124. https://doi.org/10.1371/journal.pmed.0020124 [Link](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124)
 
 #### Last updated on {.unnumbered .unlisted}
 

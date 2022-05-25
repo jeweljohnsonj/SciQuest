@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jewel Johnson">
 <meta name="dcterms.date" content="2022-05-21">
-<title>one carat blog - Chapter 1: Introduction to statistics with R</title>
+<title>one carat blog - Chapter 6: Confidence interval and effect size</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -103,9 +103,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-submit-button-title": "Submit"
   }
 }</script><style>html{ scroll-behavior: smooth; }</style>
-<script async="" src="https://hypothes.is/embed.js"></script><link rel="stylesheet" href="../../styles.css">
+<script async="" src="https://hypothes.is/embed.js"></script><script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script><script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+<link rel="stylesheet" href="../../styles.css">
 <link rel="stylesheet" href="styles.css">
-<meta name="twitter:title" content="one carat blog - Chapter 1: Introduction to statistics with R">
+<meta name="twitter:title" content="one carat blog - Chapter 6: Confidence interval and effect size">
 <meta name="twitter:image" content="https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/images/ggplot2.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -224,16 +238,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <nav id="TOC" role="doc-toc"><h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#introduction-to-statistics" id="toc-introduction-to-statistics" class="nav-link active" data-scroll-target="#introduction-to-statistics"> <span class="header-section-number">1</span> Introduction to statistics</a></li>
-  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics"> <span class="header-section-number">2</span> Descriptive statistics</a></li>
-  <li><a href="#inferential-statistics" id="toc-inferential-statistics" class="nav-link" data-scroll-target="#inferential-statistics"> <span class="header-section-number">3</span> Inferential statistics</a></li>
-  </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/edit/main/articles/stat/project1.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<li><a href="#confidence-interval-ci" id="toc-confidence-interval-ci" class="nav-link active" data-scroll-target="#confidence-interval-ci"> <span class="header-section-number">1</span> Confidence interval (CI)</a></li>
+  <li><a href="#effect-size" id="toc-effect-size" class="nav-link" data-scroll-target="#effect-size"> <span class="header-section-number">2</span> Effect size</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">3</span> References</a></li>
+  </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/edit/main/articles/stat/project6.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Chapter 1: Introduction to statistics with R</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Chapter 6: Confidence interval and effect size</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 <p class="subtitle lead"></p>
-<p>Learn the basics of statistics and how to do them with R</p>
+<p>Learn about confidence interval and effect size</p>
 </div>
 
 
@@ -257,32 +271,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </div>
   
 
-</header><section id="introduction-to-statistics" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="introduction-to-statistics">
-<span class="header-section-number">1</span> Introduction to statistics</h2>
-<p>This article, along with the related articles to this topic, is a culmination of knowledge that I gained during my time in IISER-TVM, when I took the BIO4203 course named <strong>Biological Data Analysis</strong> offered in 2019. The course was taught to me by Dr.&nbsp;Ravi Maruthachalam who is an excellent teacher and an inspiring researcher. The course helped me immensely by allowing me to understand the core basics of statistics and more importantly, remove any misconceptions about it. I hope I can deliver whatever I learned effectively through the series of articles that will be available regarding this topic, starting with this one.</p>
-<p>The topics I want to cover include;</p>
+</header><section id="confidence-interval-ci" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="confidence-interval-ci">
+<span class="header-section-number">1</span> Confidence interval (CI)</h2>
+<p>Confidence interval(CI) can be thought of as a range of values derived from a point estimate (for eg: sample mean) which has a likelihood of having the true point estimate of the population. The likelihood is set by the user and generally, they are set at 95%. A 95% confidence interval means that if the experiment were to be repeated multiple times 95% of the calculated intervals from the experiments would contain the true point estimate value. The CI is descriptive statistics which is used for population data but can also be used for sample data.</p>
+<p>The formula for finding CI is;</p>
+<p><span class="math display">CI = \mu ± z*S.E = \mu ± z*(\sigma/\sqrt n)</span> Where <span class="math inline">\mu</span> is sample mean, <span class="math inline">S.E</span> is standard error of means, <span class="math inline">z</span> is z-value, <span class="math inline">\sigma</span> is standard deviation and <span class="math inline">n</span> is the sample size.</p>
+<p>For calculating 95% CI the corresponding z-value is 1.96. Normally for sufficiently large value sample sizes this formula works fine, but for sample sizes &lt; 30, instead of the z-score we use the t-statistic which is obtained from the t-distribution. Also in this case, instead of <span class="math inline">n</span> in the denominator, we use degrees of freedom which <span class="math inline">n-1</span>. The formula then becomes;</p>
+<p><span class="math display">CI = \mu ± t*(\sigma/\sqrt{n-1})</span> The t-statistic will depend on the degrees of freedom and the confidence level.</p>
+<p>The confidence interval can be more useful when compared to p-value as they convey the precision of our estimates. The width of the CI is affected by the sample size and standard deviation, therefore CI with higher sample sizes is better in representing the population estimate. Generally, the standard deviation used for calculating CI should be the population standard deviation which unfortunately is most times an unknown value. Therefore for the calculations, it is better to use the SD from the control group as they resemble SD value close to the population value as they don’t undergo treatment. If both the control group and the treatment group have equal or close to equal variances, then we can use “pooled SD” for calculating the CI. Pooled SD is the average of both the treatment and the control groups SD.</p>
+</section><section id="effect-size" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="effect-size">
+<span class="header-section-number">2</span> Effect size</h2>
+<p>As previously mentioned, the p-value does not convey any information about the magnitude of an effect. The CI does a fair job of giving us a range of values but it is dependent on the sample size. This is where effect size comes in. The effect size of a study tells us the magnitude of the difference between the two groups. There are many ways effect size can be calculated as shown in the table below.</p>
+<div id="fig-anonymous-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3444174/"><img src="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3444174/bin/i1949-8357-4-3-279-t01.jpg" class="img-fluid figure-img"></a></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Fig1: Effect sizes. Credits: Sullivan, G. M., &amp; Feinn, R. (2012)</figcaption><p></p>
+</figure>
+</div>
+</section><section id="references" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="references">
+<span class="header-section-number">3</span> References</h2>
 <ol type="1">
-<li>Introduction to statistics</li>
-<li>Distribution and variance</li>
-<li>Standard error and standard deviation</li>
-<li>p-value and level of significance</li>
-<li>Type I error and type II error</li>
-<li>Confidence interval and effect size</li>
-<li>Parametric test and assumptions</li>
-<li>Non-parametric test and assumptions</li>
-<li>Tests for multiple groups of data</li>
+<li><p>Lee D. K. (2016). Alternatives to P value: confidence interval and effect size. Korean journal of anesthesiology, 69(6), 555–562. https://doi.org/10.4097/kjae.2016.69.6.555 <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5133225/">Link</a></p></li>
+<li><p>Hazra A. (2017). Using the confidence interval confidently. Journal of thoracic disease, 9(10), 4125–4130. https://doi.org/10.21037/jtd.2017.09.14 <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5723800/">Link</a></p></li>
+<li><p>Sullivan, G. M., &amp; Feinn, R. (2012). Using Effect Size-or Why the P Value Is Not Enough. Journal of graduate medical education, 4(3), 279–282. https://doi.org/10.4300/JGME-D-12-00156.1 <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3444174/">Link</a></p></li>
+<li><p>Ialongo C. (2016). Understanding the effect size and its measures. Biochemia medica, 26(2), 150–163. https://doi.org/10.11613/BM.2016.015 <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4910276/">Link</a></p></li>
+<li><p>Nakagawa S, Cuthill IC. Effect size, confidence interval and statistical significance: a practical guide for biologists. Biol Rev Camb Philos Soc. 2007 Nov;82(4):591-605. doi: 10.1111/j.1469-185X.2007.00027.x. Erratum in: Biol Rev Camb Philos Soc. 2009 Aug;84(3):515. PMID: 17944619. <a href="https://pubmed.ncbi.nlm.nih.gov/17944619/">Link</a></p></li>
 </ol>
-<p>With that being said, the articles will be focused on enriching the intuition behind the concepts rather than the pure math behind them. In addition, I will also be explaining how one can do the same tests using R. The articles will be supplemented by published research papers related to the topic.</p>
-</section><section id="descriptive-statistics" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="descriptive-statistics">
-<span class="header-section-number">2</span> Descriptive statistics</h2>
-<p>Applied statistics is broadly categorized into <code>descriptive statistics</code> and <code>inferential statistics</code>. Descriptive statistics deals with the data at hand. It uses different ways to summarise and inspect the data in hand and does not go beyond the data. If the data is for a population then the characteristics used are called <code>parameters</code>. Some of those descriptive parameters include the mean, median, and mode which are used to elucidate the central tendency of the data. For measuring variability, there is a range, quartiles, and standard deviation which we will see later in greater detail.</p>
-</section><section id="inferential-statistics" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="inferential-statistics">
-<span class="header-section-number">3</span> Inferential statistics</h2>
-<p>Inferential statistics are used to understand patterns of a population using sample data from it. Since collecting data for a population is tedious, we take a sample from that population, which acts as a true representative of the population. Through sampling methods and hypothesis testing, patterns seen within the sample can be extrapolated to the whole population. The characteristics used for sample data are called <code>statistics</code>. Some of the inferential statistics include sample mean, standard deviation, etc.</p>
 <section id="last-updated-on" class="level4 unnumbered unlisted"><h4 class="unnumbered unlisted anchored" data-anchor-id="last-updated-on">Last updated on</h4>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-05-25 20:40:46 IST"</code></pre>
+<pre><code>[1] "2022-05-25 20:41:13 IST"</code></pre>
 </div>
 </div>
 <p><a hidden="" href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a></p>
@@ -292,14 +309,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{johnson2022,
   author = {Jewel Johnson},
-  title = {Chapter 1: {Introduction} to Statistics with {R}},
+  title = {Chapter 6: {Confidence} Interval and Effect Size},
   date = {05/21/2022},
-  url = {https://jeweljohnsonj.github.io/one-carat-blog//articles/stat/project1.html},
+  url = {https://jeweljohnsonj.github.io/one-carat-blog//articles/stat/project6.html},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-johnson2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Jewel Johnson. 5AD–21AD. <span>“Chapter 1: Introduction to Statistics
-with R.”</span> 5AD–21AD. <a href="https://jeweljohnsonj.github.io/one-carat-blog//articles/stat/project1.html">https://jeweljohnsonj.github.io/one-carat-blog//articles/stat/project1.html</a>.
+Jewel Johnson. 5AD–21AD. <span>“Chapter 6: Confidence Interval and
+Effect Size.”</span> 5AD–21AD. <a href="https://jeweljohnsonj.github.io/one-carat-blog//articles/stat/project6.html">https://jeweljohnsonj.github.io/one-carat-blog//articles/stat/project6.html</a>.
 </div></div></section></div></main><!-- /main --><script src="../../site_libs/quarto-html/zenscroll-min.js"></script><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const icon = "";
@@ -431,9 +448,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Chapter 1: Introduction to statistics with R"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Chapter 6: Confidence interval and effect size"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> |</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">  Learn the basics of statistics and how to do them with R</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">  Learn about confidence interval and effect size</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Jewel Johnson"</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "05-21-2022"</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
@@ -454,42 +471,67 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span><span class="co"> </span></span>
 <span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
 <span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "images/ggplot2.png"</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction to statistics</span></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>This article, along with the related articles to this topic, is a culmination of knowledge that I gained during my time in IISER-TVM, when I took the BIO4203 course named **Biological Data Analysis** offered in 2019. The course was taught to me by Dr. Ravi Maruthachalam who is an excellent teacher and an inspiring researcher. The course helped me immensely by allowing me to understand the core basics of statistics and more importantly, remove any misconceptions about it. I hope I can deliver whatever I learned effectively through the series of articles that will be available regarding this topic, starting with this one.</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>The topics I want to cover include;</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Introduction to statistics</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Distribution and variance</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Standard error and standard deviation</span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>p-value and level of significance</span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>Type I error and type II error</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="ss">6.  </span>Confidence interval and effect size</span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="ss">7.  </span>Parametric test and assumptions</span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="ss">8.  </span>Non-parametric test and assumptions</span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="ss">9.  </span>Tests for multiple groups of data</span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>With that being said, the articles will be focused on enriching the intuition behind the concepts rather than the pure math behind them. In addition, I will also be explaining how one can do the same tests using R. The articles will be supplemented by published research papers related to the topic.</span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="fu">## Descriptive statistics</span></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>Applied statistics is broadly categorized into <span class="in">`descriptive statistics`</span> and <span class="in">`inferential statistics`</span>. Descriptive statistics deals with the data at hand. It uses different ways to summarise and inspect the data in hand and does not go beyond the data. If the data is for a population then the characteristics used are called <span class="in">`parameters`</span>. Some of those descriptive parameters include the mean, median, and mode which are used to elucidate the central tendency of the data. For measuring variability, there is a range, quartiles, and standard deviation which we will see later in greater detail.</span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="fu">## Inferential statistics</span></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>Inferential statistics are used to understand patterns of a population using sample data from it. Since collecting data for a population is tedious, we take a sample from that population, which acts as a true representative of the population. Through sampling methods and hypothesis testing, patterns seen within the sample can be extrapolated to the whole population. The characteristics used for sample data are called <span class="in">`statistics`</span>. Some of the inferential statistics include sample mean, standard deviation, etc.</span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Last updated on {.unnumbered .unlisted}</span></span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> true</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>paged_print <span class="ot">&lt;-</span> <span class="cf">function</span>(x, options) {</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">asis_output</span>(</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    rmarkdown<span class="sc">:::</span><span class="fu">paged_table_html</span>(x, <span class="at">options =</span> <span class="fu">attr</span>(</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>      x,</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>      <span class="st">"options"</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    )),</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">meta =</span> <span class="fu">list</span>(<span class="at">dependencies =</span> rmarkdown<span class="sc">::</span><span class="fu">html_dependency_pagedtable</span>())</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="fu">registerS3method</span>(</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>  <span class="st">"knit_print"</span>, <span class="st">"data.frame"</span>, paged_print,</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>  <span class="at">envir =</span> <span class="fu">asNamespace</span>(<span class="st">"knitr"</span>)</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="fu">## Confidence interval (CI)</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>Confidence interval(CI) can be thought of as a range of values derived from a point estimate (for eg: sample mean) which has a likelihood of having the true point estimate of the population. The likelihood is set by the user and generally, they are set at 95%. A 95% confidence interval means that if the experiment were to be repeated multiple times 95% of the calculated intervals from the experiments would contain the true point estimate value. The CI is descriptive statistics which is used for population data but can also be used for sample data.</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>The formula for finding CI is;</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>$$CI = \mu ± z*S.E = \mu ± z*(\sigma/\sqrt n)$$ Where $\mu$ is sample mean, $S.E$ is standard error of means, $z$ is z-value, $\sigma$ is standard deviation and $n$ is the sample size.</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>For calculating 95% CI the corresponding z-value is 1.96. Normally for sufficiently large value sample sizes this formula works fine, but for sample sizes <span class="sc">\&lt;</span> 30, instead of the z-score we use the t-statistic which is obtained from the t-distribution. Also in this case, instead of $n$ in the denominator, we use degrees of freedom which $n-1$. The formula then becomes;</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>$$CI = \mu ± t*(\sigma/\sqrt{n-1})$$ The t-statistic will depend on the degrees of freedom and the confidence level.</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>The confidence interval can be more useful when compared to p-value as they convey the precision of our estimates. The width of the CI is affected by the sample size and standard deviation, therefore CI with higher sample sizes is better in representing the population estimate. Generally, the standard deviation used for calculating CI should be the population standard deviation which unfortunately is most times an unknown value. Therefore for the calculations, it is better to use the SD from the control group as they resemble SD value close to the population value as they don't undergo treatment. If both the control group and the treatment group have equal or close to equal variances, then we can use "pooled SD" for calculating the CI. Pooled SD is the average of both the treatment and the control groups SD.</span>
 <span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">hidden</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://info.flagcounter.com/ynrK"</span><span class="kw">&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"Flag Counter"</span> <span class="er">border</span><span class="ot">=</span><span class="st">"0"</span><span class="kw">/&gt;&lt;/a&gt;</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="fu">## Effect size</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>As previously mentioned, the p-value does not convey any information about the magnitude of an effect. The CI does a fair job of giving us a range of values but it is dependent on the sample size. This is where effect size comes in. The effect size of a study tells us the magnitude of the difference between the two groups. There are many ways effect size can be calculated as shown in the table below.</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Fig1: Effect sizes. Credits: Sullivan, G. M., &amp; Feinn, R. (2012)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3444174/bin/i1949-8357-4-3-279-t01.jpg)</span><span class="co">](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3444174/)</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Lee D. K. (2016). Alternatives to P value: confidence interval and effect size. Korean journal of anesthesiology, 69(6), 555--562. https://doi.org/10.4097/kjae.2016.69.6.555 <span class="co">[</span><span class="ot">Link</span><span class="co">](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5133225/)</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Hazra A. (2017). Using the confidence interval confidently. Journal of thoracic disease, 9(10), 4125--4130. https://doi.org/10.21037/jtd.2017.09.14 <span class="co">[</span><span class="ot">Link</span><span class="co">](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5723800/)</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Sullivan, G. M., &amp; Feinn, R. (2012). Using Effect Size-or Why the P Value Is Not Enough. Journal of graduate medical education, 4(3), 279--282. https://doi.org/10.4300/JGME-D-12-00156.1 <span class="co">[</span><span class="ot">Link</span><span class="co">](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3444174/)</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>Ialongo C. (2016). Understanding the effect size and its measures. Biochemia medica, 26(2), 150--163. https://doi.org/10.11613/BM.2016.015 <span class="co">[</span><span class="ot">Link</span><span class="co">](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4910276/)</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>Nakagawa S, Cuthill IC. Effect size, confidence interval and statistical significance: a practical guide for biologists. Biol Rev Camb Philos Soc. 2007 Nov;82(4):591-605. doi: 10.1111/j.1469-185X.2007.00027.x. Erratum in: Biol Rev Camb Philos Soc. 2009 Aug;84(3):515. PMID: 17944619. <span class="co">[</span><span class="ot">Link</span><span class="co">](https://pubmed.ncbi.nlm.nih.gov/17944619/)</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Last updated on {.unnumbered .unlisted}</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">hidden</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://info.flagcounter.com/ynrK"</span><span class="kw">&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"Flag Counter"</span> <span class="er">border</span><span class="ot">=</span><span class="st">"0"</span><span class="kw">/&gt;&lt;/a&gt;</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

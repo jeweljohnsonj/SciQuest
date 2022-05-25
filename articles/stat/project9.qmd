@@ -1,0 +1,312 @@
+---
+title: "Chapter 9: Tests for multiple groups of data"
+subtitle: |
+  Learn about ANOVA and its non-paramteric derivatives
+author: "Jewel Johnson"
+date: "05-21-2022"
+format:
+  html:
+    toc: true
+    toc-title: On this page
+    html-math-method: katex
+    css: styles.css
+    number-sections: true
+    smooth-scroll: true
+    highlight-style: github
+    code-link: true
+    code-tools: true
+citation: true
+comments:
+  hypothesis: true
+execute: 
+  warning: false
+image: "images/ggplot2.png"
+draft: true
+---
+
+```{r}
+#| include: false
+paged_print <- function(x, options) {
+  knitr::asis_output(
+    rmarkdown:::paged_table_html(x, options = attr(
+      x,
+      "options"
+    )),
+    meta = list(dependencies = rmarkdown::html_dependency_pagedtable())
+  )
+}
+
+registerS3method(
+  "knit_print", "data.frame", paged_print,
+  envir = asNamespace("knitr")
+)
+```
+
+## Multiple pairwise comparisons problem
+
+Imagine you are rolling dice. Then the probability to get 6 as an outcome is;
+
+```{=tex}
+\begin{align}
+P(probability\ to\ get\ 6) &= 1/6 \\
+&= 1- P(probability\ to\ not\ get\ 6) \\
+&= 1- 5/6 \\
+Therefore;\ P(probability\ to\ not\ get\ 6) &= 1- 1/6
+\end{align}
+```
+Let's roll the dice for the second time, the what is the probability to get at least one 6 in these two attempts.
+
+```{=tex}
+\begin{align}
+P(probability\ to\ get\ at\ least\ one\ 6\ in\ two\ rolls) &= 1/6 + 1/6\\
+&= 1- P(probability\ to\ not\ get\ 6\ in\ two\ rolls) \\
+&= 1 - (1 - 1/6)^2
+\end{align}
+```
+Therefore for $n$ rolls, we have the probability to get at least one 6 as;
+
+```{=tex}
+\begin{align}
+P(probability\ to\ get\ 6\ in\ n\ rolls) &= 1/6 + 1/6 + \dots \\
+&= 1- P(probability\ to\ not\ get\ 6\ in\ n\ rolls) \\
+&= 1 - (1 - 1/6)^n
+\end{align}
+```
+Therefore as we keep increasing the rolls, we are bound to get a 6 in one of these rolls. This means the probability to get 6 increases as the number of rolls increases.
+
+Now with the same notion as earlier, imagine the following situation.
+
+Imagine you have set $\alpha$ = 0.05, then the probability to have a type I error will be 0.05, and the probability of not having a type I error will be 0.95.
+
+```{=tex}
+\begin{align}
+P(Probability\ to\ have\ type\ I\ error)&= 1 - P(Probability\ to\ not\ have\ type\ I\ error) \\
+&= 1- 0.95 \\
+Therefore;\ P(Probability\ to\ not\ have\ type\ I\ error) &= 1 - 0.05
+\end{align}
+```
+Now if we do the same test again, the probability to get at least a single type I error is;
+
+```{=tex}
+\begin{align}
+P(Probability\ to\ have\ at\ least\ one\ type\ I\ error\ in\ 2\ tests)&= 1 - P(Probability\ to\ have\ no\ type\ I\ error\ in\ 2\ tests) \\
+&= 1- (1-0.05)^2
+\end{align}
+```
+Therefore if we perform $n$ pairwise comparisons, then the probability to have at least one type I error in n tests is;
+
+```{=tex}
+\begin{align}
+P(Probability\ to\ have\ at\ least\ one\ type\ I\ error\ in\ n\ tests)&= 1 - P(Probability\ to\ have\ no\ type\ I\ error\ in\ n\ tests) \\
+&= 1- (1-0.05)^n
+\end{align}
+```
+Like for the coin toss problem we get an increased probability to get a type I error, even when we had set the initial $\alpha$ to be 0.05. As an example, if we do multiple t-tests for different groups in our data, considering multiple hypotheses, we have a high chance of getting a type I error. This is known as a multiple pairwise comparison problem. This is avoided by implementing countermeasures called multiple comparison corrections such as Tukey Honest Significant Differences and the Bonferroni method.
+
+## Parametric multiple comparison test
+
+If the data follows the assumptions for parametric tests, then for comparing multiple independent groups of data, we can ANOVA. A significant p-value from ANOVA indicates some of the group differences are significantly different from each other, but it does not tell which of these groups are different from each other. To know which groups are different from each other, we perform a post hoc test like a t-test, Tukey's test etc.
+
+## ANOVA
+
+### one way ANOVA
+
+Now let us try doing ANOVA in R. Like before, we will be using the `penguins` dataset from the `{palmerpenguins}` package in R. We will compare the body masses of all three species of penguins in the dataset and see if any two of them are significantly different from each other. In this case, we will be doing a one-way ANOVA, where species is our independent variable and body mass is the independent variable.
+
+```{r}
+#install.packages("palmerpenguins")
+#install.packages("tidyverse")
+library(palmerpenguins)
+library(tidyverse)
+
+# selecting species and mass columns
+pen_mass <- penguins[,c(1,6)]
+# one way ANOVA test
+anova1 <- aov(body_mass_g ~ species, data = pen_mass)
+# summarising test result
+summary(anova1)
+```
+
+The column Pr(\>F) corresponds to the p-value of the test and from the result we find that the test returned a statistically significant p-value. Now to see which species have different body masses from each other, we run a post-hoc test which in this case, we will run a Tukey HSD test.
+
+```{r}
+#install.packages("palmerpenguins")
+#install.packages("tidyverse")
+library(palmerpenguins)
+library(tidyverse)
+
+# selecting species and mass columns
+pen_mass <- penguins[,c(1,6)]
+# one way ANOVA test
+anova1 <- aov(body_mass_g ~ species, data = pen_mass)
+# tukey HSD test
+TukeyHSD(anova1)
+```
+
+From the post-hoc test, we can see that body masses between Gentoo-Adelie and Gentoo-Chinstrap are significantly different from each other.
+
+### two way ANOVA
+
+Now if we have more than one independent variable, then we can do a `two-way ANOVA`. In the test below we have both `species` and `island` as the independent variables.
+
+```{r}
+#install.packages("palmerpenguins")
+#install.packages("tidyverse")
+library(palmerpenguins)
+library(tidyverse)
+
+# selecting species and mass columns
+pen_mass_land <- penguins[,c(1,2,6)]
+# two way ANOVA test
+anova2 <- aov(body_mass_g ~ species + island, data = pen_mass_land)
+# summarising test result
+summary(anova2)
+```
+
+Here the results suggests that, body masses are different between species but there is no significant difference in body mass across the different islands. The follow up post-hoc test would look like this.
+
+```{r}
+#install.packages("palmerpenguins")
+#install.packages("tidyverse")
+library(palmerpenguins)
+library(tidyverse)
+
+# selecting species and mass columns
+pen_mass_land <- penguins[,c(1,2,6)]
+# two way ANOVA test
+anova2 <- aov(body_mass_g ~ species + island, data = pen_mass_land)
+# tukey HSD test
+TukeyHSD(anova2)
+```
+
+We got tot the same inference as last time.
+
+## two way ANOVA with dependent variable
+
+Now suppose that there is a synergistic effect between `species` and `sex` variable. Then in that case they are not independent with each other, nevertheless we can incorporate this factor by changing the addition sign `+` between the variables to an asterisk sign `*`.
+
+```{r}
+#install.packages("palmerpenguins")
+#install.packages("tidyverse")
+library(palmerpenguins)
+library(tidyverse)
+
+# selecting species and mass columns
+pen_mass_land <- penguins[,c(1,6,7)]
+# two way ANOVA test with dependent variables
+# species and sex variables are dependent in nature
+anova_2 <- aov(body_mass_g ~ species * sex, data = pen_mass_land)
+# summarising test result
+summary(anova_2)
+```
+
+From the result we can see that both species and sex have a significant effect on body mass and also the interaction between species and sex is also a significant effect.
+
+The follow up post hoc test result will be;
+
+```{r}
+#install.packages("palmerpenguins")
+#install.packages("tidyverse")
+library(palmerpenguins)
+library(tidyverse)
+
+# selecting species and mass columns
+pen_mass_land <- penguins[,c(1,6,7)]
+# two way ANOVA test with dependent variables
+# species and sex variables are dependent in nature
+anova_2 <- aov(body_mass_g ~ species * sex, data = pen_mass_land)
+# tukey HSD test
+TukeyHSD(anova_2)
+```
+
+From the pairwise comparisons we can see that male and female penguins have significantly different body masses and also the Chinstrap penguins with respect to sex, have similar body mass to Adelie penguins.
+
+### ANOVA test for unbalanced designs
+
+Now if the dataset has unequal sample sizes for each groups, then we can use the `ANOVA test for unbalanced designs`. To use the test we would require the `{car}` package in R.
+
+```{r}
+#install.packages("palmerpenguins")
+#install.packages("tidyverse")
+#install.packages(“car”)
+library(palmerpenguins)
+library(tidyverse)
+library(car)
+
+# selecting species and mass columns
+pen_mass_land <- penguins[,c(1,6,7)]
+# two way ANOVA test with dependent variables
+# species and sex variables are dependent in nature
+anova_2 <- aov(body_mass_g ~ species * sex, data = pen_mass_land)
+Anova(anova_2, type = "III")
+```
+
+### MANOVA
+
+If you have multiple dependent variables, then you can use `MANOVA`. Here our dependent variables are body mass and bill depth and independent variable is species. We want to see if body mass and bill depth is associated with different species of penguins.
+
+```{r}
+#install.packages("palmerpenguins")
+#install.packages("tidyverse")
+#install.packages(“car”)
+library(palmerpenguins)
+library(tidyverse)
+library(car)
+
+# selecting species and mass columns
+pen_mass_bill <- penguins[,c(1,4,6)]
+mass_bill <- cbind(penguins$bill_depth_mm, penguins$body_mass_g)
+# two way ANOVA test with dependent variables
+# species and sex variables are dependent in nature
+anova_3<- manova(mass_bill ~ species, data = pen_mass_bill)
+summary(anova_3)
+```
+
+From the result, we can see that, species statistically significant association with both combined body mass and bill depth variables.
+
+## Kruskal-Wallis Test
+
+The Kruskal-Wallis test is the non-parametric equivalent of ANOVA.
+
+```{r}
+#install.packages("palmerpenguins")
+#install.packages("tidyverse")
+library(palmerpenguins)
+library(tidyverse)
+
+# selecting species and mass columns
+pen_mass <- penguins[,c(1,6)]
+# Kruskal-Wallis Test
+kruskal.test(body_mass_g ~ species, data = pen_mass)
+```
+
+For post-hoc test, we can use the non-parametric version of pairwise comparisons tests coupled with p-value correction. Here we will be using the Wilcoxon rank sum test.
+
+```{r}
+#install.packages("palmerpenguins")
+#install.packages("tidyverse")
+library(palmerpenguins)
+library(tidyverse)
+
+# selecting species and mass columns
+pen_mass <- penguins[,c(1,6)]
+# wilcoxon rank sum test
+pairwise.wilcox.test(pen_mass$body_mass_g, pen_mass$species, p.adjust.method = "BH")
+```
+
+Here we can see that, Gentoo penguins have significantly different body masses compared to both Adelie and Chinstrap species.
+
+## References
+
+1.  Cardinal, R.N., & Aitken, M.R.F. (2005). ANOVA for the Behavioral Sciences Researcher (1st ed.). Psychology Press. https://doi.org/10.4324/9780203763933 [Link](https://www.taylorfrancis.com/books/mono/10.4324/9780203763933/anova-behavioral-sciences-researcher-rudolf-cardinal-michael-aitken)
+
+2.  Keselman HJ, Huberty CJ, Lix LM, et al. Statistical Practices of Educational Researchers: An Analysis of their ANOVA, MANOVA, and ANCOVA Analyses. Review of Educational Research. 1998;68(3):350-386. doi:10.3102/00346543068003350 [Link](https://journals.sagepub.com/doi/abs/10.3102/00346543068003350)
+
+#### Last updated on {.unnumbered .unlisted}
+
+```{r}
+#| echo: false
+Sys.time()
+```
+
+<a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>

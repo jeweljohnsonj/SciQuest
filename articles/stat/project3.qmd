@@ -1,7 +1,7 @@
 ---
-title: "Standard error and standard deviation"
+title: "Chapter 3: Standard error and standard deviation"
 subtitle: |
-  Learn about standard error and standard deviation
+  Learn about standard error and standard deviation, and get to know the standard normal distribution
 author: "Jewel Johnson"
 date: "05-21-2022"
 format:
@@ -44,29 +44,29 @@ registerS3method(
 
 ## Standard error
 
-The standard error or more accurately called as the `standard error of mean` is measure of spread that calculates how far the sample mean is different the population mean. It basically calculates the error in a sample statistic compared to the corresponding population parameter.
+The standard error or more accurately called the `standard error of mean` is a measure of spread that calculates how far the sample mean is different from the population mean. It calculates the error in a sample statistic compared to the corresponding population parameter.
 
-The formula to calculate standard error of mean is;
+The formula to calculate the standard error of mean is;
 
 $$\sigma_{\bar{X}} = \frac{s}{\sqrt{N}}$$
 
 where $\sigma_{\bar{X}}$ is standard error of mean, $s$ is sample standard deviation and $N$ is sample size.
 
-As you can see from the formula, if we increase our sampling size, the standard error of mean decreases and therefore our sample mean will closely resembling the population mean.
+As you can see from the formula, if we increase our sampling size, the standard error of the mean decreases, and therefore our sample mean will closely resemble the population mean.
 
 ## Standard deviation
 
 The equivalent of standard error, but for a sample in a population. Simply put, it tells us how much spread is there within a data, more precisely speaking, how much each of our data points are spread around the mean.
 
-The formula to calculate standard deviation of mean is;
+The formula to calculate the standard deviation of the mean is;
 
 $$s = \sqrt{s^{2}} = \sqrt{\frac{\sum (x_{i} - \bar{x})^{2}}{N - 1}}$$ where $s$ is standard deviation, $\sqrt{s^{2}}$ is variance, $x_{i}$ is your data point, $\bar{x}$ is sample mean and $N$ is sample size.
 
-Standard deviation is generally constant across the population and is larger than the standard error of mean. Because of which sometimes researchers cheat out by using standard error of mean in the results, rather than using standard deviation to show a false idea that their measurements are accurate.
+Standard deviation is generally constant across the population and is larger than the standard error of the mean. Because of this sometimes researchers cheat out by using standard error of the mean in the results, rather than using standard deviation, which leads to a false idea that their measurements are accurate.
 
 ## Standard normal distribution
 
-A normal distribution with mean($\mu$) = 1 and variance($\sigma^{2}$) = 1 is called as a `standard normal distribution` or a `z-distribution`. With the help of standard deviation, we can split the area under the curve of standard normal distribution into three parts. This partitioning of area is known as the `68–95–99.7 rule`. What it means is that;
+A normal distribution with mean($\mu$) = 1 and variance($\sigma^{2}$) = 1 is called as a `standard normal distribution` or a `z-distribution`. With the help of standard deviation, we can split the area under the curve of standard normal distribution into three parts. This partitioning of the area is known as the `68–95–99.7 rule`. What it means is that;
 
 -   68% of the data will lie within $±\sigma$ from $\mu$
 -   95% of the data will lie within $±2\sigma$ from $\mu$
@@ -74,9 +74,13 @@ A normal distribution with mean($\mu$) = 1 and variance($\sigma^{2}$) = 1 is cal
 
 [![Fig1: 68--95--99.7 rule. Credits: www.nagwa.com](https://images.nagwa.com/figures/explainers/378184608718/2.svg)](https://www.nagwa.com/en/explainers/378184608718/)
 
-Like previously mentioned, the width of the curve and tell us about the variance/standard deviation of the data.
+As previously mentioned, the width of the curve tells us about the variance/standard deviation of the data.
 
 [![Fig2: Area under the curve for different standard deviations. Credits: www.varsitytutors.com](https://www.varsitytutors.com/assets/vt-hotmath-legacy/hotmath_help/topics/normal-distribution-of-data/normal-distribution-1.gif)](https://www.varsitytutors.com/hotmath/hotmath_help/topics/normal-distribution-of-data)
+
+## References
+
+1.  Livingston EH. The mean and standard deviation: what does it all mean? J Surg Res. 2004 Jun 15;119(2):117-23. doi: 10.1016/j.jss.2004.02.008. PMID: 15145692. [Source](https://www.journalofsurgicalresearch.com/article/S0022-4804(04)00055-1/fulltext)
 
 #### Last updated on {.unnumbered .unlisted}
 

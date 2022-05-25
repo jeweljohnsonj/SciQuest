@@ -39,12 +39,24 @@ website:
           href: project7.qmd
       - text: "Statistics"
         menu:
-        - text: "Introduction to statistics with R"
+        - text: "Chapter 1: Introduction to statistics with R"
           href: articles/stat/project1.qmd
-        - text: "Distribution and variance"
+        - text: "Chapter 2: Distribution and variance"
           href: articles/stat/project2.qmd
-        - text: "Standard error and standard deviation"
+        - text: "Chapter 3: Standard error and standard deviation"
           href: articles/stat/project3.qmd
+        - text: "Chapter 4: p-value and level of significance"
+          href: articles/stat/project4.qmd
+        - text: "Chapter 5: Type I and Type II errors"
+          href: articles/stat/project5.qmd
+        - text: "Chapter 6: Confidence interval and effect sizes"
+          href: articles/stat/project6.qmd  
+        - text: "Chapter 7: Parametric tests and assumptions"
+          href: articles/stat/project7.qmd
+        - text: "Chapter 8: Non-parametric test and assumptions"
+          href: articles/stat/project8.qmd
+        - text: "Chapter 9: Tests for multiple groups of data"
+          href: articles/stat/project9.qmd
       - text: "About me"
         href: https://jeweljohnsonj.github.io/jewel_resume/
       - icon: github

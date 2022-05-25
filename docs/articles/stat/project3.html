@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.440">
+<meta name="generator" content="quarto-0.9.449">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jewel Johnson">
 <meta name="dcterms.date" content="2022-05-21">
-<title>one carat blog - Standard error and standard deviation</title>
+<title>one carat blog - Chapter 3: Standard error and standard deviation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -119,7 +119,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 <link rel="stylesheet" href="../../styles.css">
 <link rel="stylesheet" href="styles.css">
-<meta name="twitter:title" content="one carat blog - Standard error and standard deviation">
+<meta name="twitter:title" content="one carat blog - Chapter 3: Standard error and standard deviation">
 <meta name="twitter:image" content="https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/images/ggplot2.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -178,15 +178,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-statistics">
 <li>
     <a class="dropdown-item" href="../../articles/stat/project1.html">
- <span class="dropdown-text">Introduction to statistics with R</span></a>
+ <span class="dropdown-text">Chapter 1: Introduction to statistics with R</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../articles/stat/project2.html">
- <span class="dropdown-text">Distribution and variance</span></a>
+ <span class="dropdown-text">Chapter 2: Distribution and variance</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../articles/stat/project3.html">
- <span class="dropdown-text">Standard error and standard deviation</span></a>
+ <span class="dropdown-text">Chapter 3: Standard error and standard deviation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project4.html">
+ <span class="dropdown-text">Chapter 4: p-value and level of significance</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project5.html">
+ <span class="dropdown-text">Chapter 5: Type I and Type II errors</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project6.html">
+ <span class="dropdown-text">Chapter 6: Confidence interval and effect sizes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project7.html">
+ <span class="dropdown-text">Chapter 7: Parametric tests and assumptions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project8.html">
+ <span class="dropdown-text">Chapter 8: Non-parametric test and assumptions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project9.html">
+ <span class="dropdown-text">Chapter 9: Tests for multiple groups of data</span></a>
   </li>  
     </ul>
 </li>
@@ -217,13 +241,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#standard-error" id="toc-standard-error" class="nav-link active" data-scroll-target="#standard-error"> <span class="header-section-number">1</span> Standard error</a></li>
   <li><a href="#standard-deviation" id="toc-standard-deviation" class="nav-link" data-scroll-target="#standard-deviation"> <span class="header-section-number">2</span> Standard deviation</a></li>
   <li><a href="#standard-normal-distribution" id="toc-standard-normal-distribution" class="nav-link" data-scroll-target="#standard-normal-distribution"> <span class="header-section-number">3</span> Standard normal distribution</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">4</span> References</a></li>
   </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/edit/main/articles/stat/project3.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Standard error and standard deviation</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Chapter 3: Standard error and standard deviation</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 <p class="subtitle lead"></p>
-<p>Learn about standard error and standard deviation</p>
+<p>Learn about standard error and standard deviation, and get to know the standard normal distribution</p>
 </div>
 
 
@@ -249,20 +274,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header><section id="standard-error" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="standard-error">
 <span class="header-section-number">1</span> Standard error</h2>
-<p>The standard error or more accurately called as the <code>standard error of mean</code> is measure of spread that calculates how far the sample mean is different the population mean. It basically calculates the error in a sample statistic compared to the corresponding population parameter.</p>
-<p>The formula to calculate standard error of mean is;</p>
+<p>The standard error or more accurately called the <code>standard error of mean</code> is a measure of spread that calculates how far the sample mean is different from the population mean. It calculates the error in a sample statistic compared to the corresponding population parameter.</p>
+<p>The formula to calculate the standard error of mean is;</p>
 <p><span class="math display">\sigma_{\bar{X}} = \frac{s}{\sqrt{N}}</span></p>
 <p>where <span class="math inline">\sigma_{\bar{X}}</span> is standard error of mean, <span class="math inline">s</span> is sample standard deviation and <span class="math inline">N</span> is sample size.</p>
-<p>As you can see from the formula, if we increase our sampling size, the standard error of mean decreases and therefore our sample mean will closely resembling the population mean.</p>
+<p>As you can see from the formula, if we increase our sampling size, the standard error of the mean decreases, and therefore our sample mean will closely resemble the population mean.</p>
 </section><section id="standard-deviation" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="standard-deviation">
 <span class="header-section-number">2</span> Standard deviation</h2>
 <p>The equivalent of standard error, but for a sample in a population. Simply put, it tells us how much spread is there within a data, more precisely speaking, how much each of our data points are spread around the mean.</p>
-<p>The formula to calculate standard deviation of mean is;</p>
+<p>The formula to calculate the standard deviation of the mean is;</p>
 <p><span class="math display">s = \sqrt{s^{2}} = \sqrt{\frac{\sum (x_{i} - \bar{x})^{2}}{N - 1}}</span> where <span class="math inline">s</span> is standard deviation, <span class="math inline">\sqrt{s^{2}}</span> is variance, <span class="math inline">x_{i}</span> is your data point, <span class="math inline">\bar{x}</span> is sample mean and <span class="math inline">N</span> is sample size.</p>
-<p>Standard deviation is generally constant across the population and is larger than the standard error of mean. Because of which sometimes researchers cheat out by using standard error of mean in the results, rather than using standard deviation to show a false idea that their measurements are accurate.</p>
+<p>Standard deviation is generally constant across the population and is larger than the standard error of the mean. Because of this sometimes researchers cheat out by using standard error of the mean in the results, rather than using standard deviation, which leads to a false idea that their measurements are accurate.</p>
 </section><section id="standard-normal-distribution" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="standard-normal-distribution">
 <span class="header-section-number">3</span> Standard normal distribution</h2>
-<p>A normal distribution with mean(<span class="math inline">\mu</span>) = 1 and variance(<span class="math inline">\sigma^{2}</span>) = 1 is called as a <code>standard normal distribution</code> or a <code>z-distribution</code>. With the help of standard deviation, we can split the area under the curve of standard normal distribution into three parts. This partitioning of area is known as the <code>68–95–99.7 rule</code>. What it means is that;</p>
+<p>A normal distribution with mean(<span class="math inline">\mu</span>) = 1 and variance(<span class="math inline">\sigma^{2}</span>) = 1 is called as a <code>standard normal distribution</code> or a <code>z-distribution</code>. With the help of standard deviation, we can split the area under the curve of standard normal distribution into three parts. This partitioning of the area is known as the <code>68–95–99.7 rule</code>. What it means is that;</p>
 <ul>
 <li>68% of the data will lie within <span class="math inline">±\sigma</span> from <span class="math inline">\mu</span>
 </li>
@@ -276,16 +301,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p></p><figcaption aria-hidden="true" class="figure-caption">Fig1: 68–95–99.7 rule. Credits: www.nagwa.com</figcaption><p></p>
 </figure>
 </div>
-<p>Like previously mentioned, the width of the curve and tell us about the variance/standard deviation of the data.</p>
+<p>As previously mentioned, the width of the curve tells us about the variance/standard deviation of the data.</p>
 <div id="fig-anonymous-2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><a href="https://www.varsitytutors.com/hotmath/hotmath_help/topics/normal-distribution-of-data"><img src="https://www.varsitytutors.com/assets/vt-hotmath-legacy/hotmath_help/topics/normal-distribution-of-data/normal-distribution-1.gif" class="img-fluid figure-img"></a></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Fig2: Area under the curve for different standard deviations. Credits: www.varsitytutors.com</figcaption><p></p>
 </figure>
 </div>
+</section><section id="references" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="references">
+<span class="header-section-number">4</span> References</h2>
+<ol type="1">
+<li>Livingston EH. The mean and standard deviation: what does it all mean? J Surg Res. 2004 Jun 15;119(2):117-23. doi: 10.1016/j.jss.2004.02.008. PMID: 15145692. <a href="https://www.journalofsurgicalresearch.com/article/S0022-4804(04)00055-1/fulltext">Source</a>
+</li>
+</ol>
 <section id="last-updated-on" class="level4 unnumbered unlisted"><h4 class="unnumbered unlisted anchored" data-anchor-id="last-updated-on">Last updated on</h4>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-05-23 09:07:11 IST"</code></pre>
+<pre><code>[1] "2022-05-25 20:40:43 IST"</code></pre>
 </div>
 </div>
 <p><a hidden="" href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a></p>
@@ -295,13 +326,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{johnson2022,
   author = {Jewel Johnson},
-  title = {Standard Error and Standard Deviation},
+  title = {Chapter 3: {Standard} Error and Standard Deviation},
   date = {05/21/2022},
   url = {https://jeweljohnsonj.github.io/one-carat-blog//articles/stat/project3.html},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-johnson2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Jewel Johnson. 5AD–21AD. <span>“Standard Error and Standard
+Jewel Johnson. 5AD–21AD. <span>“Chapter 3: Standard Error and Standard
 Deviation.”</span> 5AD–21AD. <a href="https://jeweljohnsonj.github.io/one-carat-blog//articles/stat/project3.html">https://jeweljohnsonj.github.io/one-carat-blog//articles/stat/project3.html</a>.
 </div></div></section></div></main><!-- /main --><script src="../../site_libs/quarto-html/zenscroll-min.js"></script><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -434,9 +465,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Standard error and standard deviation"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Chapter 3: Standard error and standard deviation"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> |</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">  Learn about standard error and standard deviation</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">  Learn about standard error and standard deviation, and get to know the standard normal distribution</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Jewel Johnson"</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "05-21-2022"</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
@@ -479,29 +510,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="fu">## Standard error</span></span>
 <span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>The standard error or more accurately called as the <span class="in">`standard error of mean`</span> is measure of spread that calculates how far the sample mean is different the population mean. It basically calculates the error in a sample statistic compared to the corresponding population parameter.</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>The standard error or more accurately called the <span class="in">`standard error of mean`</span> is a measure of spread that calculates how far the sample mean is different from the population mean. It calculates the error in a sample statistic compared to the corresponding population parameter.</span>
 <span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>The formula to calculate standard error of mean is;</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>The formula to calculate the standard error of mean is;</span>
 <span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>$$\sigma_{\bar{X}} = \frac{s}{\sqrt{N}}$$</span>
 <span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>where $\sigma_{\bar{X}}$ is standard error of mean, $s$ is sample standard deviation and $N$ is sample size.</span>
 <span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>As you can see from the formula, if we increase our sampling size, the standard error of mean decreases and therefore our sample mean will closely resembling the population mean.</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>As you can see from the formula, if we increase our sampling size, the standard error of the mean decreases, and therefore our sample mean will closely resemble the population mean.</span>
 <span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="fu">## Standard deviation</span></span>
 <span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>The equivalent of standard error, but for a sample in a population. Simply put, it tells us how much spread is there within a data, more precisely speaking, how much each of our data points are spread around the mean.</span>
 <span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>The formula to calculate standard deviation of mean is;</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>The formula to calculate the standard deviation of the mean is;</span>
 <span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>$$s = \sqrt{s^{2}} = \sqrt{\frac{\sum (x_{i} - \bar{x})^{2}}{N - 1}}$$ where $s$ is standard deviation, $\sqrt{s^{2}}$ is variance, $x_{i}$ is your data point, $\bar{x}$ is sample mean and $N$ is sample size.</span>
 <span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>Standard deviation is generally constant across the population and is larger than the standard error of mean. Because of which sometimes researchers cheat out by using standard error of mean in the results, rather than using standard deviation to show a false idea that their measurements are accurate.</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>Standard deviation is generally constant across the population and is larger than the standard error of the mean. Because of this sometimes researchers cheat out by using standard error of the mean in the results, rather than using standard deviation, which leads to a false idea that their measurements are accurate.</span>
 <span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="fu">## Standard normal distribution</span></span>
 <span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>A normal distribution with mean($\mu$) = 1 and variance($\sigma^{2}$) = 1 is called as a <span class="in">`standard normal distribution`</span> or a <span class="in">`z-distribution`</span>. With the help of standard deviation, we can split the area under the curve of standard normal distribution into three parts. This partitioning of area is known as the <span class="in">`68–95–99.7 rule`</span>. What it means is that;</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>A normal distribution with mean($\mu$) = 1 and variance($\sigma^{2}$) = 1 is called as a <span class="in">`standard normal distribution`</span> or a <span class="in">`z-distribution`</span>. With the help of standard deviation, we can split the area under the curve of standard normal distribution into three parts. This partitioning of the area is known as the <span class="in">`68–95–99.7 rule`</span>. What it means is that;</span>
 <span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>68% of the data will lie within $±\sigma$ from $\mu$</span>
 <span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>95% of the data will lie within $±2\sigma$ from $\mu$</span>
@@ -509,18 +540,22 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Fig1: 68--95--99.7 rule. Credits: www.nagwa.com](https://images.nagwa.com/figures/explainers/378184608718/2.svg)</span><span class="co">](https://www.nagwa.com/en/explainers/378184608718/)</span></span>
 <span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>Like previously mentioned, the width of the curve and tell us about the variance/standard deviation of the data.</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>As previously mentioned, the width of the curve tells us about the variance/standard deviation of the data.</span>
 <span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Fig2: Area under the curve for different standard deviations. Credits: www.varsitytutors.com](https://www.varsitytutors.com/assets/vt-hotmath-legacy/hotmath_help/topics/normal-distribution-of-data/normal-distribution-1.gif)</span><span class="co">](https://www.varsitytutors.com/hotmath/hotmath_help/topics/normal-distribution-of-data)</span></span>
 <span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Last updated on {.unnumbered .unlisted}</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
 <span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span>
-<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">hidden</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://info.flagcounter.com/ynrK"</span><span class="kw">&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"Flag Counter"</span> <span class="er">border</span><span class="ot">=</span><span class="st">"0"</span><span class="kw">/&gt;&lt;/a&gt;</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Livingston EH. The mean and standard deviation: what does it all mean? J Surg Res. 2004 Jun 15;119(2):117-23. doi: 10.1016/j.jss.2004.02.008. PMID: 15145692. <span class="co">[</span><span class="ot">Source</span><span class="co">]</span>(https://www.journalofsurgicalresearch.com/article/S0022-4804(04)00055-1/fulltext)</span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Last updated on {.unnumbered .unlisted}</span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">hidden</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://info.flagcounter.com/ynrK"</span><span class="kw">&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"Flag Counter"</span> <span class="er">border</span><span class="ot">=</span><span class="st">"0"</span><span class="kw">/&gt;&lt;/a&gt;</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

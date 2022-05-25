@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.440">
+<meta name="generator" content="quarto-0.9.449">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jewel Johnson">
 <meta name="dcterms.date" content="2022-05-21">
-<title>one carat blog - Type I and Type II errors</title>
+<title>one carat blog - Chapter 5: Type I and Type II errors</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -119,7 +119,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 <link rel="stylesheet" href="../../styles.css">
 <link rel="stylesheet" href="styles.css">
-<meta name="twitter:title" content="one carat blog - Type I and Type II errors">
+<meta name="twitter:title" content="one carat blog - Chapter 5: Type I and Type II errors">
 <meta name="twitter:image" content="https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/images/ggplot2.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -178,15 +178,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-statistics">
 <li>
     <a class="dropdown-item" href="../../articles/stat/project1.html">
- <span class="dropdown-text">Introduction to statistics with R</span></a>
+ <span class="dropdown-text">Chapter 1: Introduction to statistics with R</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../articles/stat/project2.html">
- <span class="dropdown-text">Distribution and variance</span></a>
+ <span class="dropdown-text">Chapter 2: Distribution and variance</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../articles/stat/project3.html">
- <span class="dropdown-text">Standard error and standard deviation</span></a>
+ <span class="dropdown-text">Chapter 3: Standard error and standard deviation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project4.html">
+ <span class="dropdown-text">Chapter 4: p-value and level of significance</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project5.html">
+ <span class="dropdown-text">Chapter 5: Type I and Type II errors</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project6.html">
+ <span class="dropdown-text">Chapter 6: Confidence interval and effect sizes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project7.html">
+ <span class="dropdown-text">Chapter 7: Parametric tests and assumptions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project8.html">
+ <span class="dropdown-text">Chapter 8: Non-parametric test and assumptions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project9.html">
+ <span class="dropdown-text">Chapter 9: Tests for multiple groups of data</span></a>
   </li>  
     </ul>
 </li>
@@ -216,11 +240,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
 <li><a href="#type-i-error" id="toc-type-i-error" class="nav-link active" data-scroll-target="#type-i-error"> <span class="header-section-number">1</span> Type I error</a></li>
   <li><a href="#type-ii-error" id="toc-type-ii-error" class="nav-link" data-scroll-target="#type-ii-error"> <span class="header-section-number">2</span> Type II error</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"> <span class="header-section-number">3</span> References</a></li>
   </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/edit/main/articles/stat/project5.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Type I and Type II errors</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Chapter 5: Type I and Type II errors</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 <p class="subtitle lead"></p>
 <p>Learn about type I and type II errors</p>
 </div>
@@ -248,7 +273,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header><section id="type-i-error" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="type-i-error">
 <span class="header-section-number">1</span> Type I error</h2>
-<p>Type I error happens when we fail to reject the null hypothesis when it is actually true. It is also called as ‘false-positive’. The chance of type I error to occur is determined by the level of significance(<span class="math inline">\alpha</span>) that we set prior to our experiments. Generally <span class="math inline">\alpha</span> is set at a value of 0.05. Like previously mentioned, at this value, there is a 5% chance that the observed results or more extreme results to occur, given that the null hypothesis is true. At lower values of <span class="math inline">\alpha</span>, the chance of type I error to occur reduces.</p>
+<p>Type I error happens when we fail to reject the null hypothesis when it is true. It is also called ‘false-positive’. The chance of a type I error occurring is determined by the level of significance(<span class="math inline">\alpha</span>) that we set before our experiments. Generally, <span class="math inline">\alpha</span> is set at a value of 0.05. As previously mentioned, at this value, there is a 5% chance that the observed results or more extreme results to occur, given that the null hypothesis is true. At lower values of <span class="math inline">\alpha</span>, the chance of type I error to occur reduces.</p>
 <div id="fig-anonymous-1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure"><p><a href="https://www.scribbr.com/statistics/type-i-and-type-ii-errors/"><img src="https://cdn.scribbr.com/wp-content/uploads/2021/01/type-i-error-rate.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption aria-hidden="true" class="figure-caption">Fig1: Type I error. Credits: www.scribbr.com</figcaption><p></p>
@@ -256,11 +281,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </section><section id="type-ii-error" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="type-ii-error">
 <span class="header-section-number">2</span> Type II error</h2>
-<p>Type II error happens when we fail to not reject null hypothesis when it is actually false. It is also called as ‘false-negative’. The chance of type II error to occur is inversely proportional to the statistical power of the study.</p>
+<p>Type II error happens when we fail to not reject the null hypothesis when it is false. It is also called ‘false-negative’. The chance of type II error occurring is inversely proportional to the statistical power of the study. The statistical power of a study depends on many factors. Two of those factors are the effect size and the sample size. The effect size describes how strong the relationship is between the variables that we are experimenting with. So studies having smaller effect sizes will lead to higher chances of committing type II error when the sample size is small. Since we cannot do anything about the effect size of a study all we can do is increase the sample size of the study. Another factor that affects the chance of causing type II error is the level of significance(<span class="math inline">\alpha</span>) we set. At lower levels of <span class="math inline">\alpha</span>, there is less chance of type II error.</p>
+<p>In the later chapters, we will see how to calculate the effect size of a study using R.</p>
+</section><section id="references" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="references">
+<span class="header-section-number">3</span> References</h2>
+<ol type="1">
+<li>Ioannidis JPA (2005) Why Most Published Research Findings Are False. PLOS Medicine 2(8): e124. https://doi.org/10.1371/journal.pmed.0020124 <a href="https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124">Link</a>
+</li>
+</ol>
 <section id="last-updated-on" class="level4 unnumbered unlisted"><h4 class="unnumbered unlisted anchored" data-anchor-id="last-updated-on">Last updated on</h4>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-05-23 09:07:05 IST"</code></pre>
+<pre><code>[1] "2022-05-25 20:40:22 IST"</code></pre>
 </div>
 </div>
 <p><a hidden="" href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a></p>
@@ -270,14 +302,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{johnson2022,
   author = {Jewel Johnson},
-  title = {Type {I} and {Type} {II} Errors},
+  title = {Chapter 5: {Type} {I} and {Type} {II} Errors},
   date = {05/21/2022},
   url = {https://jeweljohnsonj.github.io/one-carat-blog//articles/stat/project5.html},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-johnson2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Jewel Johnson. 5AD–21AD. <span>“Type I and Type II Errors.”</span>
-5AD–21AD. <a href="https://jeweljohnsonj.github.io/one-carat-blog//articles/stat/project5.html">https://jeweljohnsonj.github.io/one-carat-blog//articles/stat/project5.html</a>.
+Jewel Johnson. 5AD–21AD. <span>“Chapter 5: Type I and Type II
+Errors.”</span> 5AD–21AD. <a href="https://jeweljohnsonj.github.io/one-carat-blog//articles/stat/project5.html">https://jeweljohnsonj.github.io/one-carat-blog//articles/stat/project5.html</a>.
 </div></div></section></div></main><!-- /main --><script src="../../site_libs/quarto-html/zenscroll-min.js"></script><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const icon = "";
@@ -409,7 +441,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Type I and Type II errors"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Chapter 5: Type I and Type II errors"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> |</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">  Learn about type I and type II errors</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Jewel Johnson"</span></span>
@@ -455,22 +487,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="fu">## Type I error</span></span>
 <span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>Type I error happens when we fail to reject the null hypothesis when it is actually true. It is also called as 'false-positive'. The chance of type I error to occur is determined by the level of significance($\alpha$) that we set prior to our experiments. Generally $\alpha$ is set at a value of 0.05. Like previously mentioned, at this value, there is a 5% chance that the observed results or more extreme results to occur, given that the null hypothesis is true. At lower values of $\alpha$, the chance of type I error to occur reduces.</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>Type I error happens when we fail to reject the null hypothesis when it is true. It is also called 'false-positive'. The chance of a type I error occurring is determined by the level of significance($\alpha$) that we set before our experiments. Generally, $\alpha$ is set at a value of 0.05. As previously mentioned, at this value, there is a 5% chance that the observed results or more extreme results to occur, given that the null hypothesis is true. At lower values of $\alpha$, the chance of type I error to occur reduces.</span>
 <span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Fig1: Type I error. Credits: www.scribbr.com](https://cdn.scribbr.com/wp-content/uploads/2021/01/type-i-error-rate.png)</span><span class="co">](https://www.scribbr.com/statistics/type-i-and-type-ii-errors/)</span></span>
 <span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="fu">## Type II error</span></span>
 <span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>Type II error happens when we fail to not reject null hypothesis when it is actually false. It is also called as 'false-negative'. The chance of type II error to occur is inversely proportional to the statistical power of the study.</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>Type II error happens when we fail to not reject the null hypothesis when it is false. It is also called 'false-negative'. The chance of type II error occurring is inversely proportional to the statistical power of the study. The statistical power of a study depends on many factors. Two of those factors are the effect size and the sample size. The effect size describes how strong the relationship is between the variables that we are experimenting with. So studies having smaller effect sizes will lead to higher chances of committing type II error when the sample size is small. Since we cannot do anything about the effect size of a study all we can do is increase the sample size of the study. Another factor that affects the chance of causing type II error is the level of significance($\alpha$) we set. At lower levels of $\alpha$, there is less chance of type II error.</span>
 <span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Last updated on {.unnumbered .unlisted}</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>In the later chapters, we will see how to calculate the effect size of a study using R.</span>
 <span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">hidden</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://info.flagcounter.com/ynrK"</span><span class="kw">&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"Flag Counter"</span> <span class="er">border</span><span class="ot">=</span><span class="st">"0"</span><span class="kw">/&gt;&lt;/a&gt;</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Ioannidis JPA (2005) Why Most Published Research Findings Are False. PLOS Medicine 2(8): e124. https://doi.org/10.1371/journal.pmed.0020124 <span class="co">[</span><span class="ot">Link</span><span class="co">](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124)</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Last updated on {.unnumbered .unlisted}</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">hidden</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://info.flagcounter.com/ynrK"</span><span class="kw">&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"Flag Counter"</span> <span class="er">border</span><span class="ot">=</span><span class="st">"0"</span><span class="kw">/&gt;&lt;/a&gt;</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
