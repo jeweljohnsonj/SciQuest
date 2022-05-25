@@ -31,14 +31,14 @@ This article, along with the related articles to this topic, is a culmination of
 The topics I want to cover include;
 
 1.  Introduction to statistics
-2.  Distribution and variance
-3.  Standard error and standard deviation
-4.  p-value and level of significance
-5.  Type I error and type II error
-6.  Confidence interval and effect size
-7.  Parametric test and assumptions
-8.  Non-parametric test and assumptions
-9.  Tests for multiple groups of data
+2.  [Distribution and variance](https://jeweljohnsonj.github.io/one-carat-blog/project2.html)
+3.  [Standard error and standard deviation](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project3.html)
+4.  [p-value and level of significance](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project4.html)
+5.  [Type I error and type II error](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project5.html)
+6.  [Confidence interval and effect size](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project6.html)
+7.  [Parametric test and assumptions](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project7.html)
+8.  [Non-parametric test and assumptions](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project8.html)
+9.  [Tests for multiple groups of data](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project9.html)
 
 With that being said, the articles will be focused on enriching the intuition behind the concepts rather than the pure math behind them. In addition, I will also be explaining how one can do the same tests using R. The articles will be supplemented by published research papers related to the topic.
 

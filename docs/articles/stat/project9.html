@@ -290,42 +290,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header><section id="multiple-pairwise-comparisons-problem" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="multiple-pairwise-comparisons-problem">
 <span class="header-section-number">1</span> Multiple pairwise comparisons problem</h2>
 <p>Imagine you are rolling dice. Then the probability to get 6 as an outcome is;</p>
-<span class="math display">\begin{align}
+<span class="math display">\begin{align*}
 P(probability\ to\ get\ 6) &amp;= 1/6 \\
 &amp;= 1- P(probability\ to\ not\ get\ 6) \\
 &amp;= 1- 5/6 \\
 Therefore;\ P(probability\ to\ not\ get\ 6) &amp;= 1- 1/6
-\end{align}</span>
+\end{align*}</span>
 <p>Let’s roll the dice for the second time, the what is the probability to get at least one 6 in these two attempts.</p>
-<span class="math display">\begin{align}
+<span class="math display">\begin{align*}
 P(probability\ to\ get\ at\ least\ one\ 6\ in\ two\ rolls) &amp;= 1/6 + 1/6\\
 &amp;= 1- P(probability\ to\ not\ get\ 6\ in\ two\ rolls) \\
 &amp;= 1 - (1 - 1/6)^2
-\end{align}</span>
+\end{align*}</span>
 <p>Therefore for <span class="math inline">n</span> rolls, we have the probability to get at least one 6 as;</p>
-<span class="math display">\begin{align}
+<span class="math display">\begin{align*}
 P(probability\ to\ get\ 6\ in\ n\ rolls) &amp;= 1/6 + 1/6 + \dots \\
 &amp;= 1- P(probability\ to\ not\ get\ 6\ in\ n\ rolls) \\
 &amp;= 1 - (1 - 1/6)^n
-\end{align}</span>
+\end{align*}</span>
 <p>Therefore as we keep increasing the rolls, we are bound to get a 6 in one of these rolls. This means the probability to get 6 increases as the number of rolls increases.</p>
 <p>Now with the same notion as earlier, imagine the following situation.</p>
 <p>Imagine you have set <span class="math inline">\alpha</span> = 0.05, then the probability to have a type I error will be 0.05, and the probability of not having a type I error will be 0.95.</p>
-<span class="math display">\begin{align}
+<span class="math display">\begin{align*}
 P(Probability\ to\ have\ type\ I\ error)&amp;= 1 - P(Probability\ to\ not\ have\ type\ I\ error) \\
 &amp;= 1- 0.95 \\
 Therefore;\ P(Probability\ to\ not\ have\ type\ I\ error) &amp;= 1 - 0.05
-\end{align}</span>
+\end{align*}</span>
 <p>Now if we do the same test again, the probability to get at least a single type I error is;</p>
-<span class="math display">\begin{align}
+<span class="math display">\begin{align*}
 P(Probability\ to\ have\ at\ least\ one\ type\ I\ error\ in\ 2\ tests)&amp;= 1 - P(Probability\ to\ have\ no\ type\ I\ error\ in\ 2\ tests) \\
 &amp;= 1- (1-0.05)^2
-\end{align}</span>
+\end{align*}</span>
 <p>Therefore if we perform <span class="math inline">n</span> pairwise comparisons, then the probability to have at least one type I error in n tests is;</p>
-<span class="math display">\begin{align}
+<span class="math display">\begin{align*}
 P(Probability\ to\ have\ at\ least\ one\ type\ I\ error\ in\ n\ tests)&amp;= 1 - P(Probability\ to\ have\ no\ type\ I\ error\ in\ n\ tests) \\
 &amp;= 1- (1-0.05)^n
-\end{align}</span>
+\end{align*}</span>
 <p>Like for the coin toss problem we get an increased probability to get a type I error, even when we had set the initial <span class="math inline">\alpha</span> to be 0.05. As an example, if we do multiple t-tests for different groups in our data, considering multiple hypotheses, we have a high chance of getting a type I error. This is known as a multiple pairwise comparison problem. This is avoided by implementing countermeasures called multiple comparison corrections such as Tukey Honest Significant Differences and the Bonferroni method.</p>
 </section><section id="parametric-multiple-comparison-test" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="parametric-multiple-comparison-test">
 <span class="header-section-number">2</span> Parametric multiple comparison test</h2>
@@ -627,7 +627,7 @@ P value adjustment method: BH </code></pre>
 <section id="last-updated-on" class="level4 unnumbered unlisted"><h4 class="unnumbered unlisted anchored" data-anchor-id="last-updated-on">Last updated on</h4>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-05-25 20:40:27 IST"</code></pre>
+<pre><code>[1] "2022-05-25 21:46:23 IST"</code></pre>
 </div>
 </div>
 <p><a hidden="" href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a></p>
@@ -824,30 +824,30 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb21-49"><a href="#cb21-49" aria-hidden="true" tabindex="-1"></a>Imagine you are rolling dice. Then the probability to get 6 as an outcome is;</span>
 <span id="cb21-50"><a href="#cb21-50" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-51"><a href="#cb21-51" aria-hidden="true" tabindex="-1"></a><span class="in">```{=tex}</span></span>
-<span id="cb21-52"><a href="#cb21-52" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{align}</span></span>
+<span id="cb21-52"><a href="#cb21-52" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{align*}</span></span>
 <span id="cb21-53"><a href="#cb21-53" aria-hidden="true" tabindex="-1"></a><span class="in">P(probability\ to\ get\ 6) &amp;= 1/6 \\</span></span>
 <span id="cb21-54"><a href="#cb21-54" aria-hidden="true" tabindex="-1"></a><span class="in">&amp;= 1- P(probability\ to\ not\ get\ 6) \\</span></span>
 <span id="cb21-55"><a href="#cb21-55" aria-hidden="true" tabindex="-1"></a><span class="in">&amp;= 1- 5/6 \\</span></span>
 <span id="cb21-56"><a href="#cb21-56" aria-hidden="true" tabindex="-1"></a><span class="in">Therefore;\ P(probability\ to\ not\ get\ 6) &amp;= 1- 1/6</span></span>
-<span id="cb21-57"><a href="#cb21-57" aria-hidden="true" tabindex="-1"></a><span class="in">\end{align}</span></span>
+<span id="cb21-57"><a href="#cb21-57" aria-hidden="true" tabindex="-1"></a><span class="in">\end{align*}</span></span>
 <span id="cb21-58"><a href="#cb21-58" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb21-59"><a href="#cb21-59" aria-hidden="true" tabindex="-1"></a>Let's roll the dice for the second time, the what is the probability to get at least one 6 in these two attempts.</span>
 <span id="cb21-60"><a href="#cb21-60" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-61"><a href="#cb21-61" aria-hidden="true" tabindex="-1"></a><span class="in">```{=tex}</span></span>
-<span id="cb21-62"><a href="#cb21-62" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{align}</span></span>
+<span id="cb21-62"><a href="#cb21-62" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{align*}</span></span>
 <span id="cb21-63"><a href="#cb21-63" aria-hidden="true" tabindex="-1"></a><span class="in">P(probability\ to\ get\ at\ least\ one\ 6\ in\ two\ rolls) &amp;= 1/6 + 1/6\\</span></span>
 <span id="cb21-64"><a href="#cb21-64" aria-hidden="true" tabindex="-1"></a><span class="in">&amp;= 1- P(probability\ to\ not\ get\ 6\ in\ two\ rolls) \\</span></span>
 <span id="cb21-65"><a href="#cb21-65" aria-hidden="true" tabindex="-1"></a><span class="in">&amp;= 1 - (1 - 1/6)^2</span></span>
-<span id="cb21-66"><a href="#cb21-66" aria-hidden="true" tabindex="-1"></a><span class="in">\end{align}</span></span>
+<span id="cb21-66"><a href="#cb21-66" aria-hidden="true" tabindex="-1"></a><span class="in">\end{align*}</span></span>
 <span id="cb21-67"><a href="#cb21-67" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb21-68"><a href="#cb21-68" aria-hidden="true" tabindex="-1"></a>Therefore for $n$ rolls, we have the probability to get at least one 6 as;</span>
 <span id="cb21-69"><a href="#cb21-69" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-70"><a href="#cb21-70" aria-hidden="true" tabindex="-1"></a><span class="in">```{=tex}</span></span>
-<span id="cb21-71"><a href="#cb21-71" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{align}</span></span>
+<span id="cb21-71"><a href="#cb21-71" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{align*}</span></span>
 <span id="cb21-72"><a href="#cb21-72" aria-hidden="true" tabindex="-1"></a><span class="in">P(probability\ to\ get\ 6\ in\ n\ rolls) &amp;= 1/6 + 1/6 + \dots \\</span></span>
 <span id="cb21-73"><a href="#cb21-73" aria-hidden="true" tabindex="-1"></a><span class="in">&amp;= 1- P(probability\ to\ not\ get\ 6\ in\ n\ rolls) \\</span></span>
 <span id="cb21-74"><a href="#cb21-74" aria-hidden="true" tabindex="-1"></a><span class="in">&amp;= 1 - (1 - 1/6)^n</span></span>
-<span id="cb21-75"><a href="#cb21-75" aria-hidden="true" tabindex="-1"></a><span class="in">\end{align}</span></span>
+<span id="cb21-75"><a href="#cb21-75" aria-hidden="true" tabindex="-1"></a><span class="in">\end{align*}</span></span>
 <span id="cb21-76"><a href="#cb21-76" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb21-77"><a href="#cb21-77" aria-hidden="true" tabindex="-1"></a>Therefore as we keep increasing the rolls, we are bound to get a 6 in one of these rolls. This means the probability to get 6 increases as the number of rolls increases.</span>
 <span id="cb21-78"><a href="#cb21-78" aria-hidden="true" tabindex="-1"></a></span>
@@ -856,27 +856,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb21-81"><a href="#cb21-81" aria-hidden="true" tabindex="-1"></a>Imagine you have set $\alpha$ = 0.05, then the probability to have a type I error will be 0.05, and the probability of not having a type I error will be 0.95.</span>
 <span id="cb21-82"><a href="#cb21-82" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-83"><a href="#cb21-83" aria-hidden="true" tabindex="-1"></a><span class="in">```{=tex}</span></span>
-<span id="cb21-84"><a href="#cb21-84" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{align}</span></span>
+<span id="cb21-84"><a href="#cb21-84" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{align*}</span></span>
 <span id="cb21-85"><a href="#cb21-85" aria-hidden="true" tabindex="-1"></a><span class="in">P(Probability\ to\ have\ type\ I\ error)&amp;= 1 - P(Probability\ to\ not\ have\ type\ I\ error) \\</span></span>
 <span id="cb21-86"><a href="#cb21-86" aria-hidden="true" tabindex="-1"></a><span class="in">&amp;= 1- 0.95 \\</span></span>
 <span id="cb21-87"><a href="#cb21-87" aria-hidden="true" tabindex="-1"></a><span class="in">Therefore;\ P(Probability\ to\ not\ have\ type\ I\ error) &amp;= 1 - 0.05</span></span>
-<span id="cb21-88"><a href="#cb21-88" aria-hidden="true" tabindex="-1"></a><span class="in">\end{align}</span></span>
+<span id="cb21-88"><a href="#cb21-88" aria-hidden="true" tabindex="-1"></a><span class="in">\end{align*}</span></span>
 <span id="cb21-89"><a href="#cb21-89" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb21-90"><a href="#cb21-90" aria-hidden="true" tabindex="-1"></a>Now if we do the same test again, the probability to get at least a single type I error is;</span>
 <span id="cb21-91"><a href="#cb21-91" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-92"><a href="#cb21-92" aria-hidden="true" tabindex="-1"></a><span class="in">```{=tex}</span></span>
-<span id="cb21-93"><a href="#cb21-93" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{align}</span></span>
+<span id="cb21-93"><a href="#cb21-93" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{align*}</span></span>
 <span id="cb21-94"><a href="#cb21-94" aria-hidden="true" tabindex="-1"></a><span class="in">P(Probability\ to\ have\ at\ least\ one\ type\ I\ error\ in\ 2\ tests)&amp;= 1 - P(Probability\ to\ have\ no\ type\ I\ error\ in\ 2\ tests) \\</span></span>
 <span id="cb21-95"><a href="#cb21-95" aria-hidden="true" tabindex="-1"></a><span class="in">&amp;= 1- (1-0.05)^2</span></span>
-<span id="cb21-96"><a href="#cb21-96" aria-hidden="true" tabindex="-1"></a><span class="in">\end{align}</span></span>
+<span id="cb21-96"><a href="#cb21-96" aria-hidden="true" tabindex="-1"></a><span class="in">\end{align*}</span></span>
 <span id="cb21-97"><a href="#cb21-97" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb21-98"><a href="#cb21-98" aria-hidden="true" tabindex="-1"></a>Therefore if we perform $n$ pairwise comparisons, then the probability to have at least one type I error in n tests is;</span>
 <span id="cb21-99"><a href="#cb21-99" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-100"><a href="#cb21-100" aria-hidden="true" tabindex="-1"></a><span class="in">```{=tex}</span></span>
-<span id="cb21-101"><a href="#cb21-101" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{align}</span></span>
+<span id="cb21-101"><a href="#cb21-101" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{align*}</span></span>
 <span id="cb21-102"><a href="#cb21-102" aria-hidden="true" tabindex="-1"></a><span class="in">P(Probability\ to\ have\ at\ least\ one\ type\ I\ error\ in\ n\ tests)&amp;= 1 - P(Probability\ to\ have\ no\ type\ I\ error\ in\ n\ tests) \\</span></span>
 <span id="cb21-103"><a href="#cb21-103" aria-hidden="true" tabindex="-1"></a><span class="in">&amp;= 1- (1-0.05)^n</span></span>
-<span id="cb21-104"><a href="#cb21-104" aria-hidden="true" tabindex="-1"></a><span class="in">\end{align}</span></span>
+<span id="cb21-104"><a href="#cb21-104" aria-hidden="true" tabindex="-1"></a><span class="in">\end{align*}</span></span>
 <span id="cb21-105"><a href="#cb21-105" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb21-106"><a href="#cb21-106" aria-hidden="true" tabindex="-1"></a>Like for the coin toss problem we get an increased probability to get a type I error, even when we had set the initial $\alpha$ to be 0.05. As an example, if we do multiple t-tests for different groups in our data, considering multiple hypotheses, we have a high chance of getting a type I error. This is known as a multiple pairwise comparison problem. This is avoided by implementing countermeasures called multiple comparison corrections such as Tukey Honest Significant Differences and the Bonferroni method.</span>
 <span id="cb21-107"><a href="#cb21-107" aria-hidden="true" tabindex="-1"></a></span>

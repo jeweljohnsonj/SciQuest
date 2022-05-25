@@ -228,7 +228,7 @@
     "href": "articles/stat/project1.html#inferential-statistics",
     "title": "Chapter 1: Introduction to statistics with R",
     "section": "\n3 Inferential statistics",
-    "text": "3 Inferential statistics\nInferential statistics are used to understand patterns of a population using sample data from it. Since collecting data for a population is tedious, we take a sample from that population, which acts as a true representative of the population. Through sampling methods and hypothesis testing, patterns seen within the sample can be extrapolated to the whole population. The characteristics used for sample data are called statistics. Some of the inferential statistics include sample mean, standard deviation, etc.\nLast updated on\n\n\n[1] \"2022-05-25 20:40:46 IST\""
+    "text": "3 Inferential statistics\nInferential statistics are used to understand patterns of a population using sample data from it. Since collecting data for a population is tedious, we take a sample from that population, which acts as a true representative of the population. Through sampling methods and hypothesis testing, patterns seen within the sample can be extrapolated to the whole population. The characteristics used for sample data are called statistics. Some of the inferential statistics include sample mean, standard deviation, etc.\nLast updated on\n\n\n[1] \"2022-05-25 21:44:47 IST\""
   },
   {
     "objectID": "articles/stat/project4.html",

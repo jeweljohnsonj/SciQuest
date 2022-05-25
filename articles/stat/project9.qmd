@@ -47,30 +47,30 @@ registerS3method(
 Imagine you are rolling dice. Then the probability to get 6 as an outcome is;
 
 ```{=tex}
-\begin{align}
+\begin{align*}
 P(probability\ to\ get\ 6) &= 1/6 \\
 &= 1- P(probability\ to\ not\ get\ 6) \\
 &= 1- 5/6 \\
 Therefore;\ P(probability\ to\ not\ get\ 6) &= 1- 1/6
-\end{align}
+\end{align*}
 ```
 Let's roll the dice for the second time, the what is the probability to get at least one 6 in these two attempts.
 
 ```{=tex}
-\begin{align}
+\begin{align*}
 P(probability\ to\ get\ at\ least\ one\ 6\ in\ two\ rolls) &= 1/6 + 1/6\\
 &= 1- P(probability\ to\ not\ get\ 6\ in\ two\ rolls) \\
 &= 1 - (1 - 1/6)^2
-\end{align}
+\end{align*}
 ```
 Therefore for $n$ rolls, we have the probability to get at least one 6 as;
 
 ```{=tex}
-\begin{align}
+\begin{align*}
 P(probability\ to\ get\ 6\ in\ n\ rolls) &= 1/6 + 1/6 + \dots \\
 &= 1- P(probability\ to\ not\ get\ 6\ in\ n\ rolls) \\
 &= 1 - (1 - 1/6)^n
-\end{align}
+\end{align*}
 ```
 Therefore as we keep increasing the rolls, we are bound to get a 6 in one of these rolls. This means the probability to get 6 increases as the number of rolls increases.
 
@@ -79,27 +79,27 @@ Now with the same notion as earlier, imagine the following situation.
 Imagine you have set $\alpha$ = 0.05, then the probability to have a type I error will be 0.05, and the probability of not having a type I error will be 0.95.
 
 ```{=tex}
-\begin{align}
+\begin{align*}
 P(Probability\ to\ have\ type\ I\ error)&= 1 - P(Probability\ to\ not\ have\ type\ I\ error) \\
 &= 1- 0.95 \\
 Therefore;\ P(Probability\ to\ not\ have\ type\ I\ error) &= 1 - 0.05
-\end{align}
+\end{align*}
 ```
 Now if we do the same test again, the probability to get at least a single type I error is;
 
 ```{=tex}
-\begin{align}
+\begin{align*}
 P(Probability\ to\ have\ at\ least\ one\ type\ I\ error\ in\ 2\ tests)&= 1 - P(Probability\ to\ have\ no\ type\ I\ error\ in\ 2\ tests) \\
 &= 1- (1-0.05)^2
-\end{align}
+\end{align*}
 ```
 Therefore if we perform $n$ pairwise comparisons, then the probability to have at least one type I error in n tests is;
 
 ```{=tex}
-\begin{align}
+\begin{align*}
 P(Probability\ to\ have\ at\ least\ one\ type\ I\ error\ in\ n\ tests)&= 1 - P(Probability\ to\ have\ no\ type\ I\ error\ in\ n\ tests) \\
 &= 1- (1-0.05)^n
-\end{align}
+\end{align*}
 ```
 Like for the coin toss problem we get an increased probability to get a type I error, even when we had set the initial $\alpha$ to be 0.05. As an example, if we do multiple t-tests for different groups in our data, considering multiple hypotheses, we have a high chance of getting a type I error. This is known as a multiple pairwise comparison problem. This is avoided by implementing countermeasures called multiple comparison corrections such as Tukey Honest Significant Differences and the Bonferroni method.
 
