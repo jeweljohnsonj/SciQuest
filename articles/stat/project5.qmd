@@ -21,7 +21,7 @@ comments:
   hypothesis: true
 execute: 
   warning: false
-image: "images/ggplot2.png"
+image: "images/stat.jpg"
 draft: true
 ---
 
