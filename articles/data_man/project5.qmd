@@ -165,7 +165,7 @@ pivot_longer("data", c("colname1, colname2,....."),
 
 Here is a graphical representation
 
-![](images/pivot_longer().png)
+![](images/pivot_longer().jpg)
 
 ### pivot_wider()
 
@@ -213,7 +213,7 @@ pivot_longer("data",
 
 Here is a graphical representation
 
-![](images/pivot_wider().png)
+![](images/pivot_wider().jpg)
 
 ## Splitting and uniting cells
 
