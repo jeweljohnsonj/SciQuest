@@ -202,8 +202,6 @@ Therefore even if we had set $\alpha$ = 0.05 prior, after multiple comparisons t
 
 4.  Lang JM, Rothman KJ, Cann CI. That confounded P-value. Epidemiology. 1998 Jan;9(1):7-8. doi: 10.1097/00001648-199801000-00004. PMID: 9430261. [Link](https://journals.lww.com/epidem/Citation/1998/01000/That_Confounded_P_Value.4.aspx)
 
-5.  
-
 #### Last updated on {.unnumbered .unlisted}
 
 ```{r}
