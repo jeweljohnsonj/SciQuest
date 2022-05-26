@@ -63,14 +63,6 @@ website:
         href: https://github.com/jeweljohnsonj/one-carat-blog
       - icon: twitter
         href: https://twitter.com/jeweljohnsonj
-        
-  sidebar:
-    - id: articles/stat/
-      title: "Chapter 1: Introduction to statistics with R"
-      style: "floating"
-      collapse-level: 2
-      contents:
-       - articles/stat/project1.qmd
  
 format:
   html:
