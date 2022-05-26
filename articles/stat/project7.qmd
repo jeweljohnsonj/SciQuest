@@ -20,6 +20,7 @@ comments:
   hypothesis: true
 execute: 
   warning: false
+  freeze: auto
 image: "images/stat.jpg"
 draft: true
 ---

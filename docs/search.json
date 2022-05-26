@@ -263,7 +263,7 @@
     "href": "articles/stat/project3.html#references",
     "title": "Chapter 3: Standard error and standard deviation",
     "section": "\n4 References",
-    "text": "4 References\n\nLivingston EH. The mean and standard deviation: what does it all mean? J Surg Res. 2004 Jun 15;119(2):117-23. doi: 10.1016/j.jss.2004.02.008. PMID: 15145692. Source\n\n\nLast updated on\n\n\n[1] \"2022-05-26 07:54:35 IST\""
+    "text": "4 References\n\nLivingston EH. The mean and standard deviation: what does it all mean? J Surg Res. 2004 Jun 15;119(2):117-23. doi: 10.1016/j.jss.2004.02.008. PMID: 15145692. Source\n\n\nLast updated on\n\n\n[1] \"2022-05-26 10:54:00 IST\""
   },
   {
     "objectID": "articles/stat/project1.html",
@@ -284,7 +284,7 @@
     "href": "articles/stat/project1.html#inferential-statistics",
     "title": "Chapter 1: Introduction to statistics with R",
     "section": "\n3 Inferential statistics",
-    "text": "3 Inferential statistics\nInferential statistics are used to understand patterns of a population using sample data from it. Since collecting data for a population is tedious, we take a sample from that population, which acts as a true representative of the population. Through sampling methods and hypothesis testing, patterns seen within the sample can be extrapolated to the whole population. The characteristics used for sample data are called statistics. Some of the inferential statistics include sample mean, standard deviation, etc.\nLast updated on\n\n\n[1] \"2022-05-26 08:40:31 IST\""
+    "text": "3 Inferential statistics\nInferential statistics are used to understand patterns of a population using sample data from it. Since collecting data for a population is tedious, we take a sample from that population, which acts as a true representative of the population. Through sampling methods and hypothesis testing, patterns seen within the sample can be extrapolated to the whole population. The characteristics used for sample data are called statistics. Some of the inferential statistics include sample mean, standard deviation, etc.\nLast updated on\n\n\n[1] \"2022-05-26 10:54:03 IST\""
   },
   {
     "objectID": "articles/stat/project4.html",
@@ -305,7 +305,7 @@
     "href": "articles/stat/project4.html#references",
     "title": "Chapter 4: p-value and level of significance",
     "section": "\n3 References",
-    "text": "3 References\n\nGoodman S. A dirty dozen: twelve p-value misconceptions. Semin Hematol. 2008 Jul;45(3):135-40. doi: 10.1053/j.seminhematol.2008.04.003. Erratum in: Semin Hematol. 2011 Oct;48(4):302. PMID: 18582619. Link\nGao, J. P-values – a chronic conundrum. BMC Med Res Methodol 20, 167 (2020). https://doi.org/10.1186/s12874-020-01051-6 Link\nGoodman SN. p values, hypothesis tests, and likelihood: implications for epidemiology of a neglected historical debate. Am J Epidemiol. 1993 Mar 1;137(5):485-96; discussion 497-501. doi: 10.1093/oxfordjournals.aje.a116700. PMID: 8465801. Link\nLang JM, Rothman KJ, Cann CI. That confounded P-value. Epidemiology. 1998 Jan;9(1):7-8. doi: 10.1097/00001648-199801000-00004. PMID: 9430261. Link\n\nLast updated on\n\n\n[1] \"2022-05-26 09:06:08 IST\""
+    "text": "3 References\n\nGoodman S. A dirty dozen: twelve p-value misconceptions. Semin Hematol. 2008 Jul;45(3):135-40. doi: 10.1053/j.seminhematol.2008.04.003. Erratum in: Semin Hematol. 2011 Oct;48(4):302. PMID: 18582619. Link\nGao, J. P-values – a chronic conundrum. BMC Med Res Methodol 20, 167 (2020). https://doi.org/10.1186/s12874-020-01051-6 Link\nGoodman SN. p values, hypothesis tests, and likelihood: implications for epidemiology of a neglected historical debate. Am J Epidemiol. 1993 Mar 1;137(5):485-96; discussion 497-501. doi: 10.1093/oxfordjournals.aje.a116700. PMID: 8465801. Link\nLang JM, Rothman KJ, Cann CI. That confounded P-value. Epidemiology. 1998 Jan;9(1):7-8. doi: 10.1097/00001648-199801000-00004. PMID: 9430261. Link\n\nLast updated on\n\n\n[1] \"2022-05-26 10:54:07 IST\""
   },
   {
     "objectID": "articles/stat/project2.html",
@@ -326,7 +326,7 @@
     "href": "articles/stat/project2.html#references",
     "title": "Chapter 2: Distribution and variance",
     "section": "\n3 References",
-    "text": "3 References\n\nNotes on skewed data distributions.\nMore notes on variance.\nMore notes on Basel correction. 1 and 2\n\nLast updated on\n\n\n[1] \"2022-05-26 07:55:09 IST\""
+    "text": "3 References\n\nNotes on skewed data distributions.\nMore notes on variance.\nMore notes on Basel correction. 1 and 2\n\nLast updated on\n\n\n[1] \"2022-05-26 10:54:26 IST\""
   },
   {
     "objectID": "articles/data_man/project7.html",

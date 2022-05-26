@@ -297,7 +297,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="last-updated-on" class="level4 unnumbered unlisted"><h4 class="unnumbered unlisted anchored" data-anchor-id="last-updated-on">Last updated on</h4>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-05-26 08:50:07 IST"</code></pre>
+<pre><code>[1] "2022-05-26 10:53:40 IST"</code></pre>
 </div>
 </div>
 <p><a hidden="" href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a></p>
@@ -468,54 +468,55 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co">  hypothesis: true</span></span>
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span><span class="co"> </span></span>
 <span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "images/stat.jpg"</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> true</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>paged_print <span class="ot">&lt;-</span> <span class="cf">function</span>(x, options) {</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">asis_output</span>(</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    rmarkdown<span class="sc">:::</span><span class="fu">paged_table_html</span>(x, <span class="at">options =</span> <span class="fu">attr</span>(</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>      x,</span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>      <span class="st">"options"</span></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    )),</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">meta =</span> <span class="fu">list</span>(<span class="at">dependencies =</span> rmarkdown<span class="sc">::</span><span class="fu">html_dependency_pagedtable</span>())</span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="fu">registerS3method</span>(</span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>  <span class="st">"knit_print"</span>, <span class="st">"data.frame"</span>, paged_print,</span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>  <span class="at">envir =</span> <span class="fu">asNamespace</span>(<span class="st">"knitr"</span>)</span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="fu">## Type I error</span></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>Type I error happens when we fail to reject the null hypothesis when it is true. It is also called 'false-positive'. The chance of a type I error occurring is determined by the level of significance($\alpha$) that we set before our experiments. Generally, $\alpha$ is set at a value of 0.05. As previously mentioned, at this value, there is a 5% chance that the observed results or more extreme results to occur, given that the null hypothesis is true. At lower values of $\alpha$, the chance of type I error to occur reduces.</span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Fig1: Type I error. Credits: www.scribbr.com](https://cdn.scribbr.com/wp-content/uploads/2021/01/type-i-error-rate.png)</span><span class="co">](https://www.scribbr.com/statistics/type-i-and-type-ii-errors/)</span></span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="fu">## Type II error</span></span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>Type II error happens when we fail to not reject the null hypothesis when it is false. It is also called 'false-negative'. The chance of type II error occurring is inversely proportional to the statistical power of the study. The statistical power of a study depends on many factors. Two of those factors are the effect size and the sample size. The effect size describes how strong the relationship is between the variables that we are experimenting with. So studies having smaller effect sizes will lead to higher chances of committing type II error when the sample size is small. Since we cannot do anything about the effect size of a study all we can do is increase the sample size of the study. Another factor that affects the chance of causing type II error is the level of significance($\alpha$) we set. At lower levels of $\alpha$, there is less chance of type II error.</span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Fig1: Type II error. Credits: www.scribbr.com](https://cdn.scribbr.com/wp-content/uploads/2021/01/type-ii-error-rate.png)</span><span class="co">](https://www.scribbr.com/statistics/type-i-and-type-ii-errors/)</span></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>In the later chapters, we will see how to calculate the effect size of a study.</span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Ioannidis JPA (2005) Why Most Published Research Findings Are False. PLOS Medicine 2(8): e124. https://doi.org/10.1371/journal.pmed.0020124 <span class="co">[</span><span class="ot">Link</span><span class="co">](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124)</span></span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Last updated on {.unnumbered .unlisted}</span></span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span>
-<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">hidden</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://info.flagcounter.com/ynrK"</span><span class="kw">&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"Flag Counter"</span> <span class="er">border</span><span class="ot">=</span><span class="st">"0"</span><span class="kw">/&gt;&lt;/a&gt;</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co">  freeze: auto</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "images/stat.jpg"</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> true</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>paged_print <span class="ot">&lt;-</span> <span class="cf">function</span>(x, options) {</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">asis_output</span>(</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    rmarkdown<span class="sc">:::</span><span class="fu">paged_table_html</span>(x, <span class="at">options =</span> <span class="fu">attr</span>(</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>      x,</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>      <span class="st">"options"</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    )),</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">meta =</span> <span class="fu">list</span>(<span class="at">dependencies =</span> rmarkdown<span class="sc">::</span><span class="fu">html_dependency_pagedtable</span>())</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="fu">registerS3method</span>(</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>  <span class="st">"knit_print"</span>, <span class="st">"data.frame"</span>, paged_print,</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>  <span class="at">envir =</span> <span class="fu">asNamespace</span>(<span class="st">"knitr"</span>)</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="fu">## Type I error</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>Type I error happens when we fail to reject the null hypothesis when it is true. It is also called 'false-positive'. The chance of a type I error occurring is determined by the level of significance($\alpha$) that we set before our experiments. Generally, $\alpha$ is set at a value of 0.05. As previously mentioned, at this value, there is a 5% chance that the observed results or more extreme results to occur, given that the null hypothesis is true. At lower values of $\alpha$, the chance of type I error to occur reduces.</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Fig1: Type I error. Credits: www.scribbr.com](https://cdn.scribbr.com/wp-content/uploads/2021/01/type-i-error-rate.png)</span><span class="co">](https://www.scribbr.com/statistics/type-i-and-type-ii-errors/)</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="fu">## Type II error</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>Type II error happens when we fail to not reject the null hypothesis when it is false. It is also called 'false-negative'. The chance of type II error occurring is inversely proportional to the statistical power of the study. The statistical power of a study depends on many factors. Two of those factors are the effect size and the sample size. The effect size describes how strong the relationship is between the variables that we are experimenting with. So studies having smaller effect sizes will lead to higher chances of committing type II error when the sample size is small. Since we cannot do anything about the effect size of a study all we can do is increase the sample size of the study. Another factor that affects the chance of causing type II error is the level of significance($\alpha$) we set. At lower levels of $\alpha$, there is less chance of type II error.</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Fig1: Type II error. Credits: www.scribbr.com](https://cdn.scribbr.com/wp-content/uploads/2021/01/type-ii-error-rate.png)</span><span class="co">](https://www.scribbr.com/statistics/type-i-and-type-ii-errors/)</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>In the later chapters, we will see how to calculate the effect size of a study.</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Ioannidis JPA (2005) Why Most Published Research Findings Are False. PLOS Medicine 2(8): e124. https://doi.org/10.1371/journal.pmed.0020124 <span class="co">[</span><span class="ot">Link</span><span class="co">](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124)</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Last updated on {.unnumbered .unlisted}</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">hidden</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://info.flagcounter.com/ynrK"</span><span class="kw">&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"Flag Counter"</span> <span class="er">border</span><span class="ot">=</span><span class="st">"0"</span><span class="kw">/&gt;&lt;/a&gt;</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
