@@ -189,7 +189,7 @@ For multiple pairwise comparisons, this concept is not true. For $\alpha$ = 0.05
 
 $$\alpha' = 1 - (1-\alpha)^n = 1 - (1-0.05)^n$$
 
-Therefore even if we had set $\alpha$ = 0.05 prior, after multiple comparisons the resultant $\alpha'$ will be a greater value. This is also called a multiple comparison problem and it is corrected through methods called multiple comparison corrections. This is explained in detail in Chapter 9.
+Therefore even if we had set $\alpha$ = 0.05 prior, after multiple comparisons the resultant $\alpha'$ will be a greater value. This is also called as `multiple comparison problem` and it is corrected through methods called as `multiple comparison corrections`. You can learn more about this in Chapter 9.
 :::
 
 ## References
