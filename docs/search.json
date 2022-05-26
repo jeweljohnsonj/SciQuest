@@ -60,14 +60,14 @@
     "href": "posts/welcome/index.html#making-of-one-carat-blog-second-version",
     "title": "Welcome to my blog",
     "section": "Making of one-carat-blog (second version)",
-    "text": "Making of one-carat-blog (second version)\nHello! my name is Jewel Johnson and I am the creator of this blog. The main reason why I made this blog was to have a source of medium for me to write articles in science and share them with the world. This first version of this blog was made using the distill package in R and you can find the link to it here. From then I moved on and remade the blog using the latest quarto package in R. This new package proves to be an upgrade from distill and I am starting to love the new features of it. Since I am also fond of using R, I took it upon me to write a few tutorials focusing on beginners, which you can find in this blog."
+    "text": "Making of one-carat-blog (second version)\nHello! my name is Jewel Johnson and I am the creator of this blog. The main reason why I made this blog was to have a source of medium for me to write articles in science and share them with the world. This first version of this blog was made using the distill package in R and you can find the link to it here. From then I moved on and remade the blog using the latest quarto package in R. This new package proves to be an upgrade from distill and I am starting to love the new features of it. Since I am also fond of using R, I took it upon me to write a few tutorials focusing on beginners, which you can find in this blog.\nUpdate (26-May-2022): I have also written a few articles on basic statistics and how to do them in R."
   },
   {
     "objectID": "posts/welcome/index.html#how-did-i-make-this-blog",
     "href": "posts/welcome/index.html#how-did-i-make-this-blog",
     "title": "Welcome to my blog",
     "section": "How did I make this blog",
-    "text": "How did I make this blog\nThere are several well-explained tutorials which explain from scratch how one can build a blog. If you are planning to use quarto for making your blog, then the quarto website itself features well written beginner friendly tutorials. Apart from that I found two other posts which also proved very useful while creating this blog. The links are given below.\n\nQuarto website\nPorting from distill to quarto\nWe don’t talk about Quarto"
+    "text": "How did I make this blog\nThere are several well-explained tutorials which explain from scratch how one can build a blog. If you are planning to use quarto for making your blog, then the quarto website itself features well written beginner friendly tutorials. Apart from that I found two other posts which also proved very useful while creating this blog. The links are given below.\n\nQuarto website\nPorting from distill to quarto\nWe don’t talk about Quarto\n\nLast updated on\n\n\n[1] \"2022-05-26 13:32:24 IST\""
   },
   {
     "objectID": "posts/welcome/index.html#my-great-plan",
