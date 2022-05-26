@@ -10,10 +10,10 @@ editor: source
 
 My name is Jewel Johnson and I am the creator of this blog. The blog was first made using the [`{distill}`](https://rstudio.github.io/distill/) package in R. Eventually the blog was remade using the new [`{quarto}`](https://quarto.org/) package. I write science and R-programming articles. I have also made a tutorial on data visualization and manipulation using R, and an intro to basic statistics using R, so do check them out!
 
-::: {.slate-buttons}
-[Data visualization](articles/data_viz/project1.qmd){.btn-action-primary .btn-action .btn .btn-success .btn-lg role="button"}
-[Data manipulation](articles/data_man/project5.qmd){#btn-guide .btn-action .btn .btn-info .btn-lg role="button"}
-[Statistics](articles/stat/project1.qmd){#btn-guide .btn-action .btn .btn-info .btn-lg role="button"}
+::: {.hero-buttons}
+[Data visualization](https://jeweljohnsonj.github.io/one-carat-blog/articles/data_viz/project1.html){#btn-index .btn-action .btn .btn-success .btn-lg role="button"}
+[Data manipulation](https://jeweljohnsonj.github.io/one-carat-blog/articles/data_man/project5.html){#btn-index .btn-action .btn .btn-success .btn-lg role="button"}
+[Statistics](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project1.html){#btn-index .btn-action .btn .btn-success .btn-lg role="button"}
 :::
 
 <center>        
