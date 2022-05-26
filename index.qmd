@@ -1,6 +1,7 @@
 ---
 pagetitle: "one-carat-blog"
 section-divs: false
+page-layout: custom
 toc: false
 css: index_css/index.css
 editor: source
