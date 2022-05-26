@@ -68,7 +68,7 @@ Therefore for $n$ rolls, we have the probability to get at least one 6 as;
 
 ```{=tex}
 \begin{align*}
-P(probability\ to\ get\ 6\ in\ n\ rolls) &= 1/6 + 1/6 + \dots \\
+P(probability\ to\ get\ at\ least\ one\ 6\ in\ n\ rolls) &= 1/6 + 1/6 + \dots \\
 &= 1- P(probability\ to\ not\ get\ 6\ in\ n\ rolls) \\
 &= 1 - (1 - 1/6)^n
 \end{align*}

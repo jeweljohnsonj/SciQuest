@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.449">
+<meta name="generator" content="quarto-0.9.462">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jewel Johnson">
 <meta name="dcterms.date" content="2022-05-21">
@@ -104,7 +104,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   }
 }</script><style>html{ scroll-behavior: smooth; }</style>
 <script async="" src="https://hypothes.is/embed.js"></script><link href="../../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
-<script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script><script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script><script>document.addEventListener("DOMContentLoaded", function () {
+<script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script><script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script><script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
  for (var i = 0; i < mathElements.length; i++) {
@@ -117,7 +117,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     fleqn: false
    });
 }}});
-  </script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+  </script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 <link rel="stylesheet" href="../../styles.css">
 <link rel="stylesheet" href="styles.css">
 <meta name="twitter:title" content="one carat blog - Chapter 9: Tests for multiple groups of data">
@@ -300,7 +300,7 @@ P(probability\ to\ get\ at\ least\ one\ 6\ in\ two\ rolls) &amp;= 1/6 + 1/6\\
 \end{align*}</span>
 <p>Therefore for <span class="math inline">n</span> rolls, we have the probability to get at least one 6 as;</p>
 <span class="math display">\begin{align*}
-P(probability\ to\ get\ 6\ in\ n\ rolls) &amp;= 1/6 + 1/6 + \dots \\
+P(probability\ to\ get\ at\ least\ one\ 6\ in\ n\ rolls) &amp;= 1/6 + 1/6 + \dots \\
 &amp;= 1- P(probability\ to\ not\ get\ 6\ in\ n\ rolls) \\
 &amp;= 1 - (1 - 1/6)^n
 \end{align*}</span>
@@ -623,7 +623,7 @@ P value adjustment method: BH </code></pre>
 <section id="last-updated-on" class="level4 unnumbered unlisted"><h4 class="unnumbered unlisted anchored" data-anchor-id="last-updated-on">Last updated on</h4>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-05-26 10:53:46 IST"</code></pre>
+<pre><code>[1] "2022-05-26 21:05:13 IST"</code></pre>
 </div>
 </div>
 <p><a hidden="" href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a></p>
@@ -841,7 +841,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb21-70"><a href="#cb21-70" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-71"><a href="#cb21-71" aria-hidden="true" tabindex="-1"></a><span class="in">```{=tex}</span></span>
 <span id="cb21-72"><a href="#cb21-72" aria-hidden="true" tabindex="-1"></a><span class="in">\begin{align*}</span></span>
-<span id="cb21-73"><a href="#cb21-73" aria-hidden="true" tabindex="-1"></a><span class="in">P(probability\ to\ get\ 6\ in\ n\ rolls) &amp;= 1/6 + 1/6 + \dots \\</span></span>
+<span id="cb21-73"><a href="#cb21-73" aria-hidden="true" tabindex="-1"></a><span class="in">P(probability\ to\ get\ at\ least\ one\ 6\ in\ n\ rolls) &amp;= 1/6 + 1/6 + \dots \\</span></span>
 <span id="cb21-74"><a href="#cb21-74" aria-hidden="true" tabindex="-1"></a><span class="in">&amp;= 1- P(probability\ to\ not\ get\ 6\ in\ n\ rolls) \\</span></span>
 <span id="cb21-75"><a href="#cb21-75" aria-hidden="true" tabindex="-1"></a><span class="in">&amp;= 1 - (1 - 1/6)^n</span></span>
 <span id="cb21-76"><a href="#cb21-76" aria-hidden="true" tabindex="-1"></a><span class="in">\end{align*}</span></span>
