@@ -62,7 +62,7 @@ Yes, all of them answered wrong! which means there was no right answer among the
 ::: callout-important
 ## Definition of p-value
 
-The probability to get the observed results, plus more extreme results, if the null hypothesis were true.
+**The probability to get the observed results, plus more extreme results, if the null hypothesis were true**
 :::
 
 ## Misconceptions about p-value
