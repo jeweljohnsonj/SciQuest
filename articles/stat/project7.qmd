@@ -84,7 +84,8 @@ library(palmerpenguins)
 library(tidyverse)
 library(ggpubr)
 
-ggqqplot(penguins, x = "body_mass_g", color = "species")
+penguins %>% filter(species == "Chinstrap") %>% 
+  ggqqplot(x = "body_mass_g", color = "species")
 ```
 
 If the `qq-plot` shows data points aligning within the reference line, then we can conclude that the data points follow a normal distribution.
