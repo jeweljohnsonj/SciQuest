@@ -20,12 +20,3 @@ My name is Jewel Johnson and I am the creator of this blog. The blog was first m
 <a href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_3/maxflags_9/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
 </center>
 </div>
-
-<ul class="cb-slideshow">
-  <li><span>Image 01</span><div><h3>Asian honey bee</h3></div></li>
-  <li><span>Image 02</span><div><h3>Jungle babbler</h3></div></li>
-  <li><span>Image 03</span><div><h3>Bonnet macaque</h3></div></li>
-  <li><span>Image 04</span><div><h3>Indian peafowl</h3></div></li>
-  <li><span>Image 05</span><div><h3>Nilgiri tahr</h3></div></li>
-  <li><span>Image 06</span><div><h3>Blue tailed bee eater</h3></div></li>
-</ul>

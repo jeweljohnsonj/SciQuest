@@ -494,6 +494,6 @@
     "href": "index.html",
     "title": "one carat blog",
     "section": "",
-    "text": "Image 01\n\n\nAsian honey bee\n\n\n\n\nImage 02\n\n\nJungle babbler\n\n\n\n\nImage 03\n\n\nBonnet macaque\n\n\n\n\nImage 04\n\n\nIndian peafowl\n\n\n\n\nImage 05\n\n\nNilgiri tahr\n\n\n\n\nImage 06\n\n\nBlue tailed bee eater"
+    "text": "My name is Jewel Johnson and I am the creator of this blog. The blog was first made using the {distill} package in R and was eventually remade using the new {quarto} package. In this blog I write science and R-programming articles. I have also made a tutorial on data visualization and manipulation using R, and an intro to basic statistics using R, so do check them out!\n\nData visualization Data manipulation Statistics"
   }
 ]
