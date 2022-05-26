@@ -3,7 +3,7 @@ title: "Chapter 5: Type I and Type II errors"
 subtitle: |
   Learn about type I and type II errors
 author: "Jewel Johnson"
-date: "05-21-2022"
+date: "05/21/2022"
 format:
   html:
     toc: true

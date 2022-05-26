@@ -23,20 +23,20 @@ website:
         menu:
         - text: "Data visualization"
         - text: "Chapter 1: Data visualization using ggplot2"
-          href: project1.qmd
+          href: articles/data_viz/project1.qmd
         - text: "Chapter 2: Customizing graphs in ggplot2"
-          href: project2.qmd
+          href: articles/data_viz/project2.qmd
         - text: "Chapter 3: Even more customizations in ggplot2"
-          href: project3.qmd
+          href: articles/data_viz/project3.qmd
         - text: "Chapter 4: Publication ready plots using ggpubr"
-          href: project4.qmd
+          href: articles/data_viz/project4.qmd
         - text: "Data manipulation"
         - text: "Chapter 1: Data tidying using tidyr"
-          href: project5.qmd
+          href: articles/data_man/project5.qmd
         - text: "Chapter 2: Data manipulation using dplyr (part 1)"
-          href: project6.qmd
+          href: articles/data_man/project6.qmd
         - text: "Chapter 3: Data manipulation using dplyr (part 2)"
-          href: project7.qmd
+          href: articles/data_man/project7.qmd
       - text: "Statistics"
         menu:
         - text: "Chapter 1: Introduction to statistics with R"

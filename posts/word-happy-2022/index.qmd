@@ -2,7 +2,7 @@
 title: "The World Happiness Report 2022"
 description: "Plotting an interactive map using the {leaflet} package in R"
 author: "Jewel Johnson"
-date: "05-20-2022"
+date: "05/20/2022"
 format:
   html:
     toc: true
@@ -81,7 +81,7 @@ anti_join(hap, map_world,  by = c("country" = "region"))
 
 You can see that some country names are a mismatch with the map data. So we will attempt to fix it.
 
-::: {.column-page-inset}
+::: column-page-inset
 ```{r}
 # display all country names in the dataset
 # useful to locate correct country names

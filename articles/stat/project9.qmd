@@ -3,7 +3,7 @@ title: "Chapter 9: Tests for multiple groups of data"
 subtitle: |
   Learn about ANOVA and its non-paramteric derivatives
 author: "Jewel Johnson"
-date: "05-21-2022"
+date: "05/21/2022"
 format:
   html:
     toc: true

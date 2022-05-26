@@ -3,7 +3,7 @@ title: "Chapter 6: Confidence interval and effect size"
 subtitle: |
   Learn about confidence interval and effect size
 author: "Jewel Johnson"
-date: "05-21-2022"
+date: "05/21/2022"
 format:
   html:
     toc: true

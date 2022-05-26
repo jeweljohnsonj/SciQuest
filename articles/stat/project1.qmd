@@ -3,7 +3,7 @@ title: "Chapter 1: Introduction to statistics with R"
 subtitle: |
   Learn the basics of statistics and how to do them with R
 author: "Jewel Johnson"
-date: "05-21-2022"
+date: "05/21/2022"
 format:
   html:
     toc: true
@@ -31,7 +31,7 @@ This article, along with the related articles to this topic, is a culmination of
 The topics I want to cover include;
 
 1.  Introduction to statistics
-2.  [Distribution and variance](https://jeweljohnsonj.github.io/one-carat-blog/project2.html)
+2.  [Distribution and variance](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project2.html)
 3.  [Standard error and standard deviation](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project3.html)
 4.  [p-value and level of significance](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project4.html)
 5.  [Type I error and type II error](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project5.html)

@@ -3,7 +3,7 @@ title: "Chapter 7: Parametric tests and assumptions"
 subtitle: |
   Learn about parametric tests and assumptions
 author: "Jewel Johnson"
-date: "05-21-2022"
+date: "05/21/2022"
 format:
   html:
     toc: true

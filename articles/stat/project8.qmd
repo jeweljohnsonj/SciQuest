@@ -3,7 +3,7 @@ title: "Chapter 8: Non-parametric test and assumptions"
 subtitle: |
   Learn about non-parametric test and assumptions
 author: "Jewel Johnson"
-date: "05-21-2022"
+date: "05/21/2022"
 format:
   html:
     toc: true

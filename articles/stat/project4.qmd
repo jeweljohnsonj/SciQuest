@@ -3,7 +3,7 @@ title: "Chapter 4: p-value and level of significance"
 subtitle: |
   Learn about p-value, level of significance, misconceptions behind p-value
 author: "Jewel Johnson"
-date: "05-21-2022"
+date: "05/21/2022"
 format:
   html:
     toc: true

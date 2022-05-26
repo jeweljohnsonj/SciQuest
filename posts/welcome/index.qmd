@@ -2,7 +2,7 @@
 title: "Welcome to my blog"
 description: "My story about this blog"
 author: "Jewel Johnson"
-date: "05-20-2022"
+date: "05/20/2022"
 format:
   html:
     toc: false
@@ -20,7 +20,7 @@ image: "happy.jpeg"
 categories: [news]
 ---
 
-![Initial logo when blog was first made in {distill}](logo.png)
+![Cover photo of my old blog made using {distill}](logo.png)
 
 ## Making of one-carat-blog (second version)
 

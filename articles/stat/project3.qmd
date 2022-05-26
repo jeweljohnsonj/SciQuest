@@ -3,7 +3,7 @@ title: "Chapter 3: Standard error and standard deviation"
 subtitle: |
   Learn about standard error and standard deviation, and get to know the standard normal distribution
 author: "Jewel Johnson"
-date: "05-21-2022"
+date: "05/21/2022"
 format:
   html:
     toc: true
