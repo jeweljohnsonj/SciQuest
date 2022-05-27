@@ -23,7 +23,7 @@ image: "world.jpg"
 
 ## Introduction
 
-**World Happiness Report 2022** shows which are the happiest countries for the year 2022. By statistically analyzing six key parameters, each country is given a score (which is called `happiness score` within the dataset). The higher the score, the happier the country is and vice versa. The six key parameters which are taken into analysis for determining the score are;
+**World Happiness Report 2022** shows which are the happiest countries for the year 2022. By statistically analysing six key parameters, each country is given a score (which is called `happiness score` within the dataset). The higher the score, the happier the country is and vice versa. The six key parameters which are taken into analysis for determining the score are;
 
 1.  Gross domestic product per capita
 2.  Social support
@@ -81,7 +81,6 @@ anti_join(hap, map_world,  by = c("country" = "region"))
 
 You can see that some country names are a mismatch with the map data. So we will attempt to fix it.
 
-::: column-page-inset
 ```{r}
 # display all country names in the dataset
 # useful to locate correct country names
@@ -118,7 +117,6 @@ ggplot(world_hap, aes(long, lat)) + geom_polygon(aes(fill = score, group = group
        fill = "Score",
        caption = addline_format("Source: World Happiness Report 2022,Visualization by Jewel Johnson"))
 ```
-:::
 
 ## Plotting an interactive world map
 
