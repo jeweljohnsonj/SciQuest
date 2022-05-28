@@ -699,7 +699,7 @@ ggplot(BirdNest, aes(Nesttype, Length, fill = Nesttype)) + geom_boxplot() +
 
 ### wesanderson package
 
-If you like your colours distinctive and narrative, just like how American film-maker [Mr. Wes Anderson](https://en.wikipedia.org/wiki/Wes_Anderson) would like it, then try the `{wesanderson}` package. Relive the *The Grand Budapest Hotel* moments through your graphs. The `{wesandreson}` package was developed by [Karthik Ram](https://github.com/karthik/wesanderson). There are a total of 19 colour palettes present in this package. We will see a subset of them. All colour scales in this package are available [here](https://github.com/karthik/wesanderson). The name of the tab denotes the colour scale used. The data used in this plot is the `penguin` dataset present in the package `{palmerpenguins}`.
+If you like your colours distinctive and narrative, just like how American film-maker [Mr. Wes Anderson](https://en.wikipedia.org/wiki/Wes_Anderson) would like it, then try the `{wesanderson}` package. Relive the *The Grand Budapest Hotel* moments through your graphs. The `{wesanderson}` package was developed by [Karthik Ram](https://github.com/karthik/wesanderson). There are a total of 19 colour palettes present in this package. We will see a subset of them. All colour scales in this package are available [here](https://github.com/karthik/wesanderson). The name of the tab denotes the colour scale used. The data used in this plot is the `penguin` dataset present in the package `{palmerpenguins}`.
 
 ```{r}
 #| eval: false
