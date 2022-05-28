@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Blog posts",
     "section": "",
-    "text": "The World Happiness Report 2022\n\n\n\n\n\n\n\nmaps\n\n\nleaflet\n\n\n\n\nPlotting an interactive map using the {leaflet} package in R\n\n\n\n\n\n\nMay 20, 2022\n\n\nJewel Johnson\n\n\n\n\n\n\n  \n\n\n\n\nWelcome to my blog\n\n\n\n\n\n\n\nnews\n\n\n\n\nMy story about this blog\n\n\n\n\n\n\nMay 20, 2022\n\n\nJewel Johnson\n\n\n\n\n\n\nNo matching items"
+    "text": "The World Happiness Report 2022\n\n\n\n\n\n\n\nmaps\n\n\nleaflet\n\n\n\n\nPlotting an interactive map using the {leaflet} package in R\n\n\n\n\n\n\nMay 20, 2022\n\n\n\n\n\n\n  \n\n\n\n\nWelcome to my blog\n\n\n\n\n\n\n\nnews\n\n\n\n\nMy story about this blog\n\n\n\n\n\n\nMay 20, 2022\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/word-happy-2022/index.html",
@@ -46,7 +46,7 @@
     "href": "posts/word-happy-2022/index.html#references",
     "title": "The World Happiness Report 2022",
     "section": "References",
-    "text": "References\n\nH. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.\nJoe Cheng, Bhaskar Karambelkar and Yihui Xie (2021). leaflet: Create Interactive Web Maps with the JavaScript ‘Leaflet’ Library. R package version 2.0.4.1. https://CRAN.R-project.org/package=leaflet\nPebesma, E., 2018. Simple Features for R: Standardized Support for Spatial Vector Data. The R Journal 10 (1), 439-446, https://doi.org/10.32614/RJ-2018-009\nTutorial on plotting interactive maps in R.\nThe World Happiness Report\nSource for .csv file of World Happiness Score of countries 2022. Compiled by Mathurin Aché in Kaggle.com\n\nLast updated on\n\n\n[1] \"2022-05-27 08:58:07 IST\""
+    "text": "References\n\nH. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.\nJoe Cheng, Bhaskar Karambelkar and Yihui Xie (2021). leaflet: Create Interactive Web Maps with the JavaScript ‘Leaflet’ Library. R package version 2.0.4.1. https://CRAN.R-project.org/package=leaflet\nPebesma, E., 2018. Simple Features for R: Standardized Support for Spatial Vector Data. The R Journal 10 (1), 439-446, https://doi.org/10.32614/RJ-2018-009\nTutorial on plotting interactive maps in R.\nThe World Happiness Report\nSource for .csv file of World Happiness Score of countries 2022. Compiled by Mathurin Aché in Kaggle.com\n\nLast updated on\n\n\n[1] \"2022-05-28 13:25:14 IST\""
   },
   {
     "objectID": "posts/welcome/index.html",
@@ -67,14 +67,7 @@
     "href": "posts/welcome/index.html#how-did-i-make-this-blog",
     "title": "Welcome to my blog",
     "section": "How did I make this blog",
-    "text": "How did I make this blog\nThere are several well-explained tutorials which explain from scratch how one can build a blog. If you are planning to use quarto for making your blog, then the quarto website itself features well written beginner friendly tutorials. Apart from that I found two other posts which also proved very useful while creating this blog. The links are given below.\n\nQuarto website\nPorting from distill to quarto\nWe don’t talk about Quarto\n\nLast updated on\n\n\n[1] \"2022-05-26 13:32:24 IST\""
-  },
-  {
-    "objectID": "posts/welcome/index.html#my-great-plan",
-    "href": "posts/welcome/index.html#my-great-plan",
-    "title": "Welcome to my blog",
-    "section": "My great plan",
-    "text": "My great plan\nSince I will be applying for a PhD, I hope I can showcase my skills using this blog and make myself standout from the rest. Last time when I first made the blog, the initial enthusiasm died out after one month and I did not write any posts after it. So this time, to avoid that, I took it to myself to write at lest one post per month and get the blog going. with that said I welcome you reader to my blog and I hope you enjoy it with as much as fun that I had while making it.\nLast updated on\n\n\n[1] \"2022-05-26 07:00:34 IST\""
+    "text": "How did I make this blog\nThere are several well-explained tutorials which explain from scratch how one can build a blog. If you are planning to use quarto for making your blog, then the quarto website itself features well written beginner friendly tutorials. Apart from that I found two other posts which also proved very useful while creating this blog. The links are given below.\n\nQuarto website\nPorting from distill to quarto\nWe don’t talk about Quarto\n\nLast updated on\n\n\n[1] \"2022-05-28 13:28:09 IST\""
   },
   {
     "objectID": "articles/data_viz/project3.html",

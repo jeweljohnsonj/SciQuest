@@ -1,22 +1,7 @@
 ---
 title: "The World Happiness Report 2022"
 description: "Plotting an interactive map using the {leaflet} package in R"
-author: "Jewel Johnson"
 date: "05/20/2022"
-format:
-  html:
-    toc: true
-    toc-title: On this page
-    html-math-method: katex
-    number-sections: false
-    smooth-scroll: true
-    highlight-style: github
-    code-link: true
-    code-tools: true
-citation: true
-execute: 
-  warning: false
-  freeze: auto
 categories: [maps, leaflet]
 image: "world.jpg"
 ---
