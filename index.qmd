@@ -7,7 +7,7 @@ editor: source
 ---
 ## Welcome to One Carat Blog
 
-My name is Jewel Johnson and I am the creator of this blog. The blog was first made using the [`{distill}`](https://rstudio.github.io/distill/) package in R and was eventually remade using the new [`{quarto}`](https://quarto.org/) package. In this blog I write science and R-programming articles. I have also made a tutorial on data visualization and manipulation using R, and an intro to basic statistics using R, so do check them out!
+My name is Jewel Johnson and I am the creator of this blog. The blog was first made using the [`{distill}`](https://rstudio.github.io/distill/) package in R and was eventually remade using the new [`{quarto}`](https://quarto.org/) package. In this blog I write science and R-programming articles. I have also made a tutorial on data visualization and manipulation using R, and an intro to basic statistics using R, so do check them out. Currently I am looking for PhD positions.
 
 ::: {.hero-buttons}
 [Data visualization](https://jeweljohnsonj.github.io/one-carat-blog/articles/data_viz/project1.html){#btn-index .btn-action .btn .btn-success .btn-lg role="button"}
