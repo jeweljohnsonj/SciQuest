@@ -487,6 +487,6 @@
     "href": "index.html",
     "title": "one carat blog",
     "section": "",
-    "text": "My name is Jewel Johnson and I am the creator of this blog. The blog was first made using the {distill} package in R and was eventually remade using the new {quarto} package. In this blog I write science and R-programming articles. I have also made a tutorial on data visualization and manipulation using R, and an intro to basic statistics using R, so do check them out. Currently I am looking for PhD positions.\n\nData visualization Data manipulation Statistics"
+    "text": "My name is Jewel Johnson and I am the creator of this blog. The blog was first made using the {distill} package in R and was eventually remade using the new {quarto} package. In this blog I write science and R-programming articles. I have also made a tutorial on data visualization and manipulation using R, and an intro to basic statistics using R, so do check them out!\n\nData visualization Data manipulation Statistics"
   }
 ]
