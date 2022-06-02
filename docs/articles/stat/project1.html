@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.466">
+<meta name="generator" content="quarto-0.9.497">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jewel Johnson">
 <meta name="dcterms.date" content="2022-05-21">
@@ -78,7 +78,24 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
-<script id="quarto-search-options" type="application/json">{
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../gems.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -102,7 +119,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <meta name="twitter:title" content="one carat blog - Chapter 1: Introduction to statistics with R">
 <meta name="twitter:image" content="https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/images/stat.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script><script src="../../site_libs/quarto-nav/headroom.min.js"></script><script src="../../site_libs/clipboard/clipboard.min.js"></script><script src="../../site_libs/quarto-search/autocomplete.umd.js"></script><script src="../../site_libs/quarto-search/fuse.min.js"></script><script src="../../site_libs/quarto-search/quarto-search.js"></script><meta name="quarto:offset" content="../../"><link href="../../gems.png" rel="icon" type="image/png"><script src="../../site_libs/quarto-html/quarto.js"></script><script src="../../site_libs/quarto-html/popper.min.js"></script><script src="../../site_libs/quarto-html/tippy.umd.min.js"></script><script src="../../site_libs/quarto-html/anchor.min.js"></script><link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet"><link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><script src="../../site_libs/bootstrap/bootstrap.min.js"></script><link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet"><link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet"></head>
+</head>
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
@@ -251,7 +268,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </div>
   
 
-</header><section id="introduction-to-statistics" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="introduction-to-statistics">
+</header><div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80" class="img-fluid"></p>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p>Image by <a href="https://unsplash.com/@isaacmsmith">Isaac Smith</a> on <a href="https://unsplash.com">Unsplash</a></p>
+</div>
+</div>
+</div>
+<section id="introduction-to-statistics" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="introduction-to-statistics">
 <span class="header-section-number">1</span> Introduction to statistics</h2>
 <p>This article, along with the related articles to this topic, is a culmination of knowledge that I gained during my time in IISER-TVM, when I took the BIO4203 course named <strong>Biological Data Analysis</strong> offered in 2019. The course was taught to me by <a href="https://www.iisertvm.ac.in/faculty/ravi">Dr.&nbsp;Ravi Maruthachalam</a> who is an excellent teacher and an inspiring researcher. The course helped me immensely by allowing me to understand the core basics of statistics and more importantly, remove any misconceptions about it. I hope I can deliver whatever I learned effectively through the series of articles that will be available regarding this topic, starting with this one.</p>
 <div class="callout-warning callout callout-style-default callout-captioned">
@@ -289,7 +318,7 @@ Word of caution
 <section id="last-updated-on" class="level4 unnumbered unlisted"><h4 class="unnumbered unlisted anchored" data-anchor-id="last-updated-on">Last updated on</h4>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-05-28 08:57:59 IST"</code></pre>
+<pre><code>[1] "2022-06-02 15:13:19 IST"</code></pre>
 </div>
 </div>
 <p><a hidden="" href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a></p>
@@ -464,46 +493,52 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "images/stat.jpg"</span></span>
 <span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction to statistics</span></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>This article, along with the related articles to this topic, is a culmination of knowledge that I gained during my time in IISER-TVM, when I took the BIO4203 course named **Biological Data Analysis** offered in 2019. The course was taught to me by <span class="co">[</span><span class="ot">Dr. Ravi Maruthachalam</span><span class="co">](https://www.iisertvm.ac.in/faculty/ravi)</span> who is an excellent teacher and an inspiring researcher. The course helped me immensely by allowing me to understand the core basics of statistics and more importantly, remove any misconceptions about it. I hope I can deliver whatever I learned effectively through the series of articles that will be available regarding this topic, starting with this one.</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>::: callout-warning</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="fu"># Word of caution</span></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>If you notice any typos or errors in any of the pages, you can request an edit of the page which will be shown at end of the table of contents on the right side. Thank you.</span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>::: {layout-ncol="1"}</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80)</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>Image by <span class="co">[</span><span class="ot">Isaac Smith</span><span class="co">](https://unsplash.com/@isaacmsmith)</span> on <span class="co">[</span><span class="ot">Unsplash</span><span class="co">](https://unsplash.com)</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction to statistics</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>This article, along with the related articles to this topic, is a culmination of knowledge that I gained during my time in IISER-TVM, when I took the BIO4203 course named **Biological Data Analysis** offered in 2019. The course was taught to me by <span class="co">[</span><span class="ot">Dr. Ravi Maruthachalam</span><span class="co">](https://www.iisertvm.ac.in/faculty/ravi)</span> who is an excellent teacher and an inspiring researcher. The course helped me immensely by allowing me to understand the core basics of statistics and more importantly, remove any misconceptions about it. I hope I can deliver whatever I learned effectively through the series of articles that will be available regarding this topic, starting with this one.</span>
 <span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>The topics I want to cover include;</span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Introduction to statistics</span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span><span class="co">[</span><span class="ot">Distribution and variance</span><span class="co">](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project2.html)</span></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span><span class="co">[</span><span class="ot">Standard error and standard deviation</span><span class="co">](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project3.html)</span></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span><span class="co">[</span><span class="ot">p-value and level of significance</span><span class="co">](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project4.html)</span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span><span class="co">[</span><span class="ot">Type I error and type II error</span><span class="co">](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project5.html)</span></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="ss">6.  </span><span class="co">[</span><span class="ot">Confidence interval and effect size</span><span class="co">](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project6.html)</span></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="ss">7.  </span><span class="co">[</span><span class="ot">Parametric test and assumptions</span><span class="co">](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project7.html)</span></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="ss">8.  </span><span class="co">[</span><span class="ot">Non-parametric test and assumptions</span><span class="co">](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project8.html)</span></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="ss">9.  </span><span class="co">[</span><span class="ot">Tests for multiple groups of data</span><span class="co">](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project9.html)</span></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>With that being said, the articles will be focused on enriching the intuition behind the concepts rather than the pure math behind them. In addition, I will also be explaining how one can do the same tests using R. The articles will be supplemented by published research papers related to the topic.</span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="fu">## Descriptive statistics</span></span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>Applied statistics is broadly categorized into <span class="in">`descriptive statistics`</span> and <span class="in">`inferential statistics`</span>. Descriptive statistics deals with the data at hand. It uses different ways to summarise and inspect the data in hand and does not go beyond the data. If the data is for a population then the characteristics used are called <span class="in">`parameters`</span>. Some of those descriptive parameters include the mean, median, and mode which are used to elucidate the central tendency of the data. For measuring variability, there is a range, quartiles, and standard deviation which we will see later in greater detail.</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>::: callout-warning</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="fu"># Word of caution</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>If you notice any typos or errors in any of the pages, you can request an edit of the page which will be shown at end of the table of contents on the right side. Thank you.</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>The topics I want to cover include;</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Introduction to statistics</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span><span class="co">[</span><span class="ot">Distribution and variance</span><span class="co">](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project2.html)</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span><span class="co">[</span><span class="ot">Standard error and standard deviation</span><span class="co">](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project3.html)</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span><span class="co">[</span><span class="ot">p-value and level of significance</span><span class="co">](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project4.html)</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span><span class="co">[</span><span class="ot">Type I error and type II error</span><span class="co">](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project5.html)</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="ss">6.  </span><span class="co">[</span><span class="ot">Confidence interval and effect size</span><span class="co">](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project6.html)</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="ss">7.  </span><span class="co">[</span><span class="ot">Parametric test and assumptions</span><span class="co">](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project7.html)</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="ss">8.  </span><span class="co">[</span><span class="ot">Non-parametric test and assumptions</span><span class="co">](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project8.html)</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="ss">9.  </span><span class="co">[</span><span class="ot">Tests for multiple groups of data</span><span class="co">](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project9.html)</span></span>
 <span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="fu">## Inferential statistics</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>With that being said, the articles will be focused on enriching the intuition behind the concepts rather than the pure math behind them. In addition, I will also be explaining how one can do the same tests using R. The articles will be supplemented by published research papers related to the topic.</span>
 <span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>Inferential statistics are used to understand patterns of a population using sample data from it. Since collecting data for a population is tedious, we take a sample from that population, which acts as a true representative of the population. Through sampling methods and hypothesis testing, patterns seen within the sample can be extrapolated to the whole population. The characteristics used for sample data are called <span class="in">`statistics`</span>. Some of the inferential statistics include sample mean, standard deviation, etc.</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="fu">## Descriptive statistics</span></span>
 <span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Last updated on {.unnumbered .unlisted}</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>Applied statistics is broadly categorized into <span class="in">`descriptive statistics`</span> and <span class="in">`inferential statistics`</span>. Descriptive statistics deals with the data at hand. It uses different ways to summarise and inspect the data in hand and does not go beyond the data. If the data is for a population then the characteristics used are called <span class="in">`parameters`</span>. Some of those descriptive parameters include the mean, median, and mode which are used to elucidate the central tendency of the data. For measuring variability, there is a range, quartiles, and standard deviation which we will see later in greater detail.</span>
 <span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">hidden</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://info.flagcounter.com/ynrK"</span><span class="kw">&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"Flag Counter"</span> <span class="er">border</span><span class="ot">=</span><span class="st">"0"</span><span class="kw">/&gt;&lt;/a&gt;</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="fu">## Inferential statistics</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>Inferential statistics are used to understand patterns of a population using sample data from it. Since collecting data for a population is tedious, we take a sample from that population, which acts as a true representative of the population. Through sampling methods and hypothesis testing, patterns seen within the sample can be extrapolated to the whole population. The characteristics used for sample data are called <span class="in">`statistics`</span>. Some of the inferential statistics include sample mean, standard deviation, etc.</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Last updated on {.unnumbered .unlisted}</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">hidden</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://info.flagcounter.com/ynrK"</span><span class="kw">&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"Flag Counter"</span> <span class="er">border</span><span class="ot">=</span><span class="st">"0"</span><span class="kw">/&gt;&lt;/a&gt;</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
@@ -513,4 +548,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </footer>
 
 
-<script src="../../site_libs/quarto-html/zenscroll-min.js"></script></body></html>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

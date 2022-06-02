@@ -23,6 +23,12 @@ execute:
 image: "images/dplyr.png"
 ---
 
+::: {layout-ncol=1}
+![](https://images.unsplash.com/photo-1530124566582-a618bc2615dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)
+
+Image by [Kenny Eliason](https://unsplash.com/@neonbrand) on [Unsplash](https://unsplash.com)
+:::
+
 ## Continuation from the previous chapter
 
 In the [previous chapter](https://jeweljohnsonj.github.io/jeweljohnson.github.io/project5.html) we have seen quite a lot of functions from the `{dplyr}` package. In this chapter, we will see the rest of the functions where we learn how to handle row names, how to join columns and rows and different set operations in the `{dplyr}` package.

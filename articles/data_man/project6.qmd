@@ -23,6 +23,12 @@ execute:
 image: "images/dplyr.png"
 ---
 
+::: {layout-ncol=1}
+![](https://images.unsplash.com/photo-1559535863-fcf5935d59c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80)
+
+Image by [Henry & Co.](https://unsplash.com/@hngstrm) on [Unsplash](https://unsplash.com)
+:::
+
 ## Introduction to dplyr package
 
 The `{dplyr}` package is a grammar of data manipulation just like how `{ggplot2}` is the grammar of data visualization. It helps us to apply a wide variety of functions such as;

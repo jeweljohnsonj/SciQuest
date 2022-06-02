@@ -25,6 +25,12 @@ execute:
 image: "images/tidyr.png"
 ---
 
+::: {layout-ncol=1}
+![](https://images.pexels.com/photos/434163/pexels-photo-434163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+
+Image by [Pixabay](https://www.pexels.com/@pixabay/) on [Pexels](https://www.pexels.com)
+:::
+
 ## Introduction to tidyr package
 
 Raw data might not be always in a usable form for any form of analysis or visualization process. The `{tidyr}` package aims to help you in reshaping your data in a usable form. In short, it helps you to 'tidy' up your data using various tools. In this chapter, we will see how you can use the `{tidyr}` package to make your data tidy.

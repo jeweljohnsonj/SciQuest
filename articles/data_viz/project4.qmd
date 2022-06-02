@@ -25,6 +25,12 @@ execute:
 image: "images/ggpubr.png"
 ---
 
+::: {layout-ncol=1}
+![](https://images.unsplash.com/photo-1618044733300-9472054094ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80)
+
+Image by [Markus Spiske](https://unsplash.com/@markusspiske) on [Unsplash](https://unsplash.com)
+:::
+
 ## Introduction to ggpubr package
 
 If you are a researcher who wants to have publication-ready plots but does not want to get hassled by the `{ggplot2}` package, then let me introduce you to the `{ggpubr}` package. Using this package you can make publication grade plots without spending too much time modifying things. Even if you are a beginner in R programming and does not know how to use the`{ggplot2}` package, you will still be able to plot graphs using the `{ggpubr}` package because of how easy the syntax is. But having prior knowledge of the `{ggplot2}` package will surely make things easier, and an experienced person will know that any plot which can be plotted using `{ggpubr}` can also be plotted using `{ggplot2}`. So let us start!

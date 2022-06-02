@@ -44,9 +44,22 @@ registerS3method(
 )
 ```
 
+::: {layout-ncol="1"}
+![](images/ci.jpg)
+What is the correct definiton Will?
+:::
+
 ## Confidence interval (CI)
 
-Confidence interval(CI) can be thought of as a range of values derived from a point estimate (for eg: sample mean) which has a likelihood of having the true point estimate of the population. The likelihood is set by the user and generally, they are set at 95%. A 95% confidence interval means that if the experiment were to be repeated multiple times 95% of the calculated intervals from the experiments would contain the true point estimate value. The CI is descriptive statistics which is used for population data but can also be used for sample data.
+Confidence interval(CI) can be thought of as a range of values derived from a point estimate (for eg: sample mean) which has a likelihood of having the true point estimate of the population. The likelihood is set by the user and generally, they are set at 95%.
+
+::: callout-important
+## Definition of 95% CI
+
+**A 95% confidence interval means that if the experiment were to be repeated multiple times, 95% of the calculated intervals from the experiments would contain the true point estimate value**
+:::
+
+The CI is descriptive statistics which is used for population data but can also be used for sample data.
 
 The formula for finding CI is;
 

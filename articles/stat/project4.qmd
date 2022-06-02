@@ -43,6 +43,10 @@ registerS3method(
 )
 ```
 
+::: {layout-ncol="1"}
+![](https://i.kym-cdn.com/photos/images/newsfeed/001/534/260/068.jpg)
+:::
+
 ## Definiton of p-value
 
 "What is p-value?" This was the first question that came from my instructor while I was taking the course on statistics. The question was very simple, we just have to give the definition of p-value. Yet, I was completely dumbfounded. I have seen it in almost all the scientific papers that I have read and I know that it is a result obtained after hypothesis testing. And if the value is less 0.05 then the we accept the alternate hypothesis and reject the null hypothesis. I thought that was it, until I found out about the real deal about p-value.

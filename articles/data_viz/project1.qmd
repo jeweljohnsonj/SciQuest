@@ -24,6 +24,15 @@ execute:
   freeze: auto
 image: "images/ggplot2.png"
 ---
+::: {layout-ncol=1}
+![](https://images.unsplash.com/photo-1489702932289-406b7782113c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80)
+
+Image by [Annie Spratt](https://unsplash.com/@anniespratt) on [Unsplash](https://unsplash.com)
+:::
+
+## Before we begin
+
+This series of chapters are focused on people who have a basic understanding of R programming. You are expected to know how the basic syntaxes of R language work like how to assign values, how to load your data, the different operations of R, and so on. If you just started out on your R journey then this chapter and the rest will become a roadblock for you. But fear not, there are some amazing websites that teach you the very basics of R, and that too for free! For an interactive way of learning, I recommend [DataCamp](https://app.datacamp.com). It is an online platform for learning programming languages. They have both paid and free classes. Luckily for us, they are providing the [introductory classes](https://app.datacamp.com/learn/courses/free-introduction-to-r) on R programming for free. This would be a great way to start your R journey. After you completed the course on data camp you can come back to this blog and you will find it very easy to comprehend and learn the various chapters that are available here. Coming from my own experience, it would be really helpful if you have your own data to work with. Rather than religiously following the steps in these chapters, I would recommend you have a goal in your mind before diving into the chapters. The goal should be to try incorporating the things you learned here into your own data. That would be the best way to learn anything in R. Hope you have a great time learning!
 
 ## Introduction to ggplot2 package
 

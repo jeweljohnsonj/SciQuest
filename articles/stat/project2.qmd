@@ -43,6 +43,12 @@ registerS3method(
 )
 ```
 
+::: {layout-ncol="1"}
+![](images/nor.png)
+
+Threat to normality
+:::
+
 ## Distribution and variance
 
 Let us look at the `penguins` dataset from the `{palmerpenguins}` package in R. We will plot the distribution curve for "body mass" of the "Chinstrap" species of penguins.
@@ -60,7 +66,7 @@ penguins %>% filter(species == "Chinstrap") %>% ggplot(aes(x = body_mass_g)) +
   theme_bw()
 ```
 
-As you can see, the data distribution closely resembles a "bell-shaped" curve. This kind of distribution is known as a `normal distribution` or a `Gaussian distribution`. On closer look, you can also see that the area under the curve is almost symmetrical to both sides and there is only a single peak present. We can also learn about the `variance` of the data by looking at the width of the curve. A wider curve means variance is higher and a narrower curve means variance in the data is smaller. Also for a normal distribution, there are no visible outliers present in the plot. The peak represents the `mean` of the data.
+As you can see, the data distribution closely resembles a "bell-shaped" curve. This kind of distribution is known as a `normal distribution` or a `Gaussian distribution`. On closer look, you can also see that the area under the curve is almost symmetrical to both sides and there is only a single peak present. We can also learn about the `variance` of the data by looking at the width of the curve. A wider curve means variance is higher and a narrower curve means variance in the data is smaller. Also for a normal distribution, there are no visible outliers present in the plot. Outliers are those data points which fall out of the normal trend in the data. The peak represents the `mean` of the data.
 
 ```{r}
 library(tidyverse)

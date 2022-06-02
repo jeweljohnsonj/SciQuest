@@ -43,6 +43,12 @@ registerS3method(
 )
 ```
 
+::: {layout-ncol="1"}
+![](https://images.unsplash.com/photo-1613905780946-26b73b6f6e11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80)
+
+Image by [Michal Matlon](https://unsplash.com/@michalmatlon) on [Unsplash](https://unsplash.com)
+:::
+
 ## Standard error
 
 The standard error or more accurately called the `standard error of mean` is a measure of spread that calculates how far the sample mean is different from the population mean. It calculates the error in a sample statistic compared to the corresponding population parameter.

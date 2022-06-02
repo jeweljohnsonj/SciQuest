@@ -43,6 +43,12 @@ registerS3method(
 )
 ```
 
+::: {layout-ncol="1"}
+![](https://www.accountingexperiments.com/post/anova-regression/featured_hu8d7b78fdb8970f110a404e1ae11b4c8f_365153_720x0_resize_lanczos_2.png)
+
+*Spoilers*
+:::
+
 ## Multiple pairwise comparisons problem
 
 Imagine you are rolling dice. Then the probability to get 6 as an outcome is;

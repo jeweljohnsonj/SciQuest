@@ -43,6 +43,10 @@ registerS3method(
 )
 ```
 
+::: {layout-ncol="1"}
+![](images/para1.jpg)
+:::
+
 ## Parametric test assumptions
 
 Parametric tests can only be used in datasets having two groups, which fulfill the following conditions;
