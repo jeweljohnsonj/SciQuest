@@ -44,7 +44,9 @@ registerS3method(
 ```
 
 ::: {layout-ncol="1"}
-![](https://i.kym-cdn.com/photos/images/newsfeed/001/534/260/068.jpg)
+![](\images\p_values_2x.png)
+
+Comic from [XKCD](https://xkcd.com/1478/).
 :::
 
 ## Definiton of p-value

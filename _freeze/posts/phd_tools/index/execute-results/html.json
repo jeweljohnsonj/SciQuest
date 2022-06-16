@@ -1,0 +1,14 @@
+{
+  "hash": "727c115af4e02c18be874b8715381251",
+  "result": {
+    "markdown": "---\ntitle: \"Making your PhD joruney more productive\"\ndescription: \"Here are some useful tips and tools that can boost your productivity for your PhD work\"\ndate: \"06/14/2022\"\nformat: html\nimage: \"\"\ncategories: [PhD,productivity]\ndraft: true\n---\n\n\n\n\n#### Last updated on {.unnumbered .unlisted}\n\n\n::: {.cell}\n::: {.cell-output .cell-output-stdout}\n```\n[1] \"2022-06-16 20:47:09 IST\"\n```\n:::\n:::\n\n\n<a hidden href=\"https://info.flagcounter.com/ynrK\"><img src=\"https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/\" alt=\"Flag Counter\" border=\"0\"/></a>\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
