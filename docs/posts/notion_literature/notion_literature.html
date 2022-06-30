@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.556">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="Jewel Johnson">
+<meta name="dcterms.date" content="2022-06-29">
+<meta name="description" content="This a tutorial on how you can use Notion to make a databse which tracks the research articles that you read">
+<title>one carat blog - Using Notion as a literature tracker with the help of Zotero</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../gems.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script><style>html{ scroll-behavior: smooth; }</style>
+<link rel="stylesheet" href="../../styles.css">
+<meta name="twitter:title" content="one carat blog - Using Notion as a literature tracker with the help of Zotero">
+<meta name="twitter:description" content="This a tutorial on how you can use Notion to make a databse which tracks the research articles that you…">
+<meta name="twitter:image" content="">
+<meta name="twitter:card" content="summary">
+</head>
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+    <img src="../../gems.png" alt=""><span class="navbar-title">one carat blog</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item">
+    <a class="nav-link" href="../../blog.html">Blog</a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-r-tutorials" role="button" data-bs-toggle="dropdown" aria-expanded="false">R Tutorials</a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-r-tutorials">
+<li class="dropdown-header">Data visualization</li>
+        <li>
+    <a class="dropdown-item" href="../../articles/data_viz/project1.html">
+ <span class="dropdown-text">Chapter 1: Data visualization using ggplot2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/data_viz/project2.html">
+ <span class="dropdown-text">Chapter 2: Customizing graphs in ggplot2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/data_viz/project3.html">
+ <span class="dropdown-text">Chapter 3: Even more customizations in ggplot2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/data_viz/project4.html">
+ <span class="dropdown-text">Chapter 4: Publication ready plots using ggpubr</span></a>
+  </li>  
+        <li class="dropdown-header">Data manipulation</li>
+        <li>
+    <a class="dropdown-item" href="../../articles/data_man/project5.html">
+ <span class="dropdown-text">Chapter 1: Data tidying using tidyr</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/data_man/project6.html">
+ <span class="dropdown-text">Chapter 2: Data manipulation using dplyr (part 1)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/data_man/project7.html">
+ <span class="dropdown-text">Chapter 3: Data manipulation using dplyr (part 2)</span></a>
+  </li>  
+    </ul>
+</li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-statistics" role="button" data-bs-toggle="dropdown" aria-expanded="false">Statistics</a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-statistics">
+<li>
+    <a class="dropdown-item" href="../../articles/stat/project1.html">
+ <span class="dropdown-text">Chapter 1: Introduction to statistics with R</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project2.html">
+ <span class="dropdown-text">Chapter 2: Distribution and variance</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project3.html">
+ <span class="dropdown-text">Chapter 3: Standard error and standard deviation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project4.html">
+ <span class="dropdown-text">Chapter 4: p-value and level of significance</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project5.html">
+ <span class="dropdown-text">Chapter 5: Type I and Type II errors</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project6.html">
+ <span class="dropdown-text">Chapter 6: Confidence interval and effect sizes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project7.html">
+ <span class="dropdown-text">Chapter 7: Parametric tests and assumptions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project8.html">
+ <span class="dropdown-text">Chapter 8: Non-parametric test and assumptions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project9.html">
+ <span class="dropdown-text">Chapter 9: Tests for multiple groups of data</span></a>
+  </li>  
+    </ul>
+</li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://jeweljohnsonj.github.io/jewel_resume/">About me</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jeweljohnsonj/one-carat-blog"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/jeweljohnsonj"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+<div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <div class="quarto-title-block"><div><h1 class="title">Using Notion as a literature tracker with the help of Zotero</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+                  <div>
+        <div class="description">
+          This a tutorial on how you can use Notion to make a databse which tracks the research articles that you read
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">PhD</div>
+                <div class="quarto-category">Notion</div>
+                <div class="quarto-category">Zotero</div>
+                <div class="quarto-category">productivity</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Jewel Johnson </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">June 29, 2022</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li>
+<a href="#literautre-tracker-using-notion-and-zotero" id="toc-literautre-tracker-using-notion-and-zotero" class="nav-link active" data-scroll-target="#literautre-tracker-using-notion-and-zotero">Literautre tracker using Notion and Zotero</a>
+  <ul class="collapse">
+<li><a href="#install-zotero" id="toc-install-zotero" class="nav-link" data-scroll-target="#install-zotero">Install Zotero</a></li>
+  <li><a href="#installing-notero-plugin" id="toc-installing-notero-plugin" class="nav-link" data-scroll-target="#installing-notero-plugin">Installing Notero plugin</a></li>
+  <li><a href="#configure-notero-plugin" id="toc-configure-notero-plugin" class="nav-link" data-scroll-target="#configure-notero-plugin">Configure Notero plugin</a></li>
+  </ul>
+</li>
+  </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/edit/main/posts/notion_literature/notion_literature.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content"><section id="literautre-tracker-using-notion-and-zotero" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="literautre-tracker-using-notion-and-zotero">Literautre tracker using Notion and Zotero</h2>
+<p>This is a follow-up article from my earlier post on “My Notion story” where I briefly described how one could use Notion to build a literature collection database. If you don’t know what Notion is or how to install it, please refer to my earlier article for the background information.</p>
+<p>We will aim to build a literature tracker that looks similar to the one below.</p>
+<div class="column-page">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/notion_summary.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">My literature tracker template in Notion</figcaption><p></p>
+</figure>
+</div>
+</div>
+<section id="install-zotero" class="level3"><h3 class="anchored" data-anchor-id="install-zotero">Install Zotero</h3>
+<p>The first thing to do is to download and install <a href="https://www.zotero.org/">Zotero</a>, a free-to-use reference manager that you can use to categorise and manage your research article collection. You should also create an account in Zotero and log in using that account in your Zotero app.</p>
+</section><section id="installing-notero-plugin" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="installing-notero-plugin">Installing Notero plugin</h3>
+<p>Now we are going to install a plugin for Zotero, called <a href="https://github.com/dvanoni/notero">Notero</a> by <a href="https://twitter.com/dvanoni">David Vanoni</a>, which acts as a link between Zotero and Notion. This is what syncs your Zotero library to your Notion database.</p>
+<ol type="1">
+<li>Go to the Github page of <a href="https://github.com/dvanoni/notero/releases/tag/v0.3.5">Notero</a> and download the <code>notero-0.3.5.xpi</code> file under the assets section. You can right-click on the file and save the file by clicking on ‘save link as’</li>
+</ol>
+<p><img src="images/notero.gif" class="img-fluid"></p>
+<ol start="2" type="1">
+<li>Go to the Zotero app and click on ‘Tools’ and then click ‘Add-ons’. Then in the new window, click on the Settings button and then click on ‘Install add-on from file’. Then browse to where your <code>notero-0.3.5.xpi</code> file is downloaded and then install it.</li>
+</ol>
+<div class="column-page">
+<p><img src="images/notero_install.gif" class="img-fluid"></p>
+</div>
+</section><section id="configure-notero-plugin" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="configure-notero-plugin">Configure Notero plugin</h3>
+<ol type="1">
+<li><p>After you install Notero, you can find a new option called ‘Notero Preferences’ under the ‘Tools’ section. Now to have the plugin work you need to provide an ‘integration token’ and a ‘database ID’.</p></li>
+<li><p>Now got to <a href="https://www.notion.so/my-integrations">Notion integrations</a> and click on ‘New integration’. Give a suitable name (for eg. Notero integration) and select your workspace in Notion. You can keep the rest of the options in their default setting and then save it. You will then get your integration token.</p></li>
+</ol>
+<div class="column-page">
+<p><img src="images/notion_integration.gif" class="img-fluid"></p>
+</div>
+<ol start="3" type="1">
+<li>Go back to your Notion app and then select the database which you want to integrate with the Notero plugin. If you are creating a database from scratch then make sure that the table that you are creating has the following named columns.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/notero_table.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Image from Notero Github page</figcaption><p></p>
+</figure>
+</div>
+<p>If you want to use my template then click <a href="https://jeweljohnson.notion.site/c65f406986d64871abe8e9191bcc06aa?v=becefab2c4184727952707ee2e597c36">here</a> and click on <code>Duplicate</code>. It contains most of the relevant columns and will save you time from creating it from scratch.</p>
+<p><img src="images/duplicate.png" class="img-fluid"></p>
+<ol start="4" type="1">
+<li>Once you have the database that you want to integrate with Notero, click on the ‘Share’ button and click on ‘copy link’. Paste the link in a text editor and copy the first 36 characters after your database name. This is your ‘database ID’.</li>
+</ol>
+<div class="column-page">
+<p><img src="images/notion_database.gif" class="img-fluid"></p>
+</div>
+<ol start="5" type="1">
+<li>Then finally paste your ‘integration token’ and the ‘database ID’ into the ‘Notero Preferences’ window under ‘Tools’ in Zotero and select the directory in Zotero that you want to integrate with your Notion database. Now you have successfully configured the Notero plugin.</li>
+</ol>
+<p><img src="images/notero_preferences.png" class="img-fluid"></p>
+<p>Now go to the associated database and click ‘Share’. Search for your integration and click invite. Any research article that is present in your directory associated with the Notero plugin will now automatically be synced to your associated Notion database. Notero plugin allows one-time sync between Zotero to Notion but not the other way around. So any changes that you do in the Notion database won’t be reflected to your Zotero database.</p>
+<div class="column-page">
+<p><img src="images/notion_notero.gif" class="img-fluid"></p>
+</div>
+<p>There is a reason why I said it’s a one-time sync, so any modifications that you do for already existing files won’t be reflected to Notion. But this can be easily fixed by assigning the existing papers to a temporary tag and then deleting it.</p>
+<div class="column-page">
+<p><img src="images/notero_update.gif" class="img-fluid"></p>
+</div>
+<p>There are some limitations on what the plugin is capable of doing, but it’s still better than nothing. You can learn more about the plugin from it’s <a href="https://github.com/dvanoni/notero">Github repo</a>.</p>
+<p>So there you have it, your very own literature tracker made using Notion and integrated with Zotero using the Notero plugin. I am so proud of you 👍</p>
+<p>Thank you <a href="https://twitter.com/dvanoni">David Vanoni</a> and the developers who contributed to developing the Notero plugin.</p>
+<section id="last-updated-on" class="level4 unnumbered unlisted"><h4 class="unnumbered unlisted anchored" data-anchor-id="last-updated-on">Last updated on</h4>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "2022-06-30 11:39:07 IST"</code></pre>
+</div>
+</div>
+<p><a hidden="" href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a></p>
+
+
+<!-- -->
+
+</section></section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{johnson2022,
+  author = {Jewel Johnson},
+  title = {Using {Notion} as a Literature Tracker with the Help of
+    {Zotero}},
+  date = {2022-06-29},
+  url = {https://jeweljohnsonj.github.io/one-carat-blog//posts/notion_literature/notion_literature.html},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-johnson2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+Jewel Johnson. 2022. <span>“Using Notion as a Literature Tracker with
+the Help of Zotero.”</span> June 29, 2022. <a href="https://jeweljohnsonj.github.io/one-carat-blog//posts/notion_literature/notion_literature.html">https://jeweljohnsonj.github.io/one-carat-blog//posts/notion_literature/notion_literature.html</a>.
+</div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Using Notion as a literature tracker with the help of Zotero"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "This a tutorial on how you can use Notion to make a databse which tracks the research articles that you read"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "06/29/2022"</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> ""</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [PhD, Notion, Zotero, productivity]</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> true</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">## Literautre tracker using Notion and Zotero</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>This is a follow-up article from my earlier post on "My Notion story" where I briefly described how one could use Notion to build a literature collection database. If you don't know what Notion is or how to install it, please refer to my earlier article for the background information.</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>We will aim to build a literature tracker that looks similar to the one below.</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>::: column-page</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="al">![My literature tracker template in Notion](images/notion_summary.png)</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="fu">### Install Zotero</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>The first thing to do is to download and install <span class="co">[</span><span class="ot">Zotero</span><span class="co">](https://www.zotero.org/)</span>, a free-to-use reference manager that you can use to categorise and manage your research article collection. You should also create an account in Zotero and log in using that account in your Zotero app.</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="fu">### Installing Notero plugin</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>Now we are going to install a plugin for Zotero, called <span class="co">[</span><span class="ot">Notero</span><span class="co">](https://github.com/dvanoni/notero)</span> by <span class="co">[</span><span class="ot">David Vanoni</span><span class="co">](https://twitter.com/dvanoni)</span>, which acts as a link between Zotero and Notion. This is what syncs your Zotero library to your Notion database.</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Go to the Github page of <span class="co">[</span><span class="ot">Notero</span><span class="co">](https://github.com/dvanoni/notero/releases/tag/v0.3.5)</span> and download the <span class="in">`notero-0.3.5.xpi`</span> file under the assets section. You can right-click on the file and save the file by clicking on 'save link as'</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/notero.gif)</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Go to the Zotero app and click on 'Tools' and then click 'Add-ons'. Then in the new window, click on the Settings button and then click on 'Install add-on from file'. Then browse to where your <span class="in">`notero-0.3.5.xpi`</span> file is downloaded and then install it.</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>::: column-page</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/notero_install.gif)</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="fu">### Configure Notero plugin</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>After you install Notero, you can find a new option called 'Notero Preferences' under the 'Tools' section. Now to have the plugin work you need to provide an 'integration token' and a 'database ID'.</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Now got to <span class="co">[</span><span class="ot">Notion integrations</span><span class="co">](https://www.notion.so/my-integrations)</span> and click on 'New integration'. Give a suitable name (for eg. Notero integration) and select your workspace in Notion. You can keep the rest of the options in their default setting and then save it. You will then get your integration token.</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>::: column-page</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/notion_integration.gif)</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Go back to your Notion app and then select the database which you want to integrate with the Notero plugin. If you are creating a database from scratch then make sure that the table that you are creating has the following named columns.</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="al">![Image from Notero Github page](images/notero_table.png)</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>If you want to use my template then click <span class="co">[</span><span class="ot">here</span><span class="co">](https://jeweljohnson.notion.site/c65f406986d64871abe8e9191bcc06aa?v=becefab2c4184727952707ee2e597c36)</span> and click on <span class="in">`Duplicate`</span>. It contains most of the relevant columns and will save you time from creating it from scratch.</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/duplicate.png)</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>Once you have the database that you want to integrate with Notero, click on the 'Share' button and click on 'copy link'. Paste the link in a text editor and copy the first 36 characters after your database name. This is your 'database ID'.</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>::: column-page</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/notion_database.gif)</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>Then finally paste your 'integration token' and the 'database ID' into the 'Notero Preferences' window under 'Tools' in Zotero and select the directory in Zotero that you want to integrate with your Notion database. Now you have successfully configured the Notero plugin.</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/notero_preferences.png)</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>Now go to the associated database and click 'Share'. Search for your integration and click invite. Any research article that is present in your directory associated with the Notero plugin will now automatically be synced to your associated Notion database. Notero plugin allows one-time sync between Zotero to Notion but not the other way around. So any changes that you do in the Notion database won't be reflected to your Zotero database.</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>::: column-page</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/notion_notero.gif)</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>There is a reason why I said it's a one-time sync, so any modifications that you do for already existing files won't be reflected to Notion. But this can be easily fixed by assigning the existing papers to a temporary tag and then deleting it.</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>::: column-page</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/notero_update.gif)</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>There are some limitations on what the plugin is capable of doing, but it's still better than nothing. You can learn more about the plugin from it's <span class="co">[</span><span class="ot">Github repo</span><span class="co">](https://github.com/dvanoni/notero)</span>.</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>So there you have it, your very own literature tracker made using Notion and integrated with Zotero using the Notero plugin. I am so proud of you 👍</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>Thank you <span class="co">[</span><span class="ot">David Vanoni</span><span class="co">](https://twitter.com/dvanoni)</span> and the developers who contributed to developing the Notero plugin.</span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Last updated on {.unnumbered .unlisted}</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">hidden</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://info.flagcounter.com/ynrK"</span><span class="kw">&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"Flag Counter"</span> <span class="er">border</span><span class="ot">=</span><span class="st">"0"</span><span class="kw">/&gt;&lt;/a&gt;</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+      <div class="nav-footer-center">© 2022, Jewel Johnson</div>
+  </div>
+</footer>
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

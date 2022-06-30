@@ -1,0 +1,14 @@
+{
+  "hash": "f7c128aa354c24baa864857152c20539",
+  "result": {
+    "markdown": "---\ntitle: \"Using Notion as to manage your tasks efficiently\"\ndescription: \"This a tutorial on how you can use Notion to manage your to-do-lists and create a task database\"\ndate: \"06/29/2022\"\nformat: html\nimage: \"\"\ncategories: [PhD, Notion, Zotero, productivity]\ndraft: true\n---\n\n\n## Using Notion as a task management dashboard\n\nWith the ability to make databases, Notion becomes an excellent tool to manage day to day tasks. In this article I am going to give you a quick tour on how you can use Notion as a task management dashboard, with the templates I made. Specifically I made four templates where each template serves a specific function.\n\nYou can copy my template by duplicating it to your Notion database. The link to my templates is [here](https://jeweljohnson.notion.site/Template-PhD-Dashboard-136e837c4f0b4e61bc34e2aad7fb05b5). Through this link you will get my entire template collection. For now we will only be interested in templates related to task management.\n\n![](images/task.png)\n\n## To do list\n\nWe will first see the To do list template.\n\n#### Last updated on {.unnumbered .unlisted}\n\n\n::: {.cell}\n::: {.cell-output .cell-output-stdout}\n```\n[1] \"2022-06-30 11:39:16 IST\"\n```\n:::\n:::\n\n\n<a hidden href=\"https://info.flagcounter.com/ynrK\"><img src=\"https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/\" alt=\"Flag Counter\" border=\"0\"/></a>\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

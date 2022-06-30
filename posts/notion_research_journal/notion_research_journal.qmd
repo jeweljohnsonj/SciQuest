@@ -1,0 +1,46 @@
+---
+title: "Using Notion as a research diary for your PhD"
+description: "This a tutorial on how you can use Notion as a research diary if you are a researcher"
+date: "06/29/2022"
+format: html
+image: ""
+categories: [PhD, Notion, Zotero, productivity]
+draft: true
+---
+
+## Using notion as a research diary
+
+This is a follow-up article from my earlier post on "My Notion story". If you don't know what Notion is or how to install it, please refer to my earlier article for the background information.
+
+In this article we will see how we can use Notion to keep a research diary. If you are a researcher or a PhD student then a research diary would be a very important piece of intellectual work that will be staying with you for quite a few years. So it is important that it is well written, well formatted and efficiently organised. With the power of Notion, I will show you a template that I made that can act as an electronic research diary. Thus we would be able to utilize the rich categorizing tools and other features of Notion that can aid us in creating an awesome research diary.
+
+You can get the template by clicking [here](https://jeweljohnson.notion.site/c44a2ec5f518456abfd032642220f26a?v=4adfe4fb5df54e7aac3b000b9152d164). Duplicate it into your Notion workspace.
+
+::: column-page
+![Research diary database](images/diary.png)
+:::
+
+The picture shown above is our research diary database. Each row value created in the table will be each day's entry. If you also a literature tracker database in Notion, then you can couple it with your diary entry and it will showcase any papers that you have read one that day. You can extend this idea and showcase any experiments that you have done, books you read or movies that you watched as an automated entry in your diary.
+
+So lets try writing an entry. First make a blank row entry and then hover over the newly created empty row and click 'OPEN'. This will open a new window. In that window click on 'Diary entry template'. This will bring you a sample template. You can fill in relevant info or add in new headings and so on.
+
+::: column-page
+![Research diary template](images/dairy_entry.png)
+:::
+
+You can also see that I have attached my literature database to this diary entry. We have seen previously how one can make this database in Notion. If you filter the database to the date at which the diary entry is, then you can see which papers you read that day. If you have any other databases, then using the same idea, you can attach them to you diary entry.
+
+::: column-page
+![](images/dairy.gif)
+:::
+
+I hope you find this template useful and that it helps you with your PhD.
+
+#### Last updated on {.unnumbered .unlisted}
+
+```{r}
+#| echo: false
+Sys.time()
+```
+
+<a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>

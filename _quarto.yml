@@ -9,8 +9,8 @@ website:
   page-navigation: true
   page-footer: "© 2022, Jewel Johnson"
   opengraph: true
-  site-url: https://jeweljohnsonj.github.io/one-carat-blog/
-  repo-url: https://github.com/jeweljohnsonj/one-carat-blog
+  site-url: "https://jeweljohnsonj.github.io/one-carat-blog/"
+  repo-url: "https://github.com/jeweljohnsonj/one-carat-blog"
   repo-actions: [edit, issue]
   twitter-card: true
     

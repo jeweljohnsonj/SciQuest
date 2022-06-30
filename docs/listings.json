@@ -2,8 +2,9 @@
   {
     "listing": "/blog.html",
     "items": [
-      "/posts/word-happy-2022/index.html",
-      "/posts/welcome/index.html"
+      "/posts/notion_intro/notion_story.html",
+      "/posts/welcome/index.html",
+      "/posts/word-happy-2022/index.html"
     ]
   }
 ]
