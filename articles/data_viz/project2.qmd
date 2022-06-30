@@ -25,7 +25,7 @@ comments:
 image: "images/ggplot2.png"
 ---
 
-::: {layout-ncol=1}
+::: {layout-ncol="1"}
 ![](https://images.pexels.com/photos/6648439/pexels-photo-6648439.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
 
 Image by [Cotton Bro](https://www.pexels.com/@cottonbro/) on [Pexels](https://www.pexels.com)

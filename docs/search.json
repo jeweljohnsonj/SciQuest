@@ -60,7 +60,7 @@
     "href": "articles/data_man/project5.html#references",
     "title": "Chapter 1: Data tidying using tidyr",
     "section": "\n8 References",
-    "text": "8 References\n\nHadley Wickham (2021). tidyr: Tidy Messy Data. R package version 1.1.4. https://CRAN.R-project.org/package=tidyr\n\nLast updated on\n\n\n[1] \"2022-06-30 13:09:29 IST\""
+    "text": "8 References\n\nHadley Wickham (2021). tidyr: Tidy Messy Data. R package version 1.1.4. https://CRAN.R-project.org/package=tidyr\n\nLast updated on\n\n\n[1] \"2022-06-30 13:30:54 IST\""
   },
   {
     "objectID": "articles/data_man/project6.html",
@@ -123,7 +123,7 @@
     "href": "articles/data_man/project6.html#references",
     "title": "Chapter 2: Data manipulation using dplyr (part 1)",
     "section": "\n8 References",
-    "text": "8 References\n\nHadley Wickham, Romain François, Lionel Henry and Kirill Müller (2021). dplyr: A Grammar of Data Manipulation. R package version 1.0.7. https://CRAN.R-project.org/package=dplyr Here is the link to the cheat sheet explaining each function in dplyr.\nHorst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/\nHadley Wickham (2021). tidyr: Tidy Messy Data. R package version 1.1.4. https://CRAN.R-project.org/package=tidyr\n\nLast updated on\n\n\n[1] \"2022-06-30 13:10:42 IST\""
+    "text": "8 References\n\nHadley Wickham, Romain François, Lionel Henry and Kirill Müller (2021). dplyr: A Grammar of Data Manipulation. R package version 1.0.7. https://CRAN.R-project.org/package=dplyr Here is the link to the cheat sheet explaining each function in dplyr.\nHorst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/\nHadley Wickham (2021). tidyr: Tidy Messy Data. R package version 1.1.4. https://CRAN.R-project.org/package=tidyr\n\nLast updated on\n\n\n[1] \"2022-06-30 13:34:59 IST\""
   },
   {
     "objectID": "articles/data_man/project7.html",
@@ -179,7 +179,7 @@
     "href": "articles/data_man/project7.html#references",
     "title": "Chapter 3: Data manipulation using dplyr (part 2)",
     "section": "\n7 References",
-    "text": "7 References\n\nHadley Wickham, Romain François, Lionel Henry and Kirill Müller (2021). dplyr: A Grammar of Data Manipulation. R package version 1.0.7. https://CRAN.R-project.org/package=dplyr. Here is the link to the cheat sheet explaining each and every function in dplyr.\n\nLast updated on\n\n\n[1] \"2022-06-30 13:12:19 IST\""
+    "text": "7 References\n\nHadley Wickham, Romain François, Lionel Henry and Kirill Müller (2021). dplyr: A Grammar of Data Manipulation. R package version 1.0.7. https://CRAN.R-project.org/package=dplyr. Here is the link to the cheat sheet explaining each and every function in dplyr.\n\nLast updated on\n\n\n[1] \"2022-06-30 13:34:05 IST\""
   },
   {
     "objectID": "articles/data_viz/project1.html",
@@ -228,7 +228,7 @@
     "href": "articles/data_viz/project1.html#references",
     "title": "Chapter 1: Data visualization using ggplot2",
     "section": "\n6 References",
-    "text": "6 References\n\nH. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016. Read more about ggplot2 here. You can also look at the cheat sheet for all the syntax used in ggplot2. Also check this out.\nHorst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/. doi: 10.5281/zenodo.3960218.\n\nLast updated on\n\n\n[1] \"2022-06-30 13:12:57 IST\""
+    "text": "6 References\n\nH. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016. Read more about ggplot2 here. You can also look at the cheat sheet for all the syntax used in ggplot2. Also check this out.\nHorst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/. doi: 10.5281/zenodo.3960218.\n\nLast updated on\n\n\n[1] \"2022-06-30 13:36:12 IST\""
   },
   {
     "objectID": "articles/data_viz/project2.html",
@@ -263,7 +263,7 @@
     "href": "articles/data_viz/project2.html#references",
     "title": "Chapter 2: Customizing graphs in ggplot2",
     "section": "\n4 References",
-    "text": "4 References\n\nH. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016. Read more about ggplot2 here. You can also look at the cheat sheet for all the syntax used in ggplot2. Also check this out.\nAnn Cannon, George Cobb, Bradley Hartlaub, Julie Legler, Robin Lock, Thomas Moore, Allan Rossman and Jeffrey Witmer (2019). Stat2Data: Datasets for Stat2. R package version 2.0.0. https://CRAN.R-project.org/package=Stat2Data\n\nLast updated on\n\n\n[1] \"2022-06-30 13:17:39 IST\""
+    "text": "4 References\n\nH. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016. Read more about ggplot2 here. You can also look at the cheat sheet for all the syntax used in ggplot2. Also check this out.\nAnn Cannon, George Cobb, Bradley Hartlaub, Julie Legler, Robin Lock, Thomas Moore, Allan Rossman and Jeffrey Witmer (2019). Stat2Data: Datasets for Stat2. R package version 2.0.0. https://CRAN.R-project.org/package=Stat2Data\n\nLast updated on\n\n\n[1] \"2022-06-30 13:37:18 IST\""
   },
   {
     "objectID": "articles/data_viz/project3.html",

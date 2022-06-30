@@ -23,7 +23,7 @@ execute:
 image: "images/dplyr.png"
 ---
 
-::: {layout-ncol=1}
+::: {layout-ncol="1"}
 ![](https://images.unsplash.com/photo-1530124566582-a618bc2615dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)
 
 Image by [Kenny Eliason](https://unsplash.com/@neonbrand) on [Unsplash](https://unsplash.com)
