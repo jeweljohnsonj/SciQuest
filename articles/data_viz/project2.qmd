@@ -22,15 +22,10 @@ execute:
 citation: true
 comments:
   hypothesis: true
-image: images/ggplot2.png
-twitter-card:
-  image: "images/ggplot2.png"
 ---
 
 ::: {layout-ncol="1"}
-![](https://images.pexels.com/photos/6648439/pexels-photo-6648439.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
-
-Image by [Cotton Bro](https://www.pexels.com/@cottonbro/) on [Pexels](https://www.pexels.com)
+![Image by [Cotton Bro](https://www.pexels.com/@cottonbro/) on [Pexels](https://www.pexels.com)](https://images.pexels.com/photos/6648439/pexels-photo-6648439.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1){.preview-image}
 :::
 
 After [Chapter 1](https://jeweljohnsonj.github.io/one-carat-blog/project1.html) you must be familiar with the different types of graphs that you can plot using `{ggplot2}`. So for this tutorial, we will be learning how to customize those ggplot graphs to our liking. We will learn how to tweak the aesthetics, how to change labels and how to modify and change the axes in a graph.

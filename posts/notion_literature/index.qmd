@@ -15,7 +15,7 @@ This is a follow-up article from my earlier post on "My Notion story" where I br
 We will aim to build a literature tracker that looks similar to the one below.
 
 ::: column-page
-![My literature tracker template in Notion](images/notion_summary.png)
+![My literature tracker template in Notion](images/notion_summary.png){.preview-image}
 :::
 
 ### Install Zotero

@@ -28,9 +28,7 @@ twitter-card:
 ---
 
 ::: {layout-ncol="1"}
-![](https://images.unsplash.com/photo-1618044733300-9472054094ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80)
-
-Image by [Markus Spiske](https://unsplash.com/@markusspiske) on [Unsplash](https://unsplash.com)
+![Image by [Markus Spiske](https://unsplash.com/@markusspiske) on [Unsplash](https://unsplash.com)](https://images.unsplash.com/photo-1618044733300-9472054094ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80){.preview-image}
 :::
 
 ## Introduction to ggpubr package

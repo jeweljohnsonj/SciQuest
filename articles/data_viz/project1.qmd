@@ -22,15 +22,10 @@ comments:
 execute: 
   warning: false
   freeze: auto
-image: images/ggplot2.png
-twitter-card:
-  image: "images/ggplot2.png"
 ---
 
 ::: {layout-ncol="1"}
-![](https://images.unsplash.com/photo-1489702932289-406b7782113c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80)
-
-Image by [Annie Spratt](https://unsplash.com/@anniespratt) on [Unsplash](https://unsplash.com)
+![Image by [Annie Spratt](https://unsplash.com/@anniespratt) on [Unsplash](https://unsplash.com)](https://images.unsplash.com/photo-1489702932289-406b7782113c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80){.preview-image}
 :::
 
 ## Before we begin

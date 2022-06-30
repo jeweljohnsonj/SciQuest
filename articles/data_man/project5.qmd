@@ -28,9 +28,7 @@ twitter-card:
 ---
 
 ::: {layout-ncol="1"}
-![](https://images.pexels.com/photos/434163/pexels-photo-434163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
-
-Image by [Pixabay](https://www.pexels.com/@pixabay/) on [Pexels](https://www.pexels.com)
+![Image by [Pixabay](https://www.pexels.com/@pixabay/) on [Pexels](https://www.pexels.com)](https://images.pexels.com/photos/434163/pexels-photo-434163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1){.preview-image}
 :::
 
 ## Introduction to tidyr package

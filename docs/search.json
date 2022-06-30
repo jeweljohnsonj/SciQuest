@@ -60,7 +60,7 @@
     "href": "articles/data_man/project5.html#references",
     "title": "Chapter 1: Data tidying using tidyr",
     "section": "\n8 References",
-    "text": "8 References\n\nHadley Wickham (2021). tidyr: Tidy Messy Data. R package version 1.1.4. https://CRAN.R-project.org/package=tidyr\n\nLast updated on\n\n\n[1] \"2022-06-30 14:31:10 IST\""
+    "text": "8 References\n\nHadley Wickham (2021). tidyr: Tidy Messy Data. R package version 1.1.4. https://CRAN.R-project.org/package=tidyr\n\nLast updated on\n\n\n[1] \"2022-06-30 15:09:37 IST\""
   },
   {
     "objectID": "articles/data_man/project6.html",
@@ -123,7 +123,7 @@
     "href": "articles/data_man/project6.html#references",
     "title": "Chapter 2: Data manipulation using dplyr (part 1)",
     "section": "\n8 References",
-    "text": "8 References\n\nHadley Wickham, Romain François, Lionel Henry and Kirill Müller (2021). dplyr: A Grammar of Data Manipulation. R package version 1.0.7. https://CRAN.R-project.org/package=dplyr Here is the link to the cheat sheet explaining each function in dplyr.\nHorst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/\nHadley Wickham (2021). tidyr: Tidy Messy Data. R package version 1.1.4. https://CRAN.R-project.org/package=tidyr\n\nLast updated on\n\n\n[1] \"2022-06-30 14:31:27 IST\""
+    "text": "8 References\n\nHadley Wickham, Romain François, Lionel Henry and Kirill Müller (2021). dplyr: A Grammar of Data Manipulation. R package version 1.0.7. https://CRAN.R-project.org/package=dplyr Here is the link to the cheat sheet explaining each function in dplyr.\nHorst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/\nHadley Wickham (2021). tidyr: Tidy Messy Data. R package version 1.1.4. https://CRAN.R-project.org/package=tidyr\n\nLast updated on\n\n\n[1] \"2022-06-30 15:04:28 IST\""
   },
   {
     "objectID": "articles/data_man/project7.html",
@@ -179,7 +179,7 @@
     "href": "articles/data_man/project7.html#references",
     "title": "Chapter 3: Data manipulation using dplyr (part 2)",
     "section": "\n7 References",
-    "text": "7 References\n\nHadley Wickham, Romain François, Lionel Henry and Kirill Müller (2021). dplyr: A Grammar of Data Manipulation. R package version 1.0.7. https://CRAN.R-project.org/package=dplyr. Here is the link to the cheat sheet explaining each and every function in dplyr.\n\nLast updated on\n\n\n[1] \"2022-06-30 14:31:59 IST\""
+    "text": "7 References\n\nHadley Wickham, Romain François, Lionel Henry and Kirill Müller (2021). dplyr: A Grammar of Data Manipulation. R package version 1.0.7. https://CRAN.R-project.org/package=dplyr. Here is the link to the cheat sheet explaining each and every function in dplyr.\n\nLast updated on\n\n\n[1] \"2022-06-30 15:10:14 IST\""
   },
   {
     "objectID": "articles/data_viz/project1.html",
@@ -228,7 +228,7 @@
     "href": "articles/data_viz/project1.html#references",
     "title": "Chapter 1: Data visualization using ggplot2",
     "section": "\n6 References",
-    "text": "6 References\n\nH. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016. Read more about ggplot2 here. You can also look at the cheat sheet for all the syntax used in ggplot2. Also check this out.\nHorst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/. doi: 10.5281/zenodo.3960218.\n\nLast updated on\n\n\n[1] \"2022-06-30 14:32:24 IST\""
+    "text": "6 References\n\nH. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016. Read more about ggplot2 here. You can also look at the cheat sheet for all the syntax used in ggplot2. Also check this out.\nHorst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/. doi: 10.5281/zenodo.3960218.\n\nLast updated on\n\n\n[1] \"2022-06-30 15:10:41 IST\""
   },
   {
     "objectID": "articles/data_viz/project2.html",
@@ -263,7 +263,7 @@
     "href": "articles/data_viz/project2.html#references",
     "title": "Chapter 2: Customizing graphs in ggplot2",
     "section": "\n4 References",
-    "text": "4 References\n\nH. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016. Read more about ggplot2 here. You can also look at the cheat sheet for all the syntax used in ggplot2. Also check this out.\nAnn Cannon, George Cobb, Bradley Hartlaub, Julie Legler, Robin Lock, Thomas Moore, Allan Rossman and Jeffrey Witmer (2019). Stat2Data: Datasets for Stat2. R package version 2.0.0. https://CRAN.R-project.org/package=Stat2Data\n\nLast updated on\n\n\n[1] \"2022-06-30 14:32:54 IST\""
+    "text": "4 References\n\nH. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016. Read more about ggplot2 here. You can also look at the cheat sheet for all the syntax used in ggplot2. Also check this out.\nAnn Cannon, George Cobb, Bradley Hartlaub, Julie Legler, Robin Lock, Thomas Moore, Allan Rossman and Jeffrey Witmer (2019). Stat2Data: Datasets for Stat2. R package version 2.0.0. https://CRAN.R-project.org/package=Stat2Data\n\nLast updated on\n\n\n[1] \"2022-06-30 15:11:18 IST\""
   },
   {
     "objectID": "articles/data_viz/project3.html",
@@ -361,7 +361,7 @@
     "href": "articles/data_viz/project4.html#references",
     "title": "Chapter 4: Publication ready plots using ggpubr",
     "section": "\n6 References",
-    "text": "6 References\n\nAlboukadel Kassambara (2020). ggpubr: ‘ggplot2’ Based Publication Ready Plots. R package version 0.4.0. https://CRAN.R-project.org/package=ggpubr\nHorst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/\nStephane Champely (2018). PairedData: Paired Data Analysis. R package version 1.1.1. https://CRAN.R-project.org/package=PairedData\nWilliam S. Cleveland & Robert McGill (1984) Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods, Journal of the American Statistical Association, 79:387, 531-554, DOI: 10.1080/01621459.1984.10478080\nHadley Wickham, Romain François, Lionel Henry and Kirill Müller (2021). dplyr: A Grammar of Data Manipulation. R package version 1.0.7. https://CRAN.R-project.org/package=dplyr\nHadley Wickham (2021). tidyr: Tidy Messy Data. R package version 1.1.4. https://CRAN.R-project.org/package=tidyr\nH. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.\nSimon Garnier, Noam Ross, Robert Rudis, Antônio P. Camargo, Marco Sciaini, and Cédric Scherer (2021). Rvision - Colorblind-Friendly Color Maps for R. R package version 0.6.2.\n\nLast updated on\n\n\n[1] \"2022-06-30 14:34:21 IST\""
+    "text": "6 References\n\nAlboukadel Kassambara (2020). ggpubr: ‘ggplot2’ Based Publication Ready Plots. R package version 0.4.0. https://CRAN.R-project.org/package=ggpubr\nHorst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/\nStephane Champely (2018). PairedData: Paired Data Analysis. R package version 1.1.1. https://CRAN.R-project.org/package=PairedData\nWilliam S. Cleveland & Robert McGill (1984) Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods, Journal of the American Statistical Association, 79:387, 531-554, DOI: 10.1080/01621459.1984.10478080\nHadley Wickham, Romain François, Lionel Henry and Kirill Müller (2021). dplyr: A Grammar of Data Manipulation. R package version 1.0.7. https://CRAN.R-project.org/package=dplyr\nHadley Wickham (2021). tidyr: Tidy Messy Data. R package version 1.1.4. https://CRAN.R-project.org/package=tidyr\nH. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.\nSimon Garnier, Noam Ross, Robert Rudis, Antônio P. Camargo, Marco Sciaini, and Cédric Scherer (2021). Rvision - Colorblind-Friendly Color Maps for R. R package version 0.6.2.\n\nLast updated on\n\n\n[1] \"2022-06-30 15:12:47 IST\""
   },
   {
     "objectID": "articles/stat/project1.html",
@@ -683,7 +683,7 @@
     "href": "posts/notion_intro/index.html#useful-references",
     "title": "My Notion story",
     "section": "Useful References",
-    "text": "Useful References\n\nBeginners introduction to Notion. Source\n\nBasics of Notion. Source\n\nQuick tutorial on setting up Notion. Source\n\nNotion official website has detailed guides for very single feature in Notion. Source\n\n\nLast updated on\n\n\n[1] \"2022-06-30 14:35:01 IST\""
+    "text": "Useful References\n\nBeginners introduction to Notion. Source\n\nBasics of Notion. Source\n\nQuick tutorial on setting up Notion. Source\n\nNotion official website has detailed guides for very single feature in Notion. Source\n\n\nLast updated on\n\n\n[1] \"2022-06-30 15:14:03 IST\""
   },
   {
     "objectID": "posts/welcome/index.html",

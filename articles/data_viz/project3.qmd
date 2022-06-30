@@ -23,15 +23,10 @@ execute:
   cache: true
 comments:
   hypothesis: true
-image: images/ggplot2.png
-twitter-card:
-  image: "images/ggplot2.png"
 ---
 
 ::: {layout-ncol="1"}
-![](https://images.unsplash.com/4/madebyvadim.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80)
-
-Image by [Vadim Sherbakov](https://unsplash.com/@madebyvadim) on [Pexels](https://unsplash.com)
+![Image by [Vadim Sherbakov](https://unsplash.com/@madebyvadim) on [Pexels](https://unsplash.com)](https://images.unsplash.com/4/madebyvadim.jpg?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80){.preview-image}
 :::
 
 In this chapter, we will learn how to change the theme settings of a graph in `{ggplot2}` The theme of a graph consists of non-data components present in your graph. This includes the different labels of the graph, fonts used, colour of axes, the background of the graph etc. By changing the theme we would not be changing or transforming how the data will look in the graph. Instead, we would only change the visual appearances in the graph and by doing so we can make it more aesthetically pleasing. Furthermore, we will see a few popular packages featuring ready to use themes. We will also learn about colour palettes and will see different packages associated with them.

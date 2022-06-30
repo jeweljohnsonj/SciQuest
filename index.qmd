@@ -4,6 +4,8 @@ section-divs: false
 toc: false
 css: index_css/index.css
 editor: source
+twitter-card:
+  image: "github_read.png"
 ---
 ## Welcome to One Carat Blog
 

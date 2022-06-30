@@ -20,15 +20,10 @@ comments:
 execute: 
   warning: false
   freeze: auto
-image: images/dplyr.png
-twitter-card:
-  image: "images/dplyr.png"
 ---
 
 ::: {layout-ncol="1"}
-![](https://cdn.stocksnap.io/img-thumbs/960w/arts-paint_OV9YU9IZBC.jpg)
-
-Image by [Richard Revel](https://stocksnap.io/author/34759) on [StockSnap](https://stocksnap.io)
+![Image by [Richard Revel](https://stocksnap.io/author/34759) on [StockSnap](https://stocksnap.io)](https://cdn.stocksnap.io/img-thumbs/960w/arts-paint_OV9YU9IZBC.jpg){.preview-image}
 :::
 
 ## Introduction to dplyr package
