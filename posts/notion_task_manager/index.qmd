@@ -10,9 +10,14 @@ draft: true
 
 ## Using Notion as a task management dashboard
 
-With the ability to make databases, Notion becomes an excellent tool to manage day to day tasks. In this article I am going to give you a quick tour on how you can use Notion as a task management dashboard, with the templates I made. Specifically I made four templates where each template serves a specific function.
+With the ability to make databases, Notion becomes an excellent tool to manage task lists. In this article I am going to give you a quick tour on how you can use Notion as a task management dashboard with the templates I made.
 
-You can copy my template by duplicating it to your Notion database. The link to my templates is [here](https://jeweljohnson.notion.site/Template-PhD-Dashboard-136e837c4f0b4e61bc34e2aad7fb05b5). Through this link you will get my entire template collection. For now we will only be interested in templates related to task management.
+There are four templates to add to your Notion database and you need all four of them to function properly.
+
+1. [To-do-list](https://jeweljohnson.notion.site/22735f3cfabd4e34b1a38cc2127c5202?v=8a3317915d4a4a9b97448ae74a9942bf): Acts as the master database where all tasks are stored. By default only shows incomplete tasks.
+2. [Completed task list](https://jeweljohnson.notion.site/0423a149b5274574adb7d123665c8579?v=4743a4b9a12a45a992deebd972047ea9): Same template as above, but only tasks that are completed are shown. Act as an archive for completed tasks.
+3. [Task manager](https://jeweljohnson.notion.site/Task-manager-246a1b4e5b4a4f1b846da8e42b5af756): Task manager interface where each tasks are arranged and displayed categorically. By default only shows incomplete tasks.
+4. [Task dashboard](https://jeweljohnson.notion.site/Task-dashboard-195e0f63dbd94f518918f78708677e60): A dashboard which informs you which tasks are due and how long are they due to completion.
 
 ![](images/task.png)
 

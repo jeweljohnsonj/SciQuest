@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.556">
+<meta name="generator" content="quarto-0.9.629">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jewel Johnson">
 <meta name="dcterms.date" content="2022-06-29">
@@ -117,7 +117,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 }</script><style>html{ scroll-behavior: smooth; }</style>
 <link rel="stylesheet" href="../../styles.css">
 <meta name="twitter:title" content="one carat blog - Using Notion and Zotero to build a literature tracker">
-<meta name="twitter:description" content="This a tutorial on how you can use Notion to make a database which tracks the research articles that you read which is synced to your Zotero directory via the Notero…">
+<meta name="twitter:description" content="This a tutorial on how you can use Notion to make a database which tracks the research articles that you read which is synced to your Zotero directory via the Notero plugin">
 <meta name="twitter:image" content="https://jeweljohnsonj.github.io/one-carat-blog/posts\notion_literature\images\notero_thumbnail.png">
 <meta name="twitter:image-height" content="720">
 <meta name="twitter:image-width" content="1280">
@@ -276,17 +276,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    
   <ul>
 <li>
-<a href="#literature-tracker-using-notion-and-zotero" id="toc-literature-tracker-using-notion-and-zotero" class="nav-link active" data-scroll-target="#literature-tracker-using-notion-and-zotero">Literature tracker using Notion and Zotero</a>
+<a href="#literature-tracker-using-notion-and-zotero" id="toc-literature-tracker-using-notion-and-zotero" class="nav-link active" data-scroll-target="#literature-tracker-using-notion-and-zotero"> <span class="header-section-number">1</span> Literature tracker using Notion and Zotero</a>
   <ul class="collapse">
-<li><a href="#install-zotero" id="toc-install-zotero" class="nav-link" data-scroll-target="#install-zotero">Install Zotero</a></li>
-  <li><a href="#installing-notero-plugin" id="toc-installing-notero-plugin" class="nav-link" data-scroll-target="#installing-notero-plugin">Installing Notero plugin</a></li>
-  <li><a href="#configure-notero-plugin" id="toc-configure-notero-plugin" class="nav-link" data-scroll-target="#configure-notero-plugin">Configure Notero plugin</a></li>
+<li><a href="#install-zotero" id="toc-install-zotero" class="nav-link" data-scroll-target="#install-zotero"> <span class="header-section-number">1.1</span> Install Zotero</a></li>
+  <li><a href="#installing-notero-plugin" id="toc-installing-notero-plugin" class="nav-link" data-scroll-target="#installing-notero-plugin"> <span class="header-section-number">1.2</span> Installing Notero plugin</a></li>
+  <li><a href="#configure-notero-plugin" id="toc-configure-notero-plugin" class="nav-link" data-scroll-target="#configure-notero-plugin"> <span class="header-section-number">1.3</span> Configure Notero plugin</a></li>
   </ul>
 </li>
   </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/edit/main/posts/notion_literature/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content"><section id="literature-tracker-using-notion-and-zotero" class="level2 page-columns page-full"><h2 class="anchored" data-anchor-id="literature-tracker-using-notion-and-zotero">Literature tracker using Notion and Zotero</h2>
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content"><section id="literature-tracker-using-notion-and-zotero" class="level2 page-columns page-full" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="literature-tracker-using-notion-and-zotero">
+<span class="header-section-number">1</span> Literature tracker using Notion and Zotero</h2>
 <p>This is a follow-up article from my earlier post on <a href="https://jeweljohnsonj.github.io/one-carat-blog/posts/notion_intro/">My Notion story</a>. If you don’t know what Notion is or how to install it, please refer to my <a href="https://jeweljohnsonj.github.io/one-carat-blog/posts/notion_intro/#installing-notion">earlier article</a> for the background information.</p>
 <p>In this article, we will aim to build a literature tracker that looks similar to the one below. It will be automated via the Notero plugin integrating Zotero with Notion.</p>
 <div class="column-page">
@@ -296,9 +297,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </figure>
 </div>
 </div>
-<section id="install-zotero" class="level3"><h3 class="anchored" data-anchor-id="install-zotero">Install Zotero</h3>
+<section id="install-zotero" class="level3" data-number="1.1"><h3 data-number="1.1" class="anchored" data-anchor-id="install-zotero">
+<span class="header-section-number">1.1</span> Install Zotero</h3>
 <p>The first thing to do is to download and install <a href="https://www.zotero.org/">Zotero</a>, a free-to-use reference manager that you can use to categorize and manage your research article collection. You should also create an account in Zotero and log in using that account in your Zotero app.</p>
-</section><section id="installing-notero-plugin" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="installing-notero-plugin">Installing Notero plugin</h3>
+</section><section id="installing-notero-plugin" class="level3 page-columns page-full" data-number="1.2"><h3 data-number="1.2" class="anchored" data-anchor-id="installing-notero-plugin">
+<span class="header-section-number">1.2</span> Installing Notero plugin</h3>
 <p>Now we are going to install a plugin for Zotero, called <a href="https://github.com/dvanoni/notero">Notero</a> by <a href="https://twitter.com/dvanoni">David Vanoni</a>, which acts as a link between Zotero and Notion. This is what syncs your Zotero library to your Notion database.</p>
 <ol type="1">
 <li>Go to the Github page of <a href="https://github.com/dvanoni/notero/releases/tag/v0.3.5">Notero</a> and download the <code>notero-0.3.5.xpi</code> file under the assets section. You can right-click on the file and save it by clicking on ‘save link as’</li>
@@ -340,7 +343,8 @@ Installing the plugin
 </div>
 </div>
 </div>
-</section><section id="configure-notero-plugin" class="level3 page-columns page-full"><h3 class="anchored" data-anchor-id="configure-notero-plugin">Configure Notero plugin</h3>
+</section><section id="configure-notero-plugin" class="level3 page-columns page-full" data-number="1.3"><h3 data-number="1.3" class="anchored" data-anchor-id="configure-notero-plugin">
+<span class="header-section-number">1.3</span> Configure Notero plugin</h3>
 <ol type="1">
 <li><p>After installing Notero, you can find a new option called ‘Notero Preferences’ under the ‘Tools’ section. To have the plugin work, you need to provide an ‘integration token’ and a ‘database ID’.</p></li>
 <li><p>To get the integration token, go to <a href="https://www.notion.so/my-integrations">Notion integrations</a> and click on ‘New integration’. Give a suitable name (something like ‘Notero integration’ for the ease of finding it) and then select your work space in Notion. You can keep the rest of the options in their default setting and then clikc save. You will then get your integration token.</p></li>
@@ -611,6 +615,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 });
+</script><script src="https://giscus.app/client.js" data-repo="jeweljohnsonj/one-carat-blog" data-repo-id="R_kgDOHW124A" data-category="General" data-category-id="DIC_kwDOHW124M4CPNVL" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Using Notion and Zotero to build a literature tracker"</span></span>

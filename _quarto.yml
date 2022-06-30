@@ -69,5 +69,9 @@ format:
     theme: slate
     css: styles.css
 
+comments:
+  giscus:
+    repo: jeweljohnsonj/one-carat-blog 
+
 editor: visual
 

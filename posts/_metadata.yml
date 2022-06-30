@@ -13,7 +13,7 @@ license: "CC BY"
 toc: true
 toc-title: On this page
 smooth-scroll: true
-number-sections: false
+number-sections: true
 code-link: true
 code-tools: true
 
