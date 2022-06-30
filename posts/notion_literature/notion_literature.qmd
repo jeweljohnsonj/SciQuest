@@ -8,7 +8,7 @@ categories: [PhD, Notion, Zotero, productivity]
 draft: true
 ---
 
-## Literautre tracker using Notion and Zotero
+## Literature tracker using Notion and Zotero
 
 This is a follow-up article from my earlier post on "My Notion story" where I briefly described how one could use Notion to build a literature collection database. If you don't know what Notion is or how to install it, please refer to my earlier article for the background information.
 
@@ -20,7 +20,7 @@ We will aim to build a literature tracker that looks similar to the one below.
 
 ### Install Zotero
 
-The first thing to do is to download and install [Zotero](https://www.zotero.org/), a free-to-use reference manager that you can use to categorise and manage your research article collection. You should also create an account in Zotero and log in using that account in your Zotero app.
+The first thing to do is to download and install [Zotero](https://www.zotero.org/), a free-to-use reference manager that you can use to categorize and manage your research article collection. You should also create an account in Zotero and log in using that account in your Zotero app.
 
 ### Installing Notero plugin
 
@@ -40,7 +40,7 @@ Now we are going to install a plugin for Zotero, called [Notero](https://github.
 
 1.  After you install Notero, you can find a new option called 'Notero Preferences' under the 'Tools' section. Now to have the plugin work you need to provide an 'integration token' and a 'database ID'.
 
-2.  Now got to [Notion integrations](https://www.notion.so/my-integrations) and click on 'New integration'. Give a suitable name (for eg. Notero integration) and select your workspace in Notion. You can keep the rest of the options in their default setting and then save it. You will then get your integration token.
+2.  Now got to [Notion integrations](https://www.notion.so/my-integrations) and click on 'New integration'. Give a suitable name (something like 'Notero integration' for ease of finding it) and select your work-space in Notion. You can keep the rest of the options in their default setting and then save it. You will then get your integration token.
 
 ::: column-page
 ![](images/notion_integration.gif)
