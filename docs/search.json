@@ -634,7 +634,7 @@
     "href": "blog.html",
     "title": "Blog posts",
     "section": "",
-    "text": "My Notion story\n\n\n\n\n\n\n\nPhD\n\n\nNotion\n\n\nZotero\n\n\nproductivity\n\n\n\n\nNotion is a powerful productivity software that implements database creation in its core function. In this article, I will share my story on what led me to use Notion and why you might want to consider using Notion\n\n\n\n\n\n\nJun 28, 2022\n\n\n\n\n\n\n  \n\n\n\n\nThe World Happiness Report 2022\n\n\n\n\n\n\n\nmaps\n\n\nleaflet\n\n\n\n\nPlotting an interactive map using the {leaflet} package in R\n\n\n\n\n\n\nMay 20, 2022\n\n\n\n\n\n\n  \n\n\n\n\nWelcome to my blog\n\n\n\n\n\n\n\nnews\n\n\n\n\nMy story about this blog\n\n\n\n\n\n\nMay 19, 2022\n\n\n\n\n\n\nNo matching items"
+    "text": "Using Notion and Zotero to build a literature tracker\n\n\n\n\n\n\n\nPhD\n\n\nNotion\n\n\nZotero\n\n\nproductivity\n\n\n\n\nThis a tutorial on how you can use Notion to make a database which tracks the research articles that you read which is synced to your Zotero directory via the Notero plugin\n\n\n\n\n\n\nJun 29, 2022\n\n\n\n\n\n\n  \n\n\n\n\nMy Notion story\n\n\n\n\n\n\n\nPhD\n\n\nNotion\n\n\nZotero\n\n\nproductivity\n\n\n\n\nNotion is a powerful productivity software that implements database creation in its core function. In this article, I will share my story on what led me to use Notion and why you might want to consider using Notion\n\n\n\n\n\n\nJun 28, 2022\n\n\n\n\n\n\n  \n\n\n\n\nThe World Happiness Report 2022\n\n\n\n\n\n\n\nmaps\n\n\nleaflet\n\n\n\n\nPlotting an interactive map using the {leaflet} package in R\n\n\n\n\n\n\nMay 20, 2022\n\n\n\n\n\n\n  \n\n\n\n\nWelcome to my blog\n\n\n\n\n\n\n\nnews\n\n\n\n\nMy story about this blog\n\n\n\n\n\n\nMay 19, 2022\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -683,7 +683,7 @@
     "href": "posts/notion_intro/index.html#useful-references",
     "title": "My Notion story",
     "section": "Useful References",
-    "text": "Useful References\n\nBeginners introduction to Notion. Source\n\nBasics of Notion. Source\n\nQuick tutorial on setting up Notion. Source\n\nNotion official website has detailed guides for very single feature in Notion. Source\n\n\nLast updated on\n\n\n[1] \"2022-06-30 15:29:51 IST\""
+    "text": "Useful References\n\nBeginners introduction to Notion. Source\n\nBasics of Notion. Source\n\nQuick tutorial on setting up Notion. Source\n\nNotion official website has detailed guides for very single feature in Notion. Source\n\n\nLast updated on\n\n\n[1] \"2022-06-30 16:45:49 IST\""
   },
   {
     "objectID": "posts/welcome/index.html",
@@ -747,5 +747,12 @@
     "title": "The World Happiness Report 2022",
     "section": "References",
     "text": "References\n\nH. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.\nJoe Cheng, Bhaskar Karambelkar and Yihui Xie (2021). leaflet: Create Interactive Web Maps with the JavaScript ‘Leaflet’ Library. R package version 2.0.4.1. https://CRAN.R-project.org/package=leaflet\nPebesma, E., 2018. Simple Features for R: Standardized Support for Spatial Vector Data. The R Journal 10 (1), 439-446, https://doi.org/10.32614/RJ-2018-009\nTutorial on plotting interactive maps in R.\nThe World Happiness Report\nSource for .csv file of World Happiness Score of countries 2022. Compiled by Mathurin Aché in Kaggle.com\n\nLast updated on\n\n\n[1] \"2022-06-14 21:38:22 IST\""
+  },
+  {
+    "objectID": "posts/notion_literature/index.html",
+    "href": "posts/notion_literature/index.html",
+    "title": "Using Notion and Zotero to build a literature tracker",
+    "section": "",
+    "text": "Reusehttps://creativecommons.org/licenses/by/4.0/CitationBibTeX citation:@online{johnson2022,\n  author = {Jewel Johnson},\n  title = {Using {Notion} and {Zotero} to Build a Literature Tracker},\n  date = {2022-06-29},\n  url = {https://jeweljohnsonj.github.io/one-carat-blog//posts/notion_literature},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nJewel Johnson. 2022. “Using Notion and Zotero to Build a\nLiterature Tracker.” June 29, 2022. https://jeweljohnsonj.github.io/one-carat-blog//posts/notion_literature."
   }
 ]
