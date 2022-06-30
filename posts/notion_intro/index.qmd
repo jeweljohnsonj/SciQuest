@@ -4,8 +4,7 @@ description: "Notion is a powerful productivity software that implements databas
 date: "06/28/2022"
 format: html
 categories: [PhD, Notion, Zotero, productivity]
-twitter-card:
-  image: "images/notion.png"
+image: images/notion.png
 tbl-cap-location: bottom
 ---
 
