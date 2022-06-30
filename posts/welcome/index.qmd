@@ -1,7 +1,7 @@
 ---
 title: "Welcome to my blog"
 description: "My story about this blog"
-date: "05/20/2022"
+date: "05/19/2022"
 image: "happy.jpeg"
 categories: [news]
 ---
