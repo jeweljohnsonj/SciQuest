@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.497">
+<meta name="generator" content="quarto-0.9.556">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jewel Johnson">
 <meta name="dcterms.date" content="2021-12-13">
@@ -118,7 +118,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script><link rel="stylesheet" href="../../styles.css">
 <link rel="stylesheet" href="styles.css">
 <meta name="twitter:title" content="one carat blog - Chapter 2: Data manipulation using dplyr (part 1)">
-<meta name="twitter:image" content="https://jeweljohnsonj.github.io/one-carat-blog/articles/data_man/images/dplyr.png">
+<meta name="twitter:description" content="The dplyr package is a grammar of data manipulation just like how ggplot2 is the grammar of data visualization.">
+<meta name="twitter:image" content="https://jeweljohnsonj.github.io/one-carat-blog/articles\data_man\images\dplyr.png">
 <meta name="twitter:image-height" content="500">
 <meta name="twitter:image-width" content="500">
 <meta name="twitter:card" content="summary_large_image">
@@ -541,7 +542,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["species"],"name":[1],"type":["fct"],"align":["left"]},{"label":["island"],"name":[2],"type":["fct"],"align":["left"]},{"label":["bill_length_mm"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["bill_depth_mm"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["flipper_length_mm"],"name":[5],"type":["int"],"align":["right"]},{"label":["body_mass_g"],"name":[6],"type":["int"],"align":["right"]},{"label":["sex"],"name":[7],"type":["fct"],"align":["left"]},{"label":["year"],"name":[8],"type":["int"],"align":["right"]}],"data":[{"1":"Adelie","2":"Torgersen","3":"38.7","4":"19.0","5":"195","6":"3450","7":"female","8":"2007"},{"1":"Adelie","2":"Torgersen","3":"37.8","4":"17.3","5":"180","6":"3700","7":"NA","8":"2007"},{"1":"Adelie","2":"Biscoe","3":"43.2","4":"19.0","5":"197","6":"4775","7":"male","8":"2009"},{"1":"Gentoo","2":"Biscoe","3":"44.5","4":"14.3","5":"216","6":"4100","7":"NA","8":"2007"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["species"],"name":[1],"type":["fct"],"align":["left"]},{"label":["island"],"name":[2],"type":["fct"],"align":["left"]},{"label":["bill_length_mm"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["bill_depth_mm"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["flipper_length_mm"],"name":[5],"type":["int"],"align":["right"]},{"label":["body_mass_g"],"name":[6],"type":["int"],"align":["right"]},{"label":["sex"],"name":[7],"type":["fct"],"align":["left"]},{"label":["year"],"name":[8],"type":["int"],"align":["right"]}],"data":[{"1":"Adelie","2":"Dream","3":"44.1","4":"19.7","5":"196","6":"4400","7":"male","8":"2007"},{"1":"Adelie","2":"Biscoe","3":"37.9","4":"18.6","5":"172","6":"3150","7":"female","8":"2007"},{"1":"Adelie","2":"Biscoe","3":"39.7","4":"18.9","5":"184","6":"3550","7":"male","8":"2009"},{"1":"Gentoo","2":"Biscoe","3":"46.3","4":"15.8","5":"215","6":"5050","7":"male","8":"2007"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -559,7 +560,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["species"],"name":[1],"type":["fct"],"align":["left"]},{"label":["island"],"name":[2],"type":["fct"],"align":["left"]},{"label":["bill_length_mm"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["bill_depth_mm"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["flipper_length_mm"],"name":[5],"type":["int"],"align":["right"]},{"label":["body_mass_g"],"name":[6],"type":["int"],"align":["right"]},{"label":["sex"],"name":[7],"type":["fct"],"align":["left"]},{"label":["year"],"name":[8],"type":["int"],"align":["right"]}],"data":[{"1":"Gentoo","2":"Biscoe","3":"47.7","4":"15.0","5":"216","6":"4750","7":"female","8":"2008"},{"1":"Gentoo","2":"Biscoe","3":"50.0","4":"16.3","5":"230","6":"5700","7":"male","8":"2007"},{"1":"Gentoo","2":"Biscoe","3":"46.4","4":"15.6","5":"221","6":"5000","7":"male","8":"2008"},{"1":"Adelie","2":"Biscoe","3":"35.5","4":"16.2","5":"195","6":"3350","7":"female","8":"2008"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["species"],"name":[1],"type":["fct"],"align":["left"]},{"label":["island"],"name":[2],"type":["fct"],"align":["left"]},{"label":["bill_length_mm"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["bill_depth_mm"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["flipper_length_mm"],"name":[5],"type":["int"],"align":["right"]},{"label":["body_mass_g"],"name":[6],"type":["int"],"align":["right"]},{"label":["sex"],"name":[7],"type":["fct"],"align":["left"]},{"label":["year"],"name":[8],"type":["int"],"align":["right"]}],"data":[{"1":"Adelie","2":"Biscoe","3":"35.3","4":"18.9","5":"187","6":"3800","7":"female","8":"2007"},{"1":"Gentoo","2":"Biscoe","3":"47.5","4":"14.2","5":"209","6":"4600","7":"female","8":"2008"},{"1":"Adelie","2":"Torgersen","3":"36.6","4":"17.8","5":"185","6":"3700","7":"female","8":"2007"},{"1":"Gentoo","2":"Biscoe","3":"48.8","4":"16.2","5":"222","6":"6000","7":"male","8":"2009"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -903,7 +904,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="last-updated-on" class="level4 unnumbered unlisted"><h4 class="unnumbered unlisted anchored" data-anchor-id="last-updated-on">Last updated on</h4>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-06-02 15:46:12 IST"</code></pre>
+<pre><code>[1] "2022-06-30 13:10:42 IST"</code></pre>
 </div>
 </div>
 <p><a hidden="" href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a></p>
