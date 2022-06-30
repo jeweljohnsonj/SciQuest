@@ -4,7 +4,8 @@ section-divs: false
 toc: false
 css: index_css/index.css
 editor: source
-image: github_read.png
+image: /images/github_read.png
+comments: false
 ---
 ## Welcome to One Carat Blog
 

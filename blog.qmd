@@ -8,7 +8,8 @@ listing:
   sort-ui: false
   filter-ui: true
 page-layout: full
-image: github_read.png
+image: /images/github_read.png
+comments: false
 title-block-banner: true
 margin-header: |
   <a class="twitter-timeline" data-width="500" data-height="500" data-theme="dark" href="https://twitter.com/jeweljohnsonj?ref_src=twsrc%5Etfw">Tweets by jeweljohnsonj</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
