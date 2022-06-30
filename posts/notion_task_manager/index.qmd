@@ -1,10 +1,10 @@
 ---
-title: "Using Notion as to manage your tasks efficiently"
-description: "This a tutorial on how you can use Notion to manage your to-do-lists and create a task database"
-date: "06/29/2022"
+title: "Using Notion as your task manager"
+description: "In this article I will showcase to you a template that I made which can intelligently record and track tasks "
+date: "06/30/2022"
 format: html
-image: ""
 categories: [PhD, Notion, Zotero, productivity]
+image: images/notion.png
 draft: true
 ---
 
