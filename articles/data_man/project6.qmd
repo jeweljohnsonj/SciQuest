@@ -20,7 +20,9 @@ comments:
 execute: 
   warning: false
   freeze: auto
-image: "images/dplyr.png"
+image: images/dplyr.png
+twitter-card:
+  image: "images/dplyr.png"
 ---
 
 ::: {layout-ncol="1"}

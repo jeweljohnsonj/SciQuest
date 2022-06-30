@@ -22,8 +22,6 @@ comments:
 execute: 
   warning: false
   freeze: auto
-image: "images/stat.jpg"
-draft: true
 ---
 
 ```{r}
@@ -45,8 +43,7 @@ registerS3method(
 ```
 
 ::: {layout-ncol="1"}
-![](https://4.bp.blogspot.com/-wmZzvsY_Tec/Vws0f4MJn9I/AAAAAAAAORs/gipKxA7aDboP0gx2vSmyQS_ZoVBPzqaWA/s1600/Type%252BI%252Band%252BII%252Berror.jpg)
-Type I and Type II error in its simplicity
+![Type I and Type II error in its simplicity](https://4.bp.blogspot.com/-wmZzvsY_Tec/Vws0f4MJn9I/AAAAAAAAORs/gipKxA7aDboP0gx2vSmyQS_ZoVBPzqaWA/s1600/Type%252BI%252Band%252BII%252Berror.jpg){.preview-image}
 :::
 
 ## Type I error

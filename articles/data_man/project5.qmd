@@ -22,7 +22,9 @@ comments:
 execute: 
   warning: false
   freeze: auto
-image: "images/tidyr.png"
+image: images/tidyr.png
+twitter-card:
+  image: "images/tidyr.png"
 ---
 
 ::: {layout-ncol="1"}

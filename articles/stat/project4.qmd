@@ -22,7 +22,6 @@ comments:
 execute: 
   warning: false
   freeze: auto
-image: "images/stat.jpg"
 ---
 
 ```{r}
@@ -44,9 +43,7 @@ registerS3method(
 ```
 
 ::: {layout-ncol="1"}
-![](images/p_values_2x.png)
-
-Comic from [XKCD](https://xkcd.com/1478/).
+![Comic from [XKCD](https://xkcd.com/1478/)](images/p_values_2x.png){.preview-image}
 :::
 
 ## Definiton of p-value

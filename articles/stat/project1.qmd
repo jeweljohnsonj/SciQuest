@@ -22,13 +22,10 @@ comments:
 execute: 
   warning: false
   freeze: auto
-image: "images/stat.jpg"
 ---
 
 ::: {layout-ncol="1"}
-![](https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)
-
-Image by [Isaac Smith](https://unsplash.com/@isaacmsmith) on [Unsplash](https://unsplash.com)
+![Image by [Isaac Smith](https://unsplash.com/@isaacmsmith) on [Unsplash](https://unsplash.com)](https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80){.preview-image}
 :::
 
 ## Introduction to statistics

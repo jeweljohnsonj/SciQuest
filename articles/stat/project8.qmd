@@ -21,8 +21,6 @@ comments:
 execute: 
   warning: false
   freeze: auto
-image: "images/stat.jpg"
-draft: true
 ---
 
 ```{r}
@@ -44,8 +42,7 @@ registerS3method(
 ```
 
 ::: {layout-ncol="1"}
-![](images/para.jpg)
-Which is more robust between paramteric and non-paramteric?
+![Which is more robust between paramteric and non-paramteric? Image source: [Twitter](https://twitter.com/v_matzek/status/1376959858042306562)](images/para.jpg){.preview-image} Which is more robust between paramteric and non-paramteric?
 
 Image source: [Twitter](https://twitter.com/v_matzek/status/1376959858042306562)
 :::

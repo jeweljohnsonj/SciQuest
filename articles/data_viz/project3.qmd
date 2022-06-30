@@ -23,7 +23,9 @@ execute:
   cache: true
 comments:
   hypothesis: true
-image: "images/ggplot2.png"
+image: images/ggplot2.png
+twitter-card:
+  image: "images/ggplot2.png"
 ---
 
 ::: {layout-ncol="1"}

@@ -22,7 +22,6 @@ comments:
 execute: 
   warning: false
   freeze: auto
-image: "images/stat.jpg"
 ---
 
 ```{r}
@@ -44,9 +43,8 @@ registerS3method(
 ```
 
 ::: {layout-ncol="1"}
-![](images/nor.png)
+![Normality is vulnerable against outliers](images/nor.png){.preview-image}
 
-Threat to normality
 :::
 
 ## Distribution and variance

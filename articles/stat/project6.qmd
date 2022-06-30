@@ -22,8 +22,6 @@ comments:
 execute: 
   warning: false
   freeze: auto
-image: "images/stat.jpg"
-draft: true
 ---
 
 ```{r}
@@ -45,8 +43,7 @@ registerS3method(
 ```
 
 ::: {layout-ncol="1"}
-![](images/ci.jpg)
-What is the correct definiton Will?
+![What is the correct definition Will?](images/ci.jpg){.preview-image}
 :::
 
 ## Confidence interval (CI)
