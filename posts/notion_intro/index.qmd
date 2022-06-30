@@ -1,6 +1,6 @@
 ---
 title: "My Notion story"
-description: "Notion is a powerful productivity software that implements database creation in its core function. In this article, I will share my story on what led me to use Notion and why you might want to consider using Notion."
+description: "Notion is a powerful productivity software that implements database creation in its core function. In this article, I will share my story on what led me to use Notion and why you might want to consider using Notion"
 date: "06/28/2022"
 format: html
 categories: [PhD, Notion, Zotero, productivity]
