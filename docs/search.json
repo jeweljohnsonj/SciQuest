@@ -634,7 +634,7 @@
     "href": "blog.html",
     "title": "Blog posts",
     "section": "",
-    "text": "Using Notion and Zotero to build a literature tracker\n\n\n\n\n\n\n\nPhD\n\n\nNotion\n\n\nZotero\n\n\nproductivity\n\n\n\n\nThis a tutorial on how you can use Notion to make a database which tracks the research articles that you read which is synced to your Zotero directory via the Notero plugin\n\n\n\n\n\n\nJun 29, 2022\n\n\n\n\n\n\n  \n\n\n\n\nMy Notion story\n\n\n\n\n\n\n\nPhD\n\n\nNotion\n\n\nZotero\n\n\nproductivity\n\n\n\n\nNotion is a powerful productivity software that implements database creation in its core function. In this article, I will share my story on what led me to use Notion and why you might want to consider using Notion\n\n\n\n\n\n\nJun 28, 2022\n\n\n\n\n\n\n  \n\n\n\n\nThe World Happiness Report 2022\n\n\n\n\n\n\n\nmaps\n\n\nleaflet\n\n\n\n\nPlotting an interactive map using the {leaflet} package in R\n\n\n\n\n\n\nMay 20, 2022\n\n\n\n\n\n\n  \n\n\n\n\nWelcome to my blog\n\n\n\n\n\n\n\nnews\n\n\n\n\nMy story about this blog\n\n\n\n\n\n\nMay 19, 2022\n\n\n\n\n\n\nNo matching items"
+    "text": "Using Notion and Zotero to build a literature tracker\n\n\n\n\n\n\n\nPhD\n\n\nNotion\n\n\nZotero\n\n\nproductivity\n\n\n\n\nThis a tutorial on how you can use Notion to make a database which tracks the research articles that you read which is synced to your Zotero directory via the Notero plugin\n\n\n\n\n\n\nJun 29, 2022\n\n\n\n\n\n\n  \n\n\n\n\nUsing Notion to keep a research diary\n\n\n\n\n\n\n\nPhD\n\n\nNotion\n\n\nZotero\n\n\nproductivity\n\n\n\n\nThis a tutorial on how you can use Notion to maintain a research diary if you are a researcher or a PhD student\n\n\n\n\n\n\nJun 29, 2022\n\n\n\n\n\n\n  \n\n\n\n\nMy Notion story\n\n\n\n\n\n\n\nPhD\n\n\nNotion\n\n\nZotero\n\n\nproductivity\n\n\n\n\nNotion is a powerful productivity software that implements database creation in its core function. In this article, I will share my story on what led me to use Notion and why you might want to consider using Notion\n\n\n\n\n\n\nJun 28, 2022\n\n\n\n\n\n\n  \n\n\n\n\nThe World Happiness Report 2022\n\n\n\n\n\n\n\nmaps\n\n\nleaflet\n\n\n\n\nPlotting an interactive map using the {leaflet} package in R\n\n\n\n\n\n\nMay 20, 2022\n\n\n\n\n\n\n  \n\n\n\n\nWelcome to my blog\n\n\n\n\n\n\n\nnews\n\n\n\n\nMy story about this blog\n\n\n\n\n\n\nMay 19, 2022\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -683,7 +683,28 @@
     "href": "posts/notion_intro/index.html#useful-references",
     "title": "My Notion story",
     "section": "Useful References",
-    "text": "Useful References\n\nBeginners introduction to Notion. Source\n\nBasics of Notion. Source\n\nQuick tutorial on setting up Notion. Source\n\nNotion official website has detailed guides for very single feature in Notion. Source\n\n\nLast updated on\n\n\n[1] \"2022-06-30 16:45:49 IST\""
+    "text": "Useful References\n\nBeginners introduction to Notion. Source\n\nBasics of Notion. Source\n\nQuick tutorial on setting up Notion. Source\n\nNotion official website has detailed guides for very single feature in Notion. Source\n\n\nLast updated on\n\n\n[1] \"2022-06-30 18:01:29 IST\""
+  },
+  {
+    "objectID": "posts/notion_literature/index.html",
+    "href": "posts/notion_literature/index.html",
+    "title": "Using Notion and Zotero to build a literature tracker",
+    "section": "",
+    "text": "Reusehttps://creativecommons.org/licenses/by/4.0/CitationBibTeX citation:@online{johnson2022,\n  author = {Jewel Johnson},\n  title = {Using {Notion} and {Zotero} to Build a Literature Tracker},\n  date = {2022-06-29},\n  url = {https://jeweljohnsonj.github.io/one-carat-blog//posts/notion_literature},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nJewel Johnson. 2022. “Using Notion and Zotero to Build a\nLiterature Tracker.” June 29, 2022. https://jeweljohnsonj.github.io/one-carat-blog//posts/notion_literature."
+  },
+  {
+    "objectID": "posts/notion_research_journal/index.html",
+    "href": "posts/notion_research_journal/index.html",
+    "title": "Using Notion to keep a research diary",
+    "section": "",
+    "text": "In this article, we will see how we can use Notion to keep a research diary. If you are a researcher or a PhD student, then a research diary would be a very important piece of intellectual work that will be staying with you for quite a few years. So it must be well written, well-formatted and efficiently organised. With the power of Notion, I will show you a template that I made that can be used in Notion and can act as an electronic research diary.\nYou can get the template by clicking here. Duplicate it into your Notion workspace.\n\n\n\nResearch diary database\n\n\n\nThe picture above shows the research diary database. Each row value created in the table will be each day’s entry. If you also have a literature tracker database in Notion workspace, then you can couple it with your diary entry and it will showcase any papers that you have read one that day.\nSo lets try writing an entry. First make a blank row entry and then hover over the newly created empty row and click ‘OPEN’. This will open a new window. In that window click on ‘Diary entry template’. This will bring you a sample template. You can fill in relevant info or add in your own subsection and modify the entry.\n\n\n\nResearch diary template\n\n\n\n\nThere are mainly five sections in the template. In the first section, you can outline what experiments or analyses or any other related work you did on that day. You can also attach any relevant pictures if it helps.\nIn the second section, you can outline the challenges you came across while implementing your work. It can be problems you encountered in your experiment or a bug in your code while doing data analysis etc.\nThe third section outlines your thoughts and ideas, it can either be possible solutions that you want to try out with regards to the challenges you faced or a new research question that you had while reading a paper.\nIn the fourth section of the template, I have attached my literature tracker database to the diary entry page. Now if I happened to read any research articles on that day, then by filtering the database to the diary entry date, I can have all the papers that I read on that date show up. This can be pretty convenient to track your reading goals. You can extend this idea and showcase any experiments that you have done on that day if you have an experiment database in your Notion database.\nThe fifth and last section of the template can have any other relevant work information which does not fall into the earlier section. It can be purchase reminders, suggestions by your supervisors or colleagues, deadlines for meetings or presentations etc.\n\nThis is a simple research diary template that I have created and I hope you find it useful. Suggestions and feedback to improve the diary template are most welcome. Please comment your thoughts below the article. Thanks!\n\n\n\nMaking a diary entry"
+  },
+  {
+    "objectID": "posts/notion_research_journal/index.html#useful-references",
+    "href": "posts/notion_research_journal/index.html#useful-references",
+    "title": "Using Notion to keep a research diary",
+    "section": "Useful References",
+    "text": "Useful References\n\nThe research diary image in the thumbnail for this post belongs to Dr. Julia Everitt (@juilaeverittdr). You can read more about research diary here.\n\nLast updated on\n\n\n[1] \"2022-06-30 18:01:43 IST\""
   },
   {
     "objectID": "posts/welcome/index.html",
@@ -747,12 +768,5 @@
     "title": "The World Happiness Report 2022",
     "section": "References",
     "text": "References\n\nH. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.\nJoe Cheng, Bhaskar Karambelkar and Yihui Xie (2021). leaflet: Create Interactive Web Maps with the JavaScript ‘Leaflet’ Library. R package version 2.0.4.1. https://CRAN.R-project.org/package=leaflet\nPebesma, E., 2018. Simple Features for R: Standardized Support for Spatial Vector Data. The R Journal 10 (1), 439-446, https://doi.org/10.32614/RJ-2018-009\nTutorial on plotting interactive maps in R.\nThe World Happiness Report\nSource for .csv file of World Happiness Score of countries 2022. Compiled by Mathurin Aché in Kaggle.com\n\nLast updated on\n\n\n[1] \"2022-06-14 21:38:22 IST\""
-  },
-  {
-    "objectID": "posts/notion_literature/index.html",
-    "href": "posts/notion_literature/index.html",
-    "title": "Using Notion and Zotero to build a literature tracker",
-    "section": "",
-    "text": "Reusehttps://creativecommons.org/licenses/by/4.0/CitationBibTeX citation:@online{johnson2022,\n  author = {Jewel Johnson},\n  title = {Using {Notion} and {Zotero} to Build a Literature Tracker},\n  date = {2022-06-29},\n  url = {https://jeweljohnsonj.github.io/one-carat-blog//posts/notion_literature},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nJewel Johnson. 2022. “Using Notion and Zotero to Build a\nLiterature Tracker.” June 29, 2022. https://jeweljohnsonj.github.io/one-carat-blog//posts/notion_literature."
   }
 ]

@@ -28,7 +28,7 @@ My journey in discovering Notion came from my quest to find software that can tr
 
 ::: column-page
 | Title                                                        | Authors                     | Date added   | Year of publication | Summary                                                                                                                                     | URL                                                 |
-|------------|------------|------------|------------|------------|------------|
+|----------|----------|----------|----------|-----------------------|----------|
 | Glyphosate impairs collective thermoregulation in bumblebees | (Weidenmüller et al., 2022) | 22-June-2022 | 2022                | 1\. Glyphosate sugar water reduced life expectancy of worker bees <br> 2. Glyphosate affected bees invest less time in incubating the brood | https://www.science.org/doi/10.1126/science.abf7482 |
 
 : The table interface I was looking for
