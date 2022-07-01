@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/notion_task_manager/index.html",
       "/posts/notion_literature/index.html",
       "/posts/notion_research_journal/index.html",
       "/posts/notion_intro/index.html",
