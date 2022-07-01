@@ -4,7 +4,7 @@ description: "This a tutorial on how you can use Notion to maintain reading and 
 date: "07/01/2022"
 format: html
 image: images/movie_thumb.png
-categories: [PhD, Notion, productivity]
+categories: [Notion, productivity]
 ---
 
 ## Using notion to keep a movie list tracker

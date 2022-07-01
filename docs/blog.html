@@ -66,9 +66,9 @@ ul.task-list{list-style: none;}
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -235,7 +235,7 @@ ul.task-list{list-style: none;}
 <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div></div>
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(7)</span></div><div class="category" data-category="Notion">Notion <span class="quarto-category-count">(5)</span></div><div class="category" data-category="PhD">PhD <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Zotero">Zotero <span class="quarto-category-count">(2)</span></div><div class="category" data-category="leaflet">leaflet <span class="quarto-category-count">(1)</span></div><div class="category" data-category="maps">maps <span class="quarto-category-count">(1)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(1)</span></div><div class="category" data-category="productivity">productivity <span class="quarto-category-count">(5)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(7)</span></div><div class="category" data-category="Notion">Notion <span class="quarto-category-count">(5)</span></div><div class="category" data-category="PhD">PhD <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Zotero">Zotero <span class="quarto-category-count">(2)</span></div><div class="category" data-category="leaflet">leaflet <span class="quarto-category-count">(1)</span></div><div class="category" data-category="maps">maps <span class="quarto-category-count">(1)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(1)</span></div><div class="category" data-category="productivity">productivity <span class="quarto-category-count">(5)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -247,31 +247,44 @@ ul.task-list{list-style: none;}
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
+  </div>
     <div class="input-group input-group-sm quarto-listing-filter">
       <span class="input-group-text"><i class="bi bi-search"></i></span>
       <input type="text" class="search form-control" placeholder="Filter">
     </div>
 </div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="PhD,Notion,productivity" data-listing-date-sort="1656613800000" data-listing-file-modified-sort="1656650668873" data-listing-reading-time-sort="1.635">
-<div class="thumbnail">
-<p><a href="./posts/notion_movie_books/index.html"> <img src="./posts/notion_movie_books/images/movie_thumb.png" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/notion_movie_books/index.html">
-<h3 class="no-anchor listing-title">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="Notion,productivity" data-listing-date-sort="1656613800000" data-listing-file-modified-sort="1656654480325" data-listing-reading-time-sort="1.635">
+<a href="./posts/notion_movie_books/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/notion_movie_books/images/movie_thumb.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
 Using Notion to keep movie and book list tracker
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
+</h5>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('PhD'); return false;">
-PhD
-</div>
 <div class="listing-category" onclick="window.quartoListingCategory('Notion'); return false;">
 Notion
 </div>
@@ -279,36 +292,61 @@ Notion
 productivity
 </div>
 </div>
-<a href="./posts/notion_movie_books/index.html">
-<div class="listing-description">
-<p>This a tutorial on how you can use Notion to maintain reading and watch list tracker</p>
+<div class="card-text listing-description">
+This a tutorial on how you can use Notion to maintain reading and watch list tracker
 </div>
-</a>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Jewel Johnson
 </div>
-<div class="metadata">
-<a href="./posts/notion_movie_books/index.html">
 <div class="listing-date">
 Jul 1, 2022
 </div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="news" data-listing-date-sort="1656613800000" data-listing-file-modified-sort="1656671071608" data-listing-reading-time-sort="7.445">
+<a href="./posts/welcome/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/welcome/story.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+The story behind one carat blog
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
+news
+</div>
+</div>
+<div class="card-text listing-description">
+In this article, I share my experiences on how this blog was made. Spoiler alter: it involved a lot of R package hitchhiking
+</div>
+<div class="card-attribution card-text-small justify">
 <div class="listing-author">
 Jewel Johnson
 </div>
+<div class="listing-date">
+Jul 1, 2022
+</div>
+</div>
+</div>
+</div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="PhD,Notion,productivity" data-listing-date-sort="1656527400000" data-listing-file-modified-sort="1656649919880" data-listing-reading-time-sort="7.24">
-<div class="thumbnail">
-<p><a href="./posts/notion_task_manager/index.html"> <img src="./posts/notion_task_manager/images/diary_thumb.png" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/notion_task_manager/index.html">
-<h3 class="no-anchor listing-title">
+<div class="g-col-1" data-index="2" data-categories="PhD,Notion,productivity" data-listing-date-sort="1656527400000" data-listing-file-modified-sort="1656649919880" data-listing-reading-time-sort="7.24">
+<a href="./posts/notion_task_manager/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/notion_task_manager/images/diary_thumb.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
 Using Notion as your task manager
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('PhD'); return false;">
 PhD
@@ -320,36 +358,31 @@ Notion
 productivity
 </div>
 </div>
-<a href="./posts/notion_task_manager/index.html">
-<div class="listing-description">
-<p>In this article I will showcase to you a template that I made, which can intelligently record and track tasks: you very own personal task manager with the help of Notion</p>
+<div class="card-text listing-description">
+In this article I will showcase to you a template that I made, which can intelligently record and track tasks: you very own personal task manager with the help of Notion
 </div>
-</a>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Jewel Johnson
 </div>
-<div class="metadata">
-<a href="./posts/notion_task_manager/index.html">
 <div class="listing-date">
 Jun 30, 2022
 </div>
-<div class="listing-author">
-Jewel Johnson
+</div>
+</div>
 </div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="PhD,Notion,Zotero,productivity" data-listing-date-sort="1656441000000" data-listing-file-modified-sort="1656649628267" data-listing-reading-time-sort="3.84">
-<div class="thumbnail">
-<p><a href="./posts/notion_literature/index.html"> <img src="./posts/notion_literature/images/notero_thumbnail.png" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/notion_literature/index.html">
-<h3 class="no-anchor listing-title">
+<div class="g-col-1" data-index="3" data-categories="PhD,Notion,Zotero,productivity" data-listing-date-sort="1656441000000" data-listing-file-modified-sort="1656649628267" data-listing-reading-time-sort="3.84">
+<a href="./posts/notion_literature/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/notion_literature/images/notero_thumbnail.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
 Using Notion and Zotero to build a literature tracker
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('PhD'); return false;">
 PhD
@@ -364,36 +397,31 @@ Zotero
 productivity
 </div>
 </div>
-<a href="./posts/notion_literature/index.html">
-<div class="listing-description">
-<p>This a tutorial on how you can use Notion to make a database which tracks the research articles that you read which is synced to your Zotero directory via the Notero plugin</p>
+<div class="card-text listing-description">
+This a tutorial on how you can use Notion to make a database which tracks the research articles that you read which is synced to your Zotero directory via the Notero plugin
 </div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/notion_literature/index.html">
-<div class="listing-date">
-Jun 29, 2022
-</div>
+<div class="card-attribution card-text-small justify">
 <div class="listing-author">
 Jewel Johnson
 </div>
+<div class="listing-date">
+Jun 29, 2022
+</div>
+</div>
+</div>
+</div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="PhD,Notion,productivity" data-listing-date-sort="1656441000000" data-listing-file-modified-sort="1656649830934" data-listing-reading-time-sort="2.745">
-<div class="thumbnail">
-<p><a href="./posts/notion_research_diary/index.html"> <img src="./posts/notion_research_diary/images/res_dairy.png" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/notion_research_diary/index.html">
-<h3 class="no-anchor listing-title">
+<div class="g-col-1" data-index="4" data-categories="PhD,Notion,productivity" data-listing-date-sort="1656441000000" data-listing-file-modified-sort="1656668456156" data-listing-reading-time-sort="2.75">
+<a href="./posts/notion_research_diary/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/notion_research_diary/images/res_dairy.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
 Using Notion to keep a research diary
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('PhD'); return false;">
 PhD
@@ -405,36 +433,31 @@ Notion
 productivity
 </div>
 </div>
-<a href="./posts/notion_research_diary/index.html">
-<div class="listing-description">
-<p>This a tutorial on how you can use Notion to maintain a research diary if you are a researcher or a PhD student</p>
+<div class="card-text listing-description">
+This a tutorial on how you can use Notion to maintain a research diary if you are a researcher or a PhD student
 </div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/notion_research_diary/index.html">
-<div class="listing-date">
-Jun 29, 2022
-</div>
+<div class="card-attribution card-text-small justify">
 <div class="listing-author">
 Jewel Johnson
 </div>
+<div class="listing-date">
+Jun 29, 2022
+</div>
+</div>
+</div>
+</div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="PhD,Notion,Zotero,productivity" data-listing-date-sort="1656354600000" data-listing-file-modified-sort="1656651480883" data-listing-reading-time-sort="11.2">
-<div class="thumbnail">
-<p><a href="./posts/notion_intro/index.html"> <img src="./posts/notion_intro/images/notion.png" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/notion_intro/index.html">
-<h3 class="no-anchor listing-title">
+<div class="g-col-1" data-index="5" data-categories="PhD,Notion,Zotero,productivity" data-listing-date-sort="1656354600000" data-listing-file-modified-sort="1656651480883" data-listing-reading-time-sort="11.2">
+<a href="./posts/notion_intro/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/notion_intro/images/notion.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
 My Notion story
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('PhD'); return false;">
 PhD
@@ -449,36 +472,31 @@ Zotero
 productivity
 </div>
 </div>
-<a href="./posts/notion_intro/index.html">
-<div class="listing-description">
-<p>Notion is a powerful productivity software that implements database creation in its core function. In this article, I will share my story on what led me to use Notion and why you might want to consider using Notion</p>
+<div class="card-text listing-description">
+Notion is a powerful productivity software that implements database creation in its core function. In this article, I will share my story on what led me to use Notion and…
 </div>
-</a>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Jewel Johnson
 </div>
-<div class="metadata">
-<a href="./posts/notion_intro/index.html">
 <div class="listing-date">
 Jun 28, 2022
 </div>
-<div class="listing-author">
-Jewel Johnson
+</div>
+</div>
 </div>
 </a>
 </div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="maps,leaflet" data-listing-date-sort="1652985000000" data-listing-file-modified-sort="1654775003337" data-listing-reading-time-sort="8.67">
-<div class="thumbnail">
-<p><a href="./posts/word-happy-2022/index.html"> <img src="./posts/word-happy-2022/world.jpg" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/word-happy-2022/index.html">
-<h3 class="no-anchor listing-title">
+<div class="g-col-1" data-index="6" data-categories="maps,leaflet" data-listing-date-sort="1652985000000" data-listing-file-modified-sort="1656672077896" data-listing-reading-time-sort="8.67">
+<a href="./posts/word-happy-2022/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./posts/word-happy-2022/world.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
 The World Happiness Report 2022
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
+</h5>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('maps'); return false;">
 maps
@@ -487,57 +505,20 @@ maps
 leaflet
 </div>
 </div>
-<a href="./posts/word-happy-2022/index.html">
-<div class="listing-description">
-<p>Plotting an interactive map using the {leaflet} package in R</p>
+<div class="card-text listing-description">
+Plotting an interactive map using the {leaflet} package in R
 </div>
-</a>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Jewel Johnson
 </div>
-<div class="metadata">
-<a href="./posts/word-happy-2022/index.html">
 <div class="listing-date">
 May 20, 2022
 </div>
-<div class="listing-author">
-Jewel Johnson
+</div>
+</div>
 </div>
 </a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="news" data-listing-date-sort="1652898600000" data-listing-file-modified-sort="1656577873648" data-listing-reading-time-sort="1.255">
-<div class="thumbnail">
-<p><a href="./posts/welcome/index.html"> <img src="./posts/welcome/happy.jpeg" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/welcome/index.html">
-<h3 class="no-anchor listing-title">
-Welcome to my blog
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
-news
-</div>
-</div>
-<a href="./posts/welcome/index.html">
-<div class="listing-description">
-<p>My story about this blog</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/welcome/index.html">
-<div class="listing-date">
-May 19, 2022
-</div>
-<div class="listing-author">
-Jewel Johnson
-</div>
-</a>
-</div>
 </div>
 </div>
 <div class="listing-no-matching d-none">

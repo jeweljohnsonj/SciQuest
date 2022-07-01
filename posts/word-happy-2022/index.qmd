@@ -3,7 +3,7 @@ title: "The World Happiness Report 2022"
 description: "Plotting an interactive map using the {leaflet} package in R"
 date: "05/20/2022"
 categories: [maps, leaflet]
-image: "world.jpg"
+image: world.jpg
 ---
 
 ## Introduction

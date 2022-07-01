@@ -3,12 +3,12 @@
     "listing": "/blog.html",
     "items": [
       "/posts/notion_movie_books/index.html",
+      "/posts/welcome/index.html",
       "/posts/notion_task_manager/index.html",
       "/posts/notion_literature/index.html",
       "/posts/notion_research_diary/index.html",
       "/posts/notion_intro/index.html",
-      "/posts/word-happy-2022/index.html",
-      "/posts/welcome/index.html"
+      "/posts/word-happy-2022/index.html"
     ]
   }
 ]

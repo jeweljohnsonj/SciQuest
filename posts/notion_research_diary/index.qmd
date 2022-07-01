@@ -41,7 +41,7 @@ This is a simple research diary template that I have created and I hope you find
 ![Making a diary entry](images/dairy.gif)
 :::
 
-## Useful References {.appendix}
+## Useful References {.unnumbered .appendix}
 
 1.  The research diary image in the thumbnail for this post belongs to Dr. Julia Everitt ([\@juilaeverittdr](https://twitter.com/juliaeverittdr)). You can read more about research diary [here](https://thrivingparttime.com/2021/03/15/my-research-diary-recording-the-twists-and-turns-of-a-part-time-doctorate/).
 
