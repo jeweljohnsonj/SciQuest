@@ -1,11 +1,16 @@
 ---
-title: "Using Notion to keep movie and book list tracker"
+title: "Using Notion to keep a movie and a book list tracker"
 description: "This a tutorial on how you can use Notion to maintain reading and watch list tracker"
 date: "07/01/2022"
 format: html
 image: images/movie_thumb.png
 categories: [Notion, productivity]
 ---
+
+## TL;DR
+
+-   Use [Notion](https://www.notion.so/desktop) to track your movie and book lists
+-   Duplicate the [movie list tracker](https://jeweljohnson.notion.site/c13997d07e0444bd9d3caf6d068a99b2?v=602485e9f6fe4357a1db88043cfd0450) and the [book list tracker](https://jeweljohnson.notion.site/9805efc31e5a4b39b1e29870f1febd1c?v=0cbadae558e140d7a7d339cb677f052f) templates to your Notion database and use them.
 
 ## Using notion to keep a movie list tracker
 

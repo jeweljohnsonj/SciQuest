@@ -8,6 +8,13 @@ categories: [PhD, Notion, Zotero, productivity]
 image: images/notion.png
 ---
 
+## TL;DR
+
+* Notion is a productivity software that can be used to create databases, manage tasks, take notes etc.
+* Download [Notion](https://www.notion.so/desktop) and using the links given below, 'Duplicate' the templates to your workspace
+* Made five templates using Notion which features a [literature tracker](https://jeweljohnson.notion.site/c65f406986d64871abe8e9191bcc06aa?v=becefab2c4184727952707ee2e597c36), [research diary](https://jeweljohnson.notion.site/c44a2ec5f518456abfd032642220f26a?v=4adfe4fb5df54e7aac3b000b9152d164), [task manager](https://jeweljohnsonj.github.io/one-carat-blog/posts/notion_task_manager/), [book list tracker](https://jeweljohnson.notion.site/9805efc31e5a4b39b1e29870f1febd1c?v=0cbadae558e140d7a7d339cb677f052f), [movie list tracker](https://jeweljohnson.notion.site/c13997d07e0444bd9d3caf6d068a99b2?v=602485e9f6fe4357a1db88043cfd0450) and a [finance tracker](https://www.notion.so/jeweljohnson/Finances-f8beef2bca224a9d8d8d270e88ff8e39)
+* Those who want to download all the templates in one go, click [here](https://jeweljohnson.notion.site/Template-PhD-Dashboard-136e837c4f0b4e61bc34e2aad7fb05b5)
+
 ## What is Notion?
 
 Notion is a productivity software which can be used to create databases, manage tasks, take notes etc. Its best known for its ability to make large collaborative databases where you can invite and work together with other people. In simple words, Notion can give you a personal Wiki experience by helping you manage your everyday activities.

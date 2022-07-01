@@ -7,6 +7,11 @@ image: images/res_dairy.png
 categories: [PhD, Notion, productivity]
 ---
 
+## TL;DR
+
+* Use [Notion](https://www.notion.so/desktop) to write and maintain a research diary
+* Duplicate the [diary template](https://jeweljohnson.notion.site/c44a2ec5f518456abfd032642220f26a?v=4adfe4fb5df54e7aac3b000b9152d164) and use it in Notion
+
 ## Using notion to keep a research diary
 
 In this article, we will see how we can use Notion to keep a research diary. If you are a researcher or a PhD student, then a research diary would be a very important piece of intellectual work that will be staying with you for quite a few years. So it must be well written, well-formatted and efficiently organised. With the power of Notion, I will show you a template that I made that can be used in Notion and can act as an electronic research diary.

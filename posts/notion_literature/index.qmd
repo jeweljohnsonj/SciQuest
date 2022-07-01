@@ -7,6 +7,12 @@ image: images/notero_thumbnail.png
 categories: [PhD, Notion, Zotero, productivity]
 ---
 
+## TL;DR
+
+-   Use Notion to build a literature database that can integrate with directories in Zotero with the help of the Notero plugin
+-   Install [Notion](https://www.notion.so/desktop), [Zotero](https://www.zotero.org/) and the [Notero](https://github.com/dvanoni/notero) plugin
+-   Duplicate the [literature template](https://jeweljohnson.notion.site/c65f406986d64871abe8e9191bcc06aa?v=becefab2c4184727952707ee2e597c36) to your Notion database
+
 ## Literature tracker using Notion and Zotero
 
 This is a follow-up article from my earlier post on [My Notion story](https://jeweljohnsonj.github.io/one-carat-blog/posts/notion_intro/). If you don't know what Notion is or how to install it, please refer to my [earlier article](https://jeweljohnsonj.github.io/one-carat-blog/posts/notion_intro/#installing-notion) for the background information.
