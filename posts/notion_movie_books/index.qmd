@@ -3,7 +3,7 @@ title: "Using Notion to keep movie and book list tracker"
 description: "This a tutorial on how you can use Notion to maintain reading and watch list tracker"
 date: "07/01/2022"
 format: html
-image: images/res_dairy.png
+image: images/movie_thumb.png
 categories: [PhD, Notion, productivity]
 ---
 
