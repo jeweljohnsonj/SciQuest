@@ -3,7 +3,7 @@ title: "Using Notion as your task manager"
 description: "In this article I will showcase to you a template that I made, which can intelligently record and track tasks: you very own personal task manager with the help of Notion"
 date: "06/30/2022"
 format: html
-categories: [PhD, Notion, Zotero, productivity]
+categories: [PhD, Notion, productivity]
 image: images/diary_thumb.png
 ---
 
@@ -17,12 +17,12 @@ There are four templates to add to your Notion database and you need all four of
 
 1.  [To-do-list](https://jeweljohnson.notion.site/22735f3cfabd4e34b1a38cc2127c5202?v=8a3317915d4a4a9b97448ae74a9942bf): Acts as the master database where all tasks are stored. By default only shows incomplete tasks.
 2.  [Completed task list](https://jeweljohnson.notion.site/0423a149b5274574adb7d123665c8579?v=4743a4b9a12a45a992deebd972047ea9): Same template as above, but only tasks that are completed are shown. Act as an archive for completed tasks.
-3.  [Task manager](https://jeweljohnson.notion.site/Task-manager-246a1b4e5b4a4f1b846da8e42b5af756): Task manager interface where each task are arranged and displayed categorically. By default only shows incomplete tasks.
+3.  [Task manager](https://jeweljohnson.notion.site/Task-manager-246a1b4e5b4a4f1b846da8e42b5af756): Task manager interface where each task is arranged and displayed categorically. By default only shows incomplete tasks.
 4.  [Task dashboard](https://jeweljohnson.notion.site/Task-dashboard-195e0f63dbd94f518918f78708677e60): A dashboard which informs you which tasks are due and how long are they due to completion.
 
 ## To-do-list
 
-First let us see the To-do-list. Specifically we will be seeing the 'Master table' view which lists out all the tasks which are yet to be completed. 
+First, let us see the To-do-list. Specifically, we will be seeing the 'Master table' view which lists out all the tasks which are yet to be completed.
 
 ::: column-page
 ![To-do-list](images/to_do_list.png)
@@ -30,54 +30,54 @@ First let us see the To-do-list. Specifically we will be seeing the 'Master tabl
 
 Like any basic to-do list, this list has task names and due date columns, along with many other columns. I have also tagged the tasks into their respective category and their priority. The 'Date added' and 'Due status is automatically calculated once you input a row value in the table. The 'Due status' column is dependent on a formula which takes in the 'Due date' value. The possible values for the 'Due status' column are; task finished, overdue, due today, due tomorrow, someday and later. Here 'someday' label means that the task has no due date mentioned and the 'later' label means that the task has at least 7 days before the due. The 'task finished' is only given to tasks which have the 'Done' column check box checked. The rest of the labels are what it says.
 
-You can change every single aspect of this table to suit your needs. What might be tricky to change is the 'Due status' column as it is governed by a formula which may look complex but is actually very easy.
+You can change every single aspect of this table to suit your needs. What might be tricky to change is the 'Due status' column as it is governed by a formula which may look complex but is very easy.
 
-:::{.callout-tip}
+::: callout-tip
 ## Due status formula
 
-````
-if(prop("Done") == false, 
-if(formatDate(prop("Due date"),"L") == formatDate(now(), "L"), "Due today",
-if(prop("Due date") < now(), "Overdue",
-if(prop("Due date") <= dateAdd(now(), 1, "days"), "Due tomorrow",
-if(empty(prop("Due date")), "Someday", "Later")))), "Task finished")
-
-````
+    if(prop("Done") == false, 
+    if(formatDate(prop("Due date"),"L") == formatDate(now(), "L"), "Due today",
+    if(prop("Due date") < now(), "Overdue",
+    if(prop("Due date") <= dateAdd(now(), 1, "days"), "Due tomorrow",
+    if(empty(prop("Due date")), "Someday", "Later")))), "Task finished")
 :::
 
 The formula is a series of if statements. The syntax for the if statement in Notion is as follows;
 
-````
-boolean ? value : value
-if(boolean, value, value)
+    boolean ? value : value
+    if(boolean, value, value)
 
-````
 From the syntax, you can see that the if statement is dependent on a Boolean value.
 
 So let us try to understand what this formula is trying to calculate, by taking each section separately.
 
-:::{.callout-note}
+::: callout-note
 ## if(prop("Done") == false
+
 This means that if the 'Done' column is unchecked then run the rest of the statements, if not, then it returns the label 'Task finished' which you can see in the last part of the formula. The checkboxes in Notion follow Boolean values. Checked means true and unchecked means false.
 :::
 
-:::{.callout-note}
+::: callout-note
 ## if(formatDate(prop("Due date"),"L") == formatDate(now(), "L"), "Due today"
+
 This is yet another 'if' statement but this time we are reformatting the date. The reason why we are reformatting the date is that, in Notion, any date is followed by time, so 12-12-2022 is Notion is denoted as 12-12-2022 12:00 AM. So there can be some issues where 'Due today' won't be properly shown. So reformatting the date to 'day' units is easier to work with. The `now()` function returns the current date. Therefore this formula simply returns the label 'Due today' if the due date matches the current date.
 :::
 
-:::{.callout-note}
-## if(prop("Due date") < now(), "Overdue"
+::: callout-note
+## if(prop("Due date") \< now(), "Overdue"
+
 This formula returns an 'Overdue' label if the due date is past the current date.
 :::
 
-:::{.callout-note}
-## if(prop("Due date") <= dateAdd(now(), 1, "days"), "Due tomorrow",
-The `dateAdd()` function takes in the first value, which is the current date returned from the `now()` function, and then adds 1 unit of "days" to it. Therefore the formula boils down to checking if the due date is less than or equal to tomorrow and returns the 'Due tomorrow' label if it does. We give less than or equal to sign because we want the counter-statement to be strictly greater than so that, only then does the rest of the if statement runs. Also, the less than condition can never be fulfilled here as the first statement checks if the due date matches the current day. 
+::: callout-note
+## if(prop("Due date") \<= dateAdd(now(), 1, "days"), "Due tomorrow",
+
+The `dateAdd()` function takes in the first value, which is the current date returned from the `now()` function, and then adds 1 unit of "days" to it. Therefore the formula boils down to checking if the due date is less than or equal to tomorrow and returns the 'Due tomorrow' label if it does. We give less than or equal to sign because we want the counter-statement to be strictly greater than so that, only then does the rest of the if statement runs. Also, the less than condition can never be fulfilled here as the first statement checks if the due date matches the current day.
 :::
 
-:::{.callout-note}
+::: callout-note
 ## if(empty(prop("Due date")), "Someday", "Later"
+
 Now sometimes we don't want to give the due date or we forgot to give them to a task. This is notified by the 'Someday' label. Now the 'Later' label is given when the 'Due tomorrow' condition fails, which means that the due date is greater than tomorrow.
 :::
 
@@ -103,7 +103,7 @@ The task manager page is your go-to page to list out incomplete tasks. By defaul
 ![Adding a task to the inbox](images/task_manager_1.gif)
 :::
 
-## Task dashbaord
+## Task dashboard
 
 ::: column-page
 ![Task dashboard](images/task_dash.png)
@@ -113,11 +113,11 @@ Treat the task dashboard page as your command centre for all the tasks. Remember
 
 ## Completed tasks
 
-The completed tasks page acts as an archive showcasing all the completed tasks. As someone used to say to me, it brings great joy to tick off all those tasks from the to-do list after spending your time and energy in completing them. The primary function of this page is to preserve and record task completion history. The database is identical to that of the earlier shown to-do-list database, as I have filtered it to only show row values where the 'Done' column is checked.
+The completed tasks page acts as an archive showcasing all the completed tasks. As someone used to say to me, it brings great joy to tick off all those tasks from the to-do list after spending your time and energy completing them. The primary function of this page is to preserve and record task completion history. The database is identical to that of the earlier shown to-do-list database, as I have filtered it to only show row values where the 'Done' column is checked.
 
 ## Conclusion
 
-I hope you have fun using this template. I enjoyed making this template and I aimed to make it simple and effective to use. To summarise, the to-do list is your main database, actually your only database. Everything else is just a modified version of this database where the info is shown in a different form using filtering and grouping features. After duplicating this template, you can tweak each of the parameters to suit your liking. You only need to change the parameters in the to-do-list database as the changes in it will be reflected in the rest of the pages. The only other thing that you will be needing to modify after you have changed the key parameters in the database are the headings, which are pretty straightforward to change. With that, I hope you find this template useful. Any feedback and suggestions are most welcome. You can comment below the article. 
+I hope you have fun using this template. I enjoyed making this template and I aimed to make it simple and effective to use. To summarise, the to-do list is your main database, actually your only database. Everything else is just a modified version of this database where the info is shown in a different form using filtering and grouping features. After duplicating this template, you can tweak each of the parameters to suit your liking. You only need to change the parameters in the to-do-list database as the changes in it will be reflected in the rest of the pages. The only other thing that you will be needing to modify after you have changed the key parameters in the database are the headings, which are pretty straightforward to change. With that, I hope you find this template useful. Any feedback and suggestions are most welcome. You can comment them below the article.
 
 #### Last updated on {.unnumbered .unlisted}
 

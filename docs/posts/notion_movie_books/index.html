@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.629">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="Jewel Johnson">
+<meta name="dcterms.date" content="2022-07-01">
+<meta name="description" content="This a tutorial on how you can use Notion to maintain reading and watch list tracker">
+<title>one carat blog - Using Notion to keep movie and book list tracker</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../gems.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script><style>html{ scroll-behavior: smooth; }</style>
+<link rel="stylesheet" href="../../styles.css">
+<meta name="twitter:title" content="one carat blog - Using Notion to keep movie and book list tracker">
+<meta name="twitter:description" content="This a tutorial on how you can use Notion to maintain reading and watch list tracker">
+<meta name="twitter:image" content="https://jeweljohnsonj.github.io/one-carat-blog/posts\notion_movie_books\images\res_dairy.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+    <img src="../../gems.png" alt=""><span class="navbar-title">one carat blog</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item">
+    <a class="nav-link" href="../../blog.html">Blog</a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-r-tutorials" role="button" data-bs-toggle="dropdown" aria-expanded="false">R Tutorials</a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-r-tutorials">
+<li class="dropdown-header">Data visualization</li>
+        <li>
+    <a class="dropdown-item" href="../../articles/data_viz/project1.html">
+ <span class="dropdown-text">Chapter 1: Data visualization using ggplot2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/data_viz/project2.html">
+ <span class="dropdown-text">Chapter 2: Customizing graphs in ggplot2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/data_viz/project3.html">
+ <span class="dropdown-text">Chapter 3: Even more customizations in ggplot2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/data_viz/project4.html">
+ <span class="dropdown-text">Chapter 4: Publication ready plots using ggpubr</span></a>
+  </li>  
+        <li class="dropdown-header">Data manipulation</li>
+        <li>
+    <a class="dropdown-item" href="../../articles/data_man/project5.html">
+ <span class="dropdown-text">Chapter 1: Data tidying using tidyr</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/data_man/project6.html">
+ <span class="dropdown-text">Chapter 2: Data manipulation using dplyr (part 1)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/data_man/project7.html">
+ <span class="dropdown-text">Chapter 3: Data manipulation using dplyr (part 2)</span></a>
+  </li>  
+    </ul>
+</li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-statistics" role="button" data-bs-toggle="dropdown" aria-expanded="false">Statistics</a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-statistics">
+<li>
+    <a class="dropdown-item" href="../../articles/stat/project1.html">
+ <span class="dropdown-text">Chapter 1: Introduction to statistics with R</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project2.html">
+ <span class="dropdown-text">Chapter 2: Distribution and variance</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project3.html">
+ <span class="dropdown-text">Chapter 3: Standard error and standard deviation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project4.html">
+ <span class="dropdown-text">Chapter 4: p-value and level of significance</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project5.html">
+ <span class="dropdown-text">Chapter 5: Type I and Type II errors</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project6.html">
+ <span class="dropdown-text">Chapter 6: Confidence interval and effect sizes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project7.html">
+ <span class="dropdown-text">Chapter 7: Parametric tests and assumptions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project8.html">
+ <span class="dropdown-text">Chapter 8: Non-parametric test and assumptions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project9.html">
+ <span class="dropdown-text">Chapter 9: Tests for multiple groups of data</span></a>
+  </li>  
+    </ul>
+</li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://jeweljohnsonj.github.io/jewel_resume/">About me</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jeweljohnsonj/one-carat-blog"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/jeweljohnsonj"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+<div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <div class="quarto-title-block"><div><h1 class="title">Using Notion to keep movie and book list tracker</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+                  <div>
+        <div class="description">
+          This a tutorial on how you can use Notion to maintain reading and watch list tracker
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">PhD</div>
+                <div class="quarto-category">Notion</div>
+                <div class="quarto-category">productivity</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Jewel Johnson </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">July 1, 2022</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#using-notion-to-keep-a-movie-list-tracker" id="toc-using-notion-to-keep-a-movie-list-tracker" class="nav-link active" data-scroll-target="#using-notion-to-keep-a-movie-list-tracker"> <span class="header-section-number">1</span> Using notion to keep a movie list tracker</a></li>
+  <li><a href="#movie-list-tracker" id="toc-movie-list-tracker" class="nav-link" data-scroll-target="#movie-list-tracker"> <span class="header-section-number">2</span> Movie list tracker</a></li>
+  <li><a href="#book-list-tracker" id="toc-book-list-tracker" class="nav-link" data-scroll-target="#book-list-tracker"> <span class="header-section-number">3</span> Book list tracker</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"> <span class="header-section-number">4</span> Conclusion</a></li>
+  </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/edit/main/posts/notion_movie_books/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content"><section id="using-notion-to-keep-a-movie-list-tracker" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="using-notion-to-keep-a-movie-list-tracker">
+<span class="header-section-number">1</span> Using notion to keep a movie list tracker</h2>
+<p>This was a fun little project where I made two templates that helps in maintaining reading and a watch list tracker for books and movies. I heard from my friends who are doing PhD that they spent a hefty amount of time binge-watching movies and series and most of them also read a lot of new books. So I thought why not make a template that will help them manage this. The templates are very simple and visually pleasing.</p>
+<p>This might be my shortest article ever on this blog but I thought this post can act as a source to receive feedback and comments about the templates. The links for the templates are given below.</p>
+<ol type="1">
+<li><a href="https://jeweljohnson.notion.site/c13997d07e0444bd9d3caf6d068a99b2?v=602485e9f6fe4357a1db88043cfd0450">Movie list tracker</a></li>
+<li><a href="https://jeweljohnson.notion.site/9805efc31e5a4b39b1e29870f1febd1c?v=0cbadae558e140d7a7d339cb677f052f">Book list tracker</a></li>
+</ol></section><section id="movie-list-tracker" class="level2 page-columns page-full" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="movie-list-tracker">
+<span class="header-section-number">2</span> Movie list tracker</h2>
+<div class="column-page">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/movie.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Movie list tracker</figcaption><p></p>
+</figure>
+</div>
+</div>
+<p>You can categorise the list to their ‘watch status’ and also indicate if it’s a movie or a series. Furthermore, if watch a lot of series, then you can also add in the extra columns indicating the season and so on. In the poster column, I have embedded an online image link showcasing the movie or series poster. This is done so that the media collection view (gallery view) can use these images and show visually pleasing cards. You can get the poster image links for most of the movies and series from <a href="https://www.movieposterdb.com/">here</a>. The progress section shows the data in a ‘kanban’ view to quickly visualize the watch list according to their status.</p>
+</section><section id="book-list-tracker" class="level2 page-columns page-full" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="book-list-tracker">
+<span class="header-section-number">3</span> Book list tracker</h2>
+<div class="column-page">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/book.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Movie list tracker</figcaption><p></p>
+</figure>
+</div>
+</div>
+<p>The book list tracker is almost identical to the movie list one. To get the book cover image links for the database, you can visit <a href="https://www.goodreads.com/">here</a>. The way you add entries is also pretty self intuitive so I urge you to explore it yourself.</p>
+</section><section id="conclusion" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="conclusion">
+<span class="header-section-number">4</span> Conclusion</h2>
+<p>I hope you find these templates useful. You can give your feedback and thoughts about the template in the comment section below this article.</p>
+<section id="last-updated-on" class="level4 unnumbered unlisted"><h4 class="unnumbered unlisted anchored" data-anchor-id="last-updated-on">Last updated on</h4>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "2022-07-01 10:06:38 IST"</code></pre>
+</div>
+</div>
+<p><a hidden="" href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a></p>
+
+
+<!-- -->
+
+</section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{johnson2022,
+  author = {Jewel Johnson},
+  title = {Using {Notion} to Keep Movie and Book List Tracker},
+  date = {2022-07-01},
+  url = {https://jeweljohnsonj.github.io/one-carat-blog//posts/notion_movie_books},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-johnson2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+Jewel Johnson. 2022. <span>“Using Notion to Keep Movie and Book List
+Tracker.”</span> July 1, 2022. <a href="https://jeweljohnsonj.github.io/one-carat-blog//posts/notion_movie_books">https://jeweljohnsonj.github.io/one-carat-blog//posts/notion_movie_books</a>.
+</div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script><script src="https://giscus.app/client.js" data-repo="jeweljohnsonj/one-carat-blog" data-repo-id="R_kgDOHW124A" data-category="General" data-category-id="DIC_kwDOHW124M4CPNVL" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Using Notion to keep movie and book list tracker"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "This a tutorial on how you can use Notion to maintain reading and watch list tracker"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "07/01/2022"</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> images/res_dairy.png</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [PhD, Notion, productivity]</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">## Using notion to keep a movie list tracker</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>This was a fun little project where I made two templates that helps in maintaining reading and a watch list tracker for books and movies. I heard from my friends who are doing PhD that they spent a hefty amount of time binge-watching movies and series and most of them also read a lot of new books. So I thought why not make a template that will help them manage this. The templates are very simple and visually pleasing.</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>This might be my shortest article ever on this blog but I thought this post can act as a source to receive feedback and comments about the templates. The links for the templates are given below.</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span><span class="co">[</span><span class="ot">Movie list tracker</span><span class="co">](https://jeweljohnson.notion.site/c13997d07e0444bd9d3caf6d068a99b2?v=602485e9f6fe4357a1db88043cfd0450)</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span><span class="co">[</span><span class="ot">Book list tracker</span><span class="co">](https://jeweljohnson.notion.site/9805efc31e5a4b39b1e29870f1febd1c?v=0cbadae558e140d7a7d339cb677f052f)</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## Movie list tracker</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>::: column-page</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="al">![Movie list tracker](images/movie.png)</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>You can categorise the list to their 'watch status' and also indicate if it's a movie or a series. Furthermore, if watch a lot of series, then you can also add in the extra columns indicating the season and so on. In the poster column, I have embedded an online image link showcasing the movie or series poster. This is done so that the media collection view (gallery view) can use these images and show visually pleasing cards. You can get the poster image links for most of the movies and series from <span class="co">[</span><span class="ot">here</span><span class="co">](https://www.movieposterdb.com/)</span>. The progress section shows the data in a 'kanban' view to quickly visualize the watch list according to their status.</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## Book list tracker</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>::: column-page</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="al">![Movie list tracker](images/book.png)</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>The book list tracker is almost identical to the movie list one. To get the book cover image links for the database, you can visit <span class="co">[</span><span class="ot">here</span><span class="co">](https://www.goodreads.com/)</span>. The way you add entries is also pretty self intuitive so I urge you to explore it yourself.</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>I hope you find these templates useful. You can give your feedback and thoughts about the template in the comment section below this article.</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Last updated on {.unnumbered .unlisted}</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">hidden</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://info.flagcounter.com/ynrK"</span><span class="kw">&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"Flag Counter"</span> <span class="er">border</span><span class="ot">=</span><span class="st">"0"</span><span class="kw">/&gt;&lt;/a&gt;</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+      <div class="nav-footer-center">© 2022, Jewel Johnson</div>
+  </div>
+</footer>
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

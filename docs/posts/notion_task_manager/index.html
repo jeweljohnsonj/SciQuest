@@ -242,7 +242,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
                           <div class="quarto-categories">
                 <div class="quarto-category">PhD</div>
                 <div class="quarto-category">Notion</div>
-                <div class="quarto-category">Zotero</div>
                 <div class="quarto-category">productivity</div>
               </div>
                   </div>
@@ -278,7 +277,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#using-notion-as-a-task-management-dashboard" id="toc-using-notion-as-a-task-management-dashboard" class="nav-link active" data-scroll-target="#using-notion-as-a-task-management-dashboard"> <span class="header-section-number">1</span> Using Notion as a task management dashboard</a></li>
   <li><a href="#to-do-list" id="toc-to-do-list" class="nav-link" data-scroll-target="#to-do-list"> <span class="header-section-number">2</span> To-do-list</a></li>
   <li><a href="#task-manager" id="toc-task-manager" class="nav-link" data-scroll-target="#task-manager"> <span class="header-section-number">3</span> Task manager</a></li>
-  <li><a href="#task-dashbaord" id="toc-task-dashbaord" class="nav-link" data-scroll-target="#task-dashbaord"> <span class="header-section-number">4</span> Task dashbaord</a></li>
+  <li><a href="#task-dashboard" id="toc-task-dashboard" class="nav-link" data-scroll-target="#task-dashboard"> <span class="header-section-number">4</span> Task dashboard</a></li>
   <li><a href="#completed-tasks" id="toc-completed-tasks" class="nav-link" data-scroll-target="#completed-tasks"> <span class="header-section-number">5</span> Completed tasks</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"> <span class="header-section-number">6</span> Conclusion</a></li>
   </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/edit/main/posts/notion_task_manager/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -299,12 +298,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>
 <a href="https://jeweljohnson.notion.site/0423a149b5274574adb7d123665c8579?v=4743a4b9a12a45a992deebd972047ea9">Completed task list</a>: Same template as above, but only tasks that are completed are shown. Act as an archive for completed tasks.</li>
 <li>
-<a href="https://jeweljohnson.notion.site/Task-manager-246a1b4e5b4a4f1b846da8e42b5af756">Task manager</a>: Task manager interface where each task are arranged and displayed categorically. By default only shows incomplete tasks.</li>
+<a href="https://jeweljohnson.notion.site/Task-manager-246a1b4e5b4a4f1b846da8e42b5af756">Task manager</a>: Task manager interface where each task is arranged and displayed categorically. By default only shows incomplete tasks.</li>
 <li>
 <a href="https://jeweljohnson.notion.site/Task-dashboard-195e0f63dbd94f518918f78708677e60">Task dashboard</a>: A dashboard which informs you which tasks are due and how long are they due to completion.</li>
 </ol></section><section id="to-do-list" class="level2 page-columns page-full" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="to-do-list">
 <span class="header-section-number">2</span> To-do-list</h2>
-<p>First let us see the To-do-list. Specifically we will be seeing the ‘Master table’ view which lists out all the tasks which are yet to be completed.</p>
+<p>First, let us see the To-do-list. Specifically, we will be seeing the ‘Master table’ view which lists out all the tasks which are yet to be completed.</p>
 <div class="column-page">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/to_do_list.png" class="img-fluid figure-img"></p>
@@ -313,7 +312,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <p>Like any basic to-do list, this list has task names and due date columns, along with many other columns. I have also tagged the tasks into their respective category and their priority. The ‘Date added’ and ‘Due status is automatically calculated once you input a row value in the table. The ’Due status’ column is dependent on a formula which takes in the ‘Due date’ value. The possible values for the ‘Due status’ column are; task finished, overdue, due today, due tomorrow, someday and later. Here ‘someday’ label means that the task has no due date mentioned and the ‘later’ label means that the task has at least 7 days before the due. The ‘task finished’ is only given to tasks which have the ‘Done’ column check box checked. The rest of the labels are what it says.</p>
-<p>You can change every single aspect of this table to suit your needs. What might be tricky to change is the ‘Due status’ column as it is governed by a formula which may look complex but is actually very easy.</p>
+<p>You can change every single aspect of this table to suit your needs. What might be tricky to change is the ‘Due status’ column as it is governed by a formula which may look complex but is very easy.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -328,14 +327,12 @@ Due status formula
 if(formatDate(prop("Due date"),"L") == formatDate(now(), "L"), "Due today",
 if(prop("Due date") &lt; now(), "Overdue",
 if(prop("Due date") &lt;= dateAdd(now(), 1, "days"), "Due tomorrow",
-if(empty(prop("Due date")), "Someday", "Later")))), "Task finished")
-</code></pre>
+if(empty(prop("Due date")), "Someday", "Later")))), "Task finished")</code></pre>
 </div>
 </div>
 <p>The formula is a series of if statements. The syntax for the if statement in Notion is as follows;</p>
 <pre><code>boolean ? value : value
-if(boolean, value, value)
-</code></pre>
+if(boolean, value, value)</code></pre>
 <p>From the syntax, you can see that the if statement is dependent on a Boolean value.</p>
 <p>So let us try to understand what this formula is trying to calculate, by taking each section separately.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
@@ -430,8 +427,8 @@ if(empty(prop(“Due date”)), “Someday”, “Later”
 </figure>
 </div>
 </div>
-</section><section id="task-dashbaord" class="level2 page-columns page-full" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="task-dashbaord">
-<span class="header-section-number">4</span> Task dashbaord</h2>
+</section><section id="task-dashboard" class="level2 page-columns page-full" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="task-dashboard">
+<span class="header-section-number">4</span> Task dashboard</h2>
 <div class="column-page">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/task_dash.png" class="img-fluid figure-img"></p>
@@ -442,14 +439,14 @@ if(empty(prop(“Due date”)), “Someday”, “Later”
 <p>Treat the task dashboard page as your command centre for all the tasks. Remember all those ‘due status’ labels that we had in the to-do list database. With the help of Notion’s grouping feature for databases, we can easily visualize all the tasks according to their deadlines. In the ‘task list subsection,’ I have also added table views showing tasks associated with a particular priority. The purpose of this page is to easily get a glance at tasks that close the due date.</p>
 </section><section id="completed-tasks" class="level2" data-number="5"><h2 data-number="5" class="anchored" data-anchor-id="completed-tasks">
 <span class="header-section-number">5</span> Completed tasks</h2>
-<p>The completed tasks page acts as an archive showcasing all the completed tasks. As someone used to say to me, it brings great joy to tick off all those tasks from the to-do list after spending your time and energy in completing them. The primary function of this page is to preserve and record task completion history. The database is identical to that of the earlier shown to-do-list database, as I have filtered it to only show row values where the ‘Done’ column is checked.</p>
+<p>The completed tasks page acts as an archive showcasing all the completed tasks. As someone used to say to me, it brings great joy to tick off all those tasks from the to-do list after spending your time and energy completing them. The primary function of this page is to preserve and record task completion history. The database is identical to that of the earlier shown to-do-list database, as I have filtered it to only show row values where the ‘Done’ column is checked.</p>
 </section><section id="conclusion" class="level2" data-number="6"><h2 data-number="6" class="anchored" data-anchor-id="conclusion">
 <span class="header-section-number">6</span> Conclusion</h2>
-<p>I hope you have fun using this template. I enjoyed making this template and I aimed to make it simple and effective to use. To summarise, the to-do list is your main database, actually your only database. Everything else is just a modified version of this database where the info is shown in a different form using filtering and grouping features. After duplicating this template, you can tweak each of the parameters to suit your liking. You only need to change the parameters in the to-do-list database as the changes in it will be reflected in the rest of the pages. The only other thing that you will be needing to modify after you have changed the key parameters in the database are the headings, which are pretty straightforward to change. With that, I hope you find this template useful. Any feedback and suggestions are most welcome. You can comment below the article.</p>
+<p>I hope you have fun using this template. I enjoyed making this template and I aimed to make it simple and effective to use. To summarise, the to-do list is your main database, actually your only database. Everything else is just a modified version of this database where the info is shown in a different form using filtering and grouping features. After duplicating this template, you can tweak each of the parameters to suit your liking. You only need to change the parameters in the to-do-list database as the changes in it will be reflected in the rest of the pages. The only other thing that you will be needing to modify after you have changed the key parameters in the database are the headings, which are pretty straightforward to change. With that, I hope you find this template useful. Any feedback and suggestions are most welcome. You can comment them below the article.</p>
 <section id="last-updated-on" class="level4 unnumbered unlisted"><h4 class="unnumbered unlisted anchored" data-anchor-id="last-updated-on">Last updated on</h4>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-07-01 08:05:02 IST"</code></pre>
+<pre><code>[1] "2022-07-01 10:06:48 IST"</code></pre>
 </div>
 </div>
 <p><a hidden="" href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a></p>
@@ -603,7 +600,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "In this article I will showcase to you a template that I made, which can intelligently record and track tasks: you very own personal task manager with the help of Notion"</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "06/30/2022"</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [PhD, Notion, Zotero, productivity]</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [PhD, Notion, productivity]</span></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> images/diary_thumb.png</span></span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
@@ -617,12 +614,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span><span class="co">[</span><span class="ot">To-do-list</span><span class="co">](https://jeweljohnson.notion.site/22735f3cfabd4e34b1a38cc2127c5202?v=8a3317915d4a4a9b97448ae74a9942bf)</span>: Acts as the master database where all tasks are stored. By default only shows incomplete tasks.</span>
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span><span class="co">[</span><span class="ot">Completed task list</span><span class="co">](https://jeweljohnson.notion.site/0423a149b5274574adb7d123665c8579?v=4743a4b9a12a45a992deebd972047ea9)</span>: Same template as above, but only tasks that are completed are shown. Act as an archive for completed tasks.</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span><span class="co">[</span><span class="ot">Task manager</span><span class="co">](https://jeweljohnson.notion.site/Task-manager-246a1b4e5b4a4f1b846da8e42b5af756)</span>: Task manager interface where each task are arranged and displayed categorically. By default only shows incomplete tasks.</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span><span class="co">[</span><span class="ot">Task manager</span><span class="co">](https://jeweljohnson.notion.site/Task-manager-246a1b4e5b4a4f1b846da8e42b5af756)</span>: Task manager interface where each task is arranged and displayed categorically. By default only shows incomplete tasks.</span>
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span><span class="co">[</span><span class="ot">Task dashboard</span><span class="co">](https://jeweljohnson.notion.site/Task-dashboard-195e0f63dbd94f518918f78708677e60)</span>: A dashboard which informs you which tasks are due and how long are they due to completion.</span>
 <span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## To-do-list</span></span>
 <span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>First let us see the To-do-list. Specifically we will be seeing the 'Master table' view which lists out all the tasks which are yet to be completed. </span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>First, let us see the To-do-list. Specifically, we will be seeing the 'Master table' view which lists out all the tasks which are yet to be completed.</span>
 <span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>::: column-page</span>
 <span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="al">![To-do-list](images/to_do_list.png)</span></span>
@@ -630,54 +627,54 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>Like any basic to-do list, this list has task names and due date columns, along with many other columns. I have also tagged the tasks into their respective category and their priority. The 'Date added' and 'Due status is automatically calculated once you input a row value in the table. The 'Due status' column is dependent on a formula which takes in the 'Due date' value. The possible values for the 'Due status' column are; task finished, overdue, due today, due tomorrow, someday and later. Here 'someday' label means that the task has no due date mentioned and the 'later' label means that the task has at least 7 days before the due. The 'task finished' is only given to tasks which have the 'Done' column check box checked. The rest of the labels are what it says.</span>
 <span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>You can change every single aspect of this table to suit your needs. What might be tricky to change is the 'Due status' column as it is governed by a formula which may look complex but is actually very easy.</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>You can change every single aspect of this table to suit your needs. What might be tricky to change is the 'Due status' column as it is governed by a formula which may look complex but is very easy.</span>
 <span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>:::{.callout-tip}</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
 <span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Due status formula</span></span>
 <span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="in">````</span></span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="in">if(prop("Done") == false, </span></span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="in">if(formatDate(prop("Due date"),"L") == formatDate(now(), "L"), "Due today",</span></span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="in">if(prop("Due date") &lt; now(), "Overdue",</span></span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="in">if(prop("Due date") &lt;= dateAdd(now(), 1, "days"), "Due tomorrow",</span></span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="in">if(empty(prop("Due date")), "Someday", "Later")))), "Task finished")</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="in">    if(prop("Done") == false, </span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="in">    if(formatDate(prop("Due date"),"L") == formatDate(now(), "L"), "Due today",</span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="in">    if(prop("Due date") &lt; now(), "Overdue",</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="in">    if(prop("Due date") &lt;= dateAdd(now(), 1, "days"), "Due tomorrow",</span></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="in">    if(empty(prop("Due date")), "Someday", "Later")))), "Task finished")</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a><span class="in">````</span></span>
-<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>The formula is a series of if statements. The syntax for the if statement in Notion is as follows;</span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>The formula is a series of if statements. The syntax for the if statement in Notion is as follows;</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="in">    boolean ? value : value</span></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="in">    if(boolean, value, value)</span></span>
 <span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a><span class="in">````</span></span>
-<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a><span class="in">boolean ? value : value</span></span>
-<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="in">if(boolean, value, value)</span></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>From the syntax, you can see that the if statement is dependent on a Boolean value.</span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>So let us try to understand what this formula is trying to calculate, by taking each section separately.</span>
 <span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="in">````</span></span>
-<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>From the syntax, you can see that the if statement is dependent on a Boolean value.</span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="fu">## if(prop("Done") == false</span></span>
 <span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>So let us try to understand what this formula is trying to calculate, by taking each section separately.</span>
-<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a>:::{.callout-note}</span>
-<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="fu">## if(prop("Done") == false</span></span>
-<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a>This means that if the 'Done' column is unchecked then run the rest of the statements, if not, then it returns the label 'Task finished' which you can see in the last part of the formula. The checkboxes in Notion follow Boolean values. Checked means true and unchecked means false.</span>
-<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>:::{.callout-note}</span>
-<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="fu">## if(formatDate(prop("Due date"),"L") == formatDate(now(), "L"), "Due today"</span></span>
-<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a>This is yet another 'if' statement but this time we are reformatting the date. The reason why we are reformatting the date is that, in Notion, any date is followed by time, so 12-12-2022 is Notion is denoted as 12-12-2022 12:00 AM. So there can be some issues where 'Due today' won't be properly shown. So reformatting the date to 'day' units is easier to work with. The <span class="in">`now()`</span> function returns the current date. Therefore this formula simply returns the label 'Due today' if the due date matches the current date.</span>
-<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>This means that if the 'Done' column is unchecked then run the rest of the statements, if not, then it returns the label 'Task finished' which you can see in the last part of the formula. The checkboxes in Notion follow Boolean values. Checked means true and unchecked means false.</span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="fu">## if(formatDate(prop("Due date"),"L") == formatDate(now(), "L"), "Due today"</span></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a>This is yet another 'if' statement but this time we are reformatting the date. The reason why we are reformatting the date is that, in Notion, any date is followed by time, so 12-12-2022 is Notion is denoted as 12-12-2022 12:00 AM. So there can be some issues where 'Due today' won't be properly shown. So reformatting the date to 'day' units is easier to work with. The <span class="in">`now()`</span> function returns the current date. Therefore this formula simply returns the label 'Due today' if the due date matches the current date.</span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a><span class="fu">## if(prop("Due date") \&lt; now(), "Overdue"</span></span>
 <span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a>:::{.callout-note}</span>
-<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a><span class="fu">## if(prop("Due date") &lt; now(), "Overdue"</span></span>
-<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a>This formula returns an 'Overdue' label if the due date is past the current date.</span>
-<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a>:::{.callout-note}</span>
-<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a><span class="fu">## if(prop("Due date") &lt;= dateAdd(now(), 1, "days"), "Due tomorrow",</span></span>
-<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a>The <span class="in">`dateAdd()`</span> function takes in the first value, which is the current date returned from the <span class="in">`now()`</span> function, and then adds 1 unit of "days" to it. Therefore the formula boils down to checking if the due date is less than or equal to tomorrow and returns the 'Due tomorrow' label if it does. We give less than or equal to sign because we want the counter-statement to be strictly greater than so that, only then does the rest of the if statement runs. Also, the less than condition can never be fulfilled here as the first statement checks if the due date matches the current day. </span>
-<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a>:::{.callout-note}</span>
-<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a><span class="fu">## if(empty(prop("Due date")), "Someday", "Later"</span></span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a>This formula returns an 'Overdue' label if the due date is past the current date.</span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a><span class="fu">## if(prop("Due date") \&lt;= dateAdd(now(), 1, "days"), "Due tomorrow",</span></span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a>The <span class="in">`dateAdd()`</span> function takes in the first value, which is the current date returned from the <span class="in">`now()`</span> function, and then adds 1 unit of "days" to it. Therefore the formula boils down to checking if the due date is less than or equal to tomorrow and returns the 'Due tomorrow' label if it does. We give less than or equal to sign because we want the counter-statement to be strictly greater than so that, only then does the rest of the if statement runs. Also, the less than condition can never be fulfilled here as the first statement checks if the due date matches the current day.</span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a><span class="fu">## if(empty(prop("Due date")), "Someday", "Later"</span></span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a>Now sometimes we don't want to give the due date or we forgot to give them to a task. This is notified by the 'Someday' label. Now the 'Later' label is given when the 'Due tomorrow' condition fails, which means that the due date is greater than tomorrow.</span>
 <span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a></span>
@@ -703,7 +700,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a><span class="al">![Adding a task to the inbox](images/task_manager_1.gif)</span></span>
 <span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a><span class="fu">## Task dashbaord</span></span>
+<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a><span class="fu">## Task dashboard</span></span>
 <span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a>::: column-page</span>
 <span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a><span class="al">![Task dashboard](images/task_dash.png)</span></span>
@@ -713,11 +710,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb4-113"><a href="#cb4-113" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-114"><a href="#cb4-114" aria-hidden="true" tabindex="-1"></a><span class="fu">## Completed tasks</span></span>
 <span id="cb4-115"><a href="#cb4-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a>The completed tasks page acts as an archive showcasing all the completed tasks. As someone used to say to me, it brings great joy to tick off all those tasks from the to-do list after spending your time and energy in completing them. The primary function of this page is to preserve and record task completion history. The database is identical to that of the earlier shown to-do-list database, as I have filtered it to only show row values where the 'Done' column is checked.</span>
+<span id="cb4-116"><a href="#cb4-116" aria-hidden="true" tabindex="-1"></a>The completed tasks page acts as an archive showcasing all the completed tasks. As someone used to say to me, it brings great joy to tick off all those tasks from the to-do list after spending your time and energy completing them. The primary function of this page is to preserve and record task completion history. The database is identical to that of the earlier shown to-do-list database, as I have filtered it to only show row values where the 'Done' column is checked.</span>
 <span id="cb4-117"><a href="#cb4-117" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-118"><a href="#cb4-118" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
 <span id="cb4-119"><a href="#cb4-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a>I hope you have fun using this template. I enjoyed making this template and I aimed to make it simple and effective to use. To summarise, the to-do list is your main database, actually your only database. Everything else is just a modified version of this database where the info is shown in a different form using filtering and grouping features. After duplicating this template, you can tweak each of the parameters to suit your liking. You only need to change the parameters in the to-do-list database as the changes in it will be reflected in the rest of the pages. The only other thing that you will be needing to modify after you have changed the key parameters in the database are the headings, which are pretty straightforward to change. With that, I hope you find this template useful. Any feedback and suggestions are most welcome. You can comment below the article. </span>
+<span id="cb4-120"><a href="#cb4-120" aria-hidden="true" tabindex="-1"></a>I hope you have fun using this template. I enjoyed making this template and I aimed to make it simple and effective to use. To summarise, the to-do list is your main database, actually your only database. Everything else is just a modified version of this database where the info is shown in a different form using filtering and grouping features. After duplicating this template, you can tweak each of the parameters to suit your liking. You only need to change the parameters in the to-do-list database as the changes in it will be reflected in the rest of the pages. The only other thing that you will be needing to modify after you have changed the key parameters in the database are the headings, which are pretty straightforward to change. With that, I hope you find this template useful. Any feedback and suggestions are most welcome. You can comment them below the article.</span>
 <span id="cb4-121"><a href="#cb4-121" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-122"><a href="#cb4-122" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Last updated on {.unnumbered .unlisted}</span></span>
 <span id="cb4-123"><a href="#cb4-123" aria-hidden="true" tabindex="-1"></a></span>
