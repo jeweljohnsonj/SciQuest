@@ -13,6 +13,7 @@ website:
   repo-url: "https://github.com/jeweljohnsonj/one-carat-blog"
   repo-actions: [edit, issue]
   twitter-card: true
+  google-analytics: G-EVCS615JQR
     
   navbar:
     logo: gems.png
