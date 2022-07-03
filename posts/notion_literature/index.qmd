@@ -1,6 +1,6 @@
 ---
 title: "Using Notion and Zotero to build a literature tracker"
-description: "This a tutorial on how you can use Notion to make a database which tracks the research articles that you read which is synced to your Zotero directory via the Notero plugin"
+description: "In this tutorial we will learn how we can use Notion to make a literature database. With the help of the Notero plugin, our database will be synced with our Zotero directories"
 date: "06/29/2022"
 format: html
 image: images/notero_thumbnail.png
@@ -34,19 +34,17 @@ Now we are going to install a plugin for Zotero, called [Notero](https://github.
 1.  Go to the Github page of [Notero](https://github.com/dvanoni/notero/releases/tag/v0.3.5) and download the `notero-0.3.5.xpi` file under the assets section. You can right-click on the file and save it by clicking on 'save link as'
 
 ::: {.callout-tip collapse="true"}
-## Downloading the plugin (click here)
+## Video: Downloading the plugin (click here)
 
-![](images/notero.gif)
+![](https://raw.githubusercontent.com/jeweljohnsonj/one-carat-blog/main/videos/notero_literature/notero.mp4)
 :::
 
 2.  Go to the Zotero app and click on 'Tools' and then click 'Add-ons'. Then in the new window, click on the Settings button and then click on 'Install add-on from file'. Then browse to where your `notero-0.3.5.xpi` file is downloaded and then install it.
 
-::: column-screen
 ::: {.callout-tip collapse="true"}
-## Installing the plugin
+## Video: Installing the plugin
 
-![](images/notero_install.gif)
-:::
+![](https://raw.githubusercontent.com/jeweljohnsonj/one-carat-blog/main/videos/notero_literature/notero_install.mp4)
 :::
 
 ### Configure Notero plugin
@@ -55,13 +53,12 @@ Now we are going to install a plugin for Zotero, called [Notero](https://github.
 
 2.  To get the integration token, go to [Notion integrations](https://www.notion.so/my-integrations) and click on 'New integration'. Give a suitable name (something like 'Notero integration' for the ease of finding it) and then select your workspace in Notion. You can keep the rest of the options in their default setting and then click save. You will then get your integration token.
 
-::: column-screen
 ::: {.callout-tip collapse="true"}
-## Getting the integration token
+## video: Getting the integration token
 
-![](images/notion_integration.gif)
+![](https://raw.githubusercontent.com/jeweljohnsonj/one-carat-blog/main/videos/notero_literature/notion_integration.mp4)
 :::
-:::
+
 
 3.  Go back to your Notion app and then select the database which you want to integrate with the Notero plugin. If you are creating a database from scratch then make sure that the table that you are creating has the following named columns.
 
@@ -81,12 +78,10 @@ If you want to use my template then click [here](https://jeweljohnson.notion.sit
 Copy the {database_id} part
 :::
 
-::: column-screen
 ::: {.callout-tip collapse="true"}
-## Getting the database ID
+## Video: Getting the database ID
 
-![](images/notion_database.gif)
-:::
+![](https://raw.githubusercontent.com/jeweljohnsonj/one-carat-blog/main/videos/notero_literature/notion_database.mp4)
 :::
 
 5.  Then finally paste your 'integration token' and the 'database ID' into the 'Notero Preferences' window under the 'Tools' section in Zotero. Then select the directory in Zotero that you want to integrate with your Notion database. Now you have successfully configured the Notero plugin.
@@ -95,25 +90,21 @@ Copy the {database_id} part
 
 Now go to the associated database and click 'Share'. Search for your integration and click invite. Any research article that is present in your directory associated with the Notero plugin will now automatically be synced to your associated Notion database. Notero plugin allows one-time sync between Zotero to Notion but not the other way around. So any changes that you do in the Notion database won't be reflected in your Zotero database.
 
-::: column-screen
 ::: {.callout-tip collapse="true"}
-## Notero in action
+## Video: Notero in action
 
-![](images/notion_notero.gif)
+![](https://raw.githubusercontent.com/jeweljohnsonj/one-carat-blog/main/videos/notero_literature/notion_notero.mp4)
 :::
-:::
 
-There is a reason why I said it's a one-time sync, so any modifications that you do for already existing files won't be reflected in Notion. But this can be easily fixed by assigning the existing papers to a temporary tag and then deleting it.
+There is a reason why I said it's a one-time sync, any modifications that you do for already existing files won't be reflected in Notion. But this can be easily fixed by assigning the existing papers to a tag, you can also delete it if you dont want it to appear in the database.
 
-::: column-screen
 ::: {.callout-tip collapse="true"}
-## Updating existing files with a new tag
+## Video: Updating existing files with a new tag
 
-![](images/notero_update.gif)
-:::
+![](https://raw.githubusercontent.com/jeweljohnsonj/one-carat-blog/main/videos/notero_literature/notero_update.mp4)
 :::
 
-There are some limitations on what the plugin is capable of doing, but it's still better than nothing. You can learn more about the plugin from its [Github repo](https://github.com/dvanoni/notero).
+There are some limitations on what the plugin is capable of doing, but it's still better than nothing. You can learn more about the plugin from its [Github repo page](https://github.com/dvanoni/notero).
 
 So there you have it, your very own literature tracker made using Notion and integrated with Zotero using the Notero plugin. I am so proud of you 👍
 

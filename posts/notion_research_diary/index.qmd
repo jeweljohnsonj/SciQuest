@@ -42,8 +42,9 @@ So let us try writing an entry. First, make a blank row entry and then hover ove
 
 This is a simple research diary template that I have created and I hope you find it useful. Suggestions and feedback to improve the diary template are most welcome. Please comment your thoughts below the article. Thanks!
 
-::: column-page
-![Making a diary entry](images/dairy.gif)
+::: {.callout-tip collapse="true"}
+## Video: Making a diary entry (click here)
+![](https://raw.githubusercontent.com/jeweljohnsonj/one-carat-blog/main/videos/notion_research_diary/diary.mp4)
 :::
 
 ## Useful References {.unnumbered .appendix}
