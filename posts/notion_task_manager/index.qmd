@@ -92,22 +92,25 @@ Now the reason why I went to explain this formula so elaborately is for you to a
 
 Now Notion also features some powerful ways of visualizing tabular data via 'views'. You can see that there is a 'Group table', 'Priority table' and a 'Status table' views in the database. These are nothing but the 'Master table' data grouped into different categories for easy visualization.
 
-::: column-page
-![To-do-list](images/list_view.gif)
+::: {.callout-tip collapse="true"}
+## Video: Different views of the to-do list (click here)
+![](https://raw.githubusercontent.com/jeweljohnsonj/one-carat-blog/main/videos/notion_task_manager/to_do_list.mp4)
 :::
 
 Okay, now we have a fair idea of what is there in this database and what each of the columns does. Now the funny part is that we won't be adding any tasks to this table using this page. Instead, we will be exclusively using the 'Task manager' for it.
 
 ## Task manager
 
-::: column-page
-![Task manager](images/task_manager.gif)
+::: {.callout-tip collapse="true"}
+## Video: Task manager
+![](https://raw.githubusercontent.com/jeweljohnsonj/one-carat-blog/main/videos/notion_task_manager/task_manager.mp4)
 :::
 
 The task manager page is your go-to page to list out incomplete tasks. By default, the page has categorized all tasks into their respective category as subsections. The inbox section is where you **add your task** to the to-do list and as soon as you add the associated category, it vanishes from the inbox and goes to its category subsection. Thus you don't have to worry about post categorizing into the subsection parts after you have added a task. And once you check the 'Done' column for a task, it is then archived on the Completed task list page to preserve the history of completed tasks.
 
-::: column-page
-![Adding a task to the inbox](images/task_manager_1.gif)
+::: {.callout-tip collapse="true"}
+## Video: Adding a task in the task manager
+![](https://raw.githubusercontent.com/jeweljohnsonj/one-carat-blog/main/videos/notion_task_manager/add_task.mp4)
 :::
 
 ## Task dashboard
