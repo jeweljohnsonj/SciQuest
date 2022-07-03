@@ -54,7 +54,7 @@ Now we are going to install a plugin for Zotero, called [Notero](https://github.
 2.  To get the integration token, go to [Notion integrations](https://www.notion.so/my-integrations) and click on 'New integration'. Give a suitable name (something like 'Notero integration' for the ease of finding it) and then select your workspace in Notion. You can keep the rest of the options in their default setting and then click save. You will then get your integration token.
 
 ::: {.callout-tip collapse="true"}
-## video: Getting the integration token
+## Video: Getting the integration token
 
 ![](https://raw.githubusercontent.com/jeweljohnsonj/one-carat-blog/main/videos/notero_literature/notion_integration.mp4)
 :::
