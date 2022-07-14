@@ -20,7 +20,7 @@ This is a follow-up article from my earlier post on [My Notion story](https://je
 In this article, we will aim to build a literature tracker that looks similar to the one below. It will be automated via the Notero plugin integrating Zotero with Notion.
 
 ::: column-page
-![My literature tracker template in Notion](images/notion_summary.png){.preview-image}
+![My literature tracker template in Notion](images/notion_summary.png)
 :::
 
 ### Install Zotero

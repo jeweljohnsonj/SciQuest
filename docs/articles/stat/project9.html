@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.629">
+<meta name="generator" content="quarto-1.0.16">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jewel Johnson">
 <meta name="dcterms.date" content="2022-05-21">
@@ -95,7 +95,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -306,7 +306,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="https://www.accountingexperiments.com/post/anova-regression/featured_hu8d7b78fdb8970f110a404e1ae11b4c8f_365153_720x0_resize_lanczos_2.png" class="preview-image img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">It always has been</figcaption><p></p>
+<p></p><figcaption class="figure-caption">It always has been</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -361,17 +361,17 @@ P(Probability\ to\ have\ at\ least\ one\ type\ I\ error\ in\ n\ tests)&amp;= 1 -
 <span class="header-section-number">3.1</span> one way ANOVA</h3>
 <p>Now let us try doing ANOVA in R. Like before, we will be using the <code>penguins</code> dataset from the <a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a> package in R. We will compare the body masses of all three species of penguins in the dataset and see if any two of them are significantly different from each other. In this case, we will be doing a one-way ANOVA, where species is our independent variable and body mass is the independent variable.</p>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co">#install.packages("palmerpenguins")</span>
-<span class="co">#install.packages("tidyverse")</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
-
-<span class="co"># selecting species and mass columns</span>
-<span class="va">pen_mass</span> <span class="op">&lt;-</span> <span class="va">penguins</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">6</span><span class="op">)</span><span class="op">]</span>
-<span class="co"># one way ANOVA test</span>
-<span class="va">anova1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">species</span>, data <span class="op">=</span> <span class="va">pen_mass</span><span class="op">)</span>
-<span class="co"># summarising test result</span>
-<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">anova1</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#install.packages("palmerpenguins")</span></span>
+<span><span class="co">#install.packages("tidyverse")</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># selecting species and mass columns</span></span>
+<span><span class="va">pen_mass</span> <span class="op">&lt;-</span> <span class="va">penguins</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">6</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="co"># one way ANOVA test</span></span>
+<span><span class="va">anova1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">species</span>, data <span class="op">=</span> <span class="va">pen_mass</span><span class="op">)</span></span>
+<span><span class="co"># summarising test result</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">anova1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             Df    Sum Sq  Mean Sq F value Pr(&gt;F)    
 species       2 146864214 73432107   343.6 &lt;2e-16 ***
@@ -383,17 +383,17 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 </div>
 <p>The column Pr(&gt;F) corresponds to the p-value of the test and from the result we find that the test returned a statistically significant p-value. Now to see which species have different body masses from each other, we run a post-hoc test which in this case, we will run a Tukey HSD test.</p>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co">#install.packages("palmerpenguins")</span>
-<span class="co">#install.packages("tidyverse")</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
-
-<span class="co"># selecting species and mass columns</span>
-<span class="va">pen_mass</span> <span class="op">&lt;-</span> <span class="va">penguins</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">6</span><span class="op">)</span><span class="op">]</span>
-<span class="co"># one way ANOVA test</span>
-<span class="va">anova1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">species</span>, data <span class="op">=</span> <span class="va">pen_mass</span><span class="op">)</span>
-<span class="co"># tukey HSD test</span>
-<span class="fu"><a href="https://rdrr.io/r/stats/TukeyHSD.html">TukeyHSD</a></span><span class="op">(</span><span class="va">anova1</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#install.packages("palmerpenguins")</span></span>
+<span><span class="co">#install.packages("tidyverse")</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># selecting species and mass columns</span></span>
+<span><span class="va">pen_mass</span> <span class="op">&lt;-</span> <span class="va">penguins</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">6</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="co"># one way ANOVA test</span></span>
+<span><span class="va">anova1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">species</span>, data <span class="op">=</span> <span class="va">pen_mass</span><span class="op">)</span></span>
+<span><span class="co"># tukey HSD test</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/TukeyHSD.html">TukeyHSD</a></span><span class="op">(</span><span class="va">anova1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Tukey multiple comparisons of means
     95% family-wise confidence level
@@ -412,17 +412,17 @@ Gentoo-Chinstrap 1342.92802 1178.4810 1507.3750 0.0000000</code></pre>
 <span class="header-section-number">3.2</span> two way ANOVA</h3>
 <p>Now if we have more than one independent variable, then we can do a <code>two-way ANOVA</code>. In the test below we have both <code>species</code> and <code>island</code> as the independent variables.</p>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co">#install.packages("palmerpenguins")</span>
-<span class="co">#install.packages("tidyverse")</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
-
-<span class="co"># selecting species and mass columns</span>
-<span class="va">pen_mass_land</span> <span class="op">&lt;-</span> <span class="va">penguins</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">6</span><span class="op">)</span><span class="op">]</span>
-<span class="co"># two way ANOVA test</span>
-<span class="va">anova2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">species</span> <span class="op">+</span> <span class="va">island</span>, data <span class="op">=</span> <span class="va">pen_mass_land</span><span class="op">)</span>
-<span class="co"># summarising test result</span>
-<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">anova2</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#install.packages("palmerpenguins")</span></span>
+<span><span class="co">#install.packages("tidyverse")</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># selecting species and mass columns</span></span>
+<span><span class="va">pen_mass_land</span> <span class="op">&lt;-</span> <span class="va">penguins</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">6</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="co"># two way ANOVA test</span></span>
+<span><span class="va">anova2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">species</span> <span class="op">+</span> <span class="va">island</span>, data <span class="op">=</span> <span class="va">pen_mass_land</span><span class="op">)</span></span>
+<span><span class="co"># summarising test result</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">anova2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             Df    Sum Sq  Mean Sq F value Pr(&gt;F)    
 species       2 146864214 73432107 341.663 &lt;2e-16 ***
@@ -435,17 +435,17 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 </div>
 <p>Here the results suggests that, body masses are different between species but there is no significant difference in body mass across the different islands. The follow up post-hoc test would look like this.</p>
 <div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co">#install.packages("palmerpenguins")</span>
-<span class="co">#install.packages("tidyverse")</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
-
-<span class="co"># selecting species and mass columns</span>
-<span class="va">pen_mass_land</span> <span class="op">&lt;-</span> <span class="va">penguins</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">6</span><span class="op">)</span><span class="op">]</span>
-<span class="co"># two way ANOVA test</span>
-<span class="va">anova2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">species</span> <span class="op">+</span> <span class="va">island</span>, data <span class="op">=</span> <span class="va">pen_mass_land</span><span class="op">)</span>
-<span class="co"># tukey HSD test</span>
-<span class="fu"><a href="https://rdrr.io/r/stats/TukeyHSD.html">TukeyHSD</a></span><span class="op">(</span><span class="va">anova2</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#install.packages("palmerpenguins")</span></span>
+<span><span class="co">#install.packages("tidyverse")</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># selecting species and mass columns</span></span>
+<span><span class="va">pen_mass_land</span> <span class="op">&lt;-</span> <span class="va">penguins</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">6</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="co"># two way ANOVA test</span></span>
+<span><span class="va">anova2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">species</span> <span class="op">+</span> <span class="va">island</span>, data <span class="op">=</span> <span class="va">pen_mass_land</span><span class="op">)</span></span>
+<span><span class="co"># tukey HSD test</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/TukeyHSD.html">TukeyHSD</a></span><span class="op">(</span><span class="va">anova2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Tukey multiple comparisons of means
     95% family-wise confidence level
@@ -470,18 +470,18 @@ Torgersen-Dream  11.251314 -170.2981 192.8007 0.9883345</code></pre>
 <span class="header-section-number">3.3</span> two way ANOVA with dependent variable</h3>
 <p>Now suppose that there is a synergistic effect between <code>species</code> and <code>sex</code> variable. Then in that case they are not independent with each other, nevertheless we can incorporate this factor by changing the addition sign <code>+</code> between the variables to an asterisk sign <code>*</code>.</p>
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co">#install.packages("palmerpenguins")</span>
-<span class="co">#install.packages("tidyverse")</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
-
-<span class="co"># selecting species and mass columns</span>
-<span class="va">pen_mass_land</span> <span class="op">&lt;-</span> <span class="va">penguins</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">6</span>,<span class="fl">7</span><span class="op">)</span><span class="op">]</span>
-<span class="co"># two way ANOVA test with dependent variables</span>
-<span class="co"># species and sex variables are dependent in nature</span>
-<span class="va">anova_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">species</span> <span class="op">*</span> <span class="va">sex</span>, data <span class="op">=</span> <span class="va">pen_mass_land</span><span class="op">)</span>
-<span class="co"># summarising test result</span>
-<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">anova_2</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#install.packages("palmerpenguins")</span></span>
+<span><span class="co">#install.packages("tidyverse")</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># selecting species and mass columns</span></span>
+<span><span class="va">pen_mass_land</span> <span class="op">&lt;-</span> <span class="va">penguins</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">6</span>,<span class="fl">7</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="co"># two way ANOVA test with dependent variables</span></span>
+<span><span class="co"># species and sex variables are dependent in nature</span></span>
+<span><span class="va">anova_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">species</span> <span class="op">*</span> <span class="va">sex</span>, data <span class="op">=</span> <span class="va">pen_mass_land</span><span class="op">)</span></span>
+<span><span class="co"># summarising test result</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">anova_2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             Df    Sum Sq  Mean Sq F value   Pr(&gt;F)    
 species       2 145190219 72595110 758.358  &lt; 2e-16 ***
@@ -496,18 +496,18 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 <p>From the result we can see that both species and sex have a significant effect on body mass and also the interaction between species and sex is also a significant effect.</p>
 <p>The follow up post hoc test result will be;</p>
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co">#install.packages("palmerpenguins")</span>
-<span class="co">#install.packages("tidyverse")</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
-
-<span class="co"># selecting species and mass columns</span>
-<span class="va">pen_mass_land</span> <span class="op">&lt;-</span> <span class="va">penguins</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">6</span>,<span class="fl">7</span><span class="op">)</span><span class="op">]</span>
-<span class="co"># two way ANOVA test with dependent variables</span>
-<span class="co"># species and sex variables are dependent in nature</span>
-<span class="va">anova_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">species</span> <span class="op">*</span> <span class="va">sex</span>, data <span class="op">=</span> <span class="va">pen_mass_land</span><span class="op">)</span>
-<span class="co"># tukey HSD test</span>
-<span class="fu"><a href="https://rdrr.io/r/stats/TukeyHSD.html">TukeyHSD</a></span><span class="op">(</span><span class="va">anova_2</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#install.packages("palmerpenguins")</span></span>
+<span><span class="co">#install.packages("tidyverse")</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># selecting species and mass columns</span></span>
+<span><span class="va">pen_mass_land</span> <span class="op">&lt;-</span> <span class="va">penguins</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">6</span>,<span class="fl">7</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="co"># two way ANOVA test with dependent variables</span></span>
+<span><span class="co"># species and sex variables are dependent in nature</span></span>
+<span><span class="va">anova_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">species</span> <span class="op">*</span> <span class="va">sex</span>, data <span class="op">=</span> <span class="va">pen_mass_land</span><span class="op">)</span></span>
+<span><span class="co"># tukey HSD test</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/TukeyHSD.html">TukeyHSD</a></span><span class="op">(</span><span class="va">anova_2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Tukey multiple comparisons of means
     95% family-wise confidence level
@@ -548,19 +548,19 @@ Gentoo:male-Chinstrap:male      1545.8655 1356.0392 1735.6917 0.0000000</code></
 <span class="header-section-number">3.4</span> ANOVA test for unbalanced designs</h3>
 <p>Now if the dataset has unequal sample sizes for each groups, then we can use the <code>ANOVA test for unbalanced designs</code>. To use the test we would require the <a href="https://r-forge.r-project.org/projects/car/">car</a> package in R.</p>
 <div class="cell">
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co">#install.packages("palmerpenguins")</span>
-<span class="co">#install.packages("tidyverse")</span>
-<span class="co">#install.packages(“car”)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-forge.r-project.org/projects/car/">car</a></span><span class="op">)</span>
-
-<span class="co"># selecting species and mass columns</span>
-<span class="va">pen_mass_land</span> <span class="op">&lt;-</span> <span class="va">penguins</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">6</span>,<span class="fl">7</span><span class="op">)</span><span class="op">]</span>
-<span class="co"># two way ANOVA test with dependent variables</span>
-<span class="co"># species and sex variables are dependent in nature</span>
-<span class="va">anova_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">species</span> <span class="op">*</span> <span class="va">sex</span>, data <span class="op">=</span> <span class="va">pen_mass_land</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/car/man/Anova.html">Anova</a></span><span class="op">(</span><span class="va">anova_2</span>, type <span class="op">=</span> <span class="st">"III"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#install.packages("palmerpenguins")</span></span>
+<span><span class="co">#install.packages("tidyverse")</span></span>
+<span><span class="co">#install.packages(“car”)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-forge.r-project.org/projects/car/">car</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># selecting species and mass columns</span></span>
+<span><span class="va">pen_mass_land</span> <span class="op">&lt;-</span> <span class="va">penguins</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">6</span>,<span class="fl">7</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="co"># two way ANOVA test with dependent variables</span></span>
+<span><span class="co"># species and sex variables are dependent in nature</span></span>
+<span><span class="va">anova_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">species</span> <span class="op">*</span> <span class="va">sex</span>, data <span class="op">=</span> <span class="va">pen_mass_land</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/car/man/Anova.html">Anova</a></span><span class="op">(</span><span class="va">anova_2</span>, type <span class="op">=</span> <span class="st">"III"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -574,20 +574,20 @@ Gentoo:male-Chinstrap:male      1545.8655 1356.0392 1735.6917 0.0000000</code></
 <span class="header-section-number">3.5</span> MANOVA</h3>
 <p>If you have multiple dependent variables, then you can use <code>MANOVA</code>. Here our dependent variables are body mass and bill depth and independent variable is species. We want to see if body mass and bill depth is associated with different species of penguins.</p>
 <div class="cell">
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co">#install.packages("palmerpenguins")</span>
-<span class="co">#install.packages("tidyverse")</span>
-<span class="co">#install.packages(“car”)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-forge.r-project.org/projects/car/">car</a></span><span class="op">)</span>
-
-<span class="co"># selecting species and mass columns</span>
-<span class="va">pen_mass_bill</span> <span class="op">&lt;-</span> <span class="va">penguins</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">4</span>,<span class="fl">6</span><span class="op">)</span><span class="op">]</span>
-<span class="va">mass_bill</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">penguins</span><span class="op">$</span><span class="va">bill_depth_mm</span>, <span class="va">penguins</span><span class="op">$</span><span class="va">body_mass_g</span><span class="op">)</span>
-<span class="co"># two way ANOVA test with dependent variables</span>
-<span class="co"># species and sex variables are dependent in nature</span>
-<span class="va">anova_3</span><span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/manova.html">manova</a></span><span class="op">(</span><span class="va">mass_bill</span> <span class="op">~</span> <span class="va">species</span>, data <span class="op">=</span> <span class="va">pen_mass_bill</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">anova_3</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#install.packages("palmerpenguins")</span></span>
+<span><span class="co">#install.packages("tidyverse")</span></span>
+<span><span class="co">#install.packages(“car”)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-forge.r-project.org/projects/car/">car</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># selecting species and mass columns</span></span>
+<span><span class="va">pen_mass_bill</span> <span class="op">&lt;-</span> <span class="va">penguins</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">4</span>,<span class="fl">6</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="va">mass_bill</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">penguins</span><span class="op">$</span><span class="va">bill_depth_mm</span>, <span class="va">penguins</span><span class="op">$</span><span class="va">body_mass_g</span><span class="op">)</span></span>
+<span><span class="co"># two way ANOVA test with dependent variables</span></span>
+<span><span class="co"># species and sex variables are dependent in nature</span></span>
+<span><span class="va">anova_3</span><span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/manova.html">manova</a></span><span class="op">(</span><span class="va">mass_bill</span> <span class="op">~</span> <span class="va">species</span>, data <span class="op">=</span> <span class="va">pen_mass_bill</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">anova_3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           Df  Pillai approx F num Df den Df    Pr(&gt;F)    
 species     2 0.91732   143.61      4    678 &lt; 2.2e-16 ***
@@ -601,15 +601,15 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <span class="header-section-number">4</span> Kruskal-Wallis Test</h2>
 <p>The Kruskal-Wallis test is the non-parametric equivalent of ANOVA.</p>
 <div class="cell">
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co">#install.packages("palmerpenguins")</span>
-<span class="co">#install.packages("tidyverse")</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
-
-<span class="co"># selecting species and mass columns</span>
-<span class="va">pen_mass</span> <span class="op">&lt;-</span> <span class="va">penguins</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">6</span><span class="op">)</span><span class="op">]</span>
-<span class="co"># Kruskal-Wallis Test</span>
-<span class="fu"><a href="https://rdrr.io/r/stats/kruskal.test.html">kruskal.test</a></span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">species</span>, data <span class="op">=</span> <span class="va">pen_mass</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#install.packages("palmerpenguins")</span></span>
+<span><span class="co">#install.packages("tidyverse")</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># selecting species and mass columns</span></span>
+<span><span class="va">pen_mass</span> <span class="op">&lt;-</span> <span class="va">penguins</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">6</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="co"># Kruskal-Wallis Test</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/kruskal.test.html">kruskal.test</a></span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">species</span>, data <span class="op">=</span> <span class="va">pen_mass</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Kruskal-Wallis rank sum test
@@ -620,15 +620,15 @@ Kruskal-Wallis chi-squared = 217.6, df = 2, p-value &lt; 2.2e-16</code></pre>
 </div>
 <p>For post-hoc test, we can use the non-parametric version of pairwise comparisons tests coupled with p-value correction. Here we will be using the Wilcoxon rank sum test.</p>
 <div class="cell">
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co">#install.packages("palmerpenguins")</span>
-<span class="co">#install.packages("tidyverse")</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span>
-
-<span class="co"># selecting species and mass columns</span>
-<span class="va">pen_mass</span> <span class="op">&lt;-</span> <span class="va">penguins</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">6</span><span class="op">)</span><span class="op">]</span>
-<span class="co"># wilcoxon rank sum test</span>
-<span class="fu"><a href="https://rdrr.io/r/stats/pairwise.wilcox.test.html">pairwise.wilcox.test</a></span><span class="op">(</span><span class="va">pen_mass</span><span class="op">$</span><span class="va">body_mass_g</span>, <span class="va">pen_mass</span><span class="op">$</span><span class="va">species</span>, p.adjust.method <span class="op">=</span> <span class="st">"BH"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#install.packages("palmerpenguins")</span></span>
+<span><span class="co">#install.packages("tidyverse")</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># selecting species and mass columns</span></span>
+<span><span class="va">pen_mass</span> <span class="op">&lt;-</span> <span class="va">penguins</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">6</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="co"># wilcoxon rank sum test</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/pairwise.wilcox.test.html">pairwise.wilcox.test</a></span><span class="op">(</span><span class="va">pen_mass</span><span class="op">$</span><span class="va">body_mass_g</span>, <span class="va">pen_mass</span><span class="op">$</span><span class="va">species</span>, p.adjust.method <span class="op">=</span> <span class="st">"BH"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Pairwise comparisons using Wilcoxon rank sum test with continuity correction 
@@ -672,6 +672,21 @@ Jewel Johnson. 2022. <span>“Chapter 9: Tests for Multiple Groups of
 Data.”</span> May 21, 2022. <a href="https://jeweljohnsonj.github.io/one-carat-blog//articles/stat/project9.html">https://jeweljohnsonj.github.io/one-carat-blog//articles/stat/project9.html</a>.
 </div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    toggleBodyColorMode(window.document.querySelector("link#quarto-bootstrap"));
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {

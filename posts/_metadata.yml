@@ -11,6 +11,7 @@ license: "CC BY"
 
 # Default for table of contents
 toc: true
+toc-depth: 3
 toc-title: On this page
 smooth-scroll: true
 number-sections: true

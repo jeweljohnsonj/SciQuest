@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.629">
+<meta name="generator" content="quarto-1.0.16">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jewel Johnson">
 <meta name="dcterms.date" content="2021-12-11">
@@ -95,7 +95,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -314,7 +314,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="https://images.pexels.com/photos/434163/pexels-photo-434163.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" class="preview-image img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Image by <a href="https://www.pexels.com/@pixabay/">Pixabay</a> on <a href="https://www.pexels.com">Pexels</a></figcaption><p></p>
+<p></p><figcaption class="figure-caption">Image by <a href="https://www.pexels.com/@pixabay/">Pixabay</a> on <a href="https://www.pexels.com">Pexels</a></figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -360,35 +360,35 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span class="header-section-number">3</span> Reshaping dataset</h2>
 <p>There are different sets of commands which you can utilize to reshape your data and make it tidy. Let us each of these commands in action. But first, make sure you have the <a href="https://tidyr.tidyverse.org">tidyr</a> package loaded.</p>
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># load tidyr package</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># load tidyr package</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <section id="pivot_longer" class="level3" data-number="3.1"><h3 data-number="3.1" class="anchored" data-anchor-id="pivot_longer">
 <span class="header-section-number">3.1</span> pivot_longer()</h3>
 <p>The <code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer()</a></code> command converts a ‘wide data’ to a ‘long data’. It does so by converting row names to a new column under a new variable name with its corresponding values moved into another column with another variable name. So let us see how it goes. We will take the earlier mentioned example and will see how to make it tidy. Now you don’t have to be concerned with the codes I have used to make the dummy data. Just have your focus on the <code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer()</a></code> syntax.</p>
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span>
-<span class="co"># making a dummy data</span>
-<span class="co"># using sample function to pick random numbers in a sequence</span>
-<span class="va">patient1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">5</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span>
-<span class="va">patient2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">6</span>,<span class="fl">10</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span>
-<span class="va">patient3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">11</span>,<span class="fl">15</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span>
-<span class="va">patient4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">16</span>,<span class="fl">20</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span>
-<span class="va">patient5</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">21</span>,<span class="fl">25</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span>
-
-<span class="co"># cbind simple combines the columns of same size</span>
-<span class="va">treatment_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">patient1</span>,<span class="va">patient2</span>,<span class="va">patient3</span>,<span class="va">patient4</span>,<span class="va">patient5</span><span class="op">)</span> 
-
-<span class="va">trt</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"treatment1"</span>, <span class="st">"treatment2"</span>,<span class="st">"treatment3"</span>,<span class="st">"treatment4"</span>,<span class="st">"treatment5"</span><span class="op">)</span>
-
-<span class="va">trt_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">trt</span>, <span class="va">treatment_data</span><span class="op">)</span>
-<span class="va">trt_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="va">trt_data</span><span class="op">)</span> <span class="co"># making it a data frame</span>
-
-<span class="va">trt_data_tidy</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="va">trt_data</span>,
-                              <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">patient1</span>,<span class="va">patient2</span>,<span class="va">patient3</span>,<span class="va">patient4</span>,<span class="va">patient5</span><span class="op">)</span>, 
-                              names_to <span class="op">=</span> <span class="st">"patient_ID"</span>, values_to <span class="op">=</span> <span class="st">"efficacy"</span><span class="op">)</span>
-<span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">trt_data_tidy</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span></span>
+<span><span class="co"># making a dummy data</span></span>
+<span><span class="co"># using sample function to pick random numbers in a sequence</span></span>
+<span><span class="va">patient1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">5</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">patient2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">6</span>,<span class="fl">10</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">patient3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">11</span>,<span class="fl">15</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">patient4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">16</span>,<span class="fl">20</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">patient5</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">21</span>,<span class="fl">25</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># cbind simple combines the columns of same size</span></span>
+<span><span class="va">treatment_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">patient1</span>,<span class="va">patient2</span>,<span class="va">patient3</span>,<span class="va">patient4</span>,<span class="va">patient5</span><span class="op">)</span> </span>
+<span></span>
+<span><span class="va">trt</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"treatment1"</span>, <span class="st">"treatment2"</span>,<span class="st">"treatment3"</span>,<span class="st">"treatment4"</span>,<span class="st">"treatment5"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">trt_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">trt</span>, <span class="va">treatment_data</span><span class="op">)</span></span>
+<span><span class="va">trt_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="va">trt_data</span><span class="op">)</span> <span class="co"># making it a data frame</span></span>
+<span></span>
+<span><span class="va">trt_data_tidy</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="va">trt_data</span>,</span>
+<span>                              <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">patient1</span>,<span class="va">patient2</span>,<span class="va">patient3</span>,<span class="va">patient4</span>,<span class="va">patient5</span><span class="op">)</span>, </span>
+<span>                              names_to <span class="op">=</span> <span class="st">"patient_ID"</span>, values_to <span class="op">=</span> <span class="st">"efficacy"</span><span class="op">)</span></span>
+<span><span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">trt_data_tidy</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -400,34 +400,34 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 <p>Furthermore, you don’t have to manually type in the column names as you can use <code><a href="https://rdrr.io/r/base/colnames.html">colnames()</a></code> to call the column names of the dataset. Another way of doing the same is by excluding the first column from the process. By doing so the command will automatically pivot all columns except the excluded ones, so in this way, we don’t need to manually specify the column names. The codes given below will give you the same result as before.</p>
 <div class="cell">
-<details><summary>Show the code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span>
-<span class="va">patient1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">5</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span>
-<span class="va">patient2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">6</span>,<span class="fl">10</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span>
-<span class="va">patient3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">11</span>,<span class="fl">15</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span>
-<span class="va">patient4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">16</span>,<span class="fl">20</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span>
-<span class="va">patient5</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">21</span>,<span class="fl">25</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span>
-<span class="va">treatment_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">patient1</span>,<span class="va">patient2</span>,<span class="va">patient3</span>,<span class="va">patient4</span>,<span class="va">patient5</span><span class="op">)</span> 
-<span class="va">treatment</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"treatment1"</span>, <span class="st">"treatment2"</span>,<span class="st">"treatment3"</span>,<span class="st">"treatment4"</span>,<span class="st">"treatment5"</span><span class="op">)</span>
-<span class="va">trt_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">treatment</span>, <span class="va">treatment_data</span><span class="op">)</span>
-<span class="va">trt_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="va">trt_data</span><span class="op">)</span>
-<span class="co"># using colnames, [-1] is included to exclude the name of first column from the process</span>
-<span class="va">trt_data_tidy1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="va">trt_data</span>,
-                              <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">trt_data</span><span class="op">)</span><span class="op">[</span><span class="op">-</span><span class="fl">1</span><span class="op">]</span>, 
-                              names_to <span class="op">=</span> <span class="st">"patient_ID"</span>, values_to <span class="op">=</span> <span class="st">"efficacy"</span><span class="op">)</span>
-
-<span class="co"># the same can be done by manually specifying which columns to exclude</span>
-<span class="co"># this can be done by denoting the column name ('treatment' in this case) with '-' sign</span>
-<span class="va">trt_data_tidy2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="va">trt_data</span>, names_to <span class="op">=</span> <span class="st">"patient_ID"</span>,
-                               values_to <span class="op">=</span> <span class="st">"efficacy"</span>, <span class="op">-</span><span class="va">treatment</span><span class="op">)</span>
-<span class="co"># checking if both the tidy datasets are one and the same</span>
-<span class="va">trt_data_tidy1</span> <span class="op">==</span> <span class="va">trt_data_tidy2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span></span>
+<span><span class="va">patient1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">5</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">patient2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">6</span>,<span class="fl">10</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">patient3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">11</span>,<span class="fl">15</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">patient4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">16</span>,<span class="fl">20</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">patient5</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">21</span>,<span class="fl">25</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">treatment_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">patient1</span>,<span class="va">patient2</span>,<span class="va">patient3</span>,<span class="va">patient4</span>,<span class="va">patient5</span><span class="op">)</span> </span>
+<span><span class="va">treatment</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"treatment1"</span>, <span class="st">"treatment2"</span>,<span class="st">"treatment3"</span>,<span class="st">"treatment4"</span>,<span class="st">"treatment5"</span><span class="op">)</span></span>
+<span><span class="va">trt_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">treatment</span>, <span class="va">treatment_data</span><span class="op">)</span></span>
+<span><span class="va">trt_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="va">trt_data</span><span class="op">)</span></span>
+<span><span class="co"># using colnames, [-1] is included to exclude the name of first column from the process</span></span>
+<span><span class="va">trt_data_tidy1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="va">trt_data</span>,</span>
+<span>                              <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">trt_data</span><span class="op">)</span><span class="op">[</span><span class="op">-</span><span class="fl">1</span><span class="op">]</span>, </span>
+<span>                              names_to <span class="op">=</span> <span class="st">"patient_ID"</span>, values_to <span class="op">=</span> <span class="st">"efficacy"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># the same can be done by manually specifying which columns to exclude</span></span>
+<span><span class="co"># this can be done by denoting the column name ('treatment' in this case) with '-' sign</span></span>
+<span><span class="va">trt_data_tidy2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="va">trt_data</span>, names_to <span class="op">=</span> <span class="st">"patient_ID"</span>,</span>
+<span>                               values_to <span class="op">=</span> <span class="st">"efficacy"</span>, <span class="op">-</span><span class="va">treatment</span><span class="op">)</span></span>
+<span><span class="co"># checking if both the tidy datasets are one and the same</span></span>
+<span><span class="va">trt_data_tidy1</span> <span class="op">==</span> <span class="va">trt_data_tidy2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>The syntax for <code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer()</a></code> is given below with description</p>
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="st">"data"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"colname1, colname2,....."</span><span class="op">)</span>, 
-  names_to <span class="op">=</span> <span class="st">"name of the column where your row names are present"</span>,
-  values_to <span class="op">=</span> <span class="st">"name of the column where your corresponding row values are present"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="st">"data"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"colname1, colname2,....."</span><span class="op">)</span>, </span>
+<span>  names_to <span class="op">=</span> <span class="st">"name of the column where your row names are present"</span>,</span>
+<span>  values_to <span class="op">=</span> <span class="st">"name of the column where your corresponding row values are present"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Here is a graphical representation</p>
@@ -436,34 +436,34 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span class="header-section-number">3.2</span> pivot_wider()</h3>
 <p>The <code><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider()</a></code> does the exact opposite of what <code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer()</a></code> does, which is to convert long data into wide data. We will use the previously given dummy data.</p>
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span>
-<span class="co"># making a dummy data</span>
-<span class="co"># using sample function to pick random numbers in a sequence</span>
-<span class="va">patient1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">5</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span>
-<span class="va">patient2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">6</span>,<span class="fl">10</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span>
-<span class="va">patient3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">11</span>,<span class="fl">15</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span>
-<span class="va">patient4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">16</span>,<span class="fl">20</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span>
-<span class="va">patient5</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">21</span>,<span class="fl">25</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span>
-
-<span class="co"># cbind simple combines the columns of same size</span>
-<span class="va">treatment_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">patient1</span>,<span class="va">patient2</span>,<span class="va">patient3</span>,<span class="va">patient4</span>,<span class="va">patient5</span><span class="op">)</span> 
-
-<span class="va">trt</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"treatment1"</span>, <span class="st">"treatment2"</span>,<span class="st">"treatment3"</span>,<span class="st">"treatment4"</span>,<span class="st">"treatment5"</span><span class="op">)</span>
-
-<span class="va">trt_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">trt</span>, <span class="va">treatment_data</span><span class="op">)</span>
-<span class="va">trt_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="va">trt_data</span><span class="op">)</span> <span class="co"># making it a data frame</span>
-
-<span class="va">trt_data_tidy</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="va">trt_data</span>,
-                              <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">patient1</span>,<span class="va">patient2</span>,<span class="va">patient3</span>,<span class="va">patient4</span>,<span class="va">patient5</span><span class="op">)</span>, 
-                              names_to <span class="op">=</span> <span class="st">"patient_ID"</span>, values_to <span class="op">=</span> <span class="st">"efficacy"</span><span class="op">)</span>
-
-<span class="co"># making the data wide</span>
-<span class="va">trt_data_wider</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider</a></span><span class="op">(</span><span class="va">trt_data_tidy</span>, names_from <span class="op">=</span> <span class="st">"patient_ID"</span>,
-                              values_from <span class="op">=</span> <span class="st">"efficacy"</span><span class="op">)</span>
-
-<span class="co"># paged_Table() for viewing the dataset as a table, </span>
-<span class="co"># you can see that the dataset is same as before</span>
-<span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">trt_data_wider</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span></span>
+<span><span class="co"># making a dummy data</span></span>
+<span><span class="co"># using sample function to pick random numbers in a sequence</span></span>
+<span><span class="va">patient1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">5</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">patient2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">6</span>,<span class="fl">10</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">patient3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">11</span>,<span class="fl">15</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">patient4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">16</span>,<span class="fl">20</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">patient5</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">21</span>,<span class="fl">25</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># cbind simple combines the columns of same size</span></span>
+<span><span class="va">treatment_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">patient1</span>,<span class="va">patient2</span>,<span class="va">patient3</span>,<span class="va">patient4</span>,<span class="va">patient5</span><span class="op">)</span> </span>
+<span></span>
+<span><span class="va">trt</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"treatment1"</span>, <span class="st">"treatment2"</span>,<span class="st">"treatment3"</span>,<span class="st">"treatment4"</span>,<span class="st">"treatment5"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">trt_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">trt</span>, <span class="va">treatment_data</span><span class="op">)</span></span>
+<span><span class="va">trt_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="va">trt_data</span><span class="op">)</span> <span class="co"># making it a data frame</span></span>
+<span></span>
+<span><span class="va">trt_data_tidy</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="va">trt_data</span>,</span>
+<span>                              <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">patient1</span>,<span class="va">patient2</span>,<span class="va">patient3</span>,<span class="va">patient4</span>,<span class="va">patient5</span><span class="op">)</span>, </span>
+<span>                              names_to <span class="op">=</span> <span class="st">"patient_ID"</span>, values_to <span class="op">=</span> <span class="st">"efficacy"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># making the data wide</span></span>
+<span><span class="va">trt_data_wider</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider</a></span><span class="op">(</span><span class="va">trt_data_tidy</span>, names_from <span class="op">=</span> <span class="st">"patient_ID"</span>,</span>
+<span>                              values_from <span class="op">=</span> <span class="st">"efficacy"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># paged_Table() for viewing the dataset as a table, </span></span>
+<span><span class="co"># you can see that the dataset is same as before</span></span>
+<span><span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">trt_data_wider</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -475,9 +475,9 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 <p>The syntax for <code><a href="https://tidyr.tidyverse.org/reference/pivot_wider.html">pivot_wider()</a></code> is given below with description</p>
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="st">"data"</span>, 
-  names_from <span class="op">=</span> <span class="st">"name of the column which contains your wide data columns"</span>,
-  values_from <span class="op">=</span> <span class="st">"name of the column where your corresponding wide data column values are"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="st">"data"</span>, </span>
+<span>  names_from <span class="op">=</span> <span class="st">"name of the column which contains your wide data columns"</span>,</span>
+<span>  values_from <span class="op">=</span> <span class="st">"name of the column where your corresponding wide data column values are"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Here is a graphical representation</p>
@@ -496,12 +496,12 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
-<details><summary>Show the code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="va">event</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span>
-<span class="va">century</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">19</span><span class="op">:</span><span class="fl">20</span>, each <span class="op">=</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span>
-<span class="va">year</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">10</span>,<span class="fl">16</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span>
-<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">event</span>,<span class="va">century</span>,<span class="va">year</span><span class="op">)</span><span class="op">)</span>
-
-<span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">event</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="va">century</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">19</span><span class="op">:</span><span class="fl">20</span>, each <span class="op">=</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">year</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">10</span>,<span class="fl">16</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">event</span>,<span class="va">century</span>,<span class="va">year</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -514,17 +514,17 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
-<details><summary>Show the code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span>
-<span class="co"># dummy data</span>
-<span class="va">event</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span>
-<span class="va">century</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">19</span><span class="op">:</span><span class="fl">20</span>, each <span class="op">=</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span>
-<span class="va">year</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">10</span>,<span class="fl">16</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span>
-<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">event</span>,<span class="va">century</span>,<span class="va">year</span><span class="op">)</span><span class="op">)</span>
-
-<span class="co"># uniting columns century and year</span>
-<span class="va">data_new</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unite.html">unite</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">century</span>, <span class="va">year</span>, col <span class="op">=</span> <span class="st">"event_year"</span>, sep <span class="op">=</span> <span class="st">""</span><span class="op">)</span>
-<span class="co"># viewing data as a table</span>
-<span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">data_new</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span></span>
+<span><span class="co"># dummy data</span></span>
+<span><span class="va">event</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="va">century</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fl">19</span><span class="op">:</span><span class="fl">20</span>, each <span class="op">=</span> <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">year</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">10</span>,<span class="fl">16</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">event</span>,<span class="va">century</span>,<span class="va">year</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># uniting columns century and year</span></span>
+<span><span class="va">data_new</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unite.html">unite</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">century</span>, <span class="va">year</span>, col <span class="op">=</span> <span class="st">"event_year"</span>, sep <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span>
+<span><span class="co"># viewing data as a table</span></span>
+<span><span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">data_new</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -539,11 +539,11 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 <p>The syntax of <code><a href="https://tidyr.tidyverse.org/reference/unite.html">unite()</a></code> is as follows.</p>
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://tidyr.tidyverse.org/reference/unite.html">unite</a></span><span class="op">(</span><span class="st">"dataset name"</span>,
-      <span class="st">"name of first column to unite, name of second column to unite,......."</span>,
-      col <span class="op">=</span> <span class="st">"name of the new column to which all the other column will unite together"</span>,
-      sep <span class="op">=</span> <span class="st">"input any element as a separator between the joining column values"</span><span class="op">)</span>
-<span class="co"># in this case we are not putting a sep value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Code</summary><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/unite.html">unite</a></span><span class="op">(</span><span class="st">"dataset name"</span>,</span>
+<span>      <span class="st">"name of first column to unite, name of second column to unite,......."</span>,</span>
+<span>      col <span class="op">=</span> <span class="st">"name of the new column to which all the other column will unite together"</span>,</span>
+<span>      sep <span class="op">=</span> <span class="st">"input any element as a separator between the joining column values"</span><span class="op">)</span></span>
+<span><span class="co"># in this case we are not putting a sep value</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section><section id="separate" class="level3" data-number="4.2"><h3 data-number="4.2" class="anchored" data-anchor-id="separate">
@@ -557,14 +557,14 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div class="cell">
-<details><summary>Show the code</summary><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># dummy data</span>
-<span class="va">shapes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span>
-<span class="va">area</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="fl">10</span><span class="op">:</span><span class="fl">13</span>, <span class="st">"m^2"</span><span class="op">)</span><span class="op">)</span>
-<span class="va">perimetre</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="fl">30</span><span class="op">:</span><span class="fl">33</span>, <span class="st">"m"</span><span class="op">)</span><span class="op">)</span>
-<span class="va">ratio</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">shapes</span>,<span class="va">area</span>,<span class="va">perimetre</span><span class="op">)</span><span class="op">)</span>
-<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unite.html">unite</a></span><span class="op">(</span><span class="va">ratio</span>, <span class="va">area</span>, <span class="va">perimetre</span>, col <span class="op">=</span> <span class="st">"area_perimetre"</span>, sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span>
-<span class="co"># viewing data as a table</span>
-<span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># dummy data</span></span>
+<span><span class="va">shapes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="va">area</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="fl">10</span><span class="op">:</span><span class="fl">13</span>, <span class="st">"m^2"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">perimetre</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="fl">30</span><span class="op">:</span><span class="fl">33</span>, <span class="st">"m"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">ratio</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">shapes</span>,<span class="va">area</span>,<span class="va">perimetre</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unite.html">unite</a></span><span class="op">(</span><span class="va">ratio</span>, <span class="va">area</span>, <span class="va">perimetre</span>, col <span class="op">=</span> <span class="st">"area_perimetre"</span>, sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span></span>
+<span><span class="co"># viewing data as a table</span></span>
+<span><span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -577,19 +577,19 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <div class="cell">
-<details><summary>Show the code</summary><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span>
-<span class="co"># dummy data</span>
-<span class="va">shapes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span>
-<span class="va">area</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="fl">10</span><span class="op">:</span><span class="fl">13</span>, <span class="st">"m^2"</span><span class="op">)</span><span class="op">)</span>
-<span class="va">perimetre</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="fl">30</span><span class="op">:</span><span class="fl">33</span>, <span class="st">"m"</span><span class="op">)</span><span class="op">)</span>
-<span class="va">ratio</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">shapes</span>,<span class="va">area</span>,<span class="va">perimetre</span><span class="op">)</span><span class="op">)</span>
-<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unite.html">unite</a></span><span class="op">(</span><span class="va">ratio</span>, <span class="va">area</span>, <span class="va">perimetre</span>, col <span class="op">=</span> <span class="st">"area_perimetre"</span>, sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span>
-
-<span class="co"># separating column values into two separate columns named area and perimeter respectively</span>
-<span class="va">data_new</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">area_perimetre</span>, sep <span class="op">=</span> <span class="st">"_"</span>,
-                     into <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"area"</span>, <span class="st">"perimetre"</span><span class="op">)</span><span class="op">)</span>
-<span class="co"># viewing data as a table</span>
-<span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">data_new</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span></span>
+<span><span class="co"># dummy data</span></span>
+<span><span class="va">shapes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="va">area</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="fl">10</span><span class="op">:</span><span class="fl">13</span>, <span class="st">"m^2"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">perimetre</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="fl">30</span><span class="op">:</span><span class="fl">33</span>, <span class="st">"m"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">ratio</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">shapes</span>,<span class="va">area</span>,<span class="va">perimetre</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unite.html">unite</a></span><span class="op">(</span><span class="va">ratio</span>, <span class="va">area</span>, <span class="va">perimetre</span>, col <span class="op">=</span> <span class="st">"area_perimetre"</span>, sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># separating column values into two separate columns named area and perimeter respectively</span></span>
+<span><span class="va">data_new</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">area_perimetre</span>, sep <span class="op">=</span> <span class="st">"_"</span>,</span>
+<span>                     into <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"area"</span>, <span class="st">"perimetre"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co"># viewing data as a table</span></span>
+<span><span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">data_new</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -604,10 +604,10 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 <p>The syntax of <code><a href="https://tidyr.tidyverse.org/reference/separate.html">separate()</a></code> is as follows.</p>
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span><span class="st">"data name"</span>,
-         <span class="st">"column to separate into"</span>,
-         sep <span class="op">=</span> <span class="st">"the separator element"</span>,
-         into <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"col1"</span>, <span class="st">"col2"</span>, <span class="st">"........"</span><span class="op">)</span><span class="op">)</span> <span class="co"># column names for the separated values</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Code</summary><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate.html">separate</a></span><span class="op">(</span><span class="st">"data name"</span>,</span>
+<span>         <span class="st">"column to separate into"</span>,</span>
+<span>         sep <span class="op">=</span> <span class="st">"the separator element"</span>,</span>
+<span>         into <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"col1"</span>, <span class="st">"col2"</span>, <span class="st">"........"</span><span class="op">)</span><span class="op">)</span> <span class="co"># column names for the separated values</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section><section id="separate_rows" class="level3" data-number="4.3"><h3 data-number="4.3" class="anchored" data-anchor-id="separate_rows">
@@ -621,14 +621,14 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <div class="tab-content">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <div class="cell">
-<details><summary>Show the code</summary><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># dummy data</span>
-<span class="va">shapes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span>
-<span class="va">area</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="fl">10</span><span class="op">:</span><span class="fl">13</span>, <span class="st">"m^2"</span><span class="op">)</span><span class="op">)</span>
-<span class="va">perimetre</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="fl">30</span><span class="op">:</span><span class="fl">33</span>, <span class="st">"m"</span><span class="op">)</span><span class="op">)</span>
-<span class="va">ratio</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">shapes</span>,<span class="va">area</span>,<span class="va">perimetre</span><span class="op">)</span><span class="op">)</span>
-<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unite.html">unite</a></span><span class="op">(</span><span class="va">ratio</span>, <span class="va">area</span>, <span class="va">perimetre</span>, col <span class="op">=</span> <span class="st">"area_perimetre"</span>, sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span>
-<span class="co"># viewing data as a table</span>
-<span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># dummy data</span></span>
+<span><span class="va">shapes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="va">area</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="fl">10</span><span class="op">:</span><span class="fl">13</span>, <span class="st">"m^2"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">perimetre</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="fl">30</span><span class="op">:</span><span class="fl">33</span>, <span class="st">"m"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">ratio</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">shapes</span>,<span class="va">area</span>,<span class="va">perimetre</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unite.html">unite</a></span><span class="op">(</span><span class="va">ratio</span>, <span class="va">area</span>, <span class="va">perimetre</span>, col <span class="op">=</span> <span class="st">"area_perimetre"</span>, sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span></span>
+<span><span class="co"># viewing data as a table</span></span>
+<span><span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -641,18 +641,18 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
 <div class="cell">
-<details><summary>Show the code</summary><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span>
-<span class="co"># dummy data</span>
-<span class="va">shapes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span>
-<span class="va">area</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="fl">10</span><span class="op">:</span><span class="fl">13</span>, <span class="st">"m^2"</span><span class="op">)</span><span class="op">)</span>
-<span class="va">perimetre</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="fl">30</span><span class="op">:</span><span class="fl">33</span>, <span class="st">"m"</span><span class="op">)</span><span class="op">)</span>
-<span class="va">ratio</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">shapes</span>,<span class="va">area</span>,<span class="va">perimetre</span><span class="op">)</span><span class="op">)</span>
-<span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unite.html">unite</a></span><span class="op">(</span><span class="va">ratio</span>, <span class="va">area</span>, <span class="va">perimetre</span>, col <span class="op">=</span> <span class="st">"area_perimetre"</span>, sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span>
-
-<span class="co"># separating column values into two several rows</span>
-<span class="va">data_new</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate_rows.html">separate_rows</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">area_perimetre</span>, sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span>
-<span class="co"># viewing data as a table</span>
-<span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">data_new</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span></span>
+<span><span class="co"># dummy data</span></span>
+<span><span class="va">shapes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="va">area</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="fl">10</span><span class="op">:</span><span class="fl">13</span>, <span class="st">"m^2"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">perimetre</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="fl">30</span><span class="op">:</span><span class="fl">33</span>, <span class="st">"m"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">ratio</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">shapes</span>,<span class="va">area</span>,<span class="va">perimetre</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/unite.html">unite</a></span><span class="op">(</span><span class="va">ratio</span>, <span class="va">area</span>, <span class="va">perimetre</span>, col <span class="op">=</span> <span class="st">"area_perimetre"</span>, sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># separating column values into two several rows</span></span>
+<span><span class="va">data_new</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate_rows.html">separate_rows</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">area_perimetre</span>, sep <span class="op">=</span> <span class="st">"_"</span><span class="op">)</span></span>
+<span><span class="co"># viewing data as a table</span></span>
+<span><span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">data_new</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -667,9 +667,9 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 <p>The syntax of <code><a href="https://tidyr.tidyverse.org/reference/separate_rows.html">separate_rows()</a></code> is as follows.</p>
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate_rows.html">separate_rows</a></span><span class="op">(</span><span class="st">"data name"</span>,
-         <span class="st">"column to separate"</span>,
-         sep <span class="op">=</span> <span class="st">"the separator element"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Code</summary><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/separate_rows.html">separate_rows</a></span><span class="op">(</span><span class="st">"data name"</span>,</span>
+<span>         <span class="st">"column to separate"</span>,</span>
+<span>         sep <span class="op">=</span> <span class="st">"the separator element"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section></section><section id="expanding-and-completing-dataset" class="level2" data-number="5"><h2 data-number="5" class="anchored" data-anchor-id="expanding-and-completing-dataset">
@@ -686,14 +686,14 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <div class="tab-content">
 <div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <div class="cell">
-<details><summary>Show the code</summary><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># dummy data</span>
-<span class="va">brand</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span>
-<span class="va">dress</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"shirt"</span>, <span class="st">"pant"</span>, <span class="st">"jeans"</span>, <span class="st">"trousers"</span><span class="op">)</span>
-<span class="va">size</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"s"</span>, <span class="st">"m"</span>, <span class="st">"l"</span>, <span class="st">"xl"</span><span class="op">)</span>
-<span class="va">dress_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">brand</span>,<span class="va">dress</span>,<span class="va">size</span><span class="op">)</span><span class="op">)</span>
-
-<span class="co"># viewing data as a table</span>
-<span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">dress_data</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># dummy data</span></span>
+<span><span class="va">brand</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="va">dress</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"shirt"</span>, <span class="st">"pant"</span>, <span class="st">"jeans"</span>, <span class="st">"trousers"</span><span class="op">)</span></span>
+<span><span class="va">size</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"s"</span>, <span class="st">"m"</span>, <span class="st">"l"</span>, <span class="st">"xl"</span><span class="op">)</span></span>
+<span><span class="va">dress_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">brand</span>,<span class="va">dress</span>,<span class="va">size</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># viewing data as a table</span></span>
+<span><span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">dress_data</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -706,18 +706,18 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 <div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
 <div class="cell">
-<details><summary>Show the code</summary><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span>
-<span class="co"># dummy data</span>
-<span class="va">brand</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span>
-<span class="va">dress</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"shirt"</span>, <span class="st">"pant"</span>, <span class="st">"jeans"</span>, <span class="st">"trousers"</span><span class="op">)</span>
-<span class="va">size</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"s"</span>, <span class="st">"m"</span>, <span class="st">"l"</span>, <span class="st">"xl"</span><span class="op">)</span>
-<span class="va">dress_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">brand</span>,<span class="va">dress</span>,<span class="va">size</span><span class="op">)</span><span class="op">)</span>
-
-<span class="co"># expanding dataset with brand and dress as variables</span>
-<span class="va">dress_data_expand</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/expand.html">expand</a></span><span class="op">(</span><span class="va">dress_data</span>, <span class="va">brand</span>, <span class="va">dress</span><span class="op">)</span>
-
-<span class="co"># viewing data as a table</span>
-<span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">dress_data_expand</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span></span>
+<span><span class="co"># dummy data</span></span>
+<span><span class="va">brand</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="va">dress</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"shirt"</span>, <span class="st">"pant"</span>, <span class="st">"jeans"</span>, <span class="st">"trousers"</span><span class="op">)</span></span>
+<span><span class="va">size</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"s"</span>, <span class="st">"m"</span>, <span class="st">"l"</span>, <span class="st">"xl"</span><span class="op">)</span></span>
+<span><span class="va">dress_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">brand</span>,<span class="va">dress</span>,<span class="va">size</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># expanding dataset with brand and dress as variables</span></span>
+<span><span class="va">dress_data_expand</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/expand.html">expand</a></span><span class="op">(</span><span class="va">dress_data</span>, <span class="va">brand</span>, <span class="va">dress</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># viewing data as a table</span></span>
+<span><span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">dress_data_expand</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -732,7 +732,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 <p>The syntax of <code><a href="https://tidyr.tidyverse.org/reference/expand.html">expand()</a></code> is as follows.</p>
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://tidyr.tidyverse.org/reference/expand.html">expand</a></span><span class="op">(</span><span class="st">"data name"</span>, <span class="st">"column names which you want to expand separated by commas"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Code</summary><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/expand.html">expand</a></span><span class="op">(</span><span class="st">"data name"</span>, <span class="st">"column names which you want to expand separated by commas"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section><section id="complete" class="level3" data-number="5.2"><h3 data-number="5.2" class="anchored" data-anchor-id="complete">
@@ -746,18 +746,18 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <div class="tab-content">
 <div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
 <div class="cell">
-<details><summary>Show the code</summary><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span>
-<span class="co"># dummy data</span>
-<span class="va">brand</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span>
-<span class="va">dress</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"shirt"</span>, <span class="st">"pant"</span>, <span class="st">"jeans"</span>, <span class="st">"trousers"</span><span class="op">)</span>
-<span class="va">size</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"s"</span>, <span class="st">"m"</span>, <span class="st">"l"</span>, <span class="st">"xl"</span><span class="op">)</span>
-<span class="va">dress_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">brand</span>,<span class="va">dress</span>,<span class="va">size</span><span class="op">)</span><span class="op">)</span>
-
-<span class="co"># expanding dataset with brand and dress as variables</span>
-<span class="va">dress_data_expand</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/expand.html">expand</a></span><span class="op">(</span><span class="va">dress_data</span>, <span class="va">brand</span>, <span class="va">dress</span><span class="op">)</span>
-
-<span class="co"># viewing data as a table</span>
-<span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">dress_data_expand</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span></span>
+<span><span class="co"># dummy data</span></span>
+<span><span class="va">brand</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="va">dress</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"shirt"</span>, <span class="st">"pant"</span>, <span class="st">"jeans"</span>, <span class="st">"trousers"</span><span class="op">)</span></span>
+<span><span class="va">size</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"s"</span>, <span class="st">"m"</span>, <span class="st">"l"</span>, <span class="st">"xl"</span><span class="op">)</span></span>
+<span><span class="va">dress_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">brand</span>,<span class="va">dress</span>,<span class="va">size</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># expanding dataset with brand and dress as variables</span></span>
+<span><span class="va">dress_data_expand</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/expand.html">expand</a></span><span class="op">(</span><span class="va">dress_data</span>, <span class="va">brand</span>, <span class="va">dress</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># viewing data as a table</span></span>
+<span><span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">dress_data_expand</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -770,19 +770,19 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 <div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
 <div class="cell">
-<details><summary>Show the code</summary><div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span>
-<span class="co"># dummy data</span>
-<span class="va">brand</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span>
-<span class="va">dress</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"shirt"</span>, <span class="st">"pant"</span>, <span class="st">"jeans"</span>, <span class="st">"trousers"</span><span class="op">)</span>
-<span class="va">size</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"s"</span>, <span class="st">"m"</span>, <span class="st">"l"</span>, <span class="st">"xl"</span><span class="op">)</span>
-<span class="va">dress_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">brand</span>,<span class="va">dress</span>,<span class="va">size</span><span class="op">)</span><span class="op">)</span>
-
-<span class="co"># completing dataset with brand and dress as variables</span>
-<span class="co"># the variable 'size' will be filled with NAs as we did not specify it</span>
-<span class="va">dress_data_complete</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/complete.html">complete</a></span><span class="op">(</span><span class="va">dress_data</span>,<span class="va">brand</span>,<span class="va">dress</span><span class="op">)</span>
-
-<span class="co"># viewing data as a table</span>
-<span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">dress_data_complete</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span></span>
+<span><span class="co"># dummy data</span></span>
+<span><span class="va">brand</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="va">dress</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"shirt"</span>, <span class="st">"pant"</span>, <span class="st">"jeans"</span>, <span class="st">"trousers"</span><span class="op">)</span></span>
+<span><span class="va">size</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"s"</span>, <span class="st">"m"</span>, <span class="st">"l"</span>, <span class="st">"xl"</span><span class="op">)</span></span>
+<span><span class="va">dress_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">brand</span>,<span class="va">dress</span>,<span class="va">size</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># completing dataset with brand and dress as variables</span></span>
+<span><span class="co"># the variable 'size' will be filled with NAs as we did not specify it</span></span>
+<span><span class="va">dress_data_complete</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/complete.html">complete</a></span><span class="op">(</span><span class="va">dress_data</span>,<span class="va">brand</span>,<span class="va">dress</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># viewing data as a table</span></span>
+<span><span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">dress_data_complete</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -797,7 +797,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 <p>The syntax of <code><a href="https://tidyr.tidyverse.org/reference/complete.html">complete()</a></code> is as follows.</p>
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="fu"><a href="https://tidyr.tidyverse.org/reference/complete.html">complete</a></span><span class="op">(</span><span class="st">"data name"</span>, <span class="st">"column names which you want to complete separated by commas"</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Code</summary><div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/complete.html">complete</a></span><span class="op">(</span><span class="st">"data name"</span>, <span class="st">"column names which you want to complete separated by commas"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section></section><section id="handling-nas-or-missing-values" class="level2" data-number="6"><h2 data-number="6" class="anchored" data-anchor-id="handling-nas-or-missing-values">
@@ -814,16 +814,16 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <div class="tab-content">
 <div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
 <div class="cell">
-<details><summary>Show the code</summary><div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="co"># dummy data</span>
-<span class="va">brand</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span>
-<span class="va">dress</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"shirt"</span>, <span class="st">"pant"</span>, <span class="st">"jeans"</span>, <span class="st">"trousers"</span><span class="op">)</span>
-<span class="va">size</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"s"</span>, <span class="st">"m"</span>, <span class="st">"l"</span>, <span class="st">"xl"</span><span class="op">)</span>
-<span class="va">dress_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">brand</span>,<span class="va">dress</span>,<span class="va">size</span><span class="op">)</span><span class="op">)</span>
-
-<span class="va">dress_data_complete</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/complete.html">complete</a></span><span class="op">(</span><span class="va">dress_data</span>,<span class="va">brand</span>,<span class="va">dress</span><span class="op">)</span>
-
-<span class="co"># viewing data as a table</span>
-<span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">dress_data_complete</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># dummy data</span></span>
+<span><span class="va">brand</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="va">dress</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"shirt"</span>, <span class="st">"pant"</span>, <span class="st">"jeans"</span>, <span class="st">"trousers"</span><span class="op">)</span></span>
+<span><span class="va">size</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"s"</span>, <span class="st">"m"</span>, <span class="st">"l"</span>, <span class="st">"xl"</span><span class="op">)</span></span>
+<span><span class="va">dress_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">brand</span>,<span class="va">dress</span>,<span class="va">size</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">dress_data_complete</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/complete.html">complete</a></span><span class="op">(</span><span class="va">dress_data</span>,<span class="va">brand</span>,<span class="va">dress</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># viewing data as a table</span></span>
+<span><span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">dress_data_complete</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -836,21 +836,21 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 <div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
 <div class="cell">
-<details><summary>Show the code</summary><div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span>
-<span class="co"># dummy data</span>
-<span class="va">brand</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span>
-<span class="va">dress</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"shirt"</span>, <span class="st">"pant"</span>, <span class="st">"jeans"</span>, <span class="st">"trousers"</span><span class="op">)</span>
-<span class="va">size</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"s"</span>, <span class="st">"m"</span>, <span class="st">"l"</span>, <span class="st">"xl"</span><span class="op">)</span>
-<span class="va">dress_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">brand</span>,<span class="va">dress</span>,<span class="va">size</span><span class="op">)</span><span class="op">)</span>
-
-<span class="va">dress_data_complete</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/complete.html">complete</a></span><span class="op">(</span><span class="va">dress_data</span>,<span class="va">brand</span>,<span class="va">dress</span><span class="op">)</span>
-
-<span class="co"># dropping NA values</span>
-
-<span class="va">dress_data_noNA</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">dress_data_complete</span><span class="op">)</span>
-
-<span class="co"># viewing data as a table</span>
-<span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">dress_data_noNA</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Show the code</summary><div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span></span>
+<span><span class="co"># dummy data</span></span>
+<span><span class="va">brand</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="va">dress</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"shirt"</span>, <span class="st">"pant"</span>, <span class="st">"jeans"</span>, <span class="st">"trousers"</span><span class="op">)</span></span>
+<span><span class="va">size</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"s"</span>, <span class="st">"m"</span>, <span class="st">"l"</span>, <span class="st">"xl"</span><span class="op">)</span></span>
+<span><span class="va">dress_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">brand</span>,<span class="va">dress</span>,<span class="va">size</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">dress_data_complete</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/complete.html">complete</a></span><span class="op">(</span><span class="va">dress_data</span>,<span class="va">brand</span>,<span class="va">dress</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># dropping NA values</span></span>
+<span></span>
+<span><span class="va">dress_data_noNA</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">dress_data_complete</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># viewing data as a table</span></span>
+<span><span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">dress_data_noNA</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -867,19 +867,19 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span class="header-section-number">6.2</span> fill()</h3>
 <p>Use <code><a href="https://tidyr.tidyverse.org/reference/fill.html">fill()</a></code> to replace <code>NA</code> values by taking values from nearby cells. By default the <code>NA</code> values as replaced by whatever value that is above the cell containing the <code>NA</code> value. This can be changed by specifying the <code>.direction</code> value within <code><a href="https://tidyr.tidyverse.org/reference/fill.html">fill()</a></code></p>
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span>
-<span class="co"># dummy data</span>
-<span class="va">brand</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span>
-<span class="va">dress</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"shirt"</span>, <span class="st">"pant"</span>, <span class="st">"jeans"</span>, <span class="st">"trousers"</span><span class="op">)</span>
-<span class="va">size</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"s"</span>, <span class="st">"m"</span>, <span class="st">"l"</span>, <span class="st">"xl"</span><span class="op">)</span>
-<span class="va">dress_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">brand</span>,<span class="va">dress</span>,<span class="va">size</span><span class="op">)</span><span class="op">)</span>
-<span class="va">dress_data_complete</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/complete.html">complete</a></span><span class="op">(</span><span class="va">dress_data</span>,<span class="va">brand</span>,<span class="va">dress</span><span class="op">)</span>
-
-<span class="co"># direction 'downup' simultaneously fill both upwards and downwards NA containing cells</span>
-<span class="va">dress_data_fill</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/fill.html">fill</a></span><span class="op">(</span><span class="va">dress_data_complete</span>, <span class="va">size</span>, .direction <span class="op">=</span> <span class="st">"downup"</span><span class="op">)</span>
-
-<span class="co"># viewing data as a table</span>
-<span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">dress_data_fill</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Code</summary><div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span></span>
+<span><span class="co"># dummy data</span></span>
+<span><span class="va">brand</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="va">dress</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"shirt"</span>, <span class="st">"pant"</span>, <span class="st">"jeans"</span>, <span class="st">"trousers"</span><span class="op">)</span></span>
+<span><span class="va">size</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"s"</span>, <span class="st">"m"</span>, <span class="st">"l"</span>, <span class="st">"xl"</span><span class="op">)</span></span>
+<span><span class="va">dress_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">brand</span>,<span class="va">dress</span>,<span class="va">size</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">dress_data_complete</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/complete.html">complete</a></span><span class="op">(</span><span class="va">dress_data</span>,<span class="va">brand</span>,<span class="va">dress</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># direction 'downup' simultaneously fill both upwards and downwards NA containing cells</span></span>
+<span><span class="va">dress_data_fill</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/fill.html">fill</a></span><span class="op">(</span><span class="va">dress_data_complete</span>, <span class="va">size</span>, .direction <span class="op">=</span> <span class="st">"downup"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># viewing data as a table</span></span>
+<span><span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">dress_data_fill</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -893,21 +893,21 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span class="header-section-number">6.3</span> replace_na()</h3>
 <p>Use <code><a href="https://tidyr.tidyverse.org/reference/replace_na.html">replace_na()</a></code> command to replace <code>NA</code> values to whatever value specified.</p>
 <div class="cell">
-<details><summary>Code</summary><div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span>
-<span class="co"># dummy data</span>
-<span class="va">brand</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span>
-<span class="va">dress</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"shirt"</span>, <span class="st">"pant"</span>, <span class="st">"jeans"</span>, <span class="st">"trousers"</span><span class="op">)</span>
-<span class="va">size</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"s"</span>, <span class="st">"m"</span>, <span class="st">"l"</span>, <span class="st">"xl"</span><span class="op">)</span>
-<span class="va">dress_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">brand</span>,<span class="va">dress</span>,<span class="va">size</span><span class="op">)</span><span class="op">)</span>
-<span class="va">dress_data_complete</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/complete.html">complete</a></span><span class="op">(</span><span class="va">dress_data</span>,<span class="va">brand</span>,<span class="va">dress</span><span class="op">)</span>
-
-<span class="co"># replace NA to unknown</span>
-<span class="co"># specify the column which have NA inside the list()</span>
-<span class="co"># then equate the value which would replace NAs</span>
-<span class="va">dress_data_zero</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/replace_na.html">replace_na</a></span><span class="op">(</span><span class="va">dress_data_complete</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>size <span class="op">=</span> <span class="st">"unknown"</span><span class="op">)</span><span class="op">)</span>
-
-<span class="co"># viewing data as a table</span>
-<span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">dress_data_zero</span><span class="op">)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Code</summary><div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span></span>
+<span><span class="co"># dummy data</span></span>
+<span><span class="va">brand</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">letters</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="va">dress</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"shirt"</span>, <span class="st">"pant"</span>, <span class="st">"jeans"</span>, <span class="st">"trousers"</span><span class="op">)</span></span>
+<span><span class="va">size</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"s"</span>, <span class="st">"m"</span>, <span class="st">"l"</span>, <span class="st">"xl"</span><span class="op">)</span></span>
+<span><span class="va">dress_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">brand</span>,<span class="va">dress</span>,<span class="va">size</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">dress_data_complete</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/complete.html">complete</a></span><span class="op">(</span><span class="va">dress_data</span>,<span class="va">brand</span>,<span class="va">dress</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># replace NA to unknown</span></span>
+<span><span class="co"># specify the column which have NA inside the list()</span></span>
+<span><span class="co"># then equate the value which would replace NAs</span></span>
+<span><span class="va">dress_data_zero</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/replace_na.html">replace_na</a></span><span class="op">(</span><span class="va">dress_data_complete</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>size <span class="op">=</span> <span class="st">"unknown"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># viewing data as a table</span></span>
+<span><span class="fu">rmarkdown</span><span class="fu">::</span><span class="fu"><a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html">paged_table</a></span><span class="op">(</span><span class="va">dress_data_zero</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -948,6 +948,21 @@ Jewel Johnson. 2021. <span>“Chapter 1: Data Tidying Using Tidyr.”</span>
 December 11, 2021. <a href="https://jeweljohnsonj.github.io/one-carat-blog//articles/data_man/project5.html">https://jeweljohnsonj.github.io/one-carat-blog//articles/data_man/project5.html</a>.
 </div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    toggleBodyColorMode(window.document.querySelector("link#quarto-bootstrap"));
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {

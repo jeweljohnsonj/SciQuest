@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.629">
+<meta name="generator" content="quarto-1.0.16">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jewel Johnson">
 <meta name="dcterms.date" content="2022-06-29">
@@ -96,7 +96,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -305,8 +305,8 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <p>In this article, we will aim to build a literature tracker that looks similar to the one below. It will be automated via the Notero plugin integrating Zotero with Notion.</p>
 <div class="column-page">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/notion_summary.png" class="preview-image img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">My literature tracker template in Notion</figcaption><p></p>
+<figure class="figure"><p><img src="images/notion_summary.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">My literature tracker template in Notion</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -381,13 +381,13 @@ Video: Getting the integration token
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/notero_table.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Image from Notero Github page</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Image from Notero Github page</figcaption><p></p>
 </figure>
 </div>
 <p>If you want to use my template then click <a href="https://jeweljohnson.notion.site/c65f406986d64871abe8e9191bcc06aa?v=becefab2c4184727952707ee2e597c36">here</a> and click on <code>Duplicate</code>. It contains most of the relevant columns and will save you time from creating it from scratch.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/duplicate.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Duplicating a template in Notion</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Duplicating a template in Notion</figcaption><p></p>
 </figure>
 </div>
 <ol start="4" type="1">
@@ -428,7 +428,7 @@ Video: Getting the database ID
 </ol>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="images/notero_preferences.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Notero Preferences window</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Notero Preferences window</figcaption><p></p>
 </figure>
 </div>
 <p>Now go to the associated database and click ‘Share’. Search for your integration and click invite. Any research article that is present in your directory associated with the Notero plugin will now automatically be synced to your associated Notion database. Notero plugin allows one-time sync between Zotero to Notion but not the other way around. So any changes that you do in the Notion database won’t be reflected in your Zotero database.</p>
@@ -471,7 +471,7 @@ Video: Updating existing files with a new tag
 <section id="last-updated-on" class="level4 unnumbered unlisted"><h4 class="unnumbered unlisted anchored" data-anchor-id="last-updated-on">Last updated on</h4>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-07-03 10:43:45 IST"</code></pre>
+<pre><code>[1] "2022-07-14 11:57:21 IST"</code></pre>
 </div>
 </div>
 <p><a hidden="" href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a></p>
@@ -491,6 +491,21 @@ Jewel Johnson. 2022. <span>“Using Notion and Zotero to Build a
 Literature Tracker.”</span> June 29, 2022. <a href="https://jeweljohnsonj.github.io/one-carat-blog//posts/notion_literature">https://jeweljohnsonj.github.io/one-carat-blog//posts/notion_literature</a>.
 </div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    toggleBodyColorMode(window.document.querySelector("link#quarto-bootstrap"));
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -642,7 +657,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>In this article, we will aim to build a literature tracker that looks similar to the one below. It will be automated via the Notero plugin integrating Zotero with Notion.</span>
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>::: column-page</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="al">![My literature tracker template in Notion](images/notion_summary.png)</span>{.preview-image}</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="al">![My literature tracker template in Notion](images/notion_summary.png)</span></span>
 <span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="fu">### Install Zotero</span></span>

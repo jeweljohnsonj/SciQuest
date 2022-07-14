@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.629">
+<meta name="generator" content="quarto-1.0.16">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jewel Johnson">
 <meta name="dcterms.date" content="2022-05-21">
@@ -95,7 +95,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -294,7 +294,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="https://4.bp.blogspot.com/-wmZzvsY_Tec/Vws0f4MJn9I/AAAAAAAAORs/gipKxA7aDboP0gx2vSmyQS_ZoVBPzqaWA/s1600/Type%252BI%252Band%252BII%252Berror.jpg" class="preview-image img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Type I and Type II error in its simplicity</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Type I and Type II error in its simplicity</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -305,7 +305,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <p>Type I error happens when we fail to reject the null hypothesis when it is true. It is also called ‘false-positive’. The chance of a type I error occurring is determined by the level of significance(<span class="math inline">\alpha</span>) that we set before our experiments. Generally, <span class="math inline">\alpha</span> is set at a value of 0.05. As previously mentioned, at this value, there is a 5% chance that the observed results or more extreme results to occur, given that the null hypothesis is true. At lower values of <span class="math inline">\alpha</span>, the chance of type I error to occur reduces.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><a href="https://www.scribbr.com/statistics/type-i-and-type-ii-errors/"><img src="https://cdn.scribbr.com/wp-content/uploads/2021/01/type-i-error-rate.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Fig1: Type I error. Credits: www.scribbr.com</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Fig1: Type I error. Credits: www.scribbr.com</figcaption><p></p>
 </figure>
 </div>
 </section><section id="type-ii-error" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="type-ii-error">
@@ -313,7 +313,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <p>Type II error happens when we fail to not reject the null hypothesis when it is false. It is also called ‘false-negative’. The chance of type II error occurring is inversely proportional to the statistical power of the study. The statistical power of a study depends on many factors. Two of those factors are the effect size and the sample size. The effect size describes how strong the relationship is between the variables that we are experimenting with. So studies having smaller effect sizes will lead to higher chances of committing type II error when the sample size is small. Since we cannot do anything about the effect size of a study all we can do is increase the sample size of the study. Another factor that affects the chance of causing type II error is the level of significance(<span class="math inline">\alpha</span>) we set. At lower levels of <span class="math inline">\alpha</span>, there is less chance of type II error.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><a href="https://www.scribbr.com/statistics/type-i-and-type-ii-errors/"><img src="https://cdn.scribbr.com/wp-content/uploads/2021/01/type-ii-error-rate.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Fig1: Type II error. Credits: www.scribbr.com</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Fig1: Type II error. Credits: www.scribbr.com</figcaption><p></p>
 </figure>
 </div>
 <p>In the later chapters, we will see how to calculate the effect size of a study.</p>
@@ -346,6 +346,21 @@ Jewel Johnson. 2022. <span>“Chapter 5: Type I and Type II
 Errors.”</span> May 21, 2022. <a href="https://jeweljohnsonj.github.io/one-carat-blog//articles/stat/project5.html">https://jeweljohnsonj.github.io/one-carat-blog//articles/stat/project5.html</a>.
 </div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    toggleBodyColorMode(window.document.querySelector("link#quarto-bootstrap"));
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
