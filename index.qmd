@@ -1,5 +1,5 @@
 ---
-pagetitle: "one-carat-blog"
+pagetitle: "one carat blog"
 section-divs: false
 toc: false
 css: index_css/index.css
@@ -9,15 +9,18 @@ comments: false
 ---
 ## Welcome to One Carat Blog
 
-My name is Jewel Johnson and I am the creator of this blog. I finished my master's in Biology from the [Indian Institute of Science Education and Research, Thiruvananthapuram](https://www.iisertvm.ac.in/). My research interests are in but are not limited to, behavioural ecology, visual ecology, social behaviour and understanding the effect of human activities on animals. Currently, I am looking for research labs to join for a PhD. You might find me dropping in ice-cold mails to you, seeking a graduate position. So if you are my prospective supervisor, then please have a tour of my blog 😇
+My name is Jewel Johnson and I am an aspiring ecologist who is interested in behaviour, vision and in the effect of human activities on animals (especially insects). I did my master's in Biology from the [Indian Institute of Science Education and Research, Thiruvananthapuram](https://www.iisertvm.ac.in/) (IISER-TVM). My master's thesis was on understanding the **Visual ecology of the giant honeybee (*Apis dorsata*)** under the guidance of [Prof. Hema Somanathan](https://faculty.iisertvm.ac.in/beelab/) at IISER-TVM . Currently, I am looking for research labs to join for a PhD 😇
 
-I made this blog using the **quarto** package. You can find me writing articles about science and programming in general. I also love R programming, so I have written a tutorial series on data visualization and data manipulation using R. I have also written a small series of articles focusing on understanding basic statistics using R. Thanks for visiting my blog 🙌 
+I made this blog using the [quarto](https://quarto.org/) package. My blog posts are generally focused on science communication and R programming. I have written a tutorial series on data visualization and data manipulation using R and, also on understanding basic statistics using R. Thanks for visiting my blog 🙌 
 
-::: {.hero-buttons}
-[Data visualization](https://jeweljohnsonj.github.io/one-carat-blog/articles/data_viz/project1.html){#btn-index .btn-action .btn .btn-success .btn-lg role="button"}
-[Data manipulation](https://jeweljohnsonj.github.io/one-carat-blog/articles/data_man/project5.html){#btn-index .btn-action .btn .btn-success .btn-lg role="button"}
-[Statistics](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project1.html){#btn-index .btn-action .btn .btn-success .btn-lg role="button"}
-:::
+<br>
+<center>
+<button type="button" class="btn btn-primary">[Data visualization](https://jeweljohnsonj.github.io/one-carat-blog/articles/data_viz/project1.html)</button>
+<button type="button" class="btn btn-primary">[Data manipulation](https://jeweljohnsonj.github.io/one-carat-blog/articles/data_man/project5.html)</button>
+<button type="button" class="btn btn-primary">[Statistics](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project1.html)</button>
+</center>
+<br>
+<br>
 
 <center>        
 <a href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_3/maxflags_9/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>

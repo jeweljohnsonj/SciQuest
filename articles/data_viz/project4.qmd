@@ -23,8 +23,6 @@ execute:
   warning: false
   freeze: auto
 image: images/ggpubr.png
-twitter-card:
-  image: "images/ggpubr.png"
 ---
 
 ::: {layout-ncol="1"}

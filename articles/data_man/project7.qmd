@@ -20,11 +20,8 @@ comments:
 execute: 
   warning: false
   freeze: auto
+image: /images/dplyr_1.png
 ---
-
-::: {layout-ncol="1"}
-![Image by [Kenny Eliason](https://unsplash.com/@neonbrand) on [Unsplash](https://unsplash.com)](https://images.unsplash.com/photo-1530124566582-a618bc2615dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80){.preview-image}
-:::
 
 ## Continuation from the previous chapter
 
@@ -95,12 +92,11 @@ In the code below, matching variables of df2 are joined with df1. In the final d
 If you are familiar with set theory in mathematics, what we are doing essentially is similar to $(df1 \cap df2) \cup df1$.
 
 ```{r}
-library(rmarkdown)
 library(dplyr)
 
 df1 <- tidytable::data.table(x = c("john","kevin","chris","sam","sam"), y = 1:5)
 df2 <- tidytable::data.table(x = c("kevin","sam", "bob"), z = 10:12)
-paged_table(df1 %>% left_join(df2))
+df1 %>% left_join(df2)
 ```
 
 ## right_join()
@@ -110,12 +106,11 @@ Similar to `left_join()` but here, you will be joining matching values from df1 
 This function, in the manner used here, is similar to $(df1 \cap df2) \cup df2$.
 
 ```{r}
-library(rmarkdown)
 library(dplyr)
 
 df1 <- tidytable::data.table(x = c("john","kevin","chris","sam","sam"), y = 1:5)
 df2 <- tidytable::data.table(x = c("kevin","sam", "bob"), z = 10:12)
-paged_table(df1 %>% right_join(df2))
+df1 %>% right_join(df2)
 ```
 
 ## inner_join()
@@ -125,12 +120,11 @@ The function `inner_join()` compares both df1 and df2 variables and only joins r
 This function is similar to $df1 \cap df2$.
 
 ```{r}
-library(rmarkdown)
 library(dplyr)
 
 df1 <- tidytable::data.table(x = c("john","kevin","chris","sam","sam"), y = 1:5)
 df2 <- tidytable::data.table(x = c("kevin","sam", "bob"), z = 10:12)
-paged_table(df1 %>% inner_join(df2))
+df1 %>% inner_join(df2)
 ```
 
 ## full_join()
@@ -140,12 +134,11 @@ The function `full_join()` compares both df1 and df2 variables and joins all pos
 This function is similar to $df1 \cup df2$.
 
 ```{r}
-library(rmarkdown)
 library(dplyr)
 
 df1 <- tidytable::data.table(x = c("john","kevin","chris","sam","sam"), y = 1:5)
 df2 <- tidytable::data.table(x = c("kevin","sam", "bob"), z = 10:12)
-paged_table(df1 %>% full_join(df2))
+df1 %>% full_join(df2)
 ```
 
 ## anti_join()
@@ -155,12 +148,11 @@ This is an example of filtering join. The function `anti_join()` compares df1 va
 This function, in the manner used here, is similar to $df1 \cap df2^c$.
 
 ```{r}
-library(rmarkdown)
 library(dplyr)
 
 df1 <- tidytable::data.table(x = c("john","kevin","chris","sam","sam"), y = 1:5)
 df2 <- tidytable::data.table(x = c("kevin","sam", "bob"), z = 10:12)
-paged_table(df1 %>% anti_join(df2))
+df1 %>% anti_join(df2)
 ```
 
 ## semi_join()
@@ -168,13 +160,12 @@ paged_table(df1 %>% anti_join(df2))
 This is an example of filtering join. The function `semi_join()` is similar to `inner_join()` but it only gives variables of df1 which has a match with df2.
 
 ```{r}
-library(rmarkdown)
 library(dplyr)
 
 df1 <- tidytable::data.table(x = c("john","kevin","chris","sam","sam"), y = 1:5)
 df2 <- tidytable::data.table(x = c("kevin","sam", "bob"), z = 10:12)
 
-paged_table(df1 %>% semi_join(df2))
+df1 %>% semi_join(df2)
 ```
 :::
 

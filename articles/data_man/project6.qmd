@@ -20,11 +20,8 @@ comments:
 execute: 
   warning: false
   freeze: auto
+image: /images/dplyr.png
 ---
-
-::: {layout-ncol="1"}
-![Image by [Richard Revel](https://stocksnap.io/author/34759) on [StockSnap](https://stocksnap.io)](https://cdn.stocksnap.io/img-thumbs/960w/arts-paint_OV9YU9IZBC.jpg){.preview-image}
-:::
 
 ## Introduction to dplyr package
 
@@ -86,7 +83,6 @@ The `summarise()` command allows you to get the summary statistics of a variable
 library(tidyr)
 library(dplyr)
 library(palmerpenguins)
-library(rmarkdown)
 
 summary_data <- penguins %>% drop_na() %>%
   group_by(species) %>% # we are grouping/splitting the data according to species
@@ -102,7 +98,7 @@ summary_data <- penguins %>% drop_na() %>%
             median_absolute_deviation_mass = mad(body_mass_g), # median absolute deviation of mass
             variance_mass = var(body_mass_g)) # variance
 # viewing summary as a table
-paged_table(summary_data)
+summary_data
 ```
 
 The number of non `NA` values will be the same as that of `n()` result as we have used `drop_na()`command in the beginning.
@@ -129,14 +125,14 @@ knitr::include_graphics('images/group_by.png')
 The `count()` command is used to count the number of rows of a variable. Has the same function as that of `n()`
 
 ```{r}
-library(rmarkdown)
 library(dplyr)
 library(palmerpenguins)
 
 count <- penguins %>% group_by(species) %>%
   count(island)
+
 # viewing count as a table
-paged_table(count)
+count
 ```
 
 ## Manipulating cases or observations
@@ -148,11 +144,10 @@ The following functions affect rows to give a subset of rows in a new table as o
 Use `filter()` to filter rows corresponding to a given logical criteria
 
 ```{r}
-library(rmarkdown)
 library(dplyr)
 library(palmerpenguins)
 
-paged_table(penguins %>% filter(body_mass_g < 3000))
+penguins %>% filter(body_mass_g < 3000)
 ```
 
 ### distinct()
@@ -160,11 +155,10 @@ paged_table(penguins %>% filter(body_mass_g < 3000))
 Use `distinct()` to remove rows with duplicate or same values.
 
 ```{r}
-library(rmarkdown)
 library(dplyr)
 library(palmerpenguins)
 
-paged_table(penguins %>% group_by(species) %>% distinct(body_mass_g))
+penguins %>% group_by(species) %>% distinct(body_mass_g)
 ```
 
 ### slice()
@@ -172,11 +166,11 @@ paged_table(penguins %>% group_by(species) %>% distinct(body_mass_g))
 Use `slice()` to select rows by position.
 
 ```{r}
-library(rmarkdown)
 library(dplyr)
 library(palmerpenguins)
 
-paged_table(penguins %>% slice(1:5)) # slice from first row to fifth row
+# slice from first row to fifth row
+penguins %>% slice(1:5) 
 ```
 
 ### slice_sample()
@@ -191,23 +185,21 @@ Use `slice_sample()` to randomly select rows from the dataset. Instead of `(n = 
 ## (n = 4)
 
 ```{r}
-library(rmarkdown)
 library(dplyr)
 library(palmerpenguins)
 
 # samples 4 rows randomly
-paged_table(penguins %>% slice_sample(n = 4))
+penguins %>% slice_sample(n = 4)
 ```
 
 ## weight_by
 
 ```{r}
-library(rmarkdown)
 library(dplyr)
 library(palmerpenguins)
 
 # sampling will favour rows with higher values of 'body_mass_g'
-paged_table(penguins %>% drop_na() %>% slice_sample(n = 4, weight_by = body_mass_g))
+penguins %>% drop_na() %>% slice_sample(n = 4, weight_by = body_mass_g)
 ```
 :::
 
@@ -219,21 +211,19 @@ Use `slice_min()` to extract rows containing least values and use `slice_max()` 
 ## slice_min()
 
 ```{r}
-library(rmarkdown)
 library(dplyr)
 library(palmerpenguins)
 
-paged_table(penguins %>% slice_min(body_mass_g, n = 4, with_ties = FALSE))
+penguins %>% slice_min(body_mass_g, n = 4, with_ties = FALSE)
 ```
 
 ## slice_max()
 
 ```{r}
-library(rmarkdown)
 library(dplyr)
 library(palmerpenguins)
 
-paged_table(penguins %>% slice_max(body_mass_g, n = 4,with_ties = FALSE))
+penguins %>% slice_max(body_mass_g, n = 4,with_ties = FALSE)
 ```
 :::
 
@@ -245,21 +235,19 @@ Use `slice_head()` to extract first set of rows and use `slice_tail()` to extrac
 ## slice_head()
 
 ```{r}
-library(rmarkdown)
 library(dplyr)
 library(palmerpenguins)
 
-paged_table(penguins %>% slice_head(n = 4))
+penguins %>% slice_head(n = 4)
 ```
 
 ## slice_tail()
 
 ```{r}
-library(rmarkdown)
 library(dplyr)
 library(palmerpenguins)
 
-paged_table(penguins %>% slice_tail(n = 4))
+penguins %>% slice_tail(n = 4)
 ```
 :::
 
@@ -268,13 +256,12 @@ paged_table(penguins %>% slice_tail(n = 4))
 Use `arrange()` to arrange rows in a particular order.
 
 ```{r}
-library(rmarkdown)
 library(dplyr)
 library(palmerpenguins)
 
 # arranging rows in descending order of bill length
 # by default it arranges data by ascending order when no specifications are given
-paged_table(penguins %>% arrange(desc(bill_length_mm)))
+penguins %>% arrange(desc(bill_length_mm))
 ```
 
 ### add_row()
@@ -282,12 +269,11 @@ paged_table(penguins %>% arrange(desc(bill_length_mm)))
 Use `add_row()` to add rows to the dataset.
 
 ```{r}
-library(rmarkdown)
 library(dplyr)
 
 Name <- c("a", "b")
 Age <- c(12,13)
-paged_table(data.frame(Name, Age) %>% add_row(Name = "c", Age = 15))
+data.frame(Name, Age) %>% add_row(Name = "c", Age = 15)
 ```
 
 ## Manipulating variables or columns
@@ -311,11 +297,10 @@ penguins %>% pull(body_mass_g)
 Use `select()` to extract columns as tables, by name or index.
 
 ```{r}
-library(rmarkdown)
 library(dplyr)
 library(palmerpenguins)
 
-paged_table(penguins %>% select(species, body_mass_g))
+penguins %>% select(species, body_mass_g)
 ```
 
 ### relocate()
@@ -324,33 +309,30 @@ Use `relocate()` to move columns to new position. Results are not shown as these
 
 ```{r}
 #| eval: false
-library(rmarkdown)
 library(dplyr)
 library(palmerpenguins)
 
 # relocates 'species' column to last position
-paged_table(penguins %>% relocate(species, .after = last_col()))
+penguins %>% relocate(species, .after = last_col())
 ```
 
 ```{r}
 #| eval: false
-library(rmarkdown)
 library(dplyr)
 library(palmerpenguins)
 
 # relocates 'species' column before column 'year' and renames the column as 'penguins'
-paged_table(penguins %>% relocate(penguins = species, .before = year))
+penguins %>% relocate(penguins = species, .before = year)
 ```
 
 ```{r}
 #| eval: false
-library(rmarkdown)
 library(dplyr)
 library(palmerpenguins)
 
 # you can also relocate columns based on their class
 # relocates all columns with 'character' class to last position
-paged_table(penguins %>% relocate(where(is.character), .after = last_col()))
+penguins %>% relocate(where(is.character), .after = last_col())
 ```
 
 ### rename()
@@ -371,13 +353,12 @@ penguins %>% rename(gender = sex)
 Use `mutate()` function to create new columns or variables.
 
 ```{r}
-library(rmarkdown)
 library(dplyr)
 library(palmerpenguins)
 
-paged_table(penguins %>% drop_na() %>% 
+penguins %>% drop_na() %>% 
   group_by(species) %>%
-  mutate(mean_mass = mean(body_mass_g)))
+  mutate(mean_mass = mean(body_mass_g))
 ```
 
 ### transmute()
@@ -385,13 +366,12 @@ paged_table(penguins %>% drop_na() %>%
 Does the same function as `mutate()` but in the process will drop any other columns and give you a table with only the newly created columns.
 
 ```{r}
-library(rmarkdown)
 library(dplyr)
 library(palmerpenguins)
 
-paged_table(penguins %>% drop_na() %>% 
+penguins %>% drop_na() %>% 
   group_by(species) %>%
-  transmute(mean_mass = mean(body_mass_g)))
+  transmute(mean_mass = mean(body_mass_g))
 ```
 
 ### across()
@@ -399,7 +379,6 @@ paged_table(penguins %>% drop_na() %>%
 Use `across()` to summarise or mutate columns in the same way. First example shows `across()` used with `summarise()` function.
 
 ```{r}
-library(rmarkdown)
 library(dplyr)
 library(palmerpenguins)
 
@@ -408,15 +387,14 @@ library(palmerpenguins)
 # since we are calculating mean values,
 # NAs are dropped using 'drop_na() function from 'tidyr' package
 
-paged_table(penguins %>% drop_na() %>%
+penguins %>% drop_na() %>%
   group_by(species) %>%
-  summarise(across(c(body_mass_g, bill_length_mm, bill_depth_mm), mean)))
+  summarise(across(c(body_mass_g, bill_length_mm, bill_depth_mm), mean))
 ```
 
 Second example showing `across()` used with `mutate()` function. We can efficiently create new columns using `mutate()` and `across()` together. Suppose we want to multiply all numerical values in a dataset with 2 and create new columns of those values. This can be done using the code below.
 
 ```{r}
-library(rmarkdown)
 library(dplyr)
 library(palmerpenguins)
 
@@ -426,8 +404,8 @@ two_times <- function(x) {
 } 
 
 # .name will rename the new columns with 'twice` prefix combined with existing col names
-paged_table(penguins %>% group_by(species) %>%
-  mutate(across(where(is.numeric), two_times, .names = "two_times_{col}")))
+penguins %>% group_by(species) %>%
+  mutate(across(where(is.numeric), two_times, .names = "two_times_{col}"))
 ```
 
 The same code when used just with `mutate()` function will look like this
@@ -456,14 +434,13 @@ So in this code, I will have to manually type all the col names and apply the op
 The function `c_across()` is similar to the earlier mentioned `across()` function. But instead of doing a column-wise function, it applies function across columns in a row-wise manner. Now, most functions in R by default computes across columns, so to specify row-wise computation, we have to explicitly use the function `rowwise()` in conjunction with other functions. In the example below we will sum both bill and flipper lengths of the penguins in the `penguins` dataset and create a new column called 'sum_of_lengths'.
 
 ```{r}
-library(rmarkdown)
 library(dplyr)
 library(palmerpenguins)
 
-paged_table(penguins %>% drop_na() %>%
+penguins %>% drop_na() %>%
   group_by(species) %>%
   rowwise() %>%
-  transmute(sum_of_length = sum(c_across(c(bill_length_mm,flipper_length_mm)))))
+  transmute(sum_of_length = sum(c_across(c(bill_length_mm,flipper_length_mm))))
 ```
 
 ## Summary

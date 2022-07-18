@@ -16,6 +16,7 @@ format:
     code-link: true
     code-fold: true
     code-tools: true
+    df-print: paged
 citation: true
 comments:
   hypothesis: true
@@ -23,13 +24,7 @@ execute:
   warning: false
   freeze: auto
 image: images/tidyr.png
-twitter-card:
-  image: "images/tidyr.png"
 ---
-
-::: {layout-ncol="1"}
-![Image by [Pixabay](https://www.pexels.com/@pixabay/) on [Pexels](https://www.pexels.com)](https://images.pexels.com/photos/434163/pexels-photo-434163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1){.preview-image}
-:::
 
 ## Introduction to tidyr package
 
@@ -51,7 +46,7 @@ treatment_data <- cbind(patient1,patient2,patient3,patient4,patient5)
 trt <- c("treatment1", "treatment2","treatment3","treatment4","treatment5")
 treatment_data <- cbind(trt, treatment_data)
 treatment_data <- as.data.frame(treatment_data)
-rmarkdown::paged_table(treatment_data)
+treatment_data
 ```
 
 This is how often data is stored because it is easy to write it this way. In the first column, you can see the different treatments from one to five. And in the second column, you have the efficacy values of the treatments for patient 1 and it goes on for the other patients. Now, this is a good example of how a dataset should not look like! Surprised? Let us see what makes this dataset 'dirty'.
@@ -88,7 +83,7 @@ treatment_data_tidy <-treatment_data  %>%
                values_to = "efficacy")
 
 colnames(treatment_data_tidy)[1] <- "treatment"
-rmarkdown::paged_table(treatment_data_tidy)
+treatment_data_tidy
 ```
 
 You can see each of the columns represent only one type of variable. In the first column, you have the types of treatments, followed by patient IDs and their efficacy values for each treatment. Also, note that each row represents only one observation. So this kind of data format is what we strive to achieve by using the `{tidyr}` package and they are called as 'long data'. So let us begin!
@@ -128,7 +123,7 @@ trt_data <- as.data.frame(trt_data) # making it a data frame
 trt_data_tidy <- pivot_longer(trt_data,
                               c(patient1,patient2,patient3,patient4,patient5), 
                               names_to = "patient_ID", values_to = "efficacy")
-rmarkdown::paged_table(trt_data_tidy)
+trt_data_tidy
 ```
 
 Furthermore, you don't have to manually type in the column names as you can use `colnames()` to call the column names of the dataset. Another way of doing the same is by excluding the first column from the process. By doing so the command will automatically pivot all columns except the excluded ones, so in this way, we don't need to manually specify the column names. The codes given below will give you the same result as before.
@@ -205,7 +200,7 @@ trt_data_wider <- pivot_wider(trt_data_tidy, names_from = "patient_ID",
 
 # paged_Table() for viewing the dataset as a table, 
 # you can see that the dataset is same as before
-rmarkdown::paged_table(trt_data_wider)
+trt_data_wider
 ```
 
 The syntax for `pivot_wider()` is given below with description
@@ -240,7 +235,7 @@ century <- c(rep(19:20, each = 2))
 year <- c(seq(10,16,2))
 data <- as.data.frame(cbind(event,century,year))
 
-rmarkdown::paged_table(data)
+data
 ```
 
 ## After
@@ -258,7 +253,7 @@ data <- as.data.frame(cbind(event,century,year))
 # uniting columns century and year
 data_new <- unite(data, century, year, col = "event_year", sep = "")
 # viewing data as a table
-rmarkdown::paged_table(data_new)
+data_new
 ```
 :::
 
@@ -290,7 +285,7 @@ perimetre <- c(paste0(30:33, "m"))
 ratio <-as.data.frame(cbind(shapes,area,perimetre))
 data <- unite(ratio, area, perimetre, col = "area_perimetre", sep = "_")
 # viewing data as a table
-rmarkdown::paged_table(data)
+data
 ```
 
 ## After
@@ -310,7 +305,7 @@ data <- unite(ratio, area, perimetre, col = "area_perimetre", sep = "_")
 data_new <- separate(data, area_perimetre, sep = "_",
                      into = c("area", "perimetre"))
 # viewing data as a table
-rmarkdown::paged_table(data_new)
+data_new
 ```
 :::
 
@@ -341,7 +336,7 @@ perimetre <- c(paste0(30:33, "m"))
 ratio <-as.data.frame(cbind(shapes,area,perimetre))
 data <- unite(ratio, area, perimetre, col = "area_perimetre", sep = "_")
 # viewing data as a table
-rmarkdown::paged_table(data)
+data
 ```
 
 ## After
@@ -360,7 +355,7 @@ data <- unite(ratio, area, perimetre, col = "area_perimetre", sep = "_")
 # separating column values into two several rows
 data_new <- separate_rows(data, area_perimetre, sep = "_")
 # viewing data as a table
-rmarkdown::paged_table(data_new)
+data_new
 ```
 :::
 
@@ -394,7 +389,7 @@ size <- c("s", "m", "l", "xl")
 dress_data <- as.data.frame(cbind(brand,dress,size))
 
 # viewing data as a table
-rmarkdown::paged_table(dress_data)
+dress_data
 ```
 
 ## After
@@ -413,7 +408,7 @@ dress_data <- as.data.frame(cbind(brand,dress,size))
 dress_data_expand <- expand(dress_data, brand, dress)
 
 # viewing data as a table
-rmarkdown::paged_table(dress_data_expand)
+dress_data_expand
 ```
 :::
 
@@ -445,7 +440,7 @@ dress_data <- as.data.frame(cbind(brand,dress,size))
 dress_data_expand <- expand(dress_data, brand, dress)
 
 # viewing data as a table
-rmarkdown::paged_table(dress_data_expand)
+dress_data_expand
 ```
 
 ## complete()
@@ -465,7 +460,7 @@ dress_data <- as.data.frame(cbind(brand,dress,size))
 dress_data_complete <- complete(dress_data,brand,dress)
 
 # viewing data as a table
-rmarkdown::paged_table(dress_data_complete)
+dress_data_complete
 ```
 :::
 
@@ -499,7 +494,7 @@ dress_data <- as.data.frame(cbind(brand,dress,size))
 dress_data_complete <- complete(dress_data,brand,dress)
 
 # viewing data as a table
-rmarkdown::paged_table(dress_data_complete)
+dress_data_complete
 ```
 
 ## After
@@ -521,7 +516,7 @@ dress_data_complete <- complete(dress_data,brand,dress)
 dress_data_noNA <- drop_na(dress_data_complete)
 
 # viewing data as a table
-rmarkdown::paged_table(dress_data_noNA)
+dress_data_noNA
 ```
 :::
 
@@ -542,7 +537,7 @@ dress_data_complete <- complete(dress_data,brand,dress)
 dress_data_fill <- fill(dress_data_complete, size, .direction = "downup")
 
 # viewing data as a table
-rmarkdown::paged_table(dress_data_fill)
+dress_data_fill
 ```
 
 ### replace_na()
@@ -564,7 +559,7 @@ dress_data_complete <- complete(dress_data,brand,dress)
 dress_data_zero <- replace_na(dress_data_complete, list(size = "unknown"))
 
 # viewing data as a table
-rmarkdown::paged_table(dress_data_zero)
+dress_data_zero
 ```
 
 ## Summary
