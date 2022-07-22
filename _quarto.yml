@@ -5,7 +5,7 @@ project:
 website:
   title: "one carat blog"
   image: github_read.png
-  favicon: gems.png
+  favicon: favicon.png
   page-navigation: true
   page-footer: "© 2022, Jewel Johnson"
   opengraph: true
