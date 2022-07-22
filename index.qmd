@@ -10,7 +10,7 @@ comments: false
 ::: {.column-margin}
 :::{.callout-note}
 ## Updates
-**22-July-2022**: 🚨 New blog post:
+**22-July-2022**: 🚨 New blog post: [Learning starts in the embryo for fathead minnow fish](https://jeweljohnsonj.github.io/one-carat-blog/posts/research_article_embryonic_learning/index_post.html)
 
 <br>
 
