@@ -63,7 +63,7 @@ So meet fathead minnow fish (*Pimephales promelas*), who share the same fate of 
 
 This complex behaviour repertoire is only reported to be present in juveniles and adults (well no surprises there!). But fathead minnow starts their life cycle as eggs and faces high rates of predation [@divino_importance_2008]. The embryonic stage is by far the worst period to get predated on as the embryos are heavily handicapped due to their immobility. Nevertheless, they are known to alter hatching times in response to predator cues [@kusch_effects_2004]. Moreover, when predator cues in combination with cues indicating embryo damage were introduced to embryos, the developed larvae from these embryos were small in size, indicating loss of developmental maturity [@kusch_effects_2004]. But in the presence of conspecific alarm cues, hatching times remain unchanged [@horn_embryonic_2021]. Therefore these results suggest that fathead minnow embryos can sense environmental cues but clear-cut evidence was lacking. This is exactly what was explored by graduate student Christopher Crowder and Dr. Jessica Ward at Ball State University, Indiana, USA. in their recent paper [@crowder_embryonic_2022]. The researchers asked whether fathead embryos can innately detect alarm cues just like their adult counterparts and if they do, then does that embryonic experience affect pre and/or post-embryonic behaviours?
 
-## Methods
+## Methods and results
 
 To initiate embryonic experience, researchers grew the embryos in four different environments imparting "predator-risk" and "non-predator-risk" experiences.
 
