@@ -1,7 +1,7 @@
 ---
 title: "Learning starts in the embryo for fathead minnow fish"
 description: "Embryonic learning occurs when an organism can learn while in its embryo stage. Learn how researchers showed that fathead minnow (*Pimephales promelas*) can detect conspecific alarm cues and associate them with predator cues to modulate both pre and post-embryonic behaviour"
-date: "06/22/2022"
+date: "07/22/2022"
 format: html
 image: images/preview.png
 bibliography: Blog_Embryonic_Learning.bib

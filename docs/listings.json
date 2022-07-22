@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/research_article_embryonic_learning/index_post.html",
       "/posts/research_article_biggest_bacterium/index_post.html",
       "/posts/notion_movie_books/index.html",
       "/posts/welcome/index.html",
@@ -9,7 +10,6 @@
       "/posts/notion_literature/index.html",
       "/posts/notion_research_diary/index.html",
       "/posts/notion_intro/index.html",
-      "/posts/research_article_embryonic_learning/index_post.html",
       "/posts/word-happy-2022/index.html"
     ]
   }
