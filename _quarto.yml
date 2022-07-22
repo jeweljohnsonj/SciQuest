@@ -16,7 +16,7 @@ website:
   google-analytics: G-EVCS615JQR
     
   navbar:
-    logo: gems.png
+    logo: favicon.png
     right:
       - text: "Blog"
         href: blog.qmd
