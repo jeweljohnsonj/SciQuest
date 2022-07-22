@@ -7,18 +7,33 @@ editor: source
 image: /images/github_read.png
 comments: false
 ---
+::: {.column-margin}
+:::{.callout-note}
+## Updates
+**22-July-2022**: 🚨 New blog post:
+
+<br>
+
+**14-July-2022**: 🚨 New blog post: [The world’s largest bacteria is bigger than a housefly](https://jeweljohnsonj.github.io/one-carat-blog/posts/research_article_biggest_bacterium/index_post.html)
+:::
+:::
+
 ## Welcome to One Carat Blog
 
-My name is Jewel Johnson and I am an aspiring ecologist who is interested in behaviour, vision and in the effect of human activities on animals (especially insects). I did my master's in Biology from the [Indian Institute of Science Education and Research, Thiruvananthapuram](https://www.iisertvm.ac.in/) (IISER-TVM). My master's thesis was on understanding the **Visual ecology of the giant honeybee (*Apis dorsata*)** under the guidance of [Prof. Hema Somanathan](https://faculty.iisertvm.ac.in/beelab/) at IISER-TVM . Currently, I am looking for research labs to join for a PhD 😇
+My name is Jewel Johnson and I am an aspiring ecologist who is interested in behaviour, vision and in the effect of human activities on animals (especially insects). I did my master's in Biology from the [Indian Institute of Science Education and Research, Thiruvananthapuram](https://www.iisertvm.ac.in/) (IISER-TVM). My master's thesis was on understanding the **Visual ecology of the giant honeybee (*Apis dorsata*)** under the guidance of [Prof. Hema Somanathan](https://faculty.iisertvm.ac.in/beelab/) at IISER-TVM .
+Currently, I am looking for research labs to join for a PhD 😇
 
-I made this blog using the [quarto](https://quarto.org/) package. My blog posts are generally focused on science communication and R programming. I have written a tutorial series on data visualization and data manipulation using R and, also on understanding basic statistics using R. Thanks for visiting my blog 🙌 
+I made this blog using the [quarto](https://quarto.org/) package. My blog posts are generally focused on science communication and R programming. I have written a tutorial series on data visualization and data manipulation using R and, also on understanding basic statistics using R.
+Thanks for visiting my blog 🙌 
 
 <center>
 <button type="button" class="btn btn-primary">[Data visualization](https://jeweljohnsonj.github.io/one-carat-blog/articles/data_viz/project1.html)</button>
 <button type="button" class="btn btn-primary">[Data manipulation](https://jeweljohnsonj.github.io/one-carat-blog/articles/data_man/project5.html)</button>
 <button type="button" class="btn btn-primary">[Statistics](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project1.html)</button>
 </center>
+
 <br>
+
 <center>        
 <a href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_3/maxflags_9/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
 </center>

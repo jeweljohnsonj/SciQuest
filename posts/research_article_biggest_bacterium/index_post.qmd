@@ -14,7 +14,7 @@ categories: [research article, scicom]
 ::: column-page
 ![Summary of the study in [@volland_centimeter-long_2022]](images/tl_dr.png)
 
-Source of the study: Volland, J.-M., Gonzalez-Rizzo, S., Gros, O., Tyml, T., Ivanova, N., Schulz, F., Goudeau, D., Elisabeth, N. H., Nath, N., Udwary, D., Malmstrom, R. R., Guidi-Rontani, C., Bolte-Kluge, S., Davies, K. M., Jean, M. R., Mansot, J.-L., Mouncey, N. J., Angert, E. R., Woyke, T., & Date, S. V. (2022). A centimeter-long bacterium with DNA contained in metabolically active, membrane-bound organelles. Science, 376(6600), 1453–1458. [https://doi.org/10.1126/science.abb3634](https://doi.org/10.1126/science.abb3634).
+Research article that is summarised in this post: Volland, J.-M., Gonzalez-Rizzo, S., Gros, O., Tyml, T., Ivanova, N., Schulz, F., Goudeau, D., Elisabeth, N. H., Nath, N., Udwary, D., Malmstrom, R. R., Guidi-Rontani, C., Bolte-Kluge, S., Davies, K. M., Jean, M. R., Mansot, J.-L., Mouncey, N. J., Angert, E. R., Woyke, T., & Date, S. V. (2022). A centimeter-long bacterium with DNA contained in metabolically active, membrane-bound organelles. Science, 376(6600), 1453–1458. [https://doi.org/10.1126/science.abb3634](https://doi.org/10.1126/science.abb3634).
 :::
 
 ## Introduction

@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.16">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="author" content="Jewel Johnson">
+<meta name="dcterms.date" content="2022-06-22">
+<meta name="description" content="Embryonic learning occurs when an organism can learn while in its embryo stage. Learn how researchers showed that fathead minnow (Pimephales promelas) can detect conspecific alarm cues and associate them with predator cues to modulate both pre and post-embryonic behaviour">
+<title>one carat blog - Learning starts in the embryo for fathead minnow fish</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../gems.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EVCS615JQR"></script><script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
+</script><style>html{ scroll-behavior: smooth; }</style>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><link rel="stylesheet" href="../../styles.css">
+<meta name="twitter:title" content="one carat blog - Learning starts in the embryo for fathead minnow fish">
+<meta name="twitter:description" content="Embryonic learning occurs when an organism can learn while in its embryo stage. Learn how researchers showed that fathead minnow (Pimephales promelas) can detect conspecific alarm cues and associate them with predator cues to modulate both pre and post-embryonic behaviour">
+<meta name="twitter:image" content="https://jeweljohnsonj.github.io/one-carat-blog/posts\research_article_embryonic_learning\images\preview.png">
+<meta name="twitter:image-height" content="1080">
+<meta name="twitter:image-width" content="1920">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+    <img src="../../gems.png" alt=""><span class="navbar-title">one carat blog</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item">
+    <a class="nav-link" href="../../blog.html">Blog</a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-r-tutorials" role="button" data-bs-toggle="dropdown" aria-expanded="false">R Tutorials</a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-r-tutorials">
+<li class="dropdown-header">Data visualization</li>
+        <li>
+    <a class="dropdown-item" href="../../articles/data_viz/project1.html">
+ <span class="dropdown-text">Chapter 1: Data visualization using ggplot2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/data_viz/project2.html">
+ <span class="dropdown-text">Chapter 2: Customizing graphs in ggplot2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/data_viz/project3.html">
+ <span class="dropdown-text">Chapter 3: Even more customizations in ggplot2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/data_viz/project4.html">
+ <span class="dropdown-text">Chapter 4: Publication ready plots using ggpubr</span></a>
+  </li>  
+        <li class="dropdown-header">Data manipulation</li>
+        <li>
+    <a class="dropdown-item" href="../../articles/data_man/project5.html">
+ <span class="dropdown-text">Chapter 1: Data tidying using tidyr</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/data_man/project6.html">
+ <span class="dropdown-text">Chapter 2: Data manipulation using dplyr (part 1)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/data_man/project7.html">
+ <span class="dropdown-text">Chapter 3: Data manipulation using dplyr (part 2)</span></a>
+  </li>  
+    </ul>
+</li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-statistics" role="button" data-bs-toggle="dropdown" aria-expanded="false">Statistics</a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-statistics">
+<li>
+    <a class="dropdown-item" href="../../articles/stat/project1.html">
+ <span class="dropdown-text">Chapter 1: Introduction to statistics with R</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project2.html">
+ <span class="dropdown-text">Chapter 2: Distribution and variance</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project3.html">
+ <span class="dropdown-text">Chapter 3: Standard error and standard deviation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project4.html">
+ <span class="dropdown-text">Chapter 4: p-value and level of significance</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project5.html">
+ <span class="dropdown-text">Chapter 5: Type I and Type II errors</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project6.html">
+ <span class="dropdown-text">Chapter 6: Confidence interval and effect sizes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project7.html">
+ <span class="dropdown-text">Chapter 7: Parametric tests and assumptions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project8.html">
+ <span class="dropdown-text">Chapter 8: Non-parametric test and assumptions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../articles/stat/project9.html">
+ <span class="dropdown-text">Chapter 9: Tests for multiple groups of data</span></a>
+  </li>  
+    </ul>
+</li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://jeweljohnsonj.github.io/jewel_resume/">About me</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jeweljohnsonj/one-carat-blog"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/jeweljohnsonj"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+<div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <div class="quarto-title-block"><div><h1 class="title">Learning starts in the embryo for fathead minnow fish</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+                  <div>
+        <div class="description">
+          Embryonic learning occurs when an organism can learn while in its embryo stage. Learn how researchers showed that fathead minnow (<em>Pimephales promelas</em>) can detect conspecific alarm cues and associate them with predator cues to modulate both pre and post-embryonic behaviour
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">research article</div>
+                <div class="quarto-category">scicom</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Jewel Johnson </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">June 22, 2022</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#tldr" id="toc-tldr" class="nav-link active" data-scroll-target="#tldr"> <span class="header-section-number">1</span> TL;DR</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"> <span class="header-section-number">2</span> Introduction</a></li>
+  <li><a href="#embryo-is-sensitive-to-external-cues" id="toc-embryo-is-sensitive-to-external-cues" class="nav-link" data-scroll-target="#embryo-is-sensitive-to-external-cues"> <span class="header-section-number">3</span> Embryo is sensitive to external cues</a></li>
+  <li><a href="#embryonic-response-to-predatory-cues" id="toc-embryonic-response-to-predatory-cues" class="nav-link" data-scroll-target="#embryonic-response-to-predatory-cues"> <span class="header-section-number">4</span> Embryonic response to predatory cues</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods"> <span class="header-section-number">5</span> Methods</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"> <span class="header-section-number">6</span> Conclusion</a></li>
+  </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/edit/main/posts/research_article_embryonic_learning/index_post.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content"><section id="tldr" class="level2 page-columns page-full" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="tldr">
+<span class="header-section-number">1</span> TL;DR</h2>
+<div class="column-page">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="images/tl_dr.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Summary of the study <span class="citation" data-cites="crowder_embryonic_2022">(<a href="#ref-crowder_embryonic_2022" role="doc-biblioref">1</a>)</span></figcaption><p></p>
+</figure>
+</div>
+<p>Research article that is summarised in this post: Crowder, C., &amp; Ward, J. (2022). Embryonic antipredator defenses and behavioral carryover effects in the fathead minnow (Pimephales promelas). Behavioral Ecology and Sociobiology, 76(2), 27. <a href="https://doi.org/10.1007/s00265-022-03136-2">https://doi.org/10.1007/s00265-022-03136-2</a></p>
+</div>
+</section><section id="introduction" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="introduction">
+<span class="header-section-number">2</span> Introduction</h2>
+<p>Learning is the process of acquiring information through experience. In nature, learning is ubiquitous in many different organisms and offers fitness advantages. Honeybees are known to learn floral features and utilize them during foraging <span class="citation" data-cites="menzel_honeybee_2012">(Review: <a href="#ref-menzel_honeybee_2012" role="doc-biblioref">2</a>)</span>, Wolf spiders (family Lycosidae) learn to avoid lesser quality prey when higher quality alternative prey is presented along with it <span class="citation" data-cites="toft_behavioral_1999">(<a href="#ref-toft_behavioral_1999" role="doc-biblioref">3</a>)</span>, ants are known to learn and associate visual landmarks to their nest location <span class="citation" data-cites="collett_visual_1992">(<a href="#ref-collett_visual_1992" role="doc-biblioref">4</a>)</span>. Learning is also particularly effective during different life stages. The experience acquired during the juvenile phase of an animal is known to affect their behaviour in adulthood. Baby Zebra finches (<em>Taeniopygia guttata</em>) are known to innately possess a ‘template song’ which is used as a base to learn and mimic songs sung by adult conspecifics. If baby zebra finches are isolated and not allowed to mimic the song, then when they reach adulthood, they develop irregular and abnormally sound songs as compared to experienced adults <span class="citation" data-cites="brenowitz_song_2005">(<a href="#ref-brenowitz_song_2005" role="doc-biblioref">5</a>)</span>. In the Tobacco hornworm moth, an aversive odour stimulus when learned during their larval stage persists when they metamorphose into a moth <span class="citation" data-cites="blackiston_retention_2008">(<a href="#ref-blackiston_retention_2008" role="doc-biblioref">6</a>)</span>. In houseflies, adults develop a preference for olfactory cues that were exposed to them during their larval stage <span class="citation" data-cites="ray_survival_1999">(<a href="#ref-ray_survival_1999" role="doc-biblioref">7</a>)</span>.</p>
+</section><section id="embryo-is-sensitive-to-external-cues" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="embryo-is-sensitive-to-external-cues">
+<span class="header-section-number">3</span> Embryo is sensitive to external cues</h2>
+<p>Most studies in the context of learning focused on fitness advantages to adults when learning was manifested during the juvenile phase. But some organisms, especially oviparous organisms undergo their embryonic stage outside of their mother’s body where the embryos are in direct contact with the surrounding environmental cues. They are also found to be highly sensitive to these cues. Perhaps the most famous evidence for this would be gender determination in reptiles, where the eggs respond to their surrounding ambient temperature. Here, gender is determined by temperature values after fertilization <span class="citation" data-cites="warkentin_environmentally_2011">(Review: <a href="#ref-warkentin_environmentally_2011" role="doc-biblioref">8</a>)</span>. In addition to sensing environmental cues, many studies have also reported evidence of “embryonic learning”, where the embryos learn and form memories of surrounding environmental cues and utilize these memories in both the pre and post-embryonic period to modulate their behaviour. Some of the cases where the embryo is found to respond and/or learn external cues are given below;</p>
+<ol type="1">
+<li>Eggs of ringed salamanders (<em>Ambystoma annulatum</em>, <a href="#fig-1">Figure&nbsp;1</a>) when exposed to chemical cues from predators resulted in reduced activity and greater shelter-seeking behaviour in larvae <span class="citation" data-cites="mathis_learning_2008">(<a href="#ref-mathis_learning_2008" role="doc-biblioref">9</a>)</span>.</li>
+<li>Wood frog (<em>Rana sylvatica</em>, <a href="#fig-2">Figure&nbsp;2</a>) tadpoles learned to respond to chemical cues from unfamiliar predators when associated with conspecific alarm cues during the embryo stage <span class="citation" data-cites="mathis_learning_2008">(<a href="#ref-mathis_learning_2008" role="doc-biblioref">9</a>)</span>.</li>
+<li>Naive cuttlefish (<em>Sepia officinalis</em>, <a href="#fig-3">Figure&nbsp;3</a>) prefer shrimps over crabs, but cuttlefish embryos which are visually conditioned with crabs preferred crabs over shrimps during the larval stage <span class="citation" data-cites="guibe_food_2012">(<a href="#ref-guibe_food_2012" role="doc-biblioref">10</a>)</span>. Also, cuttlefish embryos that had experience with white crabs<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> developed a preference for white crabs over black crabs<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> during the larval stage <span class="citation" data-cites="guibe_food_2012">(<a href="#ref-guibe_food_2012" role="doc-biblioref">10</a>)</span>. Moreover, cuttlefish larvae that received embryonic experience with white crabs exhibited prey generalisation where they prefer black crabs over shrimp <span class="citation" data-cites="guibe_food_2012">(<a href="#ref-guibe_food_2012" role="doc-biblioref">10</a>)</span>.</li>
+<li>Cuttlefish embryos (<em>Sepia officinalis</em>, <a href="#fig-3">Figure&nbsp;3</a>) are also seen to reduce their ventilation rate in the presence of predator indicative cues, possibly to remain cryptic. Furthermore, cuttlefish embryos are also found to associate non-predator cues with predator cues to invoke reduced ventilation behaviour which showcases evidence for associative learning in these embryos <span class="citation" data-cites="mezrai_awareness_2020">(<a href="#ref-mezrai_awareness_2020" role="doc-biblioref">11</a>)</span>.</li>
+<li>Rainbow trout embryos (<em>Oncorhynchus mykiss</em>, <a href="#fig-4">Figure&nbsp;4</a>) can learn both conspecific and heterospecific alarm cues and, rainbow trout fish with embryonic learning experiences had longer memory retention compared to the ones with no embryonic learning experience <span class="citation" data-cites="horn_retention_2019">(<a href="#ref-horn_retention_2019" role="doc-biblioref">12</a>)</span>.</li>
+<li>Bamboo sharks (<em>Chiloscyllium punctatum</em>, <a href="#fig-5">Figure&nbsp;5</a>), like all sharks, have electroreception which is normally used to locate prey. But unlike most other sharks where the embryo is developed within the mother’s body, in bamboo sharks egg sacks containing the embryo are oviposited on substrates which makes them vulnerable to predation <span class="citation" data-cites="cox_predation_1993">(<a href="#ref-cox_predation_1993" role="doc-biblioref">13</a>)</span>. It is known that bamboo shark embryos can use their electrosensory system to innately detect electric fields indicative of predators and thereby cease their respiratory gill movements to become cryptic <span class="citation" data-cites="kempster_survival_2013">(<a href="#ref-kempster_survival_2013" role="doc-biblioref">14</a>)</span>.</li>
+<li>Port Jackson shark (<em>Heterodontus portusjacksoni</em>, <a href="#fig-6">Figure&nbsp;6</a>) embryos are found to modulate their oxygen uptake rates against predator (Crested horn sharks; <em>Heterodontus galeatus</em>) and non-predator (Sand whiting; <em>Sillago ciliata</em>) olfactory cues with respect to their developmental stages. In earlier developmental stages, the embryos reduced oxygen uptake against non-predator odour cues but not against predator cues, indicating a cryptic response, possibly because of neophobia. At later developmental stages, the embryos increased oxygen uptake against predator cues and but not against non-predatory cues. This possibly indicates a fight-or-flight response where increased oxygen levels can contribute to enhanced capacity for aerobic or anaerobic activities that can aid in successful evasion by fleeing <span class="citation" data-cites="gervais_friend_2021">(<a href="#ref-gervais_friend_2021" role="doc-biblioref">15</a>)</span>.</li>
+<li>Cinnamon clownfish embryos (<em>Amphiprion melanopus</em>, <a href="#fig-7">Figure&nbsp;7</a>) are found to detect conspecific alarm cues and associate them with predator cues which resulted in increased heart rates <span class="citation" data-cites="atherton_active_2015">(<a href="#ref-atherton_active_2015" role="doc-biblioref">16</a>)</span>. Increased heart rate is found to be positively correlated with anti-predator behaviours in fish.</li>
+</ol>
+<p>These studies show that embryos can sense surrounding cues. The nature of surrounding cues also matters as some elicit innate behaviours and some don’t elicit any behaviour at all. For cues eliciting innate behaviours, some of the above-mentioned studies have shown that embryos can associate novel cues to these innately known cues and thereby change behaviour during the pre and/or post-embryonic stage.</p>
+<div class="{..column-page}">
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Ringed_Salamander_%28Ambystoma_annulatum%29_%2843505895580%29.jpg/1920px-Ringed_Salamander_%28Ambystoma_annulatum%29_%2843505895580%29.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 1: Image by <a href="https://www.flickr.com/people/60601292@N02">Peter Paplanus</a> from St.&nbsp;Louis, Missouri - <a href="https://www.flickr.com/photos/2ndpeter/43505895580/">Ringed Salamander (<em>Ambystoma annulatum</em>)</a></figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Lithobates_sylvaticus_%28Woodfrog%29.jpg/1280px-Lithobates_sylvaticus_%28Woodfrog%29.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 2: Image by <a href="https://www.flickr.com/people/19731486@N07">Brian Gratwicke</a> - <a href="https://www.flickr.com/photos/briangratwicke/5899261066/"><em>Lithobates sylvaticus</em> (Woodfrog)</a>. The wood frog is known as both <em>Lithobates sylvaticus</em> and <em>Rana sylvatica</em></figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-3" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Sepia_com%C3%BAn_%28Sepia_officinalis%29%2C_Parque_natural_de_la_Arr%C3%A1bida%2C_Portugal%2C_2020-07-21%2C_DD_62.jpg/1280px-Sepia_com%C3%BAn_%28Sepia_officinalis%29%2C_Parque_natural_de_la_Arr%C3%A1bida%2C_Portugal%2C_2020-07-21%2C_DD_62.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 3: Image by Diego Delso - <a href="https://en.wikipedia.org/wiki/File:Sepia_com%C3%BAn_(Sepia_officinalis),_Parque_natural_de_la_Arr%C3%A1bida,_Portugal,_2020-07-21,_DD_62.jpg">Common cuttlefish (<em>Sepia officinalis</em>)</a></figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-4" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Female_Rainbow_Trout_in_hand.JPG" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 4: Image by Mike Anderson - <a href="http://www.trophyfishingtn.com/coppermine/displayimage.php?album=16&amp;pid=1693#top_display_media">Female Rainbow trout (<em>Oncorhynchus mykiss</em>)</a>.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-5" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Chiloscyllium_punctatum.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 5: Image by <a href="https://www.flickr.com/people/23399714@N04">Zul M Rosle</a> from Kuantan, Malaysia - <a href="https://www.flickr.com/photos/23399714@N04/3373286436/">Brownbanded bambooshark (<em>Chiloscyllium punctatum</em>) at the KLCC Aquaria</a>.</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-6" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Heterodontus_portusjacksoni_wilsons_promontory.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 6: Image by Mark Norman/Museum Victoria - <a href="http://www.fishesofaustralia.net.au/home/species/1982">Port Jackson Shark (<em>Heterodontus portusjacksoni</em>) at Wilsons Promontory, Victoria</a>.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-7" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure"><p><img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Amphiprion_melanopus_in_Entacmaea_quadricolor.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure 7: Image by <a href="https://www.flickr.com/people/rling/">Richard Ling</a> - <a href="https://www.flickr.com/photos/rling/438039254/">Red and Black Anemonefish (<em>Amphiprion melanopus</em>) in anemone (<em>Entacmaea quadricolor</em>). Steve’s Bommie, Ribbon Reefs, Great Barrier Reef 177094512</a>.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="embryonic-response-to-predatory-cues" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="embryonic-response-to-predatory-cues">
+<span class="header-section-number">4</span> Embryonic response to predatory cues</h2>
+<p>As seen earlier, embryonic response to predators is evident and this might be because of strong predation pressures as most aquatic oviparous organisms are highly vulnerable to egg predators. While most studies have looked at the effect of embryonic response in juvenile and adult life stages, it might also have an immediate effect on the embryo itself [as seen in the Cuttlefish <span class="citation" data-cites="mezrai_awareness_2020">(<a href="#ref-mezrai_awareness_2020" role="doc-biblioref">11</a>)</span>, in Bamboo shark <span class="citation" data-cites="kempster_survival_2013">(<a href="#ref-kempster_survival_2013" role="doc-biblioref">14</a>)</span>, in Port Jackson shark <span class="citation" data-cites="gervais_friend_2021">(<a href="#ref-gervais_friend_2021" role="doc-biblioref">15</a>)</span> and Cinnamon clownfish <span class="citation" data-cites="atherton_active_2015">(<a href="#ref-atherton_active_2015" role="doc-biblioref">16</a>)</span>].</p>
+<p>So meet fathead minnow fish (<em>Pimephales promelas</em>), who share the same fate of being embryonic prey as the above-mentioned ones. The Fathead minnow is a freshwater fish species native to North America. They live in a school of up to a hundred individuals <span class="citation" data-cites="mathiron_individual_2015">(<a href="#ref-mathiron_individual_2015" role="doc-biblioref">17</a>)</span> but during the onset of the breeding season. males depart from school and adopt a solitary lifestyle <span class="citation" data-cites="mcmillan_agonistic_1974">(<a href="#ref-mcmillan_agonistic_1974" role="doc-biblioref">18</a>)</span>. Females of this species lay their eggs in sites guarded by a single male <span class="citation" data-cites="unger_nest_1983">(<a href="#ref-unger_nest_1983" role="doc-biblioref">19</a>)</span>, which hatch into larvae after 5 days of post-fertilization. They are some of the well-studied model organisms which display prominent anti-predatory behaviours. They are perhaps best known for “Schreckstoff” <span class="citation" data-cites="v_frisch_uber_1942">(Paper is in German: <a href="#ref-v_frisch_uber_1942" role="doc-biblioref">20</a>)</span>, a chemical alarm signal, which is only produced when they suffer tissue damage, which occurs most often from predator attacks. Fathead minnow innately responds to these alarm cues and associates them with predator cues <span class="citation" data-cites="smith_role_1995">(<a href="#ref-smith_role_1995" role="doc-biblioref">21</a>)</span>. With varying levels of these alarm cues, solitary individuals show a combination of anti-predatory behaviours that include, dashing, freezing, slowing and exploring <span class="citation" data-cites="lawrence_behavioral_1989">(<a href="#ref-lawrence_behavioral_1989" role="doc-biblioref">22</a>)</span>. If chased by predators, they show an increased rate of shoaling<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> and shooling<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> and, also show increased shelter-seeking behaviour <span class="citation" data-cites="mathis_chemical_1993">(<a href="#ref-mathis_chemical_1993" role="doc-biblioref">23</a>)</span>. Field studies have shown that they actively avoid areas containing heterospecific alarm cues <span class="citation" data-cites="smith_role_1995">(<a href="#ref-smith_role_1995" role="doc-biblioref">21</a>)</span>. However, they are not reported to innately identify any predators <span class="citation" data-cites="chivers_role_1994">(<a href="#ref-chivers_role_1994" role="doc-biblioref">24</a>)</span>.</p>
+<p>This complex behaviour repertoire is only reported to be present in juveniles and adults (well no surprises there!). But fathead minnow starts their life cycle as eggs and faces high rates of predation <span class="citation" data-cites="divino_importance_2008">(<a href="#ref-divino_importance_2008" role="doc-biblioref">25</a>)</span>. The embryonic stage is by far the worst period to get predated on as the embryos are heavily handicapped due to their immobility. Nevertheless, they are known to alter hatching times in response to predator cues <span class="citation" data-cites="kusch_effects_2004">(<a href="#ref-kusch_effects_2004" role="doc-biblioref">26</a>)</span>. Moreover, when predator cues in combination with cues indicating embryo damage were introduced to embryos, the developed larvae from these embryos were small in size, indicating loss of developmental maturity <span class="citation" data-cites="kusch_effects_2004">(<a href="#ref-kusch_effects_2004" role="doc-biblioref">26</a>)</span>. But in the presence of conspecific alarm cues, hatching times remain unchanged <span class="citation" data-cites="horn_embryonic_2021">(<a href="#ref-horn_embryonic_2021" role="doc-biblioref">27</a>)</span>. Therefore these results suggest that fathead minnow embryos can sense environmental cues but clear-cut evidence was lacking. This is exactly what was explored by graduate student Christopher Crowder and Dr.&nbsp;Jessica Ward at Ball State University, Indiana, USA. in their recent paper <span class="citation" data-cites="crowder_embryonic_2022">(<a href="#ref-crowder_embryonic_2022" role="doc-biblioref">1</a>)</span>. The researchers asked whether fathead embryos can innately detect alarm cues just like their adult counterparts and if they do, then does that embryonic experience affect pre and/or post-embryonic behaviours?</p>
+</section><section id="methods" class="level2" data-number="5"><h2 data-number="5" class="anchored" data-anchor-id="methods">
+<span class="header-section-number">5</span> Methods</h2>
+<p>To initiate embryonic experience, researchers grew the embryos in four different environments imparting “predator-risk” and “non-predator-risk” experiences.</p>
+<div id="tbl-1" class="anchored">
+<table class="table">
+<caption>Table 1: Embryonic environment</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead><tr class="header">
+<th>Environment</th>
+<th>Condition</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Environment 1</td>
+<td>Embryos reared in a control condition (just water with no other cues)</td>
+</tr>
+<tr class="even">
+<td>Environment 2</td>
+<td>Embryos reared with predator cues</td>
+</tr>
+<tr class="odd">
+<td>Environment 3</td>
+<td>Embryos reared with conspecific alarm cues</td>
+</tr>
+<tr class="even">
+<td>Environment 4</td>
+<td>Embryos reared with predator + conspecific alarm cues</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Except for environments 1 and 2, all other environments indicated predator risk. Since the fatheaded minnow shows no innate behaviour against any predators, environment 2 (predator cue) should be similar to environment 1 (control). If associative learning occurs in fathead minnow embryos then the larvae which came from environment 4 should be able to associate the predator cue to the alarm cue, which can later be tested through behavioural assays. As adult fathead minnows are known to innately respond to conspecific alarm cues, environments 3 and 4 can be indicative of predation pressure and embryos should be able to detect them.</p>
+<p>As fathead minnows show embryonic locomotor activity, it might make them conspicuous to egg predators. Interestingly, when locomotor activity was checked 5 days post fertilization, embryos from predator-risk environments (env. 3 and 4) showed lower motor activity, possibly indicating a cryptic response. This suggests that embryos can detect alarm cues like their adult counterparts.</p>
+<p>After testing for locomotor activity, the embryos were then grouped according to the environments they were raised in and were placed in separate control tanks devoid of alarm or predator cues. The embryos were allowed to hatch, and at 22 days post fertilization, the larvae were tested for predator avoidance behaviour and predator evasion behaviour. The idea was that larvae from predator-risk environments should show enhanced predator avoidance and evasion behaviours.</p>
+<p>Therefore, researchers tested the larvae individually on a test arena where swimming activity was checked before and after applying a stimulus. Four different stimuli were used which were synonymous with the environments. Here swimming activity was measured, which acted as a proxy to the ‘freezing’ behaviour fathead minnow showed, which is a predator avoidance behaviour. Lower swimming activity corresponds to enhanced predator avoidance behaviour, as lower activity might make them more cryptic to predators.</p>
+<p>The four stimuli that were used are;</p>
+<div id="tbl-2" class="anchored">
+<table class="table">
+<caption>Table 2: Stimuli administered</caption>
+<thead><tr class="header">
+<th>Stimulus</th>
+<th>Condition</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Stimulus 1</td>
+<td>Control (absence of predator or alarm cues)</td>
+</tr>
+<tr class="even">
+<td>Stimulus 2</td>
+<td>Predator cue</td>
+</tr>
+<tr class="odd">
+<td>Stimulus 3</td>
+<td>Conspecific alarm cue</td>
+</tr>
+<tr class="even">
+<td>Stimulus 4</td>
+<td>Predator + conspecific alarm cues</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Larvae from the predator risk environments (env. 3 and 4) should show enhanced freezing behaviour when predator risk stimuli (stimuli 3 and 4) are presented, compared to the control stimulus. Stimulus 2 should also elicit enhanced freezing behaviour if the embryo was able to associate the predator cue with the alarm cue (i.e.&nbsp;associative learning occurred in embryos indicating evidence for embryonic learning)</p>
+<p>Researchers found that before stimulus use, larvae from predator-risk environments (env. 3 and 4) had decreased swimming activity. This is in conjunction with earlier mentioned studies, where it was shown that embryos which experience predator indicative cues showed an overall decrease in activity in post-embryonic stages. Upon stimulus usage, the same trend followed, larvae from predator-risk environments had an overall decreased swimming activity for all stimuli administration instances. Both these results indicate that the larvae from predator risk environments (env. 3 and 4) showed enhanced predator avoidance behaviour compared to larvae from non-predator risk environments (env. 1 and 2). In the case of larvae from environment 4 (predator + alarm cues), when the predator cue was administered, it showed reduced swimming activity compared to the control. But the difference was not statistically significant. The level of significance for this study was chosen to be <span class="math inline">\(\alpha = 0.05\)</span> and the p-value for the difference between swimming activity when predator cue stimulus was used compared to control stimulus usage was 0.05 (same as the <span class="math inline">\(\alpha\)</span> value), as reported in the paper. But that does not rule out its biological significance and the researchers assert that associative learning has occurred. For larvae from environment 1 (control), except for the control stimulus, all other stimuli administration resulted in reduced swimming activity. This was a strange finding and the researchers suggested that it might be because of neophobia.</p>
+<p>The next anti-predatory behaviour researchers looked at was predator evasion behaviour. As mentioned before, researchers hypothesized that larvae from predator-risk environments (env. 3 and 4) should show enhanced evasion behaviours. To quantify evasion behaviour, two parameters were measured; maximal body curvature and latency to respond to simulated predator attack. When a fish tries to escape from a predator, it bends its body into a “C” shape to generate momentum drag. The maximal body curvature is the angle formed when the “C” shape is formed in a fish. A shorter angle means that the body bend is greater indicating an enhanced escape behaviour. Overall, it was found that predator risk environments (env. 3 and 4) have resulted in reduced body curvature angle, indicating enhanced evasion behaviour in the larvae. But the evidence for associative learning was not present in this case, as for larvae from environment 4 (predator + alarm cues), upon predator cue administration, the maximal body curvature angle was not significantly different from the control. Latency to respond was found to be independent of embryonic environment and stimulus administration, as no change was observed between the groups. This indicates that post-embryonic behaviour can have varying levels of susceptibility to modification via embryonic learning.</p>
+</section><section id="conclusion" class="level2" data-number="6"><h2 data-number="6" class="anchored" data-anchor-id="conclusion">
+<span class="header-section-number">6</span> Conclusion</h2>
+<p>The researchers showed, for the first time in fatheaded minnow embryos, that they can detect conspecific alarm cues, moreover, they also showed that;</p>
+<ol type="1">
+<li>In addition to detecting conspecific alarm cues, the embryos, in response to its detection also modulated their embryonic locomotor activity to become cryptic, indicating an immediate adaptive response within the embryos</li>
+<li>Embryonic experience overall enhanced predator avoidance and evasion behaviours</li>
+<li>Embryonic associative learning only modulated predator avoidance and not evasion behaviour in the larvae, indicating a varying level of susceptibility to modification via embryonic learning</li>
+</ol>
+<p>The evidence for associative learning in this study did not achieve statistical significance and was in a borderline area (p = 0.05, same as <span class="math inline">\(\alpha = 0.05\)</span>) but that does not mean there is no biological significance. As sample sizes were adequate, we can explore some possible future directions.</p>
+<ol type="1">
+<li>The predator cue used in this study came from a known egg predator of fathead minnow, the blue gill sunfish (<em>Lepomis macrochirus</em>). Using another predator cue in association with the conspecific alarm cue can mitigate any possible intrinsic effect the previous predator cue had in learning.</li>
+<li>As fathead minnows were trained to associate predator cues to conspecific alarm cues throughout 5 days post fertilization as embryos and were only tested 22 days post fertilization as larvae. There was a significant time gap between training and testing which might have corroded its memory. But fathead minnows are known to form long-lasting associations between odour cues and other cues. In an earlier study <span class="citation" data-cites="brown_fathead_1994">(<a href="#ref-brown_fathead_1994" role="doc-biblioref">28</a>)</span>, fathead minnow was shown to distinguish between familiar shoal mates and unfamiliar conspecifics, and they were able to maintain this discriminability even after 2 months of separation suggesting evidence for a long-lasting memory. I did not find any other studies which have exclusively looked at learning and memory in fathead minnow. An interesting experiment to follow up would be, training fathead minnow embryos to associate a predator cue to the conspecific alarm and testing this association at different ages after hatching. This can again check if embryonic associative learning occurred? if it occurred then how does the memory fare with increasing time interval between last association and larval age.</li>
+</ol>
+<p>In conclusion, this study <span class="citation" data-cites="crowder_embryonic_2022">(<a href="#ref-crowder_embryonic_2022" role="doc-biblioref">1</a>)</span> showcased a whole new aspect of learning in fathead minnow (<em>Pimephales promelas</em>) which opens up new avenues of research questions given their peculiar behaviour and life history.</p>
+<section id="last-updated-on" class="level4 unnumbered unlisted"><h4 class="unnumbered unlisted anchored" data-anchor-id="last-updated-on">Last updated on</h4>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "2022-07-22 14:51:03 IST"</code></pre>
+</div>
+</div>
+
+
+<!-- -->
+
+
+</section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="doc-bibliography">
+<div id="ref-crowder_embryonic_2022" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">1. </div>
+<div class="csl-right-inline">
+<strong>Crowder C</strong>, <strong>Ward J</strong>. Embryonic antipredator defenses and behavioral carryover effects in the fathead minnow (<span>Pimephales</span> promelas). <em>Behavioral Ecology and Sociobiology</em> 76: 27, 2022. doi: <a href="https://doi.org/10.1007/s00265-022-03136-2">10.1007/s00265-022-03136-2</a>.</div>
+</div>
+<div id="ref-menzel_honeybee_2012" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">2. </div>
+<div class="csl-right-inline">
+<strong>Menzel R</strong>. The honeybee as a model for understanding the basis of cognition. <em>Nature Reviews Neuroscience</em> 13: 758–768, 2012. doi: <a href="https://doi.org/10.1038/nrn3357">10.1038/nrn3357</a>.</div>
+</div>
+<div id="ref-toft_behavioral_1999" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">3. </div>
+<div class="csl-right-inline">
+<strong>Toft S</strong>, <strong>Wise DH</strong>. Behavioral and ecophysiological responses of a generalist predator to single- and mixed-species diets of different quality. <em>Oecologia</em> 119: 198–207, 1999. doi: <a href="https://doi.org/10.1007/s004420050777">10.1007/s004420050777</a>.</div>
+</div>
+<div id="ref-collett_visual_1992" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">4. </div>
+<div class="csl-right-inline">
+<strong>Collett TS</strong>, <strong>Dillmann E</strong>, <strong>Giger A</strong>, <strong>Wehner R</strong>. Visual landmarks and route following in desert ants. <em>Journal of Comparative Physiology A</em> 170: 435–442, 1992. doi: <a href="https://doi.org/10.1007/BF00191460">10.1007/BF00191460</a>.</div>
+</div>
+<div id="ref-brenowitz_song_2005" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">5. </div>
+<div class="csl-right-inline">
+<strong>Brenowitz EA</strong>, <strong>Beecher MD</strong>. Song learning in birds: Diversity and plasticity, opportunities and challenges. <em>Trends in Neurosciences</em> 28: 127–132, 2005. doi: <a href="https://doi.org/10.1016/j.tins.2005.01.004">10.1016/j.tins.2005.01.004</a>.</div>
+</div>
+<div id="ref-blackiston_retention_2008" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">6. </div>
+<div class="csl-right-inline">
+<strong>Blackiston DJ</strong>, <strong>Casey ES</strong>, <strong>Weiss MR</strong>. Retention of <span>Memory</span> through <span>Metamorphosis</span>: <span>Can</span> a <span>Moth</span> <span>Remember</span> <span>What</span> <span>It</span> <span>Learned</span> <span>As</span> a <span>Caterpillar</span>? <em>PLOS ONE</em> 3: e1736, 2008. doi: <a href="https://doi.org/10.1371/journal.pone.0001736">10.1371/journal.pone.0001736</a>.</div>
+</div>
+<div id="ref-ray_survival_1999" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">7. </div>
+<div class="csl-right-inline">
+<strong>Ray S</strong>. Survival of olfactory memory through metamorphosis in the fly <span>Musca</span> domestica. <em>Neuroscience Letters</em> 259: 37–40, 1999. doi: <a href="https://doi.org/10.1016/S0304-3940(98)00892-1">10.1016/S0304-3940(98)00892-1</a>.</div>
+</div>
+<div id="ref-warkentin_environmentally_2011" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">8. </div>
+<div class="csl-right-inline">
+<strong>Warkentin KM</strong>. Environmentally <span>Cued</span> <span>Hatching</span> across <span>Taxa</span>: <span>Embryos</span> <span>Respond</span> to <span>Risk</span> and <span>Opportunity</span>. <em>Integrative and Comparative Biology</em> 51: 14–25, 2011. doi: <a href="https://doi.org/10.1093/icb/icr017">10.1093/icb/icr017</a>.</div>
+</div>
+<div id="ref-mathis_learning_2008" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">9. </div>
+<div class="csl-right-inline">
+<strong>Mathis A</strong>, <strong>Ferrari MCO</strong>, <strong>Windel N</strong>, <strong>Messier F</strong>, <strong>Chivers DP</strong>. Learning by embryos and the ghost of predation future. <em>Proceedings of the Royal Society B: Biological Sciences</em> 275: 2603–2607, 2008. doi: <a href="https://doi.org/10.1098/rspb.2008.0754">10.1098/rspb.2008.0754</a>.</div>
+</div>
+<div id="ref-guibe_food_2012" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">10. </div>
+<div class="csl-right-inline">
+<strong>Guibé M</strong>, <strong>Poirel N</strong>, <strong>Houdé O</strong>, <strong>Dickel L</strong>. Food imprinting and visual generalization in embryos and newly hatched cuttlefish, <span>Sepia</span> officinalis. <em>Animal Behaviour</em> 84: 213–217, 2012. doi: <a href="https://doi.org/10.1016/j.anbehav.2012.04.035">10.1016/j.anbehav.2012.04.035</a>.</div>
+</div>
+<div id="ref-mezrai_awareness_2020" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">11. </div>
+<div class="csl-right-inline">
+<strong>Mezrai N</strong>, <strong>Arduini L</strong>, <strong>Dickel L</strong>, <strong>Chiao C-C</strong>, <strong>Darmaillacq A-S</strong>. Awareness of danger inside the egg: <span>Evidence</span> of innate and learned predator recognition in cuttlefish embryos. <em>Learning &amp; Behavior</em> 48: 401–410, 2020. doi: <a href="https://doi.org/10.3758/s13420-020-00424-7">10.3758/s13420-020-00424-7</a>.</div>
+</div>
+<div id="ref-horn_retention_2019" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">12. </div>
+<div class="csl-right-inline">
+<strong>Horn ME</strong>, <strong>Ferrari MCO</strong>, <strong>Chivers DP</strong>. Retention of learned predator recognition in embryonic and juvenile rainbow trout. <em>Behavioral Ecology</em> 30: 1575–1582, 2019. doi: <a href="https://doi.org/10.1093/beheco/arz116">10.1093/beheco/arz116</a>.</div>
+</div>
+<div id="ref-cox_predation_1993" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">13. </div>
+<div class="csl-right-inline">
+<strong>Cox DL</strong>, <strong>Koob TJ</strong>. Predation on elasmobranch eggs. <em>Environmental Biology of Fishes</em> 38: 117–125, 1993. doi: <a href="https://doi.org/10.1007/BF00842908">10.1007/BF00842908</a>.</div>
+</div>
+<div id="ref-kempster_survival_2013" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">14. </div>
+<div class="csl-right-inline">
+<strong>Kempster RM</strong>, <strong>Hart NS</strong>, <strong>Collin SP</strong>. Survival of the <span>Stillest</span>: <span>Predator</span> <span>Avoidance</span> in <span>Shark</span> <span>Embryos</span>. <em>PLOS ONE</em> 8: e52551, 2013. doi: <a href="https://doi.org/10.1371/journal.pone.0052551">10.1371/journal.pone.0052551</a>.</div>
+</div>
+<div id="ref-gervais_friend_2021" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">15. </div>
+<div class="csl-right-inline">
+<strong>Gervais CR</strong>, <strong>Nay T</strong>, <strong>Brown C</strong>, <strong>Gervais CR</strong>, <strong>Nay T</strong>, <strong>Brown C</strong>. Friend or foe? <span>Development</span> of odour detection, differentiation and antipredator response in an embryonic elasmobranch. <em>Marine and Freshwater Research</em> 72: 942–949, 2021. doi: <a href="https://doi.org/10.1071/MF20108">10.1071/MF20108</a>.</div>
+</div>
+<div id="ref-atherton_active_2015" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">16. </div>
+<div class="csl-right-inline">
+<strong>Atherton JA</strong>, <strong>McCormick MI</strong>. Active in the sac: Damselfish embryos use innate recognition of odours to learn predation risk before hatching. <em>Animal Behaviour</em> 103: 1–6, 2015. doi: <a href="https://doi.org/10.1016/j.anbehav.2015.01.033">10.1016/j.anbehav.2015.01.033</a>.</div>
+</div>
+<div id="ref-mathiron_individual_2015" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">17. </div>
+<div class="csl-right-inline">
+<strong>Mathiron AGE</strong>, <strong>Crane AL</strong>, <strong>Ferrari MCO</strong>. Individual vs. Social learning of predator information in fish: Does group size affect learning efficacy? <em>Behavioral Ecology and Sociobiology</em> 69: 939–949, 2015. doi: <a href="https://doi.org/10.1007/s00265-015-1905-1">10.1007/s00265-015-1905-1</a>.</div>
+</div>
+<div id="ref-mcmillan_agonistic_1974" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">18. </div>
+<div class="csl-right-inline">
+<strong>McMillan VE</strong>, <strong>Smith JF</strong>. Agonistic and reproductive behaviour of the fathead minnow (<span>Pimephales</span> promelas <span>Rafinesque</span>). <em>Zeitschrift für Tierpsychologie</em> 34: 25–58, 1974.</div>
+</div>
+<div id="ref-unger_nest_1983" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">19. </div>
+<div class="csl-right-inline">
+<strong>Unger LM</strong>. Nest defense by deceit in the fathead minnow, <span>Pimephales</span> promelas. <em>Behavioral Ecology and Sociobiology</em> 13: 125–130, 1983. doi: <a href="https://doi.org/10.1007/BF00293802">10.1007/BF00293802</a>.</div>
+</div>
+<div id="ref-v_frisch_uber_1942" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">20. </div>
+<div class="csl-right-inline">
+<strong>Frisch K v.</strong> Über einen <span>Schreckstoff</span> der <span>Fischhaut</span> und seine biologische <span>Bedeutung</span>. <em>Zeitschrift für vergleichende Physiologie</em> 29: 46–145, 1942. doi: <a href="https://doi.org/10.1007/BF00304445">10.1007/BF00304445</a>.</div>
+</div>
+<div id="ref-smith_role_1995" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">21. </div>
+<div class="csl-right-inline">
+<strong>Smith RJF</strong>, <strong>Wisenden BD</strong>, <strong>Chivers DP</strong>. The <span>Role</span> of <span>Experience</span> in the <span>Response</span> of <span>Fathead</span> <span>Minnows</span> (<span>Pimephales</span> <span>Promelas</span>) <span>To</span> <span>Skin</span> <span>Extract</span> of <span>Iowa</span> <span>Darters</span> (<span>Etheostoma</span> <span>Exile</span>). <em>Behaviour</em> 132: 665–674, 1995. doi: <a href="https://doi.org/10.1163/156853995X00072">10.1163/156853995X00072</a>.</div>
+</div>
+<div id="ref-lawrence_behavioral_1989" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">22. </div>
+<div class="csl-right-inline">
+<strong>Lawrence BJ</strong>, <strong>Smith RJF</strong>. Behavioral response of solitary fathead minnows,<span>Pimephales</span> promelas, to alarm substance. <em>Journal of Chemical Ecology</em> 15: 209–219, 1989. doi: <a href="https://doi.org/10.1007/BF02027783">10.1007/BF02027783</a>.</div>
+</div>
+<div id="ref-mathis_chemical_1993" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">23. </div>
+<div class="csl-right-inline">
+<strong>Mathis A</strong>, <strong>Smith RJF</strong>. Chemical alarm signals increase the survival time of fathead minnows (<span>Pimephales</span> promelas) during encounters with northern pike (<span>Esox</span> <span>Lucius</span>). <em>Behavioral Ecology</em> 4: 260–265, 1993. doi: <a href="https://doi.org/10.1093/beheco/4.3.260">10.1093/beheco/4.3.260</a>.</div>
+</div>
+<div id="ref-chivers_role_1994" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">24. </div>
+<div class="csl-right-inline">
+<strong>Chivers DP</strong>, <strong>Smith RJF</strong>. The role of experience and chemical alarm signalling in predator recognition by fathead minnows, <span>Pimephales</span> promelas. <em>Journal of Fish Biology</em> 44: 273–285, 1994. doi: <a href="https://doi.org/10.1111/j.1095-8649.1994.tb01205.x">10.1111/j.1095-8649.1994.tb01205.x</a>.</div>
+</div>
+<div id="ref-divino_importance_2008" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">25. </div>
+<div class="csl-right-inline">
+<strong>Divino JN</strong>, <strong>Tonn WM</strong>. Importance of <span>Nest</span> and <span>Paternal</span> <span>Characteristics</span> for <span>Hatching</span> <span>Success</span> in <span>Fathead</span> <span>Minnow</span>. <em>Copeia</em> 2008: 920–930, 2008. doi: <a href="https://doi.org/10.1643/CE-06-245">10.1643/CE-06-245</a>.</div>
+</div>
+<div id="ref-kusch_effects_2004" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">26. </div>
+<div class="csl-right-inline">
+<strong>Kusch RC</strong>, <strong>Chivers DP</strong>. The effects of crayfish predation on phenotypic and life-history variation in fathead minnows. <em>Canadian Journal of Zoology</em> 82: 917–921, 2004. doi: <a href="https://doi.org/10.1139/z04-066">10.1139/z04-066</a>.</div>
+</div>
+<div id="ref-horn_embryonic_2021" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">27. </div>
+<div class="csl-right-inline">
+<strong>Horn ME</strong>, <strong>Chivers DP</strong>. Embryonic exposure to predation risk and hatch time variation in fathead minnows. <em>PLOS ONE</em> 16: e0255961, 2021. doi: <a href="https://doi.org/10.1371/journal.pone.0255961">10.1371/journal.pone.0255961</a>.</div>
+</div>
+<div id="ref-brown_fathead_1994" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">28. </div>
+<div class="csl-right-inline">
+<strong>Brown GE</strong>, <strong>Smith RJF</strong>. Fathead minnows use chemical cues to discriminate natural shoalmates from unfamiliar conspecifics. <em>Journal of Chemical Ecology</em> 20: 3051–3061, 1994. doi: <a href="https://doi.org/10.1007/BF02033710">10.1007/BF02033710</a>.</div>
+</div>
+</div></section><section class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+<ol>
+<li id="fn1" role="doc-endnote"><p>Crabs with at least half the carapace area covered with white spots<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Crabs with dull brown carapace<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>Group of fish that stay together for social reasons<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4" role="doc-endnote"><p>Group of fish moving together in a coordinated manner<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{johnson2022,
+  author = {Jewel Johnson},
+  title = {Learning Starts in the Embryo for Fathead Minnow Fish},
+  date = {2022-06-22},
+  url = {https://jeweljohnsonj.github.io/one-carat-blog//posts/research_article_embryonic_learning/index_post.html},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-johnson2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
+<div class=""><strong>Jewel Johnson</strong>. Learning starts
+in the embryo for fathead minnow fish [Online]. 2022. <a href="https://jeweljohnsonj.github.io/one-carat-blog//posts/research_article_embryonic_learning/index_post.html">https://jeweljohnsonj.github.io/one-carat-blog//posts/research_article_embryonic_learning/index_post.html</a>.</div>
+</div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    toggleBodyColorMode(window.document.querySelector("link#quarto-bootstrap"));
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script><script src="https://giscus.app/client.js" data-repo="jeweljohnsonj/one-carat-blog" data-repo-id="R_kgDOHW124A" data-category="General" data-category-id="DIC_kwDOHW124M4CPNVL" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Learning starts in the embryo for fathead minnow fish"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Embryonic learning occurs when an organism can learn while in its embryo stage. Learn how researchers showed that fathead minnow (*Pimephales promelas*) can detect conspecific alarm cues and associate them with predator cues to modulate both pre and post-embryonic behaviour"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "06/22/2022"</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> images/preview.png</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> Blog_Embryonic_Learning.bib</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> american-physiological-society</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [research article, scicom]</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## TL;DR</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>::: column-page</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Summary of the study [@crowder_embryonic_2022]</span><span class="co">](images/tl_dr.png)</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>Research article that is summarised in this post: Crowder, C., &amp; Ward, J. (2022). Embryonic antipredator defenses and behavioral carryover effects in the fathead minnow (Pimephales promelas). Behavioral Ecology and Sociobiology, 76(2), 27. <span class="co">[</span><span class="ot">https://doi.org/10.1007/s00265-022-03136-2</span><span class="co">](https://doi.org/10.1007/s00265-022-03136-2)</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>Learning is the process of acquiring information through experience. In nature, learning is ubiquitous in many different organisms and offers fitness advantages. Honeybees are known to learn floral features and utilize them during foraging <span class="co">[</span><span class="ot">Review: @menzel_honeybee_2012</span><span class="co">]</span>, Wolf spiders (family Lycosidae) learn to avoid lesser quality prey when higher quality alternative prey is presented along with it <span class="co">[</span><span class="ot">@toft_behavioral_1999</span><span class="co">]</span>, ants are known to learn and associate visual landmarks to their nest location <span class="co">[</span><span class="ot">@collett_visual_1992</span><span class="co">]</span>. Learning is also particularly effective during different life stages. The experience acquired during the juvenile phase of an animal is known to affect their behaviour in adulthood. Baby Zebra finches (*Taeniopygia guttata*) are known to innately possess a 'template song' which is used as a base to learn and mimic songs sung by adult conspecifics. If baby zebra finches are isolated and not allowed to mimic the song, then when they reach adulthood, they develop irregular and abnormally sound songs as compared to experienced adults <span class="co">[</span><span class="ot">@brenowitz_song_2005</span><span class="co">]</span>. In the Tobacco hornworm moth, an aversive odour stimulus when learned during their larval stage persists when they metamorphose into a moth <span class="co">[</span><span class="ot">@blackiston_retention_2008</span><span class="co">]</span>. In houseflies, adults develop a preference for olfactory cues that were exposed to them during their larval stage <span class="co">[</span><span class="ot">@ray_survival_1999</span><span class="co">]</span>. </span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Embryo is sensitive to external cues</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>Most studies in the context of learning focused on fitness advantages to adults when learning was manifested during the juvenile phase. But some organisms, especially oviparous organisms undergo their embryonic stage outside of their mother's body where the embryos are in direct contact with the surrounding environmental cues. They are also found to be highly sensitive to these cues. Perhaps the most famous evidence for this would be gender determination in reptiles, where the eggs respond to their surrounding ambient temperature. Here, gender is determined by temperature values after fertilization <span class="co">[</span><span class="ot">Review: @warkentin_environmentally_2011</span><span class="co">]</span>. In addition to sensing environmental cues, many studies have also reported evidence of "embryonic learning", where the embryos learn and form memories of surrounding environmental cues and utilize these memories in both the pre and post-embryonic period to modulate their behaviour. Some of the cases where the embryo is found to respond and/or learn external cues are given below;</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Eggs of ringed salamanders (*Ambystoma annulatum*, @fig-1) when exposed to chemical cues from predators resulted in reduced activity and greater shelter-seeking behaviour in larvae <span class="co">[</span><span class="ot">@mathis_learning_2008</span><span class="co">]</span>.</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Wood frog (*Rana sylvatica*, @fig-2) tadpoles learned to respond to chemical cues from unfamiliar predators when associated with conspecific alarm cues during the embryo stage <span class="co">[</span><span class="ot">@mathis_learning_2008</span><span class="co">]</span>.</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Naive cuttlefish (*Sepia officinalis*, @fig-3) prefer shrimps over crabs, but cuttlefish embryos which are visually conditioned with crabs preferred crabs over shrimps during the larval stage <span class="co">[</span><span class="ot">@guibe_food_2012</span><span class="co">]</span>. Also, cuttlefish embryos that had experience with white crabs^<span class="co">[</span><span class="ot">Crabs with at least half the carapace area covered with white spots</span><span class="co">]</span> developed a preference for white crabs over black crabs^<span class="co">[</span><span class="ot">Crabs with dull brown carapace</span><span class="co">]</span> during the larval stage <span class="co">[</span><span class="ot">@guibe_food_2012</span><span class="co">]</span>. Moreover, cuttlefish larvae that received embryonic experience with white crabs exhibited prey generalisation where they prefer black crabs over shrimp <span class="co">[</span><span class="ot">@guibe_food_2012</span><span class="co">]</span>. </span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Cuttlefish embryos (*Sepia officinalis*, @fig-3) are also seen to reduce their ventilation rate in the presence of predator indicative cues, possibly to remain cryptic. Furthermore, cuttlefish embryos are also found to associate non-predator cues with predator cues to invoke reduced ventilation behaviour which showcases evidence for associative learning in these embryos <span class="co">[</span><span class="ot">@mezrai_awareness_2020</span><span class="co">]</span>.</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Rainbow trout embryos (*Oncorhynchus mykiss*, @fig-4) can learn both conspecific and heterospecific alarm cues and, rainbow trout fish with embryonic learning experiences had longer memory retention compared to the ones with no embryonic learning experience <span class="co">[</span><span class="ot">@horn_retention_2019</span><span class="co">]</span>.</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Bamboo sharks (*Chiloscyllium punctatum*, @fig-5), like all sharks, have electroreception which is normally used to locate prey. But unlike most other sharks where the embryo is developed within the mother's body, in bamboo sharks egg sacks containing the embryo are oviposited on substrates which makes them vulnerable to predation <span class="co">[</span><span class="ot">@cox_predation_1993</span><span class="co">]</span>. It is known that bamboo shark embryos can use their electrosensory system to innately detect electric fields indicative of predators and thereby cease their respiratory gill movements to become cryptic <span class="co">[</span><span class="ot">@kempster_survival_2013</span><span class="co">]</span>.</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>Port Jackson shark (*Heterodontus portusjacksoni*, @fig-6) embryos are found to modulate their oxygen uptake rates against predator (Crested horn sharks; *Heterodontus galeatus*) and non-predator (Sand whiting; *Sillago ciliata*) olfactory cues with respect to their developmental stages. In earlier developmental stages, the embryos reduced oxygen uptake against non-predator odour cues but not against predator cues, indicating a cryptic response, possibly because of neophobia. At later developmental stages, the embryos increased oxygen uptake against predator cues and but not against non-predatory cues. This possibly indicates a fight-or-flight response where increased oxygen levels can contribute to enhanced capacity for aerobic or anaerobic activities that can aid in successful evasion by fleeing <span class="co">[</span><span class="ot">@gervais_friend_2021</span><span class="co">]</span>.</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span>Cinnamon clownfish embryos (*Amphiprion melanopus*, @fig-7) are found to detect conspecific alarm cues and associate them with predator cues which resulted in increased heart rates <span class="co">[</span><span class="ot">@atherton_active_2015</span><span class="co">]</span>. Increased heart rate is found to be positively correlated with anti-predator behaviours in fish.</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>These studies show that embryos can sense surrounding cues. The nature of surrounding cues also matters as some elicit innate behaviours and some don't elicit any behaviour at all. For cues eliciting innate behaviours, some of the above-mentioned studies have shown that embryos can associate novel cues to these innately known cues and thereby change behaviour during the pre and/or post-embryonic stage.</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>:::{..column-page}</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>::: {layout-ncol=2}</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Image by [Peter Paplanus](https://www.flickr.com/people/60601292@N02) from St. Louis, Missouri - [Ringed Salamander (*Ambystoma annulatum*)](https://www.flickr.com/photos/2ndpeter/43505895580/)</span><span class="co">](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Ringed_Salamander_%28Ambystoma_annulatum%29_%2843505895580%29.jpg/1920px-Ringed_Salamander_%28Ambystoma_annulatum%29_%2843505895580%29.jpg)</span>{#fig-1}</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Image by [Brian Gratwicke](https://www.flickr.com/people/19731486@N07) - [*Lithobates sylvaticus* (Woodfrog)](https://www.flickr.com/photos/briangratwicke/5899261066/). The wood frog is known as both *Lithobates sylvaticus* and *Rana sylvatica*</span><span class="co">](https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Lithobates_sylvaticus_%28Woodfrog%29.jpg/1280px-Lithobates_sylvaticus_%28Woodfrog%29.jpg)</span>{#fig-2}</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Image by Diego Delso - [Common cuttlefish (*Sepia officinalis*)](https://en.wikipedia.org/wiki/File:Sepia_com%C3%BAn_(Sepia_officinalis),_Parque_natural_de_la_Arr%C3%A1bida,_Portugal,_2020-07-21,_DD_62.jpg)</span><span class="co">](https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Sepia_com%C3%BAn_%28Sepia_officinalis%29%2C_Parque_natural_de_la_Arr%C3%A1bida%2C_Portugal%2C_2020-07-21%2C_DD_62.jpg/1280px-Sepia_com%C3%BAn_%28Sepia_officinalis%29%2C_Parque_natural_de_la_Arr%C3%A1bida%2C_Portugal%2C_2020-07-21%2C_DD_62.jpg)</span>{#fig-3}</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Image by Mike Anderson - [Female Rainbow trout (*Oncorhynchus mykiss*)](http://www.trophyfishingtn.com/coppermine/displayimage.php?album=16&amp;pid=1693#top_display_media).</span><span class="co">](https://upload.wikimedia.org/wikipedia/commons/1/1d/Female_Rainbow_Trout_in_hand.JPG)</span>{#fig-4}</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Image by [Zul M Rosle](https://www.flickr.com/people/23399714@N04) from Kuantan, Malaysia - [Brownbanded bambooshark (*Chiloscyllium punctatum*) at the KLCC Aquaria](https://www.flickr.com/photos/23399714@N04/3373286436/).</span><span class="co">](https://upload.wikimedia.org/wikipedia/commons/d/d0/Chiloscyllium_punctatum.jpg)</span>{#fig-5}</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Image by Mark Norman/Museum Victoria - [Port Jackson Shark (*Heterodontus portusjacksoni*) at Wilsons Promontory, Victoria](http://www.fishesofaustralia.net.au/home/species/1982).</span><span class="co">](https://upload.wikimedia.org/wikipedia/commons/3/35/Heterodontus_portusjacksoni_wilsons_promontory.jpg)</span>{#fig-6}</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Image by [Richard Ling](https://www.flickr.com/people/rling/) - [Red and Black Anemonefish (*Amphiprion melanopus*) in anemone (*Entacmaea quadricolor*). Steve's Bommie, Ribbon Reefs, Great Barrier Reef 177094512](https://www.flickr.com/photos/rling/438039254/).</span><span class="co">](https://upload.wikimedia.org/wikipedia/commons/3/35/Amphiprion_melanopus_in_Entacmaea_quadricolor.jpg)</span>{#fig-7}</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="fu">## Embryonic response to predatory cues</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>As seen earlier, embryonic response to predators is evident and this might be because of strong predation pressures as most aquatic oviparous organisms are highly vulnerable to egg predators. While most studies have looked at the effect of embryonic response in juvenile and adult life stages, it might also have an immediate effect on the embryo itself <span class="co">[</span><span class="ot">as seen in the Cuttlefish [@mezrai_awareness_2020], in Bamboo shark [@kempster_survival_2013], in Port Jackson shark [@gervais_friend_2021] and Cinnamon clownfish [@atherton_active_2015]</span><span class="co">]</span>. </span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>So meet fathead minnow fish (*Pimephales promelas*), who share the same fate of being embryonic prey as the above-mentioned ones. The Fathead minnow is a freshwater fish species native to North America. They live in a school of up to a hundred individuals <span class="co">[</span><span class="ot">@mathiron_individual_2015</span><span class="co">]</span> but during the onset of the breeding season. males depart from school and adopt a solitary lifestyle <span class="co">[</span><span class="ot">@mcmillan_agonistic_1974</span><span class="co">]</span>. Females of this species lay their eggs in sites guarded by a single male <span class="co">[</span><span class="ot">@unger_nest_1983</span><span class="co">]</span>, which hatch into larvae after 5 days of post-fertilization. They are some of the well-studied model organisms which display prominent anti-predatory behaviours. They are perhaps best known for "Schreckstoff" <span class="co">[</span><span class="ot">Paper is in German: @v_frisch_uber_1942</span><span class="co">]</span>, a chemical alarm signal, which is only produced when they suffer tissue damage, which occurs most often from predator attacks. Fathead minnow innately responds to these alarm cues and associates them with predator cues <span class="co">[</span><span class="ot">@smith_role_1995</span><span class="co">]</span>. With varying levels of these alarm cues, solitary individuals show a combination of anti-predatory behaviours that include, dashing, freezing, slowing and exploring <span class="co">[</span><span class="ot">@lawrence_behavioral_1989</span><span class="co">]</span>. If chased by predators, they show an increased rate of shoaling^<span class="co">[</span><span class="ot">Group of fish that stay together for social reasons</span><span class="co">]</span> and shooling^<span class="co">[</span><span class="ot">Group of fish moving together in a coordinated manner</span><span class="co">]</span> and, also show increased shelter-seeking behaviour <span class="co">[</span><span class="ot">@mathis_chemical_1993</span><span class="co">]</span>. Field studies have shown that they actively avoid areas containing heterospecific alarm cues <span class="co">[</span><span class="ot">@smith_role_1995</span><span class="co">]</span>. However, they are not reported to innately identify any predators <span class="co">[</span><span class="ot">@chivers_role_1994</span><span class="co">]</span>. </span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>This complex behaviour repertoire is only reported to be present in juveniles and adults (well no surprises there!). But fathead minnow starts their life cycle as eggs and faces high rates of predation <span class="co">[</span><span class="ot">@divino_importance_2008</span><span class="co">]</span>. The embryonic stage is by far the worst period to get predated on as the embryos are heavily handicapped due to their immobility. Nevertheless, they are known to alter hatching times in response to predator cues <span class="co">[</span><span class="ot">@kusch_effects_2004</span><span class="co">]</span>. Moreover, when predator cues in combination with cues indicating embryo damage were introduced to embryos, the developed larvae from these embryos were small in size, indicating loss of developmental maturity <span class="co">[</span><span class="ot">@kusch_effects_2004</span><span class="co">]</span>. But in the presence of conspecific alarm cues, hatching times remain unchanged <span class="co">[</span><span class="ot">@horn_embryonic_2021</span><span class="co">]</span>. Therefore these results suggest that fathead minnow embryos can sense environmental cues but clear-cut evidence was lacking. This is exactly what was explored by graduate student Christopher Crowder and Dr. Jessica Ward at Ball State University, Indiana, USA. in their recent paper <span class="co">[</span><span class="ot">@crowder_embryonic_2022</span><span class="co">]</span>. The researchers asked whether fathead embryos can innately detect alarm cues just like their adult counterparts and if they do, then does that embryonic experience affect pre and/or post-embryonic behaviours?</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="fu">## Methods</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>To initiate embryonic experience, researchers grew the embryos in four different environments imparting "predator-risk" and "non-predator-risk" experiences.</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>| Environment | Condition |</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>|---|---|</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>| Environment 1 | Embryos reared in a control condition (just water with no other cues) |</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>| Environment 2 | Embryos reared with predator cues |</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>| Environment 3 | Embryos reared with conspecific alarm cues |</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>| Environment 4 | Embryos reared with predator + conspecific alarm cues |</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>: Embryonic environment {#tbl-1}</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>Except for environments 1 and 2, all other environments indicated predator risk. Since the fatheaded minnow shows no innate behaviour against any predators, environment 2 (predator cue) should be similar to environment 1 (control). If associative learning occurs in fathead minnow embryos then the larvae which came from environment 4 should be able to associate the predator cue to the alarm cue, which can later be tested through behavioural assays. As adult fathead minnows are known to innately respond to conspecific alarm cues, environments 3 and 4 can be indicative of predation pressure and embryos should be able to detect them.</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>As fathead minnows show embryonic locomotor activity, it might make them conspicuous to egg predators. Interestingly, when locomotor activity was checked 5 days post fertilization, embryos from predator-risk environments (env. 3 and 4) showed lower motor activity, possibly indicating a cryptic response. This suggests that embryos can detect alarm cues like their adult counterparts.</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>After testing for locomotor activity, the embryos were then grouped according to the environments they were raised in and were placed in separate control tanks devoid of alarm or predator cues. The embryos were allowed to hatch, and at 22 days post fertilization, the larvae were tested for predator avoidance behaviour and predator evasion behaviour. The idea was that larvae from predator-risk environments should show enhanced predator avoidance and evasion behaviours.</span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>Therefore, researchers tested the larvae individually on a test arena where swimming activity was checked before and after applying a stimulus. Four different stimuli were used which were synonymous with the environments. Here swimming activity was measured, which acted as a proxy to the 'freezing' behaviour fathead minnow showed, which is a predator avoidance behaviour. Lower swimming activity corresponds to enhanced predator avoidance behaviour, as lower activity might make them more cryptic to predators.</span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>The four stimuli that were used are;</span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>| Stimulus | Condition |</span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>|---|---|</span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>| Stimulus 1 | Control (absence of predator or alarm cues) |</span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>| Stimulus 2 | Predator cue |</span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>| Stimulus 3 | Conspecific alarm cue |</span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>| Stimulus 4 | Predator + conspecific alarm cues |</span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>: Stimuli administered {#tbl-2}</span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>Larvae from the predator risk environments (env. 3 and 4) should show enhanced freezing behaviour when predator risk stimuli (stimuli 3 and 4) are presented, compared to the control stimulus. Stimulus 2 should also elicit enhanced freezing behaviour if the embryo was able to associate the predator cue with the alarm cue (i.e. associative learning occurred in embryos indicating evidence for embryonic learning) </span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>Researchers found that before stimulus use, larvae from predator-risk environments (env. 3 and 4) had decreased swimming activity. This is in conjunction with earlier mentioned studies, where it was shown that embryos which experience predator indicative cues showed an overall decrease in activity in post-embryonic stages. Upon stimulus usage, the same trend followed, larvae from predator-risk environments had an overall decreased swimming activity for all stimuli administration instances. Both these results indicate that the larvae from predator risk environments (env. 3 and 4) showed enhanced predator avoidance behaviour compared to larvae from non-predator risk environments (env. 1 and 2). In the case of larvae from environment 4 (predator + alarm cues), when the predator cue was administered, it showed reduced swimming activity compared to the control. But the difference was not statistically significant. The level of significance for this study was chosen to be $\alpha = 0.05$ and the p-value for the difference between swimming activity when predator cue stimulus was used compared to control stimulus usage was 0.05 (same as the $\alpha$ value), as reported in the paper. But that does not rule out its biological significance and the researchers assert that associative learning has occurred. For larvae from environment 1 (control), except for the control stimulus, all other stimuli administration resulted in reduced swimming activity. This was a strange finding and the researchers suggested that it might be because of neophobia.</span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>The next anti-predatory behaviour researchers looked at was predator evasion behaviour. As mentioned before, researchers hypothesized that larvae from predator-risk environments (env. 3 and 4) should show enhanced evasion behaviours. To quantify evasion behaviour, two parameters were measured; maximal body curvature and latency to respond to simulated predator attack. When a fish tries to escape from a predator, it bends its body into a "C" shape to generate momentum drag. The maximal body curvature is the angle formed when the "C" shape is formed in a fish. A shorter angle means that the body bend is greater indicating an enhanced escape behaviour. Overall, it was found that predator risk environments (env. 3 and 4) have resulted in reduced body curvature angle, indicating enhanced evasion behaviour in the larvae. But the evidence for associative learning was not present in this case, as for larvae from environment 4 (predator + alarm cues), upon predator cue administration, the maximal body curvature angle was not significantly different from the control. Latency to respond was found to be independent of embryonic environment and stimulus administration, as no change was observed between the groups. This indicates that post-embryonic behaviour can have varying levels of susceptibility to modification via embryonic learning.  </span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>The researchers showed, for the first time in fatheaded minnow embryos, that they can detect conspecific alarm cues, moreover, they also showed that;</span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>In addition to detecting conspecific alarm cues, the embryos, in response to its detection also modulated their embryonic locomotor activity to become cryptic, indicating an immediate adaptive response within the embryos</span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Embryonic experience overall enhanced predator avoidance and evasion behaviours</span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Embryonic associative learning only modulated predator avoidance and not evasion behaviour in the larvae, indicating a varying level of susceptibility to modification via embryonic learning</span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>The evidence for associative learning in this study did not achieve statistical significance and was in a borderline area (p = 0.05, same as $\alpha = 0.05$) but that does not mean there is no biological significance. As sample sizes were adequate, we can explore some possible future directions.</span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>The predator cue used in this study came from a known egg predator of fathead minnow, the blue gill sunfish (*Lepomis macrochirus*). Using another predator cue in association with the conspecific alarm cue can mitigate any possible intrinsic effect the previous predator cue had in learning. </span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>As fathead minnows were trained to associate predator cues to conspecific alarm cues throughout 5 days post fertilization as embryos and were only tested 22 days post fertilization as larvae. There was a significant time gap between training and testing which might have corroded its memory. But fathead minnows are known to form long-lasting associations between odour cues and other cues. In an earlier study <span class="co">[</span><span class="ot">@brown_fathead_1994</span><span class="co">]</span>, fathead minnow was shown to distinguish between familiar shoal mates and unfamiliar conspecifics, and they were able to maintain this discriminability even after 2 months of separation suggesting evidence for a long-lasting memory. I did not find any other studies which have exclusively looked at learning and memory in fathead minnow. An interesting experiment to follow up would be, training fathead minnow embryos to associate a predator cue to the conspecific alarm and testing this association at different ages after hatching. This can again check if embryonic associative learning occurred? if it occurred then how does the memory fare with increasing time interval between last association and larval age.</span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>In conclusion, this study <span class="co">[</span><span class="ot">@crowder_embryonic_2022</span><span class="co">]</span> showcased a whole new aspect of learning in fathead minnow (*Pimephales promelas*) which opens up new avenues of research questions given their peculiar behaviour and life history.</span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Last updated on {.unnumbered .unlisted}</span></span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer">
+      <div class="nav-footer-center">© 2022, Jewel Johnson</div>
+  </div>
+</footer>
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
