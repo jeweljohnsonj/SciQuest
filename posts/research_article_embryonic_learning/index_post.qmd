@@ -103,7 +103,7 @@ The next anti-predatory behaviour researchers looked at was predator evasion beh
 
 ## Conclusion
 
-The researchers showed, for the first time in fatheaded minnow embryos, that they can detect conspecific alarm cues, moreover, they also showed that;
+The researchers showed, for the first time in fathead minnow embryos (*Pimephales promelas*), that they can detect conspecific alarm cues, moreover, they also showed that;
 
 1. In addition to detecting conspecific alarm cues, the embryos, in response to its detection also modulated their embryonic locomotor activity to become cryptic, indicating an immediate adaptive response within the embryos
 2. Embryonic experience overall enhanced predator avoidance and evasion behaviours
