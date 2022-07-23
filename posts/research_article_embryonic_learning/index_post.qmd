@@ -1,6 +1,6 @@
 ---
 title: "Learning starts in the embryo for fathead minnow fish"
-description: "Embryonic learning occurs when an organism can learn while in its embryo stage. Learn how researchers showed that fathead minnow (*Pimephales promelas*) can detect conspecific alarm cues and associate them with predator cues to modulate both pre and post-embryonic behaviour"
+description: "Embryonic learning occurs when an organism can learn while in its embryo stage. Learn how researchers showed that fathead minnow embryos (*Pimephales promelas*) can detect conspecific alarm cues and associate them with predator cues to modulate both pre and post-embryonic behaviours"
 date: "07/22/2022"
 format: html
 image: images/preview.png
@@ -14,7 +14,7 @@ categories: [research article, scicom]
 ::: column-page
 ![Summary of the study [@crowder_embryonic_2022]](images/tl_dr.png)
 
-Research article that is summarised in this post: Crowder, C., & Ward, J. (2022). Embryonic antipredator defenses and behavioral carryover effects in the fathead minnow (Pimephales promelas). Behavioral Ecology and Sociobiology, 76(2), 27. [https://doi.org/10.1007/s00265-022-03136-2](https://doi.org/10.1007/s00265-022-03136-2)
+Research article that is summarised in this post: Crowder, C., & Ward, J. (2022). Embryonic antipredator defenses and behavioral carryover effects in the fathead minnow (*Pimephales promelas*). Behavioral Ecology and Sociobiology, 76(2), 27. [https://doi.org/10.1007/s00265-022-03136-2](https://doi.org/10.1007/s00265-022-03136-2)
 :::
 
 ## Introduction
