@@ -160,7 +160,7 @@ I have plotted the mean, median, and mode values for the plot and you can see th
 
 The variance of data is defined as the average squared difference from the mean of the data. It tells us how far each of our data points is from the mean value.
 
-[![Fig2: Variance in distributions. Credits: https://access-excel.tips/](http://cdn-0.access-excel.tips/wp-content/uploads/2015/05/variability.gif)](https://access-excel.tips/excel-range-variance-standard-deviation/)
+
 
 The formula for finding the variance is as follows;
 

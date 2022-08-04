@@ -711,14 +711,14 @@
     "href": "tutorials/stat_basic/project2.html#variance",
     "title": "Chapter 2: Distribution and variance",
     "section": "\n2 Variance",
-    "text": "2 Variance\nThe variance of data is defined as the average squared difference from the mean of the data. It tells us how far each of our data points is from the mean value.\n\n\nFig2: Variance in distributions. Credits: https://access-excel.tips/\n\n\nThe formula for finding the variance is as follows;\ns^{2} = \\frac{\\sum (x_{i} - \\bar{x})^{2}}{n - 1}\nWhere s^{2} is sample variance, x_{i} is your data point, \\bar{x} is mean and n is the sample size.\nFor a sufficiently large value of n, the equation for variance will become;\n\\sigma^{2} = \\frac{\\sum (x_{i} - \\bar{x})^{2}}{n} where \\sigma^{2} is called population variance.\nHere \\sigma is called the standard deviation of the data which we will see in the next chapter.\nWhen we compare both equations, you can see that the sample variance has n-1 in the denominator when compared to just n in population variance. The n-1 used in the formula is called the Bessel's correction which aims to improve the accuracy in determining the sample variance as close as the population variance."
+    "text": "2 Variance\nThe variance of data is defined as the average squared difference from the mean of the data. It tells us how far each of our data points is from the mean value.\nThe formula for finding the variance is as follows;\ns^{2} = \\frac{\\sum (x_{i} - \\bar{x})^{2}}{n - 1}\nWhere s^{2} is sample variance, x_{i} is your data point, \\bar{x} is mean and n is the sample size.\nFor a sufficiently large value of n, the equation for variance will become;\n\\sigma^{2} = \\frac{\\sum (x_{i} - \\bar{x})^{2}}{n} where \\sigma^{2} is called population variance.\nHere \\sigma is called the standard deviation of the data which we will see in the next chapter.\nWhen we compare both equations, you can see that the sample variance has n-1 in the denominator when compared to just n in population variance. The n-1 used in the formula is called the Bessel's correction which aims to improve the accuracy in determining the sample variance as close as the population variance."
   },
   {
     "objectID": "tutorials/stat_basic/project2.html#references",
     "href": "tutorials/stat_basic/project2.html#references",
     "title": "Chapter 2: Distribution and variance",
     "section": "\n3 References",
-    "text": "3 References\n\nNotes on skewed data distributions.\nMore notes on variance.\nMore notes on Basel correction. 1 and 2\n\nLast updated on\n\n\n[1] \"2022-08-04 01:35:31 IST\""
+    "text": "3 References\n\nNotes on skewed data distributions.\nMore notes on variance.\nMore notes on Basel correction. 1 and 2\n\nLast updated on\n\n\n[1] \"2022-08-04 22:03:55 IST\""
   },
   {
     "objectID": "tutorials/stat_basic/project3.html",
