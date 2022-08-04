@@ -1,0 +1,39 @@
+# options specified here will apply to all posts in this folder
+
+# Freeze computed outputs
+freeze: auto
+
+# Enable banner style title blocks
+title-block-banner: true
+
+# Enable CC licence appendix
+license: "CC BY"
+
+# Default for table of contents
+toc: true
+toc-depth: 3
+toc-title: On this page
+number-sections: true
+highlight-style: github
+html-math-method: katex
+smooth-scroll: true
+number-sections: true
+code-link: true
+code-tools: true
+df-print: paged
+
+# Default knitr options
+execute:
+  warning: false
+
+# Enable hypothesis
+comments:
+  hypothesis: true
+
+# Default author
+author:
+  - name: Jewel Johnson
+    url: https://jeweljohnsonj.github.io/one-carat-blog/
+
+# Default fields for citation
+citation: true

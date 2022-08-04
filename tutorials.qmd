@@ -1,0 +1,58 @@
+---
+title: "Tutorial posts"
+subtitle: |
+  Immortalizing the things I learned.
+listing: 
+  - id: data-viz
+    contents: "tutorials/data_viz/*.qmd"
+    type: grid
+  - id: data-man
+    contents: "tutorials/data_man/*.qmd"
+    type: grid
+  - id: stat-basic
+    contents: "tutorials/stat_basic/*.qmd"
+    type: grid
+  - id: stat-model
+    contents: "tutorials/stat_model/*.qmd"
+    type: grid
+    sort:
+      - "date desc"
+    categories: numbered
+    sort-ui: true
+    filter-ui: true
+page-layout: full
+image: /media/github_read.png
+comments: false
+title-block-banner: true
+citation: false
+---
+
+## Data visualization using R
+
+:::{#data-viz}
+:::
+
+Master the art of data visualization using the `{ggplot2}` package in R
+
+## Data manipulation using R
+
+:::{#data-man}
+:::
+
+Tidy your data using power cleaning tools provided by the `{tidyr}` and `{dplyr}` packages in R
+
+## Basic statistics using R
+
+:::{#stat-basic}
+:::
+
+Now you will never be intimidated by the p-values.
+
+## Statisitcal modelling using R
+
+:::{#stat-model}
+:::
+
+So you graduated from basic statistics? Good!
+
+<a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>
