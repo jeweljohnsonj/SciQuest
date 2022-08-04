@@ -15,7 +15,12 @@ format:
 :::{.callout-important}
 ## Very important message
 
-Everyone please note that I am moving away from GitHub pages to Netifly to deploy my blog. Therefore please use the new [link](https://one-carat-blog.netlify.app/) to visit this blog. If you are using the old link (GitHub page link) : https://jeweljohnsonj.github.io/one-carat-blog/ then please move to the [new link](https://one-carat-blog.netlify.app/) as I will retire the GitHub page link in coming weeks. Thank you for your support.
+Everyone please note that I am moving away from GitHub pages to Netifly to deploy my blog. Therefore please use the [new link](https://one-carat-blog.netlify.app/) to visit this blog.
+
+
+To check if you are using the new link, while seeing this message, please look at the link in your browser. If it is `https://one-carat-blog.netlify.app/` then no worries. But if it is `https://jeweljohnsonj.github.io/one-carat-blog/`, then you are using the old link. Please use the [new link](https://one-carat-blog.netlify.app/). Thank you for your support.
+
+I will retire the GitHub page link in the coming weeks. 
 :::
 
 ## Welcome to One Carat Blog
