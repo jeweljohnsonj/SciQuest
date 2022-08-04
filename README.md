@@ -1,6 +1,6 @@
 # One carat blog
 
-![One carat blog](https://github.com/jeweljohnsonj/one-carat-blog/blob/main/github_read.png?raw=true)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a141b0a6-24e6-4c18-a65f-33c0b98797ab/deploy-status)](https://app.netlify.com/sites/one-carat-blog/deploys)
 
 Source files for my personal blog made using the [quarto](https://quarto.org/) package.
 
