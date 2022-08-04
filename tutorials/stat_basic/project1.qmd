@@ -1,0 +1,52 @@
+---
+title: "Chapter 1: Introduction to statistics with R"
+description: "Learn the basics of statistics and how to do them with R"
+date: "05/21/2022"
+format: html
+categories: [statistics, basic statistics]
+---
+
+::: {layout-ncol="1"}
+![Image by [Isaac Smith](https://unsplash.com/@isaacmsmith) on [Unsplash](https://unsplash.com)](https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80){.preview-image}
+:::
+
+## Introduction to statistics
+
+This article, along with the related articles to this topic, is a culmination of knowledge that I gained during my time in IISER-TVM, when I took the BIO4203 course named **Biological Data Analysis** offered in 2019. The course was taught to me by [Dr. Ravi Maruthachalam](https://www.iisertvm.ac.in/faculty/ravi) who is an excellent teacher and an inspiring researcher. The course helped me immensely by allowing me to understand the core basics of statistics and more importantly, remove any misconceptions about it. I hope I can deliver whatever I learned effectively through the series of articles that will be available regarding this topic, starting with this one.
+
+::: callout-warning
+# Word of caution
+
+If you notice any typos or errors in any of the pages, you can request an edit of the page which will be shown at end of the table of contents on the right side. Thank you.
+:::
+
+The topics I want to cover include;
+
+1.  Introduction to statistics
+2.  [Distribution and variance](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project2.html)
+3.  [Standard error and standard deviation](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project3.html)
+4.  [p-value and level of significance](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project4.html)
+5.  [Type I error and type II error](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project5.html)
+6.  [Confidence interval and effect size](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project6.html)
+7.  [Parametric test and assumptions](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project7.html)
+8.  [Non-parametric test and assumptions](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project8.html)
+9.  [Tests for multiple groups of data](https://jeweljohnsonj.github.io/one-carat-blog/articles/stat/project9.html)
+
+With that being said, the articles will be focused on enriching the intuition behind the concepts rather than the pure math behind them. In addition, I will also be explaining how one can do the same tests using R. The articles will be supplemented by published research papers related to the topic.
+
+## Descriptive statistics
+
+Applied statistics is broadly categorized into `descriptive statistics` and `inferential statistics`. Descriptive statistics deals with the data at hand. It uses different ways to summarise and inspect the data in hand and does not go beyond the data. If the data is for a population then the characteristics used are called `parameters`. Some of those descriptive parameters include the mean, median, and mode which are used to elucidate the central tendency of the data. For measuring variability, there is a range, quartiles, and standard deviation which we will see later in greater detail.
+
+## Inferential statistics
+
+Inferential statistics are used to understand patterns of a population using sample data from it. Since collecting data for a population is tedious, we take a sample from that population, which acts as a true representative of the population. Through sampling methods and hypothesis testing, patterns seen within the sample can be extrapolated to the whole population. The characteristics used for sample data are called `statistics`. Some of the inferential statistics include sample mean, standard deviation, etc.
+
+#### Last updated on {.unnumbered .unlisted}
+
+```{r}
+#| echo: false
+Sys.time()
+```
+
+<a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>

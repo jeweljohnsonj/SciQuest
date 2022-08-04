@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.37">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>one carat blog - Tutorial posts</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./favicon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-data-viz .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-data-viz'] = new List('listing-data-viz', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-data-man .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-data-man'] = new List('listing-data-man', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-stat-basic .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-stat-basic'] = new List('listing-stat-basic', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-stat-model .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-stat-model'] = new List('listing-stat-model', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EVCS615JQR"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+
+<link rel="stylesheet" href="styles.css">
+<meta name="twitter:title" content="one carat blog - Tutorial posts">
+<meta name="twitter:description" content="Immortalizing the things I learned.">
+<meta name="twitter:image" content="https://jeweljohnsonj.github.io/one-carat-blog//media/github_read.png">
+<meta name="twitter:image-height" content="597">
+<meta name="twitter:image-width" content="1080">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <img src="./favicon.png" alt="">
+    <span class="navbar-title">one carat blog</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./blog.html">Blog</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./tutorials.html" aria-current="page">Tutorials</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://jeweljohnsonj.github.io/jewel_resume/">About me</a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/jeweljohnsonj/one-carat-blog"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/jeweljohnsonj"><i class="bi bi-twitter" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Tutorial posts</h1>
+            <p class="subtitle lead"></p><p>Immortalizing the things I learned.</p><p></p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#data-visualization-using-r" id="toc-data-visualization-using-r" class="nav-link active" data-scroll-target="#data-visualization-using-r"> <span class="header-section-number">1</span> Data visualization using R</a></li>
+  <li><a href="#data-manipulation-using-r" id="toc-data-manipulation-using-r" class="nav-link" data-scroll-target="#data-manipulation-using-r"> <span class="header-section-number">2</span> Data manipulation using R</a></li>
+  <li><a href="#basic-statistics-using-r" id="toc-basic-statistics-using-r" class="nav-link" data-scroll-target="#basic-statistics-using-r"> <span class="header-section-number">3</span> Basic statistics using R</a></li>
+  <li><a href="#statisitcal-modelling-using-r" id="toc-statisitcal-modelling-using-r" class="nav-link" data-scroll-target="#statisitcal-modelling-using-r"> <span class="header-section-number">4</span> Statisitcal modelling using R</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/edit/main/tutorials.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(17)</span></div><div class="category" data-category="basic statistics">basic statistics <span class="quarto-category-count">(9)</span></div><div class="category" data-category="data visualization">data visualization <span class="quarto-category-count">(4)</span></div><div class="category" data-category="data wrangling">data wrangling <span class="quarto-category-count">(3)</span></div><div class="category" data-category="dplyr">dplyr <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ggplot2">ggplot2 <span class="quarto-category-count">(4)</span></div><div class="category" data-category="statistics">statistics <span class="quarto-category-count">(9)</span></div><div class="category" data-category="tidyr">tidyr <span class="quarto-category-count">(2)</span></div></div></div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+
+
+
+
+<section id="data-visualization-using-r" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="data-visualization-using-r"><span class="header-section-number">1</span> Data visualization using R</h2>
+<div id="listing-data-viz" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="ggplot2,data visualization" data-listing-date-sort="1638383400000" data-listing-file-modified-sort="1659554488121" data-listing-reading-time-sort="9.705">
+<a href="./tutorials/data_viz/project1.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./tutorials/data_viz/images/ggplot2.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Chapter 1: Data visualization using ggplot2
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('ggplot2'); return false;">
+ggplot2
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('data visualization'); return false;">
+data visualization
+</div>
+</div>
+<div class="card-text listing-description">
+Learn how to plot different types of graphs using the ggplot2 package
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Jewel Johnson
+</div>
+<div class="listing-date">
+Dec 2, 2021
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="ggplot2,data visualization" data-listing-date-sort="1638556200000" data-listing-file-modified-sort="1659553986593" data-listing-reading-time-sort="10.615">
+<a href="./tutorials/data_viz/project2.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./tutorials/data_viz/images/ggplot2_1.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Chapter 2: Customizing graphs in ggplot2
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('ggplot2'); return false;">
+ggplot2
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('data visualization'); return false;">
+data visualization
+</div>
+</div>
+<div class="card-text listing-description">
+Learn how to customize the aesthetics, labels and axes of a graph in ggplot2
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Jewel Johnson
+</div>
+<div class="listing-date">
+Dec 4, 2021
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="ggplot2,data visualization" data-listing-date-sort="1638988200000" data-listing-file-modified-sort="1659553988350" data-listing-reading-time-sort="34.91">
+<a href="./tutorials/data_viz/project3.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./tutorials/data_viz/images/ggplot2_2.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Chapter 3: Even more customizations in ggplot2
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('ggplot2'); return false;">
+ggplot2
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('data visualization'); return false;">
+data visualization
+</div>
+</div>
+<div class="card-text listing-description">
+Learn how to customize the theme and colour palette of a graph in ggplot2
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Jewel Johnson
+</div>
+<div class="listing-date">
+Dec 9, 2021
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="3" data-categories="ggplot2,data visualization" data-listing-date-sort="1641407400000" data-listing-file-modified-sort="1659553990251" data-listing-reading-time-sort="27.12">
+<a href="./tutorials/data_viz/project4.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./tutorials/data_viz/images/ggpubr.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Chapter 4: Publication ready plots using ggpubr
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('ggplot2'); return false;">
+ggplot2
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('data visualization'); return false;">
+data visualization
+</div>
+</div>
+<div class="card-text listing-description">
+Learn how to make publication ready plots and perform statistical tests using the ggpubr package
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Jewel Johnson
+</div>
+<div class="listing-date">
+Jan 6, 2022
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+<p>Master the art of data visualization using the <code>{ggplot2}</code> package in R</p>
+</section>
+<section id="data-manipulation-using-r" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="data-manipulation-using-r"><span class="header-section-number">2</span> Data manipulation using R</h2>
+<div id="listing-data-man" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="tidyr,data wrangling" data-listing-date-sort="1639161000000" data-listing-file-modified-sort="1659554736229" data-listing-reading-time-sort="12.585">
+<a href="./tutorials/data_man/project5.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./tutorials/data_man/images/tidyr.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Chapter 1: Data tidying using tidyr
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('tidyr'); return false;">
+tidyr
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('data wrangling'); return false;">
+data wrangling
+</div>
+</div>
+<div class="card-text listing-description">
+Learn how to make your data tidy with the tidyr package
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Jewel Johnson
+</div>
+<div class="listing-date">
+Dec 11, 2021
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="dplyr,data wrangling" data-listing-date-sort="1639333800000" data-listing-file-modified-sort="1659554849744" data-listing-reading-time-sort="9.605">
+<a href="./tutorials/data_man/project6.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./images/dplyr.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Chapter 2: Data manipulation using dplyr (part 1)
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('dplyr'); return false;">
+dplyr
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('data wrangling'); return false;">
+data wrangling
+</div>
+</div>
+<div class="card-text listing-description">
+Learn how to manipulate your data with the dplyr package
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Jewel Johnson
+</div>
+<div class="listing-date">
+Dec 13, 2021
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="tidyr,data wrangling" data-listing-date-sort="1639333800000" data-listing-file-modified-sort="1659554847521" data-listing-reading-time-sort="5.13">
+<a href="./tutorials/data_man/project7.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./images/dplyr_1.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Chapter 3: Data manipulation using dplyr (part 2)
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('tidyr'); return false;">
+tidyr
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('data wrangling'); return false;">
+data wrangling
+</div>
+</div>
+<div class="card-text listing-description">
+Learn how to manipulate your data with the dplyr package
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Jewel Johnson, Jewel Johnson
+</div>
+<div class="listing-date">
+Dec 13, 2021
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+<p>Tidy your data using power cleaning tools provided by the <code>{tidyr}</code> and <code>{dplyr}</code> packages in R</p>
+</section>
+<section id="basic-statistics-using-r" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="basic-statistics-using-r"><span class="header-section-number">3</span> Basic statistics using R</h2>
+<div id="listing-stat-basic" class="quarto-listing quarto-listing-container-grid">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="statistics,basic statistics" data-listing-date-sort="1653071400000" data-listing-file-modified-sort="1659555034618" data-listing-reading-time-sort="2.21">
+<a href="./tutorials/stat_basic/project1.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="https://unsplash.com/@isaacmsmith) on [Unsplash](https://unsplash.com)](https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1170&amp;q=80" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Chapter 1: Introduction to statistics with R
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
+statistics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('basic statistics'); return false;">
+basic statistics
+</div>
+</div>
+<div class="card-text listing-description">
+Learn the basics of statistics and how to do them with R
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Jewel Johnson
+</div>
+<div class="listing-date">
+May 21, 2022
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="statistics,basic statistics" data-listing-date-sort="1653071400000" data-listing-file-modified-sort="1659555119512" data-listing-reading-time-sort="6.455">
+<a href="./tutorials/stat_basic/project2.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./tutorials/stat_basic/images/nor.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Chapter 2: Distribution and variance
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
+statistics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('basic statistics'); return false;">
+basic statistics
+</div>
+</div>
+<div class="card-text listing-description">
+Learn about normal, bimodal, skewed distributions and the variance
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Jewel Johnson, Jewel Johnson
+</div>
+<div class="listing-date">
+May 21, 2022
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="statistics,basic statistics" data-listing-date-sort="1653071400000" data-listing-file-modified-sort="1659555122976" data-listing-reading-time-sort="2.26">
+<a href="./tutorials/stat_basic/project3.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="https://unsplash.com/@michalmatlon) on [Unsplash](https://unsplash.com)](https://images.unsplash.com/photo-1613905780946-26b73b6f6e11?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1172&amp;q=80" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Chapter 3: Standard error and standard deviation
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
+statistics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('basic statistics'); return false;">
+basic statistics
+</div>
+</div>
+<div class="card-text listing-description">
+Learn about standard error and standard deviation, and get to know the standard normal distribution
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Jewel Johnson, Jewel Johnson
+</div>
+<div class="listing-date">
+May 21, 2022
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="3" data-categories="statistics,basic statistics" data-listing-date-sort="1653071400000" data-listing-file-modified-sort="1659555363601" data-listing-reading-time-sort="8.75">
+<a href="./tutorials/stat_basic/project4.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="https://xkcd.com/1478/)](images/p_values_2x.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Chapter 4: p-value and level of significance
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
+statistics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('basic statistics'); return false;">
+basic statistics
+</div>
+</div>
+<div class="card-text listing-description">
+Learn about p-value, level of significance, misconceptions behind p-value
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Jewel Johnson
+</div>
+<div class="listing-date">
+May 21, 2022
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="4" data-categories="statistics,basic statistics" data-listing-date-sort="1653071400000" data-listing-file-modified-sort="1659555367177" data-listing-reading-time-sort="1.825">
+<a href="./tutorials/stat_basic/project5.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="https://4.bp.blogspot.com/-wmZzvsY_Tec/Vws0f4MJn9I/AAAAAAAAORs/gipKxA7aDboP0gx2vSmyQS_ZoVBPzqaWA/s1600/Type%252BI%252Band%252BII%252Berror.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Chapter 5: Type I and Type II errors
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
+statistics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('basic statistics'); return false;">
+basic statistics
+</div>
+</div>
+<div class="card-text listing-description">
+Learn about type I and type II errors
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Jewel Johnson, Jewel Johnson
+</div>
+<div class="listing-date">
+May 21, 2022
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="5" data-categories="statistics,basic statistics" data-listing-date-sort="1653071400000" data-listing-file-modified-sort="1659555292929" data-listing-reading-time-sort="3.145">
+<a href="./tutorials/stat_basic/project6.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./tutorials/stat_basic/images/ci.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Chapter 6: Confidence interval and effect size
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
+statistics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('basic statistics'); return false;">
+basic statistics
+</div>
+</div>
+<div class="card-text listing-description">
+Learn about confidence interval and effect size
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Jewel Johnson
+</div>
+<div class="listing-date">
+May 21, 2022
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="6" data-categories="statistics,basic statistics" data-listing-date-sort="1653071400000" data-listing-file-modified-sort="1659555370248" data-listing-reading-time-sort="4.305">
+<a href="./tutorials/stat_basic/project7.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./tutorials/stat_basic/images/para1.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Chapter 7: Parametric tests and assumptions
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
+statistics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('basic statistics'); return false;">
+basic statistics
+</div>
+</div>
+<div class="card-text listing-description">
+Learn about parametric tests and assumptions
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Jewel Johnson
+</div>
+<div class="listing-date">
+May 21, 2022
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="7" data-categories="statistics,basic statistics" data-listing-date-sort="1653071400000" data-listing-file-modified-sort="1659555289249" data-listing-reading-time-sort="1.61">
+<a href="./tutorials/stat_basic/project8.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="https://twitter.com/v_matzek/status/1376959858042306562)](images/para.jpg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Chapter 8: Non-parametric test and assumptions
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
+statistics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('basic statistics'); return false;">
+basic statistics
+</div>
+</div>
+<div class="card-text listing-description">
+Learn about non-parametric test and assumptions
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Jewel Johnson
+</div>
+<div class="listing-date">
+May 21, 2022
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="8" data-categories="statistics,basic statistics" data-listing-date-sort="1653071400000" data-listing-file-modified-sort="1659555372322" data-listing-reading-time-sort="6.73">
+<a href="./tutorials/stat_basic/project9.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="https://www.accountingexperiments.com/post/anova-regression/featured_hu8d7b78fdb8970f110a404e1ae11b4c8f_365153_720x0_resize_lanczos_2.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Chapter 9: Tests for multiple groups of data
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('statistics'); return false;">
+statistics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('basic statistics'); return false;">
+basic statistics
+</div>
+</div>
+<div class="card-text listing-description">
+Learn about ANOVA and its non-paramteric derivatives
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Jewel Johnson, Jewel Johnson
+</div>
+<div class="listing-date">
+May 21, 2022
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+<p>Now you will never be intimidated by the p-values.</p>
+</section>
+<section id="statisitcal-modelling-using-r" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="statisitcal-modelling-using-r"><span class="header-section-number">4</span> Statisitcal modelling using R</h2>
+<div id="listing-stat-model" class="quarto-listing quarto-listing-container-grid">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-stat-model-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-stat-model'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-listing-date-sort="1659551400000" data-listing-file-modified-sort="1659557289600" data-listing-reading-time-sort="44.925">
+<a href="./tutorials/stat_model/intro_stat_model.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./tutorials/stat_model/images/stat_model.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Introduction to statistical modelling in R
+</h5>
+<div class="card-text listing-description">
+Learn the model building, predicting, evaluating and plotting models in R
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Jewel Johnson
+</div>
+<div class="listing-date">
+Aug 4, 2022
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+<p>So you graduated from basic statistics? Good!</p>
+<p><a hidden="" href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a></p>
+
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+      <div class="nav-footer-center">© 2022, Jewel Johnson</div>
+  </div>
+</footer>
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

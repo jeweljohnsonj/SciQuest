@@ -1,5 +1,7 @@
 ---
 title: "Blog posts"
+subtitle: |
+  Sharing about things I find interesting. Mostly on science and R programming.
 listing:
   contents: posts
   sort: "date desc"
@@ -8,8 +10,9 @@ listing:
   sort-ui: true
   filter-ui: true
 page-layout: full
-image: /images/github_read.png
+image: /media/github_read.png
 comments: false
+citation: false
 title-block-banner: true
 margin-header: |
   <a class="twitter-timeline" data-width="500" data-height="500" data-theme="dark" href="https://twitter.com/jeweljohnsonj?ref_src=twsrc%5Etfw">Tweets by jeweljohnsonj</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

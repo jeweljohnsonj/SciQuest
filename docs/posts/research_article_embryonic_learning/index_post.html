@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.35">
+<meta name="generator" content="quarto-1.0.37">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jewel Johnson">
 <meta name="dcterms.date" content="2022-07-22">
@@ -140,7 +140,21 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </script><style>html{ scroll-behavior: smooth; }</style>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><link rel="stylesheet" href="../../styles.css">
+<script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script><script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+<link rel="stylesheet" href="../../styles.css">
 <meta name="twitter:title" content="one carat blog - Learning starts in the embryo for fathead minnow fish">
 <meta name="twitter:description" content="Embryonic learning occurs when an organism can learn while in its embryo stage. Learn how researchers showed that fathead minnow embryos (Pimephales promelas) can detect conspecific alarm cues and associate them with predator cues to modulate both pre and post-embryonic behaviours">
 <meta name="twitter:image" content="https://jeweljohnsonj.github.io/one-carat-blog/posts\research_article_embryonic_learning\images\preview.png">
@@ -163,82 +177,9 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <li class="nav-item">
     <a class="nav-link" href="../../blog.html">Blog</a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-r-tutorials" role="button" data-bs-toggle="dropdown" aria-expanded="false">R Tutorials</a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-r-tutorials">
-<li class="dropdown-header">Data visualization</li>
-        <li>
-    <a class="dropdown-item" href="../../articles/data_viz/project1.html">
- <span class="dropdown-text">Chapter 1: Data visualization using ggplot2</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../../tutorials.html">Tutorials</a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../../articles/data_viz/project2.html">
- <span class="dropdown-text">Chapter 2: Customizing graphs in ggplot2</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../articles/data_viz/project3.html">
- <span class="dropdown-text">Chapter 3: Even more customizations in ggplot2</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../articles/data_viz/project4.html">
- <span class="dropdown-text">Chapter 4: Publication ready plots using ggpubr</span></a>
-  </li>  
-        <li class="dropdown-header">Data manipulation</li>
-        <li>
-    <a class="dropdown-item" href="../../articles/data_man/project5.html">
- <span class="dropdown-text">Chapter 1: Data tidying using tidyr</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../articles/data_man/project6.html">
- <span class="dropdown-text">Chapter 2: Data manipulation using dplyr (part 1)</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../articles/data_man/project7.html">
- <span class="dropdown-text">Chapter 3: Data manipulation using dplyr (part 2)</span></a>
-  </li>  
-    </ul>
-</li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-statistics" role="button" data-bs-toggle="dropdown" aria-expanded="false">Statistics</a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-statistics">
-<li>
-    <a class="dropdown-item" href="../../articles/stat/project1.html">
- <span class="dropdown-text">Chapter 1: Introduction to statistics with R</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../articles/stat/project2.html">
- <span class="dropdown-text">Chapter 2: Distribution and variance</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../articles/stat/project3.html">
- <span class="dropdown-text">Chapter 3: Standard error and standard deviation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../articles/stat/project4.html">
- <span class="dropdown-text">Chapter 4: p-value and level of significance</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../articles/stat/project5.html">
- <span class="dropdown-text">Chapter 5: Type I and Type II errors</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../articles/stat/project6.html">
- <span class="dropdown-text">Chapter 6: Confidence interval and effect sizes</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../articles/stat/project7.html">
- <span class="dropdown-text">Chapter 7: Parametric tests and assumptions</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../articles/stat/project8.html">
- <span class="dropdown-text">Chapter 8: Non-parametric test and assumptions</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../articles/stat/project9.html">
- <span class="dropdown-text">Chapter 9: Tests for multiple groups of data</span></a>
-  </li>  
-    </ul>
-</li>
   <li class="nav-item">
     <a class="nav-link" href="https://jeweljohnsonj.github.io/jewel_resume/">About me</a>
   </li>  
@@ -467,7 +408,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </table>
 </div>
 <p>Larvae from the predator risk environments (env. 3 and 4) should show enhanced freezing behaviour when predator risk stimuli (stimuli 3 and 4) are presented, compared to the control stimulus. Stimulus 2 should also elicit enhanced freezing behaviour if the embryo was able to associate the predator cue with the alarm cue (i.e.&nbsp;associative learning occurred in embryos indicating evidence for embryonic learning)</p>
-<p>Researchers found that before stimulus use, larvae from predator-risk environments (env. 3 and 4) had decreased swimming activity. This is in conjunction with earlier mentioned studies, where it was shown that embryos which experience predator indicative cues showed an overall decrease in activity in post-embryonic stages. Upon stimulus usage, the same trend followed, larvae from predator-risk environments had an overall decreased swimming activity for all stimuli administration instances. Both these results indicate that the larvae from predator risk environments (env. 3 and 4) showed enhanced predator avoidance behaviour compared to larvae from non-predator risk environments (env. 1 and 2). In the case of larvae from environment 4 (predator + alarm cues), when the predator cue was administered, it showed reduced swimming activity compared to the control. But the difference was not statistically significant. The level of significance for this study was chosen to be <span class="math inline">\(\alpha = 0.05\)</span> and the p-value for the difference between swimming activity when predator cue stimulus was used compared to control stimulus usage was 0.05 (same as the <span class="math inline">\(\alpha\)</span> value), as reported in the paper. But that does not rule out its biological significance and the researchers assert that associative learning has occurred. For larvae from environment 1 (control), except for the control stimulus, all other stimuli administration resulted in reduced swimming activity. This was a strange finding and the researchers suggested that it might be because of neophobia.</p>
+<p>Researchers found that before stimulus use, larvae from predator-risk environments (env. 3 and 4) had decreased swimming activity. This is in conjunction with earlier mentioned studies, where it was shown that embryos which experience predator indicative cues showed an overall decrease in activity in post-embryonic stages. Upon stimulus usage, the same trend followed, larvae from predator-risk environments had an overall decreased swimming activity for all stimuli administration instances. Both these results indicate that the larvae from predator risk environments (env. 3 and 4) showed enhanced predator avoidance behaviour compared to larvae from non-predator risk environments (env. 1 and 2). In the case of larvae from environment 4 (predator + alarm cues), when the predator cue was administered, it showed reduced swimming activity compared to the control. But the difference was not statistically significant. The level of significance for this study was chosen to be <span class="math inline">\alpha = 0.05</span> and the p-value for the difference between swimming activity when predator cue stimulus was used compared to control stimulus usage was 0.05 (same as the <span class="math inline">\alpha</span> value), as reported in the paper. But that does not rule out its biological significance and the researchers assert that associative learning has occurred. For larvae from environment 1 (control), except for the control stimulus, all other stimuli administration resulted in reduced swimming activity. This was a strange finding and the researchers suggested that it might be because of neophobia.</p>
 <p>The next anti-predatory behaviour researchers looked at was predator evasion behaviour. As mentioned before, researchers hypothesized that larvae from predator-risk environments (env. 3 and 4) should show enhanced evasion behaviours. To quantify evasion behaviour, two parameters were measured; maximal body curvature and latency to respond to simulated predator attack. When a fish tries to escape from a predator, it bends its body into a “C” shape to generate momentum drag. The maximal body curvature is the angle formed when the “C” shape is formed in a fish. A shorter angle means that the body bend is greater indicating an enhanced escape behaviour. Overall, it was found that predator risk environments (env. 3 and 4) have resulted in reduced body curvature angle, indicating enhanced evasion behaviour in the larvae. But the evidence for associative learning was not present in this case, as for larvae from environment 4 (predator + alarm cues), upon predator cue administration, the maximal body curvature angle was not significantly different from the control. Latency to respond was found to be independent of embryonic environment and stimulus administration, as no change was observed between the groups. This indicates that post-embryonic behaviour can have varying levels of susceptibility to modification via embryonic learning.</p>
 </section><section id="conclusion" class="level2" data-number="6"><h2 data-number="6" class="anchored" data-anchor-id="conclusion">
 <span class="header-section-number">6</span> Conclusion</h2>
@@ -477,7 +418,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <li>Embryonic experience overall enhanced predator avoidance and evasion behaviours</li>
 <li>Embryonic associative learning only modulated predator avoidance and not evasion behaviour in the larvae, indicating a varying level of susceptibility to modification via embryonic learning</li>
 </ol>
-<p>The evidence for associative learning in this study did not achieve statistical significance and was in a borderline area (p = 0.05, same as <span class="math inline">\(\alpha = 0.05\)</span>) but that does not mean there is no biological significance. As sample sizes were adequate, we can explore some possible future directions.</p>
+<p>The evidence for associative learning in this study did not achieve statistical significance and was in a borderline area (p = 0.05, same as <span class="math inline">\alpha = 0.05</span>) but that does not mean there is no biological significance. As sample sizes were adequate, we can explore some possible future directions.</p>
 <ol type="1">
 <li>The predator cue used in this study came from a known egg predator of fathead minnow, the blue gill sunfish (<em>Lepomis macrochirus</em>). Using another predator cue in association with the conspecific alarm cue can mitigate any possible intrinsic effect the previous predator cue had in learning.</li>
 <li>As fathead minnows were trained to associate predator cues to conspecific alarm cues throughout 5 days post fertilization as embryos and were only tested 22 days post fertilization as larvae. There was a significant time gap between training and testing which might have corroded its memory. But fathead minnows are known to form long-lasting associations between odour cues and other cues. In an earlier study <span class="citation" data-cites="brown_fathead_1994">(<a href="#ref-brown_fathead_1994" role="doc-biblioref">28</a>)</span>, fathead minnow was shown to distinguish between familiar shoal mates and unfamiliar conspecifics, and they were able to maintain this discriminability even after 2 months of separation suggesting evidence for a long-lasting memory. I did not find any other studies which have exclusively looked at learning and memory in fathead minnow. An interesting experiment to follow up would be, training fathead minnow embryos to associate a predator cue to the conspecific alarm and testing this association at different ages after hatching. This can again check if embryonic associative learning occurred? if it occurred then how does the memory fare with increasing time interval between last association and larval age.</li>

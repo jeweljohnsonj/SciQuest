@@ -20,44 +20,8 @@ website:
     right:
       - text: "Blog"
         href: blog.qmd
-      - text: "R Tutorials"
-        menu:
-        - text: "Data visualization"
-        - text: "Chapter 1: Data visualization using ggplot2"
-          href: articles/data_viz/project1.qmd
-        - text: "Chapter 2: Customizing graphs in ggplot2"
-          href: articles/data_viz/project2.qmd
-        - text: "Chapter 3: Even more customizations in ggplot2"
-          href: articles/data_viz/project3.qmd
-        - text: "Chapter 4: Publication ready plots using ggpubr"
-          href: articles/data_viz/project4.qmd
-        - text: "Data manipulation"
-        - text: "Chapter 1: Data tidying using tidyr"
-          href: articles/data_man/project5.qmd
-        - text: "Chapter 2: Data manipulation using dplyr (part 1)"
-          href: articles/data_man/project6.qmd
-        - text: "Chapter 3: Data manipulation using dplyr (part 2)"
-          href: articles/data_man/project7.qmd
-      - text: "Statistics"
-        menu:
-        - text: "Chapter 1: Introduction to statistics with R"
-          href: articles/stat/project1.qmd
-        - text: "Chapter 2: Distribution and variance"
-          href: articles/stat/project2.qmd
-        - text: "Chapter 3: Standard error and standard deviation"
-          href: articles/stat/project3.qmd
-        - text: "Chapter 4: p-value and level of significance"
-          href: articles/stat/project4.qmd
-        - text: "Chapter 5: Type I and Type II errors"
-          href: articles/stat/project5.qmd
-        - text: "Chapter 6: Confidence interval and effect sizes"
-          href: articles/stat/project6.qmd  
-        - text: "Chapter 7: Parametric tests and assumptions"
-          href: articles/stat/project7.qmd
-        - text: "Chapter 8: Non-parametric test and assumptions"
-          href: articles/stat/project8.qmd
-        - text: "Chapter 9: Tests for multiple groups of data"
-          href: articles/stat/project9.qmd
+      - text: "Tutorials"
+        href: tutorials.qmd
       - text: "About me"
         href: https://jeweljohnsonj.github.io/jewel_resume/
       - icon: github
@@ -69,6 +33,18 @@ format:
   html:
     theme: slate
     css: styles.css
+    toc: true
+    toc-location: right
+    toc-depth: 3
+    toc-title: On this page
+    html-math-method: katex
+    number-sections: true
+    smooth-scroll: true
+    highlight-style: github
+    code-link: true
+    df-print: paged
+
+citation: true
 
 comments:
   giscus:
@@ -76,3 +52,8 @@ comments:
 
 editor: source
 
+freeze: auto
+
+# Extension settings
+filters:
+   - lightbox
