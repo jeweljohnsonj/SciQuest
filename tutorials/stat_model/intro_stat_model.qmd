@@ -1,6 +1,6 @@
 ---
 title: "Introduction to statistical modelling in R"
-description: "Learn the model building, predicting, evaluating and plotting models in R"
+description: "Learn how to build a model, predict values using it, evaluating it and plotting the model output in R"
 date: "08/04/2022"
 image: images/stat_model.png
 bibliography: references.bib

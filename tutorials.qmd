@@ -39,7 +39,7 @@ Master the art of data visualization using the `{ggplot2}` package in R
 :::{#data-man}
 :::
 
-Tidy your data using power cleaning tools provided by the `{tidyr}` and `{dplyr}` packages in R
+Tidy your data using powerful cleaning tools provided by the `{tidyr}` and `{dplyr}` packages in R
 
 ## Basic statistics using R
 

@@ -1,6 +1,6 @@
 ---
 title: "Chapter 3: Even more customizations in ggplot2"
-description: "Learn how to customize the theme and cthe olour palette of a graph in ggplot2"
+description: "Learn how to customize the theme and the colour palette of a graph in ggplot2"
 date: "12/09/2021"
 format: html
 execute: 
