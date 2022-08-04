@@ -4,7 +4,7 @@ section-divs: false
 toc: false
 css: index_css/index.css
 editor: source
-image: /media/github_read.png
+image: /media/blog_preview.png
 comments: false
 citation: false
 format:

@@ -10,7 +10,7 @@ listing:
   sort-ui: true
   filter-ui: true
 page-layout: full
-image: /media/github_read.png
+image: /media/blog_preview.png
 comments: false
 citation: false
 title-block-banner: true

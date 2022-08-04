@@ -1,11 +1,11 @@
 ---
 title: "Chapter 3: Even more customizations in ggplot2"
-description: "Learn how to customize the theme and colour palette of a graph in ggplot2"
+description: "Learn how to customize the theme and cthe olour palette of a graph in ggplot2"
 date: "12/09/2021"
 format: html
 execute: 
   cache: true
-image: images/ggplot2_2.png
+image: images/gg3.png
 categories: [ggplot2, data visualization]
 ---
 
@@ -1296,7 +1296,7 @@ p + theme(plot.background = element_rect(size = 5, colour = "red", fill = "light
 
 ## Summary
 
-I hope you are now able to customize a theme of a graph with ease. In this chapter, we learned about different theme elements and how to customize them. We also saw different packages in R which featured ready to use themes. We learned about colour palettes and got introduced to the popular colour packages available R. With that being said, always make sure that your graphs are colour-blind friendly. Have a good day!
+I hope you are now able to customize the theme of a graph with ease. In this chapter, we learned about different theme elements and how to customize them. We also saw different packages in R which featured ready to use themes. We learned about colour palettes and got introduced to the popular colour packages available R. With that being said, always make sure that your graphs are colour-blind friendly.
 
 ## References
 

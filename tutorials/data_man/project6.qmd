@@ -3,7 +3,7 @@ title: "Chapter 2: Data manipulation using dplyr (part 1)"
 description: "Learn how to manipulate your data with the dplyr package"
 date: "12/13/2021"
 format: html
-image: /images/dplyr.png
+image: images/dplyr.png
 categories: [dplyr, data wrangling]
 ---
 

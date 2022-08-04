@@ -3,7 +3,7 @@ title: "Chapter 1: Data visualization using ggplot2"
 description: "Learn how to plot different types of graphs using the ggplot2 package"
 date: "12/02/2021"
 format: html
-image: images/ggplot2.png
+image: images/gg1.png
 categories: [ggplot2, data visualization]
 ---
 
@@ -19,7 +19,7 @@ A ggplot2 graph is made up of three components.
 
 1.  **Data**: Data of your choice that you want to visually summarise.
 2.  **Geometry** or **geoms**: Geometry dictates the type of graph that you want to plot and this information is conveyed to ggplot2 through the `geom()` command code. For e.g. using the `geom_boxplot()` command, you can plot a box plot with your data. Likewise, there are many types of geometry that you can plot using the ggplot2 package.
-3.  **Aesthetic** mappings: Aesthetics define the different kinds of information that you want to include in the plot. One fo the most important aesthetic is in choosing which data values to plot on the x-axis and the y-axis. Another example is changing the colour of the data points, which can be used to differentiate two different categories in the data. The use of aesthetics depends on the geometry that you are using. We use the command `aes()` for adding different types of aesthetics to the plot. We will learn more about `aes()` in Chapter 2.
+3.  **Aesthetic** mappings: Aesthetics define the different kinds of information that you want to include in the plot. One fo the most important aesthetic is in choosing which data values to plot on the x-axis and the y-axis. Another example is changing the colour of the data points, which can be used to differentiate two different categories in the data. The use of aesthetics depends on the geometry that you are using. We use the command `aes()` for adding different types of aesthetics to the plot. We will learn more about `aes()` in [Chapter 2](https://one-carat-blog.netlify.app/tutorials/data_viz/project2.html). For now, we will only see what kind of plots can be made using the `{ggplot2}` package. We will learn how to tweak them in [Chapter 2](https://one-carat-blog.netlify.app/tutorials/data_viz/project2.html).
 
 This tutorial is primarily focused on students who are beginners in R programming and wants to quickly plot their data without much of a hassle. So without further ado let's plot some graphs!
 
@@ -52,9 +52,8 @@ Now there are two datasets in this package. We will be using the `penguins` data
 -   Use the command `head()` to display the first few values of `penguins` dataset to see how it looks like
 
 ```{r}
-#| column: page
 library(palmerpenguins)
-knitr::kable(head(penguins))
+head(penguins)
 ```
 
 We can see that are 8 columns in the dataset representing different values. Now let us try plotting some graphs with this data.
@@ -248,7 +247,7 @@ ggsave(my_graph, filename = "your_graph_name.png", width = 20, height = 20,
 
 ## Summary
 
-I hope this tutorial helped you to get familiarized with the `{ggplot2}` commands. There are many more different types of graphs that you can plot using `{ggplot2}`. The tutorial only showed some of the commonly used ones. The best way to learn R is through actually doing it yourself. Try to recreate the examples given in this tutorial by yourself and then try what you learned with the different datasets available in R. Have a good day!
+I hope this tutorial helped you to get familiarize with the `{ggplot2}` commands. The best way to learn R is by actually doing it yourself. So try to recreate the examples given in this tutorial and then try to apply what you learned using the different datasets available in R. In [chapter 2](https://one-carat-blog.netlify.app/tutorials/data_viz/project2.html), we will learn how to customize the plots by tweaking the aesthetic mappings.
 
 ## References
 

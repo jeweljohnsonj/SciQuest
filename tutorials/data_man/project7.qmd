@@ -4,8 +4,8 @@ description: "Learn how to manipulate your data with the dplyr package"
 author: "Jewel Johnson"
 date: "12/13/2021"
 format: html
-image: /images/dplyr_1.png
-categories: [tidyr, data wrangling]
+image: images/dplyr1.png
+categories: [dplyr, data wrangling]
 ---
 
 ## Continuation from the previous chapter

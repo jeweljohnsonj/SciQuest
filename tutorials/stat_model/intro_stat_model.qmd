@@ -183,7 +183,7 @@ Let us try to plot some models using the linear model architecture using the `lm
 
 In the dataset, we are interested to check whether the net time to complete the 10 Mile marathon (`net_sec`) is affected by the `age` and `sex` of the participant. So for making the model, we use `net_sec` as the response variable and, `age` and `sex` as the explanatory variables.
 
-We can use the `summary()` function to summarise the model. For now, we will not worry about the summary details. Then, using the `{ggplot2}` package, we will plot the model using the `stat_smooth()` function.
+We can use the `summary()` function to summarise the model. For now, we will not worry about the summary details. Then, using the `{ggplot2}` package, we will plot the model using the `stat_smooth()` function. Please not that there is another function `geom_smooth()` which is an alias of `stat_smooth()`. Both do the same thing.
 
 ```{r}
 if (!require(cherryblossom)) install.packages('cherryblossom')

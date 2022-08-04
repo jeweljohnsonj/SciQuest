@@ -1,15 +1,11 @@
 ---
 title: "Chapter 4: Publication ready plots using ggpubr"
-description: "Learn how to make publication ready plots and perform statistical tests using the ggpubr package"
+description: "Learn how to make publication ready plots and visualize results of statistical tests directly on the plot using the ggpubr package"
 date: "01/06/2022"
 format: html
-image: images/ggpubr.png
-categories: [ggplot2, data visualization]
+image: images/gg4.png
+categories: [ggpubr, data visualization]
 ---
-
-::: {layout-ncol="1"}
-![Image by [Markus Spiske](https://unsplash.com/@markusspiske) on [Unsplash](https://unsplash.com)](https://images.unsplash.com/photo-1618044733300-9472054094ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80){.preview-image}
-:::
 
 ## Introduction to ggpubr package
 
@@ -447,7 +443,7 @@ summary_tbl <- ggtexttable(summary_short, rows = NULL, theme = ttheme("mRed")) #
 summary_tbl
 ```
 
-### 3. Showing p-values and statistical results within plots
+### Showing p-values and statistical results within plots
 
 Using various functions you can show statistical outputs within the plots.
 

@@ -21,7 +21,7 @@ listing:
     sort-ui: true
     filter-ui: true
 page-layout: full
-image: /media/github_read.png
+image: /media/blog_preview.png
 comments: false
 title-block-banner: true
 citation: false
@@ -46,13 +46,13 @@ Tidy your data using power cleaning tools provided by the `{tidyr}` and `{dplyr}
 :::{#stat-basic}
 :::
 
-Now you will never be intimidated by the p-values.
+**I am currently remaking the posts, so these posts are subjected to change**
 
 ## Statisitcal modelling using R
 
 :::{#stat-model}
 :::
 
-So you graduated from basic statistics? Good!
+Guess t-test wasn't good enough for you?
 
 <a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>
