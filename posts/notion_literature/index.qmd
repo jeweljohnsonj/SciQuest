@@ -7,18 +7,6 @@ image: images/notero_thumbnail.png
 categories: [PhD, Notion, Zotero, productivity]
 ---
 
-:::{.callout-important}
-## Very important message
-
-Everyone please note that I am moving away from GitHub pages to Netifly to deploy my blog. Therefore please use the [new link](https://one-carat-blog.netlify.app/posts/notion_literature/) to visit this page.
-
-
-To check if you are using the new link, while seeing this message, please look at the link in your browser. If it is `https://one-carat-blog.netlify.app/posts/notion_literature/` then no worries. But if it is `https://jeweljohnsonj.github.io/one-carat-blog/posts/notion_literature/`, then you are using the old link. Please use the [new link](https://one-carat-blog.netlify.app/posts/notion_literature/). Thank you for your support.
-
-I will retire the GitHub page link in the coming weeks. 
-:::
-
-
 ## TL;DR
 
 -   Use Notion to build a literature database that can integrate with directories in Zotero with the help of the Notero plugin

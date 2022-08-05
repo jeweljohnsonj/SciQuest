@@ -9,6 +9,7 @@ format:
   html:
     css:
       - https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css
+categories: [stat modelling]
 ---
 
 

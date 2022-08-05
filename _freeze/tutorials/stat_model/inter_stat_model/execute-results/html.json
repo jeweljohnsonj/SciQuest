@@ -1,0 +1,20 @@
+{
+  "hash": "56ce1a8ca7fe93427349ea5a1079a9e1",
+  "result": {
+    "markdown": "---\ntitle: \"Intermediate Statistical Modelling in R\"\ndescription: \"\"\ndate: \"08/05/2022\"\nformat:\n  html:\n    css:\n      - https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css\nimage: images/stat_model.png\ncategories: [stat modelling]\ndraft: true\n---\n\n\nThis tutorial is in continuation with\n\n## Effect size and interaction\n\n#### Last updated on {.unnumbered .unlisted}\n\n\n::: {.cell}\n::: {.cell-output .cell-output-stdout}\n```\n[1] \"2022-08-05 11:14:18 IST\"\n```\n:::\n:::\n\n\n<!-- Do not forget to put flag counter -->",
+    "supporting": [
+      "inter_stat_model_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<link href=\"../../site_libs/pagedtable-1.1/css/pagedtable.css\" rel=\"stylesheet\" />\r\n<script src=\"../../site_libs/pagedtable-1.1/js/pagedtable.js\"></script>\r\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

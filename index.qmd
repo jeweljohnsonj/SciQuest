@@ -12,26 +12,9 @@ format:
     number-sections: false
 ---
 
-:::{.callout-important}
-## Very important message
-
-Everyone please note that I am moving away from GitHub pages to Netifly to deploy my blog. Therefore please use the [new link](https://one-carat-blog.netlify.app/) to visit this blog.
-
-
-To check if you are using the new link, while seeing this message, please look at the link in your browser. If it is `https://one-carat-blog.netlify.app/` then no worries. But if it is `https://jeweljohnsonj.github.io/one-carat-blog/`, then you are using the old link. Please use the [new link](https://one-carat-blog.netlify.app/). Thank you for your support.
-
-I will retire the GitHub page link in the coming weeks. 
-:::
-
 ## Welcome to One Carat Blog
 
-My name is Jewel Johnson and I am an aspiring ecologist who is interested in behaviour, vision and in the effect of human activities on animals (especially insects). I did my master's in Biology from the [Indian Institute of Science Education and Research, Thiruvananthapuram](https://www.iisertvm.ac.in/) (IISER-TVM). My master's thesis was on understanding the **Visual ecology of the giant honeybee (*Apis dorsata*)** under the guidance of [Prof. Hema Somanathan](https://faculty.iisertvm.ac.in/beelab/) at IISER-TVM .
-
-:::{.callout-tip}
-## Current status
-
-**Currently, I am looking for research labs to join for a PhD** 😇
-:::
+My name is Jewel Johnson and I am an aspiring ecologist who is interested in behaviour, vision and in the effect of human activities on animals (especially insects). I did my master's in Biology from the [Indian Institute of Science Education and Research, Thiruvananthapuram](https://www.iisertvm.ac.in/) (IISER-TVM). My master's thesis was on understanding the **Visual ecology of the giant honeybee (*Apis dorsata*)** under the guidance of [Prof. Hema Somanathan](https://faculty.iisertvm.ac.in/beelab/) at IISER-TVM. **Currently, I am looking for research labs to join for a PhD** 😇
 
 I made this blog using the [quarto](https://quarto.org/) package. My blog posts are generally focused on science communication and R programming. I also believe that teaching is the best way to learn anything, so I make extensive tutorials on the things I learn. You can find them all in the 'Tutorials' section in the navigation bar. Hope you like my blog ☺️
 

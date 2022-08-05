@@ -1,0 +1,25 @@
+---
+title: "Intermediate Statistical Modelling in R"
+description: ""
+date: "08/05/2022"
+format:
+  html:
+    css:
+      - https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css
+image: images/stat_model.png
+categories: [stat modelling]
+draft: true
+---
+
+This tutorial is in continuation with
+
+## Effect size and interaction
+
+#### Last updated on {.unnumbered .unlisted}
+
+```{r}
+#| echo: false
+Sys.time()
+```
+
+<!-- Do not forget to put flag counter -->
