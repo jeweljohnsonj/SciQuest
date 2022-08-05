@@ -571,13 +571,13 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span></span>
 <span><span class="co"># Plotting the values</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Hawks</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Weight</span>, y <span class="op">=</span> <span class="va">Wing</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="va">Wing</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="va">Wing</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="project2_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
 </div>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Plotting the values according to species text label</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Hawks</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Weight</span>, y <span class="op">=</span> <span class="va">Wing</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="project2_files/figure-html/unnamed-chunk-22-2.png" class="img-fluid" width="672"></p>
 </div>
@@ -743,7 +743,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </tr>
 </tbody>
 </table>
-<p>we are now familiar with all these different aesthetic mappings.</p>
+<p>We are now familiar with all these different aesthetic mappings.</p>
 </section><section id="summary" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="summary">
 <span class="header-section-number">4</span> Summary</h2>
 <p>In this tutorial, we learned how to modify aesthetic present for different geoms in <a href="https://ggplot2.tidyverse.org">ggplot2</a> Then we learned how to modify labels in a graph and finally, we learned how to modify and change the axes elements. This tutorial is in no way exhaustive of the different ways you can modify a graph as there many more methods which are not discussed here. Instead of trying to include everything, this tutorial tries to be a stepping stone to help students of R to learn the basics of tweaking a graph. Try to practice what is covered here using other datasets available in the r-package <a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a>.</p>
@@ -756,7 +756,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <section id="last-updated-on" class="level4 unnumbered unlisted"><h4 class="unnumbered unlisted anchored" data-anchor-id="last-updated-on">Last updated on</h4>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-08-04 19:50:12 IST"</code></pre>
+<pre><code>[1] "2022-08-05 13:13:54 IST"</code></pre>
 </div>
 </div>
 <p><a hidden="" href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a></p>
@@ -1231,11 +1231,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb32-350"><a href="#cb32-350" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-351"><a href="#cb32-351" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the values</span></span>
 <span id="cb32-352"><a href="#cb32-352" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">y =</span> Wing)) <span class="sc">+</span> </span>
-<span id="cb32-353"><a href="#cb32-353" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> Wing))</span>
+<span id="cb32-353"><a href="#cb32-353" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> Wing)) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
 <span id="cb32-354"><a href="#cb32-354" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-355"><a href="#cb32-355" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the values according to species text label</span></span>
 <span id="cb32-356"><a href="#cb32-356" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Hawks, <span class="fu">aes</span>(<span class="at">x =</span> Weight, <span class="at">y =</span> Wing)) <span class="sc">+</span> </span>
-<span id="cb32-357"><a href="#cb32-357" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> Species))</span>
+<span id="cb32-357"><a href="#cb32-357" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> Species)) <span class="sc">+</span> <span class="fu">theme_bw</span>()</span>
 <span id="cb32-358"><a href="#cb32-358" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-359"><a href="#cb32-359" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb32-360"><a href="#cb32-360" aria-hidden="true" tabindex="-1"></a></span>
@@ -1350,7 +1350,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb32-485"><a href="#cb32-485" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-486"><a href="#cb32-486" aria-hidden="true" tabindex="-1"></a>: Table of aesthetic mappings</span>
 <span id="cb32-487"><a href="#cb32-487" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-488"><a href="#cb32-488" aria-hidden="true" tabindex="-1"></a>we are now familiar with all these different aesthetic mappings.</span>
+<span id="cb32-488"><a href="#cb32-488" aria-hidden="true" tabindex="-1"></a>We are now familiar with all these different aesthetic mappings.</span>
 <span id="cb32-489"><a href="#cb32-489" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-490"><a href="#cb32-490" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summary</span></span>
 <span id="cb32-491"><a href="#cb32-491" aria-hidden="true" tabindex="-1"></a></span>

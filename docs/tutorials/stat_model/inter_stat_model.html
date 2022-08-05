@@ -124,7 +124,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script><link rel="stylesheet" href="../../styles.css">
 <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
 <meta name="twitter:title" content="one carat blog - Intermediate Statistical Modelling in R">
-<meta name="twitter:description" content="This tutorial is in continuation with">
+<meta name="twitter:description" content="This tutorial serves as a continuation from the tutorial post: Introduction to statistical modelling in R.">
 <meta name="twitter:image" content="https://jeweljohnsonj.github.io/one-carat-blog/tutorials\stat_model\images\stat_model.png">
 <meta name="twitter:image-height" content="1080">
 <meta name="twitter:image-width" content="1920">
@@ -205,13 +205,13 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
   </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/edit/main/tutorials/stat_model/inter_stat_model.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content"><p>This tutorial is in continuation with</p>
+<main class="content quarto-banner-title-block" id="quarto-document-content"><p>This tutorial serves as a continuation from the tutorial post: <a href="https://one-carat-blog.netlify.app/tutorials/stat_model/intro_stat_model.html">Introduction to statistical modelling in R</a>. Here you will learn more on effect size and interaction, the concepts of total and partial change, sampling variability and mathematical transforms, and the implications of something called collinearity.</p>
 <section id="effect-size-and-interaction" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="effect-size-and-interaction">
 <span class="header-section-number">1</span> Effect size and interaction</h2>
 <section id="last-updated-on" class="level4 unnumbered unlisted"><h4 class="unnumbered unlisted anchored" data-anchor-id="last-updated-on">Last updated on</h4>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-08-05 11:14:18 IST"</code></pre>
+<pre><code>[1] "2022-08-05 13:14:17 IST"</code></pre>
 </div>
 </div>
 <!-- Do not forget to put flag counter -->
@@ -391,18 +391,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> true</span></span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>This tutorial is in continuation with</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>This tutorial serves as a continuation from the tutorial post: <span class="co">[</span><span class="ot">Introduction to statistical modelling in R</span><span class="co">](https://one-carat-blog.netlify.app/tutorials/stat_model/intro_stat_model.html)</span>. Here you will learn more on effect size and interaction, the concepts of total and partial change, sampling variability and mathematical transforms, and the implications of something called collinearity.</span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Effect size and interaction</span></span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Last updated on {.unnumbered .unlisted}</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Do not forget to put flag counter --&gt;</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Last updated on {.unnumbered .unlisted}</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Do not forget to put flag counter --&gt;</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

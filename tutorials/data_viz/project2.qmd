@@ -306,11 +306,11 @@ data("Hawks")
 
 # Plotting the values
 ggplot(data = Hawks, aes(x = Weight, y = Wing)) + 
-  geom_text(aes(label = Wing))
+  geom_text(aes(label = Wing)) + theme_bw()
 
 # Plotting the values according to species text label
 ggplot(data = Hawks, aes(x = Weight, y = Wing)) + 
-  geom_text(aes(label = Species))
+  geom_text(aes(label = Species)) + theme_bw()
 
 ```
 
@@ -425,7 +425,7 @@ ggplot(data = Hawks, aes(x = Weight, y = Wing, colour = Species)) +
 
 : Table of aesthetic mappings
 
-we are now familiar with all these different aesthetic mappings.
+We are now familiar with all these different aesthetic mappings.
 
 ## Summary
 

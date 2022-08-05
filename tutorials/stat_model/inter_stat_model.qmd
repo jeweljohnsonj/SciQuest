@@ -11,9 +11,11 @@ categories: [stat modelling]
 draft: true
 ---
 
-This tutorial is in continuation with
+This tutorial serves as a continuation from the tutorial post: [Introduction to statistical modelling in R](https://one-carat-blog.netlify.app/tutorials/stat_model/intro_stat_model.html). Here you will learn more on effect size and interaction, the concepts of total and partial change, sampling variability and mathematical transforms, and the implications of something called collinearity.
 
 ## Effect size and interaction
+
+
 
 #### Last updated on {.unnumbered .unlisted}
 
