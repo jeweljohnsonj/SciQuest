@@ -437,7 +437,7 @@ In this tutorial, we learned how to modify aesthetic present for different geoms
 
 2.  Ann Cannon, George Cobb, Bradley Hartlaub, Julie Legler, Robin Lock, Thomas Moore, Allan Rossman and Jeffrey Witmer (2019). Stat2Data: Datasets for Stat2. R package version 2.0.0. https://CRAN.R-project.org/package=Stat2Data
 
-#### Last updated on {.unnumbered .unlisted}
+#### Last updated on {.unnumbered .unlisted .appendix}
 
 ```{r}
 #| echo: false

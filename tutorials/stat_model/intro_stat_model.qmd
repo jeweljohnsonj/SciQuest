@@ -9,9 +9,8 @@ format:
   html:
     css:
       - https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css
-categories: [stat modelling]
+categories: [statistical modelling]
 ---
-
 
 ```{ojs}
 //| output: false
@@ -136,14 +135,14 @@ This definition is not exactly needed to do modelling but it's good to know the 
 
 Now that we have a rough idea of what a model is, let us know learn how to build models in R.
 
-## Building a model
+## Making life easier
 
-To make life easier, please install the following packages before hand (Not required but can be very helpful if you are following this article code by code).
+Please install and load the necessary packages and datasets which are listed below for a seamless tutorial session. (Not required but can be very helpful if you are following this tutorial code by code)
 
 ```{r}
 #| eval: false
 
-# Install packages
+# Libraries used in this tutorial
 install.packages('cherryblossom')
 install.packages('rpart')
 install.packages('datasets')
@@ -152,7 +151,23 @@ install.packages('rpart.plot')
 install.packages('mosaicModel')
 install.packages('devtools')
 devtools::install_github("dtkaplan/statisticalModeling")
+
+# Loading the libraries
+tutorial_packages <- c("cherryblossom", "rpart", "datasets", "NHANES",
+                 "rpart.plot", "mosaicModel", "statisticalModeling")
+
+lapply(tutorial_packages, library, character.only = TRUE)
+
+# Datasets used in this tutorial
+data("run17") # From cherryblossom
+data("ToothGrowth") # From datasets
+data("chickwts") # From datasets
+data("NHANES") # From NHANES
+data("Tadpoles") # From mosaicModel
+data("Used_Fords") # From mosaicModel
 ```
+
+## Building a model
 
 The pipeline for building a model is as follows;
 
@@ -873,7 +888,11 @@ For this exercise, we will be using the `NHANES` dataset from the `{NHANES}` pac
 
 ### Evaluating a recursive partitioning model
 
-For our exploratory modelling, we will be using the recursive partitioning architecture. Using the dataset we will see what variables are related to depression. We will use the formula `Depressed ~ .`. The single period on the right side of the Tilda indicates that we want to model using all the possible variables in the dataset. Finally, we will plot the model as a 'tree' using the `rpart.plot()` function from the `{rpart.plot}` package in R.
+For our exploratory modelling, we will be using the recursive partitioning architecture. Using the dataset we will see what variables are related to depression. 
+
+We will use the formula `Depressed ~ .` 
+
+The single period on the right side of the Tilda indicates that we want to model using all the possible variables in the dataset. Finally, we will plot the model as a 'tree' using the `rpart.plot()` function from the `{rpart.plot}` package in R.
 
 ```{r}
 #| include: true
@@ -1038,9 +1057,9 @@ I hope this article provided you with a good learning experience. In a nutshell,
     * For numerical explanatory variables
     * For categorical explanatory variables
 
-Happy learning, one day you will make it 👍
+Take a break and practice the concepts learned from this tutorial. I will see you in the next tutorial where we will learn about 'Intermediate statistical modelling using R'. See you there 👍
  
-#### Last updated on {.unnumbered .unlisted}
+#### Last updated on {.unnumbered .unlisted .appendix}
 
 ```{r}
 #| echo: false

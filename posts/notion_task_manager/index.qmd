@@ -129,7 +129,7 @@ The completed tasks page acts as an archive showcasing all the completed tasks. 
 
 I hope you have fun using this template. I enjoyed making this template and I aimed to make it simple and effective to use. To summarise, the to-do list is your main database, actually your only database. Everything else is just a modified version of this database where the info is shown in a different form using filtering and grouping features. After duplicating this template, you can tweak each of the parameters to suit your liking. You only need to change the parameters in the to-do-list database as the changes in it will be reflected in the rest of the pages. The only other thing that you will be needing to modify after you have changed the key parameters in the database are the headings, which are pretty straightforward to change. With that, I hope you find this template useful. Any feedback and suggestions are most welcome. You can comment them below the article.
 
-#### Last updated on {.unnumbered .unlisted}
+#### Last updated on {.unnumbered .unlisted .appendix}
 
 ```{r}
 #| echo: false

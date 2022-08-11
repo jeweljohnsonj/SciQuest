@@ -41,7 +41,7 @@ The book list tracker is almost identical to the movie list one. To get the book
 
 I hope you find these templates useful. You can give your feedback and thoughts about the template in the comment section below this article.
 
-#### Last updated on {.unnumbered .unlisted}
+#### Last updated on {.unnumbered .unlisted .appendix}
 
 ```{r}
 #| echo: false

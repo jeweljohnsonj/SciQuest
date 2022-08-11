@@ -110,7 +110,7 @@ So there you have it, your very own literature tracker made using Notion and int
 
 Thank you [David Vanoni](https://twitter.com/dvanoni) and the developers who contributed to developing the Notero plugin. You can share your feedback and thoughts about the templates in the comment section below.
 
-#### Last updated on {.unnumbered .unlisted}
+#### Last updated on {.unnumbered .unlisted .appendix}
 
 ```{r}
 #| echo: false

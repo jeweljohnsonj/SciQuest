@@ -4,10 +4,20 @@ project:
 
 website:
   title: "one carat blog"
-  image: github_read.png
+  image: media/blog_preview.png
   favicon: favicon.png
   page-navigation: true
-  page-footer: "© 2022, Jewel Johnson"
+  page-footer:
+    left: "Blog made using [Quarto®](https://quarto.org/) with ❤️, by Jewel Johnson."
+    right:
+      - icon: github
+        href: https://github.com/jeweljohnsonj
+      - icon: twitter
+        href: https://twitter.com/jeweljohnsonj
+      - icon: envelope
+        href: mailto:jewel15@alumni.iisertvm.ac.in
+      - icon: house-chimney
+        href: mailto:jeweljohnsonj@gmail.com
   opengraph: true
   site-url: "https://jeweljohnsonj.github.io/one-carat-blog/"
   repo-url: "https://github.com/jeweljohnsonj/one-carat-blog"

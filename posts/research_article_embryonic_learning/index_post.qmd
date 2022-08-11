@@ -116,7 +116,7 @@ The evidence for associative learning in this study did not achieve statistical 
 
 In conclusion, this study [@crowder_embryonic_2022] showcased a whole new aspect of learning in fathead minnow (*Pimephales promelas*) which opens up new avenues of research questions given their peculiar behaviour and life history.
 
-#### Last updated on {.unnumbered .unlisted}
+#### Last updated on {.unnumbered .unlisted .appendix}
 
 ```{r}
 #| echo: false

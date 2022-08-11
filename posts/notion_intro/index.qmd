@@ -119,7 +119,7 @@ I hope you find the templates useful and I wish you all the best in learning Not
 3.  Quick tutorial on setting up Notion. [Source](https://radreads.co/notion-tutorial/)
 4.  Notion official website has detailed guides for very single feature in Notion. [Source](https://www.notion.so/help/guides)
 
-#### Last updated on {.unnumbered .unlisted}
+#### Last updated on {.unnumbered .unlisted .appendix}
 
 ```{r}
 #| echo: false

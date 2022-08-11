@@ -92,7 +92,7 @@ Useful Quarto articles
 
 5.  [Official guide by developers of Quarto](https://quarto.org/docs/get-started/hello/rstudio.html)
 
-#### Last updated on {.unnumbered .unlisted}
+#### Last updated on {.unnumbered .unlisted .appendix}
 
 ```{r}
 #| echo: false

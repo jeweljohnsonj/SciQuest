@@ -1314,7 +1314,7 @@ I hope you are now able to customize the theme of a graph with ease. In this cha
 
 7.  Nan Xiao (2018). ggsci: Scientific Journal and Sci-Fi Themed Color Palettes for 'ggplot2'. R package version 2.9. https://CRAN.R-project.org/package=ggsci
 
-#### Last updated on {.unnumbered .unlisted}
+#### Last updated on {.unnumbered .unlisted .appendix}
 
 ```{r}
 #| echo: false

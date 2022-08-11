@@ -97,7 +97,7 @@ In the end, when we look at these features carefully, it is analogous to the var
 For more details about the study, please find the original paper [@volland_centimeter-long_2022].
 
 
-#### Last updated on {.unnumbered .unlisted}
+#### Last updated on {.unnumbered .unlisted .appendix}
 
 ```{r}
 #| echo: false
