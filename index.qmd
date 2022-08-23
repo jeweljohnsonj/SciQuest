@@ -18,7 +18,7 @@ format:
 
 Hey there! My name is Jewel Johnson and I am an aspiring ecologist who is interested in behaviour, vision and in the effect of human activities on animals (especially insects). I did my master's in Biology from the [Indian Institute of Science Education and Research, Thiruvananthapuram](https://www.iisertvm.ac.in/) (IISER-TVM). My master's thesis was on understanding the *Visual ecology of the giant honeybee (Apis dorsata)* under the guidance of [Prof. Hema Somanathan](https://faculty.iisertvm.ac.in/beelab/) at IISER-TVM.
 
-> Currently, I am looking for research labs to join for a PhD** 😇
+> Currently, I am looking for research labs to join for a PhD 😇
 
 I made this blog using the [quarto](https://quarto.org/) package. My blog posts are generally focused on science communication and R programming. I also believe that teaching refines one's ability in learning and comprehension. Therefore I document my learning experience by writing extensive tutorials on the topic I am learning. You can find them in the 'Tutorials' section in the navigation bar.
 
