@@ -8,7 +8,6 @@ format:
       - https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css
 image: images/stat_model_3.png
 categories: [statistical modelling]
-draft: true
 ---
 
 ```{ojs}
