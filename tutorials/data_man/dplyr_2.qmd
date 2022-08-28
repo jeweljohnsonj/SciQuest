@@ -1,7 +1,6 @@
 ---
 title: "Chapter 3: Data manipulation using dplyr (part 2)"
 description: "Learn how to manipulate your data with the dplyr package"
-author: "Jewel Johnson"
 date: "12/13/2021"
 format: html
 image: images/dplyr1.png

@@ -280,7 +280,7 @@ If we look at the slope for expenditure, it is greater than the slope value we g
 summary(model_lmer)
 ```
 
-![Summary of the linear mixed effects model](images\lmer_summary.png)
+![Summary of the linear mixed effects model](images/lmer_summary.png)
 
 1.    In section 1, we can see the model formula that we used to model the data. It also tells us that the model has been fitted by REML, which stands for restricted maximum likelihood method, the method by which lmer models fit the data. 
 

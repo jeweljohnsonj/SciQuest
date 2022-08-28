@@ -1,0 +1,18 @@
+{
+  "hash": "e49b57b0d1a200e49680c02a17eeb5c7",
+  "result": {
+    "markdown": "---\ntitle: \"Visualizing Big Data with Trelliscope in R\"\ndescription: \"Learn how to visualize large datasets using the trelliscopejs R package\"\ndate: \"08/28/2022\"\nformat:\n  html:\n    css:\n      - https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css\nimage: images/stat_model_4.png\ncategories: []\ndraft: true\nfilters:\n   - social-share\nshare:\n  permalink: \"https://one-carat-blog.netlify.app/tutorials/stat_model/glmer_stat_model.html\"\n  description: \"Hierarchical and Mixed Effects Models in R\"\n  twitter: true\n  facebook: true\n  reddit: true\n  stumble: true\n  tumblr: true\n  linkedin: true\n  email: true\n---\n\n\n\n\n\n\n#### Last updated on {.unnumbered .unlisted .appendix}\n\n\n::: {.cell}\n::: {.cell-output .cell-output-stdout}\n```\n[1] \"2022-08-28 19:41:08 IST\"\n```\n:::\n:::\n\n\n<!-- Do not forget to put flag counter -->",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-in-header": [
+        "<link href=\"../../site_libs/pagedtable-1.1/css/pagedtable.css\" rel=\"stylesheet\" />\r\n<script src=\"../../site_libs/pagedtable-1.1/js/pagedtable.js\"></script>\r\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
