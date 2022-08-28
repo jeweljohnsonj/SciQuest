@@ -1,6 +1,6 @@
 ---
 title: "Hierarchical and Mixed Effects Models in R"
-description: "Go beyond linear models and extend them to analyse non-normal datasets with random effects"
+description: "Go beyond linear models and extend your skills to analyse non-normal datasets with random effects"
 date: "08/28/2022"
 bibliography: references_glmer.bib
 format:
