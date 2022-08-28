@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.38">
+<meta name="generator" content="quarto-1.1.132">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
 
 
@@ -114,9 +119,15 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 <link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="one carat blog - Blog posts">
+<meta property="og:description" content="Sharing about things I find interesting. Mostly on science and R programming.">
+<meta property="og:image" content="https://one-carat-blog.netlify.app//media/blog_preview.png">
+<meta property="og:site-name" content="one carat blog">
+<meta property="og:image:height" content="1080">
+<meta property="og:image:width" content="1920">
 <meta name="twitter:title" content="one carat blog - Blog posts">
 <meta name="twitter:description" content="Sharing about things I find interesting. Mostly on science and R programming.">
-<meta name="twitter:image" content="https://jeweljohnsonj.github.io/one-carat-blog//media/blog_preview.png">
+<meta name="twitter:image" content="https://one-carat-blog.netlify.app//media/blog_preview.png">
 <meta name="twitter:image-height" content="1080">
 <meta name="twitter:image-width" content="1920">
 <meta name="twitter:card" content="summary_large_image">
@@ -128,10 +139,14 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <a class="navbar-brand" href="./index.html">
-    <img src="./favicon.png" alt="">
+      <div class="navbar-brand-container">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./favicon.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">one carat blog</span>
-  </a>
+    </a>
+  </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -328,10 +343,10 @@ Jul 1, 2022
 </a>
 </div>
 <div class="g-col-1" data-index="3" data-categories="news" data-listing-date-sort="1656613800000" data-listing-file-modified-sort="1659763473806" data-listing-reading-time-sort="7.45">
-<a href="./posts/welcome/index.html" class="quarto-grid-link">
+<a href="./posts/welcome_to_blog/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./posts/welcome/story.png" class="thumbnail-image card-img" style="height: 150px;">
+<img src="./posts/welcome_to_blog/story.png" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -508,10 +523,10 @@ Jun 28, 2022
 </a>
 </div>
 <div class="g-col-1" data-index="8" data-categories="maps,leaflet" data-listing-date-sort="1652985000000" data-listing-file-modified-sort="1659763486253" data-listing-reading-time-sort="8.675">
-<a href="./posts/word-happy-2022/index.html" class="quarto-grid-link">
+<a href="./posts/word_happy_2022/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./posts/word-happy-2022/world.jpg" class="thumbnail-image card-img" style="height: 150px;">
+<img src="./posts/word_happy_2022/world.jpg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
@@ -614,7 +629,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

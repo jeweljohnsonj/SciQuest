@@ -5,24 +5,24 @@
       "/posts/research_article_embryonic_learning/index_post.html",
       "/posts/research_article_biggest_bacterium/index_post.html",
       "/posts/notion_movie_books/index.html",
-      "/posts/welcome/index.html",
+      "/posts/welcome_to_blog/index.html",
       "/posts/notion_task_manager/index.html",
       "/posts/notion_literature/index.html",
       "/posts/notion_research_diary/index.html",
       "/posts/notion_intro/index.html",
-      "/posts/word-happy-2022/index.html"
+      "/posts/word_happy_2022/index.html"
     ]
   },
   {
     "listing": "/tutorials.html",
     "items": [
-      "/tutorials/data_viz/project1.html",
-      "/tutorials/data_viz/project2.html",
-      "/tutorials/data_viz/project3.html",
-      "/tutorials/data_viz/project4.html",
-      "/tutorials/data_man/project5.html",
-      "/tutorials/data_man/project6.html",
-      "/tutorials/data_man/project7.html",
+      "/tutorials/data_viz/ggplot_1.html",
+      "/tutorials/data_viz/ggplot_2.html",
+      "/tutorials/data_viz/ggplot_3.html",
+      "/tutorials/data_viz/ggpubr.html",
+      "/tutorials/data_man/tidyr.html",
+      "/tutorials/data_man/dplyr_1.html",
+      "/tutorials/data_man/dplyr_2.html",
       "/tutorials/stat_basic/project1.html",
       "/tutorials/stat_basic/project2.html",
       "/tutorials/stat_basic/project3.html",
@@ -32,6 +32,7 @@
       "/tutorials/stat_basic/project7.html",
       "/tutorials/stat_basic/project8.html",
       "/tutorials/stat_basic/project9.html",
+      "/tutorials/stat_model/glmer_stat_model.html",
       "/tutorials/stat_model/glm_stat_model.html",
       "/tutorials/stat_model/inter_stat_model.html",
       "/tutorials/stat_model/intro_stat_model.html"

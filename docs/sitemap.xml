@@ -1,127 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/blog.html</loc>
-    <lastmod>2022-08-23T07:33:48.877Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/blog.html</loc>
+    <lastmod>2022-08-28T05:38:56.298Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/index.html</loc>
-    <lastmod>2022-08-23T07:33:49.721Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/index.html</loc>
+    <lastmod>2022-08-28T05:38:57.113Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/posts/notion_intro/index.html</loc>
-    <lastmod>2022-08-23T07:33:56.643Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/posts/notion_intro/index.html</loc>
+    <lastmod>2022-08-28T05:39:06.954Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/posts/notion_literature/index.html</loc>
-    <lastmod>2022-08-23T07:34:00.703Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/posts/notion_literature/index.html</loc>
+    <lastmod>2022-08-28T05:39:10.960Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/posts/notion_movie_books/index.html</loc>
-    <lastmod>2022-08-23T07:34:03.773Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/posts/notion_movie_books/index.html</loc>
+    <lastmod>2022-08-28T05:39:14.032Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/posts/notion_research_diary/index.html</loc>
-    <lastmod>2022-08-23T07:34:06.953Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/posts/notion_research_diary/index.html</loc>
+    <lastmod>2022-08-28T05:39:17.129Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/posts/notion_task_manager/index.html</loc>
-    <lastmod>2022-08-23T07:34:11.130Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/posts/notion_task_manager/index.html</loc>
+    <lastmod>2022-08-28T05:39:20.679Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/posts/research_article_biggest_bacterium/index_post.html</loc>
-    <lastmod>2022-08-23T07:34:15.484Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/posts/research_article_biggest_bacterium/index_post.html</loc>
+    <lastmod>2022-08-28T05:39:25.151Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/posts/research_article_embryonic_learning/index_post.html</loc>
-    <lastmod>2022-08-23T07:34:20.182Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/posts/research_article_embryonic_learning/index_post.html</loc>
+    <lastmod>2022-08-28T05:39:30.229Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/posts/welcome/index.html</loc>
-    <lastmod>2022-08-23T07:34:28.978Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/posts/welcome_to_blog/index.html</loc>
+    <lastmod>2022-08-28T05:39:40.527Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/posts/word-happy-2022/index.html</loc>
-    <lastmod>2022-08-23T07:34:51.160Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/posts/word_happy_2022/index.html</loc>
+    <lastmod>2022-08-28T05:40:27.335Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/tutorials/data_man/project5.html</loc>
-    <lastmod>2022-08-23T07:34:59.844Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/tutorials/data_man/dplyr_1.html</loc>
+    <lastmod>2022-08-28T05:40:49.777Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/tutorials/data_man/project6.html</loc>
-    <lastmod>2022-08-23T07:35:35.781Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/tutorials/data_man/dplyr_2.html</loc>
+    <lastmod>2022-08-28T05:41:07.655Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/tutorials/data_man/project7.html</loc>
-    <lastmod>2022-08-23T07:35:49.967Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/tutorials/data_man/tidyr.html</loc>
+    <lastmod>2022-08-28T05:41:21.148Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/tutorials/data_viz/project1.html</loc>
-    <lastmod>2022-08-23T07:35:59.231Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_1.html</loc>
+    <lastmod>2022-08-28T05:41:38.079Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/tutorials/data_viz/project2.html</loc>
-    <lastmod>2022-08-23T07:36:15.126Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_2.html</loc>
+    <lastmod>2022-08-28T05:42:13.589Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/tutorials/data_viz/project3.html</loc>
-    <lastmod>2022-08-23T07:36:45.479Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_3.html</loc>
+    <lastmod>2022-08-28T05:43:42.020Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/tutorials/data_viz/project4.html</loc>
-    <lastmod>2022-08-23T07:37:05.432Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/tutorials/data_viz/ggpubr.html</loc>
+    <lastmod>2022-08-28T05:44:41.854Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/tutorials/stat_basic/project1.html</loc>
-    <lastmod>2022-08-23T07:37:08.373Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/tutorials/stat_basic/project1.html</loc>
+    <lastmod>2022-08-28T05:44:45.595Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/tutorials/stat_basic/project2.html</loc>
-    <lastmod>2022-08-23T07:37:17.241Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/tutorials/stat_basic/project2.html</loc>
+    <lastmod>2022-08-28T05:44:59.608Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/tutorials/stat_basic/project3.html</loc>
-    <lastmod>2022-08-23T07:37:20.283Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/tutorials/stat_basic/project3.html</loc>
+    <lastmod>2022-08-28T05:45:03.120Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/tutorials/stat_basic/project4.html</loc>
-    <lastmod>2022-08-23T07:37:24.436Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/tutorials/stat_basic/project4.html</loc>
+    <lastmod>2022-08-28T05:45:06.944Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/tutorials/stat_basic/project5.html</loc>
-    <lastmod>2022-08-23T07:37:30.956Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/tutorials/stat_basic/project5.html</loc>
+    <lastmod>2022-08-28T05:45:09.782Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/tutorials/stat_basic/project6.html</loc>
-    <lastmod>2022-08-23T07:37:36.120Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/tutorials/stat_basic/project6.html</loc>
+    <lastmod>2022-08-28T05:45:13.038Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/tutorials/stat_basic/project7.html</loc>
-    <lastmod>2022-08-23T07:37:48.128Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/tutorials/stat_basic/project7.html</loc>
+    <lastmod>2022-08-28T05:45:23.417Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/tutorials/stat_basic/project8.html</loc>
-    <lastmod>2022-08-23T07:37:54.151Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/tutorials/stat_basic/project8.html</loc>
+    <lastmod>2022-08-28T05:45:29.595Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/tutorials/stat_basic/project9.html</loc>
-    <lastmod>2022-08-23T07:38:05.911Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/tutorials/stat_basic/project9.html</loc>
+    <lastmod>2022-08-28T05:45:41.903Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/tutorials/stat_model/inter_stat_model.html</loc>
-    <lastmod>2022-08-23T07:39:13.593Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/tutorials/stat_model/glmer_stat_model.html</loc>
+    <lastmod>2022-08-28T05:51:21.104Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/tutorials/stat_model/intro_stat_model.html</loc>
-    <lastmod>2022-08-23T07:39:35.641Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/tutorials/stat_model/glm_stat_model.html</loc>
+    <lastmod>2022-08-28T05:47:05.230Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/tutorials.html</loc>
-    <lastmod>2022-08-23T08:02:32.934Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/tutorials/stat_model/inter_stat_model.html</loc>
+    <lastmod>2022-08-28T05:48:07.772Z</lastmod>
   </url>
   <url>
-    <loc>https://jeweljohnsonj.github.io/one-carat-blog/tutorials/stat_model/glm_stat_model.html</loc>
-    <lastmod>2022-08-23T08:02:29.911Z</lastmod>
+    <loc>https://one-carat-blog.netlify.app/tutorials/stat_model/intro_stat_model.html</loc>
+    <lastmod>2022-08-28T05:48:53.354Z</lastmod>
+  </url>
+  <url>
+    <loc>https://one-carat-blog.netlify.app/tutorials.html</loc>
+    <lastmod>2022-08-28T05:50:40.480Z</lastmod>
   </url>
 </urlset>

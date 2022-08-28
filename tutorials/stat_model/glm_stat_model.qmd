@@ -8,6 +8,18 @@ format:
       - https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css
 image: images/stat_model_3.png
 categories: [statistical modelling]
+filters:
+   - social-share
+share:
+  permalink: "https://one-carat-blog.netlify.app/tutorials/stat_model/glm_stat_model.html"
+  description: "Generalized linear models in R"
+  twitter: true
+  facebook: true
+  reddit: true
+  stumble: true
+  tumblr: true
+  linkedin: true
+  email: true
 ---
 
 ```{ojs}
@@ -85,6 +97,8 @@ To quickly recap, a linear model tries to explain the variability seen in the re
 We will use the `HorsePrices` dataset from the `{Stat2Data}` package in R. We will model the price of the horses in this dataset to their height and age. We will use the `summary()` function to output the summary of the linear model.
 
 ```{r}
+if (!require(Stat2Data)) install.packages('Stat2Data')
+if (!require(statisticalModeling)) install.packages('statisticalModeling')
 library(Stat2Data)
 library(statisticalModeling)
 
@@ -116,13 +130,13 @@ We can see from the graph that there are two straight lines, therefore there wil
 $$ y_1 = m_1x_1 + c_1 \\
  y_2 = m_2x_2 + c_2$$
 
-From the graph, you can see that the slopes for both the lines are the same. This means that the effect size of age is the same across both the sex. Also, the slope should be a negative value because as age increases, price is decreasing for both sexes. From the model summary, the slope value for age is -220.10. Thus we have;
+From the graph, you can see that the slopes for both lines are the same. This means that the effect size of age is the same across both the sex. Also, the slope should be a negative value because as age increases, the price is decreasing for both sexes. From the model summary, the slope value for age is -220.10. Thus we have;
 
 $$m_1 = m_2 = -220.1$$
 
 Now recall how I explained that the effect size for a categorical exploratory variable is expressed in terms of [change](https://one-carat-blog.netlify.app/tutorials/stat_model/intro_stat_model.html#effect-sizes) and that change is in terms of their [y-intercepts](https://one-carat-blog.netlify.app/tutorials/stat_model/inter_stat_model.html#interactions-among-explanatory-variables).
 
-Now R calculates intercepts in two ways. The default way or the first way is what is shown in the model summary. In the (Intercept) row, the estimated value is 18199.7 and this value is the y-intercept value for the straight line for 'female'. You can easily verify this from the red line in the graph. Notice how the y-intercepts are the same as shown in the model summary and the plot. Now in the row 'Sexm', the estimated value shows how much difference is there from the estimated value shown in the (Intercept) row or otherwise how much difference in y-intercept is there between females and males. Since the difference is positive this means the y-intercept for males is 17008.6 higher than the y-intercept of females. Thus we have;
+Now R calculates intercepts in two ways. The default way or the first way is what is shown in the model summary. In the (Intercept) row, the estimated value is 18199.7 and this value is the y-intercept value for the straight line for 'female'. You can easily verify this from the red line in the graph. Notice how the y-intercepts are the same as shown in the model summary and the plot. Now in the row 'Sexm', the estimated value shows how much difference is there from the estimated value shown in the (Intercept) row or otherwise how much difference in y-intercept is there between females and males. Since the difference is positive this means the y-intercept for males is 17008.6 higher than the y-intercept for females. Thus we have;
 
 $$c_1 = 18199.7\\c_2 - c_1 = 17008.6$$
 
@@ -136,7 +150,7 @@ library(statisticalModeling)
 
 data("HorsePrices")
 
-# Building a linear model with -1 expression
+# Building a linear model showing mean for each level of the response variable
 model_lm <- lm(Price ~ Age + Sex - 1, data = HorsePrices)
 
 # Getting the summary of the linear model
@@ -147,7 +161,14 @@ Now you get individual y-intercept values for all the levels in the data. There 
 
 $$c_1 = 18199.7\\c_2 = 35208.2 = 17008.6 + 18199.7$$
 
-So the first way compares differences between groups by taking the first group as the reference and in a second way, we can see the actual change in the respective group.
+In algebraic form, the default model formula for a linear model used in `lm()` is;
+
+$$y \sim \beta_0 + \beta_2x_2 + \beta_3x_3 + .. + \epsilon$$
+And when `-1` is used in the model formula, then it becomes;
+
+$$y \sim \beta_1x_1 + \beta_2x_2 + \beta_3x_3 + .. + \epsilon$$
+
+So the first way compares differences between groups by taking the first group as the reference and giving a global intercept ($\beta_0$) and in a second way, we can see the actual change in the respective groups as their respective coefficients ($\beta_1$, $\beta_2$ etc.).
 
 ## Limitations of linear models
 
@@ -302,7 +323,7 @@ head(run17_wide)
 
 In the above case, for long format data, we have a single entry in each row corresponding to individual data but in the wide format, we have each row entry corresponding to a single age group. Another way of expressing the data in a wide format is to calculate the percentage of choices, which is by dividing the total number of choices for the first category by the total number of choices for both categories.
 
-So for wide format data; If our data structure has the absolute value of the no. of choices made then we use `cbind()` in the model formula. If we have percentages, then we use `weights = ()` in the `glm()` function.
+So for wide format data; If our data structure has the absolute value of the no. of choices made then we use `cbind()` in the model formula (also called as the Wilkinson-Rogers format). If we have percentages, then we use `weights = ()` in the `glm()` function.
 
 So in summary we choose between Bernoulli and binomial by checking the following questions;
 
@@ -353,6 +374,38 @@ model_logistic_wide_2 <- glm(prect_ten_mile ~ age,
 summary(model_logistic_long)
 summary(model_logistic_wide_1)
 summary(model_logistic_wide_2)
+```
+
+In summary we have three data formats for logistic regression
+
+1.    Binary format
+
+```{r}
+#| eval: false
+
+# Binary: y = 0 or 1
+model_logistic_long <- glm(event ~ age, data = run17_tidy, family = "binomial")
+```
+
+2.    Wilkinson-Rogers format (the 'cbind' format)
+
+```{r}
+#| eval: false
+
+# Wilkinson-Rogers: cbind(success, failure)
+model_logistic_wide_1 <- glm(cbind(Five_Km, Ten_Mile) ~ age,
+                             data = run17_wide, family = "binomial")
+```
+
+3.    Weighted format 
+
+```{r}
+#| eval: false
+
+# Weighted format: y = 'proportions', weights = 'totals'
+model_logistic_wide_2 <- glm(prect_ten_mile ~ age, 
+                             data = run17_wide, family = "binomial",
+                             weights = (run17_wide$Ten_Mile + run17_wide$Five_Km))
 ```
 
 Please note that all three models give the same coefficients but the model with the long format structure has higher degrees of freedom as compared to the other two models with the wide format.
@@ -760,12 +813,19 @@ Overdispersion occurs when the datasets have a lot of zeros or ones in the case 
 This marks the end of the introduction to generalised linear models. In summary, we learned;
 
 1.    Understanding the coefficients in a linear model
+
 2.    Why do linear models fail for some datasets and what are the limitations of a linear model
+
 3.    Two types of GLMs: Poisson and Logistic
+
 4.    Link functions
+
 5.    Understanding the coefficients in a Poisson and logistic models
+
 6.    Plotting Poisson and logistic models
+
 7.    Brief introduction to multiple regression using GLMs
+
 8.    Assumptions of GLMs: When to use GLMs
 
 In the next tutorial, we will take our understanding of GLMs to the next level and learn about 'Hierarchical and Mixed Effects Models in R'. See you then!

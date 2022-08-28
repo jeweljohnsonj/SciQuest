@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.38">
+<meta name="generator" content="quarto-1.1.132">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
 
 
@@ -198,9 +203,15 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 <link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="one carat blog - Tutorial posts">
+<meta property="og:description" content="Immortalizing the things I learned.">
+<meta property="og:image" content="https://one-carat-blog.netlify.app//media/blog_preview.png">
+<meta property="og:site-name" content="one carat blog">
+<meta property="og:image:height" content="1080">
+<meta property="og:image:width" content="1920">
 <meta name="twitter:title" content="one carat blog - Tutorial posts">
 <meta name="twitter:description" content="Immortalizing the things I learned.">
-<meta name="twitter:image" content="https://jeweljohnsonj.github.io/one-carat-blog//media/blog_preview.png">
+<meta name="twitter:image" content="https://one-carat-blog.netlify.app//media/blog_preview.png">
 <meta name="twitter:image-height" content="1080">
 <meta name="twitter:image-width" content="1920">
 <meta name="twitter:card" content="summary_large_image">
@@ -212,10 +223,14 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <a class="navbar-brand" href="./index.html">
-    <img src="./favicon.png" alt="">
+      <div class="navbar-brand-container">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./favicon.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">one carat blog</span>
-  </a>
+    </a>
+  </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -267,17 +282,17 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data-visualization-using-r" id="toc-data-visualization-using-r" class="nav-link active" data-scroll-target="#data-visualization-using-r"> <span class="header-section-number">1</span> Data visualization using R</a></li>
-  <li><a href="#data-manipulation-using-r" id="toc-data-manipulation-using-r" class="nav-link" data-scroll-target="#data-manipulation-using-r"> <span class="header-section-number">2</span> Data manipulation using R</a></li>
-  <li><a href="#basic-statistics-using-r" id="toc-basic-statistics-using-r" class="nav-link" data-scroll-target="#basic-statistics-using-r"> <span class="header-section-number">3</span> Basic statistics using R</a></li>
-  <li><a href="#statisitcal-modelling-using-r" id="toc-statisitcal-modelling-using-r" class="nav-link" data-scroll-target="#statisitcal-modelling-using-r"> <span class="header-section-number">4</span> Statisitcal modelling using R</a></li>
+  <li><a href="#data-visualization-using-r" id="toc-data-visualization-using-r" class="nav-link active" data-scroll-target="#data-visualization-using-r"><span class="toc-section-number">1</span>  Data visualization using R</a></li>
+  <li><a href="#data-manipulation-using-r" id="toc-data-manipulation-using-r" class="nav-link" data-scroll-target="#data-manipulation-using-r"><span class="toc-section-number">2</span>  Data manipulation using R</a></li>
+  <li><a href="#basic-statistics-using-r" id="toc-basic-statistics-using-r" class="nav-link" data-scroll-target="#basic-statistics-using-r"><span class="toc-section-number">3</span>  Basic statistics using R</a></li>
+  <li><a href="#statisitcal-modelling-using-r" id="toc-statisitcal-modelling-using-r" class="nav-link" data-scroll-target="#statisitcal-modelling-using-r"><span class="toc-section-number">4</span>  Statisitcal modelling using R</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/edit/main/tutorials.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(19)</span></div><div class="category" data-category="basic statistics">basic statistics <span class="quarto-category-count">(9)</span></div><div class="category" data-category="data visualization">data visualization <span class="quarto-category-count">(4)</span></div><div class="category" data-category="data wrangling">data wrangling <span class="quarto-category-count">(3)</span></div><div class="category" data-category="dplyr">dplyr <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ggplot2">ggplot2 <span class="quarto-category-count">(3)</span></div><div class="category" data-category="ggpubr">ggpubr <span class="quarto-category-count">(1)</span></div><div class="category" data-category="statistical modelling">statistical modelling <span class="quarto-category-count">(3)</span></div><div class="category" data-category="statistics">statistics <span class="quarto-category-count">(9)</span></div><div class="category" data-category="tidyr">tidyr <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(20)</span></div><div class="category" data-category="basic statistics">basic statistics <span class="quarto-category-count">(9)</span></div><div class="category" data-category="data visualization">data visualization <span class="quarto-category-count">(4)</span></div><div class="category" data-category="data wrangling">data wrangling <span class="quarto-category-count">(3)</span></div><div class="category" data-category="dplyr">dplyr <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ggplot2">ggplot2 <span class="quarto-category-count">(3)</span></div><div class="category" data-category="ggpubr">ggpubr <span class="quarto-category-count">(1)</span></div><div class="category" data-category="statistical modelling">statistical modelling <span class="quarto-category-count">(4)</span></div><div class="category" data-category="statistics">statistics <span class="quarto-category-count">(9)</span></div><div class="category" data-category="tidyr">tidyr <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -288,8 +303,8 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <h2 data-number="1" class="anchored" data-anchor-id="data-visualization-using-r"><span class="header-section-number">1</span> Data visualization using R</h2>
 <div id="listing-data-viz" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="ggplot2,data visualization" data-listing-date-sort="1638383400000" data-listing-file-modified-sort="1659763120648" data-listing-reading-time-sort="9.78">
-<a href="./tutorials/data_viz/project1.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="0" data-categories="ggplot2,data visualization" data-listing-date-sort="1638383400000" data-listing-file-modified-sort="1661663770955" data-listing-reading-time-sort="9.78">
+<a href="./tutorials/data_viz/ggplot_1.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img src="./tutorials/data_viz/images/gg1.png" class="thumbnail-image card-img" style="height: 150px;">
@@ -321,8 +336,8 @@ Dec 2, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="ggplot2,data visualization" data-listing-date-sort="1638556200000" data-listing-file-modified-sort="1659763131503" data-listing-reading-time-sort="11.62">
-<a href="./tutorials/data_viz/project2.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="1" data-categories="ggplot2,data visualization" data-listing-date-sort="1638556200000" data-listing-file-modified-sort="1661663767460" data-listing-reading-time-sort="11.62">
+<a href="./tutorials/data_viz/ggplot_2.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img src="./tutorials/data_viz/images/gg2.png" class="thumbnail-image card-img" style="height: 150px;">
@@ -354,8 +369,8 @@ Dec 4, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="ggplot2,data visualization" data-listing-date-sort="1638988200000" data-listing-file-modified-sort="1659763145799" data-listing-reading-time-sort="34.895">
-<a href="./tutorials/data_viz/project3.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="2" data-categories="ggplot2,data visualization" data-listing-date-sort="1638988200000" data-listing-file-modified-sort="1661663756512" data-listing-reading-time-sort="34.895">
+<a href="./tutorials/data_viz/ggplot_3.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img src="./tutorials/data_viz/images/gg3.png" class="thumbnail-image card-img" style="height: 150px;">
@@ -387,8 +402,8 @@ Dec 9, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="3" data-categories="ggpubr,data visualization" data-listing-date-sort="1641407400000" data-listing-file-modified-sort="1659763157378" data-listing-reading-time-sort="27.09">
-<a href="./tutorials/data_viz/project4.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="3" data-categories="ggpubr,data visualization" data-listing-date-sort="1641407400000" data-listing-file-modified-sort="1661663656435" data-listing-reading-time-sort="27.09">
+<a href="./tutorials/data_viz/ggpubr.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img src="./tutorials/data_viz/images/gg4.png" class="thumbnail-image card-img" style="height: 150px;">
@@ -431,8 +446,8 @@ No matching items
 <h2 data-number="2" class="anchored" data-anchor-id="data-manipulation-using-r"><span class="header-section-number">2</span> Data manipulation using R</h2>
 <div id="listing-data-man" class="quarto-listing quarto-listing-container-grid">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="tidyr,data wrangling" data-listing-date-sort="1639161000000" data-listing-file-modified-sort="1659763173360" data-listing-reading-time-sort="12.59">
-<a href="./tutorials/data_man/project5.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="0" data-categories="tidyr,data wrangling" data-listing-date-sort="1639161000000" data-listing-file-modified-sort="1661663633436" data-listing-reading-time-sort="12.59">
+<a href="./tutorials/data_man/tidyr.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img src="./tutorials/data_man/images/tidyr.png" class="thumbnail-image card-img" style="height: 150px;">
@@ -464,8 +479,8 @@ Dec 11, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="dplyr,data wrangling" data-listing-date-sort="1639333800000" data-listing-file-modified-sort="1659763184641" data-listing-reading-time-sort="9.61">
-<a href="./tutorials/data_man/project6.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="1" data-categories="dplyr,data wrangling" data-listing-date-sort="1639333800000" data-listing-file-modified-sort="1661663823436" data-listing-reading-time-sort="9.61">
+<a href="./tutorials/data_man/dplyr_1.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img src="./tutorials/data_man/images/dplyr.png" class="thumbnail-image card-img" style="height: 150px;">
@@ -497,8 +512,8 @@ Dec 13, 2021
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="dplyr,data wrangling" data-listing-date-sort="1639333800000" data-listing-file-modified-sort="1659763195910" data-listing-reading-time-sort="5.135">
-<a href="./tutorials/data_man/project7.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="2" data-categories="dplyr,data wrangling" data-listing-date-sort="1639333800000" data-listing-file-modified-sort="1661663860498" data-listing-reading-time-sort="5.135">
+<a href="./tutorials/data_man/dplyr_2.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
 <img src="./tutorials/data_man/images/dplyr1.png" class="thumbnail-image card-img" style="height: 150px;">
@@ -874,7 +889,37 @@ No matching items
     </div>
 </div>
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="statistical modelling" data-listing-date-sort="1661193000000" data-listing-file-modified-sort="1661241267696" data-listing-reading-time-sort="26.31">
+<div class="g-col-1" data-index="0" data-categories="statistical modelling" data-listing-date-sort="1661625000000" data-listing-file-modified-sort="1661663226392" data-listing-reading-time-sort="34.54">
+<a href="./tutorials/stat_model/glmer_stat_model.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./tutorials/stat_model/images/stat_model_4.png" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Hierarchical and Mixed Effects Models in R
+</h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('statistical modelling'); return false;">
+statistical modelling
+</div>
+</div>
+<div class="card-text listing-description">
+Go beyond linear models and extend them to analyse non-normal datasets with random effects
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+Jewel Johnson
+</div>
+<div class="listing-date">
+Aug 28, 2022
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="statistical modelling" data-listing-date-sort="1661193000000" data-listing-file-modified-sort="1661663313118" data-listing-reading-time-sort="27.54">
 <a href="./tutorials/stat_model/glm_stat_model.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -904,7 +949,7 @@ Aug 23, 2022
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="statistical modelling" data-listing-date-sort="1660156200000" data-listing-file-modified-sort="1660233677617" data-listing-reading-time-sort="43.335">
+<div class="g-col-1" data-index="2" data-categories="statistical modelling" data-listing-date-sort="1660156200000" data-listing-file-modified-sort="1661663324013" data-listing-reading-time-sort="43.25">
 <a href="./tutorials/stat_model/inter_stat_model.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -934,7 +979,7 @@ Aug 11, 2022
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="statistical modelling" data-listing-date-sort="1659551400000" data-listing-file-modified-sort="1660229926963" data-listing-reading-time-sort="45.48">
+<div class="g-col-1" data-index="3" data-categories="statistical modelling" data-listing-date-sort="1659551400000" data-listing-file-modified-sort="1661663369096" data-listing-reading-time-sort="45.48">
 <a href="./tutorials/stat_model/intro_stat_model.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -1046,7 +1091,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

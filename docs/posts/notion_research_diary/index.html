@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.38">
+<meta name="generator" content="quarto-1.1.132">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jewel Johnson">
 <meta name="dcterms.date" content="2022-06-29">
@@ -11,10 +11,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -53,7 +58,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -66,7 +71,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -123,9 +128,15 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </script><style>html{ scroll-behavior: smooth; }</style>
 <link href="../../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script><link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="one carat blog - Using Notion to keep a research diary">
+<meta property="og:description" content="This a tutorial on how you can use Notion to maintain a research diary if you are a researcher or a PhD student">
+<meta property="og:image" content="https://one-carat-blog.netlify.app/posts\notion_research_diary\images\res_dairy.png">
+<meta property="og:site-name" content="one carat blog">
+<meta property="og:image:height" content="720">
+<meta property="og:image:width" content="1280">
 <meta name="twitter:title" content="one carat blog - Using Notion to keep a research diary">
 <meta name="twitter:description" content="This a tutorial on how you can use Notion to maintain a research diary if you are a researcher or a PhD student">
-<meta name="twitter:image" content="https://jeweljohnsonj.github.io/one-carat-blog/posts\notion_research_diary\images\res_dairy.png">
+<meta name="twitter:image" content="https://one-carat-blog.netlify.app/posts\notion_research_diary\images\res_dairy.png">
 <meta name="twitter:image-height" content="720">
 <meta name="twitter:image-width" content="1280">
 <meta name="twitter:card" content="summary_large_image">
@@ -134,9 +145,13 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
-      <a class="navbar-brand" href="../../index.html">
-    <img src="../../favicon.png" alt=""><span class="navbar-title">one carat blog</span>
-  </a>
+      <div class="navbar-brand-container">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../favicon.png" alt="" class="navbar-logo"></a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">one carat blog</span>
+    </a>
+  </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -205,11 +220,11 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc"><h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#tldr" id="toc-tldr" class="nav-link active" data-scroll-target="#tldr"> <span class="header-section-number">1</span> TL;DR</a></li>
-  <li><a href="#using-notion-to-keep-a-research-diary" id="toc-using-notion-to-keep-a-research-diary" class="nav-link" data-scroll-target="#using-notion-to-keep-a-research-diary"> <span class="header-section-number">2</span> Using notion to keep a research diary</a></li>
+<li><a href="#tldr" id="toc-tldr" class="nav-link active" data-scroll-target="#tldr"><span class="toc-section-number">1</span>  TL;DR</a></li>
+  <li><a href="#using-notion-to-keep-a-research-diary" id="toc-using-notion-to-keep-a-research-diary" class="nav-link" data-scroll-target="#using-notion-to-keep-a-research-diary"><span class="toc-section-number">2</span>  Using notion to keep a research diary</a></li>
   <li><a href="#useful-references" id="toc-useful-references" class="nav-link" data-scroll-target="#useful-references">Useful References</a></li>
   </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/edit/main/posts/notion_research_diary/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -280,14 +295,15 @@ Video: Making a diary entry (click here)
 
 </div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{johnson2022,
   author = {Jewel Johnson},
+  editor = {},
   title = {Using {Notion} to Keep a Research Diary},
   date = {2022-06-29},
-  url = {https://jeweljohnsonj.github.io/one-carat-blog//posts/notion_research_diary},
+  url = {https://one-carat-blog.netlify.app//posts/notion_research_diary},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-johnson2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
 Jewel Johnson. 2022. <span>“Using Notion to Keep a Research
-Diary.”</span> June 29, 2022. <a href="https://jeweljohnsonj.github.io/one-carat-blog//posts/notion_research_diary">https://jeweljohnsonj.github.io/one-carat-blog//posts/notion_research_diary</a>.
+Diary.”</span> June 29, 2022. <a href="https://one-carat-blog.netlify.app//posts/notion_research_diary">https://one-carat-blog.netlify.app//posts/notion_research_diary</a>.
 </div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -408,7 +424,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);

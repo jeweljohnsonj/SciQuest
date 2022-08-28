@@ -8,6 +8,18 @@ format:
       - https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css
 image: images/stat_model_2.png
 categories: [statistical modelling]
+filters:
+   - social-share
+share:
+  permalink: "https://one-carat-blog.netlify.app/tutorials/stat_model/inter_stat_model.html"
+  description: "Intermediate statistical modelling in R"
+  twitter: true
+  facebook: true
+  reddit: true
+  stumble: true
+  tumblr: true
+  linkedin: true
+  email: true
 ---
 
 ```{ojs}
@@ -1396,9 +1408,7 @@ First of all, congratulations on completing the intermediate statistical modelli
     
 9. Collinearity
 
-You have mastered almost everything that is there in linear modelling. Congratulations! But, the journey is not over. The next stop is 'Generalized Linear Models in R`. This is a realm where we deal with complex datasets that cannot be analysed by our trusty linear regression models. Anyway, that's a problem for tomorrow. Practice the concepts you gained from both the tutorials and come ready for the next tutorial. Peace ✌️
-
-PS: It took me 6 whole days to make this tutorial. Never compromise on hard work 😁
+You have mastered almost everything that is there in linear modelling. Congratulations! But, the journey is not over. The next stop is 'Generalized Linear Models in R`. This is a realm where we deal with complex datasets that cannot be analysed by our trusty linear regression models. Anyway, that's a problem for tomorrow. Practice the concepts you gained from both the tutorials and come ready for the next tutorial ✌️
 
 #### Last updated on {.unnumbered .unlisted .appendix}
 

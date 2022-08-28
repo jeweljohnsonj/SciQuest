@@ -28,12 +28,16 @@ execute:
 
 # Enable hypothesis
 comments:
-  hypothesis: true
+  hypothesis: false
 
 # Default author
 author:
   - name: Jewel Johnson
     url: https://jeweljohnsonj.github.io/one-carat-blog/
+
+# Extension settings
+filters:
+   - lightbox
 
 # Default fields for citation
 citation: true

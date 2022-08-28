@@ -18,8 +18,8 @@ website:
         href: mailto:jewel15@alumni.iisertvm.ac.in
       - icon: house-chimney
         href: mailto:jeweljohnsonj@gmail.com
-  opengraph: true
-  site-url: "https://jeweljohnsonj.github.io/one-carat-blog/"
+  open-graph: true
+  site-url: "https://one-carat-blog.netlify.app/"
   repo-url: "https://github.com/jeweljohnsonj/one-carat-blog"
   repo-actions: [edit, issue]
   twitter-card: true

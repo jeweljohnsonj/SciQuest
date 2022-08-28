@@ -10,6 +10,18 @@ format:
     css:
       - https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css
 categories: [statistical modelling]
+filters:
+   - social-share
+share:
+  permalink: "https://one-carat-blog.netlify.app/tutorials/stat_model/intro_stat_model.html"
+  description: "Introduction to statistical modelling in R"
+  twitter: true
+  facebook: true
+  reddit: true
+  stumble: true
+  tumblr: true
+  linkedin: true
+  email: true
 ---
 
 ```{ojs}
