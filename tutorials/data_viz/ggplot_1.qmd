@@ -88,9 +88,9 @@ ggplot(data = penguins, aes(x = species, fill = species)) +
 
 ### Histogram
 
-Histograms are similar to bar graphs visually. But histograms are used to represent continuous data. Also the all the rectangular bars will have the same bin size or width.
+Histograms are similar to bar graphs visually and are used to represent continuous data. Histograms splits data into 'bins' and tells us the number of observations for each of the bin.
 
--   We can plot a histogram using the command `geom_histogram()`.
+-   We can plot a histogram using the command `geom_histogram()` and change the bin width using the `binwidth = ` argument.
 
 ```{r}
 #| warning: true
@@ -100,7 +100,7 @@ library(palmerpenguins)
 ggplot(data = penguins, aes(x = body_mass_g, fill = species)) + 
   xlab("Body Mass (g)") + ylab("Frequency") + 
   ggtitle("Frequency of individuals for respective body mass") + 
-  geom_histogram(bins = 25) + theme_bw()
+  geom_histogram(binwidth = 1000) + theme_bw()
 ```
 
 The warning message indicates that for two rows in the dataset, they have NA values or that they did not have any values present. This is true for real-life cases, as during data collection sometimes you will be unable to collect data due to various reasons. So this is perfectly fine.

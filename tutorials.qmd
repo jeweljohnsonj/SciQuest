@@ -32,7 +32,7 @@ citation: false
 :::{#data-viz}
 :::
 
-Master the art of data visualization using the `{ggplot2}` package in R
+Master the art of data visualization using the different packages in R
 
 ## Data manipulation using R
 
@@ -41,18 +41,18 @@ Master the art of data visualization using the `{ggplot2}` package in R
 
 Tidy your data using powerful cleaning tools provided by the `{tidyr}` and `{dplyr}` packages in R
 
-## Basic statistics using R
+## Introductory statistics using R
 
 :::{#stat-basic}
 :::
 
-**I am currently remaking the posts, so these posts are subjected to change**
+Be confident in your foundations of statistics
 
-## Statisitcal modelling using R
+## Statistical modelling using R
 
 :::{#stat-model}
 :::
 
-Guess t-test wasn't good enough for you?
+Equip yourselves with powerful modelling tools to analyse data in a more creative and complex way.
 
 <a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>

@@ -5,6 +5,7 @@ author: "Jewel Johnson"
 date: "05/21/2022"
 format: html
 categories: [statistics, basic statistics]
+draft: true
 ---
 
 ```{r}

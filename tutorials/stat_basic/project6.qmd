@@ -4,6 +4,7 @@ description: "Learn about confidence interval and effect size"
 date: "05/21/2022"
 format: html
 categories: [statistics, basic statistics]
+draft: true
 ---
 
 ```{r}

@@ -5,6 +5,7 @@ author: "Jewel Johnson"
 date: "05/21/2022"
 format: html
 categories: [statistics, basic statistics]
+draft: true
 ---
 
 ```{r}
@@ -49,7 +50,7 @@ The formula to calculate the standard deviation of the mean is;
 
 $$s = \sqrt{s^{2}} = \sqrt{\frac{\sum (x_{i} - \bar{x})^{2}}{N - 1}}$$ where $s$ is standard deviation, $\sqrt{s^{2}}$ is variance, $x_{i}$ is your data point, $\bar{x}$ is sample mean and $N$ is sample size.
 
-Standard deviation is generally constant across the population and is larger than the standard error of the mean. Because of this sometimes researchers cheat out by using standard error of the mean in the results, rather than using standard deviation, which leads to a false idea that their measurements are accurate.
+ Because of this sometimes researchers cheat out by using standard error of the mean in the results, rather than using standard deviation, which leads to a false idea that their measurements are accurate.
 
 ## Standard normal distribution
 

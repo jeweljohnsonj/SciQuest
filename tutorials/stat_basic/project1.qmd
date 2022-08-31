@@ -4,6 +4,7 @@ description: "Learn the basics of statistics and how to do them with R"
 date: "05/21/2022"
 format: html
 categories: [statistics, basic statistics]
+draft: true
 ---
 
 ::: {layout-ncol="1"}
