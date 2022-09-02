@@ -1387,7 +1387,7 @@ TL;DR
 <span class="header-section-number">9.4</span> Different types data transformations</h3>
 <p>Depending on the nature of the dataset, different transformations can be applied to better visualize the relationship between two variables. Given below are different data transformation functions which are used depending on the skewness of the data <span class="citation" data-cites="s_data_2010">(<a href="#ref-s_data_2010" role="doc-biblioref">S 2010</a>)</span>.</p>
 <ol type="1">
-<li><p>For right-skewed data, the standard deviation is proportional to the mean. In this case, logarithmic transformation (<span class="math inline">log(x)</span>) works best.</p></li>
+<li><p>For right-skewed data, the standard deviation is proportional to the mean. In this case, logarithmic transformation (<span class="math inline">log(x)</span>) works best. The square root transformation (<span class="math inline">\sqrt{x}</span>) can also be used.</p></li>
 <li><p>If the variance is proportional to the mean (in the case of Poisson distributions), square root transformation (<span class="math inline">\sqrt{x}</span>) is preferred. This happens more in the case of variables which are measured as counts e.g., number of malignant cells in a microscopic field, number of deaths from swine flu, etc.</p></li>
 <li><p>If the standard deviation is proportional to the mean squared, a reciprocal transformation (<span class="math inline">\frac{1}{x}</span>) can be performed. Reciprocal transformation is carried out for highly variable quantities such as serum creatinine.</p></li>
 <li><p>Other transformations include the square transformation (<span class="math inline">x^2</span>) and exponential transformation (<span class="math inline">e^x</span>) which can be used for left skewed data.</p></li>
@@ -1407,7 +1407,7 @@ TL;DR
 <tbody>
 <tr class="odd">
 <td>Logarithmic transformation<br>(<span class="math inline">log(x)</span>)</td>
-<td>Scaling large values to small values<br>and making them fit a normal distribution</td>
+<td>Scaling large values to small values and making them fit a normal distribution</td>
 <td>Cannot be used when there are 0 and negative values.<br>Can be circumvented by subtracting the whole dataset<br>with the min value in the database</td>
 </tr>
 <tr class="even">
@@ -1436,7 +1436,7 @@ TL;DR
 </section><div id="quarto-appendix" class="default"><section id="last-updated-on" class="level4 unnumbered unlisted appendix"><h2 class="quarto-appendix-heading">Last updated on</h2><div class="quarto-appendix-contents">
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-08-31 12:04:54 IST"</code></pre>
+<pre><code>[1] "2022-09-02 09:39:50 IST"</code></pre>
 </div>
 </div>
 <!-- Do not forget to put flag counter -->
@@ -2695,7 +2695,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb82-1178"><a href="#cb82-1178" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb82-1179"><a href="#cb82-1179" aria-hidden="true" tabindex="-1"></a>Depending on the nature of the dataset, different transformations can be applied to better visualize the relationship between two variables. Given below are different data transformation functions which are used depending on the skewness of the data <span class="co">[</span><span class="ot">@s_data_2010</span><span class="co">]</span>.</span>
 <span id="cb82-1180"><a href="#cb82-1180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb82-1181"><a href="#cb82-1181" aria-hidden="true" tabindex="-1"></a><span class="ss">1.    </span>For right-skewed data, the standard deviation is proportional to the mean. In this case, logarithmic transformation ($log(x)$) works best. </span>
+<span id="cb82-1181"><a href="#cb82-1181" aria-hidden="true" tabindex="-1"></a><span class="ss">1.    </span>For right-skewed data, the standard deviation is proportional to the mean. In this case, logarithmic transformation ($log(x)$) works best. The square root transformation ($\sqrt{x}$) can also be used. </span>
 <span id="cb82-1182"><a href="#cb82-1182" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb82-1183"><a href="#cb82-1183" aria-hidden="true" tabindex="-1"></a><span class="ss">2.    </span>If the variance is proportional to the mean (in the case of Poisson distributions), square root transformation ($\sqrt{x}$) is preferred. This happens more in the case of variables which are measured as counts e.g., number of malignant cells in a microscopic field, number of deaths from swine flu, etc.</span>
 <span id="cb82-1184"><a href="#cb82-1184" aria-hidden="true" tabindex="-1"></a></span>
@@ -2705,7 +2705,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb82-1188"><a href="#cb82-1188" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb82-1189"><a href="#cb82-1189" aria-hidden="true" tabindex="-1"></a>| Transformation | When is it used? | When it cannot be used? |</span>
 <span id="cb82-1190"><a href="#cb82-1190" aria-hidden="true" tabindex="-1"></a>|---|---|---|</span>
-<span id="cb82-1191"><a href="#cb82-1191" aria-hidden="true" tabindex="-1"></a>| Logarithmic transformation<span class="kw">&lt;br&gt;</span>($log(x)$) | Scaling large values to small values<span class="kw">&lt;br&gt;</span>and making them fit a normal distribution | Cannot be used when there are 0 and negative values.<span class="kw">&lt;br&gt;</span>Can be circumvented by subtracting the whole dataset<span class="kw">&lt;br&gt;</span>with the min value in the database |</span>
+<span id="cb82-1191"><a href="#cb82-1191" aria-hidden="true" tabindex="-1"></a>| Logarithmic transformation<span class="kw">&lt;br&gt;</span>($log(x)$) | Scaling large values to small values and making them fit a normal distribution | Cannot be used when there are 0 and negative values.<span class="kw">&lt;br&gt;</span>Can be circumvented by subtracting the whole dataset<span class="kw">&lt;br&gt;</span>with the min value in the database |</span>
 <span id="cb82-1192"><a href="#cb82-1192" aria-hidden="true" tabindex="-1"></a>| Square root transformation<span class="kw">&lt;br&gt;</span>($\sqrt{x}$) | To inflate small values and to stabilize large values | Not applicable to negative values |</span>
 <span id="cb82-1193"><a href="#cb82-1193" aria-hidden="true" tabindex="-1"></a>| Reciprocal transformation<span class="kw">&lt;br&gt;</span>($\frac{1}{x}$) | Highly varying data | Not applicable when there are zero values |</span>
 <span id="cb82-1194"><a href="#cb82-1194" aria-hidden="true" tabindex="-1"></a></span>

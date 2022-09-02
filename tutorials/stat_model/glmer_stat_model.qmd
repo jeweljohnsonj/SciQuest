@@ -273,7 +273,7 @@ model_lmer <- lmer(read ~ expenditure + (1 | county), data = CASchools)
 tidy(model_lmer)
 ```
 
-If we look at the slope for expenditure, it is greater than the slope value we got from the linear model but still is almost zero. The standard error for the estimated slope is also less as compared to the earlier built models. But there is a strong role of counties on the average reading score of stundets. How did I know that? Let us first compare the summary of the linear model to that of the linear mixed effects model using the `summary()` function.
+If we look at the slope for expenditure, it is greater than the slope value we got from the linear model but still is almost zero. The standard error for the estimated slope is also less as compared to the earlier built models. But there is a strong role of counties on the average reading score of students. How did I know that? Let us first understand the summary of the linear mixed effects model using the `summary()` function.
 
 ```{r}
 #| eval: false

@@ -549,7 +549,7 @@ flowchart TB
 </div>
 </div>
 </div>
-<p>If we look at the slope for expenditure, it is greater than the slope value we got from the linear model but still is almost zero. The standard error for the estimated slope is also less as compared to the earlier built models. But there is a strong role of counties on the average reading score of stundets. How did I know that? Let us first compare the summary of the linear model to that of the linear mixed effects model using the <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> function.</p>
+<p>If we look at the slope for expenditure, it is greater than the slope value we got from the linear model but still is almost zero. The standard error for the estimated slope is also less as compared to the earlier built models. But there is a strong role of counties on the average reading score of students. How did I know that? Let us first understand the summary of the linear mixed effects model using the <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> function.</p>
 <div class="cell">
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">model_lmer</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1595,7 +1595,7 @@ group2 -0.324</code></pre>
 </section><div id="quarto-appendix" class="default"><section id="last-updated-on" class="level4 unnumbered unlisted appendix"><h2 class="quarto-appendix-heading">Last updated on</h2><div class="quarto-appendix-contents">
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-08-28 19:39:59 IST"</code></pre>
+<pre><code>[1] "2022-09-02 09:41:16 IST"</code></pre>
 </div>
 </div>
 <!-- Do not forget to put flag counter -->
@@ -2059,7 +2059,7 @@ model_lmer &lt;- lmer(read ~ expenditure + (1 | county), data = CASchools)
 tidy(model_lmer)
 ```
 
-If we look at the slope for expenditure, it is greater than the slope value we got from the linear model but still is almost zero. The standard error for the estimated slope is also less as compared to the earlier built models. But there is a strong role of counties on the average reading score of stundets. How did I know that? Let us first compare the summary of the linear model to that of the linear mixed effects model using the `summary()` function.
+If we look at the slope for expenditure, it is greater than the slope value we got from the linear model but still is almost zero. The standard error for the estimated slope is also less as compared to the earlier built models. But there is a strong role of counties on the average reading score of students. How did I know that? Let us first understand the summary of the linear mixed effects model using the `summary()` function.
 
 quarto-executable-code-5450563D
 

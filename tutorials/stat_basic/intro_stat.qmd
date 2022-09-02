@@ -1082,7 +1082,7 @@ You can see that for positive or right-skewed distribution, the tail ends of the
 
 Depending on the nature of the dataset, different transformations can be applied to better visualize the relationship between two variables. Given below are different data transformation functions which are used depending on the skewness of the data [@s_data_2010].
 
-1.    For right-skewed data, the standard deviation is proportional to the mean. In this case, logarithmic transformation ($log(x)$) works best. 
+1.    For right-skewed data, the standard deviation is proportional to the mean. In this case, logarithmic transformation ($log(x)$) works best. The square root transformation ($\sqrt{x}$) can also be used. 
 
 2.    If the variance is proportional to the mean (in the case of Poisson distributions), square root transformation ($\sqrt{x}$) is preferred. This happens more in the case of variables which are measured as counts e.g., number of malignant cells in a microscopic field, number of deaths from swine flu, etc.
 
@@ -1092,7 +1092,7 @@ Depending on the nature of the dataset, different transformations can be applied
 
 | Transformation | When is it used? | When it cannot be used? |
 |---|---|---|
-| Logarithmic transformation<br>($log(x)$) | Scaling large values to small values<br>and making them fit a normal distribution | Cannot be used when there are 0 and negative values.<br>Can be circumvented by subtracting the whole dataset<br>with the min value in the database |
+| Logarithmic transformation<br>($log(x)$) | Scaling large values to small values and making them fit a normal distribution | Cannot be used when there are 0 and negative values.<br>Can be circumvented by subtracting the whole dataset<br>with the min value in the database |
 | Square root transformation<br>($\sqrt{x}$) | To inflate small values and to stabilize large values | Not applicable to negative values |
 | Reciprocal transformation<br>($\frac{1}{x}$) | Highly varying data | Not applicable when there are zero values |
 

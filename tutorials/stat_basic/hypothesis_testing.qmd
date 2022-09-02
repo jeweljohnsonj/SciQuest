@@ -1,0 +1,39 @@
+---
+title: "Hypothesis Testing in R"
+description: "Learn how to do hypothesis testing using R"
+date: "09/01/2022"
+format:
+  html:
+    css:
+      - https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css
+image: images/stat_model_4.png
+categories: [basic statistics]
+draft : true
+filters:
+   - social-share
+share:
+  permalink: "https://one-carat-blog.netlify.app/tutorials/stat_model/hypothesis_testing.html"
+  description: "Hypothesis Testing in R"
+  twitter: true
+  facebook: true
+  reddit: true
+  stumble: true
+  tumblr: true
+  linkedin: true
+  email: true
+---
+
+## Introduction
+
+In this tutorial we will learn how to test hypothesis using various statistical tests in R. We will learn various concepts like p-values, type I and type II errors, parametric and non parametric tests and, their assumptions. So let us start!
+
+
+
+#### Last updated on {.unnumbered .unlisted .appendix}
+
+```{r}
+#| echo: false
+Sys.time()
+```
+
+<!-- Do not forget to put flag counter -->
