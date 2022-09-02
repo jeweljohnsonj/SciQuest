@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Regression in R"
 description: "Learn the basics of regression in R"
-date: "08/28/2022"
+date: "09/02/2022"
 format:
   html:
     css:
