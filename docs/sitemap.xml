@@ -2,102 +2,106 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://one-carat-blog.netlify.app/blog.html</loc>
-    <lastmod>2022-09-02T19:20:41.287Z</lastmod>
+    <lastmod>2022-09-19T09:11:12.185Z</lastmod>
   </url>
   <url>
     <loc>https://one-carat-blog.netlify.app/index.html</loc>
-    <lastmod>2022-09-02T19:20:42.316Z</lastmod>
+    <lastmod>2022-09-19T09:11:13.990Z</lastmod>
   </url>
   <url>
     <loc>https://one-carat-blog.netlify.app/posts/notion_intro/index.html</loc>
-    <lastmod>2022-09-02T19:20:53.019Z</lastmod>
+    <lastmod>2022-09-19T09:11:29.230Z</lastmod>
   </url>
   <url>
     <loc>https://one-carat-blog.netlify.app/posts/notion_literature/index.html</loc>
-    <lastmod>2022-09-02T19:21:00.220Z</lastmod>
+    <lastmod>2022-09-19T09:11:37.743Z</lastmod>
   </url>
   <url>
     <loc>https://one-carat-blog.netlify.app/posts/notion_movie_books/index.html</loc>
-    <lastmod>2022-09-02T19:21:06.132Z</lastmod>
+    <lastmod>2022-09-19T09:11:42.925Z</lastmod>
   </url>
   <url>
     <loc>https://one-carat-blog.netlify.app/posts/notion_research_diary/index.html</loc>
-    <lastmod>2022-09-02T19:21:10.626Z</lastmod>
+    <lastmod>2022-09-19T09:11:46.555Z</lastmod>
   </url>
   <url>
     <loc>https://one-carat-blog.netlify.app/posts/notion_task_manager/index.html</loc>
-    <lastmod>2022-09-02T19:21:15.346Z</lastmod>
+    <lastmod>2022-09-19T09:11:50.590Z</lastmod>
   </url>
   <url>
     <loc>https://one-carat-blog.netlify.app/posts/research_article_biggest_bacterium/index_post.html</loc>
-    <lastmod>2022-09-02T19:21:23.749Z</lastmod>
+    <lastmod>2022-09-19T09:11:56.130Z</lastmod>
   </url>
   <url>
     <loc>https://one-carat-blog.netlify.app/posts/research_article_embryonic_learning/index_post.html</loc>
-    <lastmod>2022-09-02T19:21:31.196Z</lastmod>
+    <lastmod>2022-09-19T09:12:01.340Z</lastmod>
   </url>
   <url>
     <loc>https://one-carat-blog.netlify.app/posts/welcome_to_blog/index.html</loc>
-    <lastmod>2022-09-02T19:21:44.057Z</lastmod>
+    <lastmod>2022-09-19T09:12:10.396Z</lastmod>
   </url>
   <url>
     <loc>https://one-carat-blog.netlify.app/posts/word_happy_2022/index.html</loc>
-    <lastmod>2022-09-02T19:22:04.903Z</lastmod>
+    <lastmod>2022-09-19T09:12:33.359Z</lastmod>
   </url>
   <url>
     <loc>https://one-carat-blog.netlify.app/tutorials/data_man/dplyr_1.html</loc>
-    <lastmod>2022-09-02T19:22:26.368Z</lastmod>
+    <lastmod>2022-09-19T09:12:49.702Z</lastmod>
   </url>
   <url>
     <loc>https://one-carat-blog.netlify.app/tutorials/data_man/dplyr_2.html</loc>
-    <lastmod>2022-09-02T19:22:40.600Z</lastmod>
+    <lastmod>2022-09-19T09:13:06.500Z</lastmod>
   </url>
   <url>
     <loc>https://one-carat-blog.netlify.app/tutorials/data_man/tidyr.html</loc>
-    <lastmod>2022-09-02T19:22:49.878Z</lastmod>
+    <lastmod>2022-09-19T09:13:16.135Z</lastmod>
   </url>
   <url>
     <loc>https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_1.html</loc>
-    <lastmod>2022-09-02T19:22:57.779Z</lastmod>
+    <lastmod>2022-09-19T09:13:24.162Z</lastmod>
   </url>
   <url>
     <loc>https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_2.html</loc>
-    <lastmod>2022-09-02T19:23:12.626Z</lastmod>
+    <lastmod>2022-09-19T09:13:41.550Z</lastmod>
   </url>
   <url>
     <loc>https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_3.html</loc>
-    <lastmod>2022-09-02T19:23:36.280Z</lastmod>
+    <lastmod>2022-09-19T09:14:03.430Z</lastmod>
   </url>
   <url>
     <loc>https://one-carat-blog.netlify.app/tutorials/data_viz/ggpubr.html</loc>
-    <lastmod>2022-09-02T19:23:51.956Z</lastmod>
+    <lastmod>2022-09-19T09:14:20.675Z</lastmod>
   </url>
   <url>
     <loc>https://one-carat-blog.netlify.app/tutorials/stat_basic/intro_reg.html</loc>
-    <lastmod>2022-09-02T19:35:44.721Z</lastmod>
+    <lastmod>2022-09-19T09:15:18.179Z</lastmod>
   </url>
   <url>
     <loc>https://one-carat-blog.netlify.app/tutorials/stat_basic/intro_stat.html</loc>
-    <lastmod>2022-09-02T19:24:57.110Z</lastmod>
+    <lastmod>2022-09-19T09:15:36.665Z</lastmod>
   </url>
   <url>
     <loc>https://one-carat-blog.netlify.app/tutorials/stat_model/glmer_stat_model.html</loc>
-    <lastmod>2022-09-02T19:26:13.442Z</lastmod>
+    <lastmod>2022-09-19T09:16:52.165Z</lastmod>
   </url>
   <url>
     <loc>https://one-carat-blog.netlify.app/tutorials/stat_model/glm_stat_model.html</loc>
-    <lastmod>2022-09-02T19:26:30.812Z</lastmod>
+    <lastmod>2022-09-19T09:17:07.332Z</lastmod>
   </url>
   <url>
     <loc>https://one-carat-blog.netlify.app/tutorials/stat_model/inter_stat_model.html</loc>
-    <lastmod>2022-09-02T19:26:59.864Z</lastmod>
+    <lastmod>2022-09-19T09:17:38.842Z</lastmod>
   </url>
   <url>
     <loc>https://one-carat-blog.netlify.app/tutorials/stat_model/intro_stat_model.html</loc>
-    <lastmod>2022-09-02T19:27:22.431Z</lastmod>
+    <lastmod>2022-09-19T09:17:58.754Z</lastmod>
   </url>
   <url>
     <loc>https://one-carat-blog.netlify.app/tutorials.html</loc>
-    <lastmod>2022-09-02T19:35:49.191Z</lastmod>
+    <lastmod>2022-09-19T09:20:01.927Z</lastmod>
+  </url>
+  <url>
+    <loc>https://one-carat-blog.netlify.app/tutorials/stat_basic/inter_reg.html</loc>
+    <lastmod>2022-09-19T09:20:36.831Z</lastmod>
   </url>
 </urlset>

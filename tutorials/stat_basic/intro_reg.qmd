@@ -7,7 +7,7 @@ format:
     css:
       - https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css
 image: images/intro_reg.png
-categories: [basic regression]
+categories: [regression]
 filters:
    - social-share
 share:
