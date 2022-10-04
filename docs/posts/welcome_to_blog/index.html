@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.242">
+<meta name="generator" content="quarto-1.1.251">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="author" content="Jewel Johnson">
 <meta name="dcterms.date" content="2022-07-01">
 <meta name="description" content="In this article, I share my experiences on how this blog was made. Spoiler alter: it involved a lot of R package hitchhiking">
+
 <title>one carat blog - The story behind one carat blog</title>
 <style>
 code{white-space: pre-wrap;}
@@ -85,6 +88,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
@@ -101,7 +105,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -119,15 +124,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EVCS615JQR"></script><script type="text/javascript">
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EVCS615JQR"></script>
+
+<script type="text/javascript">
 
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
-</script><style>html{ scroll-behavior: smooth; }</style>
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
 <link href="../../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
-<script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script><link rel="stylesheet" href="../../styles.css">
+<script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+<link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="one carat blog - The story behind one carat blog">
 <meta property="og:description" content="In this article, I share my experiences on how this blog was made. Spoiler alter: it involved a lot of R package hitchhiking">
 <meta property="og:image" content="https://one-carat-blog.netlify.app/posts\welcome_to_blog\story.png">
@@ -141,13 +154,17 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <meta name="twitter:image-width" content="1280">
 <meta name="twitter:card" content="summary_large_image">
 </head>
+
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../favicon.png" alt="" class="navbar-logo"></a>
+    <img src="../../favicon.png" alt="" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">one carat blog</span>
     </a>
@@ -157,7 +174,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-<li class="nav-item">
+  <li class="nav-item">
     <a class="nav-link" href="../../blog.html">Blog</a>
   </li>  
   <li class="nav-item">
@@ -177,10 +194,14 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
  </a>
   </li>  
 </ul>
-<div id="quarto-search" class="" title="Search"></div>
+              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
-    </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <div class="quarto-title-block"><div><h1 class="title">The story behind one carat blog</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
                   <div>
@@ -218,30 +239,39 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#cover-photos-of-my-blogs" id="toc-cover-photos-of-my-blogs" class="nav-link active" data-scroll-target="#cover-photos-of-my-blogs"><span class="toc-section-number">1</span>  Cover photos of my blogs</a></li>
+  <li><a href="#cover-photos-of-my-blogs" id="toc-cover-photos-of-my-blogs" class="nav-link active" data-scroll-target="#cover-photos-of-my-blogs"><span class="toc-section-number">1</span>  Cover photos of my blogs</a></li>
   <li><a href="#making-of-one-carat-blog" id="toc-making-of-one-carat-blog" class="nav-link" data-scroll-target="#making-of-one-carat-blog"><span class="toc-section-number">2</span>  Making of one carat blog</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/edit/main/posts/welcome_to_blog/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/edit/main/posts/welcome_to_blog/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content"><section id="cover-photos-of-my-blogs" class="level2 page-columns page-full" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="cover-photos-of-my-blogs">
-<span class="header-section-number">1</span> Cover photos of my blogs</h2>
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
+
+
+
+
+<section id="cover-photos-of-my-blogs" class="level2 page-columns page-full" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="cover-photos-of-my-blogs"><span class="header-section-number">1</span> Cover photos of my blogs</h2>
 <div class="column-page">
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="logo.png" class="img-fluid figure-img"></p>
+<figure class="figure">
+<p><img src="logo.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Cover photo of my old blog made using distill</figcaption><p></p>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="preview.png" class="img-fluid figure-img"></p>
+<figure class="figure">
+<p><img src="preview.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Cover photo of my new blog made using quarto</figcaption><p></p>
 </figure>
 </div>
@@ -249,32 +279,37 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-</section><section id="making-of-one-carat-blog" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="making-of-one-carat-blog">
-<span class="header-section-number">2</span> Making of one carat blog</h2>
+</section>
+<section id="making-of-one-carat-blog" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="making-of-one-carat-blog"><span class="header-section-number">2</span> Making of one carat blog</h2>
 <p>My name is Jewel Johnson and I am the creator of this blog. The story about this blog started with my wish to have a writing space, to showcase the things that I learned. I find that having a blog to write, instills self-discipline in learning new things. So I initially began looking for ways to build a blog. I read many online articles which talked about using WordPress, Blogger, Weebly, Wix and so on. But almost all of these services were paid and I was not able to afford them. I began looking for free alternatives and I came to know about Medium. Now Medium is not precisely a blog but a publishing platform and it restricts readers behind a paywall if they want to read your posts. But you do get paid if anyone reads your articles. So I tried writing a few articles on R programming. Medium supports code blocks but it was extremely difficult to use them and it was never tailored for writing R codes. As I was interested in sharing some of the things I learned about R, I wanted to see what all articles were written about R programming on Medium. So I read some of them in <a href="https://towardsdatascience.com/">Towards data science</a>, which is part of Medium but specialized in articles related to data science. There were some good articles but to my surprise, most articles were downright copy-pasting what was there in the package tutorials or their related source webpages. And the articles were made with very low effort. The only thing I found nice was the stock images. So I ditched Medium for these reasons and went on to see if I can make a blog using purely R. And that’s when I came to know about the {Rmarkdown} package in R and Github pages. So long story short, I learned how to use this package and how to host a webpage for free on Github. And this led to the creation of my <a href="https://jeweljohnsonj.github.io/jeweljohnson_markdown/index.html">first blog</a>. It was very basic and visually simple, but I was proud of it. So I began writing tutorials on data visualization using R and wrote my first article about the {ggplot2} package in R. I shared it with my friends and received good support from them. Then I wanted to improve my blog and I began searching for new ways to make the blog better, which led me to learn about the {distill} package in R.</p>
 <p>I was flabbergasted when I saw the <a href="https://jhelvy.github.io/distillery/showcase.html">blogs and websites</a> made using the distill package. They were so much better than the ones made from <code>{Rmarkdown}</code>. I first learned about {distill} from <a href="https://twitter.com/ellamkaye">Dr.&nbsp;Ella Kaye’s</a> blog <a href="https://ellakaye.rbind.io/posts/2021-05-08-welcome-to-my-distill-website/">post</a> and <a href="https://twitter.com/lisalendway">Dr.&nbsp;Lisa Lendway’s</a> blog <a href="https://lisalendway.netlify.app/posts/2020-12-09-buildingdistill/">post</a>. And after reading <a href="https://twitter.com/andreashandel">Prof.&nbsp;Andreas Handel</a> blog <a href="https://www.andreashandel.com/posts/distill-github-website/">post</a> on how to build a website using distill I was convinced to rebuild my blog. The YouTube <a href="https://youtu.be/Fm3bsYCilEU">video</a> by <a href="https://twitter.com/lisalendway">Dr.&nbsp;Lisa Lendway’s</a> and the <a href="https://rstudio.github.io/distill/">official tutorials</a> given on the distill website also helped me very much. And the end product was this <a href="https://jeweljohnsonj.github.io/jeweljohnson.github.io/">beautiful blog</a> that I created. I even named my blog; <code>'one carat blog'</code>, a name resembling me.</p>
 <p>And all was well and I began concentrating on my blog. I went on to write a series of articles encompassing a complete tutorial on learning data visualization and data manipulation using R. It was well received and I got a lot of helpful comments about it. One thing that kind of annoyed me about the {distill} package was that the table of contents won’t float for long posts. This made the ‘table of contents’ obsolete. Nevertheless, the package fulfilled most of what I wanted to have in a blog. This period was also the first time I began learning about <code>HTML</code> and <code>CSS</code> languages. Using that knowledge I began tweaking my blog and customizing it. I also wrote an article highlighting a few quality of life modifications one can implement in their distill blog and to my surprise, the <a href="https://distillery.rbind.io/posts/2021-12-18-quality-of-life-modifications-for-your-distill-websites/">post</a> was adopted to the official distill website, which showcased useful tutorials related to distill blogging.</p>
 <blockquote class="twitter-tweet blockquote" data-conversation="none" data-theme="dark">
 <p lang="en" dir="ltr">
-</p>
-<p>Great to see you’ve added your blog to the distillery. You should also consider adding your excellent “Quality of life modifications for your distill websites” post to the Tips &amp; Tricks section of the site <a href="https://t.co/SMOtCU0eM1">https://t.co/SMOtCU0eM1</a></p>
-
+</p><p>Great to see you’ve added your blog to the distillery. You should also consider adding your excellent “Quality of life modifications for your distill websites” post to the Tips &amp; Tricks section of the site <a href="https://t.co/SMOtCU0eM1">https://t.co/SMOtCU0eM1</a></p>
+<p></p>
 <p>— Ella Kaye (<span class="citation" data-cites="ellamkaye">@ellamkaye</span>) <a href="https://twitter.com/ellamkaye/status/1472960799685722124?ref_src=twsrc%5Etfw">December 20, 2021</a></p>
 </blockquote>
-<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><p>I also received back from <a href="https://twitter.com/ellamkaye">Dr.&nbsp;Ella Kaye’s</a> in Twitter and I was added to the distill club! I was very happy at that time.</p>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>I also received back from <a href="https://twitter.com/ellamkaye">Dr.&nbsp;Ella Kaye’s</a> in Twitter and I was added to the distill club! I was very happy at that time.</p>
 <blockquote class="twitter-tweet blockquote" data-theme="dark">
 <p lang="en" dir="ltr">
-</p>
-<p>This is fab! Welcome to <a href="https://twitter.com/hashtag/DistillClub?src=hash&amp;ref_src=twsrc%5Etfw">#DistillClub</a> <a href="https://t.co/4jpeBe7Kis">pic.twitter.com/4jpeBe7Kis</a></p>
-
+</p><p>This is fab! Welcome to <a href="https://twitter.com/hashtag/DistillClub?src=hash&amp;ref_src=twsrc%5Etfw">#DistillClub</a> <a href="https://t.co/4jpeBe7Kis">pic.twitter.com/4jpeBe7Kis</a></p>
+<p></p>
 <p>— Ella Kaye (<span class="citation" data-cites="ellamkaye">@ellamkaye</span>) <a href="https://twitter.com/ellamkaye/status/1472959954172747790?ref_src=twsrc%5Etfw">December 20, 2021</a></p>
 </blockquote>
-<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><p>This was also the time when I changed the About me page. Everyone who was having a distill blog was using a default template provided by the {postcards} package in R. But I wanted to have a unique ‘about me’ page, which acted like my CV. So I used the <a href="https://github.com/sproogen/modern-resume-theme">modern resume theme</a> by <a href="https://www.jameswgrant.co.uk/">James Grant</a> and made this <a href="https://jeweljohnsonj.github.io/jewel_resume/">cool looking CV</a>.</p>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>This was also the time when I changed the About me page. Everyone who was having a distill blog was using a default template provided by the {postcards} package in R. But I wanted to have a unique ‘about me’ page, which acted like my CV. So I used the <a href="https://github.com/sproogen/modern-resume-theme">modern resume theme</a> by <a href="https://www.jameswgrant.co.uk/">James Grant</a> and made this <a href="https://jeweljohnsonj.github.io/jewel_resume/">cool looking CV</a>.</p>
 <p>Then for about four months, I had the worst time in my life. I was feeling depressed and sick. Many things had happened and I could not do any blogging or anything for that matter. And then finally after sorting out my affairs, I went back to blogging. I opened Rstudio one day and I got a blank window. This was the first time I was seeing this bug, so when I searched about it, I learned that a new package for R called {quarto} was causing some issues with Rstudio. To my knowledge, it only affected Linux users. Then I searched about what is {quarto} package is about and I struck a gold mine.</p>
 <p>It was everything {distill} had, but better. The best thing was that it natively supported a floating table of contents, something which was missing in {distill}. My first introduction to quarto came from <a href="https://twitter.com/apreshill">Dr.&nbsp;Alison Hill’s</a> blog <a href="https://www.apreshill.com/blog/2022-04-we-dont-talk-about-quarto/">post</a> where she gave a brief intro on what the quarto package is about. After reading the post I was in a dilemma as to whether I should migrate my blog to quarto or not. Then I found that most of the blogs featured on the <a href="https://jhelvy.github.io/distillery/showcase.html">distill official website</a> had migrated to quarto. It was the new trend in town, and everyone was adapting it. So I finally made up my mind and decided to migrate, again, for the second time and it led to a few sleepless nights that I am not very proud of. The <a href="https://blog.djnavarro.net/posts/2022-04-20_porting-to-quarto/">post</a> from <a href="https://twitter.com/djnavarro">Dr.&nbsp;Danielle Navarro</a> was also very helpful and made the transition process much easier.</p>
 <p>So with help of all these articles and many glasses of homemade wine, I finally migrated from {distill} to {quarto} and made this blog which you are browsing now. I had to convert all my <code>.Rmd</code> files to the new <code>.qmd</code> file that quarto supports. The <code>YAML</code> headers were a pain in the <em>beep</em> to change. But in the end, it was worth it. I changed the previous visitor counter to a new flag counter for this blog. I also designed a new icon and a new cover image. And as of writing this blog post, I also wrote a series of articles focusing on beginner-level statistics in my blog. And recently I have been working on a software called Notion and have made some cool productivity templates focusing on PhD students. I also have written some blog posts showcasing those templates, so make sure to check them out.</p>
 <p>To conclude I hitchhiked from Rmarkdown to distill and now to quarto, the end product is this beautifully made blog that you are browsing. I hope you enjoy this blog and find the posts and tutorials helpful. If you find them useful, make sure to share them. If you have any suggestions or feedback for this blog, then please comment them in the comment section at the end of the blog. Thanks for visiting my blog and I hope you have a great time.</p>
-</section><div id="quarto-appendix" class="default"><section id="references" class="level2 unnumbered appendix"><h2 class="quarto-appendix-heading">References</h2><div class="quarto-appendix-contents">
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="references" class="level2 unnumbered appendix"><h2 class="quarto-appendix-heading">References</h2><div class="quarto-appendix-contents">
+
 <p>Useful Distill articles</p>
 <ol type="1">
 <li><p>Kaye (2021, May 8). ELLA KAYE: Welcome to my {distill} website!. Retrieved from <a href="https://ellakaye.rbind.io/posts/2021-05-08-welcome-to-my-distill-website/" class="uri">https://ellakaye.rbind.io/posts/2021-05-08-welcome-to-my-distill-website/</a></p></li>
@@ -291,7 +326,9 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <li><p><a href="https://twitter.com/rappa753/status/1531692573126959106?s=20&amp;t=6m6RMOkad-GUyd4KAvk4fA">Cool quarto tips and tricks</a>. Tweet by <a href="https://twitter.com/rappa753">Albert Rapp</a></p></li>
 <li><p><a href="https://quarto.org/docs/get-started/hello/rstudio.html">Official guide by developers of Quarto</a></p></li>
 </ol>
+
 </div></section><section id="last-updated-on" class="level4 unnumbered unlisted appendix"><h2 class="quarto-appendix-heading">Last updated on</h2><div class="quarto-appendix-contents">
+
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "2022-08-28 11:09:32 IST"</code></pre>
@@ -313,7 +350,8 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-johnson2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
 Jewel Johnson. 2022. <span>“The Story Behind One Carat Blog.”</span>
 July 1, 2022. <a href="https://one-carat-blog.netlify.app//posts/welcome_to_blog">https://one-carat-blog.netlify.app//posts/welcome_to_blog</a>.
-</div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -461,7 +499,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 });
-</script><script src="https://giscus.app/client.js" data-repo="jeweljohnsonj/one-carat-blog" data-repo-id="R_kgDOHW124A" data-category="General" data-category-id="DIC_kwDOHW124M4CPNVL" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<script src="https://giscus.app/client.js" data-repo="jeweljohnsonj/one-carat-blog" data-repo-id="R_kgDOHW124A" data-category="General" data-category-id="DIC_kwDOHW124M4CPNVL" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "The story behind one carat blog"</span></span>
@@ -568,11 +607,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">Blog made using <a href="https://quarto.org/">Quarto®</a> with ❤️, by Jewel Johnson.</div>   
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-<li class="nav-item compact">
+    <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/jeweljohnsonj">
       <i class="bi bi-github" role="img">
 </i> 
@@ -597,9 +637,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
 </ul>
-</div>
+    </div>
   </div>
 </footer>
+
 
 
 <script src="../../site_libs/quarto-html/zenscroll-min.js"></script>

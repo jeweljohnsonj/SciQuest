@@ -7,6 +7,18 @@ image: images/notero_thumbnail.png
 categories: [PhD, Notion, Zotero, productivity]
 ---
 
+:::{.callout-important}
+## An update
+
+As Notion has been updated, they have moved the plugin integration to a new menu option called 'Add connections'. Therefore you won't find the integration from the 'Share' menu as before. So what does this mean to you?
+
+1.    If you are a returning user to this article, then please see the new 'Notero in action' video which is given in step 6 under [Configure Notero plugin](https://one-carat-blog.netlify.app/posts/notion_literature/#configure-notero-plugin) section.
+
+2.    If you are a new user, reading this article for the first time, then don't worry about anything and please follow the steps given below.
+
+Also please click on the 'green bar' to reveal the video showcasing the steps in the given section. If you have any doubts, please let me know in the comment section below the page.
+:::
+
 ## TL;DR
 
 -   Use Notion to build a literature database that can integrate with directories in Zotero with the help of the Notero plugin
@@ -25,7 +37,7 @@ In this article, we will aim to build a literature tracker that looks similar to
 
 ### Install Zotero
 
-The first thing to do is to download and install [Zotero](https://www.zotero.org/), a free-to-use reference manager that you can use to categorize and manage your research article collection. You should also create an account in Zotero and log in using that account in your Zotero app.
+1.    The first thing to do is to download and install [Zotero](https://www.zotero.org/), a free-to-use reference manager that you can use to categorize and manage your research article collection. You should also create an account in Zotero and log in using that account in your Zotero app.
 
 ### Installing Notero plugin
 
@@ -39,7 +51,7 @@ Now we are going to install a plugin for Zotero, called [Notero](https://github.
 ![](https://raw.githubusercontent.com/jeweljohnsonj/one-carat-blog/main/videos/notero_literature/notero.mp4)
 :::
 
-2.  Go to the Zotero app and click on 'Tools' and then click 'Add-ons'. Then in the new window, click on the Settings button and then click on 'Install add-on from file'. Then browse to where your `notero-0.3.5.xpi` file is downloaded and then install it.
+2.  Go to the Zotero app and click on 'Tools' and then click 'Add-ons'. Then in the new window, click on the Settings button and then click on 'Install add-on from file'. Then browse to where you downloaded your `notero-0.3.5.xpi` file (or any newer file than the given version) and install it.
 
 ::: {.callout-tip collapse="true"}
 ## Video: Installing the plugin
@@ -88,7 +100,7 @@ Copy the {database_id} part
 
 ![Notero Preferences window](images/notero_preferences.png)
 
-Now go to the associated database and click 'Share'. Search for your integration and click invite. Any research article that is present in your directory associated with the Notero plugin will now automatically be synced to your associated Notion database. Notero plugin allows one-time sync between Zotero to Notion but not the other way around. So any changes that you do in the Notion database won't be reflected in your Zotero database.
+6. Now go to the associated database and click on the 'three dots' which will bring down a menu. In the menu, click on 'Add connections' and scroll down to find your Notero integration. Any research article that is present in the directory associated with the Notero plugin will now automatically be synced to your associated Notion database. Notero plugin allows one-time sync between Zotero to Notion but not the other way around. So any changes that you do in the Notion database won't be reflected in your Zotero database. Please click on the green bar given below to see the video showcasing the steps.
 
 ::: {.callout-tip collapse="true"}
 ## Video: Notero in action

@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.242">
+<meta name="generator" content="quarto-1.1.251">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="author" content="Jewel Johnson">
 <meta name="dcterms.date" content="2021-12-13">
 <meta name="description" content="Learn how to manipulate your data with the dplyr package">
+
 <title>one carat blog - Chapter 2: Data manipulation using dplyr (part 1)</title>
 <style>
 code{white-space: pre-wrap;}
@@ -85,6 +88,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
@@ -103,7 +107,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
 <link href="../../site_libs/quarto-contrib/social-share-0.1.0/social-share.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/social-share-0.1.0/all.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/quarto-contrib/social-share-0.1.0/all.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -121,15 +126,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EVCS615JQR"></script><script type="text/javascript">
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EVCS615JQR"></script>
+
+<script type="text/javascript">
 
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
-</script><style>html{ scroll-behavior: smooth; }</style>
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
 <link href="../../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
-<script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script><link rel="stylesheet" href="../../styles.css">
+<script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+<link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="one carat blog - Chapter 2: Data manipulation using dplyr (part 1)">
 <meta property="og:description" content="Learn how to manipulate your data with the dplyr package">
 <meta property="og:image" content="https://one-carat-blog.netlify.app/tutorials\data_man\images\dplyr.png">
@@ -143,13 +156,17 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <meta name="twitter:image-width" content="1920">
 <meta name="twitter:card" content="summary_large_image">
 </head>
+
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../favicon.png" alt="" class="navbar-logo"></a>
+    <img src="../../favicon.png" alt="" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">one carat blog</span>
     </a>
@@ -159,7 +176,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-<li class="nav-item">
+  <li class="nav-item">
     <a class="nav-link" href="../../blog.html">Blog</a>
   </li>  
   <li class="nav-item">
@@ -179,10 +196,14 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
  </a>
   </li>  
 </ul>
-<div id="quarto-search" class="" title="Search"></div>
+              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
-    </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <div class="quarto-title-block"><div><h1 class="title">Chapter 2: Data manipulation using dplyr (part 1)</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
                   <div>
@@ -221,29 +242,25 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#introduction-to-dplyr-package" id="toc-introduction-to-dplyr-package" class="nav-link active" data-scroll-target="#introduction-to-dplyr-package"><span class="toc-section-number">1</span>  Introduction to dplyr package</a></li>
+  <li><a href="#introduction-to-dplyr-package" id="toc-introduction-to-dplyr-package" class="nav-link active" data-scroll-target="#introduction-to-dplyr-package"><span class="toc-section-number">1</span>  Introduction to dplyr package</a></li>
   <li><a href="#the-pipe-operator" id="toc-the-pipe-operator" class="nav-link" data-scroll-target="#the-pipe-operator"><span class="toc-section-number">2</span>  The pipe operator %&gt;%</a></li>
-  <li>
-<a href="#grouping-the-data" id="toc-grouping-the-data" class="nav-link" data-scroll-target="#grouping-the-data"><span class="toc-section-number">3</span>  Grouping the data</a>
+  <li><a href="#grouping-the-data" id="toc-grouping-the-data" class="nav-link" data-scroll-target="#grouping-the-data"><span class="toc-section-number">3</span>  Grouping the data</a>
   <ul class="collapse">
-<li><a href="#group_by" id="toc-group_by" class="nav-link" data-scroll-target="#group_by"><span class="toc-section-number">3.1</span>  group_by()</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#summarising-the-data" id="toc-summarising-the-data" class="nav-link" data-scroll-target="#summarising-the-data"><span class="toc-section-number">4</span>  Summarising the data</a>
+  <li><a href="#group_by" id="toc-group_by" class="nav-link" data-scroll-target="#group_by"><span class="toc-section-number">3.1</span>  group_by()</a></li>
+  </ul></li>
+  <li><a href="#summarising-the-data" id="toc-summarising-the-data" class="nav-link" data-scroll-target="#summarising-the-data"><span class="toc-section-number">4</span>  Summarising the data</a>
   <ul class="collapse">
-<li><a href="#summarise" id="toc-summarise" class="nav-link" data-scroll-target="#summarise"><span class="toc-section-number">4.1</span>  summarise()</a></li>
+  <li><a href="#summarise" id="toc-summarise" class="nav-link" data-scroll-target="#summarise"><span class="toc-section-number">4.1</span>  summarise()</a></li>
   <li><a href="#when-to-use-group_by" id="toc-when-to-use-group_by" class="nav-link" data-scroll-target="#when-to-use-group_by"><span class="toc-section-number">4.2</span>  when to use group_by()</a></li>
   <li><a href="#count" id="toc-count" class="nav-link" data-scroll-target="#count"><span class="toc-section-number">4.3</span>  count()</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#manipulating-cases-or-observations" id="toc-manipulating-cases-or-observations" class="nav-link" data-scroll-target="#manipulating-cases-or-observations"><span class="toc-section-number">5</span>  Manipulating cases or observations</a>
+  </ul></li>
+  <li><a href="#manipulating-cases-or-observations" id="toc-manipulating-cases-or-observations" class="nav-link" data-scroll-target="#manipulating-cases-or-observations"><span class="toc-section-number">5</span>  Manipulating cases or observations</a>
   <ul class="collapse">
-<li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"><span class="toc-section-number">5.1</span>  filter()</a></li>
+  <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"><span class="toc-section-number">5.1</span>  filter()</a></li>
   <li><a href="#distinct" id="toc-distinct" class="nav-link" data-scroll-target="#distinct"><span class="toc-section-number">5.2</span>  distinct()</a></li>
   <li><a href="#slice" id="toc-slice" class="nav-link" data-scroll-target="#slice"><span class="toc-section-number">5.3</span>  slice()</a></li>
   <li><a href="#slice_sample" id="toc-slice_sample" class="nav-link" data-scroll-target="#slice_sample"><span class="toc-section-number">5.4</span>  slice_sample()</a></li>
@@ -251,12 +268,10 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
   <li><a href="#slice_head-and-slice_tail" id="toc-slice_head-and-slice_tail" class="nav-link" data-scroll-target="#slice_head-and-slice_tail"><span class="toc-section-number">5.6</span>  slice_head() and slice_tail()</a></li>
   <li><a href="#arrange" id="toc-arrange" class="nav-link" data-scroll-target="#arrange"><span class="toc-section-number">5.7</span>  arrange()</a></li>
   <li><a href="#add_row" id="toc-add_row" class="nav-link" data-scroll-target="#add_row"><span class="toc-section-number">5.8</span>  add_row()</a></li>
-  </ul>
-</li>
-  <li>
-<a href="#manipulating-variables-or-columns" id="toc-manipulating-variables-or-columns" class="nav-link" data-scroll-target="#manipulating-variables-or-columns"><span class="toc-section-number">6</span>  Manipulating variables or columns</a>
+  </ul></li>
+  <li><a href="#manipulating-variables-or-columns" id="toc-manipulating-variables-or-columns" class="nav-link" data-scroll-target="#manipulating-variables-or-columns"><span class="toc-section-number">6</span>  Manipulating variables or columns</a>
   <ul class="collapse">
-<li><a href="#pull" id="toc-pull" class="nav-link" data-scroll-target="#pull"><span class="toc-section-number">6.1</span>  pull()</a></li>
+  <li><a href="#pull" id="toc-pull" class="nav-link" data-scroll-target="#pull"><span class="toc-section-number">6.1</span>  pull()</a></li>
   <li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select"><span class="toc-section-number">6.2</span>  select()</a></li>
   <li><a href="#relocate" id="toc-relocate" class="nav-link" data-scroll-target="#relocate"><span class="toc-section-number">6.3</span>  relocate()</a></li>
   <li><a href="#rename" id="toc-rename" class="nav-link" data-scroll-target="#rename"><span class="toc-section-number">6.4</span>  rename()</a></li>
@@ -264,80 +279,89 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
   <li><a href="#transmute" id="toc-transmute" class="nav-link" data-scroll-target="#transmute"><span class="toc-section-number">6.6</span>  transmute()</a></li>
   <li><a href="#across" id="toc-across" class="nav-link" data-scroll-target="#across"><span class="toc-section-number">6.7</span>  across()</a></li>
   <li><a href="#c_across" id="toc-c_across" class="nav-link" data-scroll-target="#c_across"><span class="toc-section-number">6.8</span>  c_across()</a></li>
-  </ul>
-</li>
+  </ul></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="toc-section-number">7</span>  Summary</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="toc-section-number">8</span>  References</a></li>
-  </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/edit/main/tutorials/data_man/dplyr_1.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/edit/main/tutorials/data_man/dplyr_1.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content"><section id="introduction-to-dplyr-package" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="introduction-to-dplyr-package">
-<span class="header-section-number">1</span> Introduction to dplyr package</h2>
-<p>The <a href="https://dplyr.tidyverse.org">dplyr</a> package is a grammar of data manipulation just like how <a href="https://ggplot2.tidyverse.org">ggplot2</a> is the grammar of data visualization. It helps us to apply a wide variety of functions such as;</p>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="introduction-to-dplyr-package" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction-to-dplyr-package"><span class="header-section-number">1</span> Introduction to dplyr package</h2>
+<p>The <code>{dplyr}</code> package is a grammar of data manipulation just like how <code>{ggplot2}</code> is the grammar of data visualization. It helps us to apply a wide variety of functions such as;</p>
 <ol type="1">
 <li>Summarising the dataset</li>
 <li>Applying selections and orderings as a function of a variable</li>
 <li>Creating new variables as a function of existing variables</li>
 </ol>
 <p>We will see in-depth how to manipulate our data like a boss!</p>
-</section><section id="the-pipe-operator" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="the-pipe-operator">
-<span class="header-section-number">2</span> The pipe operator %&gt;%</h2>
-<p>Perhaps the most amazing thing in making codes short and efficient is the pipe operator which is originally from the <a href="https://magrittr.tidyverse.org">magrittr</a> package which is made available for the <a href="https://dplyr.tidyverse.org">dplyr</a> package. The pipe operator helps you skip the intermediate steps of saving an object before you can use them in command. It does so by ‘piping’ together results from the first object to the function ahead of the pipe operator. The command <code>x %&gt;% y %&gt;% z</code> can be read as ‘take the result of x and use it with function y and take that result and use it with function z’. This is the gist of what the pipe operator does. Allow me to demonstrate.</p>
+</section>
+<section id="the-pipe-operator" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="the-pipe-operator"><span class="header-section-number">2</span> The pipe operator %&gt;%</h2>
+<p>Perhaps the most amazing thing in making codes short and efficient is the pipe operator which is originally from the <code>{magrittr}</code> package which is made available for the <code>{dplyr}</code> package. The pipe operator helps you skip the intermediate steps of saving an object before you can use them in command. It does so by ‘piping’ together results from the first object to the function ahead of the pipe operator. The command <code>x %&gt;% y %&gt;% z</code> can be read as ‘take the result of x and use it with function y and take that result and use it with function z’. This is the gist of what the pipe operator does. Allow me to demonstrate.</p>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># dummy data</span></span>
-<span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">100</span>, size <span class="op">=</span> <span class="fl">50</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">b</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">100</span>, size <span class="op">=</span> <span class="fl">50</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">a</span>,<span class="va">b</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># without %&gt;%</span></span>
-<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">mutate</span><span class="op">(</span><span class="va">data</span>, ab <span class="op">=</span> <span class="va">a</span><span class="op">*</span><span class="va">b</span>, twice_a <span class="op">=</span> <span class="fl">2</span><span class="op">*</span><span class="va">a</span><span class="op">)</span></span>
-<span><span class="va">data_new</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">data</span>, <span class="va">ab</span> <span class="op">&lt;</span> <span class="fl">300</span>, <span class="va">twice_a</span> <span class="op">&lt;</span> <span class="fl">200</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">data_new</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">ab</span>, <span class="va">twice_a</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># with %&gt;%</span></span>
-<span><span class="va">data</span> <span class="op">%&gt;%</span> <span class="fu">mutate</span><span class="op">(</span>ab <span class="op">=</span> <span class="va">a</span><span class="op">*</span><span class="va">b</span>, twice_a <span class="op">=</span> <span class="fl">2</span><span class="op">*</span><span class="va">a</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">ab</span> <span class="op">&lt;</span> <span class="fl">300</span>, <span class="va">twice_a</span> <span class="op">&lt;</span> <span class="fl">200</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">ab</span>, <span class="va">twice_a</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># dummy data</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="at">size =</span> <span class="dv">50</span>))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="at">size =</span> <span class="dv">50</span>))</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(a,b))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># without %&gt;%</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">mutate</span>(data, <span class="at">ab =</span> a<span class="sc">*</span>b, <span class="at">twice_a =</span> <span class="dv">2</span><span class="sc">*</span>a)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>data_new <span class="ot">&lt;-</span> <span class="fu">filter</span>(data, ab <span class="sc">&lt;</span> <span class="dv">300</span>, twice_a <span class="sc">&lt;</span> <span class="dv">200</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_new, <span class="fu">aes</span>(ab, twice_a)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># with %&gt;%</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">ab =</span> a<span class="sc">*</span>b, <span class="at">twice_a =</span> <span class="dv">2</span><span class="sc">*</span>a) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ab <span class="sc">&lt;</span> <span class="dv">300</span>, twice_a <span class="sc">&lt;</span> <span class="dv">200</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(ab, twice_a)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>As you can see, with pipe operator <code>%&gt;%</code>, we did not have to save any objects in the intermediate steps and also it improved the overall clarity of the code. I have used a few commands from the <a href="https://dplyr.tidyverse.org">dplyr</a> package in the example given above. So without further ado let us delve into the <a href="https://dplyr.tidyverse.org">dplyr</a> package. For this chapter, I will be using the penguin dataset from the popular <code>{palmerpenguin}</code> package as an example.</p>
+<p>As you can see, with pipe operator <code>%&gt;%</code>, we did not have to save any objects in the intermediate steps and also it improved the overall clarity of the code. I have used a few commands from the <code>{dplyr}</code> package in the example given above. So without further ado let us delve into the <code>{dplyr}</code> package. For this chapter, I will be using the penguin dataset from the popular <code>{palmerpenguin}</code> package as an example.</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># install palmerpenguins package</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"palmerpenguins"</span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install palmerpenguins package</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"palmerpenguins"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="grouping-the-data" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="grouping-the-data">
-<span class="header-section-number">3</span> Grouping the data</h2>
-<section id="group_by" class="level3" data-number="3.1"><h3 data-number="3.1" class="anchored" data-anchor-id="group_by">
-<span class="header-section-number">3.1</span> group_by()</h3>
-<p>The command <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> allows us to group the data via existing variables. It allows for a ‘split-apply-combine’ way of getting output. First, it will split the data or group the data with the levels in the variable, then apply the function of our choice and then finally combine the results to give us a tabular output. On its own the command doesn’t do anything, we use it in conjunction with other commands to get results based on the grouping we specify. The command <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup()</a></code> is used to ungroup the data.</p>
-</section></section><section id="summarising-the-data" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="summarising-the-data">
-<span class="header-section-number">4</span> Summarising the data</h2>
-<section id="summarise" class="level3" data-number="4.1"><h3 data-number="4.1" class="anchored" data-anchor-id="summarise">
-<span class="header-section-number">4.1</span> summarise()</h3>
-<p>The <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> command allows you to get the summary statistics of a variable or a column in the dataset. The result is given as tabular data. Many types of summary statistics can be obtained using the <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> function. Some of them are given below. To calculate average values it is necessary to drop <code>NA</code> values from the dataset. Use <code><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na()</a></code> command from the <a href="https://tidyr.tidyverse.org">tidyr</a> package. The comments denote what each summary statistic is.</p>
+</section>
+<section id="grouping-the-data" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="grouping-the-data"><span class="header-section-number">3</span> Grouping the data</h2>
+<section id="group_by" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="group_by"><span class="header-section-number">3.1</span> group_by()</h3>
+<p>The command <code>group_by()</code> allows us to group the data via existing variables. It allows for a ‘split-apply-combine’ way of getting output. First, it will split the data or group the data with the levels in the variable, then apply the function of our choice and then finally combine the results to give us a tabular output. On its own the command doesn’t do anything, we use it in conjunction with other commands to get results based on the grouping we specify. The command <code>ungroup()</code> is used to ungroup the data.</p>
+</section>
+</section>
+<section id="summarising-the-data" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="summarising-the-data"><span class="header-section-number">4</span> Summarising the data</h2>
+<section id="summarise" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="summarise"><span class="header-section-number">4.1</span> summarise()</h3>
+<p>The <code>summarise()</code> command allows you to get the summary statistics of a variable or a column in the dataset. The result is given as tabular data. Many types of summary statistics can be obtained using the <code>summarise()</code> function. Some of them are given below. To calculate average values it is necessary to drop <code>NA</code> values from the dataset. Use <code>drop_na()</code> command from the <code>{tidyr}</code> package. The comments denote what each summary statistic is.</p>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">summary_data</span> <span class="op">&lt;-</span> <span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="co"># we are grouping/splitting the data according to species</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>avg_mass <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span>, <span class="co"># mean mass</span></span>
-<span>            median_mass <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span>, <span class="co"># median mass</span></span>
-<span>            max_mass <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span>, <span class="co"># max value of mass, can also use min()</span></span>
-<span>            standard_deviation_bill_length <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span>, <span class="co"># standard deviation of bill_length</span></span>
-<span>            sum_mass <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">flipper_length_mm</span><span class="op">)</span>, <span class="co"># sum</span></span>
-<span>            distinct_years <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/n_distinct.html">n_distinct</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span>, <span class="co"># distinct values in column year</span></span>
-<span>            no_of_non_NAs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span><span class="op">)</span>, <span class="co"># gives no of non NAs, </span></span>
-<span>            length_rows <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/context.html">n</a></span><span class="op">(</span><span class="op">)</span>, <span class="co"># length of the rows</span></span>
-<span>            iqr_mass <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/IQR.html">IQR</a></span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span>, <span class="co"># inter quartile range of mass</span></span>
-<span>            median_absolute_deviation_mass <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/mad.html">mad</a></span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span>, <span class="co"># median absolute deviation of mass</span></span>
-<span>            variance_mass <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">var</a></span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="co"># variance</span></span>
-<span><span class="co"># viewing summary as a table</span></span>
-<span><span class="va">summary_data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>summary_data <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span> <span class="co"># we are grouping/splitting the data according to species</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">avg_mass =</span> <span class="fu">mean</span>(body_mass_g), <span class="co"># mean mass</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">median_mass =</span> <span class="fu">median</span>(body_mass_g), <span class="co"># median mass</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">max_mass =</span> <span class="fu">max</span>(body_mass_g), <span class="co"># max value of mass, can also use min()</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">standard_deviation_bill_length =</span> <span class="fu">sd</span>(bill_length_mm), <span class="co"># standard deviation of bill_length</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>            <span class="at">sum_mass =</span> <span class="fu">sum</span>(flipper_length_mm), <span class="co"># sum</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">distinct_years =</span> <span class="fu">n_distinct</span>(year), <span class="co"># distinct values in column year</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>            <span class="at">no_of_non_NAs =</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(year)), <span class="co"># gives no of non NAs, </span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">length_rows =</span> <span class="fu">n</span>(), <span class="co"># length of the rows</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>            <span class="at">iqr_mass =</span> <span class="fu">IQR</span>(body_mass_g), <span class="co"># inter quartile range of mass</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>            <span class="at">median_absolute_deviation_mass =</span> <span class="fu">mad</span>(body_mass_g), <span class="co"># median absolute deviation of mass</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">variance_mass =</span> <span class="fu">var</span>(body_mass_g)) <span class="co"># variance</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co"># viewing summary as a table</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>summary_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -347,12 +371,12 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-<p>The number of non <code>NA</code> values will be the same as that of <code><a href="https://dplyr.tidyverse.org/reference/context.html">n()</a></code> result as we have used <code><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na()</a></code>command in the beginning.</p>
-<p>The base function <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> in R also gives the whole summary statistics of a dataset.</p>
+<p>The number of non <code>NA</code> values will be the same as that of <code>n()</code> result as we have used <code>drop_na()</code>command in the beginning.</p>
+<p>The base function <code>summary()</code> in R also gives the whole summary statistics of a dataset.</p>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">penguins</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      species          island    bill_length_mm  bill_depth_mm  
  Adelie   :152   Biscoe   :168   Min.   :32.10   Min.   :13.10  
@@ -372,26 +396,28 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
  NA's   :2         NA's   :2                                 </code></pre>
 </div>
 </div>
-</section><section id="when-to-use-group_by" class="level3" data-number="4.2"><h3 data-number="4.2" class="anchored" data-anchor-id="when-to-use-group_by">
-<span class="header-section-number">4.2</span> when to use group_by()</h3>
-<p>It can be confusing to decide when to use the <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> function. In short, you should use it whenever you want any function to act separately on different groups present in the dataset. Here is a graphical representation of how the <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> function is used to calculate the mean values of a dataset. When used with <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> it calculates mean values for the respective groups in the data, but when <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> is not used, it will calculate the mean value of the entire dataset irrespective of the different groups present and outputs a single column.</p>
+</section>
+<section id="when-to-use-group_by" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="when-to-use-group_by"><span class="header-section-number">4.2</span> when to use group_by()</h3>
+<p>It can be confusing to decide when to use the <code>group_by()</code> function. In short, you should use it whenever you want any function to act separately on different groups present in the dataset. Here is a graphical representation of how the <code>summarise()</code> function is used to calculate the mean values of a dataset. When used with <code>group_by()</code> it calculates mean values for the respective groups in the data, but when <code>group_by()</code> is not used, it will calculate the mean value of the entire dataset irrespective of the different groups present and outputs a single column.</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="images/group_by.png" class="img-fluid" width="792"></p>
 </div>
 </div>
-</section><section id="count" class="level3" data-number="4.3"><h3 data-number="4.3" class="anchored" data-anchor-id="count">
-<span class="header-section-number">4.3</span> count()</h3>
-<p>The <code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code> command is used to count the number of rows of a variable. Has the same function as that of <code><a href="https://dplyr.tidyverse.org/reference/context.html">n()</a></code></p>
+</section>
+<section id="count" class="level3" data-number="4.3">
+<h3 data-number="4.3" class="anchored" data-anchor-id="count"><span class="header-section-number">4.3</span> count()</h3>
+<p>The <code>count()</code> command is used to count the number of rows of a variable. Has the same function as that of <code>n()</code></p>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">count</span> <span class="op">&lt;-</span> <span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">island</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># viewing count as a table</span></span>
-<span><span class="va">count</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>count <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(island)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># viewing count as a table</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>count</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -401,17 +427,19 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-</section></section><section id="manipulating-cases-or-observations" class="level2" data-number="5"><h2 data-number="5" class="anchored" data-anchor-id="manipulating-cases-or-observations">
-<span class="header-section-number">5</span> Manipulating cases or observations</h2>
+</section>
+</section>
+<section id="manipulating-cases-or-observations" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="manipulating-cases-or-observations"><span class="header-section-number">5</span> Manipulating cases or observations</h2>
 <p>The following functions affect rows to give a subset of rows in a new table as output.</p>
-<section id="filter" class="level3" data-number="5.1"><h3 data-number="5.1" class="anchored" data-anchor-id="filter">
-<span class="header-section-number">5.1</span> filter()</h3>
-<p>Use <code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> to filter rows corresponding to a given logical criteria</p>
+<section id="filter" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="filter"><span class="header-section-number">5.1</span> filter()</h3>
+<p>Use <code>filter()</code> to filter rows corresponding to a given logical criteria</p>
 <div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">&lt;</span> <span class="fl">3000</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">filter</span>(body_mass_g <span class="sc">&lt;</span> <span class="dv">3000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -421,14 +449,15 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-</section><section id="distinct" class="level3" data-number="5.2"><h3 data-number="5.2" class="anchored" data-anchor-id="distinct">
-<span class="header-section-number">5.2</span> distinct()</h3>
-<p>Use <code><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct()</a></code> to remove rows with duplicate or same values.</p>
+</section>
+<section id="distinct" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="distinct"><span class="header-section-number">5.2</span> distinct()</h3>
+<p>Use <code>distinct()</code> to remove rows with duplicate or same values.</p>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html">distinct</a></span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span> <span class="fu">distinct</span>(body_mass_g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -438,15 +467,16 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-</section><section id="slice" class="level3" data-number="5.3"><h3 data-number="5.3" class="anchored" data-anchor-id="slice">
-<span class="header-section-number">5.3</span> slice()</h3>
-<p>Use <code><a href="https://dplyr.tidyverse.org/reference/slice.html">slice()</a></code> to select rows by position.</p>
+</section>
+<section id="slice" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="slice"><span class="header-section-number">5.3</span> slice()</h3>
+<p>Use <code>slice()</code> to select rows by position.</p>
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># slice from first row to fifth row</span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># slice from first row to fifth row</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -456,30 +486,25 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-</section><section id="slice_sample" class="level3" data-number="5.4"><h3 data-number="5.4" class="anchored" data-anchor-id="slice_sample">
-<span class="header-section-number">5.4</span> slice_sample()</h3>
-<p>Use <code><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_sample()</a></code> to randomly select rows from the dataset. Instead of <code>(n = )</code> you can also provide the proportion value (between 0 and 1) using <code>(prop = )</code>. For e.g.&nbsp;for a dataset with 10 rows, giving <code>(prop = 0.5)</code> will randomly sample 5 rows. Other related functions include;</p>
+</section>
+<section id="slice_sample" class="level3" data-number="5.4">
+<h3 data-number="5.4" class="anchored" data-anchor-id="slice_sample"><span class="header-section-number">5.4</span> slice_sample()</h3>
+<p>Use <code>slice_sample()</code> to randomly select rows from the dataset. Instead of <code>(n = )</code> you can also provide the proportion value (between 0 and 1) using <code>(prop = )</code>. For e.g.&nbsp;for a dataset with 10 rows, giving <code>(prop = 0.5)</code> will randomly sample 5 rows. Other related functions include;</p>
 <ul>
-<li>
-<code>preserve</code> : Values include <code>TRUE</code> to preserve grouping in a grouped dataset and <code>FALSE</code> to not preserve grouping while sampling.</li>
-<li>
-<code>weight_by</code> : Gives priority to a particular variable during sampling. An example is given below.</li>
-<li>
-<code>replace</code> : Values include <code>TRUE</code> if you want sampling with replacement which can result in duplicate values, <code>FALSE</code> if you want sampling without replacement.</li>
+<li><code>preserve</code> : Values include <code>TRUE</code> to preserve grouping in a grouped dataset and <code>FALSE</code> to not preserve grouping while sampling.</li>
+<li><code>weight_by</code> : Gives priority to a particular variable during sampling. An example is given below.</li>
+<li><code>replace</code> : Values include <code>TRUE</code> if you want sampling with replacement which can result in duplicate values, <code>FALSE</code> if you want sampling without replacement.</li>
 </ul>
 <div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist">
-<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">(n = 4)</a></li>
-<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">weight_by</a></li>
-</ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">(n = 4)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">weight_by</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># samples 4 rows randomly</span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_sample</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># samples 4 rows randomly</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -492,11 +517,11 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># sampling will favour rows with higher values of 'body_mass_g'</span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_sample</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">4</span>, weight_by <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># sampling will favour rows with higher values of 'body_mass_g'</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">4</span>, <span class="at">weight_by =</span> body_mass_g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -509,21 +534,19 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-</section><section id="slice_min-and-slice_max" class="level3" data-number="5.5"><h3 data-number="5.5" class="anchored" data-anchor-id="slice_min-and-slice_max">
-<span class="header-section-number">5.5</span> slice_min() and slice_max()</h3>
-<p>Use <code><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_min()</a></code> to extract rows containing least values and use <code><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_max()</a></code> to extract rows with greatest values. The function <code>with_ties = FALSE</code> is included to avoid tie values.</p>
+</section>
+<section id="slice_min-and-slice_max" class="level3" data-number="5.5">
+<h3 data-number="5.5" class="anchored" data-anchor-id="slice_min-and-slice_max"><span class="header-section-number">5.5</span> slice_min() and slice_max()</h3>
+<p>Use <code>slice_min()</code> to extract rows containing least values and use <code>slice_max()</code> to extract rows with greatest values. The function <code>with_ties = FALSE</code> is included to avoid tie values.</p>
 <div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist">
-<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">slice_min()</a></li>
-<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">slice_max()</a></li>
-</ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">slice_min()</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">slice_max()</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div class="cell">
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_min</a></span><span class="op">(</span><span class="va">body_mass_g</span>, n <span class="op">=</span> <span class="fl">4</span>, with_ties <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">slice_min</span>(body_mass_g, <span class="at">n =</span> <span class="dv">4</span>, <span class="at">with_ties =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -536,10 +559,10 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <div class="cell">
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_max</a></span><span class="op">(</span><span class="va">body_mass_g</span>, n <span class="op">=</span> <span class="fl">4</span>,with_ties <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">slice_max</span>(body_mass_g, <span class="at">n =</span> <span class="dv">4</span>,<span class="at">with_ties =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -552,21 +575,19 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-</section><section id="slice_head-and-slice_tail" class="level3" data-number="5.6"><h3 data-number="5.6" class="anchored" data-anchor-id="slice_head-and-slice_tail">
-<span class="header-section-number">5.6</span> slice_head() and slice_tail()</h3>
-<p>Use <code><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head()</a></code> to extract first set of rows and use <code><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_tail()</a></code> to extract last set of rows.</p>
+</section>
+<section id="slice_head-and-slice_tail" class="level3" data-number="5.6">
+<h3 data-number="5.6" class="anchored" data-anchor-id="slice_head-and-slice_tail"><span class="header-section-number">5.6</span> slice_head() and slice_tail()</h3>
+<p>Use <code>slice_head()</code> to extract first set of rows and use <code>slice_tail()</code> to extract last set of rows.</p>
 <div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist">
-<li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">slice_head()</a></li>
-<li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">slice_tail()</a></li>
-</ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">slice_head()</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">slice_tail()</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <div class="cell">
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -579,10 +600,10 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
 <div class="cell">
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_tail</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">slice_tail</span>(<span class="at">n =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -595,16 +616,17 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-</section><section id="arrange" class="level3" data-number="5.7"><h3 data-number="5.7" class="anchored" data-anchor-id="arrange">
-<span class="header-section-number">5.7</span> arrange()</h3>
-<p>Use <code><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange()</a></code> to arrange rows in a particular order.</p>
+</section>
+<section id="arrange" class="level3" data-number="5.7">
+<h3 data-number="5.7" class="anchored" data-anchor-id="arrange"><span class="header-section-number">5.7</span> arrange()</h3>
+<p>Use <code>arrange()</code> to arrange rows in a particular order.</p>
 <div class="cell">
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># arranging rows in descending order of bill length</span></span>
-<span><span class="co"># by default it arranges data by ascending order when no specifications are given</span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># arranging rows in descending order of bill length</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co"># by default it arranges data by ascending order when no specifications are given</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(bill_length_mm))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -614,15 +636,16 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-</section><section id="add_row" class="level3" data-number="5.8"><h3 data-number="5.8" class="anchored" data-anchor-id="add_row">
-<span class="header-section-number">5.8</span> add_row()</h3>
-<p>Use <code><a href="https://tibble.tidyverse.org/reference/add_row.html">add_row()</a></code> to add rows to the dataset.</p>
+</section>
+<section id="add_row" class="level3" data-number="5.8">
+<h3 data-number="5.8" class="anchored" data-anchor-id="add_row"><span class="header-section-number">5.8</span> add_row()</h3>
+<p>Use <code>add_row()</code> to add rows to the dataset.</p>
 <div class="cell">
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">Name</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"a"</span>, <span class="st">"b"</span><span class="op">)</span></span>
-<span><span class="va">Age</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">12</span>,<span class="fl">13</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">Name</span>, <span class="va">Age</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/add_row.html">add_row</a></span><span class="op">(</span>Name <span class="op">=</span> <span class="st">"c"</span>, Age <span class="op">=</span> <span class="fl">15</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>Name <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>Age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">13</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(Name, Age) <span class="sc">%&gt;%</span> <span class="fu">add_row</span>(<span class="at">Name =</span> <span class="st">"c"</span>, <span class="at">Age =</span> <span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -632,26 +655,29 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-</section></section><section id="manipulating-variables-or-columns" class="level2" data-number="6"><h2 data-number="6" class="anchored" data-anchor-id="manipulating-variables-or-columns">
-<span class="header-section-number">6</span> Manipulating variables or columns</h2>
+</section>
+</section>
+<section id="manipulating-variables-or-columns" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="manipulating-variables-or-columns"><span class="header-section-number">6</span> Manipulating variables or columns</h2>
 <p>The following functions affect columns to give a subset of columns in a new table as output.</p>
-<section id="pull" class="level3" data-number="6.1"><h3 data-number="6.1" class="anchored" data-anchor-id="pull">
-<span class="header-section-number">6.1</span> pull()</h3>
-<p>Use <code><a href="https://dplyr.tidyverse.org/reference/pull.html">pull()</a></code> to extract columns as a vector, by name or index. Only the first 10 results are shown for easy viewing.</p>
+<section id="pull" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="pull"><span class="header-section-number">6.1</span> pull()</h3>
+<p>Use <code>pull()</code> to extract columns as a vector, by name or index. Only the first 10 results are shown for easy viewing.</p>
 <div class="cell">
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">pull</span>(body_mass_g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="select" class="level3" data-number="6.2"><h3 data-number="6.2" class="anchored" data-anchor-id="select">
-<span class="header-section-number">6.2</span> select()</h3>
-<p>Use <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> to extract columns as tables, by name or index.</p>
+</section>
+<section id="select" class="level3" data-number="6.2">
+<h3 data-number="6.2" class="anchored" data-anchor-id="select"><span class="header-section-number">6.2</span> select()</h3>
+<p>Use <code>select()</code> to extract columns as tables, by name or index.</p>
 <div class="cell">
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">species</span>, <span class="va">body_mass_g</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">select</span>(species, body_mass_g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -661,51 +687,54 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-</section><section id="relocate" class="level3" data-number="6.3"><h3 data-number="6.3" class="anchored" data-anchor-id="relocate">
-<span class="header-section-number">6.3</span> relocate()</h3>
-<p>Use <code><a href="https://dplyr.tidyverse.org/reference/relocate.html">relocate()</a></code> to move columns to new position. Results are not shown as these are trivial results.</p>
+</section>
+<section id="relocate" class="level3" data-number="6.3">
+<h3 data-number="6.3" class="anchored" data-anchor-id="relocate"><span class="header-section-number">6.3</span> relocate()</h3>
+<p>Use <code>relocate()</code> to move columns to new position. Results are not shown as these are trivial results.</p>
 <div class="cell">
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># relocates 'species' column to last position</span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/relocate.html">relocate</a></span><span class="op">(</span><span class="va">species</span>, .after <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/everything.html">last_col</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># relocates 'species' column to last position</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">relocate</span>(species, <span class="at">.after =</span> <span class="fu">last_col</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># relocates 'species' column before column 'year' and renames the column as 'penguins'</span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/relocate.html">relocate</a></span><span class="op">(</span>penguins <span class="op">=</span> <span class="va">species</span>, .before <span class="op">=</span> <span class="va">year</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># relocates 'species' column before column 'year' and renames the column as 'penguins'</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">relocate</span>(<span class="at">penguins =</span> species, <span class="at">.before =</span> year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># you can also relocate columns based on their class</span></span>
-<span><span class="co"># relocates all columns with 'character' class to last position</span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/relocate.html">relocate</a></span><span class="op">(</span><span class="fu">where</span><span class="op">(</span><span class="va">is.character</span><span class="op">)</span>, .after <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/everything.html">last_col</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># you can also relocate columns based on their class</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co"># relocates all columns with 'character' class to last position</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">relocate</span>(<span class="fu">where</span>(is.character), <span class="at">.after =</span> <span class="fu">last_col</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="rename" class="level3" data-number="6.4"><h3 data-number="6.4" class="anchored" data-anchor-id="rename">
-<span class="header-section-number">6.4</span> rename()</h3>
-<p>Use <code><a href="https://dplyr.tidyverse.org/reference/rename.html">rename()</a></code> function to rename column names in the dataset.</p>
+</section>
+<section id="rename" class="level3" data-number="6.4">
+<h3 data-number="6.4" class="anchored" data-anchor-id="rename"><span class="header-section-number">6.4</span> rename()</h3>
+<p>Use <code>rename()</code> function to rename column names in the dataset.</p>
 <div class="cell">
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># renames the column sex to gender</span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html">rename</a></span><span class="op">(</span>gender <span class="op">=</span> <span class="va">sex</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># renames the column sex to gender</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">gender =</span> sex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="mutate" class="level3" data-number="6.5"><h3 data-number="6.5" class="anchored" data-anchor-id="mutate">
-<span class="header-section-number">6.5</span> mutate()</h3>
-<p>Use <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> function to create new columns or variables.</p>
+</section>
+<section id="mutate" class="level3" data-number="6.5">
+<h3 data-number="6.5" class="anchored" data-anchor-id="mutate"><span class="header-section-number">6.5</span> mutate()</h3>
+<p>Use <code>mutate()</code> function to create new columns or variables.</p>
 <div class="cell">
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>mean_mass <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(body_mass_g))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -715,16 +744,17 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-</section><section id="transmute" class="level3" data-number="6.6"><h3 data-number="6.6" class="anchored" data-anchor-id="transmute">
-<span class="header-section-number">6.6</span> transmute()</h3>
-<p>Does the same function as <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> but in the process will drop any other columns and give you a table with only the newly created columns.</p>
+</section>
+<section id="transmute" class="level3" data-number="6.6">
+<h3 data-number="6.6" class="anchored" data-anchor-id="transmute"><span class="header-section-number">6.6</span> transmute()</h3>
+<p>Does the same function as <code>mutate()</code> but in the process will drop any other columns and give you a table with only the newly created columns.</p>
 <div class="cell">
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">transmute</a></span><span class="op">(</span>mean_mass <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(body_mass_g))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -734,21 +764,22 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-</section><section id="across" class="level3" data-number="6.7"><h3 data-number="6.7" class="anchored" data-anchor-id="across">
-<span class="header-section-number">6.7</span> across()</h3>
-<p>Use <code><a href="https://dplyr.tidyverse.org/reference/across.html">across()</a></code> to summarise or mutate columns in the same way. First example shows <code><a href="https://dplyr.tidyverse.org/reference/across.html">across()</a></code> used with <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> function.</p>
+</section>
+<section id="across" class="level3" data-number="6.7">
+<h3 data-number="6.7" class="anchored" data-anchor-id="across"><span class="header-section-number">6.7</span> across()</h3>
+<p>Use <code>across()</code> to summarise or mutate columns in the same way. First example shows <code>across()</code> used with <code>summarise()</code> function.</p>
 <div class="cell">
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># summarise across columns body mass, bill length and bill depth</span></span>
-<span><span class="co"># and calculate the mean values</span></span>
-<span><span class="co"># since we are calculating mean values,</span></span>
-<span><span class="co"># NAs are dropped using 'drop_na() function from 'tidyr' package</span></span>
-<span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html">across</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">body_mass_g</span>, <span class="va">bill_length_mm</span>, <span class="va">bill_depth_mm</span><span class="op">)</span>, <span class="va">mean</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># summarise across columns body mass, bill length and bill depth</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co"># and calculate the mean values</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co"># since we are calculating mean values,</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># NAs are dropped using 'drop_na() function from 'tidyr' package</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">c</span>(body_mass_g, bill_length_mm, bill_depth_mm), mean))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -758,19 +789,19 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-<p>Second example showing <code><a href="https://dplyr.tidyverse.org/reference/across.html">across()</a></code> used with <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> function. We can efficiently create new columns using <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/across.html">across()</a></code> together. Suppose we want to multiply all numerical values in a dataset with 2 and create new columns of those values. This can be done using the code below.</p>
+<p>Second example showing <code>across()</code> used with <code>mutate()</code> function. We can efficiently create new columns using <code>mutate()</code> and <code>across()</code> together. Suppose we want to multiply all numerical values in a dataset with 2 and create new columns of those values. This can be done using the code below.</p>
 <div class="cell">
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># define the function</span></span>
-<span><span class="va">two_times</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fl">2</span><span class="op">*</span><span class="va">x</span></span>
-<span><span class="op">}</span> </span>
-<span></span>
-<span><span class="co"># .name will rename the new columns with 'twice` prefix combined with existing col names</span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html">across</a></span><span class="op">(</span><span class="fu">where</span><span class="op">(</span><span class="va">is.numeric</span><span class="op">)</span>, <span class="va">two_times</span>, .names <span class="op">=</span> <span class="st">"two_times_{col}"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># define the function</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>two_times <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span><span class="sc">*</span>x</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>} </span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="co"># .name will rename the new columns with 'twice` prefix combined with existing col names</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), two_times, <span class="at">.names =</span> <span class="st">"two_times_{col}"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -780,34 +811,35 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-<p>The same code when used just with <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> function will look like this</p>
+<p>The same code when used just with <code>mutate()</code> function will look like this</p>
 <div class="cell">
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># define the function</span></span>
-<span><span class="va">two_times</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fl">2</span><span class="op">*</span><span class="va">x</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="co"># using only 'mutate()' function</span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>twice_bill_lenght <span class="op">=</span> <span class="fu">two_times</span><span class="op">(</span><span class="va">bill_length_mm</span><span class="op">)</span>,</span>
-<span>         twice_body_mass <span class="op">=</span> <span class="fu">two_times</span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span>,</span>
-<span>         <span class="va">.....</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># define the function</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>two_times <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span><span class="sc">*</span>x</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="co"># using only 'mutate()' function</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">twice_bill_lenght =</span> <span class="fu">two_times</span>(bill_length_mm),</span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">twice_body_mass =</span> <span class="fu">two_times</span>(body_mass_g),</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>         .....)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>So in this code, I will have to manually type all the col names and apply the operation individually which is too much of a hassle. Now we can better appreciate how efficient it is in using <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/across.html">across()</a></code> functions together.</p>
-</section><section id="c_across" class="level3" data-number="6.8"><h3 data-number="6.8" class="anchored" data-anchor-id="c_across">
-<span class="header-section-number">6.8</span> c_across()</h3>
-<p>The function <code><a href="https://dplyr.tidyverse.org/reference/c_across.html">c_across()</a></code> is similar to the earlier mentioned <code><a href="https://dplyr.tidyverse.org/reference/across.html">across()</a></code> function. But instead of doing a column-wise function, it applies function across columns in a row-wise manner. Now, most functions in R by default computes across columns, so to specify row-wise computation, we have to explicitly use the function <code><a href="https://dplyr.tidyverse.org/reference/rowwise.html">rowwise()</a></code> in conjunction with other functions. In the example below we will sum both bill and flipper lengths of the penguins in the <code>penguins</code> dataset and create a new column called ‘sum_of_lengths’.</p>
+<p>So in this code, I will have to manually type all the col names and apply the operation individually which is too much of a hassle. Now we can better appreciate how efficient it is in using <code>mutate()</code> and <code>across()</code> functions together.</p>
+</section>
+<section id="c_across" class="level3" data-number="6.8">
+<h3 data-number="6.8" class="anchored" data-anchor-id="c_across"><span class="header-section-number">6.8</span> c_across()</h3>
+<p>The function <code>c_across()</code> is similar to the earlier mentioned <code>across()</code> function. But instead of doing a column-wise function, it applies function across columns in a row-wise manner. Now, most functions in R by default computes across columns, so to specify row-wise computation, we have to explicitly use the function <code>rowwise()</code> in conjunction with other functions. In the example below we will sum both bill and flipper lengths of the penguins in the <code>penguins</code> dataset and create a new column called ‘sum_of_lengths’.</p>
 <div class="cell">
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rowwise.html">rowwise</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">transmute</a></span><span class="op">(</span>sum_of_length <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/c_across.html">c_across</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">bill_length_mm</span>,<span class="va">flipper_length_mm</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(<span class="at">sum_of_length =</span> <span class="fu">sum</span>(<span class="fu">c_across</span>(<span class="fu">c</span>(bill_length_mm,flipper_length_mm))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -817,17 +849,24 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-</section></section><section id="summary" class="level2" data-number="7"><h2 data-number="7" class="anchored" data-anchor-id="summary">
-<span class="header-section-number">7</span> Summary</h2>
-<p>The <a href="https://dplyr.tidyverse.org">dplyr</a> package is the grammar of the data manipulation in R. It features well-made functions to help us summarise the data, group data by variables and manipulate columns and rows in the dataset. In this chapter, we learned in detail the different functions that help us manipulate data efficiently and have seen case examples also. In the next chapter, we will see the remaining set of functions in the <a href="https://dplyr.tidyverse.org">dplyr</a> package.</p>
-</section><section id="references" class="level2" data-number="8"><h2 data-number="8" class="anchored" data-anchor-id="references">
-<span class="header-section-number">8</span> References</h2>
+</section>
+</section>
+<section id="summary" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="summary"><span class="header-section-number">7</span> Summary</h2>
+<p>The <code>{dplyr}</code> package is the grammar of the data manipulation in R. It features well-made functions to help us summarise the data, group data by variables and manipulate columns and rows in the dataset. In this chapter, we learned in detail the different functions that help us manipulate data efficiently and have seen case examples also. In the next chapter, we will see the remaining set of functions in the <code>{dplyr}</code> package.</p>
+</section>
+<section id="references" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="references"><span class="header-section-number">8</span> References</h2>
 <ol type="1">
-<li><p>Hadley Wickham, Romain François, Lionel Henry and Kirill Müller (2021). dplyr: A Grammar of Data Manipulation. R package version 1.0.7. https://CRAN.R-project.org/package=dplyr Here is the <a href="https://github.com/rstudio/cheatsheets/blob/main/data-transformation.pdf">link</a> to the cheat sheet explaining each function in <a href="https://dplyr.tidyverse.org">dplyr</a>.</p></li>
+<li><p>Hadley Wickham, Romain François, Lionel Henry and Kirill Müller (2021). dplyr: A Grammar of Data Manipulation. R package version 1.0.7. https://CRAN.R-project.org/package=dplyr Here is the <a href="https://github.com/rstudio/cheatsheets/blob/main/data-transformation.pdf">link</a> to the cheat sheet explaining each function in <code>{dplyr}</code>.</p></li>
 <li><p>Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</p></li>
 <li><p>Hadley Wickham (2021). tidyr: Tidy Messy Data. R package version 1.1.4. https://CRAN.R-project.org/package=tidyr</p></li>
 </ol>
-</section><div id="quarto-appendix" class="default"><section id="last-updated-on" class="level4 unnumbered unlisted appendix"><h2 class="quarto-appendix-heading">Last updated on</h2><div class="quarto-appendix-contents">
+
+</section>
+
+<div id="quarto-appendix" class="default"><section id="last-updated-on" class="level4 unnumbered unlisted appendix"><h2 class="quarto-appendix-heading">Last updated on</h2><div class="quarto-appendix-contents">
+
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "2022-08-28 11:10:33 IST"</code></pre>
@@ -849,7 +888,8 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-johnson2021" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
 Jewel Johnson. 2021. <span>“Chapter 2: Data Manipulation Using Dplyr
 (Part 1).”</span> December 13, 2021. <a href="https://one-carat-blog.netlify.app//tutorials/data_man/dplyr_1.html">https://one-carat-blog.netlify.app//tutorials/data_man/dplyr_1.html</a>.
-</div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -997,7 +1037,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 });
-</script><script src="https://giscus.app/client.js" data-repo="jeweljohnsonj/one-carat-blog" data-repo-id="R_kgDOHW124A" data-category="General" data-category-id="DIC_kwDOHW124M4CPNVL" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<script src="https://giscus.app/client.js" data-repo="jeweljohnsonj/one-carat-blog" data-repo-id="R_kgDOHW124A" data-category="General" data-category-id="DIC_kwDOHW124M4CPNVL" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb31" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Chapter 2: Data manipulation using dplyr (part 1)"</span></span>
@@ -1463,11 +1504,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">Blog made using <a href="https://quarto.org/">Quarto®</a> with ❤️, by Jewel Johnson.</div>   
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-<li class="nav-item compact">
+    <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/jeweljohnsonj">
       <i class="bi bi-github" role="img">
 </i> 
@@ -1492,11 +1534,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
 </ul>
-</div>
+    </div>
   </div>
-</footer><div class="page-columns page-rows-contents page-layout-article"><div class="social-share">
-<a href="https://twitter.com/share?url=https://one-carat-blog.netlify.app/tutorials/data_man/dplyr_1.html&amp;text=Data%20manipulation%20using%20dplyr%20(part%201)" target="_blank" class="twitter"><i class="fab fa-twitter fa-fw fa-lg"></i></a><a href="https://www.linkedin.com/shareArticle?url=https://one-carat-blog.netlify.app/tutorials/data_man/dplyr_1.html&amp;title=Data%20manipulation%20using%20dplyr%20(part%201)" target="_blank" class="linkedin"><i class="fa-brands fa-linkedin-in fa-fw fa-lg"></i></a>  <a href="mailto:?subject=Data%20manipulation%20using%20dplyr%20(part%201)&amp;body=Check%20out%20this%20link:https://one-carat-blog.netlify.app/tutorials/data_man/dplyr_1.html" target="_blank" class="email"><i class="fa-solid fa-envelope fa-fw fa-lg"></i></a><a href="https://www.facebook.com/sharer.php?u=https://one-carat-blog.netlify.app/tutorials/data_man/dplyr_1.html" target="_blank" class="facebook"><i class="fab fa-facebook-f fa-fw fa-lg"></i></a><a href="https://reddit.com/submit?url=https://one-carat-blog.netlify.app/tutorials/data_man/dplyr_1.html&amp;title=Data%20manipulation%20using%20dplyr%20(part%201)" target="_blank" class="reddit">   <i class="fa-brands fa-reddit-alien fa-fw fa-lg"></i></a><a href="https://www.stumbleupon.com/submit?url=https://one-carat-blog.netlify.app/tutorials/data_man/dplyr_1.html&amp;title=Data%20manipulation%20using%20dplyr%20(part%201)" target="_blank" class="stumbleupon"><i class="fa-brands fa-stumbleupon fa-fw fa-lg"></i></a><a href="https://www.tumblr.com/share/link?url=https://one-carat-blog.netlify.app/tutorials/data_man/dplyr_1.html&amp;name=Data%20manipulation%20using%20dplyr%20(part%201)" target="_blank" class="tumblr"><i class="fa-brands fa-tumblr fa-fw fa-lg"></i></a>
-</div></div>
+</footer>
+<div class="page-columns page-rows-contents page-layout-article"><div class="social-share"><a href="https://twitter.com/share?url=https://one-carat-blog.netlify.app/tutorials/data_man/dplyr_1.html&amp;text=Data manipulation using dplyr (part 1)" target="_blank" class="twitter"><i class="fab fa-twitter fa-fw fa-lg"></i></a><a href="https://www.linkedin.com/shareArticle?url=https://one-carat-blog.netlify.app/tutorials/data_man/dplyr_1.html&amp;title=Data manipulation using dplyr (part 1)" target="_blank" class="linkedin"><i class="fa-brands fa-linkedin-in fa-fw fa-lg"></i></a>  <a href="mailto:?subject=Data manipulation using dplyr (part 1)&amp;body=Check out this link:https://one-carat-blog.netlify.app/tutorials/data_man/dplyr_1.html" target="_blank" class="email"><i class="fa-solid fa-envelope fa-fw fa-lg"></i></a><a href="https://www.facebook.com/sharer.php?u=https://one-carat-blog.netlify.app/tutorials/data_man/dplyr_1.html" target="_blank" class="facebook"><i class="fab fa-facebook-f fa-fw fa-lg"></i></a><a href="https://reddit.com/submit?url=https://one-carat-blog.netlify.app/tutorials/data_man/dplyr_1.html&amp;title=Data manipulation using dplyr (part 1)" target="_blank" class="reddit">   <i class="fa-brands fa-reddit-alien fa-fw fa-lg"></i></a><a href="https://www.stumbleupon.com/submit?url=https://one-carat-blog.netlify.app/tutorials/data_man/dplyr_1.html&amp;title=Data manipulation using dplyr (part 1)" target="_blank" class="stumbleupon"><i class="fa-brands fa-stumbleupon fa-fw fa-lg"></i></a><a href="https://www.tumblr.com/share/link?url=https://one-carat-blog.netlify.app/tutorials/data_man/dplyr_1.html&amp;name=Data manipulation using dplyr (part 1)" target="_blank" class="tumblr"><i class="fa-brands fa-tumblr fa-fw fa-lg"></i></a></div></div>
 
 
 
