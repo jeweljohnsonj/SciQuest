@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.1.251">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jewel Johnson">
-<meta name="dcterms.date" content="2022-09-01">
+<meta name="dcterms.date" content="2022-10-06">
 <meta name="description" content="Learn how to do hypothesis testing using R">
 <title>one carat blog - Hypothesis Testing in R</title>
 <style>
@@ -206,7 +206,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">September 1, 2022</p>
+        <p class="date">October 6, 2022</p>
       </div>
     </div>
       
@@ -226,11 +226,11 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content"><section id="introduction" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="introduction">
 <span class="header-section-number">1</span> Introduction</h2>
-<p>In this tutorial we will learn how to test hypothesis using various statistical tests in R. We will learn various concepts like p-values, type I and type II errors, parametric and non parametric tests and, their assumptions. So let us start!</p>
+<p>In this tutorial we will learn about hypothesis testing in R. We will learn various concepts like p-values, type I and type II errors, parametric and non parametric tests and, their assumptions. So let us start!</p>
 </section><div id="quarto-appendix" class="default"><section id="last-updated-on" class="level4 unnumbered unlisted appendix"><h2 class="quarto-appendix-heading">Last updated on</h2><div class="quarto-appendix-contents">
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-09-01 17:05:38 IST"</code></pre>
+<pre><code>[1] "2022-10-06 09:10:22 IST"</code></pre>
 </div>
 </div>
 <!-- Do not forget to put flag counter -->
@@ -242,13 +242,13 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
   author = {Jewel Johnson},
   editor = {},
   title = {Hypothesis {Testing} in {R}},
-  date = {2022-09-01},
+  date = {2022-10-06},
   url = {https://one-carat-blog.netlify.app//tutorials/stat_basic/hypothesis_testing.html},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-johnson2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Jewel Johnson. 2022. <span>“Hypothesis Testing in R.”</span> September
-1, 2022. <a href="https://one-carat-blog.netlify.app//tutorials/stat_basic/hypothesis_testing.html">https://one-carat-blog.netlify.app//tutorials/stat_basic/hypothesis_testing.html</a>.
+Jewel Johnson. 2022. <span>“Hypothesis Testing in R.”</span> October 6,
+2022. <a href="https://one-carat-blog.netlify.app//tutorials/stat_basic/hypothesis_testing.html">https://one-carat-blog.netlify.app//tutorials/stat_basic/hypothesis_testing.html</a>.
 </div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -402,7 +402,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Hypothesis Testing in R"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Learn how to do hypothesis testing using R"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "09/01/2022"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "10/06/2022"</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">    css:</span></span>
@@ -426,18 +426,20 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
 <span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>In this tutorial we will learn how to test hypothesis using various statistical tests in R. We will learn various concepts like p-values, type I and type II errors, parametric and non parametric tests and, their assumptions. So let us start!</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>In this tutorial we will learn about hypothesis testing in R. We will learn various concepts like p-values, type I and type II errors, parametric and non parametric tests and, their assumptions. So let us start!</span>
 <span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Last updated on {.unnumbered .unlisted .appendix}</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Do not forget to put flag counter --&gt;</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Last updated on {.unnumbered .unlisted .appendix}</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Do not forget to put flag counter --&gt;</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
