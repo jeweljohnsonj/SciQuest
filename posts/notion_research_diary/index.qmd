@@ -4,7 +4,7 @@ description: "This a tutorial on how you can use Notion to maintain a research d
 date: "06/29/2022"
 format: html
 image: images/res_dairy.png
-categories: [PhD, Notion, productivity]
+categories: [PhD, Notion]
 ---
 
 ## TL;DR

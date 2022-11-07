@@ -3,7 +3,7 @@ title: "Using Notion as your task manager"
 description: "In this article I will showcase to you a template that I made, which can intelligently record and track tasks: you very own personal task manager with the help of Notion"
 date: "06/30/2022"
 format: html
-categories: [PhD, Notion, productivity]
+categories: [PhD, Notion]
 image: images/diary_thumb.png
 ---
 

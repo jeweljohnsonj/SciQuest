@@ -4,7 +4,7 @@ description: "In this tutorial we will learn how we can use Notion to make a lit
 date: "06/29/2022"
 format: html
 image: images/notero_thumbnail.png
-categories: [PhD, Notion, Zotero, productivity]
+categories: [PhD, Notion, Zotero]
 ---
 
 :::{.callout-important}
