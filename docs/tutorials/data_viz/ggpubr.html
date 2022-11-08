@@ -280,7 +280,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://sjmgarnier.github.io/viridis/">viridis</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggballoonplot.html">ggballoonplot</a></span><span class="op">(</span><span class="va">mtcars</span>, fill <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span><span class="fu">ggballoonplot</span><span class="op">(</span><span class="va">mtcars</span>, fill <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://sjmgarnier.github.io/viridis/reference/scale_viridis.html">scale_fill_viridis</a></span><span class="op">(</span>option <span class="op">=</span> <span class="st">"turbo"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="ggpubr_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
@@ -294,7 +294,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggbarplot.html">ggbarplot</a></span><span class="op">(</span><span class="va">penguins</span>,</span>
+<span><span class="fu">ggbarplot</span><span class="op">(</span><span class="va">penguins</span>,</span>
 <span>          x <span class="op">=</span> <span class="st">"species"</span>,</span>
 <span>          y <span class="op">=</span> <span class="st">"bill_length_mm"</span>,</span>
 <span>          add <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"mean_sd"</span><span class="op">)</span>,</span>
@@ -321,7 +321,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggboxplot.html">ggboxplot</a></span><span class="op">(</span><span class="va">penguins</span> ,</span>
+<span><span class="fu">ggboxplot</span><span class="op">(</span><span class="va">penguins</span> ,</span>
 <span>          x <span class="op">=</span> <span class="st">"species"</span>,</span>
 <span>          y <span class="op">=</span> <span class="st">"bill_depth_mm"</span>,</span>
 <span>          title <span class="op">=</span> <span class="st">"Mean bill depth of penguins"</span>,</span>
@@ -342,7 +342,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggviolin.html">ggviolin</a></span><span class="op">(</span><span class="va">penguins</span> ,</span>
+<span><span class="fu">ggviolin</span><span class="op">(</span><span class="va">penguins</span> ,</span>
 <span>          x <span class="op">=</span> <span class="st">"species"</span>,</span>
 <span>          y <span class="op">=</span> <span class="st">"bill_depth_mm"</span>,</span>
 <span>          title <span class="op">=</span> <span class="st">"Mean bill depth of penguins"</span>,</span>
@@ -363,7 +363,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggdensity.html">ggdensity</a></span><span class="op">(</span><span class="va">penguins</span>,</span>
+<span><span class="fu">ggdensity</span><span class="op">(</span><span class="va">penguins</span>,</span>
 <span>          x <span class="op">=</span> <span class="st">"body_mass_g"</span>,</span>
 <span>          color <span class="op">=</span> <span class="st">"species"</span>,</span>
 <span>          rug <span class="op">=</span> <span class="cn">TRUE</span>,</span>
@@ -391,7 +391,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span></span>
 <span><span class="va">labs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">penguins_freq</span><span class="op">$</span><span class="va">species</span>, <span class="st">" ("</span>, <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="op">(</span><span class="va">penguins_freq</span><span class="op">$</span><span class="va">frequency</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">penguins_freq</span><span class="op">$</span><span class="va">frequency</span><span class="op">)</span><span class="op">)</span><span class="op">*</span><span class="fl">100</span>, digits <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>, <span class="st">"%)"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggdonutchart.html">ggdonutchart</a></span><span class="op">(</span><span class="va">penguins_freq</span>,</span>
+<span><span class="fu">ggdonutchart</span><span class="op">(</span><span class="va">penguins_freq</span>,</span>
 <span>             <span class="st">"frequency"</span>,</span>
 <span>             label <span class="op">=</span> <span class="va">labs</span>,</span>
 <span>             fill <span class="op">=</span> <span class="st">"species"</span>,</span>
@@ -417,7 +417,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span></span>
 <span><span class="va">labs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="va">penguins_freq</span><span class="op">$</span><span class="va">species</span>, <span class="st">" ("</span>, <span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="op">(</span><span class="va">penguins_freq</span><span class="op">$</span><span class="va">frequency</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">penguins_freq</span><span class="op">$</span><span class="va">frequency</span><span class="op">)</span><span class="op">)</span><span class="op">*</span><span class="fl">100</span>, digits <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>, <span class="st">"%)"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggpie.html">ggpie</a></span><span class="op">(</span><span class="va">penguins_freq</span>,</span>
+<span><span class="fu">ggpie</span><span class="op">(</span><span class="va">penguins_freq</span>,</span>
 <span>             <span class="st">"frequency"</span>,</span>
 <span>             label <span class="op">=</span> <span class="va">labs</span>,</span>
 <span>             fill <span class="op">=</span> <span class="st">"species"</span>,</span>
@@ -438,7 +438,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span></span>
 <span><span class="va">mtcars</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/rownames.html">rownames_to_column</a></span><span class="op">(</span>var <span class="op">=</span> <span class="st">"car_names"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>cyl <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggdotchart.html">ggdotchart</a></span><span class="op">(</span><span class="st">"car_names"</span>,</span>
+<span>  <span class="fu">ggdotchart</span><span class="op">(</span><span class="st">"car_names"</span>,</span>
 <span>             <span class="st">"mpg"</span>,</span>
 <span>             color <span class="op">=</span> <span class="st">"cyl"</span>,</span>
 <span>             palette <span class="op">=</span> <span class="st">"aaas"</span>,</span>
@@ -448,7 +448,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span>             dot.size <span class="op">=</span> <span class="fl">2</span>,</span>
 <span>             ylab <span class="op">=</span> <span class="st">"Miles per gallon of fuel"</span>,</span>
 <span>             title <span class="op">=</span> <span class="st">"Mileage of different cars"</span>,</span>
-<span>             ggtheme <span class="op">=</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/theme_pubr.html">theme_pubr</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggdotchart.html">theme_cleveland</a></span><span class="op">(</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>             ggtheme <span class="op">=</span> <span class="fu">theme_pubr</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu">theme_cleveland</span><span class="op">(</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="ggpubr_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -460,7 +460,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggdotplot.html">ggdotplot</a></span><span class="op">(</span><span class="va">penguins</span> ,</span>
+<span><span class="fu">ggdotplot</span><span class="op">(</span><span class="va">penguins</span> ,</span>
 <span>          x <span class="op">=</span> <span class="st">"species"</span>,</span>
 <span>          y <span class="op">=</span> <span class="st">"bill_depth_mm"</span>,</span>
 <span>          title <span class="op">=</span> <span class="st">"Mean bill depth of penguins"</span>,</span>
@@ -481,7 +481,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/gghistogram.html">gghistogram</a></span><span class="op">(</span><span class="va">penguins</span>,</span>
+<span><span class="fu">gghistogram</span><span class="op">(</span><span class="va">penguins</span>,</span>
 <span>            x <span class="op">=</span> <span class="st">"body_mass_g"</span>,</span>
 <span>            add <span class="op">=</span> <span class="st">"mean"</span>,</span>
 <span>            fill <span class="op">=</span> <span class="st">"species"</span>,</span>
@@ -501,7 +501,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggline.html">ggline</a></span><span class="op">(</span><span class="va">penguins</span>,</span>
+<span><span class="fu">ggline</span><span class="op">(</span><span class="va">penguins</span>,</span>
 <span>      x <span class="op">=</span> <span class="st">"body_mass_g"</span>,</span>
 <span>      y <span class="op">=</span> <span class="st">"bill_depth_mm"</span>,</span>
 <span>      linetype <span class="op">=</span> <span class="st">"species"</span>,</span>
@@ -525,7 +525,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"Anorexia"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">Anorexia</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
-<span>  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggpaired.html">ggpaired</a></span><span class="op">(</span>cond1 <span class="op">=</span> <span class="st">"Prior"</span>,</span>
+<span>  <span class="fu">ggpaired</span><span class="op">(</span>cond1 <span class="op">=</span> <span class="st">"Prior"</span>,</span>
 <span>           cond2 <span class="op">=</span> <span class="st">"Post"</span>,</span>
 <span>           title <span class="op">=</span> <span class="st">"Weights of girls before and after treatment for anorexia"</span>,</span>
 <span>           xlab <span class="op">=</span> <span class="st">"Condition"</span>,</span>
@@ -545,7 +545,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggqqplot.html">ggqqplot</a></span><span class="op">(</span><span class="st">"body_mass_g"</span>,</span>
+<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu">ggqqplot</span><span class="op">(</span><span class="st">"body_mass_g"</span>,</span>
 <span>                      color <span class="op">=</span> <span class="st">"species"</span>,</span>
 <span>                      palette <span class="op">=</span> <span class="st">"aaas"</span>,</span>
 <span>                      title <span class="op">=</span> <span class="st">"Quantile-Quantile plot"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -561,7 +561,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">species</span> <span class="op">==</span> <span class="st">"Chinstrap"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggscatter.html">ggscatter</a></span><span class="op">(</span><span class="st">"body_mass_g"</span>,</span>
+<span>  <span class="fu">ggscatter</span><span class="op">(</span><span class="st">"body_mass_g"</span>,</span>
 <span>            <span class="st">"bill_length_mm"</span>,</span>
 <span>            add <span class="op">=</span> <span class="st">"reg.line"</span>,</span>
 <span>            add.params <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>color <span class="op">=</span> <span class="st">"darkred"</span>, fill <span class="op">=</span> <span class="st">"yellow"</span><span class="op">)</span>,</span>
@@ -582,7 +582,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggscatter.html">ggscatter</a></span><span class="op">(</span><span class="st">"body_mass_g"</span>,</span>
+<span>  <span class="fu">ggscatter</span><span class="op">(</span><span class="st">"body_mass_g"</span>,</span>
 <span>            <span class="st">"bill_length_mm"</span>,</span>
 <span>            color <span class="op">=</span> <span class="st">"species"</span>,</span>
 <span>            alpha <span class="op">=</span> <span class="fl">0.5</span>,</span>
@@ -602,7 +602,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span></span>
 <span><span class="va">mtcars</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/rownames.html">rownames_to_column</a></span><span class="op">(</span>var <span class="op">=</span> <span class="st">"car_names"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>cyl <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">cyl</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggscatter.html">ggscatter</a></span><span class="op">(</span><span class="st">"wt"</span>,</span>
+<span>  <span class="fu">ggscatter</span><span class="op">(</span><span class="st">"wt"</span>,</span>
 <span>             <span class="st">"mpg"</span>,</span>
 <span>             color <span class="op">=</span> <span class="st">"cyl"</span>,</span>
 <span>             palette <span class="op">=</span> <span class="st">"nejm"</span>,</span>
@@ -611,7 +611,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span>             title <span class="op">=</span> <span class="st">"Mileage vs Weight of different cars"</span>,</span>
 <span>             label <span class="op">=</span> <span class="st">"car_names"</span>,</span>
 <span>             repel <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span>             ggtheme <span class="op">=</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/theme_pubr.html">theme_pubr</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggdotchart.html">theme_cleveland</a></span><span class="op">(</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>             ggtheme <span class="op">=</span> <span class="fu">theme_pubr</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu">theme_cleveland</span><span class="op">(</span><span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="ggpubr_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -624,7 +624,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggscatterhist.html">ggscatterhist</a></span><span class="op">(</span><span class="st">"body_mass_g"</span>,</span>
+<span>  <span class="fu">ggscatterhist</span><span class="op">(</span><span class="st">"body_mass_g"</span>,</span>
 <span>            <span class="st">"bill_length_mm"</span>,</span>
 <span>            color <span class="op">=</span> <span class="st">"species"</span>,</span>
 <span>            alpha <span class="op">=</span> <span class="fl">0.5</span>, size <span class="op">=</span> <span class="fl">2</span>,</span>
@@ -643,7 +643,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggscatterhist.html">ggscatterhist</a></span><span class="op">(</span><span class="st">"body_mass_g"</span>,</span>
+<span>  <span class="fu">ggscatterhist</span><span class="op">(</span><span class="st">"body_mass_g"</span>,</span>
 <span>            <span class="st">"bill_depth_mm"</span>,</span>
 <span>            color <span class="op">=</span> <span class="st">"species"</span>,</span>
 <span>            alpha <span class="op">=</span> <span class="fl">0.5</span>, size <span class="op">=</span> <span class="fl">2</span>,</span>
@@ -652,7 +652,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span>            title <span class="op">=</span> <span class="st">"Body mass vs Bill depth"</span>,</span>
 <span>            xlab <span class="op">=</span> <span class="st">"Body mass (g)"</span>,</span>
 <span>            ylab <span class="op">=</span> <span class="st">"Bill depth (mm)"</span>,</span>
-<span>            ggtheme <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>            ggtheme <span class="op">=</span> <span class="fu">theme_bw</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="ggpubr_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -674,7 +674,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span><span class="co"># tidying the data</span></span>
 <span><span class="va">Anorexia_new</span> <span class="op">&lt;-</span> <span class="va">Anorexia</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">Prior</span>, <span class="va">Post</span><span class="op">)</span>, names_to <span class="op">=</span> <span class="st">"condition"</span>, values_to <span class="op">=</span> <span class="st">"weight"</span><span class="op">)</span></span>
-<span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/compare_means.html">compare_means</a></span><span class="op">(</span><span class="va">weight</span> <span class="op">~</span> <span class="va">condition</span>, <span class="va">Anorexia_new</span>, paired <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu">compare_means</span><span class="op">(</span><span class="va">weight</span> <span class="op">~</span> <span class="va">condition</span>, <span class="va">Anorexia_new</span>, paired <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
 <colgroup>
@@ -712,7 +712,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 <p>You can also do parametric tests like ANOVA and its non-parametric version; the Kruskal-Wallis test, which can be followed by multiple pairwise comparisons.</p>
 <div class="cell">
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/compare_means.html">compare_means</a></span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">species</span>, <span class="va">penguins</span>, method <span class="op">=</span> <span class="st">"anova"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu">compare_means</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">species</span>, <span class="va">penguins</span>, method <span class="op">=</span> <span class="st">"anova"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
 <thead><tr class="header">
@@ -733,7 +733,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </tr></tbody>
 </table>
 </div>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/compare_means.html">compare_means</a></span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">species</span>, <span class="va">penguins</span>, method <span class="op">=</span> <span class="st">"kruskal.test"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu">compare_means</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">species</span>, <span class="va">penguins</span>, method <span class="op">=</span> <span class="st">"kruskal.test"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
 <thead><tr class="header">
@@ -759,7 +759,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <div class="cell">
 <div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># multiple pairwise comparisons</span></span>
 <span><span class="co"># when there is more than two levels, the function automatically does pairwise comparisons</span></span>
-<span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/compare_means.html">compare_means</a></span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">species</span>, <span class="va">penguins</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu">compare_means</span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">species</span>, <span class="va">penguins</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
 <colgroup>
@@ -819,9 +819,9 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 </section><section id="descriptive-statistics-by-groups" class="level3" data-number="3.2"><h3 data-number="3.2" class="anchored" data-anchor-id="descriptive-statistics-by-groups">
 <span class="header-section-number">3.2</span> Descriptive statistics by groups</h3>
-<p>Using the function <code><a href="https://rpkgs.datanovia.com/ggpubr/reference/desc_statby.html">desc_statby()</a></code> we can get the summary statistics of a dataset in the form of a data frame. Similar to the <code><a href="https://rdrr.io/pkg/PairedData/man/summary.html">summary()</a></code> function in base R.</p>
+<p>Using the function <code>desc_statby()</code> we can get the summary statistics of a dataset in the form of a data frame. Similar to the <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> function in base R.</p>
 <div class="cell">
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/desc_statby.html">desc_statby</a></span><span class="op">(</span><span class="va">penguins</span>, measure.var <span class="op">=</span> <span class="st">"body_mass_g"</span>, grps <span class="op">=</span> <span class="st">"species"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu">desc_statby</span><span class="op">(</span><span class="va">penguins</span>, measure.var <span class="op">=</span> <span class="st">"body_mass_g"</span>, grps <span class="op">=</span> <span class="st">"species"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="table table-sm table-striped">
 <colgroup>
@@ -909,11 +909,11 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </table>
 </div>
 </div>
-<p>You can also show the data as a table using the <code><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggtexttable.html">ggtexttable()</a></code> function.</p>
+<p>You can also show the data as a table using the <code>ggtexttable()</code> function.</p>
 <div class="cell">
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">summary</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/desc_statby.html">desc_statby</a></span><span class="op">(</span><span class="va">penguins</span>, measure.var <span class="op">=</span> <span class="st">"body_mass_g"</span>, grps <span class="op">=</span> <span class="st">"species"</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">summary</span> <span class="op">&lt;-</span> <span class="fu">desc_statby</span><span class="op">(</span><span class="va">penguins</span>, measure.var <span class="op">=</span> <span class="st">"body_mass_g"</span>, grps <span class="op">=</span> <span class="st">"species"</span><span class="op">)</span></span>
 <span><span class="va">summary_short</span> <span class="op">&lt;-</span> <span class="va">summary</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">species</span>, <span class="va">mean</span>, <span class="va">median</span>, <span class="va">se</span>, <span class="va">sd</span><span class="op">)</span></span>
-<span><span class="va">summary_tbl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggtexttable.html">ggtexttable</a></span><span class="op">(</span><span class="va">summary_short</span>, rows <span class="op">=</span> <span class="cn">NULL</span>, theme <span class="op">=</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggtexttable.html">ttheme</a></span><span class="op">(</span><span class="st">"mRed"</span><span class="op">)</span><span class="op">)</span> <span class="co"># use ?ttheme to see more themes</span></span>
+<span><span class="va">summary_tbl</span> <span class="op">&lt;-</span> <span class="fu">ggtexttable</span><span class="op">(</span><span class="va">summary_short</span>, rows <span class="op">=</span> <span class="cn">NULL</span>, theme <span class="op">=</span> <span class="fu">ttheme</span><span class="op">(</span><span class="st">"mRed"</span><span class="op">)</span><span class="op">)</span> <span class="co"># use ?ttheme to see more themes</span></span>
 <span><span class="va">summary_tbl</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="ggpubr_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid" width="672"></p>
@@ -930,7 +930,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"Anorexia"</span><span class="op">)</span></span>
 <span><span class="va">Anorexia</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
-<span>  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggpaired.html">ggpaired</a></span><span class="op">(</span>cond1 <span class="op">=</span> <span class="st">"Prior"</span>,</span>
+<span>  <span class="fu">ggpaired</span><span class="op">(</span>cond1 <span class="op">=</span> <span class="st">"Prior"</span>,</span>
 <span>           cond2 <span class="op">=</span> <span class="st">"Post"</span>,</span>
 <span>           title <span class="op">=</span> <span class="st">"Weights of girls before and after treatment for anorexia"</span>,</span>
 <span>           xlab <span class="op">=</span> <span class="st">"Condition"</span>,</span>
@@ -938,7 +938,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span>           fill <span class="op">=</span> <span class="st">"condition"</span>,</span>
 <span>           line.color <span class="op">=</span> <span class="st">"darkgreen"</span>,</span>
 <span>           line.size <span class="op">=</span> <span class="fl">0.2</span>,</span>
-<span>           palette <span class="op">=</span> <span class="st">"simpsons"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/stat_compare_means.html">stat_compare_means</a></span><span class="op">(</span>paired <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>           palette <span class="op">=</span> <span class="st">"simpsons"</span><span class="op">)</span> <span class="op">+</span> <span class="fu">stat_compare_means</span><span class="op">(</span>paired <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="ggpubr_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -950,7 +950,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">species</span> <span class="op">==</span> <span class="st">"Adelie"</span> <span class="op">&amp;</span> <span class="va">island</span> <span class="op">==</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Biscoe"</span>,<span class="st">"Torgersen"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggboxplot.html">ggboxplot</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"island"</span>,</span>
+<span><span class="fu">ggboxplot</span><span class="op">(</span>x <span class="op">=</span> <span class="st">"island"</span>,</span>
 <span>          y <span class="op">=</span> <span class="st">"bill_depth_mm"</span>,</span>
 <span>          title <span class="op">=</span> <span class="st">"Mean bill depth of penguins"</span>,</span>
 <span>          xlab <span class="op">=</span> <span class="st">"Island"</span>,</span>
@@ -958,7 +958,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span>          color <span class="op">=</span> <span class="st">"island"</span>,</span>
 <span>          palette <span class="op">=</span> <span class="st">"futurama"</span>,</span>
 <span>          add <span class="op">=</span> <span class="st">"jitter"</span>,</span>
-<span>          shape <span class="op">=</span> <span class="st">"island"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/stat_compare_means.html">stat_compare_means</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"t.test"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>          shape <span class="op">=</span> <span class="st">"island"</span><span class="op">)</span> <span class="op">+</span> <span class="fu">stat_compare_means</span><span class="op">(</span>method <span class="op">=</span> <span class="st">"t.test"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="ggpubr_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -972,7 +972,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span><span class="co"># listing out pairwise comparisons </span></span>
 <span><span class="va">compare</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Adelie"</span>, <span class="st">"Chinstrap"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Adelie"</span>, <span class="st">"Gentoo"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Chinstrap"</span>, <span class="st">"Gentoo"</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggboxplot.html">ggboxplot</a></span><span class="op">(</span><span class="va">penguins</span> ,</span>
+<span><span class="fu">ggboxplot</span><span class="op">(</span><span class="va">penguins</span> ,</span>
 <span>          x <span class="op">=</span> <span class="st">"species"</span>,</span>
 <span>          y <span class="op">=</span> <span class="st">"bill_depth_mm"</span>,</span>
 <span>          title <span class="op">=</span> <span class="st">"Mean bill depth of penguins"</span>,</span>
@@ -982,8 +982,8 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span>          palette <span class="op">=</span> <span class="st">"futurama"</span>,</span>
 <span>          add <span class="op">=</span> <span class="st">"jitter"</span>,</span>
 <span>          shape <span class="op">=</span> <span class="st">"species"</span><span class="op">)</span> <span class="op">+</span> </span>
-<span>  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/stat_compare_means.html">stat_compare_means</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"anova"</span>, label.y <span class="op">=</span> <span class="fl">25</span><span class="op">)</span> <span class="op">+</span> <span class="co">#anova test</span></span>
-<span>  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/stat_compare_means.html">stat_compare_means</a></span><span class="op">(</span>comparisons <span class="op">=</span> <span class="va">compare</span>, method <span class="op">=</span> <span class="st">"t.test"</span><span class="op">)</span> <span class="co"># post hoc test using t-test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">stat_compare_means</span><span class="op">(</span>method <span class="op">=</span> <span class="st">"anova"</span>, label.y <span class="op">=</span> <span class="fl">25</span><span class="op">)</span> <span class="op">+</span> <span class="co">#anova test</span></span>
+<span>  <span class="fu">stat_compare_means</span><span class="op">(</span>comparisons <span class="op">=</span> <span class="va">compare</span>, method <span class="op">=</span> <span class="st">"t.test"</span><span class="op">)</span> <span class="co"># post hoc test using t-test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="ggpubr_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -995,7 +995,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">compare</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Adelie"</span>, <span class="st">"Chinstrap"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Adelie"</span>, <span class="st">"Gentoo"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Chinstrap"</span>, <span class="st">"Gentoo"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggboxplot.html">ggboxplot</a></span><span class="op">(</span><span class="va">penguins</span> ,</span>
+<span><span class="fu">ggboxplot</span><span class="op">(</span><span class="va">penguins</span> ,</span>
 <span>          x <span class="op">=</span> <span class="st">"species"</span>,</span>
 <span>          y <span class="op">=</span> <span class="st">"bill_depth_mm"</span>,</span>
 <span>          title <span class="op">=</span> <span class="st">"Mean bill depth of penguins"</span>,</span>
@@ -1005,8 +1005,8 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span>          palette <span class="op">=</span> <span class="st">"futurama"</span>,</span>
 <span>          add <span class="op">=</span> <span class="st">"jitter"</span>,</span>
 <span>          shape <span class="op">=</span> <span class="st">"species"</span><span class="op">)</span> <span class="op">+</span> </span>
-<span>  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/stat_compare_means.html">stat_compare_means</a></span><span class="op">(</span>label.y <span class="op">=</span> <span class="fl">25</span><span class="op">)</span> <span class="op">+</span> <span class="co">#anova test</span></span>
-<span>  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/stat_compare_means.html">stat_compare_means</a></span><span class="op">(</span>comparisons <span class="op">=</span> <span class="va">compare</span><span class="op">)</span> <span class="co"># post hoc test using t-test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">stat_compare_means</span><span class="op">(</span>label.y <span class="op">=</span> <span class="fl">25</span><span class="op">)</span> <span class="op">+</span> <span class="co">#anova test</span></span>
+<span>  <span class="fu">stat_compare_means</span><span class="op">(</span>comparisons <span class="op">=</span> <span class="va">compare</span><span class="op">)</span> <span class="co"># post hoc test using t-test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="ggpubr_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -1018,7 +1018,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">compare</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Adelie"</span>, <span class="st">"Chinstrap"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Adelie"</span>, <span class="st">"Gentoo"</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Chinstrap"</span>, <span class="st">"Gentoo"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggboxplot.html">ggboxplot</a></span><span class="op">(</span><span class="va">penguins</span> ,</span>
+<span><span class="fu">ggboxplot</span><span class="op">(</span><span class="va">penguins</span> ,</span>
 <span>          x <span class="op">=</span> <span class="st">"species"</span>,</span>
 <span>          y <span class="op">=</span> <span class="st">"bill_depth_mm"</span>,</span>
 <span>          title <span class="op">=</span> <span class="st">"Mean bill depth of penguins"</span>,</span>
@@ -1028,8 +1028,8 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span>          palette <span class="op">=</span> <span class="st">"futurama"</span>,</span>
 <span>          add <span class="op">=</span> <span class="st">"jitter"</span>,</span>
 <span>          shape <span class="op">=</span> <span class="st">"species"</span><span class="op">)</span> <span class="op">+</span> </span>
-<span>  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/stat_compare_means.html">stat_compare_means</a></span><span class="op">(</span>label.y <span class="op">=</span> <span class="fl">25</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/stat_compare_means.html">stat_compare_means</a></span><span class="op">(</span>comparisons <span class="op">=</span> <span class="va">compare</span>, label <span class="op">=</span> <span class="st">"p.signif"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">stat_compare_means</span><span class="op">(</span>label.y <span class="op">=</span> <span class="fl">25</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">stat_compare_means</span><span class="op">(</span>comparisons <span class="op">=</span> <span class="va">compare</span>, label <span class="op">=</span> <span class="st">"p.signif"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="ggpubr_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -1044,7 +1044,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggscatter.html">ggscatter</a></span><span class="op">(</span><span class="st">"body_mass_g"</span>,</span>
+<span>  <span class="fu">ggscatter</span><span class="op">(</span><span class="st">"body_mass_g"</span>,</span>
 <span>            <span class="st">"bill_length_mm"</span>,</span>
 <span>            color <span class="op">=</span> <span class="st">"species"</span>,</span>
 <span>            alpha <span class="op">=</span> <span class="fl">0.5</span>,</span>
@@ -1059,7 +1059,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 </section><section id="adding-paragraph" class="level3" data-number="3.5"><h3 data-number="3.5" class="anchored" data-anchor-id="adding-paragraph">
 <span class="header-section-number">3.5</span> Adding paragraph</h3>
-<p>You can also add a paragraph beneath the plot of your interest using the <code><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggparagraph.html">ggparagraph()</a></code> and <code><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggarrange.html">ggarrange()</a></code> functions.</p>
+<p>You can also add a paragraph beneath the plot of your interest using the <code>ggparagraph()</code> and <code>ggarrange()</code> functions.</p>
 <div class="cell">
 <div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># install.packages("PairedData")</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">PairedData</span><span class="op">)</span></span>
@@ -1069,10 +1069,10 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span><span class="va">text</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"The above dataset shows the weight (in lbs) of 17 girls before"</span>,</span>
 <span>              <span class="st">"and after they got treatment for anorexia."</span>, sep <span class="op">=</span> <span class="st">" "</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">text_plot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggparagraph.html">ggparagraph</a></span><span class="op">(</span><span class="va">text</span>, face <span class="op">=</span> <span class="st">"bold"</span>, size <span class="op">=</span> <span class="fl">12</span><span class="op">)</span></span>
+<span><span class="va">text_plot</span> <span class="op">&lt;-</span> <span class="fu">ggparagraph</span><span class="op">(</span><span class="va">text</span>, face <span class="op">=</span> <span class="st">"bold"</span>, size <span class="op">=</span> <span class="fl">12</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">plot</span> <span class="op">&lt;-</span> <span class="va">Anorexia</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
-<span>  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggpaired.html">ggpaired</a></span><span class="op">(</span>cond1 <span class="op">=</span> <span class="st">"Prior"</span>,</span>
+<span>  <span class="fu">ggpaired</span><span class="op">(</span>cond1 <span class="op">=</span> <span class="st">"Prior"</span>,</span>
 <span>           cond2 <span class="op">=</span> <span class="st">"Post"</span>,</span>
 <span>           title <span class="op">=</span> <span class="st">"Weights of girls before and after treatment for anorexia"</span>,</span>
 <span>           xlab <span class="op">=</span> <span class="st">"Condition"</span>,</span>
@@ -1082,7 +1082,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span>           line.size <span class="op">=</span> <span class="fl">0.2</span>,</span>
 <span>           palette <span class="op">=</span> <span class="st">"simpsons"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggarrange.html">ggarrange</a></span><span class="op">(</span><span class="va">plot</span>, <span class="va">text_plot</span>,</span>
+<span><span class="fu">ggarrange</span><span class="op">(</span><span class="va">plot</span>, <span class="va">text_plot</span>,</span>
 <span>         ncol <span class="op">=</span> <span class="fl">1</span>, nrow <span class="op">=</span> <span class="fl">2</span>,</span>
 <span>         heights <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">0.3</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -1091,13 +1091,13 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 </section><section id="having-plots-placed-adjacent-to-each-other" class="level3" data-number="3.6"><h3 data-number="3.6" class="anchored" data-anchor-id="having-plots-placed-adjacent-to-each-other">
 <span class="header-section-number">3.6</span> Having plots placed adjacent to each other</h3>
-<p>You can use the <code><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggarrange.html">ggarrange()</a></code> function to place different plots together.</p>
+<p>You can use the <code>ggarrange()</code> function to place different plots together.</p>
 <div class="cell">
 <div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># install.packages("palmerpenguins")</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">bar_plot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggbarplot.html">ggbarplot</a></span><span class="op">(</span><span class="va">penguins</span>,</span>
+<span><span class="va">bar_plot</span> <span class="op">&lt;-</span> <span class="fu">ggbarplot</span><span class="op">(</span><span class="va">penguins</span>,</span>
 <span>          x <span class="op">=</span> <span class="st">"species"</span>,</span>
 <span>          y <span class="op">=</span> <span class="st">"bill_length_mm"</span>,</span>
 <span>          add <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"mean_sd"</span><span class="op">)</span>,</span>
@@ -1113,7 +1113,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span>          ylim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">60</span><span class="op">)</span>,</span>
 <span>          palette <span class="op">=</span> <span class="st">"npg"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">histogram</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/gghistogram.html">gghistogram</a></span><span class="op">(</span><span class="va">penguins</span>,</span>
+<span><span class="va">histogram</span> <span class="op">&lt;-</span> <span class="fu">gghistogram</span><span class="op">(</span><span class="va">penguins</span>,</span>
 <span>            x <span class="op">=</span> <span class="st">"body_mass_g"</span>,</span>
 <span>            add <span class="op">=</span> <span class="st">"mean"</span>,</span>
 <span>            fill <span class="op">=</span> <span class="st">"species"</span>,</span>
@@ -1123,12 +1123,12 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span>            ylab <span class="op">=</span> <span class="st">"Frequency"</span>,</span>
 <span>            palette <span class="op">=</span> <span class="st">"startrek"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">summary</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/desc_statby.html">desc_statby</a></span><span class="op">(</span><span class="va">penguins</span>, measure.var <span class="op">=</span> <span class="st">"body_mass_g"</span>, grps <span class="op">=</span> <span class="st">"species"</span><span class="op">)</span></span>
+<span><span class="va">summary</span> <span class="op">&lt;-</span> <span class="fu">desc_statby</span><span class="op">(</span><span class="va">penguins</span>, measure.var <span class="op">=</span> <span class="st">"body_mass_g"</span>, grps <span class="op">=</span> <span class="st">"species"</span><span class="op">)</span></span>
 <span><span class="va">summary_short</span> <span class="op">&lt;-</span> <span class="va">summary</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">species</span>, <span class="va">mean</span>, <span class="va">median</span>, <span class="va">se</span>, <span class="va">sd</span><span class="op">)</span></span>
-<span><span class="va">summary_tbl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggtexttable.html">ggtexttable</a></span><span class="op">(</span><span class="va">summary_short</span>, rows <span class="op">=</span> <span class="cn">NULL</span>, theme <span class="op">=</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggtexttable.html">ttheme</a></span><span class="op">(</span><span class="st">"mRed"</span><span class="op">)</span><span class="op">)</span> <span class="co"># use ?ttheme to see more themes</span></span>
+<span><span class="va">summary_tbl</span> <span class="op">&lt;-</span> <span class="fu">ggtexttable</span><span class="op">(</span><span class="va">summary_short</span>, rows <span class="op">=</span> <span class="cn">NULL</span>, theme <span class="op">=</span> <span class="fu">ttheme</span><span class="op">(</span><span class="st">"mRed"</span><span class="op">)</span><span class="op">)</span> <span class="co"># use ?ttheme to see more themes</span></span>
 <span></span>
 <span><span class="co"># arranging plots together</span></span>
-<span><span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggarrange.html">ggarrange</a></span><span class="op">(</span><span class="va">bar_plot</span>, <span class="va">histogram</span>,</span>
+<span><span class="fu">ggarrange</span><span class="op">(</span><span class="va">bar_plot</span>, <span class="va">histogram</span>,</span>
 <span>         ncol <span class="op">=</span> <span class="fl">2</span>, nrow <span class="op">=</span> <span class="fl">2</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"A"</span>, <span class="st">"B"</span><span class="op">)</span>,</span>
 <span>         heights <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">0.3</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -1141,7 +1141,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">bar_plot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggbarplot.html">ggbarplot</a></span><span class="op">(</span><span class="va">penguins</span>,</span>
+<span><span class="va">bar_plot</span> <span class="op">&lt;-</span> <span class="fu">ggbarplot</span><span class="op">(</span><span class="va">penguins</span>,</span>
 <span>          x <span class="op">=</span> <span class="st">"species"</span>,</span>
 <span>          y <span class="op">=</span> <span class="st">"bill_length_mm"</span>,</span>
 <span>          add <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"mean_sd"</span><span class="op">)</span>,</span>
@@ -1157,7 +1157,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span>          ylim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">60</span><span class="op">)</span>,</span>
 <span>          palette <span class="op">=</span> <span class="st">"npg"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">histogram</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/gghistogram.html">gghistogram</a></span><span class="op">(</span><span class="va">penguins</span>,</span>
+<span><span class="va">histogram</span> <span class="op">&lt;-</span> <span class="fu">gghistogram</span><span class="op">(</span><span class="va">penguins</span>,</span>
 <span>            x <span class="op">=</span> <span class="st">"body_mass_g"</span>,</span>
 <span>            add <span class="op">=</span> <span class="st">"mean"</span>,</span>
 <span>            fill <span class="op">=</span> <span class="st">"species"</span>,</span>
@@ -1167,9 +1167,9 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span>            ylab <span class="op">=</span> <span class="st">"Frequency"</span>,</span>
 <span>            palette <span class="op">=</span> <span class="st">"startrek"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">summary</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/desc_statby.html">desc_statby</a></span><span class="op">(</span><span class="va">penguins</span>, measure.var <span class="op">=</span> <span class="st">"body_mass_g"</span>, grps <span class="op">=</span> <span class="st">"species"</span><span class="op">)</span></span>
+<span><span class="va">summary</span> <span class="op">&lt;-</span> <span class="fu">desc_statby</span><span class="op">(</span><span class="va">penguins</span>, measure.var <span class="op">=</span> <span class="st">"body_mass_g"</span>, grps <span class="op">=</span> <span class="st">"species"</span><span class="op">)</span></span>
 <span><span class="va">summary_short</span> <span class="op">&lt;-</span> <span class="va">summary</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">species</span>, <span class="va">mean</span>, <span class="va">median</span>, <span class="va">se</span>, <span class="va">sd</span><span class="op">)</span></span>
-<span><span class="va">summary_tbl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggtexttable.html">ggtexttable</a></span><span class="op">(</span><span class="va">summary_short</span>, rows <span class="op">=</span> <span class="cn">NULL</span>, theme <span class="op">=</span> <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggtexttable.html">ttheme</a></span><span class="op">(</span><span class="st">"mRed"</span><span class="op">)</span><span class="op">)</span> <span class="co"># use ?ttheme to see more themes</span></span>
+<span><span class="va">summary_tbl</span> <span class="op">&lt;-</span> <span class="fu">ggtexttable</span><span class="op">(</span><span class="va">summary_short</span>, rows <span class="op">=</span> <span class="cn">NULL</span>, theme <span class="op">=</span> <span class="fu">ttheme</span><span class="op">(</span><span class="st">"mRed"</span><span class="op">)</span><span class="op">)</span> <span class="co"># use ?ttheme to see more themes</span></span>
 <span></span>
 <span><span class="co"># arranging three plots together</span></span>
 <span><span class="va">layout_matrix</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">2</span>, <span class="fl">4</span>, <span class="fl">3</span>, <span class="fl">3</span>, <span class="fl">4</span><span class="op">)</span>, nrow <span class="op">=</span> <span class="fl">2</span>, byrow <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
@@ -1181,14 +1181,14 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 </section></section><section id="saving-your-plot" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="saving-your-plot">
 <span class="header-section-number">4</span> Saving your plot</h2>
-<p>Using the function <code><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggexport.html">ggexport()</a></code> you can save your plot. Tweak width and height accordingly and also change the resolution to fit your needs.</p>
+<p>Using the function <code>ggexport()</code> you can save your plot. Tweak width and height accordingly and also change the resolution to fit your needs.</p>
 <div class="cell">
 <div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># install.packages("palmerpenguins")</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggscatterhist.html">ggscatterhist</a></span><span class="op">(</span><span class="st">"body_mass_g"</span>,</span>
+<span>  <span class="fu">ggscatterhist</span><span class="op">(</span><span class="st">"body_mass_g"</span>,</span>
 <span>            <span class="st">"bill_length_mm"</span>,</span>
 <span>            color <span class="op">=</span> <span class="st">"species"</span>,</span>
 <span>            alpha <span class="op">=</span> <span class="fl">0.5</span>, size <span class="op">=</span> <span class="fl">2</span>,</span>
@@ -1197,7 +1197,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span>            title <span class="op">=</span> <span class="st">"Body mass distribution of penguins"</span>,</span>
 <span>            xlab <span class="op">=</span> <span class="st">"Body mass (g)"</span>,</span>
 <span>            ylab <span class="op">=</span> <span class="st">"Bill length (mm)"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://rpkgs.datanovia.com/ggpubr/reference/ggexport.html">ggexport</a></span><span class="op">(</span>filename <span class="op">=</span> <span class="st">"my_plot.png"</span>, width <span class="op">=</span> <span class="fl">800</span>, height <span class="op">=</span> <span class="fl">600</span>, res <span class="op">=</span> <span class="fl">150</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu">ggexport</span><span class="op">(</span>filename <span class="op">=</span> <span class="st">"my_plot.png"</span>, width <span class="op">=</span> <span class="fl">800</span>, height <span class="op">=</span> <span class="fl">600</span>, res <span class="op">=</span> <span class="fl">150</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="summary" class="level2" data-number="5"><h2 data-number="5" class="anchored" data-anchor-id="summary">
 <span class="header-section-number">5</span> Summary</h2>

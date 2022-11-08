@@ -1,83 +1,193 @@
 ---
-title: "Using Obsidian as a note taking software for academic puposes"
+title: "Using Obsidian as a note-taking software for academic purposes"
 description: "Learn how to use Obsidian to write notes on literature articles"
-date: "10/31/2022"
+date: "11/08/2022"
 format: html
 tbl-cap-location: bottom
 categories: [PhD, Obsidian]
-image: images/notion.png
+image: images/obsidian_zotero.png
 filters:
   - lightbox
 lightbox: auto
-draft: true
 ---
 
 ## Getting started
 
-It's been a while since I have been trying to find various productivity softwares to prepare myself for my future PhD journey. One of those tasks which I wanted to automate was in organizing my scientific literature collection. The answer to organizing and annotating the literature was met by two softwares; Zotero and Notion. Zotero is a free to use reference manager that can be used to organize your literature collection with ease. Notion on the other hand is a productivity software which can used as a workspace manager, task manager and into many other things. I have written a [guide](https://one-carat-blog.netlify.app/posts/notion_literature/) on how one can use Zotero and Notion to build a literature tracker.
+It's been a while since I have been trying to find various productivity software to prepare myself for my future Ph.D. journey. One of those tasks which I wanted to automate was in organizing my scientific literature collection. The answer to organizing and annotating the literature was met by two software; Zotero and Notion. Zotero is a free-to-use reference manager that can organize your literature collection with ease. Notion, on the other hand, is a productivity software that can be used as a workspace manager, task manager, and many other things. I have written a [guide](https://one-carat-blog.netlify.app/posts/notion_literature/) on how one can use Zotero and Notion to build a literature tracker.
 
-Now that the organization part is taken care of, I wanted to have a software which can help me take notes on those literature. Now you can write notes and embed them into the .pdf file using Zotero, or use Notion to create notes using the literature base which are synced with the Zotero libraries. Both these methods work, but I wanted something versatile. And that's what brought me to **Obsidian**, an open source, free to use, note taking software that uses the Markdown language at its core. In this blog post I will show you how I use Obsidian to take literature notes. 
+Now that the organization part is taken care of, I was in search of software that can help me take summary notes on the literature that I am studying. Now I can write notes and embed them into the .pdf file using Zotero itself or use Notion to create notes using the literature database which is synced with the Zotero libraries. Both these methods work, but I wanted something versatile. And that's what brought me to **Obsidian**, an open-source, free-to-use, note-taking software that uses the [Markdown](https://en.wikipedia.org/wiki/Markdown) language at its core. In this blog post, I will show you how I use Obsidian to take literature notes. 
 
 ## Using Obsidian with Zotero
 
-Before we begin, the picture given below shows my Obsidian interface. The interface is broken down to different panels, where each panel shows a specific info.
+Before we begin, the picture given below shows my Obsidian interface. The interface is broken down into different panels, where each panel shows specific info.
 
 ::: {layout="[[1, 1], [1]]"}
-![A glimspe of my Obsidian interface](images/obsidian_interface.png){group="elsewhere"
+![A glimpse of my Obsidian interface](images/obsidian_interface.png){group="elsewhere"
 description="My Obsidian interface featuring different sections."}
 
 ![Different sections of the interface](images/obsidian_interface_inkscape.svg){group="elsewhere"
-description="Each section functions or displays a specific info which can enhance the note taking experience"}
+description="Each section functions or displays a specific info which can enhance the note-taking experience"}
 :::
 
-In this blog post I will show you how you can use Obsidian. along with Zotero to take notes. Now the primary goal for me in using Obsidian is to write summaries of the literature that I am studying, but at the same time, you can also so use it as a research diaries and as a general note taking software to write your thoughts and ideas. So let us get started!
+Now the primary goal for me in using Obsidian is to write summary notes of the papers that I am reading, but at the same time, I can also so use it as a research diary and as a general note-taking software to write my thoughts and ideas. One good thing about Obsidian is that you don't need an active internet connection to use it and also the markdown files that you will be making will be saved locally. So let us get started!
 
 ### Setting up Obsidian
 
 We will first see how to create the interface that we saw earlier. For that let us first install Obsidian. 
 
-1.    Installing Obsidian is very easy. Just visit their official [website](https://obsidian.md/) and download the version suited for your operating system. I assume that you already have Zotero in your computer. If not, then please visit [here](https://www.zotero.org/) and download the appropriate version for your system. Now that we have both Obsidian and Zotero, let us get started.
+1.    Installing Obsidian is very easy. Just visit their official [website](https://obsidian.md/) and download the version suited for your operating system. I assume that you already have Zotero on your computer. If not, then please visit [here](https://www.zotero.org/) and download the appropriate version for your system. Now that we have both Obsidian and Zotero, let us get started.
 
-One good things about Obsidian is that you do not need an active internet connection to use it and also the markdown files that you will be making will be saved locally. 
+![Initial message after opening Obsidian for the first time](images/obsidian_first.png){#fig-start}
 
-2.    When you first open Obsidian, it will ask you to create a vault. The vault is a folder location which will contain all the markdown files you will be creating. After you have selected a vault location, you will opening interface would be something like this;
+When you first open Obsidian, it will ask you to create a vault as shown in the @fig-start below. The vault is a folder location that will contain all the markdown files you will be creating. Now instead of doing everything from scratch, for convenience, I will be sharing my vault [template](https://github.com/jeweljohnsonj/obsidian_template) folder so that you can get started quickly. The folder will also contain the necessary plugins and configurations to jump-start your Obsidian journey. 
 
-![Default interface](images/obsidian_first.png)
+2.    Download the folder as a zip file from [here](https://github.com/jeweljohnsonj/obsidian_template/archive/refs/heads/main.zip).
+
+3.    Extract the zip file and open the folder in Obsidian using 'Open folder as vault' as shown in @fig-start. If done properly, then you will get the following interface as shown in the image below.
+
+![Vault template interface](images/vault_folder.png)
+
+I use the following plugins which are not owned or made by me. The credits go to the plugin developers. You can learn more about the plugins by following their GitHub repo links.
+
+1.    [Obsidian Admonition](https://github.com/valentine195/obsidian-admonition)
+2.    [Autocomplete Obsidian Plugin](https://github.com/yeboster/autocomplete-obsidian)
+3.    [Better Word Count](https://github.com/lukeleppan/better-word-count)
+4.    [obsidian-calendar-plugin](https://github.com/liamcain/obsidian-calendar-plugin)
+5.    [obsidian-citation-plugin](https://github.com/hans/obsidian-citation-plugin)
+6.    [cMenu Plugin](https://github.com/chetachiezikeuzor/cMenu-Plugin)
+7.    [Obsidian Dataview](https://github.com/blacksmithgu/obsidian-dataview)
+8.    [Obsidian Icon Folder](https://github.com/FlorianWoelki/obsidian-icon-folder)
+9.    [Obsidian Pandoc Reference List](https://github.com/mgmeyers/obsidian-pandoc-reference-list)
 
 ### Setting up Zotero
 
-Now before we proceed, let us configure Zotero. We will use Zotero to create a BibTeX file from a library. Now this .bib file will contains all the metadata of the literature present in that library. But we wont be making a normal .bib file, instead we will use a plugin called 'Better BibTeX for Zotero' to make the .bib file, which feature an auto update feature. What it means is that, as you add in more literature to your Zotero library, the .bib file will automatically gets updated. Pretty cool right?
+Now before we proceed, let us configure Zotero. We will use Zotero to create a BibTeX file from a library. Now, this .bib file will contain all the metadata of the literature present in that library. But we won't be making a normal .bib file, instead, we will use a plugin called 'Better BibTeX for Zotero' to make the .bib file, which features an auto-update feature. What it means is that, as you add more literature to your Zotero library, the .bib file will automatically update. Pretty cool right?
 
-3.    Download the 'Better BibTeX for Zotero' plugin from [here](https://github.com/retorquere/zotero-better-bibtex/releases/tag/v6.7.36). Hover your cursor to 
-`zotero-better-bibtex-6.7.36.xpi`, then right click and select 'Save link as' to download the addon.
+1.    Download the 'Better BibTeX for Zotero' plugin from [here](https://github.com/retorquere/zotero-better-bibtex/releases/tag/v6.7.36). Hover your cursor to 
+`zotero-better-bibtex-6.7.36.xpi`, then right-click and select 'Save link as' to download the addon.
 
-4.    Then open up Zotero and navigate to Tools -> Add-ons. Then go the setting options by clicking on the gear icon and then select 'Install add-on from file'. Browse to the location where your file was downloaded and then install the addon.
+2.    Then open up Zotero and navigate to Tools -> Add-ons. Then go to the setting options by clicking on the gear icon and then select 'Install add-on from file'. Browse to the location where your file was downloaded and then install the addon.
 
-5.    Let us now configure the plugin. Select Edit -> Preferences -> Better BibTex. In the 'Citation key format' section replace the given text to following: `authEtal2+year`. This will change the citation key to 'author name + year' format which is much more useful and easy to understand the default citation key format. You can visit [here](https://retorque.re/zotero-better-bibtex/citing/) to learn more about how to customize your citation key format.
+3.    Let us now configure the plugin. Select Edit -> Preferences -> Better BibTex. In the 'Citation key format' section replace the existing text with the following: `authEtal2+year`.
+
+![My zotero BibTex citation key format](images/zotero_bib.png)
+
+This will change the citation key to the 'author name + year' format which is much more useful and easy to understand than the default citation key format. You can visit [here](https://retorque.re/zotero-better-bibtex/citing/) to learn more about how to customize your citation key format.
 
 Finally, select the folder which you want to make a .bib file for. If you want to access all the literature files from the Zotero library, then export the .bib file from 'My library'.
 
-6.    Right click on 'My library' and then click on 'Export library'. A small windows will pop up, select 'Better BibLaTeX' from the format option. Check the 'Keep updated' option, this will auto update the .bib file when you add new files to the Zotero library. You can also check the 'Export notes' option if you want to export the highlights and annotation that you have made on the .pdf files using Zotero.
+4. Right-click on 'My library' and then click on 'Export library'. A small window will pop up, select 'Better BibLaTeX' from the format option. Check the 'Keep updated' option, this will auto-update the .bib file when you add new files to the Zotero library. You can also check the 'Export notes' option if you want to export the highlights and annotations that you have made on the .pdf files using Zotero.
 
-7.    Save your .bib file in a location of your choice. Then copy the full path (file location) to the .bib file. We will be needing this shortly.
+5.    Save your .bib file in a location of your choice. Then copy the full path (file location) to the .bib file. We will be needing this shortly.
 
-### Installing plugins in Obsidian
+![Exporting .bib file using Zotero](https://raw.githubusercontent.com/jeweljohnsonj/one-carat-blog/main/videos/obsidian_zotero/zotero_to_bib.mp4)
 
-Now you might be wondering why your Obsidian interface is not looking the same as mine. This because I use a few plugins to enable some extra features. Now Obsidian features an awesome community that make hundreds of plugins, enabling an element of versatility to the note taking experience. We will be using a few of these plugins. So let us download our first plugin for Obsidian.
+### Configuring the plugins
 
-1.    Installing plugins in Obsidian is super easy. Select the 'settings' tab in the bottom-left section and then select the 'Community plugins' option. Select 'Turn on community plugins' option. Then click on 'Browse' and search for the plugin named 'Citations' and install it and then enable it.
+As you are using my template, you don't have to individually download the plugins which I am using. But you do need to configure a few settings (only two configurations). Let us configure the 'Citations' plugin first.
 
-![Citations plugin](images/citations.png)
+1.    Go to the setting page in Obsidian. Then under 'Community plugins' select the 'Citations' plugin. Then in the 'Citation database path' paste your .bib file path.
 
-2.    Then go to 'Options' section of the plugin. We need to do a few things here. Choose the 'Citation database format' as `BibLaTex`. Then paste the .bib file location to the 'Citation database path' which we copied earlier. Also make a new folder in your Obsidian vault folder. This folder will be used to create .md files of the literature that you will be accessing in Obsidian via Zotero. Paste the name of that folder in the 'Literature note folder' section.
+As an example my .bib file location is the following; `/home/jewel/Downloads/Example.bib`
 
-![Citations plugin options](images/citations_option.png)
+![Citations plugin option](images/citations_option.png)
 
-Now you can go one step more to customize your literature note and make it look pretty. By default Obsidian support call-out blocks. But with the help of the plugin; 'Admonition' you can make custom callout blocks.
+The syntax of the citations template that I am using is the following;
 
-3.    Search and install the community plugin 'Admonition'. Then configure and add in new callout blocks in plugin options. I made three custom blocks; Title (title), Year (year) and Authors (authors). The word given in the brackets are what is used to call the blocks. So to input the callout block for the title, you can use the following syntax; `>[!title]`.
+```
+---
+title: "{{title}}"
+authors: {{authorString}}
+year: {{year}}
+citekey: {{citekey}}
+---
 
-To the access the plugin in the note window, press `Ctrl+P` to open up the commands menu. Type 'Citations' and view the different options. Otherwise you can quickly access the citation menu by pressing `Ctrl+Shift+E` instead. Then you can browse through your library collection and search for the literature that you want. By selecting a literature entry, a markdown file (.md file) will be automatically be created to your 'Literature note folder'. You can open these markdown files and then make necessary edits. I personally use them to write the summary and my understanding of that paper in the .md file.
+>[!title]
+{{title}}
+
+>[!year]
+{{year}}
+
+>[!author]
+{{authorString}}
+
+------------------------------------
+
+URL: {{URL}}
+
+Zotero link:  [@{{citekey}}]({{zoteroSelectURI}})
+
+tags::
+
+------------------------------------
+
+### Research question
+1. 
+
+### Findings
+1. 
+
+### Discussion
+1. 
+
+### Methodology
+1. 
+
+### Remarks
+1. 
+
+```
+You can visit the official GitHub [repo](https://github.com/hans/obsidian-citation-plugin) of the Citations plugin or read the instructions shown in the plugin window in Obsidian to learn more about how to customize the template.
+
+You also need to configure the 'Pandoc Reference List' plugin. To use this plugin you would need the `pandoc` package installed on your computer. Most operating systems have it pre-installed and if you don't have it then please visit [here](https://pandoc.org/installing.html) for info on how to install the package. For Linux users, you can install 'pandoc' using your package manager by searching.
+
+1.    Head on to the 'Pandoc Reference List' plugin under the 'Community plugins' section. In 'Path to Bibliography File' section, paste the same path location as before (i.e. the location of your .bib file).
+
+![Pandoc plugin option](images/pandoc.png)
+
+### Using the citation plugin
+
+To access the plugin in the note window, press `Ctrl+P` to open up the commands menu. Type 'Citations' and view the different options. For quick access, you can press `Ctrl+Shift+E` instead and browse through your library collection and search for the literature that you want to reference.
+
+![Citation plugin hotkeys](images/citation_hotkeys.png)
+
+By selecting a literature entry, a markdown file (.md file) will be automatically created in your 'Literature_collection' folder. You can open these markdown files and then make the necessary edits. I use them to write the summary and my understanding of that paper in the .md file.
+
+![Citations plugin in action](https://raw.githubusercontent.com/jeweljohnsonj/one-carat-blog/main/videos/obsidian_zotero/inserting_citation.mp4)
+
+I have also made a literature table using the 'Dataview' plugin. You can configure the source code of the table to suit your needs. 
+
+The source code is as follows;
+
+````
+```dataview
+table title, authors, year, tags
+from "Literature_collection"
+sort year desc
+```
+````
+
+You can learn more about how to configure the table [here](https://github.com/blacksmithgu/obsidian-dataview).
+
+![Literature table](images/literature_table.png)
+
+## Conlusion
+
+I have just started out using Obsidian and so far I have had an amazing experience. There are a lot of community plugins available and I get easily overwhelmed by them. You can browse the plugins collection and see what fits your interests. I hope you find this guide helpful and let me know in the comments about your experience with Obsidian.
+
+## Plugin credits
+
+I use the following plugins in my workflow. You can learn more about these plugins in the links given below.
+
+1.    [Obsidian Admonition](https://github.com/valentine195/obsidian-admonition)
+2.    [Autocomplete Obsidian Plugin](https://github.com/yeboster/autocomplete-obsidian)
+3.    [Better Word Count](https://github.com/lukeleppan/better-word-count)
+4.    [obsidian-calendar-plugin](https://github.com/liamcain/obsidian-calendar-plugin)
+5.    [obsidian-citation-plugin](https://github.com/hans/obsidian-citation-plugin)
+6.    [cMenu Plugin](https://github.com/chetachiezikeuzor/cMenu-Plugin)
+7.    [Obsidian Dataview](https://github.com/blacksmithgu/obsidian-dataview)
+8.    [Obsidian Icon Folder](https://github.com/FlorianWoelki/obsidian-icon-folder)
+9.    [Obsidian Pandoc Reference List](https://github.com/mgmeyers/obsidian-pandoc-reference-list)
 
 #### Last updated on {.unnumbered .unlisted .appendix}
 
@@ -85,3 +195,5 @@ To the access the plugin in the note window, press `Ctrl+P` to open up the comma
 #| echo: false
 Sys.time()
 ```
+
+<a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>

@@ -284,7 +284,7 @@ TL;DR
 <p>In this article you will learn;</p>
 <ol type="1">
 <li><p>Interpreting effect size when the response variable is categorical</p></li>
-<li><p>Plotting model output using the <code><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel()</a></code> function from the <code>{statisticalModeling}</code> package</p></li>
+<li><p>Plotting model output using the <code>fmodel()</code> function from the <code>{statisticalModeling}</code> package</p></li>
 <li><p>Interaction terms</p></li>
 <li><p>Polynomial regression</p></li>
 <li><p>Total change and partial change</p></li>
@@ -382,7 +382,7 @@ TL;DR
 <span><span class="va">model_rpart</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/rpart/man/rpart.html">rpart</a></span><span class="op">(</span><span class="va">Depressed</span> <span class="op">~</span> <span class="va">LittleInterest</span>, data <span class="op">=</span> <span class="va">NHANES</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the effect size</span></span>
-<span><span class="va">effect_size_rpart</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/effect_size.html">effect_size</a></span><span class="op">(</span><span class="va">model_rpart</span>, <span class="op">~</span> <span class="va">LittleInterest</span><span class="op">)</span></span>
+<span><span class="va">effect_size_rpart</span> <span class="op">&lt;-</span> <span class="fu">effect_size</span><span class="op">(</span><span class="va">model_rpart</span>, <span class="op">~</span> <span class="va">LittleInterest</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Printing the effect size</span></span>
 <span><span class="va">effect_size_rpart</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -415,7 +415,7 @@ TL;DR
 <span><span class="va">model_rpart</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/rpart/man/rpart.html">rpart</a></span><span class="op">(</span><span class="va">SmokeNow</span> <span class="op">~</span> <span class="va">BMI</span>, data <span class="op">=</span> <span class="va">NHANES</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the effect size</span></span>
-<span><span class="va">effect_size_rpart</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/effect_size.html">effect_size</a></span><span class="op">(</span><span class="va">model_rpart</span>, <span class="op">~</span> <span class="va">BMI</span><span class="op">)</span></span>
+<span><span class="va">effect_size_rpart</span> <span class="op">&lt;-</span> <span class="fu">effect_size</span><span class="op">(</span><span class="va">model_rpart</span>, <span class="op">~</span> <span class="va">BMI</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Printing the effect size</span></span>
 <span><span class="va">effect_size_rpart</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -443,7 +443,7 @@ TL;DR
 <span><span class="va">model_logistic</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html">glm</a></span><span class="op">(</span><span class="va">SmokeNow</span> <span class="op">==</span> <span class="st">"No"</span> <span class="op">~</span> <span class="va">BMI</span>, data <span class="op">=</span> <span class="va">NHANES</span>, family <span class="op">=</span> <span class="st">"binomial"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the effect size</span></span>
-<span><span class="va">effect_size_logistic</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/effect_size.html">effect_size</a></span><span class="op">(</span><span class="va">model_logistic</span>, <span class="op">~</span> <span class="va">BMI</span><span class="op">)</span></span>
+<span><span class="va">effect_size_logistic</span> <span class="op">&lt;-</span> <span class="fu">effect_size</span><span class="op">(</span><span class="va">model_logistic</span>, <span class="op">~</span> <span class="va">BMI</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Printing the effect size</span></span>
 <span><span class="va">effect_size_logistic</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -456,33 +456,33 @@ TL;DR
 </div>
 </div>
 </div>
-<p>We got a very small effect size value but a non-zero value. Let us try plotting both models. We will use the <code><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel()</a></code> function in the <code>{statisticalModeling}</code> package to easily plot the model. Use the slider to view between the plots.</p>
+<p>We got a very small effect size value but a non-zero value. Let us try plotting both models. We will use the <code>fmodel()</code> function in the <code>{statisticalModeling}</code> package to easily plot the model. Use the slider to view between the plots.</p>
 <div class="cell">
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Plotting both recursive partitioning model</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel</a></span><span class="op">(</span><span class="va">model_rpart</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
+<span><span class="fu">fmodel</span><span class="op">(</span><span class="va">model_rpart</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"SmokeNow ~ Age (recursive partitioning model)"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting both logistic model</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel</a></span><span class="op">(</span><span class="va">model_logistic</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu">fmodel</span><span class="op">(</span><span class="va">model_logistic</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"SmokeNow ~ Age (logistic model)"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="juxtapose" data-startingposition="50%">
 <div class="cell">
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Plotting both recursive partitioning model</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel</a></span><span class="op">(</span><span class="va">model_rpart</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
+<span><span class="fu">fmodel</span><span class="op">(</span><span class="va">model_rpart</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"SmokeNow ~ Age (recursive partitioning model)"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="inter_stat_model_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Plotting both logistic model</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel</a></span><span class="op">(</span><span class="va">model_logistic</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu">fmodel</span><span class="op">(</span><span class="va">model_logistic</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"SmokeNow ~ Age (logistic model)"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="inter_stat_model_files/figure-html/unnamed-chunk-7-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
-<p>Please note that the <code><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel()</a></code> function, while plotting for the recursive partitioning model takes in the ‘first’ level in the variable. You can easily check which level is represented in the y-axis by checking the level order.</p>
+<p>Please note that the <code>fmodel()</code> function, while plotting for the recursive partitioning model takes in the ‘first’ level in the variable. You can easily check which level is represented in the y-axis by checking the level order.</p>
 <div class="cell">
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">NHANES</span><span class="op">)</span></span>
 <span></span>
@@ -496,7 +496,7 @@ TL;DR
 <p>After comparing both the plots you can quickly notice that the plot for the recursive partitioning model shows step-wise change or sudden change and for the logistic model plot, the increase is gradual. Interestingly the plot shows that in higher BMI groups, i.e.&nbsp;in groups of obese people, a smoking habit is uncommon. Anyway, in the recursive partitioning model plot, there is a sudden increase in y-axis values between 20 and 30 in the axis. Let us calculate the effect size of both models at this range.</p>
 <div class="cell">
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Calculating the effect size for recursive partitioning model</span></span>
-<span><span class="va">effect_size_rpart</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/effect_size.html">effect_size</a></span><span class="op">(</span><span class="va">model_rpart</span>, <span class="op">~</span> <span class="va">BMI</span>, BMI <span class="op">=</span> <span class="fl">20</span>, to <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
+<span><span class="va">effect_size_rpart</span> <span class="op">&lt;-</span> <span class="fu">effect_size</span><span class="op">(</span><span class="va">model_rpart</span>, <span class="op">~</span> <span class="va">BMI</span>, BMI <span class="op">=</span> <span class="fl">20</span>, to <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Printing the effect size for recursive partitioning </span></span>
 <span><span class="va">effect_size_rpart</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -509,7 +509,7 @@ TL;DR
 </div>
 </div>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Calculating the effect size for logistic model</span></span>
-<span><span class="va">effect_size_logistic</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/effect_size.html">effect_size</a></span><span class="op">(</span><span class="va">model_logistic</span>, <span class="op">~</span> <span class="va">BMI</span>, BMI <span class="op">=</span> <span class="fl">20</span>, to <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
+<span><span class="va">effect_size_logistic</span> <span class="op">&lt;-</span> <span class="fu">effect_size</span><span class="op">(</span><span class="va">model_logistic</span>, <span class="op">~</span> <span class="va">BMI</span>, BMI <span class="op">=</span> <span class="fl">20</span>, to <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Printing the effect size for logistic</span></span>
 <span><span class="va">effect_size_logistic</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -526,7 +526,7 @@ TL;DR
 <p>Now coming back to interpreting the values, let’s take the case we just discussed. Let us take the effect sizes in the recursive partitioning model. Here, as BMI changes from 20 to 30, there is a 1.8% increased chance that the smoking habit drops. Also ass the response variable is dichotomous, the opposite happens for the other case; 1.8% reduced chance that smoking habit is seen. With such low chances, BMI might not have any association with smoking habit at that particular range of the x-axis. values.</p>
 </section><section id="plotting-the-model-output" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="plotting-the-model-output">
 <span class="header-section-number">4</span> Plotting the model output</h2>
-<p>With the help of the <code><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel()</a></code> function in the <code>{statisticalModeling}</code> package, we can easily plot the model outputs as a plot. Let us plot some plots.</p>
+<p>With the help of the <code>fmodel()</code> function in the <code>{statisticalModeling}</code> package, we can easily plot the model outputs as a plot. Let us plot some plots.</p>
 <p>We will again use the <code>NHANES</code> dataset from the <code>{NHANES}</code> package in R. We will <code>DiabetesAge</code> as the response variable and see if it has any association with <code>Age</code>. The <code>Diabetes</code> describes the participant’s age at which they were declared diabetic.</p>
 <div class="cell">
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Loading libraries</span></span>
@@ -537,7 +537,7 @@ TL;DR
 <span><span class="va">model_logistic</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html">glm</a></span><span class="op">(</span><span class="va">Diabetes</span> <span class="op">~</span> <span class="va">Age</span>, data <span class="op">=</span> <span class="va">NHANES</span>, family <span class="op">=</span> <span class="st">"binomial"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting the graph</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel</a></span><span class="op">(</span><span class="va">model_logistic</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu">fmodel</span><span class="op">(</span><span class="va">model_logistic</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Diabetes ~ Age (logistic model)"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="inter_stat_model_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
@@ -553,7 +553,7 @@ TL;DR
 <span><span class="va">model_logistic</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html">glm</a></span><span class="op">(</span><span class="va">Diabetes</span> <span class="op">~</span> <span class="va">Age</span> <span class="op">+</span> <span class="va">Gender</span>, data <span class="op">=</span> <span class="va">NHANES</span>, family <span class="op">=</span> <span class="st">"binomial"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting the graph</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel</a></span><span class="op">(</span><span class="va">model_logistic</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu">fmodel</span><span class="op">(</span><span class="va">model_logistic</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"DiabetesAge ~ Age + Gender (logistic model)"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="inter_stat_model_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
@@ -569,7 +569,7 @@ TL;DR
 <span><span class="va">model_logistic</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html">glm</a></span><span class="op">(</span><span class="va">Diabetes</span> <span class="op">~</span> <span class="va">Age</span> <span class="op">+</span> <span class="va">Gender</span> <span class="op">+</span> <span class="va">Depressed</span>, data <span class="op">=</span> <span class="va">NHANES</span>, family <span class="op">=</span> <span class="st">"binomial"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting the graph</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel</a></span><span class="op">(</span><span class="va">model_logistic</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu">fmodel</span><span class="op">(</span><span class="va">model_logistic</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"DiabetesAge ~ Age + Gender + Depressed (logistic model)"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="inter_stat_model_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
@@ -586,16 +586,16 @@ TL;DR
 <span>                      data <span class="op">=</span> <span class="va">NHANES</span>, family <span class="op">=</span> <span class="st">"binomial"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting the graph</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel</a></span><span class="op">(</span><span class="va">model_logistic</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu">fmodel</span><span class="op">(</span><span class="va">model_logistic</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"DiabetesAge ~ Age + Gender + Depressed + Education (logistic model)"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="inter_stat_model_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>The plot undergoes another layer of faceting. Now we get a rather complex plot as compared to the plot with just one explanatory variable. The plot shows some interesting info. Males are more prone to become diabetic as compared to females in all the groups. For college graduates who have no depression, both sexes have a reduced chance of having diabetes at younger ages as compared to all other groups. People with high school level of education and college level education have the most chance of becoming diabetic out of all groups. I leave the rest of the interpretations to the readers.</p>
-<p>In summary, the <code><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel()</a></code> function syntax with four explanatory variables would be;</p>
+<p>In summary, the <code>fmodel()</code> function syntax with four explanatory variables would be;</p>
 <div class="cell">
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel</a></span><span class="op">(</span><span class="va">response</span> <span class="op">~</span> <span class="va">var1</span> <span class="op">+</span> <span class="va">var2</span> <span class="op">+</span> <span class="va">var3</span> <span class="op">+</span> <span class="va">var4</span>, data <span class="op">=</span> <span class="va">dataset</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">fmodel</span><span class="op">(</span><span class="va">response</span> <span class="op">~</span> <span class="va">var1</span> <span class="op">+</span> <span class="va">var2</span> <span class="op">+</span> <span class="va">var3</span> <span class="op">+</span> <span class="va">var4</span>, data <span class="op">=</span> <span class="va">dataset</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Here, the response variable will always be plotted on the y-axis. The var1 will be plotted on the x-axis and will be the main exploratory variable that we are interested in. The var2 will assume the colour aesthetic. The var3 and var4 will invoke faceting. Therefore we have;</p>
 <table class="table">
@@ -636,7 +636,7 @@ TL;DR
 <span><span class="va">model_lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">time</span> <span class="op">~</span> <span class="va">year</span> <span class="op">+</span> <span class="va">sex</span>, data <span class="op">=</span> <span class="va">SwimRecords</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting the model</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel</a></span><span class="op">(</span><span class="va">model_lm</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu">fmodel</span><span class="op">(</span><span class="va">model_lm</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"time ~ year + sex (linear model)"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="inter_stat_model_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
@@ -652,7 +652,7 @@ TL;DR
 <span><span class="va">model_lm_int</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">time</span> <span class="op">~</span> <span class="va">year</span> <span class="op">*</span> <span class="va">sex</span>, data <span class="op">=</span> <span class="va">SwimRecords</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting the model</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel</a></span><span class="op">(</span><span class="va">model_lm_int</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu">fmodel</span><span class="op">(</span><span class="va">model_lm_int</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"time ~ year * sex (linear model)"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="inter_stat_model_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
@@ -669,7 +669,7 @@ TL;DR
 <span><span class="va">model_lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">time</span> <span class="op">~</span> <span class="va">year</span> <span class="op">+</span> <span class="va">sex</span>, data <span class="op">=</span> <span class="va">SwimRecords</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting the model</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel</a></span><span class="op">(</span><span class="va">model_lm</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu">fmodel</span><span class="op">(</span><span class="va">model_lm</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"time ~ year + sex (linear model without interaction)"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="inter_stat_model_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
@@ -678,7 +678,7 @@ TL;DR
 <span><span class="va">model_lm_int</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">time</span> <span class="op">~</span> <span class="va">year</span> <span class="op">*</span> <span class="va">sex</span>, data <span class="op">=</span> <span class="va">SwimRecords</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting the model</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel</a></span><span class="op">(</span><span class="va">model_lm_int</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu">fmodel</span><span class="op">(</span><span class="va">model_lm_int</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"time ~ year * sex (linear model with interaction)"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="inter_stat_model_files/figure-html/unnamed-chunk-17-2.png" class="img-fluid" width="672"></p>
@@ -699,7 +699,7 @@ TL;DR
 <span><span class="va">model_lm_int</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">time</span> <span class="op">~</span> <span class="va">year</span> <span class="op">*</span> <span class="va">sex</span>, data <span class="op">=</span> <span class="va">SwimRecords</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the m.s.e</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">mse</span> <span class="op">~</span> <span class="va">model</span>, data <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/cv_pred_error.html">cv_pred_error</a></span><span class="op">(</span><span class="va">model_lm</span>, <span class="va">model_lm_int</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">mse</span> <span class="op">~</span> <span class="va">model</span>, data <span class="op">=</span> <span class="fu">cv_pred_error</span><span class="op">(</span><span class="va">model_lm</span>, <span class="va">model_lm_int</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Welch Two Sample t-test
@@ -772,7 +772,7 @@ sample estimates:
 <span><span class="va">model_lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">vmax</span> <span class="op">~</span> <span class="va">rtemp</span>, data <span class="op">=</span> <span class="va">Tadpoles</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting the model</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel</a></span><span class="op">(</span><span class="va">model_lm</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Tadpoles</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu">fmodel</span><span class="op">(</span><span class="va">model_lm</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Tadpoles</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="inter_stat_model_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
@@ -791,7 +791,7 @@ sample estimates:
 <span><span class="va">model_lm_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">vmax</span> <span class="op">~</span> <span class="va">rtemp</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/AsIs.html">I</a></span><span class="op">(</span><span class="va">rtemp</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">Tadpoles</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting the model</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel</a></span><span class="op">(</span><span class="va">model_lm_2</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Tadpoles</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu">fmodel</span><span class="op">(</span><span class="va">model_lm_2</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Tadpoles</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="inter_stat_model_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid" width="672"></p>
@@ -808,7 +808,7 @@ sample estimates:
 <span><span class="va">model_lm_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">vmax</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/stats/poly.html">poly</a></span><span class="op">(</span><span class="va">rtemp</span>, <span class="fl">2</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">Tadpoles</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting the model</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel</a></span><span class="op">(</span><span class="va">model_lm_2</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Tadpoles</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu">fmodel</span><span class="op">(</span><span class="va">model_lm_2</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Tadpoles</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="inter_stat_model_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid" width="672"></p>
@@ -873,7 +873,7 @@ graph TB
 <span></span>
 <span></span>
 <span><span class="co"># Calculating the effect size</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/effect_size.html">effect_size</a></span><span class="op">(</span><span class="va">model_lm</span>, <span class="op">~</span> <span class="va">Sex</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">effect_size</span><span class="op">(</span><span class="va">model_lm</span>, <span class="op">~</span> <span class="va">Sex</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -896,7 +896,7 @@ graph TB
 <span><span class="va">model_lm_partial</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Price</span> <span class="op">~</span> <span class="va">Sex</span> <span class="op">+</span> <span class="va">Height</span> <span class="op">+</span> <span class="va">Age</span>, data <span class="op">=</span> <span class="va">HorsePrices</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the effect size</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/effect_size.html">effect_size</a></span><span class="op">(</span><span class="va">model_lm_partial</span>, <span class="op">~</span> <span class="va">Sex</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">effect_size</span><span class="op">(</span><span class="va">model_lm_partial</span>, <span class="op">~</span> <span class="va">Sex</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -913,7 +913,7 @@ graph TB
 <p>One of the implications of a model is to account for variations seen within the response variable to the model output values. The R-squared value tells us how well this has been done. By definition;</p>
 <p><span class="math display">R^2 = \frac{variance\,of\,model\,output\,values}{variance\,of\,response\,variable\,values}</span> The R-squared value is always positive and is between 0 and 1. R-squared value of 1 means that the model accounted for all the variance seen within the actual dataset values of the response variable. R-squared value of 0 means that the model does not account for any variance seen in the response variable.</p>
 <p>But the R-squared value has its flaws which we will see soon.</p>
-<p>Let us calculate the R-squared value for some models. We will again use the <code>HorsePrices</code> dataset from the <a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a> package in R. Let us build the earlier model again and calculate the R-squared value for the model. We will use the <code><a href="https://rdrr.io/pkg/statisticalModeling/man/evaluate_model.html">evaluate_model()</a></code> function from the <code>statisticalModeling</code> package to get the predicted values. For now, we will use the training dataset itself as the testing dataset. We will use the <code><a href="https://www.mosaic-web.org/mosaic/reference/aggregating.html">var()</a></code> formula to calculate the variance.</p>
+<p>Let us calculate the R-squared value for some models. We will again use the <code>HorsePrices</code> dataset from the <a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a> package in R. Let us build the earlier model again and calculate the R-squared value for the model. We will use the <code>evaluate_model()</code> function from the <code>statisticalModeling</code> package to get the predicted values. For now, we will use the training dataset itself as the testing dataset. We will use the <code><a href="https://rdrr.io/r/stats/cor.html">var()</a></code> formula to calculate the variance.</p>
 <div class="cell">
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Loading libraries</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span></span>
@@ -925,7 +925,7 @@ graph TB
 <span><span class="va">model_lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Price</span> <span class="op">~</span> <span class="va">Sex</span>, data <span class="op">=</span> <span class="va">HorsePrices</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Getting the predicted values</span></span>
-<span><span class="va">model_lm_output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/evaluate_model.html">evaluate_model</a></span><span class="op">(</span><span class="va">model_lm</span>, data <span class="op">=</span> <span class="va">HorsePrices</span><span class="op">)</span></span>
+<span><span class="va">model_lm_output</span> <span class="op">&lt;-</span> <span class="fu">evaluate_model</span><span class="op">(</span><span class="va">model_lm</span>, data <span class="op">=</span> <span class="va">HorsePrices</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the R-squared value</span></span>
 <span><span class="va">r_squared</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">model_lm_output</span>, <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">var</a></span><span class="op">(</span><span class="va">model_output</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">var</a></span><span class="op">(</span><span class="va">Price</span><span class="op">)</span><span class="op">)</span></span>
@@ -952,7 +952,7 @@ graph TB
 <span><span class="va">model_lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Price</span> <span class="op">~</span> <span class="va">Sex</span> <span class="op">+</span> <span class="va">Height</span> <span class="op">+</span> <span class="va">Age</span>, data <span class="op">=</span> <span class="va">HorsePrices_new</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Getting the predicted values</span></span>
-<span><span class="va">model_lm_output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/evaluate_model.html">evaluate_model</a></span><span class="op">(</span><span class="va">model_lm</span>, data <span class="op">=</span> <span class="va">HorsePrices_new</span><span class="op">)</span></span>
+<span><span class="va">model_lm_output</span> <span class="op">&lt;-</span> <span class="fu">evaluate_model</span><span class="op">(</span><span class="va">model_lm</span>, data <span class="op">=</span> <span class="va">HorsePrices_new</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the R-squared value</span></span>
 <span><span class="va">r_squared</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">model_lm_output</span>, <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">var</a></span><span class="op">(</span><span class="va">model_output</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">var</a></span><span class="op">(</span><span class="va">Price</span><span class="op">)</span><span class="op">)</span></span>
@@ -983,7 +983,7 @@ graph TB
 <span><span class="va">model_lm_random</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Price</span> <span class="op">~</span> <span class="va">Sex</span> <span class="op">+</span> <span class="va">Height</span> <span class="op">+</span> <span class="va">Age</span> <span class="op">+</span> <span class="va">Random</span>, data <span class="op">=</span> <span class="va">HorsePrices_new</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Getting the predicted values</span></span>
-<span><span class="va">model_lm_random_output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/evaluate_model.html">evaluate_model</a></span><span class="op">(</span><span class="va">model_lm_random</span>, data <span class="op">=</span> <span class="va">HorsePrices_new</span><span class="op">)</span></span>
+<span><span class="va">model_lm_random_output</span> <span class="op">&lt;-</span> <span class="fu">evaluate_model</span><span class="op">(</span><span class="va">model_lm_random</span>, data <span class="op">=</span> <span class="va">HorsePrices_new</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the R-squared value</span></span>
 <span><span class="va">r_squared</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">model_lm_random_output</span>, <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">var</a></span><span class="op">(</span><span class="va">model_output</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">var</a></span><span class="op">(</span><span class="va">Price</span><span class="op">)</span><span class="op">)</span></span>
@@ -1017,7 +1017,7 @@ graph TB
 <span><span class="va">model_lm_random</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Price</span> <span class="op">~</span> <span class="va">Sex</span> <span class="op">+</span> <span class="va">Random</span>, data <span class="op">=</span> <span class="va">HorsePrices_new</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the mean of square of prediction errors for trials</span></span>
-<span><span class="va">model_errors</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/cv_pred_error.html">cv_pred_error</a></span><span class="op">(</span><span class="va">model_lm</span>, <span class="va">model_lm_random</span><span class="op">)</span></span>
+<span><span class="va">model_errors</span> <span class="op">&lt;-</span> <span class="fu">cv_pred_error</span><span class="op">(</span><span class="va">model_lm</span>, <span class="va">model_lm_random</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the mean of square of prediction errors</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/boxplot.html">boxplot</a></span><span class="op">(</span><span class="va">mse</span> <span class="op">~</span> <span class="va">model</span>, <span class="va">model_errors</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1060,7 +1060,7 @@ sample estimates:
 <span><span class="va">model_lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Price</span> <span class="op">~</span> <span class="va">Sex</span> <span class="op">+</span> <span class="va">Height</span> <span class="op">+</span> <span class="va">Age</span>, data <span class="op">=</span> <span class="va">HorsePrices_new</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Getting the predicted values</span></span>
-<span><span class="va">model_lm_output</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/evaluate_model.html">evaluate_model</a></span><span class="op">(</span><span class="va">model_lm</span>, data <span class="op">=</span> <span class="va">HorsePrices_new</span><span class="op">)</span></span>
+<span><span class="va">model_lm_output</span> <span class="op">&lt;-</span> <span class="fu">evaluate_model</span><span class="op">(</span><span class="va">model_lm</span>, data <span class="op">=</span> <span class="va">HorsePrices_new</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the R-squared value using model output values</span></span>
 <span><span class="va">r_squared_mo</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">model_lm_output</span>, <span class="fu"><a href="https://rdrr.io/r/stats/cor.html">var</a></span><span class="op">(</span><span class="va">model_output</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">var</a></span><span class="op">(</span><span class="va">Price</span><span class="op">)</span><span class="op">)</span></span>
@@ -1153,7 +1153,7 @@ graph LR
 <span><span class="va">model_lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">net_sec</span> <span class="op">~</span> <span class="va">age</span> <span class="op">+</span> <span class="va">sex</span>, data <span class="op">=</span> <span class="va">run17_marathon</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the effect size</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/effect_size.html">effect_size</a></span><span class="op">(</span><span class="va">model_lm</span>, <span class="op">~</span> <span class="va">age</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">effect_size</span><span class="op">(</span><span class="va">model_lm</span>, <span class="op">~</span> <span class="va">age</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -1163,7 +1163,7 @@ graph LR
 </div>
 </div>
 </div>
-<p>Using the <code><a href="https://www.mosaic-web.org/mosaic/reference/resample.html">sample()</a></code> function in R, we will sample the row indices in the original dataset. Then using these row indices, we build a resampled dataset. Then using this resampled dataset, we will build a new model and then calculate the effect size.</p>
+<p>Using the <code><a href="https://rdrr.io/r/base/sample.html">sample()</a></code> function in R, we will sample the row indices in the original dataset. Then using these row indices, we build a resampled dataset. Then using this resampled dataset, we will build a new model and then calculate the effect size.</p>
 <div class="cell">
 <div class="sourceCode" id="cb46"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Loading libraries</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/OpenIntroStat/cherryblossom">cherryblossom</a></span><span class="op">)</span></span>
@@ -1183,7 +1183,7 @@ graph LR
 <span><span class="va">model_lm_resample</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">net_sec</span> <span class="op">~</span> <span class="va">age</span> <span class="op">+</span> <span class="va">sex</span>, data <span class="op">=</span> <span class="va">resample_data</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the effect size</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/effect_size.html">effect_size</a></span><span class="op">(</span><span class="va">model_lm_resample</span>, <span class="op">~</span> <span class="va">age</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">effect_size</span><span class="op">(</span><span class="va">model_lm_resample</span>, <span class="op">~</span> <span class="va">age</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -1193,7 +1193,7 @@ graph LR
 </div>
 </div>
 </div>
-<p>We get a slightly different effect size value in each case. If we repeat this process, we can get multiple effect size values that we can plot to get the sampling distribution of the effect size. doing this code by code is tedious and therefore we will automate this process using the <code><a href="https://rdrr.io/pkg/statisticalModeling/man/ensemble.html">ensemble()</a></code> function in the <code>statisticalModeling</code> package in R. Using <code>nreps</code> inside the <code><a href="https://rdrr.io/pkg/statisticalModeling/man/ensemble.html">ensemble()</a></code> function, we can specify how many times we want to resample the data. Normally, 100 resampling trials are performed.</p>
+<p>We get a slightly different effect size value in each case. If we repeat this process, we can get multiple effect size values that we can plot to get the sampling distribution of the effect size. doing this code by code is tedious and therefore we will automate this process using the <code>ensemble()</code> function in the <code>statisticalModeling</code> package in R. Using <code>nreps</code> inside the <code>ensemble()</code> function, we can specify how many times we want to resample the data. Normally, 100 resampling trials are performed.</p>
 <div class="cell">
 <div class="sourceCode" id="cb47"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Loading libraries</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/OpenIntroStat/cherryblossom">cherryblossom</a></span><span class="op">)</span></span>
@@ -1207,10 +1207,10 @@ graph LR
 <span><span class="va">model_lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">net_sec</span> <span class="op">~</span> <span class="va">age</span> <span class="op">+</span> <span class="va">sex</span>, data <span class="op">=</span> <span class="va">run17_marathon</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Resampling 100 times</span></span>
-<span><span class="va">model_trials</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/ensemble.html">ensemble</a></span><span class="op">(</span><span class="va">model_lm</span>, nreps <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span>
+<span><span class="va">model_trials</span> <span class="op">&lt;-</span> <span class="fu">ensemble</span><span class="op">(</span><span class="va">model_lm</span>, nreps <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the effect size for each resampled data</span></span>
-<span><span class="va">resampled_effect_sizes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/effect_size.html">effect_size</a></span><span class="op">(</span><span class="va">model_trials</span>, <span class="op">~</span> <span class="va">age</span><span class="op">)</span></span>
+<span><span class="va">resampled_effect_sizes</span> <span class="op">&lt;-</span> <span class="fu">effect_size</span><span class="op">(</span><span class="va">model_trials</span>, <span class="op">~</span> <span class="va">age</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Printing effect sizes</span></span>
 <span><span class="va">resampled_effect_sizes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1274,7 +1274,7 @@ graph LR
 <span><span class="va">model_lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">mbbl</span> <span class="op">~</span> <span class="va">year</span>, data <span class="op">=</span> <span class="va">Oil_1980</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting the linear model</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel</a></span><span class="op">(</span><span class="va">model_lm</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Oil_1980</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu">fmodel</span><span class="op">(</span><span class="va">model_lm</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Oil_1980</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>y <span class="op">=</span> <span class="st">"mbbl (oil production in millions of barrels)"</span>,</span>
 <span>                title <span class="op">=</span> <span class="st">"Oil production in millions of barrels ~ Year"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -1286,7 +1286,7 @@ graph LR
 <span><span class="va">model_lm_log</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">log_mbbl</span> <span class="op">~</span> <span class="va">year</span>, data <span class="op">=</span> <span class="va">Oil_1980</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting the linear model with log transformed response variable</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel</a></span><span class="op">(</span><span class="va">model_lm_log</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Oil_1980</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu">fmodel</span><span class="op">(</span><span class="va">model_lm_log</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Oil_1980</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>y <span class="op">=</span> <span class="st">"log(mbbl) [oil production in millions of barrels]"</span>,</span>
 <span>                title <span class="op">=</span> <span class="st">"log(Oil production in millions of barrels) ~ Year"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1306,7 +1306,7 @@ graph LR
 <span><span class="va">model_lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">mbbl</span> <span class="op">~</span> <span class="va">year</span>, data <span class="op">=</span> <span class="va">Oil_1980</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting the linear model</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel</a></span><span class="op">(</span><span class="va">model_lm</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Oil_1980</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu">fmodel</span><span class="op">(</span><span class="va">model_lm</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Oil_1980</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>y <span class="op">=</span> <span class="st">"mbbl (oil production in millions of barrels)"</span>,</span>
 <span>                title <span class="op">=</span> <span class="st">"Oil production in millions of barrels ~ Year"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1320,7 +1320,7 @@ graph LR
 <span><span class="va">model_lm_log</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">log_mbbl</span> <span class="op">~</span> <span class="va">year</span>, data <span class="op">=</span> <span class="va">Oil_1980</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting the linear model with log transformed response variable</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel</a></span><span class="op">(</span><span class="va">model_lm_log</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Oil_1980</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu">fmodel</span><span class="op">(</span><span class="va">model_lm_log</span><span class="op">)</span> <span class="op">+</span> <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">Oil_1980</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>y <span class="op">=</span> <span class="st">"log(mbbl) [oil production in millions of barrels]"</span>,</span>
 <span>                title <span class="op">=</span> <span class="st">"log(Oil production in millions of barrels) ~ Year"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1349,8 +1349,8 @@ graph LR
 <span><span class="va">model_lm_log</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">log_mbbl</span> <span class="op">~</span> <span class="va">year</span>, data <span class="op">=</span> <span class="va">Oil_1980</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Evaluating the model</span></span>
-<span><span class="va">predict_lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/evaluate_model.html">evaluate_model</a></span><span class="op">(</span><span class="va">model_lm</span>, data <span class="op">=</span> <span class="va">Oil_1980</span><span class="op">)</span></span>
-<span><span class="va">predict_lm_log</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/evaluate_model.html">evaluate_model</a></span><span class="op">(</span><span class="va">model_lm_log</span>, data <span class="op">=</span> <span class="va">Oil_1980</span><span class="op">)</span></span>
+<span><span class="va">predict_lm</span> <span class="op">&lt;-</span> <span class="fu">evaluate_model</span><span class="op">(</span><span class="va">model_lm</span>, data <span class="op">=</span> <span class="va">Oil_1980</span><span class="op">)</span></span>
+<span><span class="va">predict_lm_log</span> <span class="op">&lt;-</span> <span class="fu">evaluate_model</span><span class="op">(</span><span class="va">model_lm_log</span>, data <span class="op">=</span> <span class="va">Oil_1980</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Transforming the model output values back to normal</span></span>
 <span><span class="va">predict_lm_log</span><span class="op">$</span><span class="va">model_output_nonlog</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="va">predict_lm_log</span><span class="op">$</span><span class="va">model_output</span><span class="op">)</span></span>
@@ -1379,7 +1379,7 @@ graph LR
 <span><span class="va">model_lm_log</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">log_mbbl</span> <span class="op">~</span> <span class="va">year</span>, data <span class="op">=</span> <span class="va">Oil_1980</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the effect sizes</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/effect_size.html">effect_size</a></span><span class="op">(</span><span class="va">model_lm</span>, <span class="op">~</span> <span class="va">year</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">effect_size</span><span class="op">(</span><span class="va">model_lm</span>, <span class="op">~</span> <span class="va">year</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -1388,7 +1388,7 @@ graph LR
   </script>
 </div>
 </div>
-<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/effect_size.html">effect_size</a></span><span class="op">(</span><span class="va">model_lm_log</span>, <span class="op">~</span> <span class="va">year</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">effect_size</span><span class="op">(</span><span class="va">model_lm_log</span>, <span class="op">~</span> <span class="va">year</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -1409,7 +1409,7 @@ graph LR
 <span><span class="va">model_lm_log</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">log_mbbl</span> <span class="op">~</span> <span class="va">year</span>, data <span class="op">=</span> <span class="va">Oil_1980</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the effect size</span></span>
-<span><span class="va">effect_lm_log</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/effect_size.html">effect_size</a></span><span class="op">(</span><span class="va">model_lm_log</span>, <span class="op">~</span> <span class="va">year</span><span class="op">)</span></span>
+<span><span class="va">effect_lm_log</span> <span class="op">&lt;-</span> <span class="fu">effect_size</span><span class="op">(</span><span class="va">model_lm_log</span>, <span class="op">~</span> <span class="va">year</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Converting effect size to percentage change</span></span>
 <span><span class="fl">100</span> <span class="op">*</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="va">effect_lm_log</span><span class="op">$</span><span class="va">slope</span><span class="op">)</span> <span class="op">-</span> <span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1428,10 +1428,10 @@ graph LR
 <span><span class="va">model_lm_log</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">log_mbbl</span> <span class="op">~</span> <span class="va">year</span>, data <span class="op">=</span> <span class="va">Oil_1980</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Bootstrap replications: 100 trials</span></span>
-<span><span class="va">bootstrap_trials</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/ensemble.html">ensemble</a></span><span class="op">(</span><span class="va">model_lm_log</span>, nreps <span class="op">=</span> <span class="fl">100</span>, data <span class="op">=</span> <span class="va">Oil_1980</span><span class="op">)</span></span>
+<span><span class="va">bootstrap_trials</span> <span class="op">&lt;-</span> <span class="fu">ensemble</span><span class="op">(</span><span class="va">model_lm_log</span>, nreps <span class="op">=</span> <span class="fl">100</span>, data <span class="op">=</span> <span class="va">Oil_1980</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the effect size</span></span>
-<span><span class="va">bootstrap_effect_sizes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/effect_size.html">effect_size</a></span><span class="op">(</span><span class="va">bootstrap_trials</span>, <span class="op">~</span> <span class="va">year</span><span class="op">)</span></span>
+<span><span class="va">bootstrap_effect_sizes</span> <span class="op">&lt;-</span> <span class="fu">effect_size</span><span class="op">(</span><span class="va">bootstrap_trials</span>, <span class="op">~</span> <span class="va">year</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Converting effect size to percentage change</span></span>
 <span><span class="va">bootstrap_effect_sizes</span><span class="op">$</span><span class="va">precentage_change</span> <span class="op">&lt;-</span> <span class="fl">100</span> <span class="op">*</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="va">bootstrap_effect_sizes</span><span class="op">$</span><span class="va">slope</span><span class="op">)</span> <span class="op">-</span> <span class="fl">1</span><span class="op">)</span></span>
@@ -1500,7 +1500,7 @@ graph LR
 <span><span class="va">model_lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Price</span> <span class="op">~</span> <span class="va">Age</span>, data <span class="op">=</span> <span class="va">female_horses</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting the model</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel</a></span><span class="op">(</span><span class="va">model_lm</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">female_horses</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu">fmodel</span><span class="op">(</span><span class="va">model_lm</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">female_horses</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="va">outliers</span><span class="op">)</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span>, vjust <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>            col <span class="op">=</span> <span class="st">"red"</span>, data <span class="op">=</span> <span class="va">female_horses</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">50000</span>,<span class="fl">10000</span><span class="op">)</span>, limits <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">50000</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -1535,7 +1535,7 @@ graph LR
 <span><span class="va">model_lm_rank</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">price_rank</span> <span class="op">~</span> <span class="va">Age</span>, data <span class="op">=</span> <span class="va">female_horses</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting the model</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel</a></span><span class="op">(</span><span class="va">model_lm_rank</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">female_horses</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu">fmodel</span><span class="op">(</span><span class="va">model_lm_rank</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">female_horses</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_text.html">geom_text</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>label <span class="op">=</span> <span class="va">outliers</span><span class="op">)</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span>, vjust <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>            col <span class="op">=</span> <span class="st">"red"</span>, data <span class="op">=</span> <span class="va">female_horses</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>y <span class="op">=</span> <span class="st">"Ranked Price"</span>, title <span class="op">=</span> <span class="st">"Linear model with ranked price"</span><span class="op">)</span> <span class="op">+</span></span>
@@ -1559,15 +1559,15 @@ graph LR
 <span><span class="va">model_lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">sat</span> <span class="op">~</span> <span class="va">expend</span>, data <span class="op">=</span> <span class="va">SAT</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting the model</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel</a></span><span class="op">(</span><span class="va">model_lm</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">fmodel</span><span class="op">(</span><span class="va">model_lm</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="inter_stat_model_files/figure-html/unnamed-chunk-47-1.png" class="img-fluid" width="672"></p>
 </div>
 <div class="sourceCode" id="cb70"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Bootstrap replications: 100 trials</span></span>
-<span><span class="va">bootstrap_trials</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/ensemble.html">ensemble</a></span><span class="op">(</span><span class="va">model_lm</span>, nreps <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span>
+<span><span class="va">bootstrap_trials</span> <span class="op">&lt;-</span> <span class="fu">ensemble</span><span class="op">(</span><span class="va">model_lm</span>, nreps <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the effect sizes of salary from the bootstrap samples</span></span>
-<span><span class="va">bootstrap_effect_sizes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/effect_size.html">effect_size</a></span><span class="op">(</span><span class="va">bootstrap_trials</span>, <span class="op">~</span> <span class="va">expend</span><span class="op">)</span></span>
+<span><span class="va">bootstrap_effect_sizes</span> <span class="op">&lt;-</span> <span class="fu">effect_size</span><span class="op">(</span><span class="va">bootstrap_trials</span>, <span class="op">~</span> <span class="va">expend</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the 95% confidence interval</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span><span class="va">bootstrap_effect_sizes</span>, <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">slope</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">slope</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1586,15 +1586,15 @@ graph LR
 <span><span class="va">model_lm_cov</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">sat</span> <span class="op">~</span> <span class="va">expend</span> <span class="op">+</span> <span class="va">frac</span>, data <span class="op">=</span> <span class="va">SAT</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting the model</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel</a></span><span class="op">(</span><span class="va">model_lm_cov</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">fmodel</span><span class="op">(</span><span class="va">model_lm_cov</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="inter_stat_model_files/figure-html/unnamed-chunk-48-1.png" class="img-fluid" width="672"></p>
 </div>
 <div class="sourceCode" id="cb73"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Bootstrap replications: 100 trials</span></span>
-<span><span class="va">bootstrap_trials_cov</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/ensemble.html">ensemble</a></span><span class="op">(</span><span class="va">model_lm_cov</span>, nreps <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span>
+<span><span class="va">bootstrap_trials_cov</span> <span class="op">&lt;-</span> <span class="fu">ensemble</span><span class="op">(</span><span class="va">model_lm_cov</span>, nreps <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the effect sizes of salary from the bootstrap samples</span></span>
-<span><span class="va">bootstrap_effect_sizes_cov</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/effect_size.html">effect_size</a></span><span class="op">(</span><span class="va">bootstrap_trials</span>, <span class="op">~</span> <span class="va">expend</span><span class="op">)</span></span>
+<span><span class="va">bootstrap_effect_sizes_cov</span> <span class="op">&lt;-</span> <span class="fu">effect_size</span><span class="op">(</span><span class="va">bootstrap_trials</span>, <span class="op">~</span> <span class="va">expend</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the 95% confidence interval</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span><span class="va">bootstrap_effect_sizes_cov</span>, <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">slope</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">2</span>, <span class="fl">2</span><span class="op">)</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">slope</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1614,7 +1614,7 @@ graph LR
 <span><span class="va">model_lm_cov</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">sat</span> <span class="op">~</span> <span class="va">expend</span> <span class="op">+</span> <span class="va">frac</span>, data <span class="op">=</span> <span class="va">SAT</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the m.s.e values</span></span>
-<span><span class="va">trials_mse</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/cv_pred_error.html">cv_pred_error</a></span><span class="op">(</span><span class="va">model_lm</span>, <span class="va">model_lm_cov</span><span class="op">)</span></span>
+<span><span class="va">trials_mse</span> <span class="op">&lt;-</span> <span class="fu">cv_pred_error</span><span class="op">(</span><span class="va">model_lm</span>, <span class="va">model_lm_cov</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Printing mse</span></span>
 <span><span class="va">trials_mse</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1643,7 +1643,7 @@ sample estimates:
 </div>
 </div>
 <p>From the t.test results, the model with the covariate has a lower mean prediction error value as compared to the model without the covariate. Adding <code>frac</code> as the covariate seems to significantly improve our model.</p>
-<p>The reason why I emphasized covariates is because collinearity is introduced to the model as a result of our choice of covariates. To check for collinearity, we build a linear model with our group of explanatory variables that we want to check. Then we will find the R-squared value from the model, the greater the R-squared value, the greater the collinearity between these variables. Let us find the collinearity between <code>expend</code> and <code>frac</code>. We can either use the <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> function to get the model summary and then get the R-squared value from the summary or use the <code><a href="https://www.mosaic-web.org/mosaic/reference/rsquared.html">rsquared()</a></code> function from the <a href="https://github.com/ProjectMOSAIC/mosaic">mosaic</a> package in R.</p>
+<p>The reason why I emphasized covariates is because collinearity is introduced to the model as a result of our choice of covariates. To check for collinearity, we build a linear model with our group of explanatory variables that we want to check. Then we will find the R-squared value from the model, the greater the R-squared value, the greater the collinearity between these variables. Let us find the collinearity between <code>expend</code> and <code>frac</code>. We can either use the <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> function to get the model summary and then get the R-squared value from the summary or use the <code>rsquared()</code> function from the <a href="https://github.com/ProjectMOSAIC/mosaic">mosaic</a> package in R.</p>
 <div class="cell">
 <div class="sourceCode" id="cb78"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ProjectMOSAIC/mosaic">mosaic</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">'mosaic'</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ProjectMOSAIC/mosaicData">mosaicData</a></span><span class="op">)</span></span>
@@ -1675,12 +1675,12 @@ Multiple R-squared:  0.3512,    Adjusted R-squared:  0.3377
 F-statistic: 25.98 on 1 and 48 DF,  p-value: 5.781e-06</code></pre>
 </div>
 <div class="sourceCode" id="cb80"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Getting the Rsquared value</span></span>
-<span><span class="fu"><a href="https://www.mosaic-web.org/mosaic/reference/rsquared.html">rsquared</a></span><span class="op">(</span><span class="va">model_cov</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">rsquared</span><span class="op">(</span><span class="va">model_cov</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.3512072</code></pre>
 </div>
 </div>
-<p>From the model summary, the value that we are interested in is given in the ‘Multiple R-squared’ section, which is 0.35, which is the same as the output given by the <code><a href="https://www.mosaic-web.org/mosaic/reference/rsquared.html">rsquared()</a></code> function. The value of 0.35 means that 35% of the variation seen in the <code>expend</code> variable is explained by <code>frac</code>. This suggests that there is some level of redundancy between the <code>expend</code> and <code>frac</code>. Greater the R-squared value, the greater the redundancy between the variables.</p>
+<p>From the model summary, the value that we are interested in is given in the ‘Multiple R-squared’ section, which is 0.35, which is the same as the output given by the <code>rsquared()</code> function. The value of 0.35 means that 35% of the variation seen in the <code>expend</code> variable is explained by <code>frac</code>. This suggests that there is some level of redundancy between the <code>expend</code> and <code>frac</code>. Greater the R-squared value, the greater the redundancy between the variables.</p>
 <p>R-squared is also represented in a different way called ‘variance inflation factor (VIF)’ which measures the factor by which the correlations amongst the predictor variables inflate the variance of the standard error of the effect size. Okay, that was a handful, let us see what this means. First, let us see the formula for VIF;</p>
 <p><span class="math display">VIF = \frac{1}{1-R^2}</span></p>
 <p>Here, if we have an R-squared value of 0, which means there is no collinearity between the variables, then VIF would be 1. Let us assume we get a VIF value of 2. In the current context, this means that the variance of the effect sizes calculated from bootstrap trials is increased by a factor of 2. If variance increases, then the standard error associated with the effect sizes increases and thereby it will lead to reduced precision. A result of collinearity is often getting a wider confidence interval thereby giving us an unprecise estimation of; for example effect sizes in this case.</p>
@@ -1696,12 +1696,12 @@ F-statistic: 25.98 on 1 and 48 DF,  p-value: 5.781e-06</code></pre>
 <span><span class="va">model_collinear_salary</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">expend</span> <span class="op">~</span> <span class="va">salary</span>, data <span class="op">=</span> <span class="va">SAT</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Getting the Rsquared value</span></span>
-<span><span class="fu"><a href="https://www.mosaic-web.org/mosaic/reference/rsquared.html">rsquared</a></span><span class="op">(</span><span class="va">model_collinear_salary</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">rsquared</span><span class="op">(</span><span class="va">model_collinear_salary</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.7565547</code></pre>
 </div>
 </div>
-<p>Looks like we opened Pandora’s box. Now let us build two models, one without salary and one with salary and, see how the prediction error of the effect sizes changes. The two models will have the SAT scores as the response variable. We will calculate the standard error of effect sizes within the <code><a href="https://rdrr.io/pkg/statisticalModeling/man/effect_size.html">effect_size()</a></code> formula by assigning <code>bootstrap = TRUE</code>.</p>
+<p>Looks like we opened Pandora’s box. Now let us build two models, one without salary and one with salary and, see how the prediction error of the effect sizes changes. The two models will have the SAT scores as the response variable. We will calculate the standard error of effect sizes within the <code>effect_size()</code> formula by assigning <code>bootstrap = TRUE</code>.</p>
 <div class="cell">
 <div class="sourceCode" id="cb84"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">statisticalModeling</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ProjectMOSAIC/mosaicData">mosaicData</a></span><span class="op">)</span></span>
@@ -1713,7 +1713,7 @@ F-statistic: 25.98 on 1 and 48 DF,  p-value: 5.781e-06</code></pre>
 <span><span class="va">model_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">sat</span> <span class="op">~</span> <span class="va">expend</span> <span class="op">+</span> <span class="va">salary</span>, data <span class="op">=</span> <span class="va">SAT</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating effect sizes and standard error via bootstrapping</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/effect_size.html">effect_size</a></span><span class="op">(</span><span class="va">model_1</span>, <span class="op">~</span> <span class="va">expend</span>, bootstrap <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, n <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu">effect_size</span><span class="op">(</span><span class="va">model_1</span>, <span class="op">~</span> <span class="va">expend</span>, bootstrap <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, n <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -1722,7 +1722,7 @@ F-statistic: 25.98 on 1 and 48 DF,  p-value: 5.781e-06</code></pre>
   </script>
 </div>
 </div>
-<div class="sourceCode" id="cb85"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/effect_size.html">effect_size</a></span><span class="op">(</span><span class="va">model_2</span>, <span class="op">~</span> <span class="va">expend</span>, bootstrap <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, n <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb85"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu">effect_size</span><span class="op">(</span><span class="va">model_2</span>, <span class="op">~</span> <span class="va">expend</span>, bootstrap <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, n <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -1733,13 +1733,13 @@ F-statistic: 25.98 on 1 and 48 DF,  p-value: 5.781e-06</code></pre>
 </div>
 </div>
 <p>You can see that the standard error has increased which is due to the effect of collinearity between <code>expend</code> and <code>salary</code>.</p>
-<p>The <code>statisticalModeling</code> package comes with the <code><a href="https://rdrr.io/pkg/statisticalModeling/man/collinearity.html">collinearity()</a></code> function which can be used to calculate how much the effect size might (at a maximum) be influenced by collinearity with the other explanatory variables. Essentially, the <code><a href="https://rdrr.io/pkg/statisticalModeling/man/collinearity.html">collinearity()</a></code> function calculates the square root of VIF which denotes the inflation of standard errors. Let us check the collinearity between <code>expend</code> and <code>salary</code> variables.</p>
+<p>The <code>statisticalModeling</code> package comes with the <code>collinearity()</code> function which can be used to calculate how much the effect size might (at a maximum) be influenced by collinearity with the other explanatory variables. Essentially, the <code>collinearity()</code> function calculates the square root of VIF which denotes the inflation of standard errors. Let us check the collinearity between <code>expend</code> and <code>salary</code> variables.</p>
 <div class="cell">
 <div class="sourceCode" id="cb86"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">statisticalModeling</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ProjectMOSAIC/mosaicData">mosaicData</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the collinearity</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/collinearity.html">collinearity</a></span><span class="op">(</span><span class="op">~</span> <span class="va">expend</span> <span class="op">+</span> <span class="va">salary</span>, data <span class="op">=</span> <span class="va">SAT</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">collinearity</span><span class="op">(</span><span class="op">~</span> <span class="va">expend</span> <span class="op">+</span> <span class="va">salary</span>, data <span class="op">=</span> <span class="va">SAT</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -1758,7 +1758,7 @@ F-statistic: 25.98 on 1 and 48 DF,  p-value: 5.781e-06</code></pre>
 <span><span class="va">model_3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">sat</span> <span class="op">~</span> <span class="va">expend</span> <span class="op">*</span> <span class="va">salary</span>, data <span class="op">=</span> <span class="va">SAT</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating effect sizes and standard error via bootstrapping</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/effect_size.html">effect_size</a></span><span class="op">(</span><span class="va">model_3</span>, <span class="op">~</span> <span class="va">expend</span>, bootstrap <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, n <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="fu">effect_size</span><span class="op">(</span><span class="va">model_3</span>, <span class="op">~</span> <span class="va">expend</span>, bootstrap <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, n <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -1780,12 +1780,12 @@ F-statistic: 25.98 on 1 and 48 DF,  p-value: 5.781e-06</code></pre>
 <span><span class="va">model_3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">sat</span> <span class="op">~</span> <span class="va">expend</span> <span class="op">*</span> <span class="va">salary</span>, data <span class="op">=</span> <span class="va">SAT</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the mean prediction error for 100 trials</span></span>
-<span><span class="va">model_mse</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/cv_pred_error.html">cv_pred_error</a></span><span class="op">(</span><span class="va">model_1</span>, <span class="va">model_2</span>, <span class="va">model_3</span>, ntrials <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span>
+<span><span class="va">model_mse</span> <span class="op">&lt;-</span> <span class="fu">cv_pred_error</span><span class="op">(</span><span class="va">model_1</span>, <span class="va">model_2</span>, <span class="va">model_3</span>, ntrials <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the mean and sd of mse</span></span>
 <span><span class="va">model_mse_mean</span> <span class="op">&lt;-</span> <span class="va">model_mse</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">mse</span><span class="op">)</span>,</span>
-<span>            sd <span class="op">=</span> <span class="fu"><a href="https://www.mosaic-web.org/mosaic/reference/aggregating.html">sd</a></span><span class="op">(</span><span class="va">mse</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">mse</span><span class="op">)</span>,</span>
+<span>            sd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">mse</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Printing the mean and sd of mse</span></span>
 <span><span class="va">model_mse_mean</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1809,7 +1809,7 @@ F-statistic: 25.98 on 1 and 48 DF,  p-value: 5.781e-06</code></pre>
 <p>First of all, congratulations on completing the intermediate statistical modelling tutorial (bonus points if you completed the introduction tutorial also). In a nutshell, this is what we have learned from this tutorial;</p>
 <ol type="1">
 <li><p>Interpreting effect size when the response variable is categorical</p></li>
-<li><p>Plotting model output using the <code><a href="https://rdrr.io/pkg/statisticalModeling/man/fmodel.html">fmodel()</a></code> function from the <code>{statisticalModeling}</code> package</p></li>
+<li><p>Plotting model output using the <code>fmodel()</code> function from the <code>{statisticalModeling}</code> package</p></li>
 <li><p>Interaction terms</p></li>
 <li><p>Polynomial regression</p></li>
 <li><p>Total and partial change</p></li>

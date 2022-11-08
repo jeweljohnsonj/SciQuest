@@ -335,7 +335,7 @@ TL;DR
 <li>Using the model to predict values outside the data</li>
 <li>Calculating the mean of the square of the prediction errors</li>
 <li>Using error to compare models to aid explanatory variable selection</li>
-<li>Cross-validation technique and model iteration by <code><a href="https://rdrr.io/pkg/statisticalModeling/man/cv_pred_error.html">cv_pred_error()</a></code> function</li>
+<li>Cross-validation technique and model iteration by <code>cv_pred_error()</code> function</li>
 <li>Prediction error for a categorical response variable</li>
 </ul>
 </li>
@@ -959,7 +959,7 @@ F-statistic:  1222 on 2 and 17439 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <p>For the seed I have set, using the cross-validation method, we seem to not solve the problem we had earlier. The model with the random variable as the explanatory variable still has a lower error value as compared to the model without the random variable. But this was just an opportunistic case, as the training and testing sets are chosen at random. You might not get the same result as mine if you run this code (provided that the <code><a href="https://rdrr.io/r/base/Random.html">set.seed()</a></code> is changed). We can deal with this randomness by rerunning the calculation many times to get a more consistent measure of the error value.</p>
-<p>We will use the <code><a href="https://rdrr.io/pkg/statisticalModeling/man/cv_pred_error.html">cv_pred_error()</a></code> function from the <code>statisticalModeling</code> package to rerun the calculations many times. The function automatically makes the training and testing sets using the original dataset and also calculates the m.s.e for each trial. In the code given below, we store the results from the <code><a href="https://rdrr.io/pkg/statisticalModeling/man/cv_pred_error.html">cv_pred_error()</a></code> function into a variable called ‘trials’. The variable ‘trials’ will have two columns in it; <code>mse</code> which denotes the mean of the square of the prediction errors (m.s.e) and <code>model</code> which denotes the name of the model given as input. Then in the final step, we compare the m.s.e values between the model using a simple t-test.</p>
+<p>We will use the <code>cv_pred_error()</code> function from the <code>statisticalModeling</code> package to rerun the calculations many times. The function automatically makes the training and testing sets using the original dataset and also calculates the m.s.e for each trial. In the code given below, we store the results from the <code>cv_pred_error()</code> function into a variable called ‘trials’. The variable ‘trials’ will have two columns in it; <code>mse</code> which denotes the mean of the square of the prediction errors (m.s.e) and <code>model</code> which denotes the name of the model given as input. Then in the final step, we compare the m.s.e values between the model using a simple t-test.</p>
 <div class="cell">
 <div class="sourceCode" id="cb41"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/">devtools</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">'devtools'</span><span class="op">)</span></span>
 <span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va">statisticalModeling</span><span class="op">)</span><span class="op">)</span> <span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"dtkaplan/statisticalModeling"</span><span class="op">)</span></span>
@@ -980,7 +980,7 @@ F-statistic:  1222 on 2 and 17439 DF,  p-value: &lt; 2.2e-16</code></pre>
 <span><span class="va">model_feed_random</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">weight</span> <span class="op">~</span> <span class="va">feed</span> <span class="op">+</span> <span class="va">random</span>, data <span class="op">=</span> <span class="va">chickwts</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Rerunning the models (100 times for each model)</span></span>
-<span><span class="va">trials</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/cv_pred_error.html">cv_pred_error</a></span><span class="op">(</span><span class="va">model_feed</span>, <span class="va">model_feed_random</span>, ntrials <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span>
+<span><span class="va">trials</span> <span class="op">&lt;-</span> <span class="fu">cv_pred_error</span><span class="op">(</span><span class="va">model_feed</span>, <span class="va">model_feed_random</span>, ntrials <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Compare the two sets of cross-validated errors</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/t.test.html">t.test</a></span><span class="op">(</span><span class="va">mse</span> <span class="op">~</span> <span class="va">model</span>, data <span class="op">=</span> <span class="va">trials</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1192,7 +1192,7 @@ Levels: 10 Mile 5K</code></pre>
 <pre><code>[1] 2273954</code></pre>
 </div>
 <div class="sourceCode" id="cb68"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Calculating m.s.e by iterating the model 100 times</span></span>
-<span><span class="va">trials</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/cv_pred_error.html">cv_pred_error</a></span><span class="op">(</span><span class="va">null_model</span><span class="op">)</span></span>
+<span><span class="va">trials</span> <span class="op">&lt;-</span> <span class="fu">cv_pred_error</span><span class="op">(</span><span class="va">null_model</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Printing m.s.e values for each iteration</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">trials</span><span class="op">$</span><span class="va">mse</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1208,7 +1208,7 @@ Levels: 10 Mile 5K</code></pre>
 <span class="header-section-number">5.1</span> Evaluating a recursive partitioning model</h3>
 <p>For our exploratory modelling, we will be using the recursive partitioning architecture. Using the dataset we will see what variables are related to depression.</p>
 <p>We will use the formula <code>Depressed ~ .</code></p>
-<p>The single period on the right side of the Tilda indicates that we want to model using all the possible variables in the dataset. Finally, we will plot the model as a ‘tree’ using the <code><a href="https://rdrr.io/pkg/rpart.plot/man/rpart.plot.html">rpart.plot()</a></code> function from the <a href="http://www.milbo.org/rpart-plot/index.html">rpart.plot</a> package in R.</p>
+<p>The single period on the right side of the Tilda indicates that we want to model using all the possible variables in the dataset. Finally, we will plot the model as a ‘tree’ using the <code>rpart.plot()</code> function from the <a href="http://www.milbo.org/rpart-plot/index.html">rpart.plot</a> package in R.</p>
 <div class="cell">
 <div class="sourceCode" id="cb70"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va">NHANES</span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">'NHANES'</span><span class="op">)</span></span>
 <span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va"><a href="http://www.milbo.org/rpart-plot/index.html">rpart.plot</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">'rpart.plot'</span><span class="op">)</span></span>
@@ -1220,7 +1220,7 @@ Levels: 10 Mile 5K</code></pre>
 <span><span class="va">model_rpart</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/rpart/man/rpart.html">rpart</a></span><span class="op">(</span><span class="va">Depressed</span> <span class="op">~</span> <span class="va">.</span> , data <span class="op">=</span> <span class="va">NHANES</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting the model with sample sizes</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/rpart.plot/man/rpart.plot.html">rpart.plot</a></span><span class="op">(</span><span class="va">model_rpart</span>, extra <span class="op">=</span> <span class="fl">1</span>, type <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">rpart.plot</span><span class="op">(</span><span class="va">model_rpart</span>, extra <span class="op">=</span> <span class="fl">1</span>, type <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="intro_stat_model_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -1238,7 +1238,7 @@ Levels: 10 Mile 5K</code></pre>
 <p>Working with numbers can be tricky, so let us represent the sample sizes in percentiles for easy comparisons.</p>
 <div class="cell">
 <div class="sourceCode" id="cb73"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Plotting the model with percentile values</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/rpart.plot/man/rpart.plot.html">rpart.plot</a></span><span class="op">(</span><span class="va">model_rpart</span>, extra <span class="op">=</span> <span class="st">"auto"</span>, type <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">rpart.plot</span><span class="op">(</span><span class="va">model_rpart</span>, extra <span class="op">=</span> <span class="st">"auto"</span>, type <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="intro_stat_model_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -1302,7 +1302,7 @@ Unit\,of\,effect\,size = \frac{Unit\,of\,response\,variable}{Unit\,of\,explarato
 <p>Suppose we have a response variable called ‘rent’ (Dollars) and we have a categorical explanatory variable called ‘city’. Let us say the variable ‘city’ has two levels; Chicago and New York. The meaning of effect size values in this context would be the numerical difference in the response variable when input is changed from one category to another. If our effect size in moving from Chicago to New York is 500 Dollars, then this means that the rent increases by 500 when we move from Chicago to New York.</p>
 <p>Here the calculated effect size is will have the same unit as the response variable</p>
 <p>Look at the following exercise, we will use the <code>Used_Fords</code> dataset in the <code>{mosaicModel}</code> package in R. The dataset contains details about used Ford cars. We will see if the price of the cars (Price) has any relationship with both, how old the car is (Age) and the colour of the car (Color). We will build two linear models using <code>Price</code> as the response variable. But one model will have <code>Age</code> and the other will have <code>Color</code> as the explanatory variable. The units are; Price = <span class="math inline">USD</span> and Age = <span class="math inline">years</span></p>
-<p>We will calculate the effect sizes using the <code><a href="https://rdrr.io/pkg/statisticalModeling/man/effect_size.html">effect_size()</a></code> function from the <code>{statisticalModeling }</code> package. The <code><a href="https://rdrr.io/pkg/statisticalModeling/man/effect_size.html">effect_size()</a></code> function takes in two arguments; the model and a formula indicating which variable to vary when looking at the model output. The effect size to <code>Age</code> will be represented in dollars/year and the effect size to <code>Colour</code> will be represented as a difference in dollars when changing from one colour to another.</p>
+<p>We will calculate the effect sizes using the <code>effect_size()</code> function from the <code>{statisticalModeling }</code> package. The <code>effect_size()</code> function takes in two arguments; the model and a formula indicating which variable to vary when looking at the model output. The effect size to <code>Age</code> will be represented in dollars/year and the effect size to <code>Colour</code> will be represented as a difference in dollars when changing from one colour to another.</p>
 <div class="cell">
 <div class="sourceCode" id="cb82"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">mosaicModel</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">statisticalModeling</span><span class="op">)</span></span>
@@ -1313,7 +1313,7 @@ Unit\,of\,effect\,size = \frac{Unit\,of\,response\,variable}{Unit\,of\,explarato
 <span><span class="va">model_car_age</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Price</span> <span class="op">~</span>  <span class="va">Age</span>, data <span class="op">=</span> <span class="va">Used_Fords</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the effect sizes by varying age</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/effect_size.html">effect_size</a></span><span class="op">(</span><span class="va">model_car_age</span>, <span class="op">~</span> <span class="va">Age</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">effect_size</span><span class="op">(</span><span class="va">model_car_age</span>, <span class="op">~</span> <span class="va">Age</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -1329,7 +1329,7 @@ Unit\,of\,effect\,size = \frac{Unit\,of\,response\,variable}{Unit\,of\,explarato
 <span><span class="va">model_car_age</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Price</span> <span class="op">~</span>  <span class="va">Color</span>, data <span class="op">=</span> <span class="va">Used_Fords</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Calculating the effect sizes by varying colour</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/statisticalModeling/man/effect_size.html">effect_size</a></span><span class="op">(</span><span class="va">model_car_age</span>, <span class="op">~</span> <span class="va">Color</span>, Color <span class="op">=</span> <span class="st">"blue"</span>, to <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu">effect_size</span><span class="op">(</span><span class="va">model_car_age</span>, <span class="op">~</span> <span class="va">Color</span>, Color <span class="op">=</span> <span class="st">"blue"</span>, to <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -1339,7 +1339,7 @@ Unit\,of\,effect\,size = \frac{Unit\,of\,response\,variable}{Unit\,of\,explarato
 </div>
 </div>
 </div>
-<p>For categorical explanatory variables, the <code><a href="https://rdrr.io/pkg/statisticalModeling/man/effect_size.html">effect_size()</a></code> function automatically takes appropriate levels. However, we can manually change this behaviour. From the given code, the effect size to colour is calculated when the colour of the car changes from blue to red. Here the effect size is represented in the change column. The value is -3290. This means that the price of the car reduces by 3290 dollars when the colour of the car changes from blue to red.</p>
+<p>For categorical explanatory variables, the <code>effect_size()</code> function automatically takes appropriate levels. However, we can manually change this behaviour. From the given code, the effect size to colour is calculated when the colour of the car changes from blue to red. Here the effect size is represented in the change column. The value is -3290. This means that the price of the car reduces by 3290 dollars when the colour of the car changes from blue to red.</p>
 </section><section id="conclusion" class="level2" data-number="8"><h2 data-number="8" class="anchored" data-anchor-id="conclusion">
 <span class="header-section-number">8</span> Conclusion</h2>
 <p>I hope this article provided you with a good learning experience. In a nutshell, we learned;</p>
@@ -1367,7 +1367,7 @@ Unit\,of\,effect\,size = \frac{Unit\,of\,response\,variable}{Unit\,of\,explarato
 <li>Using the model to predict values outside the data</li>
 <li>Calculating the mean of the square of the prediction errors</li>
 <li>Using error to compare models to aid explanatory variable selection</li>
-<li>Cross-validation technique and model iteration by <code><a href="https://rdrr.io/pkg/statisticalModeling/man/cv_pred_error.html">cv_pred_error()</a></code> function</li>
+<li>Cross-validation technique and model iteration by <code>cv_pred_error()</code> function</li>
 <li>Prediction error for a categorical response variable</li>
 </ul>
 </li>
