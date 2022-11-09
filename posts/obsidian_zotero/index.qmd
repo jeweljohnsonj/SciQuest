@@ -94,6 +94,9 @@ As an example my .bib file location is the following; `/home/jewel/Downloads/Exa
 
 The syntax of the citations template that I am using is the following;
 
+:::{.callout-note collapse="true"}
+# Citation template syntax (click here to see the code)
+
 ```
 ---
 title: "{{title}}"
@@ -137,6 +140,8 @@ tags::
 1. 
 
 ```
+:::
+
 You can visit the official GitHub [repo](https://github.com/hans/obsidian-citation-plugin) of the Citations plugin or read the instructions shown in the plugin window in Obsidian to learn more about how to customize the template.
 
 You also need to configure the 'Pandoc Reference List' plugin. To use this plugin you would need the `pandoc` package installed on your computer. Most operating systems have it pre-installed and if you don't have it then please visit [here](https://pandoc.org/installing.html) for info on how to install the package. For Linux users, you can install 'pandoc' using your package manager by searching.
@@ -159,6 +164,9 @@ I have also made a literature table using the 'Dataview' plugin. You can configu
 
 The source code is as follows;
 
+:::{.callout-note collapse="true"}
+# Literature table syntax (click here to see the code)
+
 ````
 ```dataview
 table title, authors, year, tags
@@ -166,8 +174,9 @@ from "Literature_collection"
 sort year desc
 ```
 ````
+:::
 
-You can learn more about how to configure the table [here](https://github.com/blacksmithgu/obsidian-dataview).
+The syntax picks up .yaml headers like title, authors, year and tags, all of which have been pre configured in the literature .md files using the Citations plugin template that we saw before. You can learn more about how to configure the table [here](https://github.com/blacksmithgu/obsidian-dataview).
 
 ![Literature table](images/literature_table.png)
 
