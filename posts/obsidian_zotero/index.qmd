@@ -25,7 +25,7 @@ Before we begin, the picture given below shows my Obsidian interface. The interf
 ![A glimpse of my Obsidian interface](images/obsidian_interface.png){group="elsewhere"
 description="My Obsidian interface featuring different sections."}
 
-![Different sections of the interface](images/obsidian_interface_inkscape.svg){group="elsewhere"
+![Different sections of the interface](images/obsidian_interface_inkscape.png){group="elsewhere"
 description="Each section functions or displays a specific info which can enhance the note-taking experience"}
 :::
 
