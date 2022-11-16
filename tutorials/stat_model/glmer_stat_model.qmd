@@ -520,7 +520,7 @@ model_lmer_predict <- ggpredict(model_lmer, terms = c("expenditure"))
 plot(model_lmer_predict)
 ```
 
-## Plotting the residulas
+## Plotting the residuals
 
 We can use the base `plot()` function to plot the residuals of the models.
 

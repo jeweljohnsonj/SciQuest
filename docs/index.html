@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -107,23 +107,26 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html">Blog</a>
+    <a class="nav-link" href="./blog.html">
+ <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutorials.html">Tutorials</a>
+    <a class="nav-link" href="./tutorials.html">
+ <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://jeweljohnsonj.github.io/jewel_resume/">About me</a>
+    <a class="nav-link" href="https://jeweljohnsonj.github.io/jewel_resume/">
+ <span class="menu-text">About me</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/jeweljohnsonj/one-carat-blog"><i class="bi bi-github" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://twitter.com/jeweljohnsonj"><i class="bi bi-twitter" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
@@ -145,10 +148,11 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <iframe src="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1x140XobOdXwflXTyN53o_0udhJAOW8SVnPgRX5iXtxE&amp;font=Default&amp;lang=en&amp;initial_zoom=2&amp;height=650" width="100%" height="650" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" frameborder="0">
 </iframe>
 </div>
-<p>Hey there! My name is Jewel Johnson and I am an aspiring ecologist who is interested in behaviour, vision and in the effect of human activities on animals (especially insects). I did my master’s in Biology from the <a href="https://www.iisertvm.ac.in/">Indian Institute of Science Education and Research, Thiruvananthapuram</a> (IISER-TVM). My master’s thesis was on understanding the <em>Visual ecology of the giant honeybee (Apis dorsata)</em> under the guidance of <a href="https://faculty.iisertvm.ac.in/beelab/">Prof.&nbsp;Hema Somanathan</a> at IISER-TVM.</p>
-<blockquote class="blockquote">
-<p>Currently, I am looking for research labs to join for a PhD 😇</p>
-</blockquote>
+<p>Hey there! My name is Jewel Johnson and I am an aspiring ecologist who is interested in behaviour, vision and in the effect of human activities on animals (especially insects).</p>
+<ul>
+<li><p>I did my master’s in Biology from the <a href="https://www.iisertvm.ac.in/">Indian Institute of Science Education and Research, Thiruvananthapuram</a> (IISER-TVM). My master’s thesis was on understanding the <em>Visual ecology of the giant honeybee (Apis dorsata)</em> under the guidance of <a href="https://faculty.iisertvm.ac.in/beelab/">Prof.&nbsp;Hema Somanathan</a> at IISER-TVM.</p></li>
+<li><p>I am an incoming Ph.D.&nbsp;student in <a href="https://www.animalbehaviorlab.com/">Dr.&nbsp;Jessica Ward’s lab</a> at <a href="https://www.bsu.edu/">Ball State University</a>, Indiana, and will be studying embryonic social learning using fathead minnow as a model organism.</p></li>
+</ul>
 <p>I made this blog using the <a href="https://quarto.org/">quarto</a> package. My blog posts are generally focused on science communication and R programming. I also believe that teaching refines one’s ability in learning and comprehension. Therefore I document my learning experience by writing extensive tutorials on the topic I am learning. You can find them in the ‘Tutorials’ section in the navigation bar.</p>
 <center>
 <a href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_3/maxflags_9/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
@@ -198,7 +202,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -234,24 +255,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.2.269">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jewel Johnson">
 <meta name="dcterms.date" content="2022-08-28">
@@ -147,9 +147,9 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </script><style>html{ scroll-behavior: smooth; }</style>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script><script src="../../site_libs/quarto-diagram/mermaid-init.js"></script><link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <link href="../../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
-<script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script><script src="../../site_libs/quarto-diagram/mermaid.min.js"></script><script src="../../site_libs/quarto-diagram/mermaid-init.js"></script><link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
-<script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script><script>document.addEventListener("DOMContentLoaded", function () {
+<script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script><script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script><script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
  for (var i = 0; i < mathElements.length; i++) {
@@ -195,23 +195,26 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
 <li class="nav-item">
-    <a class="nav-link" href="../../blog.html">Blog</a>
+    <a class="nav-link" href="../../blog.html">
+ <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../tutorials.html">Tutorials</a>
+    <a class="nav-link" href="../../tutorials.html">
+ <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://jeweljohnsonj.github.io/jewel_resume/">About me</a>
+    <a class="nav-link" href="https://jeweljohnsonj.github.io/jewel_resume/">
+ <span class="menu-text">About me</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/jeweljohnsonj/one-carat-blog"><i class="bi bi-github" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://twitter.com/jeweljohnsonj"><i class="bi bi-twitter" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
 </ul>
 <div id="quarto-search" class="" title="Search"></div>
@@ -247,6 +250,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
         <p class="date">August 28, 2022</p>
       </div>
     </div>
+    
       
     </div>
     
@@ -272,7 +276,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
   </ul>
 </li>
   <li><a href="#plotting-lmer-models" id="toc-plotting-lmer-models" class="nav-link" data-scroll-target="#plotting-lmer-models"><span class="toc-section-number">6</span>  Plotting lmer models</a></li>
-  <li><a href="#plotting-the-residulas" id="toc-plotting-the-residulas" class="nav-link" data-scroll-target="#plotting-the-residulas"><span class="toc-section-number">7</span>  Plotting the residulas</a></li>
+  <li><a href="#plotting-the-residuals" id="toc-plotting-the-residuals" class="nav-link" data-scroll-target="#plotting-the-residuals"><span class="toc-section-number">7</span>  Plotting the residuals</a></li>
   <li><a href="#plotting-the-cofidence-intervals" id="toc-plotting-the-cofidence-intervals" class="nav-link" data-scroll-target="#plotting-the-cofidence-intervals"><span class="toc-section-number">8</span>  Plotting the cofidence intervals</a></li>
   <li><a href="#null-hypothesis-testing" id="toc-null-hypothesis-testing" class="nav-link" data-scroll-target="#null-hypothesis-testing"><span class="toc-section-number">9</span>  Null hypothesis testing</a></li>
   <li><a href="#model-comparison-using-anova" id="toc-model-comparison-using-anova" class="nav-link" data-scroll-target="#model-comparison-using-anova"><span class="toc-section-number">10</span>  Model comparison using ANOVA</a></li>
@@ -356,7 +360,7 @@ TL;DR
 <div>
 <p>
 </p>
-<pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">%%{init: {'securityLevel': 'loose', 'theme':'base'}}%%
+<pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">%%{init: {'securityLevel': 'loose', 'theme':'base'}}%%
 flowchart TB
   A[Education] --&gt; B(School 1)
   A --&gt; C(School 2)
@@ -522,9 +526,9 @@ flowchart TB
 <p>The coefficient for Alameda county is the greatest out of all the counties, which is why we got all the intercept values as negative in the earlier case. Also, the p-value associated with expenditure (p = 0.54) is greater than 0.05 suggesting that expenditure does not explain the variance seen in the average reading scores.</p>
 <section id="adding-a-random-intercept" class="level3" data-number="5.1"><h3 data-number="5.1" class="anchored" data-anchor-id="adding-a-random-intercept">
 <span class="header-section-number">5.1</span> Adding a random intercept</h3>
-<p>What if we only want to see how expenditure affects the reading score without the county differences? Let us build a linear mixed effects model with <code>county</code> as the ‘random effect’ and ‘expenditure’ as the ‘fixed effect’. To build a linear mixed effects model we use the function <code>lmer()</code> from the <a href="https://github.com/lme4/lme4/">lme4</a> package in R.</p>
+<p>What if we only want to see how expenditure affects the reading score without the county differences? Let us build a linear mixed effects model with <code>county</code> as the ‘random effect’ and ‘expenditure’ as the ‘fixed effect’. To build a linear mixed effects model we use the function <code><a href="https://rdrr.io/pkg/lme4/man/lmer.html">lmer()</a></code> from the <a href="https://github.com/lme4/lme4/">lme4</a> package in R.</p>
 <p>The syntax for building a linear mixed effects model is very similar to the syntax we used while using the <code><a href="https://rdrr.io/r/stats/lm.html">lm()</a></code> and <code><a href="https://rdrr.io/r/stats/glm.html">glm()</a></code> functions. Here we are considering <code>county</code> as a random effect, moreover, the <code>county</code> variable is categorical and therefore, we are essentially considering <code>county</code> as a random intercept.</p>
-<p>The notation for specifying random effect within the model formula is <code>(1 | county)</code>. If we do not specify a random effect term in the model formula, the <code>lmer()</code> function won’t run. Without further ado, let’s see it in action.</p>
+<p>The notation for specifying random effect within the model formula is <code>(1 | county)</code>. If we do not specify a random effect term in the model formula, the <code><a href="https://rdrr.io/pkg/lme4/man/lmer.html">lmer()</a></code> function won’t run. Without further ado, let’s see it in action.</p>
 <p>The <code><a href="https://generics.r-lib.org/reference/tidy.html">tidy()</a></code> function from the <a href="https://broom.tidymodels.org/">broom</a> package in R only work for models built using <code><a href="https://rdrr.io/r/stats/lm.html">lm()</a></code> and <code><a href="https://rdrr.io/r/stats/glm.html">glm()</a></code>. To extend its usage to mixed effects models, we have to install an additional package called <a href="https://github.com/bbolker/broom.mixed">broom.mixed</a></p>
 <div class="cell">
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va"><a href="https://github.com/lme4/lme4/">lme4</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">'lme4'</span><span class="op">)</span></span>
@@ -536,7 +540,7 @@ flowchart TB
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"CASchools"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Building a linear mixed effects model</span></span>
-<span><span class="va">model_lmer</span> <span class="op">&lt;-</span> <span class="fu">lmer</span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">expenditure</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">county</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">CASchools</span><span class="op">)</span></span>
+<span><span class="va">model_lmer</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lme4/man/lmer.html">lmer</a></span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">expenditure</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">county</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">CASchools</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Extracting coefficients from the model</span></span>
 <span><span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html">tidy</a></span><span class="op">(</span><span class="va">model_lmer</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -582,24 +586,24 @@ flowchart TB
 </ol>
 <p>Now that we got a sense of the model summary of a linear mixed effects model, let us see some more functions in R that would be useful for extracting information from the model.</p>
 <ul>
-<li>To extract the coefficients of the fixed effect variables, use the <code>fixef()</code>
+<li>To extract the coefficients of the fixed effect variables, use the <code><a href="https://rdrr.io/pkg/nlme/man/fixed.effects.html">fixef()</a></code>
 </li>
 </ul>
 <div class="cell">
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Extracting the coefficients of the fixed effects</span></span>
-<span><span class="fu">fixef</span><span class="op">(</span><span class="va">model_lmer</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/pkg/nlme/man/fixed.effects.html">fixef</a></span><span class="op">(</span><span class="va">model_lmer</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> (Intercept)  expenditure 
 6.454923e+02 1.954755e-03 </code></pre>
 </div>
 </div>
 <ul>
-<li>To extract the coefficients of the random effect variables, use the <code>ranef()</code>
+<li>To extract the coefficients of the random effect variables, use the <code><a href="https://rdrr.io/pkg/nlme/man/random.effects.html">ranef()</a></code>
 </li>
 </ul>
 <div class="cell">
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Extracting the coefficients of the fixed effects</span></span>
-<span><span class="fu">ranef</span><span class="op">(</span><span class="va">model_lmer</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/pkg/nlme/man/random.effects.html">ranef</a></span><span class="op">(</span><span class="va">model_lmer</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$county
                  (Intercept)
@@ -699,7 +703,7 @@ expenditure -8.340782e-04 4.796441e-03</code></pre>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"CASchools"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Building a linear mixed effects model using random slope and random intercept</span></span>
-<span><span class="va">model_lmer2</span> <span class="op">&lt;-</span> <span class="fu">lmer</span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">expenditure</span> <span class="op">+</span> <span class="op">(</span><span class="va">students</span> <span class="op">|</span> <span class="va">county</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">CASchools</span><span class="op">)</span></span>
+<span><span class="va">model_lmer2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lme4/man/lmer.html">lmer</a></span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">expenditure</span> <span class="op">+</span> <span class="op">(</span><span class="va">students</span> <span class="op">|</span> <span class="va">county</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">CASchools</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Extracting coefficients from the model</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">model_lmer2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -733,9 +737,9 @@ optimizer (nloptwrap) convergence code: 0 (OK)
 boundary (singular) fit: see help('isSingular')</code></pre>
 </div>
 </div>
-<p>The variance of students is very less and therefore might not be affecting the scores that much. Also, note that we got an error message in the output saying <code>boundary (singular) fit</code>. This generally indicates that the estimate for the random effect variable that we used is very small. In our, it means that the random effect slopes of students are very small which we can see using the <code>ranef()</code> function. So we can remove <code>students</code> from our model.</p>
+<p>The variance of students is very less and therefore might not be affecting the scores that much. Also, note that we got an error message in the output saying <code>boundary (singular) fit</code>. This generally indicates that the estimate for the random effect variable that we used is very small. In our, it means that the random effect slopes of students are very small which we can see using the <code><a href="https://rdrr.io/pkg/nlme/man/random.effects.html">ranef()</a></code> function. So we can remove <code>students</code> from our model.</p>
 <div class="cell">
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">ranef</span><span class="op">(</span><span class="va">model_lmer2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/nlme/man/random.effects.html">ranef</a></span><span class="op">(</span><span class="va">model_lmer2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$county
                 (Intercept)      students
@@ -799,7 +803,7 @@ with conditional variances for "county" </code></pre>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"CASchools"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Building a linear mixed effects model (no correlation between random effects)</span></span>
-<span><span class="va">model_lmer3</span> <span class="op">&lt;-</span> <span class="fu">lmer</span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">expenditure</span> <span class="op">+</span> <span class="op">(</span><span class="va">students</span> <span class="op">||</span> <span class="va">county</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">CASchools</span><span class="op">)</span></span>
+<span><span class="va">model_lmer3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lme4/man/lmer.html">lmer</a></span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">expenditure</span> <span class="op">+</span> <span class="op">(</span><span class="va">students</span> <span class="op">||</span> <span class="va">county</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">CASchools</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Extracting coefficients from the model</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">model_lmer3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -853,7 +857,7 @@ Model is nearly unidentifiable: large eigenvalue ratio
 <span><span class="va">CASchools_scaled</span><span class="op">$</span><span class="va">expenditure_scaled</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/scale.html">scale</a></span><span class="op">(</span><span class="va">CASchools_scaled</span><span class="op">$</span><span class="va">expenditure</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Building a linear mixed effects model (same fixed and random effect)</span></span>
-<span><span class="va">model_lmer4</span> <span class="op">&lt;-</span> <span class="fu">lmer</span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">expenditure</span> <span class="op">+</span> <span class="op">(</span><span class="va">expenditure</span> <span class="op">|</span> <span class="va">county</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">CASchools</span><span class="op">)</span></span>
+<span><span class="va">model_lmer4</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lme4/man/lmer.html">lmer</a></span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">expenditure</span> <span class="op">+</span> <span class="op">(</span><span class="va">expenditure</span> <span class="op">|</span> <span class="va">county</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">CASchools</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Extracting coefficients from the model</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">model_lmer4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -888,7 +892,7 @@ unable to evaluate scaled gradient
 Model failed to converge: degenerate  Hessian with 1 negative eigenvalues</code></pre>
 </div>
 </div>
-<p>The table below shows all the different types of random effect syntaxes we can use in the <code>lmer()</code> function.</p>
+<p>The table below shows all the different types of random effect syntaxes we can use in the <code><a href="https://rdrr.io/pkg/lme4/man/lmer.html">lmer()</a></code> function.</p>
 <table class="table">
 <caption>Different random effect syntaxes used in the <a href="https://github.com/lme4/lme4/">lme4</a> package</caption>
 <thead><tr class="header">
@@ -934,7 +938,7 @@ Model failed to converge: degenerate  Hessian with 1 negative eigenvalues</code>
 <span><span class="va">model_lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">expenditure</span> <span class="op">+</span> <span class="va">county</span>, data <span class="op">=</span> <span class="va">CASchools</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Building a linear mixed effects model</span></span>
-<span><span class="va">model_lmer</span> <span class="op">&lt;-</span> <span class="fu">lmer</span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">expenditure</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">county</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">CASchools</span><span class="op">)</span></span>
+<span><span class="va">model_lmer</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lme4/man/lmer.html">lmer</a></span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">expenditure</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">county</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">CASchools</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Saving predicted values for each model</span></span>
 <span><span class="va">data</span> <span class="op">&lt;-</span> <span class="va">CASchools</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>predicted_lm <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">model_lm</span><span class="op">)</span>,</span>
@@ -967,7 +971,7 @@ Model failed to converge: degenerate  Hessian with 1 negative eigenvalues</code>
 <span><span class="va">model_lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">expenditure</span> <span class="op">+</span> <span class="va">teachers</span>, data <span class="op">=</span> <span class="va">CASchools</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Building a linear mixed effects model</span></span>
-<span><span class="va">model_lmer</span> <span class="op">&lt;-</span> <span class="fu">lmer</span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">expenditure</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">teachers</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">CASchools</span><span class="op">)</span></span>
+<span><span class="va">model_lmer</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lme4/man/lmer.html">lmer</a></span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">expenditure</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">teachers</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">CASchools</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Saving predicted values for each model</span></span>
 <span><span class="va">data</span> <span class="op">&lt;-</span> <span class="va">CASchools</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>predicted_lm <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">model_lm</span><span class="op">)</span>,</span>
@@ -1000,10 +1004,10 @@ Model failed to converge: degenerate  Hessian with 1 negative eigenvalues</code>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"CASchools"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Building a linear mixed effects model</span></span>
-<span><span class="va">model_lmer</span> <span class="op">&lt;-</span> <span class="fu">lmer</span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">expenditure</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">county</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">CASchools</span><span class="op">)</span></span>
+<span><span class="va">model_lmer</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lme4/man/lmer.html">lmer</a></span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">expenditure</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">county</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">CASchools</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Predicting values</span></span>
-<span><span class="va">model_lmer_predict</span> <span class="op">&lt;-</span> <span class="fu">ggpredict</span><span class="op">(</span><span class="va">model_lmer</span>, terms <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"expenditure"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">model_lmer_predict</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://strengejacke.github.io/ggeffects/reference/ggpredict.html">ggpredict</a></span><span class="op">(</span><span class="va">model_lmer</span>, terms <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"expenditure"</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting the model</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">model_lmer_predict</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1011,8 +1015,8 @@ Model failed to converge: degenerate  Hessian with 1 negative eigenvalues</code>
 <p><img src="glmer_stat_model_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-</section><section id="plotting-the-residulas" class="level2" data-number="7"><h2 data-number="7" class="anchored" data-anchor-id="plotting-the-residulas">
-<span class="header-section-number">7</span> Plotting the residulas</h2>
+</section><section id="plotting-the-residuals" class="level2" data-number="7"><h2 data-number="7" class="anchored" data-anchor-id="plotting-the-residuals">
+<span class="header-section-number">7</span> Plotting the residuals</h2>
 <p>We can use the base <code><a href="https://rdrr.io/r/graphics/plot.default.html">plot()</a></code> function to plot the residuals of the models.</p>
 <div class="cell">
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/lme4/lme4/">lme4</a></span><span class="op">)</span></span>
@@ -1026,7 +1030,7 @@ Model failed to converge: degenerate  Hessian with 1 negative eigenvalues</code>
 <span><span class="va">model_lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">expenditure</span> <span class="op">+</span> <span class="va">county</span>, data <span class="op">=</span> <span class="va">CASchools</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Building a linear mixed effects model</span></span>
-<span><span class="va">model_lmer</span> <span class="op">&lt;-</span> <span class="fu">lmer</span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">expenditure</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">county</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">CASchools</span><span class="op">)</span></span>
+<span><span class="va">model_lmer</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lme4/man/lmer.html">lmer</a></span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">expenditure</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">county</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">CASchools</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting the linear model diagnostics</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span><span class="op">(</span>mfrow<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">2</span><span class="op">)</span><span class="op">)</span></span>
@@ -1053,12 +1057,12 @@ Model failed to converge: degenerate  Hessian with 1 negative eigenvalues</code>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"CASchools"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Building a linear mixed effects model</span></span>
-<span><span class="va">model_lmer</span> <span class="op">&lt;-</span> <span class="fu">lmer</span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">expenditure</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">county</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">CASchools</span><span class="op">)</span></span>
+<span><span class="va">model_lmer</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lme4/man/lmer.html">lmer</a></span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">expenditure</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">county</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">CASchools</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Extracting the coefficients</span></span>
 <span><span class="va">model_lmer_coef</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html">tidy</a></span><span class="op">(</span><span class="va">model_lmer</span>, conf.int <span class="op">=</span> <span class="cn">T</span><span class="op">)</span></span>
 <span><span class="va">model_lmer_coef1</span> <span class="op">&lt;-</span> <span class="va">model_lmer_coef</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">effect</span> <span class="op">==</span> <span class="st">"fixed"</span> <span class="op">&amp;</span> <span class="va">term</span> <span class="op">!=</span> <span class="st">"(Intercept)"</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">effect</span> <span class="op">==</span> <span class="st">"fixed"</span> <span class="op">&amp;</span> <span class="va">term</span> <span class="op">!=</span> <span class="st">"(Intercept)"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting the 95% CI</span></span>
 <span><span class="va">model_lmer_conf</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">model_lmer_coef1</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">term</span>, y <span class="op">=</span> <span class="va">estimate</span>,</span>
@@ -1088,13 +1092,13 @@ Model failed to converge: degenerate  Hessian with 1 negative eigenvalues</code>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"CASchools"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Building a linear mixed effects model</span></span>
-<span><span class="va">model_lmer</span> <span class="op">&lt;-</span> <span class="fu">lmer</span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">expenditure</span> <span class="op">+</span> <span class="va">teachers</span> <span class="op">+</span> <span class="va">students</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">county</span><span class="op">)</span>,</span>
+<span><span class="va">model_lmer</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lme4/man/lmer.html">lmer</a></span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">expenditure</span> <span class="op">+</span> <span class="va">teachers</span> <span class="op">+</span> <span class="va">students</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">county</span><span class="op">)</span>,</span>
 <span>                   data <span class="op">=</span> <span class="va">CASchools</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Extracting the coefficients</span></span>
 <span><span class="va">model_lmer_coef</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html">tidy</a></span><span class="op">(</span><span class="va">model_lmer</span>, conf.int <span class="op">=</span> <span class="cn">T</span><span class="op">)</span></span>
 <span><span class="va">model_lmer_coef1</span> <span class="op">&lt;-</span> <span class="va">model_lmer_coef</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">effect</span> <span class="op">==</span> <span class="st">"fixed"</span> <span class="op">&amp;</span> <span class="va">term</span> <span class="op">!=</span> <span class="st">"(Intercept)"</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">effect</span> <span class="op">==</span> <span class="st">"fixed"</span> <span class="op">&amp;</span> <span class="va">term</span> <span class="op">!=</span> <span class="st">"(Intercept)"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting the 95% CI</span></span>
 <span><span class="va">model_lmer_conf</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">model_lmer_coef1</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">term</span>, y <span class="op">=</span> <span class="va">estimate</span>,</span>
@@ -1115,7 +1119,7 @@ Model failed to converge: degenerate  Hessian with 1 negative eigenvalues</code>
 </div>
 </section><section id="null-hypothesis-testing" class="level2" data-number="9"><h2 data-number="9" class="anchored" data-anchor-id="null-hypothesis-testing">
 <span class="header-section-number">9</span> Null hypothesis testing</h2>
-<p>As mentioned earlier, p values are not calculated for fixed terms using the <a href="https://github.com/lme4/lme4/">lme4</a> package for various reasons. So if we have to calculate the p values, we have to use the <a href="https://github.com/runehaubo/lmerTestR">lmerTest</a> package in R. By loading the <a href="https://github.com/runehaubo/lmerTestR">lmerTest</a> package, the <a href="https://github.com/lme4/lme4/">lme4</a> package is automatically loaded. We don’t have to provide any special syntax for calculating the p-values, instead, p-values are automatically calculated when calling the <code>lmer()</code> function.</p>
+<p>As mentioned earlier, p values are not calculated for fixed terms using the <a href="https://github.com/lme4/lme4/">lme4</a> package for various reasons. So if we have to calculate the p values, we have to use the <a href="https://github.com/runehaubo/lmerTestR">lmerTest</a> package in R. By loading the <a href="https://github.com/runehaubo/lmerTestR">lmerTest</a> package, the <a href="https://github.com/lme4/lme4/">lme4</a> package is automatically loaded. We don’t have to provide any special syntax for calculating the p-values, instead, p-values are automatically calculated when calling the <code><a href="https://rdrr.io/pkg/lme4/man/lmer.html">lmer()</a></code> function.</p>
 <div class="cell">
 <div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va"><a href="https://github.com/runehaubo/lmerTestR">lmerTest</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">'lmerTest'</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/runehaubo/lmerTestR">lmerTest</a></span><span class="op">)</span></span>
@@ -1124,7 +1128,7 @@ Model failed to converge: degenerate  Hessian with 1 negative eigenvalues</code>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"CASchools"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Building a linear mixed effects model</span></span>
-<span><span class="va">model_lmer</span> <span class="op">&lt;-</span> <span class="fu">lmer</span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">expenditure</span> <span class="op">+</span> <span class="va">teachers</span> <span class="op">+</span> <span class="va">students</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">county</span><span class="op">)</span>,</span>
+<span><span class="va">model_lmer</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lmerTest/man/lmer.html">lmer</a></span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">expenditure</span> <span class="op">+</span> <span class="va">teachers</span> <span class="op">+</span> <span class="va">students</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">county</span><span class="op">)</span>,</span>
 <span>                   data <span class="op">=</span> <span class="va">CASchools</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Printing model summary</span></span>
@@ -1177,11 +1181,11 @@ Some predictor variables are on very different scales: consider rescaling</code>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"CASchools"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Building a linear mixed effects model with only random effect (null model)</span></span>
-<span><span class="va">model_lmer_null</span> <span class="op">&lt;-</span> <span class="fu">lmer</span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">county</span><span class="op">)</span>,</span>
+<span><span class="va">model_lmer_null</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lme4/man/lmer.html">lmer</a></span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">county</span><span class="op">)</span>,</span>
 <span>                   data <span class="op">=</span> <span class="va">CASchools</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Building a linear mixed effects model with fixed effect</span></span>
-<span><span class="va">model_lmer_teacher</span> <span class="op">&lt;-</span> <span class="fu">lmer</span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">teachers</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">county</span><span class="op">)</span>,</span>
+<span><span class="va">model_lmer_teacher</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lme4/man/lmer.html">lmer</a></span><span class="op">(</span><span class="va">read</span> <span class="op">~</span> <span class="va">teachers</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">county</span><span class="op">)</span>,</span>
 <span>                   data <span class="op">=</span> <span class="va">CASchools</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Comparing models using ANOVA</span></span>
@@ -1199,7 +1203,7 @@ Some predictor variables are on very different scales: consider rescaling</code>
 </section><section id="generalized-linear-mixed-effects-model" class="level2" data-number="11"><h2 data-number="11" class="anchored" data-anchor-id="generalized-linear-mixed-effects-model">
 <span class="header-section-number">11</span> Generalized linear mixed effects model</h2>
 <p>Same way as we made the transition from linear models to generalized linear models, we now transition from linear mixed effects model to generalized mixed effects model. As you might have guessed, we will be dealing with datasets which do not follow the normal distribution and are in the form of a count or binomial type.</p>
-<p>We use the <code>glmer()</code> function to build generalized linear mixed effects models (glmer models) and use the <code>family = " "</code> argument to specify the distribution of residuals of the data. If it’s non-normal and is count then we use <code>family = "poisson"</code> and if it’s binomial then we use <code>family = "binomial"</code>.</p>
+<p>We use the <code><a href="https://rdrr.io/pkg/lme4/man/glmer.html">glmer()</a></code> function to build generalized linear mixed effects models (glmer models) and use the <code>family = " "</code> argument to specify the distribution of residuals of the data. If it’s non-normal and is count then we use <code>family = "poisson"</code> and if it’s binomial then we use <code>family = "binomial"</code>.</p>
 <section id="logistic-mixed-effects-model" class="level3" data-number="11.1"><h3 data-number="11.1" class="anchored" data-anchor-id="logistic-mixed-effects-model">
 <span class="header-section-number">11.1</span> Logistic mixed effects model</h3>
 <p>For this exercise, we will be using the <code>CreditCard</code> dataset from the <code>{AER}</code> package in R. The dataset contains the credit history of a sample of applicants for a type of credit card. We will be building a glmer model to predict the success of the acceptance of the credit card application (<code>card</code>) using yearly income (<code>income</code>) as the fixed effect and the house ownership status (<code>owner</code>) as the random effect.</p>
@@ -1230,7 +1234,7 @@ Some predictor variables are on very different scales: consider rescaling</code>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"CreditCard"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Building a logistic mixed effects model</span></span>
-<span><span class="va">model_glmer_logistic</span> <span class="op">&lt;-</span> <span class="fu">glmer</span><span class="op">(</span><span class="va">card</span> <span class="op">~</span> <span class="va">income</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">owner</span><span class="op">)</span>, family <span class="op">=</span> <span class="st">"binomial"</span>,</span>
+<span><span class="va">model_glmer_logistic</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lme4/man/glmer.html">glmer</a></span><span class="op">(</span><span class="va">card</span> <span class="op">~</span> <span class="va">income</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">owner</span><span class="op">)</span>, family <span class="op">=</span> <span class="st">"binomial"</span>,</span>
 <span>                           data <span class="op">=</span> <span class="va">CreditCard</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Printing the summary of the model</span></span>
@@ -1277,7 +1281,7 @@ income -0.564</code></pre>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"CreditCard"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Building a logistic mixed effects model</span></span>
-<span><span class="va">model_glmer_logistic</span> <span class="op">&lt;-</span> <span class="fu">glmer</span><span class="op">(</span><span class="va">card</span> <span class="op">~</span> <span class="va">income</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">owner</span><span class="op">)</span>, family <span class="op">=</span> <span class="st">"binomial"</span>,</span>
+<span><span class="va">model_glmer_logistic</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lme4/man/glmer.html">glmer</a></span><span class="op">(</span><span class="va">card</span> <span class="op">~</span> <span class="va">income</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">owner</span><span class="op">)</span>, family <span class="op">=</span> <span class="st">"binomial"</span>,</span>
 <span>                           data <span class="op">=</span> <span class="va">CreditCard</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Extracting the odds ratios</span></span>
@@ -1303,11 +1307,11 @@ income -0.564</code></pre>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"CreditCard"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Building a logistic mixed effects model</span></span>
-<span><span class="va">model_glmer_logistic</span> <span class="op">&lt;-</span> <span class="fu">glmer</span><span class="op">(</span><span class="va">card</span> <span class="op">~</span> <span class="va">income</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">owner</span><span class="op">)</span>, family <span class="op">=</span> <span class="st">"binomial"</span>,</span>
+<span><span class="va">model_glmer_logistic</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lme4/man/glmer.html">glmer</a></span><span class="op">(</span><span class="va">card</span> <span class="op">~</span> <span class="va">income</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">owner</span><span class="op">)</span>, family <span class="op">=</span> <span class="st">"binomial"</span>,</span>
 <span>                           data <span class="op">=</span> <span class="va">CreditCard</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Predicting values</span></span>
-<span><span class="va">model_glmer_logistic_predict</span> <span class="op">&lt;-</span> <span class="fu">ggpredict</span><span class="op">(</span><span class="va">model_glmer_logistic</span>, <span class="st">"income"</span><span class="op">)</span></span>
+<span><span class="va">model_glmer_logistic_predict</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://strengejacke.github.io/ggeffects/reference/ggpredict.html">ggpredict</a></span><span class="op">(</span><span class="va">model_glmer_logistic</span>, <span class="st">"income"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting the model</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">model_glmer_logistic_predict</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1346,7 +1350,7 @@ income -0.564</code></pre>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"RecreationDemand"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Building a poisson mixed effects model</span></span>
-<span><span class="va">model_glmer_poisson</span> <span class="op">&lt;-</span> <span class="fu">glmer</span><span class="op">(</span><span class="va">trips</span> <span class="op">~</span> <span class="va">income</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">ski</span><span class="op">)</span>, family <span class="op">=</span> <span class="st">"poisson"</span>,</span>
+<span><span class="va">model_glmer_poisson</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lme4/man/glmer.html">glmer</a></span><span class="op">(</span><span class="va">trips</span> <span class="op">~</span> <span class="va">income</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">ski</span><span class="op">)</span>, family <span class="op">=</span> <span class="st">"poisson"</span>,</span>
 <span>                           data <span class="op">=</span> <span class="va">RecreationDemand</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Printing the summary of the model</span></span>
@@ -1394,11 +1398,11 @@ income -0.269</code></pre>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"RecreationDemand"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Building a poisson mixed effects model</span></span>
-<span><span class="va">model_glmer_poisson</span> <span class="op">&lt;-</span> <span class="fu">glmer</span><span class="op">(</span><span class="va">trips</span> <span class="op">~</span> <span class="va">income</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">ski</span><span class="op">)</span>, family <span class="op">=</span> <span class="st">"poisson"</span>,</span>
+<span><span class="va">model_glmer_poisson</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lme4/man/glmer.html">glmer</a></span><span class="op">(</span><span class="va">trips</span> <span class="op">~</span> <span class="va">income</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">ski</span><span class="op">)</span>, family <span class="op">=</span> <span class="st">"poisson"</span>,</span>
 <span>                           data <span class="op">=</span> <span class="va">RecreationDemand</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Predicting values</span></span>
-<span><span class="va">model_glmer_poisson_predict</span> <span class="op">&lt;-</span> <span class="fu">ggpredict</span><span class="op">(</span><span class="va">model_glmer_poisson</span>,</span>
+<span><span class="va">model_glmer_poisson_predict</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://strengejacke.github.io/ggeffects/reference/ggpredict.html">ggpredict</a></span><span class="op">(</span><span class="va">model_glmer_poisson</span>,</span>
 <span>                                         terms <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"income"</span>, <span class="st">"ski"</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Plotting the model</span></span>
@@ -1460,7 +1464,7 @@ mean difference
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"sleep"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Building a linear mixed effect model</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="fu">lmer</span><span class="op">(</span><span class="va">extra</span> <span class="op">~</span> <span class="va">group</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">ID</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">sleep</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/lme4/man/lmer.html">lmer</a></span><span class="op">(</span><span class="va">extra</span> <span class="op">~</span> <span class="va">group</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">ID</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">sleep</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear mixed model fit by REML. t-tests use Satterthwaite's method [
 lmerModLmerTest]
@@ -1526,7 +1530,7 @@ group2 -0.324</code></pre>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"sleep"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Building a linear mixed effects model</span></span>
-<span><span class="va">sleep_model</span> <span class="op">&lt;-</span> <span class="fu">lmer</span><span class="op">(</span><span class="va">extra</span> <span class="op">~</span> <span class="va">group</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">ID</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">sleep</span><span class="op">)</span></span>
+<span><span class="va">sleep_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lme4/man/lmer.html">lmer</a></span><span class="op">(</span><span class="va">extra</span> <span class="op">~</span> <span class="va">group</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">ID</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">sleep</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Performing a ANOVA</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/anova.html">anova</a></span><span class="op">(</span><span class="va">sleep_model</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1560,7 +1564,7 @@ group2 -0.324</code></pre>
 </tr>
 <tr class="even">
 <td>Use <code><a href="https://rdrr.io/r/stats/lm.html">lm()</a></code> or <code><a href="https://rdrr.io/r/stats/glm.html">glm()</a></code> in base R</td>
-<td>Use <code>lmer()</code> or <code>glmer()</code> from <a href="https://github.com/lme4/lme4/">lme4</a> package in R</td>
+<td>Use <code><a href="https://rdrr.io/pkg/lme4/man/lmer.html">lmer()</a></code> or <code><a href="https://rdrr.io/pkg/lme4/man/glmer.html">glmer()</a></code> from <a href="https://github.com/lme4/lme4/">lme4</a> package in R</td>
 </tr>
 <tr class="odd">
 <td>Easier to explain</td>
@@ -1595,7 +1599,7 @@ group2 -0.324</code></pre>
 </section><div id="quarto-appendix" class="default"><section id="last-updated-on" class="level4 unnumbered unlisted appendix"><h2 class="quarto-appendix-heading">Last updated on</h2><div class="quarto-appendix-contents">
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-11-01 13:36:10 IST"</code></pre>
+<pre><code>[1] "2022-11-16 18:49:15 IST"</code></pre>
 </div>
 </div>
 <!-- Do not forget to put flag counter -->
@@ -1611,15 +1615,14 @@ Gelman, Andrew. 2005. <span>“Analysis of Variance—Why It Is More Important T
 </div>
 </div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{johnson2022,
   author = {Jewel Johnson},
-  editor = {},
   title = {Hierarchical and {Mixed} {Effects} {Models} in {R}},
   date = {2022-08-28},
-  url = {https://one-carat-blog.netlify.app//tutorials/stat_model/glmer_stat_model.html},
+  url = {https://one-carat-blog.netlify.app//glmer_stat_model.html},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-johnson2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
 Jewel Johnson. 2022. <span>“Hierarchical and Mixed Effects Models in
-R.”</span> August 28, 2022. <a href="https://one-carat-blog.netlify.app//tutorials/stat_model/glmer_stat_model.html">https://one-carat-blog.netlify.app//tutorials/stat_model/glmer_stat_model.html</a>.
+R.”</span> August 28, 2022. <a href="https://one-carat-blog.netlify.app//glmer_stat_model.html">https://one-carat-blog.netlify.app//glmer_stat_model.html</a>.
 </div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1661,7 +1664,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -1748,24 +1768,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script><script src="https://giscus.app/client.js" data-repo="jeweljohnsonj/one-carat-blog" data-repo-id="R_kgDOHW124A" data-category="General" data-category-id="DIC_kwDOHW124M4CPNVL" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
@@ -2332,7 +2370,7 @@ model_lmer_predict &lt;- ggpredict(model_lmer, terms = c("expenditure"))
 plot(model_lmer_predict)
 ```
 
-## Plotting the residulas
+## Plotting the residuals
 
 We can use the base `plot()` function to plot the residuals of the models.
 

@@ -17,7 +17,6 @@ number-sections: true
 highlight-style: github
 html-math-method: katex
 smooth-scroll: true
-number-sections: true
 code-link: true
 code-tools: true
 df-print: paged
