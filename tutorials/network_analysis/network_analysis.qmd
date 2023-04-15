@@ -1017,7 +1017,9 @@ In short, we learned about;
 12.   How to find communities in a network?
 13.   How to visualize the network in 3D using the `{threejs}` package ?
 
-This tutorial is made from my note while attending the 'Network Analysis in R' course in DataCamp. There are bound to be mistakes in this tutorial and some of the things which I have written are from my understanding of the topic which might not reflect accurately what the correct notion about the topic is, therefore if you come across mistakes, please comment on them below in the comments section. I am more interested to learn the 3D visualization techniques which I find to be super cool. If I would learn some of that I will be writing a sequel to this tutorial. Thank you!
+This tutorial is based on my notes from attending the 'Network Analysis in R' course on DataCamp. As with any personal notes, there may be mistakes and some of the information presented may not accurately reflect the topic. If you notice any errors, please feel free to leave a comment in the section below.
+
+I am particularly interested in learning about 3D visualization techniques, which I find to be fascinating. If I am able to learn more about this topic, I will write a sequel to this tutorial. Thank you for reading!
 
 
 <a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>
