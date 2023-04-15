@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.3.302">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Jewel Johnson">
 <meta name="dcterms.date" content="2021-12-13">
 <meta name="description" content="Learn how to manipulate your data with the dplyr package">
-<title>one carat blog - Chapter 2: Data manipulation using dplyr (part 1)</title>
+<title>SciQuest - Chapter 2: Data manipulation using dplyr (part 1)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,9 +17,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -46,43 +47,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -98,10 +69,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/quarto-contrib/social-share-0.1.0/social-share.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/social-share-0.1.0/all.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -130,13 +101,13 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </script><style>html{ scroll-behavior: smooth; }</style>
 <link href="../../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
 <script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script><link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="one carat blog - Chapter 2: Data manipulation using dplyr (part 1)">
+<meta property="og:title" content="SciQuest - Chapter 2: Data manipulation using dplyr (part 1)">
 <meta property="og:description" content="Learn how to manipulate your data with the dplyr package">
 <meta property="og:image" content="https://one-carat-blog.netlify.app/tutorials/data_man/images/dplyr.png">
-<meta property="og:site-name" content="one carat blog">
+<meta property="og:site-name" content="SciQuest">
 <meta property="og:image:height" content="1080">
 <meta property="og:image:width" content="1920">
-<meta name="twitter:title" content="one carat blog - Chapter 2: Data manipulation using dplyr (part 1)">
+<meta name="twitter:title" content="SciQuest - Chapter 2: Data manipulation using dplyr (part 1)">
 <meta name="twitter:description" content="Learn how to manipulate your data with the dplyr package">
 <meta name="twitter:image" content="https://one-carat-blog.netlify.app/tutorials/data_man/images/dplyr.png">
 <meta name="twitter:image-height" content="1080">
@@ -151,35 +122,40 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../../favicon.png" alt="" class="navbar-logo"></a>
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">one carat blog</span>
+    <span class="navbar-title">SciQuest</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
 <li class="nav-item">
-    <a class="nav-link" href="../../blog.html">Blog</a>
+    <a class="nav-link" href="../../blog.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../tutorials.html">Tutorials</a>
+    <a class="nav-link" href="../../tutorials.html" rel="" target="">
+ <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://jeweljohnsonj.github.io/jewel_resume/">About me</a>
+    <a class="nav-link" href="https://jeweljohnsonj.github.io/jewel_resume/" rel="" target="">
+ <span class="menu-text">About me</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/jeweljohnsonj/one-carat-blog"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/jeweljohnsonj/one-carat-blog" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/jeweljohnsonj"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/jeweljohnsonj" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
 </ul>
-<div id="quarto-search" class="" title="Search"></div>
+<div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
@@ -203,7 +179,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Jewel Johnson </p>
+               <p><a href="https://jeweljohnsonj.github.io/one-carat-blog/">Jewel Johnson</a> </p>
             </div>
     </div>
       
@@ -211,6 +187,13 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
         <p class="date">December 13, 2021</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Modified</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">April 14, 2023</p>
       </div>
     </div>
       
@@ -224,50 +207,50 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#introduction-to-dplyr-package" id="toc-introduction-to-dplyr-package" class="nav-link active" data-scroll-target="#introduction-to-dplyr-package"><span class="toc-section-number">1</span>  Introduction to dplyr package</a></li>
-  <li><a href="#the-pipe-operator" id="toc-the-pipe-operator" class="nav-link" data-scroll-target="#the-pipe-operator"><span class="toc-section-number">2</span>  The pipe operator %&gt;%</a></li>
+<li><a href="#introduction-to-dplyr-package" id="toc-introduction-to-dplyr-package" class="nav-link active" data-scroll-target="#introduction-to-dplyr-package"><span class="header-section-number">1</span> Introduction to dplyr package</a></li>
+  <li><a href="#the-pipe-operator" id="toc-the-pipe-operator" class="nav-link" data-scroll-target="#the-pipe-operator"><span class="header-section-number">2</span> The pipe operator %&gt;%</a></li>
   <li>
-<a href="#grouping-the-data" id="toc-grouping-the-data" class="nav-link" data-scroll-target="#grouping-the-data"><span class="toc-section-number">3</span>  Grouping the data</a>
+<a href="#grouping-the-data" id="toc-grouping-the-data" class="nav-link" data-scroll-target="#grouping-the-data"><span class="header-section-number">3</span> Grouping the data</a>
   <ul class="collapse">
-<li><a href="#group_by" id="toc-group_by" class="nav-link" data-scroll-target="#group_by"><span class="toc-section-number">3.1</span>  group_by()</a></li>
+<li><a href="#group_by" id="toc-group_by" class="nav-link" data-scroll-target="#group_by"><span class="header-section-number">3.1</span> group_by()</a></li>
   </ul>
 </li>
   <li>
-<a href="#summarising-the-data" id="toc-summarising-the-data" class="nav-link" data-scroll-target="#summarising-the-data"><span class="toc-section-number">4</span>  Summarising the data</a>
+<a href="#summarising-the-data" id="toc-summarising-the-data" class="nav-link" data-scroll-target="#summarising-the-data"><span class="header-section-number">4</span> Summarising the data</a>
   <ul class="collapse">
-<li><a href="#summarise" id="toc-summarise" class="nav-link" data-scroll-target="#summarise"><span class="toc-section-number">4.1</span>  summarise()</a></li>
-  <li><a href="#when-to-use-group_by" id="toc-when-to-use-group_by" class="nav-link" data-scroll-target="#when-to-use-group_by"><span class="toc-section-number">4.2</span>  when to use group_by()</a></li>
-  <li><a href="#count" id="toc-count" class="nav-link" data-scroll-target="#count"><span class="toc-section-number">4.3</span>  count()</a></li>
+<li><a href="#summarise" id="toc-summarise" class="nav-link" data-scroll-target="#summarise"><span class="header-section-number">4.1</span> summarise()</a></li>
+  <li><a href="#when-to-use-group_by" id="toc-when-to-use-group_by" class="nav-link" data-scroll-target="#when-to-use-group_by"><span class="header-section-number">4.2</span> when to use group_by()</a></li>
+  <li><a href="#count" id="toc-count" class="nav-link" data-scroll-target="#count"><span class="header-section-number">4.3</span> count()</a></li>
   </ul>
 </li>
   <li>
-<a href="#manipulating-cases-or-observations" id="toc-manipulating-cases-or-observations" class="nav-link" data-scroll-target="#manipulating-cases-or-observations"><span class="toc-section-number">5</span>  Manipulating cases or observations</a>
+<a href="#manipulating-cases-or-observations" id="toc-manipulating-cases-or-observations" class="nav-link" data-scroll-target="#manipulating-cases-or-observations"><span class="header-section-number">5</span> Manipulating cases or observations</a>
   <ul class="collapse">
-<li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"><span class="toc-section-number">5.1</span>  filter()</a></li>
-  <li><a href="#distinct" id="toc-distinct" class="nav-link" data-scroll-target="#distinct"><span class="toc-section-number">5.2</span>  distinct()</a></li>
-  <li><a href="#slice" id="toc-slice" class="nav-link" data-scroll-target="#slice"><span class="toc-section-number">5.3</span>  slice()</a></li>
-  <li><a href="#slice_sample" id="toc-slice_sample" class="nav-link" data-scroll-target="#slice_sample"><span class="toc-section-number">5.4</span>  slice_sample()</a></li>
-  <li><a href="#slice_min-and-slice_max" id="toc-slice_min-and-slice_max" class="nav-link" data-scroll-target="#slice_min-and-slice_max"><span class="toc-section-number">5.5</span>  slice_min() and slice_max()</a></li>
-  <li><a href="#slice_head-and-slice_tail" id="toc-slice_head-and-slice_tail" class="nav-link" data-scroll-target="#slice_head-and-slice_tail"><span class="toc-section-number">5.6</span>  slice_head() and slice_tail()</a></li>
-  <li><a href="#arrange" id="toc-arrange" class="nav-link" data-scroll-target="#arrange"><span class="toc-section-number">5.7</span>  arrange()</a></li>
-  <li><a href="#add_row" id="toc-add_row" class="nav-link" data-scroll-target="#add_row"><span class="toc-section-number">5.8</span>  add_row()</a></li>
+<li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"><span class="header-section-number">5.1</span> filter()</a></li>
+  <li><a href="#distinct" id="toc-distinct" class="nav-link" data-scroll-target="#distinct"><span class="header-section-number">5.2</span> distinct()</a></li>
+  <li><a href="#slice" id="toc-slice" class="nav-link" data-scroll-target="#slice"><span class="header-section-number">5.3</span> slice()</a></li>
+  <li><a href="#slice_sample" id="toc-slice_sample" class="nav-link" data-scroll-target="#slice_sample"><span class="header-section-number">5.4</span> slice_sample()</a></li>
+  <li><a href="#slice_min-and-slice_max" id="toc-slice_min-and-slice_max" class="nav-link" data-scroll-target="#slice_min-and-slice_max"><span class="header-section-number">5.5</span> slice_min() and slice_max()</a></li>
+  <li><a href="#slice_head-and-slice_tail" id="toc-slice_head-and-slice_tail" class="nav-link" data-scroll-target="#slice_head-and-slice_tail"><span class="header-section-number">5.6</span> slice_head() and slice_tail()</a></li>
+  <li><a href="#arrange" id="toc-arrange" class="nav-link" data-scroll-target="#arrange"><span class="header-section-number">5.7</span> arrange()</a></li>
+  <li><a href="#add_row" id="toc-add_row" class="nav-link" data-scroll-target="#add_row"><span class="header-section-number">5.8</span> add_row()</a></li>
   </ul>
 </li>
   <li>
-<a href="#manipulating-variables-or-columns" id="toc-manipulating-variables-or-columns" class="nav-link" data-scroll-target="#manipulating-variables-or-columns"><span class="toc-section-number">6</span>  Manipulating variables or columns</a>
+<a href="#manipulating-variables-or-columns" id="toc-manipulating-variables-or-columns" class="nav-link" data-scroll-target="#manipulating-variables-or-columns"><span class="header-section-number">6</span> Manipulating variables or columns</a>
   <ul class="collapse">
-<li><a href="#pull" id="toc-pull" class="nav-link" data-scroll-target="#pull"><span class="toc-section-number">6.1</span>  pull()</a></li>
-  <li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select"><span class="toc-section-number">6.2</span>  select()</a></li>
-  <li><a href="#relocate" id="toc-relocate" class="nav-link" data-scroll-target="#relocate"><span class="toc-section-number">6.3</span>  relocate()</a></li>
-  <li><a href="#rename" id="toc-rename" class="nav-link" data-scroll-target="#rename"><span class="toc-section-number">6.4</span>  rename()</a></li>
-  <li><a href="#mutate" id="toc-mutate" class="nav-link" data-scroll-target="#mutate"><span class="toc-section-number">6.5</span>  mutate()</a></li>
-  <li><a href="#transmute" id="toc-transmute" class="nav-link" data-scroll-target="#transmute"><span class="toc-section-number">6.6</span>  transmute()</a></li>
-  <li><a href="#across" id="toc-across" class="nav-link" data-scroll-target="#across"><span class="toc-section-number">6.7</span>  across()</a></li>
-  <li><a href="#c_across" id="toc-c_across" class="nav-link" data-scroll-target="#c_across"><span class="toc-section-number">6.8</span>  c_across()</a></li>
+<li><a href="#pull" id="toc-pull" class="nav-link" data-scroll-target="#pull"><span class="header-section-number">6.1</span> pull()</a></li>
+  <li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select"><span class="header-section-number">6.2</span> select()</a></li>
+  <li><a href="#relocate" id="toc-relocate" class="nav-link" data-scroll-target="#relocate"><span class="header-section-number">6.3</span> relocate()</a></li>
+  <li><a href="#rename" id="toc-rename" class="nav-link" data-scroll-target="#rename"><span class="header-section-number">6.4</span> rename()</a></li>
+  <li><a href="#mutate" id="toc-mutate" class="nav-link" data-scroll-target="#mutate"><span class="header-section-number">6.5</span> mutate()</a></li>
+  <li><a href="#transmute" id="toc-transmute" class="nav-link" data-scroll-target="#transmute"><span class="header-section-number">6.6</span> transmute()</a></li>
+  <li><a href="#across" id="toc-across" class="nav-link" data-scroll-target="#across"><span class="header-section-number">6.7</span> across()</a></li>
+  <li><a href="#c_across" id="toc-c_across" class="nav-link" data-scroll-target="#c_across"><span class="header-section-number">6.8</span> c_across()</a></li>
   </ul>
 </li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="toc-section-number">7</span>  Summary</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="toc-section-number">8</span>  References</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">7</span> Summary</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">8</span> References</a></li>
   </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/edit/main/tutorials/data_man/dplyr_1.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
@@ -377,7 +360,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <p>It can be confusing to decide when to use the <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> function. In short, you should use it whenever you want any function to act separately on different groups present in the dataset. Here is a graphical representation of how the <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> function is used to calculate the mean values of a dataset. When used with <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> it calculates mean values for the respective groups in the data, but when <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> is not used, it will calculate the mean value of the entire dataset irrespective of the different groups present and outputs a single column.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="images/group_by.png" class="img-fluid"></p>
+<p><img src="images/group_by.png" class="img-fluid" width="792"></p>
 </div>
 </div>
 </section><section id="count" class="level3" data-number="4.3"><h3 data-number="4.3" class="anchored" data-anchor-id="count">
@@ -467,7 +450,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <li>
 <code>replace</code> : Values include <code>TRUE</code> if you want sampling with replacement which can result in duplicate values, <code>FALSE</code> if you want sampling without replacement.</li>
 </ul>
-<div class="panel-tabset">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist">
 <li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">(n = 4)</a></li>
 <li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">weight_by</a></li>
@@ -484,7 +467,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["species"],"name":[1],"type":["fct"],"align":["left"]},{"label":["island"],"name":[2],"type":["fct"],"align":["left"]},{"label":["bill_length_mm"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["bill_depth_mm"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["flipper_length_mm"],"name":[5],"type":["int"],"align":["right"]},{"label":["body_mass_g"],"name":[6],"type":["int"],"align":["right"]},{"label":["sex"],"name":[7],"type":["fct"],"align":["left"]},{"label":["year"],"name":[8],"type":["int"],"align":["right"]}],"data":[{"1":"Gentoo","2":"Biscoe","3":"51.5","4":"16.3","5":"230","6":"5500","7":"male","8":"2009"},{"1":"Gentoo","2":"Biscoe","3":"50.0","4":"15.3","5":"220","6":"5550","7":"male","8":"2007"},{"1":"Chinstrap","2":"Dream","3":"51.4","4":"19.0","5":"201","6":"3950","7":"male","8":"2009"},{"1":"Chinstrap","2":"Dream","3":"52.0","4":"18.1","5":"201","6":"4050","7":"male","8":"2007"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["species"],"name":[1],"type":["fct"],"align":["left"]},{"label":["island"],"name":[2],"type":["fct"],"align":["left"]},{"label":["bill_length_mm"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["bill_depth_mm"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["flipper_length_mm"],"name":[5],"type":["int"],"align":["right"]},{"label":["body_mass_g"],"name":[6],"type":["int"],"align":["right"]},{"label":["sex"],"name":[7],"type":["fct"],"align":["left"]},{"label":["year"],"name":[8],"type":["int"],"align":["right"]}],"data":[{"1":"Gentoo","2":"Biscoe","3":"44.9","4":"13.3","5":"213","6":"5100","7":"female","8":"2008"},{"1":"Gentoo","2":"Biscoe","3":"45.1","4":"14.5","5":"207","6":"5050","7":"female","8":"2007"},{"1":"Adelie","2":"Biscoe","3":"37.6","4":"17.0","5":"185","6":"3600","7":"female","8":"2008"},{"1":"Gentoo","2":"Biscoe","3":"47.2","4":"15.5","5":"215","6":"4975","7":"female","8":"2009"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -501,7 +484,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 
 <div data-pagedtable="false">
   <script data-pagedtable-source="" type="application/json">
-{"columns":[{"label":["species"],"name":[1],"type":["fct"],"align":["left"]},{"label":["island"],"name":[2],"type":["fct"],"align":["left"]},{"label":["bill_length_mm"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["bill_depth_mm"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["flipper_length_mm"],"name":[5],"type":["int"],"align":["right"]},{"label":["body_mass_g"],"name":[6],"type":["int"],"align":["right"]},{"label":["sex"],"name":[7],"type":["fct"],"align":["left"]},{"label":["year"],"name":[8],"type":["int"],"align":["right"]}],"data":[{"1":"Gentoo","2":"Biscoe","3":"51.1","4":"16.5","5":"225","6":"5250","7":"male","8":"2009"},{"1":"Gentoo","2":"Biscoe","3":"55.1","4":"16.0","5":"230","6":"5850","7":"male","8":"2009"},{"1":"Adelie","2":"Biscoe","3":"36.4","4":"17.1","5":"184","6":"2850","7":"female","8":"2008"},{"1":"Gentoo","2":"Biscoe","3":"48.2","4":"14.3","5":"210","6":"4600","7":"female","8":"2007"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["species"],"name":[1],"type":["fct"],"align":["left"]},{"label":["island"],"name":[2],"type":["fct"],"align":["left"]},{"label":["bill_length_mm"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["bill_depth_mm"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["flipper_length_mm"],"name":[5],"type":["int"],"align":["right"]},{"label":["body_mass_g"],"name":[6],"type":["int"],"align":["right"]},{"label":["sex"],"name":[7],"type":["fct"],"align":["left"]},{"label":["year"],"name":[8],"type":["int"],"align":["right"]}],"data":[{"1":"Adelie","2":"Dream","3":"38.1","4":"17.6","5":"187","6":"3425","7":"female","8":"2009"},{"1":"Adelie","2":"Biscoe","3":"42.2","4":"19.5","5":"197","6":"4275","7":"male","8":"2009"},{"1":"Gentoo","2":"Biscoe","3":"47.4","4":"14.6","5":"212","6":"4725","7":"female","8":"2009"},{"1":"Gentoo","2":"Biscoe","3":"45.1","4":"14.5","5":"215","6":"5000","7":"female","8":"2007"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -512,7 +495,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </section><section id="slice_min-and-slice_max" class="level3" data-number="5.5"><h3 data-number="5.5" class="anchored" data-anchor-id="slice_min-and-slice_max">
 <span class="header-section-number">5.5</span> slice_min() and slice_max()</h3>
 <p>Use <code><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_min()</a></code> to extract rows containing least values and use <code><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_max()</a></code> to extract rows with greatest values. The function <code>with_ties = FALSE</code> is included to avoid tie values.</p>
-<div class="panel-tabset">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist">
 <li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">slice_min()</a></li>
 <li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">slice_max()</a></li>
@@ -555,7 +538,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </section><section id="slice_head-and-slice_tail" class="level3" data-number="5.6"><h3 data-number="5.6" class="anchored" data-anchor-id="slice_head-and-slice_tail">
 <span class="header-section-number">5.6</span> slice_head() and slice_tail()</h3>
 <p>Use <code><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_head()</a></code> to extract first set of rows and use <code><a href="https://dplyr.tidyverse.org/reference/slice.html">slice_tail()</a></code> to extract last set of rows.</p>
-<div class="panel-tabset">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist">
 <li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">slice_head()</a></li>
 <li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">slice_tail()</a></li>
@@ -684,7 +667,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span></span>
 <span><span class="co"># you can also relocate columns based on their class</span></span>
 <span><span class="co"># relocates all columns with 'character' class to last position</span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/relocate.html">relocate</a></span><span class="op">(</span><span class="fu">where</span><span class="op">(</span><span class="va">is.character</span><span class="op">)</span>, .after <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/everything.html">last_col</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/relocate.html">relocate</a></span><span class="op">(</span><span class="fu"><a href="https://tidyselect.r-lib.org/reference/where.html">where</a></span><span class="op">(</span><span class="va">is.character</span><span class="op">)</span>, .after <span class="op">=</span> <span class="fu"><a href="https://tidyselect.r-lib.org/reference/everything.html">last_col</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section><section id="rename" class="level3" data-number="6.4"><h3 data-number="6.4" class="anchored" data-anchor-id="rename">
 <span class="header-section-number">6.4</span> rename()</h3>
@@ -724,7 +707,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span></span>
 <span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">transmute</a></span><span class="op">(</span>mean_mass <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/transmute.html">transmute</a></span><span class="op">(</span>mean_mass <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -770,7 +753,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span></span>
 <span><span class="co"># .name will rename the new columns with 'twice` prefix combined with existing col names</span></span>
 <span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html">across</a></span><span class="op">(</span><span class="fu">where</span><span class="op">(</span><span class="va">is.numeric</span><span class="op">)</span>, <span class="va">two_times</span>, .names <span class="op">=</span> <span class="st">"two_times_{col}"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html">across</a></span><span class="op">(</span><span class="fu"><a href="https://tidyselect.r-lib.org/reference/where.html">where</a></span><span class="op">(</span><span class="va">is.numeric</span><span class="op">)</span>, <span class="va">two_times</span>, .names <span class="op">=</span> <span class="st">"two_times_{col}"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -807,7 +790,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">species</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rowwise.html">rowwise</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">transmute</a></span><span class="op">(</span>sum_of_length <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/c_across.html">c_across</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">bill_length_mm</span>,<span class="va">flipper_length_mm</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/transmute.html">transmute</a></span><span class="op">(</span>sum_of_length <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/c_across.html">c_across</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">bill_length_mm</span>,<span class="va">flipper_length_mm</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 
 <div data-pagedtable="false">
@@ -827,27 +810,20 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <li><p>Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</p></li>
 <li><p>Hadley Wickham (2021). tidyr: Tidy Messy Data. R package version 1.1.4. https://CRAN.R-project.org/package=tidyr</p></li>
 </ol>
-</section><div id="quarto-appendix" class="default"><section id="last-updated-on" class="level4 unnumbered unlisted appendix"><h2 class="quarto-appendix-heading">Last updated on</h2><div class="quarto-appendix-contents">
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-11-01 14:21:22 IST"</code></pre>
-</div>
-</div>
 <p><a hidden="" href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a></p>
 
 
 <!-- -->
 
-</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{johnson2021,
-  author = {Jewel Johnson},
-  editor = {},
+</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{johnson2021,
+  author = {Johnson, Jewel},
   title = {Chapter 2: {Data} Manipulation Using Dplyr (Part 1)},
   date = {2021-12-13},
   url = {https://one-carat-blog.netlify.app//tutorials/data_man/dplyr_1.html},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-johnson2021" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Jewel Johnson. 2021. <span>“Chapter 2: Data Manipulation Using Dplyr
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-johnson2021" class="csl-entry quarto-appendix-citeas" role="listitem">
+Johnson, Jewel. 2021. <span>“Chapter 2: Data Manipulation Using Dplyr
 (Part 1).”</span> December 13, 2021. <a href="https://one-carat-blog.netlify.app//tutorials/data_man/dplyr_1.html">https://one-carat-blog.netlify.app//tutorials/data_man/dplyr_1.html</a>.
 </div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -876,9 +852,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -890,7 +880,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -977,494 +984,595 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script><script src="https://giscus.app/client.js" data-repo="jeweljohnsonj/one-carat-blog" data-repo-id="R_kgDOHW124A" data-category="General" data-category-id="DIC_kwDOHW124M4CPNVL" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb31" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Chapter 2: Data manipulation using dplyr (part 1)"</span></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Learn how to manipulate your data with the dplyr package"</span></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "12/13/2021"</span></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> images/dplyr.png</span></span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [dplyr, data wrangling]</span></span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="an">filters:</span></span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="co">   - social-share</span></span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="an">share:</span></span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="co">  permalink: "https://one-carat-blog.netlify.app/tutorials/data_man/dplyr_1.html"</span></span>
-<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="co">  description: "Data manipulation using dplyr (part 1)"</span></span>
-<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="co">  twitter: true</span></span>
-<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a><span class="co">  facebook: true</span></span>
-<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a><span class="co">  reddit: true</span></span>
-<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a><span class="co">  stumble: true</span></span>
-<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a><span class="co">  tumblr: true</span></span>
-<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a><span class="co">  linkedin: true</span></span>
-<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a><span class="co">  email: true</span></span>
-<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction to dplyr package</span></span>
-<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a>The <span class="in">`{dplyr}`</span> package is a grammar of data manipulation just like how <span class="in">`{ggplot2}`</span> is the grammar of data visualization. It helps us to apply a wide variety of functions such as;</span>
-<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Summarising the dataset</span>
-<span id="cb31-27"><a href="#cb31-27" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Applying selections and orderings as a function of a variable</span>
-<span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Creating new variables as a function of existing variables</span>
-<span id="cb31-29"><a href="#cb31-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-30"><a href="#cb31-30" aria-hidden="true" tabindex="-1"></a>We will see in-depth how to manipulate our data like a boss!</span>
-<span id="cb31-31"><a href="#cb31-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-32"><a href="#cb31-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## The pipe operator %\&gt;%</span></span>
-<span id="cb31-33"><a href="#cb31-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-34"><a href="#cb31-34" aria-hidden="true" tabindex="-1"></a>Perhaps the most amazing thing in making codes short and efficient is the pipe operator which is originally from the <span class="in">`{magrittr}`</span> package which is made available for the <span class="in">`{dplyr}`</span> package. The pipe operator helps you skip the intermediate steps of saving an object before you can use them in command. It does so by 'piping' together results from the first object to the function ahead of the pipe operator. The command <span class="in">`x %&gt;% y %&gt;% z`</span> can be read as 'take the result of x and use it with function y and take that result and use it with function z'. This is the gist of what the pipe operator does. Allow me to demonstrate.</span>
-<span id="cb31-35"><a href="#cb31-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-38"><a href="#cb31-38" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-39"><a href="#cb31-39" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb31-40"><a href="#cb31-40" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb31-41"><a href="#cb31-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-42"><a href="#cb31-42" aria-hidden="true" tabindex="-1"></a><span class="co"># dummy data</span></span>
-<span id="cb31-43"><a href="#cb31-43" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="at">size =</span> <span class="dv">50</span>))</span>
-<span id="cb31-44"><a href="#cb31-44" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="at">size =</span> <span class="dv">50</span>))</span>
-<span id="cb31-45"><a href="#cb31-45" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(a,b))</span>
-<span id="cb31-46"><a href="#cb31-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-47"><a href="#cb31-47" aria-hidden="true" tabindex="-1"></a><span class="co"># without %&gt;%</span></span>
-<span id="cb31-48"><a href="#cb31-48" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">mutate</span>(data, <span class="at">ab =</span> a<span class="sc">*</span>b, <span class="at">twice_a =</span> <span class="dv">2</span><span class="sc">*</span>a)</span>
-<span id="cb31-49"><a href="#cb31-49" aria-hidden="true" tabindex="-1"></a>data_new <span class="ot">&lt;-</span> <span class="fu">filter</span>(data, ab <span class="sc">&lt;</span> <span class="dv">300</span>, twice_a <span class="sc">&lt;</span> <span class="dv">200</span>)</span>
-<span id="cb31-50"><a href="#cb31-50" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_new, <span class="fu">aes</span>(ab, twice_a)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
-<span id="cb31-51"><a href="#cb31-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-52"><a href="#cb31-52" aria-hidden="true" tabindex="-1"></a><span class="co"># with %&gt;%</span></span>
-<span id="cb31-53"><a href="#cb31-53" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">ab =</span> a<span class="sc">*</span>b, <span class="at">twice_a =</span> <span class="dv">2</span><span class="sc">*</span>a) <span class="sc">%&gt;%</span> </span>
-<span id="cb31-54"><a href="#cb31-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ab <span class="sc">&lt;</span> <span class="dv">300</span>, twice_a <span class="sc">&lt;</span> <span class="dv">200</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb31-55"><a href="#cb31-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(ab, twice_a)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
-<span id="cb31-56"><a href="#cb31-56" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-57"><a href="#cb31-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-58"><a href="#cb31-58" aria-hidden="true" tabindex="-1"></a>As you can see, with pipe operator <span class="in">`%&gt;%`</span>, we did not have to save any objects in the intermediate steps and also it improved the overall clarity of the code. I have used a few commands from the <span class="in">`{dplyr}`</span> package in the example given above. So without further ado let us delve into the <span class="in">`{dplyr}`</span> package. For this chapter, I will be using the penguin dataset from the popular <span class="in">`{palmerpenguin}`</span> package as an example.</span>
-<span id="cb31-59"><a href="#cb31-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-62"><a href="#cb31-62" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-63"><a href="#cb31-63" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb31-64"><a href="#cb31-64" aria-hidden="true" tabindex="-1"></a><span class="co"># install palmerpenguins package</span></span>
-<span id="cb31-65"><a href="#cb31-65" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"palmerpenguins"</span>)</span>
-<span id="cb31-66"><a href="#cb31-66" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-67"><a href="#cb31-67" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb31-68"><a href="#cb31-68" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-69"><a href="#cb31-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-70"><a href="#cb31-70" aria-hidden="true" tabindex="-1"></a><span class="fu">## Grouping the data</span></span>
-<span id="cb31-71"><a href="#cb31-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-72"><a href="#cb31-72" aria-hidden="true" tabindex="-1"></a><span class="fu">### group_by()</span></span>
-<span id="cb31-73"><a href="#cb31-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-74"><a href="#cb31-74" aria-hidden="true" tabindex="-1"></a>The command <span class="in">`group_by()`</span> allows us to group the data via existing variables. It allows for a 'split-apply-combine' way of getting output. First, it will split the data or group the data with the levels in the variable, then apply the function of our choice and then finally combine the results to give us a tabular output. On its own the command doesn't do anything, we use it in conjunction with other commands to get results based on the grouping we specify. The command <span class="in">`ungroup()`</span> is used to ungroup the data.</span>
-<span id="cb31-75"><a href="#cb31-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-76"><a href="#cb31-76" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summarising the data</span></span>
-<span id="cb31-77"><a href="#cb31-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-78"><a href="#cb31-78" aria-hidden="true" tabindex="-1"></a><span class="fu">### summarise()</span></span>
-<span id="cb31-79"><a href="#cb31-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-80"><a href="#cb31-80" aria-hidden="true" tabindex="-1"></a>The <span class="in">`summarise()`</span> command allows you to get the summary statistics of a variable or a column in the dataset. The result is given as tabular data. Many types of summary statistics can be obtained using the <span class="in">`summarise()`</span> function. Some of them are given below. To calculate average values it is necessary to drop <span class="in">`NA`</span> values from the dataset. Use <span class="in">`drop_na()`</span> command from the <span class="in">`{tidyr}`</span> package. The comments denote what each summary statistic is.</span>
-<span id="cb31-81"><a href="#cb31-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-84"><a href="#cb31-84" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-85"><a href="#cb31-85" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb31-86"><a href="#cb31-86" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-87"><a href="#cb31-87" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb31-88"><a href="#cb31-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-89"><a href="#cb31-89" aria-hidden="true" tabindex="-1"></a>summary_data <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb31-90"><a href="#cb31-90" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span> <span class="co"># we are grouping/splitting the data according to species</span></span>
-<span id="cb31-91"><a href="#cb31-91" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">avg_mass =</span> <span class="fu">mean</span>(body_mass_g), <span class="co"># mean mass</span></span>
-<span id="cb31-92"><a href="#cb31-92" aria-hidden="true" tabindex="-1"></a>            <span class="at">median_mass =</span> <span class="fu">median</span>(body_mass_g), <span class="co"># median mass</span></span>
-<span id="cb31-93"><a href="#cb31-93" aria-hidden="true" tabindex="-1"></a>            <span class="at">max_mass =</span> <span class="fu">max</span>(body_mass_g), <span class="co"># max value of mass, can also use min()</span></span>
-<span id="cb31-94"><a href="#cb31-94" aria-hidden="true" tabindex="-1"></a>            <span class="at">standard_deviation_bill_length =</span> <span class="fu">sd</span>(bill_length_mm), <span class="co"># standard deviation of bill_length</span></span>
-<span id="cb31-95"><a href="#cb31-95" aria-hidden="true" tabindex="-1"></a>            <span class="at">sum_mass =</span> <span class="fu">sum</span>(flipper_length_mm), <span class="co"># sum</span></span>
-<span id="cb31-96"><a href="#cb31-96" aria-hidden="true" tabindex="-1"></a>            <span class="at">distinct_years =</span> <span class="fu">n_distinct</span>(year), <span class="co"># distinct values in column year</span></span>
-<span id="cb31-97"><a href="#cb31-97" aria-hidden="true" tabindex="-1"></a>            <span class="at">no_of_non_NAs =</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(year)), <span class="co"># gives no of non NAs, </span></span>
-<span id="cb31-98"><a href="#cb31-98" aria-hidden="true" tabindex="-1"></a>            <span class="at">length_rows =</span> <span class="fu">n</span>(), <span class="co"># length of the rows</span></span>
-<span id="cb31-99"><a href="#cb31-99" aria-hidden="true" tabindex="-1"></a>            <span class="at">iqr_mass =</span> <span class="fu">IQR</span>(body_mass_g), <span class="co"># inter quartile range of mass</span></span>
-<span id="cb31-100"><a href="#cb31-100" aria-hidden="true" tabindex="-1"></a>            <span class="at">median_absolute_deviation_mass =</span> <span class="fu">mad</span>(body_mass_g), <span class="co"># median absolute deviation of mass</span></span>
-<span id="cb31-101"><a href="#cb31-101" aria-hidden="true" tabindex="-1"></a>            <span class="at">variance_mass =</span> <span class="fu">var</span>(body_mass_g)) <span class="co"># variance</span></span>
-<span id="cb31-102"><a href="#cb31-102" aria-hidden="true" tabindex="-1"></a><span class="co"># viewing summary as a table</span></span>
-<span id="cb31-103"><a href="#cb31-103" aria-hidden="true" tabindex="-1"></a>summary_data</span>
-<span id="cb31-104"><a href="#cb31-104" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-105"><a href="#cb31-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-106"><a href="#cb31-106" aria-hidden="true" tabindex="-1"></a>The number of non <span class="in">`NA`</span> values will be the same as that of <span class="in">`n()`</span> result as we have used <span class="in">`drop_na()`</span>command in the beginning.</span>
-<span id="cb31-107"><a href="#cb31-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-108"><a href="#cb31-108" aria-hidden="true" tabindex="-1"></a>The base function <span class="in">`summary()`</span> in R also gives the whole summary statistics of a dataset.</span>
-<span id="cb31-109"><a href="#cb31-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-112"><a href="#cb31-112" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-113"><a href="#cb31-113" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb31-114"><a href="#cb31-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-115"><a href="#cb31-115" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(penguins)</span>
-<span id="cb31-116"><a href="#cb31-116" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-117"><a href="#cb31-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-118"><a href="#cb31-118" aria-hidden="true" tabindex="-1"></a><span class="fu">### when to use group_by()</span></span>
-<span id="cb31-119"><a href="#cb31-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-120"><a href="#cb31-120" aria-hidden="true" tabindex="-1"></a>It can be confusing to decide when to use the <span class="in">`group_by()`</span> function. In short, you should use it whenever you want any function to act separately on different groups present in the dataset. Here is a graphical representation of how the <span class="in">`summarise()`</span> function is used to calculate the mean values of a dataset. When used with <span class="in">`group_by()`</span> it calculates mean values for the respective groups in the data, but when <span class="in">`group_by()`</span> is not used, it will calculate the mean value of the entire dataset irrespective of the different groups present and outputs a single column.</span>
-<span id="cb31-121"><a href="#cb31-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-124"><a href="#cb31-124" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-125"><a href="#cb31-125" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb31-126"><a href="#cb31-126" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">'images/group_by.png'</span>)</span>
-<span id="cb31-127"><a href="#cb31-127" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-128"><a href="#cb31-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-129"><a href="#cb31-129" aria-hidden="true" tabindex="-1"></a><span class="fu">### count()</span></span>
-<span id="cb31-130"><a href="#cb31-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-131"><a href="#cb31-131" aria-hidden="true" tabindex="-1"></a>The <span class="in">`count()`</span> command is used to count the number of rows of a variable. Has the same function as that of <span class="in">`n()`</span></span>
-<span id="cb31-132"><a href="#cb31-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-135"><a href="#cb31-135" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-136"><a href="#cb31-136" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-137"><a href="#cb31-137" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb31-138"><a href="#cb31-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-139"><a href="#cb31-139" aria-hidden="true" tabindex="-1"></a>count <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
-<span id="cb31-140"><a href="#cb31-140" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(island)</span>
-<span id="cb31-141"><a href="#cb31-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-142"><a href="#cb31-142" aria-hidden="true" tabindex="-1"></a><span class="co"># viewing count as a table</span></span>
-<span id="cb31-143"><a href="#cb31-143" aria-hidden="true" tabindex="-1"></a>count</span>
-<span id="cb31-144"><a href="#cb31-144" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-145"><a href="#cb31-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-146"><a href="#cb31-146" aria-hidden="true" tabindex="-1"></a><span class="fu">## Manipulating cases or observations</span></span>
-<span id="cb31-147"><a href="#cb31-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-148"><a href="#cb31-148" aria-hidden="true" tabindex="-1"></a>The following functions affect rows to give a subset of rows in a new table as output.</span>
-<span id="cb31-149"><a href="#cb31-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-150"><a href="#cb31-150" aria-hidden="true" tabindex="-1"></a><span class="fu">### filter()</span></span>
-<span id="cb31-151"><a href="#cb31-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-152"><a href="#cb31-152" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`filter()`</span> to filter rows corresponding to a given logical criteria</span>
-<span id="cb31-153"><a href="#cb31-153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-156"><a href="#cb31-156" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-157"><a href="#cb31-157" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-158"><a href="#cb31-158" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb31-159"><a href="#cb31-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-160"><a href="#cb31-160" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">filter</span>(body_mass_g <span class="sc">&lt;</span> <span class="dv">3000</span>)</span>
-<span id="cb31-161"><a href="#cb31-161" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-162"><a href="#cb31-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-163"><a href="#cb31-163" aria-hidden="true" tabindex="-1"></a><span class="fu">### distinct()</span></span>
-<span id="cb31-164"><a href="#cb31-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-165"><a href="#cb31-165" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`distinct()`</span> to remove rows with duplicate or same values.</span>
-<span id="cb31-166"><a href="#cb31-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-169"><a href="#cb31-169" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-170"><a href="#cb31-170" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-171"><a href="#cb31-171" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb31-172"><a href="#cb31-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-173"><a href="#cb31-173" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span> <span class="fu">distinct</span>(body_mass_g)</span>
-<span id="cb31-174"><a href="#cb31-174" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-175"><a href="#cb31-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-176"><a href="#cb31-176" aria-hidden="true" tabindex="-1"></a><span class="fu">### slice()</span></span>
-<span id="cb31-177"><a href="#cb31-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-178"><a href="#cb31-178" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`slice()`</span> to select rows by position.</span>
-<span id="cb31-179"><a href="#cb31-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-182"><a href="#cb31-182" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-183"><a href="#cb31-183" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-184"><a href="#cb31-184" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb31-185"><a href="#cb31-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-186"><a href="#cb31-186" aria-hidden="true" tabindex="-1"></a><span class="co"># slice from first row to fifth row</span></span>
-<span id="cb31-187"><a href="#cb31-187" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) </span>
-<span id="cb31-188"><a href="#cb31-188" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-189"><a href="#cb31-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-190"><a href="#cb31-190" aria-hidden="true" tabindex="-1"></a><span class="fu">### slice_sample()</span></span>
-<span id="cb31-191"><a href="#cb31-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-192"><a href="#cb31-192" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`slice_sample()`</span> to randomly select rows from the dataset. Instead of <span class="in">`(n = )`</span> you can also provide the proportion value (between 0 and 1) using <span class="in">`(prop = )`</span>. For e.g. for a dataset with 10 rows, giving <span class="in">`(prop = 0.5)`</span> will randomly sample 5 rows. Other related functions include;</span>
-<span id="cb31-193"><a href="#cb31-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-194"><a href="#cb31-194" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`preserve`</span> : Values include <span class="in">`TRUE`</span> to preserve grouping in a grouped dataset and <span class="in">`FALSE`</span> to not preserve grouping while sampling.</span>
-<span id="cb31-195"><a href="#cb31-195" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`weight_by`</span> : Gives priority to a particular variable during sampling. An example is given below.</span>
-<span id="cb31-196"><a href="#cb31-196" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`replace`</span> : Values include <span class="in">`TRUE`</span> if you want sampling with replacement which can result in duplicate values, <span class="in">`FALSE`</span> if you want sampling without replacement.</span>
-<span id="cb31-197"><a href="#cb31-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-198"><a href="#cb31-198" aria-hidden="true" tabindex="-1"></a>::: panel-tabset</span>
-<span id="cb31-199"><a href="#cb31-199" aria-hidden="true" tabindex="-1"></a><span class="fu">## (n = 4)</span></span>
-<span id="cb31-200"><a href="#cb31-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-203"><a href="#cb31-203" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-204"><a href="#cb31-204" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-205"><a href="#cb31-205" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb31-206"><a href="#cb31-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-207"><a href="#cb31-207" aria-hidden="true" tabindex="-1"></a><span class="co"># samples 4 rows randomly</span></span>
-<span id="cb31-208"><a href="#cb31-208" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">4</span>)</span>
-<span id="cb31-209"><a href="#cb31-209" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-210"><a href="#cb31-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-211"><a href="#cb31-211" aria-hidden="true" tabindex="-1"></a><span class="fu">## weight_by</span></span>
-<span id="cb31-212"><a href="#cb31-212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-215"><a href="#cb31-215" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-216"><a href="#cb31-216" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-217"><a href="#cb31-217" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb31-218"><a href="#cb31-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-219"><a href="#cb31-219" aria-hidden="true" tabindex="-1"></a><span class="co"># sampling will favour rows with higher values of 'body_mass_g'</span></span>
-<span id="cb31-220"><a href="#cb31-220" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">4</span>, <span class="at">weight_by =</span> body_mass_g)</span>
-<span id="cb31-221"><a href="#cb31-221" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-222"><a href="#cb31-222" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb31-223"><a href="#cb31-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-224"><a href="#cb31-224" aria-hidden="true" tabindex="-1"></a><span class="fu">### slice_min() and slice_max()</span></span>
-<span id="cb31-225"><a href="#cb31-225" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-226"><a href="#cb31-226" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`slice_min()`</span> to extract rows containing least values and use <span class="in">`slice_max()`</span> to extract rows with greatest values. The function <span class="in">`with_ties = FALSE`</span> is included to avoid tie values.</span>
-<span id="cb31-227"><a href="#cb31-227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-228"><a href="#cb31-228" aria-hidden="true" tabindex="-1"></a>::: panel-tabset</span>
-<span id="cb31-229"><a href="#cb31-229" aria-hidden="true" tabindex="-1"></a><span class="fu">## slice_min()</span></span>
-<span id="cb31-230"><a href="#cb31-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-233"><a href="#cb31-233" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-234"><a href="#cb31-234" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-235"><a href="#cb31-235" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb31-236"><a href="#cb31-236" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-237"><a href="#cb31-237" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">slice_min</span>(body_mass_g, <span class="at">n =</span> <span class="dv">4</span>, <span class="at">with_ties =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb31-238"><a href="#cb31-238" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-239"><a href="#cb31-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-240"><a href="#cb31-240" aria-hidden="true" tabindex="-1"></a><span class="fu">## slice_max()</span></span>
-<span id="cb31-241"><a href="#cb31-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-244"><a href="#cb31-244" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-245"><a href="#cb31-245" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-246"><a href="#cb31-246" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb31-247"><a href="#cb31-247" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-248"><a href="#cb31-248" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">slice_max</span>(body_mass_g, <span class="at">n =</span> <span class="dv">4</span>,<span class="at">with_ties =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb31-249"><a href="#cb31-249" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-250"><a href="#cb31-250" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb31-251"><a href="#cb31-251" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-252"><a href="#cb31-252" aria-hidden="true" tabindex="-1"></a><span class="fu">### slice_head() and slice_tail()</span></span>
-<span id="cb31-253"><a href="#cb31-253" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-254"><a href="#cb31-254" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`slice_head()`</span> to extract first set of rows and use <span class="in">`slice_tail()`</span> to extract last set of rows.</span>
-<span id="cb31-255"><a href="#cb31-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-256"><a href="#cb31-256" aria-hidden="true" tabindex="-1"></a>::: panel-tabset</span>
-<span id="cb31-257"><a href="#cb31-257" aria-hidden="true" tabindex="-1"></a><span class="fu">## slice_head()</span></span>
-<span id="cb31-258"><a href="#cb31-258" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-261"><a href="#cb31-261" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-262"><a href="#cb31-262" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-263"><a href="#cb31-263" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb31-264"><a href="#cb31-264" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-265"><a href="#cb31-265" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">4</span>)</span>
-<span id="cb31-266"><a href="#cb31-266" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-267"><a href="#cb31-267" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-268"><a href="#cb31-268" aria-hidden="true" tabindex="-1"></a><span class="fu">## slice_tail()</span></span>
-<span id="cb31-269"><a href="#cb31-269" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-272"><a href="#cb31-272" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-273"><a href="#cb31-273" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-274"><a href="#cb31-274" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb31-275"><a href="#cb31-275" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-276"><a href="#cb31-276" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">slice_tail</span>(<span class="at">n =</span> <span class="dv">4</span>)</span>
-<span id="cb31-277"><a href="#cb31-277" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-278"><a href="#cb31-278" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb31-279"><a href="#cb31-279" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-280"><a href="#cb31-280" aria-hidden="true" tabindex="-1"></a><span class="fu">### arrange()</span></span>
-<span id="cb31-281"><a href="#cb31-281" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-282"><a href="#cb31-282" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`arrange()`</span> to arrange rows in a particular order.</span>
-<span id="cb31-283"><a href="#cb31-283" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-286"><a href="#cb31-286" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-287"><a href="#cb31-287" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-288"><a href="#cb31-288" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb31-289"><a href="#cb31-289" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-290"><a href="#cb31-290" aria-hidden="true" tabindex="-1"></a><span class="co"># arranging rows in descending order of bill length</span></span>
-<span id="cb31-291"><a href="#cb31-291" aria-hidden="true" tabindex="-1"></a><span class="co"># by default it arranges data by ascending order when no specifications are given</span></span>
-<span id="cb31-292"><a href="#cb31-292" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(bill_length_mm))</span>
-<span id="cb31-293"><a href="#cb31-293" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-294"><a href="#cb31-294" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-295"><a href="#cb31-295" aria-hidden="true" tabindex="-1"></a><span class="fu">### add_row()</span></span>
-<span id="cb31-296"><a href="#cb31-296" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-297"><a href="#cb31-297" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`add_row()`</span> to add rows to the dataset.</span>
-<span id="cb31-298"><a href="#cb31-298" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-301"><a href="#cb31-301" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-302"><a href="#cb31-302" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-303"><a href="#cb31-303" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-304"><a href="#cb31-304" aria-hidden="true" tabindex="-1"></a>Name <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>)</span>
-<span id="cb31-305"><a href="#cb31-305" aria-hidden="true" tabindex="-1"></a>Age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">13</span>)</span>
-<span id="cb31-306"><a href="#cb31-306" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(Name, Age) <span class="sc">%&gt;%</span> <span class="fu">add_row</span>(<span class="at">Name =</span> <span class="st">"c"</span>, <span class="at">Age =</span> <span class="dv">15</span>)</span>
-<span id="cb31-307"><a href="#cb31-307" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-308"><a href="#cb31-308" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-309"><a href="#cb31-309" aria-hidden="true" tabindex="-1"></a><span class="fu">## Manipulating variables or columns</span></span>
-<span id="cb31-310"><a href="#cb31-310" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-311"><a href="#cb31-311" aria-hidden="true" tabindex="-1"></a>The following functions affect columns to give a subset of columns in a new table as output.</span>
-<span id="cb31-312"><a href="#cb31-312" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-313"><a href="#cb31-313" aria-hidden="true" tabindex="-1"></a><span class="fu">### pull()</span></span>
-<span id="cb31-314"><a href="#cb31-314" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-315"><a href="#cb31-315" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`pull()`</span> to extract columns as a vector, by name or index. Only the first 10 results are shown for easy viewing.</span>
-<span id="cb31-316"><a href="#cb31-316" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-319"><a href="#cb31-319" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-320"><a href="#cb31-320" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb31-321"><a href="#cb31-321" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-322"><a href="#cb31-322" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb31-323"><a href="#cb31-323" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-324"><a href="#cb31-324" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">pull</span>(body_mass_g)</span>
-<span id="cb31-325"><a href="#cb31-325" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-326"><a href="#cb31-326" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-327"><a href="#cb31-327" aria-hidden="true" tabindex="-1"></a><span class="fu">### select()</span></span>
-<span id="cb31-328"><a href="#cb31-328" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-329"><a href="#cb31-329" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`select()`</span> to extract columns as tables, by name or index.</span>
-<span id="cb31-330"><a href="#cb31-330" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-333"><a href="#cb31-333" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-334"><a href="#cb31-334" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-335"><a href="#cb31-335" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb31-336"><a href="#cb31-336" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-337"><a href="#cb31-337" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">select</span>(species, body_mass_g)</span>
-<span id="cb31-338"><a href="#cb31-338" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-339"><a href="#cb31-339" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-340"><a href="#cb31-340" aria-hidden="true" tabindex="-1"></a><span class="fu">### relocate()</span></span>
-<span id="cb31-341"><a href="#cb31-341" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-342"><a href="#cb31-342" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`relocate()`</span> to move columns to new position. Results are not shown as these are trivial results.</span>
-<span id="cb31-343"><a href="#cb31-343" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-346"><a href="#cb31-346" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-347"><a href="#cb31-347" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb31-348"><a href="#cb31-348" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-349"><a href="#cb31-349" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb31-350"><a href="#cb31-350" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-351"><a href="#cb31-351" aria-hidden="true" tabindex="-1"></a><span class="co"># relocates 'species' column to last position</span></span>
-<span id="cb31-352"><a href="#cb31-352" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">relocate</span>(species, <span class="at">.after =</span> <span class="fu">last_col</span>())</span>
-<span id="cb31-353"><a href="#cb31-353" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-354"><a href="#cb31-354" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-357"><a href="#cb31-357" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-358"><a href="#cb31-358" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb31-359"><a href="#cb31-359" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-360"><a href="#cb31-360" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb31-361"><a href="#cb31-361" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-362"><a href="#cb31-362" aria-hidden="true" tabindex="-1"></a><span class="co"># relocates 'species' column before column 'year' and renames the column as 'penguins'</span></span>
-<span id="cb31-363"><a href="#cb31-363" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">relocate</span>(<span class="at">penguins =</span> species, <span class="at">.before =</span> year)</span>
-<span id="cb31-364"><a href="#cb31-364" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-365"><a href="#cb31-365" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-368"><a href="#cb31-368" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-369"><a href="#cb31-369" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb31-370"><a href="#cb31-370" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-371"><a href="#cb31-371" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb31-372"><a href="#cb31-372" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-373"><a href="#cb31-373" aria-hidden="true" tabindex="-1"></a><span class="co"># you can also relocate columns based on their class</span></span>
-<span id="cb31-374"><a href="#cb31-374" aria-hidden="true" tabindex="-1"></a><span class="co"># relocates all columns with 'character' class to last position</span></span>
-<span id="cb31-375"><a href="#cb31-375" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">relocate</span>(<span class="fu">where</span>(is.character), <span class="at">.after =</span> <span class="fu">last_col</span>())</span>
-<span id="cb31-376"><a href="#cb31-376" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-377"><a href="#cb31-377" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-378"><a href="#cb31-378" aria-hidden="true" tabindex="-1"></a><span class="fu">### rename()</span></span>
-<span id="cb31-379"><a href="#cb31-379" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-380"><a href="#cb31-380" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`rename()`</span> function to rename column names in the dataset.</span>
-<span id="cb31-381"><a href="#cb31-381" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-384"><a href="#cb31-384" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-385"><a href="#cb31-385" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb31-386"><a href="#cb31-386" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-387"><a href="#cb31-387" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb31-388"><a href="#cb31-388" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-389"><a href="#cb31-389" aria-hidden="true" tabindex="-1"></a><span class="co"># renames the column sex to gender</span></span>
-<span id="cb31-390"><a href="#cb31-390" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">gender =</span> sex)</span>
-<span id="cb31-391"><a href="#cb31-391" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-392"><a href="#cb31-392" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-393"><a href="#cb31-393" aria-hidden="true" tabindex="-1"></a><span class="fu">### mutate()</span></span>
-<span id="cb31-394"><a href="#cb31-394" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-395"><a href="#cb31-395" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`mutate()`</span> function to create new columns or variables.</span>
-<span id="cb31-396"><a href="#cb31-396" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-399"><a href="#cb31-399" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-400"><a href="#cb31-400" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-401"><a href="#cb31-401" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb31-402"><a href="#cb31-402" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-403"><a href="#cb31-403" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb31-404"><a href="#cb31-404" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
-<span id="cb31-405"><a href="#cb31-405" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(body_mass_g))</span>
-<span id="cb31-406"><a href="#cb31-406" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-407"><a href="#cb31-407" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-408"><a href="#cb31-408" aria-hidden="true" tabindex="-1"></a><span class="fu">### transmute()</span></span>
-<span id="cb31-409"><a href="#cb31-409" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-410"><a href="#cb31-410" aria-hidden="true" tabindex="-1"></a>Does the same function as <span class="in">`mutate()`</span> but in the process will drop any other columns and give you a table with only the newly created columns.</span>
-<span id="cb31-411"><a href="#cb31-411" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-414"><a href="#cb31-414" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-415"><a href="#cb31-415" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-416"><a href="#cb31-416" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb31-417"><a href="#cb31-417" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-418"><a href="#cb31-418" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb31-419"><a href="#cb31-419" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
-<span id="cb31-420"><a href="#cb31-420" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(body_mass_g))</span>
-<span id="cb31-421"><a href="#cb31-421" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-422"><a href="#cb31-422" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-423"><a href="#cb31-423" aria-hidden="true" tabindex="-1"></a><span class="fu">### across()</span></span>
-<span id="cb31-424"><a href="#cb31-424" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-425"><a href="#cb31-425" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`across()`</span> to summarise or mutate columns in the same way. First example shows <span class="in">`across()`</span> used with <span class="in">`summarise()`</span> function.</span>
-<span id="cb31-426"><a href="#cb31-426" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-429"><a href="#cb31-429" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-430"><a href="#cb31-430" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-431"><a href="#cb31-431" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb31-432"><a href="#cb31-432" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-433"><a href="#cb31-433" aria-hidden="true" tabindex="-1"></a><span class="co"># summarise across columns body mass, bill length and bill depth</span></span>
-<span id="cb31-434"><a href="#cb31-434" aria-hidden="true" tabindex="-1"></a><span class="co"># and calculate the mean values</span></span>
-<span id="cb31-435"><a href="#cb31-435" aria-hidden="true" tabindex="-1"></a><span class="co"># since we are calculating mean values,</span></span>
-<span id="cb31-436"><a href="#cb31-436" aria-hidden="true" tabindex="-1"></a><span class="co"># NAs are dropped using 'drop_na() function from 'tidyr' package</span></span>
-<span id="cb31-437"><a href="#cb31-437" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-438"><a href="#cb31-438" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb31-439"><a href="#cb31-439" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
-<span id="cb31-440"><a href="#cb31-440" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">c</span>(body_mass_g, bill_length_mm, bill_depth_mm), mean))</span>
-<span id="cb31-441"><a href="#cb31-441" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-442"><a href="#cb31-442" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-443"><a href="#cb31-443" aria-hidden="true" tabindex="-1"></a>Second example showing <span class="in">`across()`</span> used with <span class="in">`mutate()`</span> function. We can efficiently create new columns using <span class="in">`mutate()`</span> and <span class="in">`across()`</span> together. Suppose we want to multiply all numerical values in a dataset with 2 and create new columns of those values. This can be done using the code below.</span>
-<span id="cb31-444"><a href="#cb31-444" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-447"><a href="#cb31-447" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-448"><a href="#cb31-448" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-449"><a href="#cb31-449" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb31-450"><a href="#cb31-450" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-451"><a href="#cb31-451" aria-hidden="true" tabindex="-1"></a><span class="co"># define the function</span></span>
-<span id="cb31-452"><a href="#cb31-452" aria-hidden="true" tabindex="-1"></a>two_times <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb31-453"><a href="#cb31-453" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span><span class="sc">*</span>x</span>
-<span id="cb31-454"><a href="#cb31-454" aria-hidden="true" tabindex="-1"></a>} </span>
-<span id="cb31-455"><a href="#cb31-455" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-456"><a href="#cb31-456" aria-hidden="true" tabindex="-1"></a><span class="co"># .name will rename the new columns with 'twice` prefix combined with existing col names</span></span>
-<span id="cb31-457"><a href="#cb31-457" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
-<span id="cb31-458"><a href="#cb31-458" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), two_times, <span class="at">.names =</span> <span class="st">"two_times_{col}"</span>))</span>
-<span id="cb31-459"><a href="#cb31-459" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-460"><a href="#cb31-460" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-461"><a href="#cb31-461" aria-hidden="true" tabindex="-1"></a>The same code when used just with <span class="in">`mutate()`</span> function will look like this</span>
-<span id="cb31-462"><a href="#cb31-462" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-465"><a href="#cb31-465" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-466"><a href="#cb31-466" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb31-467"><a href="#cb31-467" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-468"><a href="#cb31-468" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb31-469"><a href="#cb31-469" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-470"><a href="#cb31-470" aria-hidden="true" tabindex="-1"></a><span class="co"># define the function</span></span>
-<span id="cb31-471"><a href="#cb31-471" aria-hidden="true" tabindex="-1"></a>two_times <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb31-472"><a href="#cb31-472" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span><span class="sc">*</span>x</span>
-<span id="cb31-473"><a href="#cb31-473" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb31-474"><a href="#cb31-474" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-475"><a href="#cb31-475" aria-hidden="true" tabindex="-1"></a><span class="co"># using only 'mutate()' function</span></span>
-<span id="cb31-476"><a href="#cb31-476" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
-<span id="cb31-477"><a href="#cb31-477" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">twice_bill_lenght =</span> <span class="fu">two_times</span>(bill_length_mm),</span>
-<span id="cb31-478"><a href="#cb31-478" aria-hidden="true" tabindex="-1"></a>         <span class="at">twice_body_mass =</span> <span class="fu">two_times</span>(body_mass_g),</span>
-<span id="cb31-479"><a href="#cb31-479" aria-hidden="true" tabindex="-1"></a>         .....)</span>
-<span id="cb31-480"><a href="#cb31-480" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-481"><a href="#cb31-481" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-482"><a href="#cb31-482" aria-hidden="true" tabindex="-1"></a>So in this code, I will have to manually type all the col names and apply the operation individually which is too much of a hassle. Now we can better appreciate how efficient it is in using <span class="in">`mutate()`</span> and <span class="in">`across()`</span> functions together.</span>
-<span id="cb31-483"><a href="#cb31-483" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-484"><a href="#cb31-484" aria-hidden="true" tabindex="-1"></a><span class="fu">### c_across()</span></span>
-<span id="cb31-485"><a href="#cb31-485" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-486"><a href="#cb31-486" aria-hidden="true" tabindex="-1"></a>The function <span class="in">`c_across()`</span> is similar to the earlier mentioned <span class="in">`across()`</span> function. But instead of doing a column-wise function, it applies function across columns in a row-wise manner. Now, most functions in R by default computes across columns, so to specify row-wise computation, we have to explicitly use the function <span class="in">`rowwise()`</span> in conjunction with other functions. In the example below we will sum both bill and flipper lengths of the penguins in the <span class="in">`penguins`</span> dataset and create a new column called 'sum_of_lengths'.</span>
-<span id="cb31-487"><a href="#cb31-487" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-490"><a href="#cb31-490" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-491"><a href="#cb31-491" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb31-492"><a href="#cb31-492" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb31-493"><a href="#cb31-493" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-494"><a href="#cb31-494" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb31-495"><a href="#cb31-495" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
-<span id="cb31-496"><a href="#cb31-496" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb31-497"><a href="#cb31-497" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(<span class="at">sum_of_length =</span> <span class="fu">sum</span>(<span class="fu">c_across</span>(<span class="fu">c</span>(bill_length_mm,flipper_length_mm))))</span>
-<span id="cb31-498"><a href="#cb31-498" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-499"><a href="#cb31-499" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-500"><a href="#cb31-500" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summary</span></span>
-<span id="cb31-501"><a href="#cb31-501" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-502"><a href="#cb31-502" aria-hidden="true" tabindex="-1"></a>The <span class="in">`{dplyr}`</span> package is the grammar of the data manipulation in R. It features well-made functions to help us summarise the data, group data by variables and manipulate columns and rows in the dataset. In this chapter, we learned in detail the different functions that help us manipulate data efficiently and have seen case examples also. In the next chapter, we will see the remaining set of functions in the <span class="in">`{dplyr}`</span> package.</span>
-<span id="cb31-503"><a href="#cb31-503" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-504"><a href="#cb31-504" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
-<span id="cb31-505"><a href="#cb31-505" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-506"><a href="#cb31-506" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Hadley Wickham, Romain François, Lionel Henry and Kirill Müller (2021). dplyr: A Grammar of Data Manipulation. R package version 1.0.7. https://CRAN.R-project.org/package=dplyr Here is the <span class="co">[</span><span class="ot">link</span><span class="co">](https://github.com/rstudio/cheatsheets/blob/main/data-transformation.pdf)</span> to the cheat sheet explaining each function in <span class="in">`{dplyr}`</span>.</span>
-<span id="cb31-507"><a href="#cb31-507" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-508"><a href="#cb31-508" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</span>
-<span id="cb31-509"><a href="#cb31-509" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-510"><a href="#cb31-510" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Hadley Wickham (2021). tidyr: Tidy Messy Data. R package version 1.1.4. https://CRAN.R-project.org/package=tidyr</span>
-<span id="cb31-511"><a href="#cb31-511" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-512"><a href="#cb31-512" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Last updated on {.unnumbered .unlisted .appendix}</span></span>
-<span id="cb31-513"><a href="#cb31-513" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-516"><a href="#cb31-516" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb31-517"><a href="#cb31-517" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb31-518"><a href="#cb31-518" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span>
-<span id="cb31-519"><a href="#cb31-519" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb31-520"><a href="#cb31-520" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-521"><a href="#cb31-521" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">hidden</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://info.flagcounter.com/ynrK"</span><span class="kw">&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"Flag Counter"</span> <span class="er">border</span><span class="ot">=</span><span class="st">"0"</span><span class="kw">/&gt;&lt;/a&gt;</span></span>
+<div class="sourceCode" id="cb30" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Chapter 2: Data manipulation using dplyr (part 1)"</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Learn how to manipulate your data with the dplyr package"</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "12/13/2021"</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="an">date-modified:</span><span class="co"> last-modified</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> images/dplyr.png</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [dplyr, data wrangling]</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="an">filters:</span></span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="co">   - social-share</span></span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="an">share:</span></span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a><span class="co">  permalink: "https://one-carat-blog.netlify.app/tutorials/data_man/dplyr_1.html"</span></span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a><span class="co">  description: "Data manipulation using dplyr (part 1)"</span></span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a><span class="co">  twitter: true</span></span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a><span class="co">  facebook: true</span></span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a><span class="co">  reddit: true</span></span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a><span class="co">  stumble: true</span></span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a><span class="co">  tumblr: true</span></span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a><span class="co">  linkedin: true</span></span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a><span class="co">  email: true</span></span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction to dplyr package</span></span>
+<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a>The <span class="in">`{dplyr}`</span> package is a grammar of data manipulation just like how <span class="in">`{ggplot2}`</span> is the grammar of data visualization. It helps us to apply a wide variety of functions such as;</span>
+<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Summarising the dataset</span>
+<span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Applying selections and orderings as a function of a variable</span>
+<span id="cb30-29"><a href="#cb30-29" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Creating new variables as a function of existing variables</span>
+<span id="cb30-30"><a href="#cb30-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-31"><a href="#cb30-31" aria-hidden="true" tabindex="-1"></a>We will see in-depth how to manipulate our data like a boss!</span>
+<span id="cb30-32"><a href="#cb30-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-33"><a href="#cb30-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## The pipe operator %\&gt;%</span></span>
+<span id="cb30-34"><a href="#cb30-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-35"><a href="#cb30-35" aria-hidden="true" tabindex="-1"></a>Perhaps the most amazing thing in making codes short and efficient is the pipe operator which is originally from the <span class="in">`{magrittr}`</span> package which is made available for the <span class="in">`{dplyr}`</span> package. The pipe operator helps you skip the intermediate steps of saving an object before you can use them in command. It does so by 'piping' together results from the first object to the function ahead of the pipe operator. The command <span class="in">`x %&gt;% y %&gt;% z`</span> can be read as 'take the result of x and use it with function y and take that result and use it with function z'. This is the gist of what the pipe operator does. Allow me to demonstrate.</span>
+<span id="cb30-36"><a href="#cb30-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-39"><a href="#cb30-39" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-40"><a href="#cb30-40" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb30-41"><a href="#cb30-41" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-42"><a href="#cb30-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-43"><a href="#cb30-43" aria-hidden="true" tabindex="-1"></a><span class="co"># dummy data</span></span>
+<span id="cb30-44"><a href="#cb30-44" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="at">size =</span> <span class="dv">50</span>))</span>
+<span id="cb30-45"><a href="#cb30-45" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="at">size =</span> <span class="dv">50</span>))</span>
+<span id="cb30-46"><a href="#cb30-46" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(a,b))</span>
+<span id="cb30-47"><a href="#cb30-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-48"><a href="#cb30-48" aria-hidden="true" tabindex="-1"></a><span class="co"># without %&gt;%</span></span>
+<span id="cb30-49"><a href="#cb30-49" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">mutate</span>(data, <span class="at">ab =</span> a<span class="sc">*</span>b, <span class="at">twice_a =</span> <span class="dv">2</span><span class="sc">*</span>a)</span>
+<span id="cb30-50"><a href="#cb30-50" aria-hidden="true" tabindex="-1"></a>data_new <span class="ot">&lt;-</span> <span class="fu">filter</span>(data, ab <span class="sc">&lt;</span> <span class="dv">300</span>, twice_a <span class="sc">&lt;</span> <span class="dv">200</span>)</span>
+<span id="cb30-51"><a href="#cb30-51" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data_new, <span class="fu">aes</span>(ab, twice_a)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb30-52"><a href="#cb30-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-53"><a href="#cb30-53" aria-hidden="true" tabindex="-1"></a><span class="co"># with %&gt;%</span></span>
+<span id="cb30-54"><a href="#cb30-54" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">ab =</span> a<span class="sc">*</span>b, <span class="at">twice_a =</span> <span class="dv">2</span><span class="sc">*</span>a) <span class="sc">%&gt;%</span> </span>
+<span id="cb30-55"><a href="#cb30-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(ab <span class="sc">&lt;</span> <span class="dv">300</span>, twice_a <span class="sc">&lt;</span> <span class="dv">200</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb30-56"><a href="#cb30-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(ab, twice_a)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
+<span id="cb30-57"><a href="#cb30-57" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-58"><a href="#cb30-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-59"><a href="#cb30-59" aria-hidden="true" tabindex="-1"></a>As you can see, with pipe operator <span class="in">`%&gt;%`</span>, we did not have to save any objects in the intermediate steps and also it improved the overall clarity of the code. I have used a few commands from the <span class="in">`{dplyr}`</span> package in the example given above. So without further ado let us delve into the <span class="in">`{dplyr}`</span> package. For this chapter, I will be using the penguin dataset from the popular <span class="in">`{palmerpenguin}`</span> package as an example.</span>
+<span id="cb30-60"><a href="#cb30-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-63"><a href="#cb30-63" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-64"><a href="#cb30-64" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb30-65"><a href="#cb30-65" aria-hidden="true" tabindex="-1"></a><span class="co"># install palmerpenguins package</span></span>
+<span id="cb30-66"><a href="#cb30-66" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"palmerpenguins"</span>)</span>
+<span id="cb30-67"><a href="#cb30-67" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-68"><a href="#cb30-68" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-69"><a href="#cb30-69" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-70"><a href="#cb30-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-71"><a href="#cb30-71" aria-hidden="true" tabindex="-1"></a><span class="fu">## Grouping the data</span></span>
+<span id="cb30-72"><a href="#cb30-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-73"><a href="#cb30-73" aria-hidden="true" tabindex="-1"></a><span class="fu">### group_by()</span></span>
+<span id="cb30-74"><a href="#cb30-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-75"><a href="#cb30-75" aria-hidden="true" tabindex="-1"></a>The command <span class="in">`group_by()`</span> allows us to group the data via existing variables. It allows for a 'split-apply-combine' way of getting output. First, it will split the data or group the data with the levels in the variable, then apply the function of our choice and then finally combine the results to give us a tabular output. On its own the command doesn't do anything, we use it in conjunction with other commands to get results based on the grouping we specify. The command <span class="in">`ungroup()`</span> is used to ungroup the data.</span>
+<span id="cb30-76"><a href="#cb30-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-77"><a href="#cb30-77" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summarising the data</span></span>
+<span id="cb30-78"><a href="#cb30-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-79"><a href="#cb30-79" aria-hidden="true" tabindex="-1"></a><span class="fu">### summarise()</span></span>
+<span id="cb30-80"><a href="#cb30-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-81"><a href="#cb30-81" aria-hidden="true" tabindex="-1"></a>The <span class="in">`summarise()`</span> command allows you to get the summary statistics of a variable or a column in the dataset. The result is given as tabular data. Many types of summary statistics can be obtained using the <span class="in">`summarise()`</span> function. Some of them are given below. To calculate average values it is necessary to drop <span class="in">`NA`</span> values from the dataset. Use <span class="in">`drop_na()`</span> command from the <span class="in">`{tidyr}`</span> package. The comments denote what each summary statistic is.</span>
+<span id="cb30-82"><a href="#cb30-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-85"><a href="#cb30-85" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-86"><a href="#cb30-86" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb30-87"><a href="#cb30-87" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-88"><a href="#cb30-88" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-89"><a href="#cb30-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-90"><a href="#cb30-90" aria-hidden="true" tabindex="-1"></a>summary_data <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb30-91"><a href="#cb30-91" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span> <span class="co"># we are grouping/splitting the data according to species</span></span>
+<span id="cb30-92"><a href="#cb30-92" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">avg_mass =</span> <span class="fu">mean</span>(body_mass_g), <span class="co"># mean mass</span></span>
+<span id="cb30-93"><a href="#cb30-93" aria-hidden="true" tabindex="-1"></a>            <span class="at">median_mass =</span> <span class="fu">median</span>(body_mass_g), <span class="co"># median mass</span></span>
+<span id="cb30-94"><a href="#cb30-94" aria-hidden="true" tabindex="-1"></a>            <span class="at">max_mass =</span> <span class="fu">max</span>(body_mass_g), <span class="co"># max value of mass, can also use min()</span></span>
+<span id="cb30-95"><a href="#cb30-95" aria-hidden="true" tabindex="-1"></a>            <span class="at">standard_deviation_bill_length =</span> <span class="fu">sd</span>(bill_length_mm), <span class="co"># standard deviation of bill_length</span></span>
+<span id="cb30-96"><a href="#cb30-96" aria-hidden="true" tabindex="-1"></a>            <span class="at">sum_mass =</span> <span class="fu">sum</span>(flipper_length_mm), <span class="co"># sum</span></span>
+<span id="cb30-97"><a href="#cb30-97" aria-hidden="true" tabindex="-1"></a>            <span class="at">distinct_years =</span> <span class="fu">n_distinct</span>(year), <span class="co"># distinct values in column year</span></span>
+<span id="cb30-98"><a href="#cb30-98" aria-hidden="true" tabindex="-1"></a>            <span class="at">no_of_non_NAs =</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(year)), <span class="co"># gives no of non NAs, </span></span>
+<span id="cb30-99"><a href="#cb30-99" aria-hidden="true" tabindex="-1"></a>            <span class="at">length_rows =</span> <span class="fu">n</span>(), <span class="co"># length of the rows</span></span>
+<span id="cb30-100"><a href="#cb30-100" aria-hidden="true" tabindex="-1"></a>            <span class="at">iqr_mass =</span> <span class="fu">IQR</span>(body_mass_g), <span class="co"># inter quartile range of mass</span></span>
+<span id="cb30-101"><a href="#cb30-101" aria-hidden="true" tabindex="-1"></a>            <span class="at">median_absolute_deviation_mass =</span> <span class="fu">mad</span>(body_mass_g), <span class="co"># median absolute deviation of mass</span></span>
+<span id="cb30-102"><a href="#cb30-102" aria-hidden="true" tabindex="-1"></a>            <span class="at">variance_mass =</span> <span class="fu">var</span>(body_mass_g)) <span class="co"># variance</span></span>
+<span id="cb30-103"><a href="#cb30-103" aria-hidden="true" tabindex="-1"></a><span class="co"># viewing summary as a table</span></span>
+<span id="cb30-104"><a href="#cb30-104" aria-hidden="true" tabindex="-1"></a>summary_data</span>
+<span id="cb30-105"><a href="#cb30-105" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-106"><a href="#cb30-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-107"><a href="#cb30-107" aria-hidden="true" tabindex="-1"></a>The number of non <span class="in">`NA`</span> values will be the same as that of <span class="in">`n()`</span> result as we have used <span class="in">`drop_na()`</span>command in the beginning.</span>
+<span id="cb30-108"><a href="#cb30-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-109"><a href="#cb30-109" aria-hidden="true" tabindex="-1"></a>The base function <span class="in">`summary()`</span> in R also gives the whole summary statistics of a dataset.</span>
+<span id="cb30-110"><a href="#cb30-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-113"><a href="#cb30-113" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-114"><a href="#cb30-114" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-115"><a href="#cb30-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-116"><a href="#cb30-116" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(penguins)</span>
+<span id="cb30-117"><a href="#cb30-117" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-118"><a href="#cb30-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-119"><a href="#cb30-119" aria-hidden="true" tabindex="-1"></a><span class="fu">### when to use group_by()</span></span>
+<span id="cb30-120"><a href="#cb30-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-121"><a href="#cb30-121" aria-hidden="true" tabindex="-1"></a>It can be confusing to decide when to use the <span class="in">`group_by()`</span> function. In short, you should use it whenever you want any function to act separately on different groups present in the dataset. Here is a graphical representation of how the <span class="in">`summarise()`</span> function is used to calculate the mean values of a dataset. When used with <span class="in">`group_by()`</span> it calculates mean values for the respective groups in the data, but when <span class="in">`group_by()`</span> is not used, it will calculate the mean value of the entire dataset irrespective of the different groups present and outputs a single column.</span>
+<span id="cb30-122"><a href="#cb30-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-125"><a href="#cb30-125" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-126"><a href="#cb30-126" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb30-127"><a href="#cb30-127" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">'images/group_by.png'</span>)</span>
+<span id="cb30-128"><a href="#cb30-128" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-129"><a href="#cb30-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-130"><a href="#cb30-130" aria-hidden="true" tabindex="-1"></a><span class="fu">### count()</span></span>
+<span id="cb30-131"><a href="#cb30-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-132"><a href="#cb30-132" aria-hidden="true" tabindex="-1"></a>The <span class="in">`count()`</span> command is used to count the number of rows of a variable. Has the same function as that of <span class="in">`n()`</span></span>
+<span id="cb30-133"><a href="#cb30-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-136"><a href="#cb30-136" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-137"><a href="#cb30-137" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-138"><a href="#cb30-138" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-139"><a href="#cb30-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-140"><a href="#cb30-140" aria-hidden="true" tabindex="-1"></a>count <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb30-141"><a href="#cb30-141" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(island)</span>
+<span id="cb30-142"><a href="#cb30-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-143"><a href="#cb30-143" aria-hidden="true" tabindex="-1"></a><span class="co"># viewing count as a table</span></span>
+<span id="cb30-144"><a href="#cb30-144" aria-hidden="true" tabindex="-1"></a>count</span>
+<span id="cb30-145"><a href="#cb30-145" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-146"><a href="#cb30-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-147"><a href="#cb30-147" aria-hidden="true" tabindex="-1"></a><span class="fu">## Manipulating cases or observations</span></span>
+<span id="cb30-148"><a href="#cb30-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-149"><a href="#cb30-149" aria-hidden="true" tabindex="-1"></a>The following functions affect rows to give a subset of rows in a new table as output.</span>
+<span id="cb30-150"><a href="#cb30-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-151"><a href="#cb30-151" aria-hidden="true" tabindex="-1"></a><span class="fu">### filter()</span></span>
+<span id="cb30-152"><a href="#cb30-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-153"><a href="#cb30-153" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`filter()`</span> to filter rows corresponding to a given logical criteria</span>
+<span id="cb30-154"><a href="#cb30-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-157"><a href="#cb30-157" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-158"><a href="#cb30-158" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-159"><a href="#cb30-159" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-160"><a href="#cb30-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-161"><a href="#cb30-161" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">filter</span>(body_mass_g <span class="sc">&lt;</span> <span class="dv">3000</span>)</span>
+<span id="cb30-162"><a href="#cb30-162" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-163"><a href="#cb30-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-164"><a href="#cb30-164" aria-hidden="true" tabindex="-1"></a><span class="fu">### distinct()</span></span>
+<span id="cb30-165"><a href="#cb30-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-166"><a href="#cb30-166" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`distinct()`</span> to remove rows with duplicate or same values.</span>
+<span id="cb30-167"><a href="#cb30-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-170"><a href="#cb30-170" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-171"><a href="#cb30-171" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-172"><a href="#cb30-172" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-173"><a href="#cb30-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-174"><a href="#cb30-174" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span> <span class="fu">distinct</span>(body_mass_g)</span>
+<span id="cb30-175"><a href="#cb30-175" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-176"><a href="#cb30-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-177"><a href="#cb30-177" aria-hidden="true" tabindex="-1"></a><span class="fu">### slice()</span></span>
+<span id="cb30-178"><a href="#cb30-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-179"><a href="#cb30-179" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`slice()`</span> to select rows by position.</span>
+<span id="cb30-180"><a href="#cb30-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-183"><a href="#cb30-183" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-184"><a href="#cb30-184" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-185"><a href="#cb30-185" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-186"><a href="#cb30-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-187"><a href="#cb30-187" aria-hidden="true" tabindex="-1"></a><span class="co"># slice from first row to fifth row</span></span>
+<span id="cb30-188"><a href="#cb30-188" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) </span>
+<span id="cb30-189"><a href="#cb30-189" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-190"><a href="#cb30-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-191"><a href="#cb30-191" aria-hidden="true" tabindex="-1"></a><span class="fu">### slice_sample()</span></span>
+<span id="cb30-192"><a href="#cb30-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-193"><a href="#cb30-193" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`slice_sample()`</span> to randomly select rows from the dataset. Instead of <span class="in">`(n = )`</span> you can also provide the proportion value (between 0 and 1) using <span class="in">`(prop = )`</span>. For e.g. for a dataset with 10 rows, giving <span class="in">`(prop = 0.5)`</span> will randomly sample 5 rows. Other related functions include;</span>
+<span id="cb30-194"><a href="#cb30-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-195"><a href="#cb30-195" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`preserve`</span> : Values include <span class="in">`TRUE`</span> to preserve grouping in a grouped dataset and <span class="in">`FALSE`</span> to not preserve grouping while sampling.</span>
+<span id="cb30-196"><a href="#cb30-196" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`weight_by`</span> : Gives priority to a particular variable during sampling. An example is given below.</span>
+<span id="cb30-197"><a href="#cb30-197" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`replace`</span> : Values include <span class="in">`TRUE`</span> if you want sampling with replacement which can result in duplicate values, <span class="in">`FALSE`</span> if you want sampling without replacement.</span>
+<span id="cb30-198"><a href="#cb30-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-199"><a href="#cb30-199" aria-hidden="true" tabindex="-1"></a>::: panel-tabset</span>
+<span id="cb30-200"><a href="#cb30-200" aria-hidden="true" tabindex="-1"></a><span class="fu">## (n = 4)</span></span>
+<span id="cb30-201"><a href="#cb30-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-204"><a href="#cb30-204" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-205"><a href="#cb30-205" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-206"><a href="#cb30-206" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-207"><a href="#cb30-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-208"><a href="#cb30-208" aria-hidden="true" tabindex="-1"></a><span class="co"># samples 4 rows randomly</span></span>
+<span id="cb30-209"><a href="#cb30-209" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">4</span>)</span>
+<span id="cb30-210"><a href="#cb30-210" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-211"><a href="#cb30-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-212"><a href="#cb30-212" aria-hidden="true" tabindex="-1"></a><span class="fu">## weight_by</span></span>
+<span id="cb30-213"><a href="#cb30-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-216"><a href="#cb30-216" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-217"><a href="#cb30-217" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-218"><a href="#cb30-218" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-219"><a href="#cb30-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-220"><a href="#cb30-220" aria-hidden="true" tabindex="-1"></a><span class="co"># sampling will favour rows with higher values of 'body_mass_g'</span></span>
+<span id="cb30-221"><a href="#cb30-221" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">4</span>, <span class="at">weight_by =</span> body_mass_g)</span>
+<span id="cb30-222"><a href="#cb30-222" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-223"><a href="#cb30-223" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb30-224"><a href="#cb30-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-225"><a href="#cb30-225" aria-hidden="true" tabindex="-1"></a><span class="fu">### slice_min() and slice_max()</span></span>
+<span id="cb30-226"><a href="#cb30-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-227"><a href="#cb30-227" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`slice_min()`</span> to extract rows containing least values and use <span class="in">`slice_max()`</span> to extract rows with greatest values. The function <span class="in">`with_ties = FALSE`</span> is included to avoid tie values.</span>
+<span id="cb30-228"><a href="#cb30-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-229"><a href="#cb30-229" aria-hidden="true" tabindex="-1"></a>::: panel-tabset</span>
+<span id="cb30-230"><a href="#cb30-230" aria-hidden="true" tabindex="-1"></a><span class="fu">## slice_min()</span></span>
+<span id="cb30-231"><a href="#cb30-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-234"><a href="#cb30-234" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-235"><a href="#cb30-235" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-236"><a href="#cb30-236" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-237"><a href="#cb30-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-238"><a href="#cb30-238" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">slice_min</span>(body_mass_g, <span class="at">n =</span> <span class="dv">4</span>, <span class="at">with_ties =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb30-239"><a href="#cb30-239" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-240"><a href="#cb30-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-241"><a href="#cb30-241" aria-hidden="true" tabindex="-1"></a><span class="fu">## slice_max()</span></span>
+<span id="cb30-242"><a href="#cb30-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-245"><a href="#cb30-245" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-246"><a href="#cb30-246" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-247"><a href="#cb30-247" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-248"><a href="#cb30-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-249"><a href="#cb30-249" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">slice_max</span>(body_mass_g, <span class="at">n =</span> <span class="dv">4</span>,<span class="at">with_ties =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb30-250"><a href="#cb30-250" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-251"><a href="#cb30-251" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb30-252"><a href="#cb30-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-253"><a href="#cb30-253" aria-hidden="true" tabindex="-1"></a><span class="fu">### slice_head() and slice_tail()</span></span>
+<span id="cb30-254"><a href="#cb30-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-255"><a href="#cb30-255" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`slice_head()`</span> to extract first set of rows and use <span class="in">`slice_tail()`</span> to extract last set of rows.</span>
+<span id="cb30-256"><a href="#cb30-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-257"><a href="#cb30-257" aria-hidden="true" tabindex="-1"></a>::: panel-tabset</span>
+<span id="cb30-258"><a href="#cb30-258" aria-hidden="true" tabindex="-1"></a><span class="fu">## slice_head()</span></span>
+<span id="cb30-259"><a href="#cb30-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-262"><a href="#cb30-262" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-263"><a href="#cb30-263" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-264"><a href="#cb30-264" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-265"><a href="#cb30-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-266"><a href="#cb30-266" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">4</span>)</span>
+<span id="cb30-267"><a href="#cb30-267" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-268"><a href="#cb30-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-269"><a href="#cb30-269" aria-hidden="true" tabindex="-1"></a><span class="fu">## slice_tail()</span></span>
+<span id="cb30-270"><a href="#cb30-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-273"><a href="#cb30-273" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-274"><a href="#cb30-274" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-275"><a href="#cb30-275" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-276"><a href="#cb30-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-277"><a href="#cb30-277" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">slice_tail</span>(<span class="at">n =</span> <span class="dv">4</span>)</span>
+<span id="cb30-278"><a href="#cb30-278" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-279"><a href="#cb30-279" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb30-280"><a href="#cb30-280" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-281"><a href="#cb30-281" aria-hidden="true" tabindex="-1"></a><span class="fu">### arrange()</span></span>
+<span id="cb30-282"><a href="#cb30-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-283"><a href="#cb30-283" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`arrange()`</span> to arrange rows in a particular order.</span>
+<span id="cb30-284"><a href="#cb30-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-287"><a href="#cb30-287" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-288"><a href="#cb30-288" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-289"><a href="#cb30-289" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-290"><a href="#cb30-290" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-291"><a href="#cb30-291" aria-hidden="true" tabindex="-1"></a><span class="co"># arranging rows in descending order of bill length</span></span>
+<span id="cb30-292"><a href="#cb30-292" aria-hidden="true" tabindex="-1"></a><span class="co"># by default it arranges data by ascending order when no specifications are given</span></span>
+<span id="cb30-293"><a href="#cb30-293" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(bill_length_mm))</span>
+<span id="cb30-294"><a href="#cb30-294" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-295"><a href="#cb30-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-296"><a href="#cb30-296" aria-hidden="true" tabindex="-1"></a><span class="fu">### add_row()</span></span>
+<span id="cb30-297"><a href="#cb30-297" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-298"><a href="#cb30-298" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`add_row()`</span> to add rows to the dataset.</span>
+<span id="cb30-299"><a href="#cb30-299" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-302"><a href="#cb30-302" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-303"><a href="#cb30-303" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-304"><a href="#cb30-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-305"><a href="#cb30-305" aria-hidden="true" tabindex="-1"></a>Name <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>)</span>
+<span id="cb30-306"><a href="#cb30-306" aria-hidden="true" tabindex="-1"></a>Age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">13</span>)</span>
+<span id="cb30-307"><a href="#cb30-307" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(Name, Age) <span class="sc">%&gt;%</span> <span class="fu">add_row</span>(<span class="at">Name =</span> <span class="st">"c"</span>, <span class="at">Age =</span> <span class="dv">15</span>)</span>
+<span id="cb30-308"><a href="#cb30-308" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-309"><a href="#cb30-309" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-310"><a href="#cb30-310" aria-hidden="true" tabindex="-1"></a><span class="fu">## Manipulating variables or columns</span></span>
+<span id="cb30-311"><a href="#cb30-311" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-312"><a href="#cb30-312" aria-hidden="true" tabindex="-1"></a>The following functions affect columns to give a subset of columns in a new table as output.</span>
+<span id="cb30-313"><a href="#cb30-313" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-314"><a href="#cb30-314" aria-hidden="true" tabindex="-1"></a><span class="fu">### pull()</span></span>
+<span id="cb30-315"><a href="#cb30-315" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-316"><a href="#cb30-316" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`pull()`</span> to extract columns as a vector, by name or index. Only the first 10 results are shown for easy viewing.</span>
+<span id="cb30-317"><a href="#cb30-317" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-320"><a href="#cb30-320" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-321"><a href="#cb30-321" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb30-322"><a href="#cb30-322" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-323"><a href="#cb30-323" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-324"><a href="#cb30-324" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-325"><a href="#cb30-325" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">pull</span>(body_mass_g)</span>
+<span id="cb30-326"><a href="#cb30-326" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-327"><a href="#cb30-327" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-328"><a href="#cb30-328" aria-hidden="true" tabindex="-1"></a><span class="fu">### select()</span></span>
+<span id="cb30-329"><a href="#cb30-329" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-330"><a href="#cb30-330" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`select()`</span> to extract columns as tables, by name or index.</span>
+<span id="cb30-331"><a href="#cb30-331" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-334"><a href="#cb30-334" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-335"><a href="#cb30-335" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-336"><a href="#cb30-336" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-337"><a href="#cb30-337" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-338"><a href="#cb30-338" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">select</span>(species, body_mass_g)</span>
+<span id="cb30-339"><a href="#cb30-339" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-340"><a href="#cb30-340" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-341"><a href="#cb30-341" aria-hidden="true" tabindex="-1"></a><span class="fu">### relocate()</span></span>
+<span id="cb30-342"><a href="#cb30-342" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-343"><a href="#cb30-343" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`relocate()`</span> to move columns to new position. Results are not shown as these are trivial results.</span>
+<span id="cb30-344"><a href="#cb30-344" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-347"><a href="#cb30-347" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-348"><a href="#cb30-348" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb30-349"><a href="#cb30-349" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-350"><a href="#cb30-350" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-351"><a href="#cb30-351" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-352"><a href="#cb30-352" aria-hidden="true" tabindex="-1"></a><span class="co"># relocates 'species' column to last position</span></span>
+<span id="cb30-353"><a href="#cb30-353" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">relocate</span>(species, <span class="at">.after =</span> <span class="fu">last_col</span>())</span>
+<span id="cb30-354"><a href="#cb30-354" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-355"><a href="#cb30-355" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-358"><a href="#cb30-358" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-359"><a href="#cb30-359" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb30-360"><a href="#cb30-360" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-361"><a href="#cb30-361" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-362"><a href="#cb30-362" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-363"><a href="#cb30-363" aria-hidden="true" tabindex="-1"></a><span class="co"># relocates 'species' column before column 'year' and renames the column as 'penguins'</span></span>
+<span id="cb30-364"><a href="#cb30-364" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">relocate</span>(<span class="at">penguins =</span> species, <span class="at">.before =</span> year)</span>
+<span id="cb30-365"><a href="#cb30-365" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-366"><a href="#cb30-366" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-369"><a href="#cb30-369" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-370"><a href="#cb30-370" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb30-371"><a href="#cb30-371" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-372"><a href="#cb30-372" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-373"><a href="#cb30-373" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-374"><a href="#cb30-374" aria-hidden="true" tabindex="-1"></a><span class="co"># you can also relocate columns based on their class</span></span>
+<span id="cb30-375"><a href="#cb30-375" aria-hidden="true" tabindex="-1"></a><span class="co"># relocates all columns with 'character' class to last position</span></span>
+<span id="cb30-376"><a href="#cb30-376" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">relocate</span>(<span class="fu">where</span>(is.character), <span class="at">.after =</span> <span class="fu">last_col</span>())</span>
+<span id="cb30-377"><a href="#cb30-377" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-378"><a href="#cb30-378" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-379"><a href="#cb30-379" aria-hidden="true" tabindex="-1"></a><span class="fu">### rename()</span></span>
+<span id="cb30-380"><a href="#cb30-380" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-381"><a href="#cb30-381" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`rename()`</span> function to rename column names in the dataset.</span>
+<span id="cb30-382"><a href="#cb30-382" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-385"><a href="#cb30-385" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-386"><a href="#cb30-386" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb30-387"><a href="#cb30-387" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-388"><a href="#cb30-388" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-389"><a href="#cb30-389" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-390"><a href="#cb30-390" aria-hidden="true" tabindex="-1"></a><span class="co"># renames the column sex to gender</span></span>
+<span id="cb30-391"><a href="#cb30-391" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">gender =</span> sex)</span>
+<span id="cb30-392"><a href="#cb30-392" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-393"><a href="#cb30-393" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-394"><a href="#cb30-394" aria-hidden="true" tabindex="-1"></a><span class="fu">### mutate()</span></span>
+<span id="cb30-395"><a href="#cb30-395" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-396"><a href="#cb30-396" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`mutate()`</span> function to create new columns or variables.</span>
+<span id="cb30-397"><a href="#cb30-397" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-400"><a href="#cb30-400" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-401"><a href="#cb30-401" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-402"><a href="#cb30-402" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-403"><a href="#cb30-403" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-404"><a href="#cb30-404" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb30-405"><a href="#cb30-405" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb30-406"><a href="#cb30-406" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(body_mass_g))</span>
+<span id="cb30-407"><a href="#cb30-407" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-408"><a href="#cb30-408" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-409"><a href="#cb30-409" aria-hidden="true" tabindex="-1"></a><span class="fu">### transmute()</span></span>
+<span id="cb30-410"><a href="#cb30-410" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-411"><a href="#cb30-411" aria-hidden="true" tabindex="-1"></a>Does the same function as <span class="in">`mutate()`</span> but in the process will drop any other columns and give you a table with only the newly created columns.</span>
+<span id="cb30-412"><a href="#cb30-412" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-415"><a href="#cb30-415" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-416"><a href="#cb30-416" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-417"><a href="#cb30-417" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-418"><a href="#cb30-418" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-419"><a href="#cb30-419" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb30-420"><a href="#cb30-420" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb30-421"><a href="#cb30-421" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(body_mass_g))</span>
+<span id="cb30-422"><a href="#cb30-422" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-423"><a href="#cb30-423" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-424"><a href="#cb30-424" aria-hidden="true" tabindex="-1"></a><span class="fu">### across()</span></span>
+<span id="cb30-425"><a href="#cb30-425" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-426"><a href="#cb30-426" aria-hidden="true" tabindex="-1"></a>Use <span class="in">`across()`</span> to summarise or mutate columns in the same way. First example shows <span class="in">`across()`</span> used with <span class="in">`summarise()`</span> function.</span>
+<span id="cb30-427"><a href="#cb30-427" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-430"><a href="#cb30-430" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-431"><a href="#cb30-431" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-432"><a href="#cb30-432" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-433"><a href="#cb30-433" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-434"><a href="#cb30-434" aria-hidden="true" tabindex="-1"></a><span class="co"># summarise across columns body mass, bill length and bill depth</span></span>
+<span id="cb30-435"><a href="#cb30-435" aria-hidden="true" tabindex="-1"></a><span class="co"># and calculate the mean values</span></span>
+<span id="cb30-436"><a href="#cb30-436" aria-hidden="true" tabindex="-1"></a><span class="co"># since we are calculating mean values,</span></span>
+<span id="cb30-437"><a href="#cb30-437" aria-hidden="true" tabindex="-1"></a><span class="co"># NAs are dropped using 'drop_na() function from 'tidyr' package</span></span>
+<span id="cb30-438"><a href="#cb30-438" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-439"><a href="#cb30-439" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb30-440"><a href="#cb30-440" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb30-441"><a href="#cb30-441" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">c</span>(body_mass_g, bill_length_mm, bill_depth_mm), mean))</span>
+<span id="cb30-442"><a href="#cb30-442" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-443"><a href="#cb30-443" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-444"><a href="#cb30-444" aria-hidden="true" tabindex="-1"></a>Second example showing <span class="in">`across()`</span> used with <span class="in">`mutate()`</span> function. We can efficiently create new columns using <span class="in">`mutate()`</span> and <span class="in">`across()`</span> together. Suppose we want to multiply all numerical values in a dataset with 2 and create new columns of those values. This can be done using the code below.</span>
+<span id="cb30-445"><a href="#cb30-445" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-448"><a href="#cb30-448" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-449"><a href="#cb30-449" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-450"><a href="#cb30-450" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-451"><a href="#cb30-451" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-452"><a href="#cb30-452" aria-hidden="true" tabindex="-1"></a><span class="co"># define the function</span></span>
+<span id="cb30-453"><a href="#cb30-453" aria-hidden="true" tabindex="-1"></a>two_times <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb30-454"><a href="#cb30-454" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span><span class="sc">*</span>x</span>
+<span id="cb30-455"><a href="#cb30-455" aria-hidden="true" tabindex="-1"></a>} </span>
+<span id="cb30-456"><a href="#cb30-456" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-457"><a href="#cb30-457" aria-hidden="true" tabindex="-1"></a><span class="co"># .name will rename the new columns with 'twice` prefix combined with existing col names</span></span>
+<span id="cb30-458"><a href="#cb30-458" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb30-459"><a href="#cb30-459" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), two_times, <span class="at">.names =</span> <span class="st">"two_times_{col}"</span>))</span>
+<span id="cb30-460"><a href="#cb30-460" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-461"><a href="#cb30-461" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-462"><a href="#cb30-462" aria-hidden="true" tabindex="-1"></a>The same code when used just with <span class="in">`mutate()`</span> function will look like this</span>
+<span id="cb30-463"><a href="#cb30-463" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-466"><a href="#cb30-466" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-467"><a href="#cb30-467" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb30-468"><a href="#cb30-468" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-469"><a href="#cb30-469" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-470"><a href="#cb30-470" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-471"><a href="#cb30-471" aria-hidden="true" tabindex="-1"></a><span class="co"># define the function</span></span>
+<span id="cb30-472"><a href="#cb30-472" aria-hidden="true" tabindex="-1"></a>two_times <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb30-473"><a href="#cb30-473" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span><span class="sc">*</span>x</span>
+<span id="cb30-474"><a href="#cb30-474" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb30-475"><a href="#cb30-475" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-476"><a href="#cb30-476" aria-hidden="true" tabindex="-1"></a><span class="co"># using only 'mutate()' function</span></span>
+<span id="cb30-477"><a href="#cb30-477" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb30-478"><a href="#cb30-478" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">twice_bill_lenght =</span> <span class="fu">two_times</span>(bill_length_mm),</span>
+<span id="cb30-479"><a href="#cb30-479" aria-hidden="true" tabindex="-1"></a>         <span class="at">twice_body_mass =</span> <span class="fu">two_times</span>(body_mass_g),</span>
+<span id="cb30-480"><a href="#cb30-480" aria-hidden="true" tabindex="-1"></a>         .....)</span>
+<span id="cb30-481"><a href="#cb30-481" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-482"><a href="#cb30-482" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-483"><a href="#cb30-483" aria-hidden="true" tabindex="-1"></a>So in this code, I will have to manually type all the col names and apply the operation individually which is too much of a hassle. Now we can better appreciate how efficient it is in using <span class="in">`mutate()`</span> and <span class="in">`across()`</span> functions together.</span>
+<span id="cb30-484"><a href="#cb30-484" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-485"><a href="#cb30-485" aria-hidden="true" tabindex="-1"></a><span class="fu">### c_across()</span></span>
+<span id="cb30-486"><a href="#cb30-486" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-487"><a href="#cb30-487" aria-hidden="true" tabindex="-1"></a>The function <span class="in">`c_across()`</span> is similar to the earlier mentioned <span class="in">`across()`</span> function. But instead of doing a column-wise function, it applies function across columns in a row-wise manner. Now, most functions in R by default computes across columns, so to specify row-wise computation, we have to explicitly use the function <span class="in">`rowwise()`</span> in conjunction with other functions. In the example below we will sum both bill and flipper lengths of the penguins in the <span class="in">`penguins`</span> dataset and create a new column called 'sum_of_lengths'.</span>
+<span id="cb30-488"><a href="#cb30-488" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-491"><a href="#cb30-491" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb30-492"><a href="#cb30-492" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-493"><a href="#cb30-493" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-494"><a href="#cb30-494" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-495"><a href="#cb30-495" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb30-496"><a href="#cb30-496" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb30-497"><a href="#cb30-497" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb30-498"><a href="#cb30-498" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(<span class="at">sum_of_length =</span> <span class="fu">sum</span>(<span class="fu">c_across</span>(<span class="fu">c</span>(bill_length_mm,flipper_length_mm))))</span>
+<span id="cb30-499"><a href="#cb30-499" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-500"><a href="#cb30-500" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-501"><a href="#cb30-501" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summary</span></span>
+<span id="cb30-502"><a href="#cb30-502" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-503"><a href="#cb30-503" aria-hidden="true" tabindex="-1"></a>The <span class="in">`{dplyr}`</span> package is the grammar of the data manipulation in R. It features well-made functions to help us summarise the data, group data by variables and manipulate columns and rows in the dataset. In this chapter, we learned in detail the different functions that help us manipulate data efficiently and have seen case examples also. In the next chapter, we will see the remaining set of functions in the <span class="in">`{dplyr}`</span> package.</span>
+<span id="cb30-504"><a href="#cb30-504" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-505"><a href="#cb30-505" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
+<span id="cb30-506"><a href="#cb30-506" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-507"><a href="#cb30-507" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Hadley Wickham, Romain François, Lionel Henry and Kirill Müller (2021). dplyr: A Grammar of Data Manipulation. R package version 1.0.7. https://CRAN.R-project.org/package=dplyr Here is the <span class="co">[</span><span class="ot">link</span><span class="co">](https://github.com/rstudio/cheatsheets/blob/main/data-transformation.pdf)</span> to the cheat sheet explaining each function in <span class="in">`{dplyr}`</span>.</span>
+<span id="cb30-508"><a href="#cb30-508" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-509"><a href="#cb30-509" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/</span>
+<span id="cb30-510"><a href="#cb30-510" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-511"><a href="#cb30-511" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Hadley Wickham (2021). tidyr: Tidy Messy Data. R package version 1.1.4. https://CRAN.R-project.org/package=tidyr</span>
+<span id="cb30-512"><a href="#cb30-512" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-513"><a href="#cb30-513" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">hidden</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://info.flagcounter.com/ynrK"</span><span class="kw">&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"Flag Counter"</span> <span class="er">border</span><span class="ot">=</span><span class="st">"0"</span><span class="kw">/&gt;&lt;/a&gt;</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Blog made using <a href="https://quarto.org/">Quarto®</a> with ❤️, by Jewel Johnson.</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
 <li class="nav-item compact">

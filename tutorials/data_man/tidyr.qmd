@@ -2,6 +2,7 @@
 title: "Chapter 1: Data tidying using tidyr"
 description: "Learn how to make your data tidy with the tidyr package"
 date: "12/11/2021"
+date-modified: last-modified
 format:
   html:
     code-fold: true

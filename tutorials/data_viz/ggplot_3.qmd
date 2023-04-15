@@ -2,6 +2,7 @@
 title: "Chapter 3: Even more customizations in ggplot2"
 description: "Learn how to customize the theme and the colour palette of a graph in ggplot2"
 date: "12/09/2021"
+date-modified: last-modified
 format: html
 execute: 
   cache: true
@@ -1325,12 +1326,5 @@ I hope you are now able to customize the theme of a graph with ease. In this cha
 6.  Karthik Ram and Hadley Wickham (2018). wesanderson: A Wes Anderson Palette Generator. R package version 0.3.6. https://CRAN.R-project.org/package=wesanderson
 
 7.  Nan Xiao (2018). ggsci: Scientific Journal and Sci-Fi Themed Color Palettes for 'ggplot2'. R package version 2.9. https://CRAN.R-project.org/package=ggsci
-
-#### Last updated on {.unnumbered .unlisted .appendix}
-
-```{r}
-#| echo: false
-Sys.time()
-```
 
 <a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>

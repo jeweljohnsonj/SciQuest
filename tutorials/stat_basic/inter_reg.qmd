@@ -2,6 +2,7 @@
 title: "Intermediate Regression in R"
 description: "Level up your regression knowledge using multiple explanatory variables"
 date: "09/19/2022"
+date-modified: last-modified
 format:
   html:
     css:
@@ -506,13 +507,6 @@ It is time to wrap up! In this tutorial we have learned the following things;
 6.    What is Simpson's paradox
 
 7.    Visualising models with two numerical explanatory variables
-
-#### Last updated on {.unnumbered .unlisted .appendix}
-
-```{r}
-#| echo: false
-Sys.time()
-```
 
 <!-- Do not forget to put flag counter -->
 <a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>

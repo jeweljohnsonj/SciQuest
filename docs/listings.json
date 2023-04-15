@@ -5,11 +5,11 @@
       "/posts/obsidian_zotero/index.html",
       "/posts/research_article_embryonic_learning/index_post.html",
       "/posts/research_article_biggest_bacterium/index_post.html",
-      "/posts/welcome_to_blog/index.html",
       "/posts/notion_movie_books/index.html",
+      "/posts/welcome_to_blog/index.html",
       "/posts/notion_task_manager/index.html",
-      "/posts/notion_research_diary/index.html",
       "/posts/notion_literature/index.html",
+      "/posts/notion_research_diary/index.html",
       "/posts/notion_intro/index.html",
       "/posts/word_happy_2022/index.html"
     ]
@@ -27,8 +27,8 @@
       "/tutorials/stat_basic/inter_reg.html",
       "/tutorials/stat_basic/intro_reg.html",
       "/tutorials/stat_basic/intro_stat.html",
-      "/tutorials/stat_model/glmer_stat_model.html",
       "/tutorials/stat_model/glm_stat_model.html",
+      "/tutorials/stat_model/glmer_stat_model.html",
       "/tutorials/stat_model/inter_stat_model.html",
       "/tutorials/stat_model/intro_stat_model.html"
     ]

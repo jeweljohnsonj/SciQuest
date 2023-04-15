@@ -2,6 +2,7 @@
 title: "Chapter 3: Data manipulation using dplyr (part 2)"
 description: "Learn how to manipulate your data with the dplyr package"
 date: "12/13/2021"
+date-modified: last-modified
 format: html
 image: images/dplyr1.png
 categories: [dplyr, data wrangling]
@@ -266,12 +267,5 @@ Thus to conclude this chapter, we have now learned almost all functions in the d
 ## References
 
 1.  Hadley Wickham, Romain François, Lionel Henry and Kirill Müller (2021). dplyr: A Grammar of Data Manipulation. R package version 1.0.7. https://CRAN.R-project.org/package=dplyr. Here is the [link](https://github.com/rstudio/cheatsheets/blob/main/data-transformation.pdf) to the cheat sheet explaining each and every function in `{dplyr}`.
-
-#### Last updated on {.unnumbered .unlisted .appendix}
-
-```{r}
-#| echo: false
-Sys.time()
-```
 
 <a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>

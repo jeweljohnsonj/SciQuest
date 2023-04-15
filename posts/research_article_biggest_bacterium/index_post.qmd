@@ -2,6 +2,7 @@
 title: "The world's largest bacteria is bigger than a housefly"
 description: "Meet *Thiomargarita magnifica*, a recently discovered species of bacteria that is a whopping 1 cm in length, making it the largest bacteria ever till now."
 date: "07/14/2022"
+date-modified: last-modified
 format: html
 image: images/compare.png
 bibliography: reference.bib
@@ -95,13 +96,5 @@ How is *(Ca.)* T. magnifica overcoming these constraints? First of all, they hav
 In the end, when we look at these features carefully, it is analogous to the various features present in eukaryotes. The polyploid genome of *(Ca.)* T. magnifica is equivalent to polypoid mtDNA present in eukaryotes. Compartmentalisation of DNA and ribosome via pepins is equivalent to compartmentalisation seen in the nucleus and the endoplasmic reticulum. And perhaps the icing on the cake is that *(Ca.)* T. magnifica transfers its genetic material via a membrane-bound organelle; pepins, something that is never seen before in prokaryotes. Therefore *(Ca.)* T. magnifica stands as one of the extreme cases of bacterial evolution which blurs our understanding of what constitutes a eukaryote and a prokaryote.
 
 For more details about the study, please find the original paper [@volland_centimeter-long_2022].
-
-
-#### Last updated on {.unnumbered .unlisted .appendix}
-
-```{r}
-#| echo: false
-Sys.time()
-```
 
 <a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>

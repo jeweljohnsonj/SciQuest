@@ -2,6 +2,7 @@
 title: "Chapter 4: Publication ready plots using ggpubr"
 description: "Learn how to make publication ready plots and visualize results of statistical tests directly on the plot using the ggpubr package"
 date: "01/06/2022"
+date-modified: last-modified
 format: html
 image: images/gg4.png
 categories: [ggpubr, data visualization]
@@ -760,12 +761,5 @@ I hope this chapter was useful to you. Check out the other chapter for more begi
 7.  H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016.
 
 8.  Simon Garnier, Noam Ross, Robert Rudis, Antônio P. Camargo, Marco Sciaini, and Cédric Scherer (2021). Rvision - Colorblind-Friendly Color Maps for R. R package version 0.6.2.
-
-#### Last updated on {.unnumbered .unlisted .appendix}
-
-```{r}
-#| echo: false
-Sys.time()
-```
 
 <a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>

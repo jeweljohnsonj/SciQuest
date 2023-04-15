@@ -2,6 +2,7 @@
 title: "Hypothesis Testing in R"
 description: "Learn how to do hypothesis testing using R"
 date: "10/06/2022"
+date-modified: last-modified
 format:
   html:
     css:
@@ -27,15 +28,5 @@ share:
 
 In this tutorial we will learn about hypothesis testing in R. We will learn various concepts like p-values, type I and type II errors, parametric and non parametric tests and, their assumptions. So let us start!
 
-
-
-
-
-#### Last updated on {.unnumbered .unlisted .appendix}
-
-```{r}
-#| echo: false
-Sys.time()
-```
 
 <!-- Do not forget to put flag counter -->

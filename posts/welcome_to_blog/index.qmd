@@ -2,6 +2,7 @@
 title: "The story behind one carat blog"
 description: "In this article, I share my experiences on how this blog was made. Spoiler alter: it involved a lot of R package hitchhiking"
 date: "07/01/2022"
+date-modified: last-modified
 image: story.png
 categories: [news]
 ---
@@ -91,12 +92,5 @@ Useful Quarto articles
 4.  [Cool quarto tips and tricks](https://twitter.com/rappa753/status/1531692573126959106?s=20&t=6m6RMOkad-GUyd4KAvk4fA). Tweet by [Albert Rapp](https://twitter.com/rappa753)
 
 5.  [Official guide by developers of Quarto](https://quarto.org/docs/get-started/hello/rstudio.html)
-
-#### Last updated on {.unnumbered .unlisted .appendix}
-
-```{r}
-#| echo: false
-Sys.time()
-```
 
 <a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>

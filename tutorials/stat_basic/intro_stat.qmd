@@ -2,6 +2,7 @@
 title: "Introductory statistics with R"
 description: "Learn the basics of statistics using R"
 date: "08/31/2022"
+date-modified: last-modified
 format:
   html:
     css:
@@ -1115,13 +1116,6 @@ We have completed the basics of statistics and also learned how to implement the
 6.    Data transformation: Skewness, Q-Q plot and data transformation functions
 
 In the next chapter will we see how to use R for hypothesis testing.
-
-#### Last updated on {.unnumbered .unlisted .appendix}
-
-```{r}
-#| echo: false
-Sys.time()
-```
 
 <!-- Do not forget to put flag counter -->
 <a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>

@@ -2,6 +2,7 @@
 title: "Using Notion to keep a movie and a book list tracker"
 description: "This a tutorial on how you can use Notion to maintain reading and watch list tracker"
 date: "07/01/2022"
+date-modified: last-modified
 format: html
 image: images/movie_thumb.png
 categories: [Notion]
@@ -40,12 +41,5 @@ The book list tracker is almost identical to the movie list one. To get the book
 ## Conclusion
 
 I hope you find these templates useful. You can give your feedback and thoughts about the template in the comment section below this article.
-
-#### Last updated on {.unnumbered .unlisted .appendix}
-
-```{r}
-#| echo: false
-Sys.time()
-```
 
 <a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>

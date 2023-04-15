@@ -2,6 +2,7 @@
 title: "Introduction to statistical modelling in R"
 description: "Learn how to build a model, predict values using it, evaluating it and plotting the model output in R"
 date: "08/04/2022"
+date-modified: last-modified
 image: images/stat_model.png
 bibliography: references.bib
 csl: american-physiological-society
@@ -184,15 +185,10 @@ data("Used_Fords") # From mosaicModel
 The pipeline for building a model is as follows;
 
 ```{mermaid}
-%%{init: {'securityLevel': 'loose', 'theme':'base'}}%%
 graph LR
-  A(Collect data) --> B(Select explanatory<br> and response variables) --> C(Select model architecture) --> D(Build the model)
-  subgraph Pipeline for making a statistical model
-  A
-  B
-  C
-  D
-  end
+subgraph Pipeline for making a statistical model
+A(Collect data) --> B(Select explanatory<br> and response variables) --> C(Select model architecture) --> D(Build the model)
+end
 ```
 
 The first step in building a model is by acquiring data. Then we need to select the appropriate response variable (dependent variable) and the explanatory variables (independent variable). In a cancer drug trial experiment data, tumour size can be the response variable and the drug type and patient age can be the explanatory variables. After selecting the variables, the model architecture is chosen. In our earlier example, we used a linear model to explain the changes seen in stopping distances with speed. Choosing a model architecture depends on the nature of the data. For now, we will mostly be using the linear model `lm()`. But throughout the tutorial, we will also see other model architectures. The final step is to build the model, which is done by the computer.
@@ -1070,12 +1066,5 @@ I hope this article provided you with a good learning experience. In a nutshell,
     * For categorical explanatory variables
 
 Take a break and practice the concepts learned from this tutorial. I will see you in the next tutorial where we will learn about 'Intermediate statistical modelling using R'. See you there 👍
- 
-#### Last updated on {.unnumbered .unlisted .appendix}
-
-```{r}
-#| echo: false
-Sys.time()
-```
 
 <a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>

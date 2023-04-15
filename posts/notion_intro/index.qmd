@@ -2,6 +2,7 @@
 title: "My Notion story"
 description: "Notion is a powerful productivity software that implements database creation in its core function. In this article, I will share my story on what led me to use Notion and why you might want to consider using Notion"
 date: "06/28/2022"
+date-modified: last-modified
 format: html
 tbl-cap-location: bottom
 categories: [Notion, Zotero]
@@ -118,12 +119,5 @@ I hope you find the templates useful and I wish you all the best in learning Not
 2.  Basics of Notion. [Source](https://www.youtube.com/watch?v=aA7si7AmPkY&t=345s&ab_channel=Notion)
 3.  Quick tutorial on setting up Notion. [Source](https://radreads.co/notion-tutorial/)
 4.  Notion official website has detailed guides for very single feature in Notion. [Source](https://www.notion.so/help/guides)
-
-#### Last updated on {.unnumbered .unlisted .appendix}
-
-```{r}
-#| echo: false
-Sys.time()
-```
 
 <a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>

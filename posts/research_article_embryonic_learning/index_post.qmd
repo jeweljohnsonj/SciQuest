@@ -2,6 +2,7 @@
 title: "Learning starts in the embryo for fathead minnow fish"
 description: "Embryonic learning occurs when an organism can learn while in its embryo stage. Learn how researchers showed that fathead minnow embryos (*Pimephales promelas*) can detect conspecific alarm cues and associate them with predator cues to modulate both pre and post-embryonic behaviours"
 date: "07/22/2022"
+date-modified: last-modified
 format: html
 image: images/preview.png
 bibliography: Blog_Embryonic_Learning.bib
@@ -115,12 +116,5 @@ The evidence for associative learning in this study did not achieve statistical 
 2. As fathead minnows were trained to associate predator cues to conspecific alarm cues throughout 5 days post fertilization as embryos and were only tested 22 days post fertilization as larvae. There was a significant time gap between training and testing which might have corroded its memory. But fathead minnows are known to form long-lasting associations between odour cues and other cues. In an earlier study [@brown_fathead_1994], fathead minnow was shown to distinguish between familiar shoal mates and unfamiliar conspecifics, and they were able to maintain this discriminability even after 2 months of separation suggesting evidence for a long-lasting memory. I did not find any other studies which have exclusively looked at learning and memory in fathead minnow. An interesting experiment to follow up would be, training fathead minnow embryos to associate a predator cue to the conspecific alarm and testing this association at different ages after hatching. This can again check if embryonic associative learning occurred? if it occurred then how does the memory fare with increasing time interval between last association and larval age.
 
 In conclusion, this study [@crowder_embryonic_2022] showcased a whole new aspect of learning in fathead minnow (*Pimephales promelas*) which opens up new avenues of research questions given their peculiar behaviour and life history.
-
-#### Last updated on {.unnumbered .unlisted .appendix}
-
-```{r}
-#| echo: false
-Sys.time()
-```
 
 <a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>

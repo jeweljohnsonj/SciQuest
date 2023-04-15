@@ -2,6 +2,7 @@
 title: "Intermediate statistical modelling in R"
 description: "Learn about interaction terms, total and partial change, R-squared values, bootstrapping and collinearity"
 date: "08/11/2022"
+date-modified: last-modified
 format:
   html:
     css:
@@ -1409,12 +1410,5 @@ First of all, congratulations on completing the intermediate statistical modelli
 9. Collinearity
 
 You have mastered almost everything that is there in linear modelling. Congratulations! But, the journey is not over. The next stop is 'Generalized Linear Models in R`. This is a realm where we deal with complex datasets that cannot be analysed by our trusty linear regression models. Anyway, that's a problem for tomorrow. Practice the concepts you gained from both the tutorials and come ready for the next tutorial ✌️
-
-#### Last updated on {.unnumbered .unlisted .appendix}
-
-```{r}
-#| echo: false
-Sys.time()
-```
 
 <a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>

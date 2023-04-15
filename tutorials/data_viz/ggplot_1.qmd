@@ -2,6 +2,7 @@
 title: "Chapter 1: Data visualization using ggplot2"
 description: "Learn how to plot different types of graphs using the ggplot2 package"
 date: "12/02/2021"
+date-modified: last-modified
 format: html
 image: images/gg1.png
 categories: [ggplot2, data visualization]
@@ -266,12 +267,5 @@ I hope this tutorial helped you to get familiarize with the `{ggplot2}` commands
 1.  H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016. Read more about ggplot2 [here](https://ggplot2.tidyverse.org/). You can also look at the [cheat sheet](https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf) for all the syntax used in `ggplot2`. Also check this [out](https://github.com/erikgahner/awesome-ggplot2).
 
 2.  Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/. doi: 10.5281/zenodo.3960218.
-
-#### Last updated on {.unnumbered .unlisted .appendix}
-
-```{r}
-#| echo: false
-Sys.time()
-```
 
 <a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>

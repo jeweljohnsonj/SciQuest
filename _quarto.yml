@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "one carat blog"
+  title: "SciQuest"
   image: media/blog_preview.png
   favicon: favicon.png
   page-navigation: true
@@ -41,7 +41,7 @@ website:
  
 format:
   html:
-    theme: slate
+    theme: united
     css: styles.css
     toc: true
     toc-location: right

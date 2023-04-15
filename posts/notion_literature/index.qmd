@@ -2,6 +2,7 @@
 title: "Using Notion and Zotero to build a literature tracker"
 description: "In this tutorial we will learn how we can use Notion to make a literature database. With the help of the Notero plugin, our database will be synced with our Zotero directories"
 date: "06/29/2022"
+date-modified: last-modified
 format: html
 image: images/notero_thumbnail.png
 categories: [PhD, Notion, Zotero]
@@ -119,12 +120,5 @@ There are some limitations on what the plugin is capable of doing, but it's stil
 So there you have it, your very own literature tracker made using Notion and integrated with Zotero using the Notero plugin. I am so proud of you 👍
 
 Thank you [David Vanoni](https://twitter.com/dvanoni) and the developers who contributed to developing the Notero plugin. You can share your feedback and thoughts about the templates in the comment section below.
-
-#### Last updated on {.unnumbered .unlisted .appendix}
-
-```{r}
-#| echo: false
-Sys.time()
-```
 
 <a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>

@@ -2,6 +2,7 @@
 title: "Chapter 2: Customizing graphs in ggplot2"
 description: "Learn how to customize the aesthetics, labels and axes of a graph in ggplot2"
 date: "12/04/2021"
+date-modified: last-modified
 format: html
 image: images/gg2.png
 categories: [ggplot2, data visualization]
@@ -448,12 +449,5 @@ In this tutorial, we learned how to modify aesthetic present for different geoms
 1.  H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2016. Read more about ggplot2 [here](https://ggplot2.tidyverse.org/). You can also look at the [cheat sheet](https://github.com/rstudio/cheatsheets/blob/master/data-visualization-2.1.pdf) for all the syntax used in `ggplot2`. Also check this [out](https://github.com/erikgahner/awesome-ggplot2).
 
 2.  Ann Cannon, George Cobb, Bradley Hartlaub, Julie Legler, Robin Lock, Thomas Moore, Allan Rossman and Jeffrey Witmer (2019). Stat2Data: Datasets for Stat2. R package version 2.0.0. https://CRAN.R-project.org/package=Stat2Data
-
-#### Last updated on {.unnumbered .unlisted .appendix}
-
-```{r}
-#| echo: false
-Sys.time()
-```
 
 <a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>

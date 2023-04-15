@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.3.302">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="author" content="Jewel Johnson">
 <meta name="dcterms.date" content="2022-07-14">
 <meta name="description" content="Meet Thiomargarita magnifica, a recently discovered species of bacteria that is a whopping 1 cm in length, making it the largest bacteria ever till now.">
-<title>one carat blog - The world’s largest bacteria is bigger than a housefly</title>
+
+<title>SciQuest - The world’s largest bacteria is bigger than a housefly</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,9 +20,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -46,48 +50,19 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -101,8 +76,8 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
+
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
@@ -117,10 +92,11 @@ div.csl-indent {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -138,15 +114,20 @@ div.csl-indent {
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EVCS615JQR"></script><script type="text/javascript">
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EVCS615JQR"></script>
+
+<script type="text/javascript">
 
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
-</script><style>html{ scroll-behavior: smooth; }</style>
-<link href="../../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
-<script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script><script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script><script>document.addEventListener("DOMContentLoaded", function () {
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
  for (var i = 0; i < mathElements.length; i++) {
@@ -159,61 +140,76 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
     fleqn: false
    });
 }}});
-  </script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="one carat blog - The world’s largest bacteria is bigger than a housefly">
+<meta property="og:title" content="SciQuest - The world’s largest bacteria is bigger than a housefly">
 <meta property="og:description" content="Meet Thiomargarita magnifica, a recently discovered species of bacteria that is a whopping 1 cm in length, making it the largest bacteria ever till now.">
 <meta property="og:image" content="https://one-carat-blog.netlify.app/posts/research_article_biggest_bacterium/images/compare.png">
-<meta property="og:site-name" content="one carat blog">
+<meta property="og:site-name" content="SciQuest">
 <meta property="og:image:height" content="1080">
 <meta property="og:image:width" content="1920">
-<meta name="twitter:title" content="one carat blog - The world’s largest bacteria is bigger than a housefly">
+<meta name="twitter:title" content="SciQuest - The world’s largest bacteria is bigger than a housefly">
 <meta name="twitter:description" content="Meet Thiomargarita magnifica, a recently discovered species of bacteria that is a whopping 1 cm in length, making it the largest bacteria ever till now.">
 <meta name="twitter:image" content="https://one-carat-blog.netlify.app/posts/research_article_biggest_bacterium/images/compare.png">
 <meta name="twitter:image-height" content="1080">
 <meta name="twitter:image-width" content="1920">
 <meta name="twitter:card" content="summary_large_image">
 </head>
+
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../favicon.png" alt="" class="navbar-logo"></a>
+    <img src="../../favicon.png" alt="" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">one carat blog</span>
+    <span class="navbar-title">SciQuest</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-<li class="nav-item">
-    <a class="nav-link" href="../../blog.html">Blog</a>
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../tutorials.html">Tutorials</a>
+    <a class="nav-link" href="../../tutorials.html" rel="" target="">
+ <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://jeweljohnsonj.github.io/jewel_resume/">About me</a>
+    <a class="nav-link" href="https://jeweljohnsonj.github.io/jewel_resume/" rel="" target="">
+ <span class="menu-text">About me</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/jeweljohnsonj/one-carat-blog"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/jeweljohnsonj/one-carat-blog" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/jeweljohnsonj"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/jeweljohnsonj" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
 </ul>
-<div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
-    </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <div class="quarto-title-block"><div><h1 class="title">The world’s largest bacteria is bigger than a housefly</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
                   <div>
@@ -234,7 +230,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Jewel Johnson </p>
+               <p><a href="https://jeweljohnsonj.github.io/one-carat-blog/">Jewel Johnson</a> </p>
             </div>
     </div>
       
@@ -242,6 +238,13 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
         <p class="date">July 14, 2022</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Modified</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">April 14, 2023</p>
       </div>
     </div>
       
@@ -252,83 +255,100 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#tldr" id="toc-tldr" class="nav-link active" data-scroll-target="#tldr"><span class="toc-section-number">1</span>  TL;DR</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="toc-section-number">2</span>  Introduction</a></li>
-  <li><a href="#discovering-the-biggest-bacteria" id="toc-discovering-the-biggest-bacteria" class="nav-link" data-scroll-target="#discovering-the-biggest-bacteria"><span class="toc-section-number">3</span>  Discovering the biggest bacteria</a></li>
-  <li>
-<a href="#elucidating-the-biggest-bacteria" id="toc-elucidating-the-biggest-bacteria" class="nav-link" data-scroll-target="#elucidating-the-biggest-bacteria"><span class="toc-section-number">4</span>  Elucidating the biggest bacteria</a>
+  <li><a href="#tldr" id="toc-tldr" class="nav-link active" data-scroll-target="#tldr"><span class="header-section-number">1</span> TL;DR</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">2</span> Introduction</a></li>
+  <li><a href="#discovering-the-biggest-bacteria" id="toc-discovering-the-biggest-bacteria" class="nav-link" data-scroll-target="#discovering-the-biggest-bacteria"><span class="header-section-number">3</span> Discovering the biggest bacteria</a></li>
+  <li><a href="#elucidating-the-biggest-bacteria" id="toc-elucidating-the-biggest-bacteria" class="nav-link" data-scroll-target="#elucidating-the-biggest-bacteria"><span class="header-section-number">4</span> Elucidating the biggest bacteria</a>
   <ul class="collapse">
-<li><a href="#the-whole-filament-is-a-single-bacterial-cell" id="toc-the-whole-filament-is-a-single-bacterial-cell" class="nav-link" data-scroll-target="#the-whole-filament-is-a-single-bacterial-cell"><span class="toc-section-number">4.1</span>  The whole filament is a single bacterial cell</a></li>
-  <li><a href="#inside-the-biggest-bacteria-large-central-vacuole-sulphur-granules-and-pepins" id="toc-inside-the-biggest-bacteria-large-central-vacuole-sulphur-granules-and-pepins" class="nav-link" data-scroll-target="#inside-the-biggest-bacteria-large-central-vacuole-sulphur-granules-and-pepins"><span class="toc-section-number">4.2</span>  Inside the biggest bacteria: Large central vacuole, sulphur granules and pepins</a></li>
-  <li><a href="#localization-of-atp-synthase" id="toc-localization-of-atp-synthase" class="nav-link" data-scroll-target="#localization-of-atp-synthase"><span class="toc-section-number">4.3</span>  Localization of ATP synthase</a></li>
+  <li><a href="#the-whole-filament-is-a-single-bacterial-cell" id="toc-the-whole-filament-is-a-single-bacterial-cell" class="nav-link" data-scroll-target="#the-whole-filament-is-a-single-bacterial-cell"><span class="header-section-number">4.1</span> The whole filament is a single bacterial cell</a></li>
+  <li><a href="#inside-the-biggest-bacteria-large-central-vacuole-sulphur-granules-and-pepins" id="toc-inside-the-biggest-bacteria-large-central-vacuole-sulphur-granules-and-pepins" class="nav-link" data-scroll-target="#inside-the-biggest-bacteria-large-central-vacuole-sulphur-granules-and-pepins"><span class="header-section-number">4.2</span> Inside the biggest bacteria: Large central vacuole, sulphur granules and pepins</a></li>
+  <li><a href="#localization-of-atp-synthase" id="toc-localization-of-atp-synthase" class="nav-link" data-scroll-target="#localization-of-atp-synthase"><span class="header-section-number">4.3</span> Localization of ATP synthase</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">5</span> Conclusion</a></li>
   </ul>
-</li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="toc-section-number">5</span>  Conclusion</a></li>
-  </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/edit/main/posts/research_article_biggest_bacterium/index_post.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/edit/main/posts/research_article_biggest_bacterium/index_post.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content"><section id="tldr" class="level2 page-columns page-full" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="tldr">
-<span class="header-section-number">1</span> TL;DR</h2>
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
+
+
+
+
+<section id="tldr" class="level2 page-columns page-full" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="tldr"><span class="header-section-number">1</span> TL;DR</h2>
 <div class="column-page">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="images/tl_dr.png" class="img-fluid figure-img"></p>
+<figure class="figure">
+<p><img src="images/tl_dr.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Summary of the study in <span class="citation" data-cites="volland_centimeter-long_2022">(<a href="#ref-volland_centimeter-long_2022" role="doc-biblioref">1</a>)</span></figcaption><p></p>
 </figure>
 </div>
 <p>Research article that is summarised in this post: Volland, J.-M., Gonzalez-Rizzo, S., Gros, O., Tyml, T., Ivanova, N., Schulz, F., Goudeau, D., Elisabeth, N. H., Nath, N., Udwary, D., Malmstrom, R. R., Guidi-Rontani, C., Bolte-Kluge, S., Davies, K. M., Jean, M. R., Mansot, J.-L., Mouncey, N. J., Angert, E. R., Woyke, T., &amp; Date, S. V. (2022). A centimeter-long bacterium with DNA contained in metabolically active, membrane-bound organelles. Science, 376(6600), 1453–1458. <a href="https://doi.org/10.1126/science.abb3634">https://doi.org/10.1126/science.abb3634</a>.</p>
 </div>
-</section><section id="introduction" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="introduction">
-<span class="header-section-number">2</span> Introduction</h2>
+</section>
+<section id="introduction" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="introduction"><span class="header-section-number">2</span> Introduction</h2>
 <p>When you think of bacteria, the first thing that might come to your mind is a microscope, given how tiny they are to see. Most of the bacteria and archaea are about ~ <span class="math inline">2 \mu m</span> in size <span class="citation" data-cites="volland_centimeter-long_2022">(<a href="#ref-volland_centimeter-long_2022" role="doc-biblioref">1</a>)</span>. The record for the smallest living organism is shared between the pathogenic bacteria, <em>Mycoplasma pneumoniae</em> and the <em>Thermodiscus sp.</em> belonging to Archae. Both can be as small as <span class="math inline">0.2 \mu m</span> in size <span class="citation" data-cites="schulz_big_2001">(<a href="#ref-schulz_big_2001" role="doc-biblioref">2</a>)</span>. The biggest bacteria was thought to be <em>Thiomargarita namibiensis</em>, which can be as big as <span class="math inline">750 \mu m</span> in size (average size is <span class="math inline">180 \mu m</span>) and can be seen with the naked eye <span class="citation" data-cites="schulz_dense_1999">(<a href="#ref-schulz_dense_1999" role="doc-biblioref">3</a>)</span>. But the recent discovery of a new bacteria species has overtaken <em>T. namibinesis</em> to become the biggest bacteria ever. Moreover, it is about ~50 times bigger on average, compared to <em>T. namibinesis</em> and is seen in lengths of more than <span class="math inline">9000 \mu m</span>, which is about <span class="math inline">1cm</span>! To put that in perspective, a housefly, which is a complex multi-cellular organism is on average only about <span class="math inline">0.5 \ to\ 0.7cm</span> long!</p>
 <p>Meet <em>Thiomargarita magnifica</em>, your newest species of bacteria, which as we know is the biggest bacteria to date. As reported by a group of researchers in a recent paper <span class="citation" data-cites="volland_centimeter-long_2022">(<a href="#ref-volland_centimeter-long_2022" role="doc-biblioref">1</a>)</span> in <em>Science</em>, there is more than just the size that makes this bacteria special. <em>Thiomargarita magnifica</em> is packed with so many complex features that it is blurring the lines between what we considered to be prokaryotes and eukaryotes.</p>
-</section><section id="discovering-the-biggest-bacteria" class="level2 page-columns page-full" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="discovering-the-biggest-bacteria">
-<span class="header-section-number">3</span> Discovering the biggest bacteria</h2>
+</section>
+<section id="discovering-the-biggest-bacteria" class="level2 page-columns page-full" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="discovering-the-biggest-bacteria"><span class="header-section-number">3</span> Discovering the biggest bacteria</h2>
 <div class="column-page">
 <div id="fig-1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="images/thiomargartia_magnifica.png" class="img-fluid figure-img"></p>
+<figure class="figure">
+<p><img src="images/thiomargartia_magnifica.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;1: Images (A) and (B) are taken from supplementary fig.&nbsp;S1. in <span class="citation" data-cites="volland_centimeter-long_2022">(<a href="#ref-volland_centimeter-long_2022" role="doc-biblioref">1</a>)</span>.<br> (A) Shows <em>Thiomargarita magnifica</em> (white-filaments) attached to sunken leaves of <em>Rhizophora mangle</em>.<br> (B) Buds forming on the apical pole the filament</figcaption><p></p>
 </figure>
 </div>
 </div>
 <p>Researchers first discovered <em>Thiomargarita magnifica</em> attached to the sunken leaves of <em>Rhizophora mangle</em> (as seen in <a href="#fig-1">Figure&nbsp;1</a>) present in the shallow tropical marine mangroves from Guadeloupe, Lesser Antilles, a French overseas province. The bacteria appeared as a long-white filament and was first thought to be a fungus. It was only later through various techniques that the researchers concluded that this is not a fungus, but a new species of bacteria and rather a very long one that is. Since the bacteria is not yet culturable in laboratory conditions, under the nomenclature followed in microbiology, they are called <em>Candidatus (Ca.)</em> Thiomargarita magnifica.</p>
-</section><section id="elucidating-the-biggest-bacteria" class="level2 page-columns page-full" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="elucidating-the-biggest-bacteria">
-<span class="header-section-number">4</span> Elucidating the biggest bacteria</h2>
-<section id="the-whole-filament-is-a-single-bacterial-cell" class="level3" data-number="4.1"><h3 data-number="4.1" class="anchored" data-anchor-id="the-whole-filament-is-a-single-bacterial-cell">
-<span class="header-section-number">4.1</span> The whole filament is a single bacterial cell</h3>
+</section>
+<section id="elucidating-the-biggest-bacteria" class="level2 page-columns page-full" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="elucidating-the-biggest-bacteria"><span class="header-section-number">4</span> Elucidating the biggest bacteria</h2>
+<section id="the-whole-filament-is-a-single-bacterial-cell" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="the-whole-filament-is-a-single-bacterial-cell"><span class="header-section-number">4.1</span> The whole filament is a single bacterial cell</h3>
 <div id="fig-2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="images/filament_one_cell.png" class="img-fluid figure-img"></p>
+<figure class="figure">
+<p><img src="images/filament_one_cell.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;2: Images (A), (B) and (C) are taken from supplementary fig.&nbsp;S4. Image (D) is taken from Fig. 1. All images are from <span class="citation" data-cites="volland_centimeter-long_2022">(<a href="#ref-volland_centimeter-long_2022" role="doc-biblioref">1</a>)</span>.<br> In all the images the red outline represents the plasma membrane, arrowheads represent division septa and “V” in the image (D) represents a large central vacuole.<br>(A) Cell membrane of Cyanobacterium <em>Microcoleus vaginatus</em> showing discontinuity throughout the filament because of the presence of division septa.<br>(B) The membrane septum separating vacuolated cells of a <em>Beggiatoa</em>-like filament.<br>(C) The membrane septum separating the large vacuolated cells of the <em>Marithrix</em>-like bacterial filaments.<br>(D) Continuous cell membrane of with no division septa in <em>(Ca.)</em> T. magnifica.</figcaption><p></p>
 </figure>
 </div>
 <p><em>(Ca.)</em> T. magnifica belongs to the family of large sulphur bacteria (LSB). LSBs are known to form long filaments of lengths up to <span class="math inline">200 \mu m</span> <span class="citation" data-cites="jean_two_2015 huettel_vertical_1996 nelson_characterization_1989">(<a href="#ref-jean_two_2015" role="doc-biblioref">4</a>–<a href="#ref-nelson_characterization_1989" role="doc-biblioref">6</a>)</span>. But these filaments are built up of individual LSB cells and therefore cannot be considered as a single living organism. Thus, the white filament was initially thought to be made of individual cells. To check this, researchers used dyes to visualize the entire plasma membrane of the filament. If it was made of individual cells, then the dye will show discontinuity in the plasma membrane structure indicating septa divisions. But to their surprise, they found no discontinuity and concluded that the whole filament is a single bacterial cell (as seen in <a href="#fig-2">Figure&nbsp;2</a>). Moreover, the filaments also had small buds forming from its apical pole and some of these filaments along with the buds were up to <span class="math inline">2cm</span> in size.</p>
-</section><section id="inside-the-biggest-bacteria-large-central-vacuole-sulphur-granules-and-pepins" class="level3 page-columns page-full" data-number="4.2"><h3 data-number="4.2" class="anchored" data-anchor-id="inside-the-biggest-bacteria-large-central-vacuole-sulphur-granules-and-pepins">
-<span class="header-section-number">4.2</span> Inside the biggest bacteria: Large central vacuole, sulphur granules and pepins</h3>
+</section>
+<section id="inside-the-biggest-bacteria-large-central-vacuole-sulphur-granules-and-pepins" class="level3 page-columns page-full" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="inside-the-biggest-bacteria-large-central-vacuole-sulphur-granules-and-pepins"><span class="header-section-number">4.2</span> Inside the biggest bacteria: Large central vacuole, sulphur granules and pepins</h3>
 
 <div class="no-row-height column-margin column-container"><div class="">
 <div id="fig-3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="images/vacuole.png" class="img-fluid figure-img"></p>
+<figure class="figure">
+<p><img src="images/vacuole.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;3: Image (E) is taken from fig.&nbsp;1. in <span class="citation" data-cites="volland_centimeter-long_2022">(<a href="#ref-volland_centimeter-long_2022" role="doc-biblioref">1</a>)</span>. (E) Image shows a bud forming from the mother cell, where a Large central vacuole is present and is represented as “V”.</figcaption><p></p>
 </figure>
 </div>
 </div></div><p>Interestingly the whole filament was not filled with the cytoplasm rather, a large central vacuole was present in the middle (as seen in <a href="#fig-2">Figure&nbsp;2</a> and <a href="#fig-3">Figure&nbsp;3</a>). This vacuole pushed the cellular cytoplasm to its periphery. The vacuole contributed to around 70% of the total cell volume. Therefore, although the cell is large, most of its volume is metabolically inactive. Apart from the vacuole, lucent vesicles were also found, which when further analyzed revealed to be filled with sulfur granules (see <a href="#fig-4">Figure&nbsp;4</a>). As <em>Thiomargarita spp.</em> are sulfur-oxidizing gammaproteobacteria <span class="citation" data-cites="salman_phylogenetic_2013">(<a href="#ref-salman_phylogenetic_2013" role="doc-biblioref">7</a>)</span>, this was not a surprise.</p>
 <p>Additionally, electron-rich membrane-bound compartments were found within the cytoplasm (see <a href="#fig-4">Figure&nbsp;4</a>), which was similar to structures previously reported in other LSBs. They were hypothesized to be compartments containing ribosomes and genetic material <span class="citation" data-cites="maier_fine_1990">(<a href="#ref-maier_fine_1990" role="doc-biblioref">8</a>)</span>. To check if this holds, researchers used a stain to check where the genetic material was localized in <em>(Ca.)</em> T. magnifica. It was found that almost all of its DNA was concentrated inside these compartments. Further analysis also showed evidence of structures that were 10 to 20 nm in size, inside these compartments, similar to ribosomes. Researchers then used a technique to look for ribosomal RNAs and confirmed their presence inside these structures which indicated that those structures were ribosomes. Adding to this evidence, when translational activity was checked, they were consistently seen within most of the sites where ribosomal RNA was found.</p>
 <div id="fig-4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="images/pepin_sulphur_granule.png" class="img-fluid figure-img"></p>
+<figure class="figure">
+<p><img src="images/pepin_sulphur_granule.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;4: Image (G) is taken from fig.&nbsp;1. in <span class="citation" data-cites="volland_centimeter-long_2022">(<a href="#ref-volland_centimeter-long_2022" role="doc-biblioref">1</a>)</span>. (E) The arrowheads show two electron-rich membrane-bound compartments called pepins, the letter “S” represents sulphur granules and “V” represents a large central vacuole.</figcaption><p></p>
 </figure>
 </div>
 <p>These membrane-bound structures containing DNA and ribosomes, which were not seen attached to the cell membrane are equivalent to the compartmentalization seen in eukaryotes, where DNA is present inside the nucleus and ribosomes are attached to the endoplasmic reticulum. Thus, this new membrane-bound organelle was named ‘pepins’ by the researchers, because of how they resemble pips or seeds in a watermelon. Overall, the cytoplasm of <em>(Ca.)</em> T. magnifica contained sulfur granules, pepins and various membrane structures forming a complex membrane network that spanned the whole cytoplasm.</p>
-</section><section id="localization-of-atp-synthase" class="level3 page-columns page-full" data-number="4.3"><h3 data-number="4.3" class="anchored" data-anchor-id="localization-of-atp-synthase">
-<span class="header-section-number">4.3</span> Localization of ATP synthase</h3>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside"><strong>Periplasm</strong> is a gel-like matrix present between the outer membrane and the inner membrane of a gram-negative bacteria</span></div></div>
+</section>
+<section id="localization-of-atp-synthase" class="level3 page-columns page-full" data-number="4.3">
+<h3 data-number="4.3" class="anchored" data-anchor-id="localization-of-atp-synthase"><span class="header-section-number">4.3</span> Localization of ATP synthase</h3>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class=""><strong>Periplasm</strong> is a gel-like matrix present between the outer membrane and the inner membrane of a gram-negative bacteria</span></div></div>
 <div id="fig-etc" class="quarto-layout-panel">
-<figure class="figure"><div class="quarto-layout-row quarto-layout-valign-top">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
 <div id="fig-bacteria-etc" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="images/ecoli_etc.png" class="img-fluid figure-img" data-ref-parent="fig-etc"></p>
+<figure class="figure">
+<p><img src="images/ecoli_etc.png" class="img-fluid figure-img" data-ref-parent="fig-etc"></p>
 <p></p><figcaption class="figure-caption">(a) Image is taken from fig.&nbsp;1. in: <span class="citation" data-cites="kaila_architecture_2021">(<a href="#ref-kaila_architecture_2021" role="doc-biblioref">9</a>)</span>. Electron transport chain of <em>E. coli</em></figcaption><p></p>
 </figure>
 </div>
@@ -337,7 +357,8 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
 <div id="fig-mt-etc" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="images/mt_etc.jpg" class="img-fluid figure-img" data-ref-parent="fig-etc"></p>
+<figure class="figure">
+<p><img src="images/mt_etc.jpg" class="img-fluid figure-img" data-ref-parent="fig-etc"></p>
 <p></p><figcaption class="figure-caption">(b) Image is taken from fig.&nbsp;1. in: <span class="citation" data-cites="li_mitochondrial_2021">(<a href="#ref-li_mitochondrial_2021" role="doc-biblioref">10</a>)</span>. Electron transport chain in a mitochondrial cell</figcaption><p></p>
 </figure>
 </div>
@@ -350,14 +371,17 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 
 <div class="no-row-height column-margin column-container"><div class="">
 <div id="fig-6" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure"><p><img src="images/atp_synthase.png" class="img-fluid figure-img"></p>
+<figure class="figure">
+<p><img src="images/atp_synthase.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;6: Image (F) is taken from supplementary fig.&nbsp;S20. in: <span class="citation" data-cites="volland_centimeter-long_2022">(<a href="#ref-volland_centimeter-long_2022" role="doc-biblioref">1</a>)</span>. (E) The red colour indicates ATP synthase and blue colour dots highlight DNA which is used here as a proxy for where the pepins are situated. As you can see, the ATP synthase is expressed throughout the complex membrane network and the pepins present in the cytoplasm</figcaption><p></p>
 </figure>
 </div>
 </div></div><p>The surprises do not stop there. Researchers further found that <em>(Ca.)</em> T. magnifica also showed extreme polyploidy, with around 740,000 genome copies for a 2 cm long cell. This is the highest number of genome copies ever reported for a single cell. The genome copies were very similar in their composition. A single genome copy was found to be 11.5 and 12.2 Mb in size, comparable to the popular <em>Saccharomyces cerevisiae</em> genome (12.1 Mb). <em>(Ca.)</em> T. magnifica genome had around 11,788 genes, more than three times the median gene count of prokaryotes (3935 genes) <span class="citation" data-cites="chiyomaru_revisiting_2020">(<a href="#ref-chiyomaru_revisiting_2020" role="doc-biblioref">11</a>)</span>. Interestingly many of the common genes present within prokaryotes which coded for proteins that are responsible for cell division were absent here. But cell elongation protein genes were found to be intact and were found to be duplicated, forming multiple copies placed beside each other in the genome, which might suggest a possible reason why <em>(Ca.)</em> T. magnifica grow so long.</p>
 <p>The researchers also found that, unlike most bacteria which reproduce via binary fission where cell volume doubles before cell division, in <em>(Ca.)</em> T. magnifica, they follow a dimorphic lifecycle; a bud-like cell stage and a filament-like cell stage. When they reproduce, the apical pole of the filament mother cell constricts and buds off to become a daughter cell (see <a href="#fig-1">Figure&nbsp;1</a> and <a href="#fig-2">Figure&nbsp;2</a>). Interestingly, the genetic material is passed on to the daughter cell via pepins which is never seen before in bacteria.</p>
-</section></section><section id="conclusion" class="level2" data-number="5"><h2 data-number="5" class="anchored" data-anchor-id="conclusion">
-<span class="header-section-number">5</span> Conclusion</h2>
+</section>
+</section>
+<section id="conclusion" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">5</span> Conclusion</h2>
 <p>Overall <em>(Ca.)</em> T. magnifica turned out to be a very bizarre form of bacterial species that under the current understanding of cell morphology and energetics should not exist. So how come we find this bacteria in nature? Most bacteria are unable to grow to large sizes as they are met with various constraints related to energy and space. An overview of these constraints is given below.</p>
 <ol type="1">
 <li><p>As bacteria lack any mode of intracellular transporters to transport materials across the cytoplasm, they rely exclusively on diffusion. Chemical diffusion is extremely slow and is only effective in micro meter distances. So if the cell is too large, it will take a tremendous amount of time to disperse proteins and other materials effectively across the cell <span class="citation" data-cites="schulz_big_2001">(<a href="#ref-schulz_big_2001" role="doc-biblioref">2</a>)</span>.</p></li>
@@ -368,96 +392,66 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <p>How is <em>(Ca.)</em> T. magnifica overcoming these constraints? First of all, they have multiple copies of their genome compartmentalised along with ribosomes inside pepins. And these pepins are present across the cytoplasm. This might solve the diffusion limit problem because now the protein and other materials are almost always accessible across the cytoplasm at any time. Efficient compartmentalisation again might be the answer to surpassing the ribosome limit. In the case of the energy production limit attained due to surface area constraints, for <em>(Ca.)</em> T. magnifica, ATP synthase is expressed within the cytoplasm via pepin membranes and the complex membrane structure. Therefore, the available plasma membrane for energy production is much higher compared to other prokaryotes.</p>
 <p>In the end, when we look at these features carefully, it is analogous to the various features present in eukaryotes. The polyploid genome of <em>(Ca.)</em> T. magnifica is equivalent to polypoid mtDNA present in eukaryotes. Compartmentalisation of DNA and ribosome via pepins is equivalent to compartmentalisation seen in the nucleus and the endoplasmic reticulum. And perhaps the icing on the cake is that <em>(Ca.)</em> T. magnifica transfers its genetic material via a membrane-bound organelle; pepins, something that is never seen before in prokaryotes. Therefore <em>(Ca.)</em> T. magnifica stands as one of the extreme cases of bacterial evolution which blurs our understanding of what constitutes a eukaryote and a prokaryote.</p>
 <p>For more details about the study, please find the original paper <span class="citation" data-cites="volland_centimeter-long_2022">(<a href="#ref-volland_centimeter-long_2022" role="doc-biblioref">1</a>)</span>.</p>
-</section><div id="quarto-appendix" class="default"><section id="last-updated-on" class="level4 unnumbered unlisted appendix"><h2 class="quarto-appendix-heading">Last updated on</h2><div class="quarto-appendix-contents">
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-11-01 16:33:52 IST"</code></pre>
-</div>
-</div>
 <p><a hidden="" href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a></p>
 
 
 <!-- -->
 
 
-</div></section><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="doc-bibliography">
-<div id="ref-volland_centimeter-long_2022" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">1. </div>
-<div class="csl-right-inline">
-<strong>Volland J-M</strong>, <strong>Gonzalez-Rizzo S</strong>, <strong>Gros O</strong>, <strong>Tyml T</strong>, <strong>Ivanova N</strong>, <strong>Schulz F</strong>, <strong>Goudeau D</strong>, <strong>Elisabeth NH</strong>, <strong>Nath N</strong>, <strong>Udwary D</strong>, <strong>Malmstrom RR</strong>, <strong>Guidi-Rontani C</strong>, <strong>Bolte-Kluge S</strong>, <strong>Davies KM</strong>, <strong>Jean MR</strong>, <strong>Mansot J-L</strong>, <strong>Mouncey NJ</strong>, <strong>Angert ER</strong>, <strong>Woyke T</strong>, <strong>Date SV</strong>. A centimeter-long bacterium with <span>DNA</span> contained in metabolically active, membrane-bound organelles. <em>Science</em> 376: 1453–1458, 2022. doi: <a href="https://doi.org/10.1126/science.abb3634">10.1126/science.abb3634</a>.</div>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-volland_centimeter-long_2022" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline"><strong>Volland J-M</strong>, <strong>Gonzalez-Rizzo S</strong>, <strong>Gros O</strong>, <strong>Tyml T</strong>, <strong>Ivanova N</strong>, <strong>Schulz F</strong>, <strong>Goudeau D</strong>, <strong>Elisabeth NH</strong>, <strong>Nath N</strong>, <strong>Udwary D</strong>, <strong>Malmstrom RR</strong>, <strong>Guidi-Rontani C</strong>, <strong>Bolte-Kluge S</strong>, <strong>Davies KM</strong>, <strong>Jean MR</strong>, <strong>Mansot J-L</strong>, <strong>Mouncey NJ</strong>, <strong>Angert ER</strong>, <strong>Woyke T</strong>, <strong>Date SV</strong>. A centimeter-long bacterium with <span>DNA</span> contained in metabolically active, membrane-bound organelles. <em>Science</em> 376: 1453–1458, 2022. doi: <a href="https://doi.org/10.1126/science.abb3634">10.1126/science.abb3634</a>.</div>
 </div>
-<div id="ref-schulz_big_2001" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">2. </div>
-<div class="csl-right-inline">
-<strong>Schulz HN</strong>, <strong>Jørgensen BB</strong>. Big <span>Bacteria</span>. <em>Annual Review of Microbiology</em> 55: 105–137, 2001. doi: <a href="https://doi.org/10.1146/annurev.micro.55.1.105">10.1146/annurev.micro.55.1.105</a>.</div>
+<div id="ref-schulz_big_2001" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline"><strong>Schulz HN</strong>, <strong>Jørgensen BB</strong>. Big <span>Bacteria</span>. <em>Annual Review of Microbiology</em> 55: 105–137, 2001. doi: <a href="https://doi.org/10.1146/annurev.micro.55.1.105">10.1146/annurev.micro.55.1.105</a>.</div>
 </div>
-<div id="ref-schulz_dense_1999" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">3. </div>
-<div class="csl-right-inline">
-<strong>Schulz HN</strong>, <strong>Brinkhoff T</strong>, <strong>Ferdelman TG</strong>, <strong>Mariné MH</strong>, <strong>Teske A</strong>, <strong>Jørgensen BB</strong>. Dense <span>Populations</span> of a <span>Giant</span> <span>Sulfur</span> <span>Bacterium</span> in <span>Namibian</span> <span>Shelf</span> <span>Sediments</span>. <em>Science</em> 284: 493–495, 1999. doi: <a href="https://doi.org/10.1126/science.284.5413.493">10.1126/science.284.5413.493</a>.</div>
+<div id="ref-schulz_dense_1999" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline"><strong>Schulz HN</strong>, <strong>Brinkhoff T</strong>, <strong>Ferdelman TG</strong>, <strong>Mariné MH</strong>, <strong>Teske A</strong>, <strong>Jørgensen BB</strong>. Dense <span>Populations</span> of a <span>Giant</span> <span>Sulfur</span> <span>Bacterium</span> in <span>Namibian</span> <span>Shelf</span> <span>Sediments</span>. <em>Science</em> 284: 493–495, 1999. doi: <a href="https://doi.org/10.1126/science.284.5413.493">10.1126/science.284.5413.493</a>.</div>
 </div>
-<div id="ref-jean_two_2015" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">4. </div>
-<div class="csl-right-inline">
-<strong>Jean MRN</strong>, <strong>Gonzalez-Rizzo S</strong>, <strong>Gauffre-Autelin P</strong>, <strong>Lengger SK</strong>, <strong>Schouten S</strong>, <strong>Gros O</strong>. Two <span>New</span> <span>Beggiatoa</span> <span>Species</span> <span>Inhabiting</span> <span>Marine</span> <span>Mangrove</span> <span>Sediments</span> in the <span>Caribbean</span>. <em>PLOS ONE</em> 10: e0117832, 2015. doi: <a href="https://doi.org/10.1371/journal.pone.0117832">10.1371/journal.pone.0117832</a>.</div>
+<div id="ref-jean_two_2015" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline"><strong>Jean MRN</strong>, <strong>Gonzalez-Rizzo S</strong>, <strong>Gauffre-Autelin P</strong>, <strong>Lengger SK</strong>, <strong>Schouten S</strong>, <strong>Gros O</strong>. Two <span>New</span> <span>Beggiatoa</span> <span>Species</span> <span>Inhabiting</span> <span>Marine</span> <span>Mangrove</span> <span>Sediments</span> in the <span>Caribbean</span>. <em>PLOS ONE</em> 10: e0117832, 2015. doi: <a href="https://doi.org/10.1371/journal.pone.0117832">10.1371/journal.pone.0117832</a>.</div>
 </div>
-<div id="ref-huettel_vertical_1996" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">5. </div>
-<div class="csl-right-inline">
-<strong>Huettel M</strong>, <strong>Forster S</strong>, <strong>Kloser S</strong>, <strong>Fossing H</strong>. Vertical <span>Migration</span> in the <span>Sediment</span>-<span>Dwelling</span> <span>Sulfur</span> <span>Bacteria</span> <span>Thioploca</span> spp. In <span>Overcoming</span> <span>Diffusion</span> <span>Limitations</span>. <em>Applied and Environmental Microbiology</em> 62: 1863–1872, 1996. doi: <a href="https://doi.org/10.1128/aem.62.6.1863-1872.1996">10.1128/aem.62.6.1863-1872.1996</a>.</div>
+<div id="ref-huettel_vertical_1996" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline"><strong>Huettel M</strong>, <strong>Forster S</strong>, <strong>Kloser S</strong>, <strong>Fossing H</strong>. Vertical <span>Migration</span> in the <span>Sediment</span>-<span>Dwelling</span> <span>Sulfur</span> <span>Bacteria</span> <span>Thioploca</span> spp. In <span>Overcoming</span> <span>Diffusion</span> <span>Limitations</span>. <em>Applied and Environmental Microbiology</em> 62: 1863–1872, 1996. doi: <a href="https://doi.org/10.1128/aem.62.6.1863-1872.1996">10.1128/aem.62.6.1863-1872.1996</a>.</div>
 </div>
-<div id="ref-nelson_characterization_1989" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">6. </div>
-<div class="csl-right-inline">
-<strong>Nelson DC</strong>, <strong>Wirsen CO</strong>, <strong>Jannasch HW</strong>. Characterization of <span>Large</span>, <span>Autotrophic</span> <em>beggiatoa</em> spp. <span>Abundant</span> at <span>Hydrothermal</span> <span>Vents</span> of the <span>Guaymas</span> <span>Basin</span>. <em>Applied and Environmental Microbiology</em> 55: 2909–2917, 1989. doi: <a href="https://doi.org/10.1128/aem.55.11.2909-2917.1989">10.1128/aem.55.11.2909-2917.1989</a>.</div>
+<div id="ref-nelson_characterization_1989" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline"><strong>Nelson DC</strong>, <strong>Wirsen CO</strong>, <strong>Jannasch HW</strong>. Characterization of <span>Large</span>, <span>Autotrophic</span> <em>beggiatoa</em> spp. <span>Abundant</span> at <span>Hydrothermal</span> <span>Vents</span> of the <span>Guaymas</span> <span>Basin</span>. <em>Applied and Environmental Microbiology</em> 55: 2909–2917, 1989. doi: <a href="https://doi.org/10.1128/aem.55.11.2909-2917.1989">10.1128/aem.55.11.2909-2917.1989</a>.</div>
 </div>
-<div id="ref-salman_phylogenetic_2013" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">7. </div>
-<div class="csl-right-inline">
-<strong>Salman V</strong>, <strong>Bailey JV</strong>, <strong>Teske A</strong>. Phylogenetic and morphologic complexity of giant sulphur bacteria. <em>Antonie van Leeuwenhoek</em> 104: 169–186, 2013. doi: <a href="https://doi.org/10.1007/s10482-013-9952-y">10.1007/s10482-013-9952-y</a>.</div>
+<div id="ref-salman_phylogenetic_2013" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline"><strong>Salman V</strong>, <strong>Bailey JV</strong>, <strong>Teske A</strong>. Phylogenetic and morphologic complexity of giant sulphur bacteria. <em>Antonie van Leeuwenhoek</em> 104: 169–186, 2013. doi: <a href="https://doi.org/10.1007/s10482-013-9952-y">10.1007/s10482-013-9952-y</a>.</div>
 </div>
-<div id="ref-maier_fine_1990" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">8. </div>
-<div class="csl-right-inline">
-<strong>Maier S</strong>, <strong>Völker H</strong>, <strong>Beese M</strong>, <strong>Gallardo VA</strong>. The fine structure of <em><span>Thioploca</span> araucae</em> and <em><span>Thioploca</span> chileae</em>. <em>Canadian Journal of Microbiology</em> 36: 438–448, 1990. doi: <a href="https://doi.org/10.1139/m90-077">10.1139/m90-077</a>.</div>
+<div id="ref-maier_fine_1990" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline"><strong>Maier S</strong>, <strong>Völker H</strong>, <strong>Beese M</strong>, <strong>Gallardo VA</strong>. The fine structure of <em><span>Thioploca</span> araucae</em> and <em><span>Thioploca</span> chileae</em>. <em>Canadian Journal of Microbiology</em> 36: 438–448, 1990. doi: <a href="https://doi.org/10.1139/m90-077">10.1139/m90-077</a>.</div>
 </div>
-<div id="ref-kaila_architecture_2021" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">9. </div>
-<div class="csl-right-inline">
-<strong>Kaila VRI</strong>, <strong>Wikström M</strong>. Architecture of bacterial respiratory chains. <em>Nature Reviews Microbiology</em> 19: 319–330, 2021. doi: <a href="https://doi.org/10.1038/s41579-020-00486-4">10.1038/s41579-020-00486-4</a>.</div>
+<div id="ref-kaila_architecture_2021" class="csl-entry" role="listitem">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline"><strong>Kaila VRI</strong>, <strong>Wikström M</strong>. Architecture of bacterial respiratory chains. <em>Nature Reviews Microbiology</em> 19: 319–330, 2021. doi: <a href="https://doi.org/10.1038/s41579-020-00486-4">10.1038/s41579-020-00486-4</a>.</div>
 </div>
-<div id="ref-li_mitochondrial_2021" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">10. </div>
-<div class="csl-right-inline">
-<strong>Li J-L</strong>, <strong>Lin T-Y</strong>, <strong>Chen P-L</strong>, <strong>Guo T-N</strong>, <strong>Huang S-Y</strong>, <strong>Chen C-H</strong>, <strong>Lin C-H</strong>, <strong>Chan C-C</strong>. Mitochondrial <span>Function</span> and <span>Parkinson</span>’s <span>Disease</span>: <span>From</span> the <span>Perspective</span> of the <span>Electron</span> <span>Transport</span> <span>Chain</span>. <em>Frontiers in Molecular Neuroscience</em> 14: 797833, 2021. doi: <a href="https://doi.org/10.3389/fnmol.2021.797833">10.3389/fnmol.2021.797833</a>.</div>
+<div id="ref-li_mitochondrial_2021" class="csl-entry" role="listitem">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline"><strong>Li J-L</strong>, <strong>Lin T-Y</strong>, <strong>Chen P-L</strong>, <strong>Guo T-N</strong>, <strong>Huang S-Y</strong>, <strong>Chen C-H</strong>, <strong>Lin C-H</strong>, <strong>Chan C-C</strong>. Mitochondrial <span>Function</span> and <span>Parkinson</span>’s <span>Disease</span>: <span>From</span> the <span>Perspective</span> of the <span>Electron</span> <span>Transport</span> <span>Chain</span>. <em>Frontiers in Molecular Neuroscience</em> 14: 797833, 2021. doi: <a href="https://doi.org/10.3389/fnmol.2021.797833">10.3389/fnmol.2021.797833</a>.</div>
 </div>
-<div id="ref-chiyomaru_revisiting_2020" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">11. </div>
-<div class="csl-right-inline">
-<strong>Chiyomaru K</strong>, <strong>Takemoto K</strong>. Revisiting the hypothesis of an energetic barrier to genome complexity between eukaryotes and prokaryotes. <em>Royal Society Open Science</em> 7: 191859, 2020. doi: <a href="https://doi.org/10.1098/rsos.191859">10.1098/rsos.191859</a>.</div>
+<div id="ref-chiyomaru_revisiting_2020" class="csl-entry" role="listitem">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline"><strong>Chiyomaru K</strong>, <strong>Takemoto K</strong>. Revisiting the hypothesis of an energetic barrier to genome complexity between eukaryotes and prokaryotes. <em>Royal Society Open Science</em> 7: 191859, 2020. doi: <a href="https://doi.org/10.1098/rsos.191859">10.1098/rsos.191859</a>.</div>
 </div>
-<div id="ref-kempes_evolutionary_2016" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">12. </div>
-<div class="csl-right-inline">
-<strong>Kempes CP</strong>, <strong>Wang L</strong>, <strong>Amend JP</strong>, <strong>Doyle J</strong>, <strong>Hoehler T</strong>. Evolutionary tradeoffs in cellular composition across diverse bacteria. <em>The ISME Journal</em> 10: 2145–2157, 2016. doi: <a href="https://doi.org/10.1038/ismej.2016.21">10.1038/ismej.2016.21</a>.</div>
+<div id="ref-kempes_evolutionary_2016" class="csl-entry" role="listitem">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline"><strong>Kempes CP</strong>, <strong>Wang L</strong>, <strong>Amend JP</strong>, <strong>Doyle J</strong>, <strong>Hoehler T</strong>. Evolutionary tradeoffs in cellular composition across diverse bacteria. <em>The ISME Journal</em> 10: 2145–2157, 2016. doi: <a href="https://doi.org/10.1038/ismej.2016.21">10.1038/ismej.2016.21</a>.</div>
 </div>
-<div id="ref-schavemaker_role_2022" class="csl-entry" role="doc-biblioentry">
-<div class="csl-left-margin">13. </div>
-<div class="csl-right-inline">
-<strong>Schavemaker PE</strong>, <strong>Muñoz-Gómez SA</strong>. <a href="https://doi.org/10.1101/2021.10.23.465364">The role of mitochondrial energetics in the origin and diversification of eukaryotes</a>. bioRxiv: 2022.</div>
+<div id="ref-schavemaker_role_2022" class="csl-entry" role="listitem">
+<div class="csl-left-margin">13. </div><div class="csl-right-inline"><strong>Schavemaker PE</strong>, <strong>Muñoz-Gómez SA</strong>. <a href="https://doi.org/10.1101/2021.10.23.465364">The role of mitochondrial energetics in the origin and diversification of eukaryotes</a>. bioRxiv: 2022.</div>
 </div>
-</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{johnson2022,
-  author = {Jewel Johnson},
-  editor = {},
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{johnson2022,
+  author = {Johnson, Jewel},
   title = {The World’s Largest Bacteria Is Bigger Than a Housefly},
   date = {2022-07-14},
   url = {https://one-carat-blog.netlify.app//posts/research_article_biggest_bacterium/index_post.html},
   langid = {en}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-johnson2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-<div class=""><strong>Jewel Johnson</strong>. The world’s
-largest bacteria is bigger than a housefly [Online]. 2022. <a href="https://one-carat-blog.netlify.app//posts/research_article_biggest_bacterium/index_post.html">https://one-carat-blog.netlify.app//posts/research_article_biggest_bacterium/index_post.html</a>.</div>
-</div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-johnson2022" class="csl-entry quarto-appendix-citeas" role="listitem">
+<div class=""><strong>Johnson J</strong>. The world’s largest
+bacteria is bigger than a housefly [Online]. 2022. <a href="https://one-carat-blog.netlify.app//posts/research_article_biggest_bacterium/index_post.html">https://one-carat-blog.netlify.app//posts/research_article_biggest_bacterium/index_post.html</a>.</div>
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -484,9 +478,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -498,7 +506,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -585,143 +610,244 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
-</script><script src="https://giscus.app/client.js" data-repo="jeweljohnsonj/one-carat-blog" data-repo-id="R_kgDOHW124A" data-category="General" data-category-id="DIC_kwDOHW124M4CPNVL" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<script src="https://giscus.app/client.js" data-repo="jeweljohnsonj/one-carat-blog" data-repo-id="R_kgDOHW124A" data-category="General" data-category-id="DIC_kwDOHW124M4CPNVL" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "The world's largest bacteria is bigger than a housefly"</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Meet *Thiomargarita magnifica*, a recently discovered species of bacteria that is a whopping 1 cm in length, making it the largest bacteria ever till now."</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "07/14/2022"</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> images/compare.png</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> reference.bib</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> american-physiological-society</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [research article, scicom]</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## TL;DR</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>::: column-page</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Summary of the study in [@volland_centimeter-long_2022]</span><span class="co">](images/tl_dr.png)</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>Research article that is summarised in this post: Volland, J.-M., Gonzalez-Rizzo, S., Gros, O., Tyml, T., Ivanova, N., Schulz, F., Goudeau, D., Elisabeth, N. H., Nath, N., Udwary, D., Malmstrom, R. R., Guidi-Rontani, C., Bolte-Kluge, S., Davies, K. M., Jean, M. R., Mansot, J.-L., Mouncey, N. J., Angert, E. R., Woyke, T., &amp; Date, S. V. (2022). A centimeter-long bacterium with DNA contained in metabolically active, membrane-bound organelles. Science, 376(6600), 1453–1458. <span class="co">[</span><span class="ot">https://doi.org/10.1126/science.abb3634</span><span class="co">](https://doi.org/10.1126/science.abb3634)</span>.</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>When you think of bacteria, the first thing that might come to your mind is a microscope, given how tiny they are to see. Most of the bacteria and archaea are about ~ $2 \mu m$ in size <span class="co">[</span><span class="ot">@volland_centimeter-long_2022</span><span class="co">]</span>. The record for the smallest living organism is shared between the pathogenic bacteria, *Mycoplasma pneumoniae* and the *Thermodiscus sp.* belonging to Archae. Both can be as small as $0.2 \mu m$ in size [@schulz_big_2001]. The biggest bacteria was thought to be *Thiomargarita namibiensis*, which can be as big as $750 \mu m$ in size (average size is $180 \mu m$) and can be seen with the naked eye [@schulz_dense_1999]. But the recent discovery of a new bacteria species has overtaken *T. namibinesis* to become the biggest bacteria ever. Moreover, it is about ~50 times bigger on average, compared to *T. namibinesis* and is seen in lengths of more than $9000 \mu m$, which is about $1cm$! To put that in perspective, a housefly, which is a complex multi-cellular organism is on average only about $0.5 \ to\ 0.7cm$ long!</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>Meet *Thiomargarita magnifica*, your newest species of bacteria, which as we know is the biggest bacteria to date. As reported by a group of researchers in a recent paper [@volland_centimeter-long_2022] in *Science*, there is more than just the size that makes this bacteria special. *Thiomargarita magnifica* is packed with so many complex features that it is blurring the lines between what we considered to be prokaryotes and eukaryotes.</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="fu">## Discovering the biggest bacteria</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>::: column-page</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Images (A) and (B) are taken from supplementary fig. S1. in [@volland_centimeter-long_2022].&lt;br&gt; (A) Shows *Thiomargarita magnifica* (white-filaments) attached to sunken leaves of *Rhizophora mangle*.&lt;br&gt; (B) Buds forming on the apical pole the filament</span><span class="co">](images/thiomargartia_magnifica.png)</span>{#fig-1}</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>Researchers first discovered *Thiomargarita magnifica* attached to the sunken leaves of *Rhizophora mangle* (as seen in @fig-1) present in the shallow tropical marine mangroves from Guadeloupe, Lesser Antilles, a French overseas province. The bacteria appeared as a long-white filament and was first thought to be a fungus. It was only later through various techniques that the researchers concluded that this is not a fungus, but a new species of bacteria and rather a very long one that is. Since the bacteria is not yet culturable in laboratory conditions, under the nomenclature followed in microbiology, they are called *Candidatus (Ca.)* Thiomargarita magnifica.</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="fu">## Elucidating the biggest bacteria</span></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="fu">### The whole filament is a single bacterial cell</span></span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Images (A), (B) and (C) are taken from supplementary fig. S4. Image (D) is taken from Fig. 1. All images are from [@volland_centimeter-long_2022].&lt;br&gt; In all the images the red outline represents the plasma membrane, arrowheads represent division septa and "V" in the image (D) represents a large central vacuole.&lt;br&gt;(A) Cell membrane of Cyanobacterium *Microcoleus vaginatus* showing discontinuity throughout the filament because of the presence of division septa.&lt;br&gt;(B) The membrane septum separating vacuolated cells of a *Beggiatoa*-like filament.&lt;br&gt;(C) The membrane septum separating the large vacuolated cells of the *Marithrix*-like bacterial filaments.&lt;br&gt;(D) Continuous cell membrane of with no division septa in *(Ca.)* T. magnifica.</span><span class="co">](images/filament_one_cell.png)</span>{#fig-2}</span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>*(Ca.)* T. magnifica belongs to the family of large sulphur bacteria (LSB). LSBs are known to form long filaments of lengths up to $200 \mu m$ <span class="co">[</span><span class="ot">@jean_two_2015;@huettel_vertical_1996; @nelson_characterization_1989</span><span class="co">]</span>. But these filaments are built up of individual LSB cells and therefore cannot be considered as a single living organism. Thus, the white filament was initially thought to be made of individual cells. To check this, researchers used dyes to visualize the entire plasma membrane of the filament. If it was made of individual cells, then the dye will show discontinuity in the plasma membrane structure indicating septa divisions. But to their surprise, they found no discontinuity and concluded that the whole filament is a single bacterial cell (as seen in @fig-2). Moreover, the filaments also had small buds forming from its apical pole and some of these filaments along with the buds were up to $2cm$ in size.</span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="fu">### Inside the biggest bacteria: Large central vacuole, sulphur granules and pepins</span></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>::: {.column-margin}</span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Image (E) is taken from fig. 1. in [@volland_centimeter-long_2022]. (E) Image shows a bud forming from the mother cell, where a Large central vacuole is present and is represented as "V".</span><span class="co">](images/vacuole.png)</span>{#fig-3}</span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>Interestingly the whole filament was not filled with the cytoplasm rather, a large central vacuole was present in the middle (as seen in @fig-2 and @fig-3). This vacuole pushed the cellular cytoplasm to its periphery. The vacuole contributed to around 70% of the total cell volume. Therefore, although the cell is large, most of its volume is metabolically inactive. Apart from the vacuole, lucent vesicles were also found, which when further analyzed revealed to be filled with sulfur granules (see @fig-4). As *Thiomargarita spp.* are sulfur-oxidizing gammaproteobacteria <span class="co">[</span><span class="ot">@salman_phylogenetic_2013</span><span class="co">]</span>, this was not a surprise.</span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>Additionally, electron-rich membrane-bound compartments were found within the cytoplasm (see @fig-4), which was similar to structures previously reported in other LSBs. They were hypothesized to be compartments containing ribosomes and genetic material <span class="co">[</span><span class="ot">@maier_fine_1990</span><span class="co">]</span>. To check if this holds, researchers used a stain to check where the genetic material was localized in  *(Ca.)* T. magnifica. It was found that almost all of its DNA was concentrated inside these compartments. Further analysis also showed evidence of structures that were 10 to 20 nm in size, inside these compartments, similar to ribosomes. Researchers then used a technique to look for ribosomal RNAs and confirmed their presence inside these structures which indicated that those structures were ribosomes. Adding to this evidence, when translational activity was checked, they were consistently seen within most of the sites where ribosomal RNA was found.</span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Image (G) is taken from fig. 1. in [@volland_centimeter-long_2022]. (E) The arrowheads show two electron-rich membrane-bound compartments called pepins, the letter "S" represents sulphur granules and "V" represents a large central vacuole.</span><span class="co">](images/pepin_sulphur_granule.png)</span>{#fig-4}</span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>These membrane-bound structures containing DNA and ribosomes, which were not seen attached to the cell membrane are equivalent to the compartmentalization seen in eukaryotes, where DNA is present inside the nucleus and ribosomes are attached to the endoplasmic reticulum. Thus, this new membrane-bound organelle was named 'pepins' by the researchers, because of how they resemble pips or seeds in a watermelon. Overall, the cytoplasm of *(Ca.)* T. magnifica contained sulfur granules, pepins and various membrane structures forming a complex membrane network that spanned the whole cytoplasm.</span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="fu">### Localization of ATP synthase</span></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**Periplasm** is a gel-like matrix present between the outer membrane and the inner membrane of a gram-negative bacteria</span><span class="co">]</span>{.aside}</span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>::: {#fig-etc layout-nrow=2}</span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Image is taken from fig. 1. in: [@kaila_architecture_2021]. Electron transport chain of *E. coli*</span><span class="co">](images/ecoli_etc.png)</span>{#fig-bacteria-etc}</span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Image is taken from fig. 1. in: [@li_mitochondrial_2021]. Electron transport chain in a mitochondrial cell</span><span class="co">](images/mt_etc.jpg)</span>{#fig-mt-etc}</span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>Electron transport chains of prokaryotes and eukaryotes</span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>Another defining feature between eukaryotes and prokaryotes is the localization of ATP synthase. In eukaryotes, the ATP synthase is localized in the mitochondrial membrane where the electron transport chain (ETC) protein complexes are present <span class="co">[</span><span class="ot">@li_mitochondrial_2021</span><span class="co">]</span>. But for bacteria and archaea, mitochondria are absent and the ATP synthase is localized to the cell membrane along with the other protein complexes present in the ETC <span class="co">[</span><span class="ot">@kaila_architecture_2021</span><span class="co">]</span>. Researchers checked within *(Ca.)* T. magnifica, where the ATP synthase is localized. Surprisingly ATP synthase was found in the membranes of pepins and the complex membrane structure, throughout the cytoplasm (see @fig-6). But ATP synthase was absent in the cellular membrane, this was similar to eukaryotes, where ATP synthase is only present in the mitochondria, which is present within the cytoplasm. These results together elevated pepins as not just a housing compartment for ribosomes and DNA, but also as a potential energy-producing organelle.</span>
-<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>::: {.column-margin}</span>
-<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Image (F) is taken from supplementary fig. S20. in: [@volland_centimeter-long_2022]. (E) The red colour indicates ATP synthase and blue colour dots highlight DNA which is used here as a proxy for where the pepins are situated. As you can see, the ATP synthase is expressed throughout the complex membrane network and the pepins present in the cytoplasm</span><span class="co">](images/atp_synthase.png)</span>{#fig-6}</span>
-<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>The surprises do not stop there. Researchers further found that *(Ca.)* T. magnifica also showed extreme polyploidy, with around 740,000 genome copies for a 2 cm long cell. This is the highest number of genome copies ever reported for a single cell. The genome copies were very similar in their composition. A single genome copy was found to be 11.5 and 12.2 Mb in size, comparable to the popular *Saccharomyces cerevisiae* genome (12.1 Mb). *(Ca.)* T. magnifica genome had around 11,788 genes, more than three times the median gene count of prokaryotes (3935 genes) [@chiyomaru_revisiting_2020]. Interestingly many of the common genes present within prokaryotes which coded for proteins that are responsible for cell division were absent here. But cell elongation protein genes were found to be intact and were found to be duplicated, forming multiple copies placed beside each other in the genome, which might suggest a possible reason why *(Ca.)* T. magnifica grow so long. </span>
-<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>The researchers also found that, unlike most bacteria which reproduce via binary fission where cell volume doubles before cell division, in *(Ca.)* T. magnifica, they follow a dimorphic lifecycle; a bud-like cell stage and a filament-like cell stage. When they reproduce, the apical pole of the filament mother cell constricts and buds off to become a daughter cell (see @fig-1 and @fig-2). Interestingly, the genetic material is passed on to the daughter cell via pepins which is never seen before in bacteria.</span>
-<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
-<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>Overall *(Ca.)* T. magnifica turned out to be a very bizarre form of bacterial species that under the current understanding of cell morphology and energetics should not exist. So how come we find this bacteria in nature? Most bacteria are unable to grow to large sizes as they are met with various constraints related to energy and space. An overview of these constraints is given below.</span>
-<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>As bacteria lack any mode of intracellular transporters to transport materials across the cytoplasm, they rely exclusively on diffusion. Chemical diffusion is extremely slow and is only effective in micro meter distances. So if the cell is too large, it will take a tremendous amount of time to disperse proteins and other materials effectively across the cell <span class="co">[</span><span class="ot">@schulz_big_2001</span><span class="co">]</span>.</span>
-<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>When cell size increases, it reaches a point where the number of ribosomes needed to sustain the cell exceeds the available cell volume. This is called 'ribosome catastrophe' and the upper limit of the cell volume for this catastrophe is $1.39±0.03 × 10^{−15}m^3$. The reported cytoplasmic volume of *(Ca.)* T. magnifica was around $5.91 × 10^{−12} m^3$, which is several orders greater than the ribosome catastrophe limit <span class="co">[</span><span class="ot">@kempes_evolutionary_2016</span><span class="co">]</span>.</span>
-<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Plasma membrane is the only location where ATP production can happen via the electron transport chain (ETC). And for bacteria and archaea, the only available membrane that they can use for ETC is their cellular membrane. Therefore as cell size increases, the surface area increase will quickly be outpaced by the volume increase owing to their differences in orders of increase. And as volume increase is followed by increased metabolic activity, energy production will become a bottleneck <span class="co">[</span><span class="ot">@schavemaker_role_2022;@kempes_evolutionary_2016</span><span class="co">]</span>.</span>
-<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>Now even if these constraints make perfect sense in the context of cell biology, there are always outliers in nature which defy them. One such outlies is this recently discovered bacterial species: *(Ca.)* T. magnifica.</span>
-<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>How is *(Ca.)* T. magnifica overcoming these constraints? First of all, they have multiple copies of their genome compartmentalised along with ribosomes inside pepins. And these pepins are present across the cytoplasm. This might solve the diffusion limit problem because now the protein and other materials are almost always accessible across the cytoplasm at any time. Efficient compartmentalisation again might be the answer to surpassing the ribosome limit. In the case of the energy production limit attained due to surface area constraints, for *(Ca.)* T. magnifica, ATP synthase is expressed within the cytoplasm via pepin membranes and the complex membrane structure. Therefore, the available plasma membrane for energy production is much higher compared to other prokaryotes. </span>
-<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>In the end, when we look at these features carefully, it is analogous to the various features present in eukaryotes. The polyploid genome of *(Ca.)* T. magnifica is equivalent to polypoid mtDNA present in eukaryotes. Compartmentalisation of DNA and ribosome via pepins is equivalent to compartmentalisation seen in the nucleus and the endoplasmic reticulum. And perhaps the icing on the cake is that *(Ca.)* T. magnifica transfers its genetic material via a membrane-bound organelle; pepins, something that is never seen before in prokaryotes. Therefore *(Ca.)* T. magnifica stands as one of the extreme cases of bacterial evolution which blurs our understanding of what constitutes a eukaryote and a prokaryote.</span>
-<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>For more details about the study, please find the original paper <span class="co">[</span><span class="ot">@volland_centimeter-long_2022</span><span class="co">]</span>.</span>
-<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Last updated on {.unnumbered .unlisted .appendix}</span></span>
-<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span>
-<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">hidden</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://info.flagcounter.com/ynrK"</span><span class="kw">&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"Flag Counter"</span> <span class="er">border</span><span class="ot">=</span><span class="st">"0"</span><span class="kw">/&gt;&lt;/a&gt;</span></span>
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "The world's largest bacteria is bigger than a housefly"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Meet *Thiomargarita magnifica*, a recently discovered species of bacteria that is a whopping 1 cm in length, making it the largest bacteria ever till now."</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "07/14/2022"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">date-modified:</span><span class="co"> last-modified</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> images/compare.png</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> reference.bib</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> american-physiological-society</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [research article, scicom]</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## TL;DR</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>::: column-page</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Summary of the study in [@volland_centimeter-long_2022]</span><span class="co">](images/tl_dr.png)</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Research article that is summarised in this post: Volland, J.-M., Gonzalez-Rizzo, S., Gros, O., Tyml, T., Ivanova, N., Schulz, F., Goudeau, D., Elisabeth, N. H., Nath, N., Udwary, D., Malmstrom, R. R., Guidi-Rontani, C., Bolte-Kluge, S., Davies, K. M., Jean, M. R., Mansot, J.-L., Mouncey, N. J., Angert, E. R., Woyke, T., &amp; Date, S. V. (2022). A centimeter-long bacterium with DNA contained in metabolically active, membrane-bound organelles. Science, 376(6600), 1453–1458. <span class="co">[</span><span class="ot">https://doi.org/10.1126/science.abb3634</span><span class="co">](https://doi.org/10.1126/science.abb3634)</span>.</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>When you think of bacteria, the first thing that might come to your mind is a microscope, given how tiny they are to see. Most of the bacteria and archaea are about ~ $2 \mu m$ in size <span class="co">[</span><span class="ot">@volland_centimeter-long_2022</span><span class="co">]</span>. The record for the smallest living organism is shared between the pathogenic bacteria, *Mycoplasma pneumoniae* and the *Thermodiscus sp.* belonging to Archae. Both can be as small as $0.2 \mu m$ in size [@schulz_big_2001]. The biggest bacteria was thought to be *Thiomargarita namibiensis*, which can be as big as $750 \mu m$ in size (average size is $180 \mu m$) and can be seen with the naked eye [@schulz_dense_1999]. But the recent discovery of a new bacteria species has overtaken *T. namibinesis* to become the biggest bacteria ever. Moreover, it is about ~50 times bigger on average, compared to *T. namibinesis* and is seen in lengths of more than $9000 \mu m$, which is about $1cm$! To put that in perspective, a housefly, which is a complex multi-cellular organism is on average only about $0.5 \ to\ 0.7cm$ long!</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>Meet *Thiomargarita magnifica*, your newest species of bacteria, which as we know is the biggest bacteria to date. As reported by a group of researchers in a recent paper [@volland_centimeter-long_2022] in *Science*, there is more than just the size that makes this bacteria special. *Thiomargarita magnifica* is packed with so many complex features that it is blurring the lines between what we considered to be prokaryotes and eukaryotes.</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## Discovering the biggest bacteria</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>::: column-page</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Images (A) and (B) are taken from supplementary fig. S1. in [@volland_centimeter-long_2022].&lt;br&gt; (A) Shows *Thiomargarita magnifica* (white-filaments) attached to sunken leaves of *Rhizophora mangle*.&lt;br&gt; (B) Buds forming on the apical pole the filament</span><span class="co">](images/thiomargartia_magnifica.png)</span>{#fig-1}</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>Researchers first discovered *Thiomargarita magnifica* attached to the sunken leaves of *Rhizophora mangle* (as seen in @fig-1) present in the shallow tropical marine mangroves from Guadeloupe, Lesser Antilles, a French overseas province. The bacteria appeared as a long-white filament and was first thought to be a fungus. It was only later through various techniques that the researchers concluded that this is not a fungus, but a new species of bacteria and rather a very long one that is. Since the bacteria is not yet culturable in laboratory conditions, under the nomenclature followed in microbiology, they are called *Candidatus (Ca.)* Thiomargarita magnifica.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Elucidating the biggest bacteria</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">### The whole filament is a single bacterial cell</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Images (A), (B) and (C) are taken from supplementary fig. S4. Image (D) is taken from Fig. 1. All images are from [@volland_centimeter-long_2022].&lt;br&gt; In all the images the red outline represents the plasma membrane, arrowheads represent division septa and "V" in the image (D) represents a large central vacuole.&lt;br&gt;(A) Cell membrane of Cyanobacterium *Microcoleus vaginatus* showing discontinuity throughout the filament because of the presence of division septa.&lt;br&gt;(B) The membrane septum separating vacuolated cells of a *Beggiatoa*-like filament.&lt;br&gt;(C) The membrane septum separating the large vacuolated cells of the *Marithrix*-like bacterial filaments.&lt;br&gt;(D) Continuous cell membrane of with no division septa in *(Ca.)* T. magnifica.</span><span class="co">](images/filament_one_cell.png)</span>{#fig-2}</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>*(Ca.)* T. magnifica belongs to the family of large sulphur bacteria (LSB). LSBs are known to form long filaments of lengths up to $200 \mu m$ <span class="co">[</span><span class="ot">@jean_two_2015;@huettel_vertical_1996; @nelson_characterization_1989</span><span class="co">]</span>. But these filaments are built up of individual LSB cells and therefore cannot be considered as a single living organism. Thus, the white filament was initially thought to be made of individual cells. To check this, researchers used dyes to visualize the entire plasma membrane of the filament. If it was made of individual cells, then the dye will show discontinuity in the plasma membrane structure indicating septa divisions. But to their surprise, they found no discontinuity and concluded that the whole filament is a single bacterial cell (as seen in @fig-2). Moreover, the filaments also had small buds forming from its apical pole and some of these filaments along with the buds were up to $2cm$ in size.</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="fu">### Inside the biggest bacteria: Large central vacuole, sulphur granules and pepins</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>::: {.column-margin}</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Image (E) is taken from fig. 1. in [@volland_centimeter-long_2022]. (E) Image shows a bud forming from the mother cell, where a Large central vacuole is present and is represented as "V".</span><span class="co">](images/vacuole.png)</span>{#fig-3}</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>Interestingly the whole filament was not filled with the cytoplasm rather, a large central vacuole was present in the middle (as seen in @fig-2 and @fig-3). This vacuole pushed the cellular cytoplasm to its periphery. The vacuole contributed to around 70% of the total cell volume. Therefore, although the cell is large, most of its volume is metabolically inactive. Apart from the vacuole, lucent vesicles were also found, which when further analyzed revealed to be filled with sulfur granules (see @fig-4). As *Thiomargarita spp.* are sulfur-oxidizing gammaproteobacteria <span class="co">[</span><span class="ot">@salman_phylogenetic_2013</span><span class="co">]</span>, this was not a surprise.</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>Additionally, electron-rich membrane-bound compartments were found within the cytoplasm (see @fig-4), which was similar to structures previously reported in other LSBs. They were hypothesized to be compartments containing ribosomes and genetic material <span class="co">[</span><span class="ot">@maier_fine_1990</span><span class="co">]</span>. To check if this holds, researchers used a stain to check where the genetic material was localized in  *(Ca.)* T. magnifica. It was found that almost all of its DNA was concentrated inside these compartments. Further analysis also showed evidence of structures that were 10 to 20 nm in size, inside these compartments, similar to ribosomes. Researchers then used a technique to look for ribosomal RNAs and confirmed their presence inside these structures which indicated that those structures were ribosomes. Adding to this evidence, when translational activity was checked, they were consistently seen within most of the sites where ribosomal RNA was found.</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Image (G) is taken from fig. 1. in [@volland_centimeter-long_2022]. (E) The arrowheads show two electron-rich membrane-bound compartments called pepins, the letter "S" represents sulphur granules and "V" represents a large central vacuole.</span><span class="co">](images/pepin_sulphur_granule.png)</span>{#fig-4}</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>These membrane-bound structures containing DNA and ribosomes, which were not seen attached to the cell membrane are equivalent to the compartmentalization seen in eukaryotes, where DNA is present inside the nucleus and ribosomes are attached to the endoplasmic reticulum. Thus, this new membrane-bound organelle was named 'pepins' by the researchers, because of how they resemble pips or seeds in a watermelon. Overall, the cytoplasm of *(Ca.)* T. magnifica contained sulfur granules, pepins and various membrane structures forming a complex membrane network that spanned the whole cytoplasm.</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="fu">### Localization of ATP synthase</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**Periplasm** is a gel-like matrix present between the outer membrane and the inner membrane of a gram-negative bacteria</span><span class="co">]</span>{.aside}</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>::: {#fig-etc layout-nrow=2}</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Image is taken from fig. 1. in: [@kaila_architecture_2021]. Electron transport chain of *E. coli*</span><span class="co">](images/ecoli_etc.png)</span>{#fig-bacteria-etc}</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Image is taken from fig. 1. in: [@li_mitochondrial_2021]. Electron transport chain in a mitochondrial cell</span><span class="co">](images/mt_etc.jpg)</span>{#fig-mt-etc}</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>Electron transport chains of prokaryotes and eukaryotes</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>Another defining feature between eukaryotes and prokaryotes is the localization of ATP synthase. In eukaryotes, the ATP synthase is localized in the mitochondrial membrane where the electron transport chain (ETC) protein complexes are present <span class="co">[</span><span class="ot">@li_mitochondrial_2021</span><span class="co">]</span>. But for bacteria and archaea, mitochondria are absent and the ATP synthase is localized to the cell membrane along with the other protein complexes present in the ETC <span class="co">[</span><span class="ot">@kaila_architecture_2021</span><span class="co">]</span>. Researchers checked within *(Ca.)* T. magnifica, where the ATP synthase is localized. Surprisingly ATP synthase was found in the membranes of pepins and the complex membrane structure, throughout the cytoplasm (see @fig-6). But ATP synthase was absent in the cellular membrane, this was similar to eukaryotes, where ATP synthase is only present in the mitochondria, which is present within the cytoplasm. These results together elevated pepins as not just a housing compartment for ribosomes and DNA, but also as a potential energy-producing organelle.</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>::: {.column-margin}</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>!<span class="co">[</span><span class="ot">Image (F) is taken from supplementary fig. S20. in: [@volland_centimeter-long_2022]. (E) The red colour indicates ATP synthase and blue colour dots highlight DNA which is used here as a proxy for where the pepins are situated. As you can see, the ATP synthase is expressed throughout the complex membrane network and the pepins present in the cytoplasm</span><span class="co">](images/atp_synthase.png)</span>{#fig-6}</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>The surprises do not stop there. Researchers further found that *(Ca.)* T. magnifica also showed extreme polyploidy, with around 740,000 genome copies for a 2 cm long cell. This is the highest number of genome copies ever reported for a single cell. The genome copies were very similar in their composition. A single genome copy was found to be 11.5 and 12.2 Mb in size, comparable to the popular *Saccharomyces cerevisiae* genome (12.1 Mb). *(Ca.)* T. magnifica genome had around 11,788 genes, more than three times the median gene count of prokaryotes (3935 genes) [@chiyomaru_revisiting_2020]. Interestingly many of the common genes present within prokaryotes which coded for proteins that are responsible for cell division were absent here. But cell elongation protein genes were found to be intact and were found to be duplicated, forming multiple copies placed beside each other in the genome, which might suggest a possible reason why *(Ca.)* T. magnifica grow so long. </span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>The researchers also found that, unlike most bacteria which reproduce via binary fission where cell volume doubles before cell division, in *(Ca.)* T. magnifica, they follow a dimorphic lifecycle; a bud-like cell stage and a filament-like cell stage. When they reproduce, the apical pole of the filament mother cell constricts and buds off to become a daughter cell (see @fig-1 and @fig-2). Interestingly, the genetic material is passed on to the daughter cell via pepins which is never seen before in bacteria.</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>Overall *(Ca.)* T. magnifica turned out to be a very bizarre form of bacterial species that under the current understanding of cell morphology and energetics should not exist. So how come we find this bacteria in nature? Most bacteria are unable to grow to large sizes as they are met with various constraints related to energy and space. An overview of these constraints is given below.</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>As bacteria lack any mode of intracellular transporters to transport materials across the cytoplasm, they rely exclusively on diffusion. Chemical diffusion is extremely slow and is only effective in micro meter distances. So if the cell is too large, it will take a tremendous amount of time to disperse proteins and other materials effectively across the cell <span class="co">[</span><span class="ot">@schulz_big_2001</span><span class="co">]</span>.</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>When cell size increases, it reaches a point where the number of ribosomes needed to sustain the cell exceeds the available cell volume. This is called 'ribosome catastrophe' and the upper limit of the cell volume for this catastrophe is $1.39±0.03 × 10^{−15}m^3$. The reported cytoplasmic volume of *(Ca.)* T. magnifica was around $5.91 × 10^{−12} m^3$, which is several orders greater than the ribosome catastrophe limit <span class="co">[</span><span class="ot">@kempes_evolutionary_2016</span><span class="co">]</span>.</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Plasma membrane is the only location where ATP production can happen via the electron transport chain (ETC). And for bacteria and archaea, the only available membrane that they can use for ETC is their cellular membrane. Therefore as cell size increases, the surface area increase will quickly be outpaced by the volume increase owing to their differences in orders of increase. And as volume increase is followed by increased metabolic activity, energy production will become a bottleneck <span class="co">[</span><span class="ot">@schavemaker_role_2022;@kempes_evolutionary_2016</span><span class="co">]</span>.</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>Now even if these constraints make perfect sense in the context of cell biology, there are always outliers in nature which defy them. One such outlies is this recently discovered bacterial species: *(Ca.)* T. magnifica.</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>How is *(Ca.)* T. magnifica overcoming these constraints? First of all, they have multiple copies of their genome compartmentalised along with ribosomes inside pepins. And these pepins are present across the cytoplasm. This might solve the diffusion limit problem because now the protein and other materials are almost always accessible across the cytoplasm at any time. Efficient compartmentalisation again might be the answer to surpassing the ribosome limit. In the case of the energy production limit attained due to surface area constraints, for *(Ca.)* T. magnifica, ATP synthase is expressed within the cytoplasm via pepin membranes and the complex membrane structure. Therefore, the available plasma membrane for energy production is much higher compared to other prokaryotes. </span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>In the end, when we look at these features carefully, it is analogous to the various features present in eukaryotes. The polyploid genome of *(Ca.)* T. magnifica is equivalent to polypoid mtDNA present in eukaryotes. Compartmentalisation of DNA and ribosome via pepins is equivalent to compartmentalisation seen in the nucleus and the endoplasmic reticulum. And perhaps the icing on the cake is that *(Ca.)* T. magnifica transfers its genetic material via a membrane-bound organelle; pepins, something that is never seen before in prokaryotes. Therefore *(Ca.)* T. magnifica stands as one of the extreme cases of bacterial evolution which blurs our understanding of what constitutes a eukaryote and a prokaryote.</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>For more details about the study, please find the original paper <span class="co">[</span><span class="ot">@volland_centimeter-long_2022</span><span class="co">]</span>.</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">hidden</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://info.flagcounter.com/ynrK"</span><span class="kw">&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"Flag Counter"</span> <span class="er">border</span><span class="ot">=</span><span class="st">"0"</span><span class="kw">/&gt;&lt;/a&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">Blog made using <a href="https://quarto.org/">Quarto®</a> with ❤️, by Jewel Johnson.</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-<li class="nav-item compact">
+    <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/jeweljohnsonj">
       <i class="bi bi-github" role="img">
 </i> 
@@ -746,9 +872,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
 </ul>
-</div>
+    </div>
   </div>
 </footer>
+
 
 
 <script src="../../site_libs/quarto-html/zenscroll-min.js"></script>

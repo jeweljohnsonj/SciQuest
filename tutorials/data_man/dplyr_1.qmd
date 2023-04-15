@@ -2,6 +2,7 @@
 title: "Chapter 2: Data manipulation using dplyr (part 1)"
 description: "Learn how to manipulate your data with the dplyr package"
 date: "12/13/2021"
+date-modified: last-modified
 format: html
 image: images/dplyr.png
 categories: [dplyr, data wrangling]
@@ -450,12 +451,5 @@ The `{dplyr}` package is the grammar of the data manipulation in R. It features 
 2.  Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer Archipelago (Antarctica) penguin data. R package version 0.1.0. https://allisonhorst.github.io/palmerpenguins/
 
 3.  Hadley Wickham (2021). tidyr: Tidy Messy Data. R package version 1.1.4. https://CRAN.R-project.org/package=tidyr
-
-#### Last updated on {.unnumbered .unlisted .appendix}
-
-```{r}
-#| echo: false
-Sys.time()
-```
 
 <a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>

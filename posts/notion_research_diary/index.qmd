@@ -2,6 +2,7 @@
 title: "Using Notion to keep a research diary"
 description: "This a tutorial on how you can use Notion to maintain a research diary if you are a researcher or a PhD student"
 date: "06/29/2022"
+date-modified: last-modified
 format: html
 image: images/res_dairy.png
 categories: [PhD, Notion]
@@ -50,12 +51,5 @@ This is a simple research diary template that I have created and I hope you find
 ## Useful References {.unnumbered .appendix}
 
 1.  The research diary image in the thumbnail for this post belongs to Dr. Julia Everitt ([\@juilaeverittdr](https://twitter.com/juliaeverittdr)). You can read more about research diary [here](https://thrivingparttime.com/2021/03/15/my-research-diary-recording-the-twists-and-turns-of-a-part-time-doctorate/).
-
-#### Last updated on {.unnumbered .unlisted .appendix}
-
-```{r}
-#| echo: false
-Sys.time()
-```
 
 <a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>

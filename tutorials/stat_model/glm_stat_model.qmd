@@ -2,6 +2,7 @@
 title: "Generalized linear models in R"
 description: "Go beyond linear models and extend them to analyse non-normal datasets"
 date: "08/23/2022"
+date-modified: last-modified
 format:
   html:
     css:
@@ -98,7 +99,7 @@ We will use the `HorsePrices` dataset from the `{Stat2Data}` package in R. We wi
 
 ```{r}
 if (!require(Stat2Data)) install.packages('Stat2Data')
-if (!require(statisticalModeling)) install.packages('statisticalModeling')
+if (!require(statisticalModeling)) devtools::install_github("dtkaplan/statisticalModeling")
 library(Stat2Data)
 library(statisticalModeling)
 
@@ -829,13 +830,6 @@ This marks the end of the introduction to generalised linear models. In summary,
 8.    Assumptions of GLMs: When to use GLMs
 
 In the next tutorial, we will take our understanding of GLMs to the next level and learn about 'Hierarchical and Mixed Effects Models in R'. See you then!
-
-#### Last updated on {.unnumbered .unlisted .appendix}
-
-```{r}
-#| echo: false
-Sys.time()
-```
 
 <!-- Do not forget to put flag counter -->
 <a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>
