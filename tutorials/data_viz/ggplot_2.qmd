@@ -9,7 +9,7 @@ categories: [ggplot2, data visualization]
 filters:
    - social-share
 share:
-  permalink: "https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_2.html"
+  permalink: "https://sciquest.netlify.app/tutorials/data_viz/ggplot_2.html"
   description: "Customizing graphs in ggplot2"
   twitter: true
   facebook: true
@@ -20,7 +20,7 @@ share:
   email: true
 ---
 
-After going through [Chapter 1](https://jeweljohnsonj.github.io/one-carat-blog/project1.html) you would be now familiar with the different types of graphs that you can plot using `{ggplot2}`. So for this tutorial, we will be learning how to customize those ggplot graphs to our liking. We will learn how to tweak the aesthetics, how to change labels and how to modify and change the axes in a graph.
+After going through [Chapter 1](https://sciquest.netlify.app/tutorials/data_viz/ggplot_1.html) you would be now familiar with the different types of graphs that you can plot using `{ggplot2}`. So for this tutorial, we will be learning how to customize those ggplot graphs to our liking. We will learn how to tweak the aesthetics, how to change labels and how to modify and change the axes in a graph.
 
 So let us plot a graph from scratch and learn how to use different aesthetics available.
 
@@ -88,7 +88,7 @@ Now, this graph even though shows us data points we are not sure which point bel
 
 ### Changing colour
 
--   To change colour of the 'element' as a function species, we have to add `colour = Species` within the `aes()` of the ggplot command. I use the general term 'element' here to emphasize that the same change in aesthetics will work for most of other types of geometries in ggplot2 (something which you have seen extensively in [Chapter 1](https://jeweljohnsonj.github.io/one-carat-blog/project1.html). Like for a line graph, the 'element' would be lines. Here we have a scatter plot, so the 'element' would be points.
+-   To change colour of the 'element' as a function species, we have to add `colour = Species` within the `aes()` of the ggplot command. I use the general term 'element' here to emphasize that the same change in aesthetics will work for most of other types of geometries in ggplot2 (something which you have seen extensively in [Chapter 1](https://sciquest.netlify.app/tutorials/data_viz/ggplot_1.html). Like for a line graph, the 'element' would be lines. Here we have a scatter plot, so the 'element' would be points.
 
 Also note that, in addition to `colour`, R also recognizes `color` and `col` wordings and they function the same as `colour`.
 

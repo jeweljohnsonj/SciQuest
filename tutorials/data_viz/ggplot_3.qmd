@@ -11,7 +11,7 @@ categories: [ggplot2, data visualization]
 filters:
    - social-share
 share:
-  permalink: "https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_3.html"
+  permalink: "https://sciquest.netlify.app/tutorials/data_viz/ggplot_3.html"
   description: "Even more customizations in ggplot2"
   twitter: true
   facebook: true

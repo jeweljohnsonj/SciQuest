@@ -23,7 +23,7 @@ You can get the template by clicking [here](https://jeweljohnson.notion.site/c44
 ![Research diary database](images/diary.png)
 :::
 
-The picture above shows the research diary database. Each row value created in the table will be each day's entry. If you also have a [literature tracker](https://jeweljohnsonj.github.io/one-carat-blog/posts/notion_literature/) database in Notion workspace, then you can couple it with your diary entry and it will showcase any papers that you have read one that day.
+The picture above shows the research diary database. Each row value created in the table will be each day's entry. If you also have a [literature tracker](https://jeweljohnsonj.github.io/sciquest/posts/notion_literature/) database in Notion workspace, then you can couple it with your diary entry and it will showcase any papers that you have read one that day.
 
 So let us try writing an entry. First, make a blank row entry and then hover over the newly created empty row and click 'OPEN'. This will open a new window. In that window click on 'Diary entry template'. This will bring you a sample template. You can fill in relevant info or add in your subsection and modify the entry.
 
@@ -45,7 +45,7 @@ This is a simple research diary template that I have created and I hope you find
 
 ::: {.callout-tip collapse="true"}
 ## Video: Making a diary entry (click here)
-![](https://raw.githubusercontent.com/jeweljohnsonj/one-carat-blog/main/videos/notion_research_diary/diary.mp4)
+![](https://raw.githubusercontent.com/jeweljohnsonj/sciquest/main/videos/notion_research_diary/diary.mp4)
 :::
 
 ## Useful References {.unnumbered .appendix}

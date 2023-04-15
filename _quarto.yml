@@ -19,8 +19,8 @@ website:
       - icon: house
         href: mailto:jeweljohnsonj@gmail.com
   open-graph: true
-  site-url: "https://one-carat-blog.netlify.app/"
-  repo-url: "https://github.com/jeweljohnsonj/one-carat-blog"
+  site-url: "https://sciquest.netlify.app/"
+  repo-url: "https://github.com/jeweljohnsonj/SciQuest"
   repo-actions: [edit, issue]
   twitter-card: true
   google-analytics: G-EVCS615JQR
@@ -35,7 +35,7 @@ website:
       - text: "About me"
         href: https://jeweljohnsonj.github.io/jewel_resume/
       - icon: github
-        href: https://github.com/jeweljohnsonj/one-carat-blog
+        href: https://github.com/jeweljohnsonj/SciQuest
       - icon: twitter
         href: https://twitter.com/jeweljohnsonj
  
@@ -58,7 +58,7 @@ citation: true
 
 comments:
   giscus:
-    repo: jeweljohnsonj/one-carat-blog 
+    repo: jeweljohnsonj/SciQuest
 
 editor: source
 

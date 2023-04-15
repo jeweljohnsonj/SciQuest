@@ -14,7 +14,7 @@ lightbox: auto
 
 ## Getting started
 
-It's been a while since I have been trying to find various productivity software to prepare myself for my future Ph.D. journey. One of those tasks which I wanted to automate was in organizing my scientific literature collection. The answer to organizing and annotating the literature was met by two software; Zotero and Notion. Zotero is a free-to-use reference manager that can organize your literature collection with ease. Notion, on the other hand, is a productivity software that can be used as a workspace manager, task manager, and many other things. I have written a [guide](https://one-carat-blog.netlify.app/posts/notion_literature/) on how one can use Zotero and Notion to build a literature tracker.
+It's been a while since I have been trying to find various productivity software to prepare myself for my future Ph.D. journey. One of those tasks which I wanted to automate was in organizing my scientific literature collection. The answer to organizing and annotating the literature was met by two software; Zotero and Notion. Zotero is a free-to-use reference manager that can organize your literature collection with ease. Notion, on the other hand, is a productivity software that can be used as a workspace manager, task manager, and many other things. I have written a [guide](https://sciquest.netlify.app/posts/notion_literature/) on how one can use Zotero and Notion to build a literature tracker.
 
 Now that the organization part is taken care of, I was in search of software that can help me take summary notes on the literature that I am studying. Now I can write notes and embed them into the .pdf file using Zotero itself or use Notion to create notes using the literature database which is synced with the Zotero libraries. Both these methods work, but I wanted something versatile. And that's what brought me to **Obsidian**, an open-source, free-to-use, note-taking software that uses the [Markdown](https://en.wikipedia.org/wiki/Markdown) language at its core. In this blog post, I will show you how I use Obsidian to take literature notes. 
 
@@ -81,7 +81,7 @@ Finally, select the folder which you want to make a .bib file for. If you want t
 
 5.    Save your .bib file in a location of your choice. Then copy the full path (file location) to the .bib file. We will be needing this shortly.
 
-![Exporting .bib file using Zotero](https://raw.githubusercontent.com/jeweljohnsonj/one-carat-blog/main/videos/obsidian_zotero/zotero_to_bib.mp4)
+![Exporting .bib file using Zotero](https://raw.githubusercontent.com/jeweljohnsonj/sciquest/main/videos/obsidian_zotero/zotero_to_bib.mp4)
 
 ### Configuring the plugins
 
@@ -159,7 +159,7 @@ To access the plugin in the note window, press `Ctrl+P` to open up the commands 
 
 By selecting a literature entry, a markdown file (.md file) will be automatically created in your 'Literature_collection' folder. You can open these markdown files and then make the necessary edits. I use them to write the summary and my understanding of that paper in the .md file.
 
-![Citations plugin in action](https://raw.githubusercontent.com/jeweljohnsonj/one-carat-blog/main/videos/obsidian_zotero/inserting_citation.mp4)
+![Citations plugin in action](https://raw.githubusercontent.com/jeweljohnsonj/sciquest/main/videos/obsidian_zotero/inserting_citation.mp4)
 
 I have also made a literature table using the 'Dataview' plugin. You can configure the source code of the table to suit your needs. 
 

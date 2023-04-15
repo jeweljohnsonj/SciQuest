@@ -1,119 +1,123 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://one-carat-blog.netlify.app/blog.html</loc>
-    <lastmod>2023-04-15T12:30:42.879Z</lastmod>
+    <loc>https://sciquest.netlify.app/blog.html</loc>
+    <lastmod>2023-04-15T14:05:20.163Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/index.html</loc>
-    <lastmod>2023-04-15T12:40:03.203Z</lastmod>
+    <loc>https://sciquest.netlify.app/index.html</loc>
+    <lastmod>2023-04-15T14:05:21.065Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/posts/notion_intro/index.html</loc>
-    <lastmod>2023-04-15T12:30:52.957Z</lastmod>
+    <loc>https://sciquest.netlify.app/posts/notion_intro/index.html</loc>
+    <lastmod>2023-04-15T14:05:26.295Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/posts/notion_literature/index.html</loc>
-    <lastmod>2023-04-15T12:30:56.256Z</lastmod>
+    <loc>https://sciquest.netlify.app/posts/notion_literature/index.html</loc>
+    <lastmod>2023-04-15T14:05:29.913Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/posts/notion_movie_books/index.html</loc>
-    <lastmod>2023-04-15T12:30:59.658Z</lastmod>
+    <loc>https://sciquest.netlify.app/posts/notion_movie_books/index.html</loc>
+    <lastmod>2023-04-15T14:05:31.983Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/posts/notion_research_diary/index.html</loc>
-    <lastmod>2023-04-15T12:31:01.767Z</lastmod>
+    <loc>https://sciquest.netlify.app/posts/notion_research_diary/index.html</loc>
+    <lastmod>2023-04-15T14:05:34.276Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/posts/notion_task_manager/index.html</loc>
-    <lastmod>2023-04-15T12:31:04.612Z</lastmod>
+    <loc>https://sciquest.netlify.app/posts/notion_task_manager/index.html</loc>
+    <lastmod>2023-04-15T14:05:37.436Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/posts/obsidian_zotero/index.html</loc>
-    <lastmod>2023-04-15T12:31:08.330Z</lastmod>
+    <loc>https://sciquest.netlify.app/posts/obsidian_zotero/index.html</loc>
+    <lastmod>2023-04-15T14:05:42.411Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/posts/research_article_biggest_bacterium/index_post.html</loc>
-    <lastmod>2023-04-15T12:31:14.658Z</lastmod>
+    <loc>https://sciquest.netlify.app/posts/research_article_biggest_bacterium/index_post.html</loc>
+    <lastmod>2023-04-15T14:05:46.738Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/posts/research_article_embryonic_learning/index_post.html</loc>
-    <lastmod>2023-04-15T12:31:19.353Z</lastmod>
+    <loc>https://sciquest.netlify.app/posts/research_article_embryonic_learning/index_post.html</loc>
+    <lastmod>2023-04-15T14:05:51.470Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/posts/welcome_to_blog/index.html</loc>
-    <lastmod>2023-04-15T12:31:22.132Z</lastmod>
+    <loc>https://sciquest.netlify.app/posts/welcome_to_blog/index.html</loc>
+    <lastmod>2023-04-15T14:05:54.458Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/posts/word_happy_2022/index.html</loc>
-    <lastmod>2023-04-15T12:31:37.647Z</lastmod>
+    <loc>https://sciquest.netlify.app/posts/word_happy_2022/index.html</loc>
+    <lastmod>2023-04-15T14:06:09.842Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/tutorials/data_man/dplyr_1.html</loc>
-    <lastmod>2023-04-15T12:31:53.743Z</lastmod>
+    <loc>https://sciquest.netlify.app/tutorials/data_man/dplyr_1.html</loc>
+    <lastmod>2023-04-15T14:06:26.243Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/tutorials/data_man/dplyr_2.html</loc>
-    <lastmod>2023-04-15T12:32:14.728Z</lastmod>
+    <loc>https://sciquest.netlify.app/tutorials/data_man/dplyr_2.html</loc>
+    <lastmod>2023-04-15T14:06:39.335Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/tutorials/data_man/tidyr.html</loc>
-    <lastmod>2023-04-15T12:32:24.959Z</lastmod>
+    <loc>https://sciquest.netlify.app/tutorials/data_man/tidyr.html</loc>
+    <lastmod>2023-04-15T14:06:48.779Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_1.html</loc>
-    <lastmod>2023-04-15T12:32:33.487Z</lastmod>
+    <loc>https://sciquest.netlify.app/tutorials/data_viz/ggplot_1.html</loc>
+    <lastmod>2023-04-15T14:06:59.142Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_2.html</loc>
-    <lastmod>2023-04-15T12:32:48.594Z</lastmod>
+    <loc>https://sciquest.netlify.app/tutorials/data_viz/ggplot_2.html</loc>
+    <lastmod>2023-04-15T14:07:15.183Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_3.html</loc>
-    <lastmod>2023-04-15T12:33:13.389Z</lastmod>
+    <loc>https://sciquest.netlify.app/tutorials/data_viz/ggplot_3.html</loc>
+    <lastmod>2023-04-15T14:07:45.360Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/tutorials/data_viz/ggpubr.html</loc>
-    <lastmod>2023-04-15T12:33:30.037Z</lastmod>
+    <loc>https://sciquest.netlify.app/tutorials/data_viz/ggpubr.html</loc>
+    <lastmod>2023-04-15T14:08:07.037Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/tutorials/stat_basic/inter_reg.html</loc>
-    <lastmod>2023-04-15T12:34:04.068Z</lastmod>
+    <loc>https://sciquest.netlify.app/tutorials/network_analysis/network_analysis.html</loc>
+    <lastmod>2023-04-15T14:08:23.316Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/tutorials/stat_basic/intro_reg.html</loc>
-    <lastmod>2023-04-15T12:34:34.962Z</lastmod>
+    <loc>https://sciquest.netlify.app/tutorials/stat_basic/inter_reg.html</loc>
+    <lastmod>2023-04-15T14:08:58.758Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/tutorials/stat_basic/intro_stat.html</loc>
-    <lastmod>2023-04-15T12:34:56.179Z</lastmod>
+    <loc>https://sciquest.netlify.app/tutorials/stat_basic/intro_reg.html</loc>
+    <lastmod>2023-04-15T14:09:27.197Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/tutorials/stat_model/glmer_stat_model.html</loc>
-    <lastmod>2023-04-15T12:36:26.263Z</lastmod>
+    <loc>https://sciquest.netlify.app/tutorials/stat_basic/intro_stat.html</loc>
+    <lastmod>2023-04-15T14:09:51.361Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/tutorials/stat_model/glm_stat_model.html</loc>
-    <lastmod>2023-04-15T12:36:48.145Z</lastmod>
+    <loc>https://sciquest.netlify.app/tutorials/stat_model/glmer_stat_model.html</loc>
+    <lastmod>2023-04-15T14:11:17.289Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/tutorials/stat_model/inter_stat_model.html</loc>
-    <lastmod>2023-04-15T12:37:27.847Z</lastmod>
+    <loc>https://sciquest.netlify.app/tutorials/stat_model/glm_stat_model.html</loc>
+    <lastmod>2023-04-15T14:11:37.071Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/tutorials/stat_model/intro_stat_model.html</loc>
-    <lastmod>2023-04-15T12:37:53.272Z</lastmod>
+    <loc>https://sciquest.netlify.app/tutorials/stat_model/inter_stat_model.html</loc>
+    <lastmod>2023-04-15T14:12:10.172Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/tutorials.html</loc>
-    <lastmod>2023-04-15T12:37:56.953Z</lastmod>
+    <loc>https://sciquest.netlify.app/tutorials/stat_model/intro_stat_model.html</loc>
+    <lastmod>2023-04-15T14:12:36.377Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/docs/site_libs/d3v5-5.9.2/API.html</loc>
-    <lastmod>2023-04-15T12:39:49.752Z</lastmod>
+    <loc>https://sciquest.netlify.app/tutorials.html</loc>
+    <lastmod>2023-04-15T14:17:16.195Z</lastmod>
   </url>
   <url>
-    <loc>https://one-carat-blog.netlify.app/docs/site_libs/d3v5-5.9.2/CHANGES.html</loc>
-    <lastmod>2023-04-15T12:39:58.547Z</lastmod>
+    <loc>https://sciquest.netlify.app/docs/site_libs/d3v5-5.9.2/API.html</loc>
+    <lastmod>2023-04-15T14:16:36.743Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sciquest.netlify.app/docs/site_libs/d3v5-5.9.2/CHANGES.html</loc>
+    <lastmod>2023-04-15T14:16:53.479Z</lastmod>
   </url>
 </urlset>

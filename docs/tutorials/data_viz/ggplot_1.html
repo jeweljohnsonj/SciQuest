@@ -103,13 +103,13 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script><link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="SciQuest - Chapter 1: Data visualization using ggplot2">
 <meta property="og:description" content="Learn how to plot different types of graphs using the ggplot2 package">
-<meta property="og:image" content="https://one-carat-blog.netlify.app/tutorials/data_viz/images/gg1.png">
+<meta property="og:image" content="https://sciquest.netlify.app/tutorials/data_viz/images/gg1.png">
 <meta property="og:site-name" content="SciQuest">
 <meta property="og:image:height" content="1080">
 <meta property="og:image:width" content="1920">
 <meta name="twitter:title" content="SciQuest - Chapter 1: Data visualization using ggplot2">
 <meta name="twitter:description" content="Learn how to plot different types of graphs using the ggplot2 package">
-<meta name="twitter:image" content="https://one-carat-blog.netlify.app/tutorials/data_viz/images/gg1.png">
+<meta name="twitter:image" content="https://sciquest.netlify.app/tutorials/data_viz/images/gg1.png">
 <meta name="twitter:image-height" content="1080">
 <meta name="twitter:image-width" content="1920">
 <meta name="twitter:card" content="summary_large_image">
@@ -144,7 +144,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
  <span class="menu-text">About me</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/jeweljohnsonj/one-carat-blog" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/jeweljohnsonj/SciQuest" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -179,7 +179,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p><a href="https://jeweljohnsonj.github.io/one-carat-blog/">Jewel Johnson</a> </p>
+               <p><a href="https://sciquest.netlify.app/">Jewel Johnson</a> </p>
             </div>
     </div>
       
@@ -193,7 +193,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">April 14, 2023</p>
+        <p class="date-modified">April 15, 2023</p>
       </div>
     </div>
       
@@ -226,7 +226,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
   <li><a href="#saving-your-ggplot2-graphs" id="toc-saving-your-ggplot2-graphs" class="nav-link" data-scroll-target="#saving-your-ggplot2-graphs"><span class="header-section-number">4</span> Saving your ggplot2 graphs</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">5</span> Summary</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">6</span> References</a></li>
-  </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/edit/main/tutorials/data_viz/ggplot_1.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+  </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/SciQuest/edit/main/tutorials/data_viz/ggplot_1.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/SciQuest/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content"><section id="before-we-begin" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="before-we-begin">
@@ -242,7 +242,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <li>
 <strong>Geometry</strong> or <strong>geoms</strong>: Geometry dictates the type of graph that you want to plot and this information is conveyed to ggplot2 through the <code>geom()</code> command code. For e.g.&nbsp;using the <code><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot()</a></code> command, you can plot a box plot with your data. Likewise, there are many types of geometry that you can plot using the ggplot2 package.</li>
 <li>
-<strong>Aesthetic</strong> mappings: Aesthetics define the different kinds of information that you want to include in the plot. One fo the most important aesthetic is in choosing which data values to plot on the x-axis and the y-axis. Another example is changing the colour of the data points, which can be used to differentiate two different categories in the data. The use of aesthetics depends on the geometry that you are using. We use the command <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> for adding different types of aesthetics to the plot. We will learn more about <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> in <a href="https://one-carat-blog.netlify.app/tutorials/data_viz/project2.html">Chapter 2</a>. For now, we will only see what kind of plots can be made using the <a href="https://ggplot2.tidyverse.org">ggplot2</a> package. We will learn how to tweak them in <a href="https://one-carat-blog.netlify.app/tutorials/data_viz/project2.html">Chapter 2</a>.</li>
+<strong>Aesthetic</strong> mappings: Aesthetics define the different kinds of information that you want to include in the plot. One fo the most important aesthetic is in choosing which data values to plot on the x-axis and the y-axis. Another example is changing the colour of the data points, which can be used to differentiate two different categories in the data. The use of aesthetics depends on the geometry that you are using. We use the command <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> for adding different types of aesthetics to the plot. We will learn more about <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> in <a href="https://sciquest.netlify.app/tutorials/data_viz/ggplot_2.html">Chapter 2</a>. For now, we will only see what kind of plots can be made using the <a href="https://ggplot2.tidyverse.org">ggplot2</a> package. We will learn how to tweak them in <a href="https://sciquest.netlify.app/tutorials/data_viz/ggplot_2.html">Chapter 2</a>.</li>
 </ol>
 <p>This tutorial is primarily focused on students who are beginners in R programming and wants to quickly plot their data without much of a hassle. So without further ado let’s plot some graphs!</p>
 </section><section id="setting-up-the-prerequisites" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="setting-up-the-prerequisites">
@@ -489,7 +489,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </div>
 </section><section id="summary" class="level2" data-number="5"><h2 data-number="5" class="anchored" data-anchor-id="summary">
 <span class="header-section-number">5</span> Summary</h2>
-<p>I hope this tutorial helped you to get familiarize with the <a href="https://ggplot2.tidyverse.org">ggplot2</a> commands. The best way to learn R is by actually doing it yourself. So try to recreate the examples given in this tutorial and then try to apply what you learned using the different datasets available in R. In <a href="https://one-carat-blog.netlify.app/tutorials/data_viz/project2.html">chapter 2</a>, we will learn how to customize the plots by tweaking the aesthetic mappings.</p>
+<p>I hope this tutorial helped you to get familiarize with the <a href="https://ggplot2.tidyverse.org">ggplot2</a> commands. The best way to learn R is by actually doing it yourself. So try to recreate the examples given in this tutorial and then try to apply what you learned using the different datasets available in R. In <a href="https://sciquest.netlify.app/tutorials/data_viz/ggplot_2.html">chapter 2</a>, we will learn how to customize the plots by tweaking the aesthetic mappings.</p>
 </section><section id="references" class="level2" data-number="6"><h2 data-number="6" class="anchored" data-anchor-id="references">
 <span class="header-section-number">6</span> References</h2>
 <ol type="1">
@@ -505,12 +505,12 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
   author = {Johnson, Jewel},
   title = {Chapter 1: {Data} Visualization Using Ggplot2},
   date = {2021-12-02},
-  url = {https://one-carat-blog.netlify.app//tutorials/data_viz/ggplot_1.html},
+  url = {https://sciquest.netlify.app//tutorials/data_viz/ggplot_1.html},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-johnson2021" class="csl-entry quarto-appendix-citeas" role="listitem">
 Johnson, Jewel. 2021. <span>“Chapter 1: Data Visualization Using
-Ggplot2.”</span> December 2, 2021. <a href="https://one-carat-blog.netlify.app//tutorials/data_viz/ggplot_1.html">https://one-carat-blog.netlify.app//tutorials/data_viz/ggplot_1.html</a>.
+Ggplot2.”</span> December 2, 2021. <a href="https://sciquest.netlify.app//tutorials/data_viz/ggplot_1.html">https://sciquest.netlify.app//tutorials/data_viz/ggplot_1.html</a>.
 </div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -794,7 +794,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><script src="https://giscus.app/client.js" data-repo="jeweljohnsonj/one-carat-blog" data-repo-id="R_kgDOHW124A" data-category="General" data-category-id="DIC_kwDOHW124M4CPNVL" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script><script src="https://giscus.app/client.js" data-repo="jeweljohnsonj/SciQuest" data-repo-id="R_kgDOHW124A" data-category="General" data-category-id="DIC_kwDOHW124M4CPNVL" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb16" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Chapter 1: Data visualization using ggplot2"</span></span>
@@ -807,7 +807,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="an">filters:</span></span>
 <span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="co">   - social-share</span></span>
 <span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="an">share:</span></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="co">  permalink: "https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_1.html"</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="co">  permalink: "https://sciquest.netlify.app/tutorials/data_viz/ggplot_1.html"</span></span>
 <span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="co">  description: "Data visualization using ggplot2"</span></span>
 <span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="co">  twitter: true</span></span>
 <span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="co">  facebook: true</span></span>
@@ -830,7 +830,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>**Data**: Data of your choice that you want to visually summarise.</span>
 <span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>**Geometry** or **geoms**: Geometry dictates the type of graph that you want to plot and this information is conveyed to ggplot2 through the <span class="in">`geom()`</span> command code. For e.g. using the <span class="in">`geom_boxplot()`</span> command, you can plot a box plot with your data. Likewise, there are many types of geometry that you can plot using the ggplot2 package.</span>
-<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**Aesthetic** mappings: Aesthetics define the different kinds of information that you want to include in the plot. One fo the most important aesthetic is in choosing which data values to plot on the x-axis and the y-axis. Another example is changing the colour of the data points, which can be used to differentiate two different categories in the data. The use of aesthetics depends on the geometry that you are using. We use the command <span class="in">`aes()`</span> for adding different types of aesthetics to the plot. We will learn more about <span class="in">`aes()`</span> in <span class="co">[</span><span class="ot">Chapter 2</span><span class="co">](https://one-carat-blog.netlify.app/tutorials/data_viz/project2.html)</span>. For now, we will only see what kind of plots can be made using the <span class="in">`{ggplot2}`</span> package. We will learn how to tweak them in <span class="co">[</span><span class="ot">Chapter 2</span><span class="co">](https://one-carat-blog.netlify.app/tutorials/data_viz/project2.html)</span>.</span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>**Aesthetic** mappings: Aesthetics define the different kinds of information that you want to include in the plot. One fo the most important aesthetic is in choosing which data values to plot on the x-axis and the y-axis. Another example is changing the colour of the data points, which can be used to differentiate two different categories in the data. The use of aesthetics depends on the geometry that you are using. We use the command <span class="in">`aes()`</span> for adding different types of aesthetics to the plot. We will learn more about <span class="in">`aes()`</span> in <span class="co">[</span><span class="ot">Chapter 2</span><span class="co">](https://sciquest.netlify.app/tutorials/data_viz/ggplot_2.html)</span>. For now, we will only see what kind of plots can be made using the <span class="in">`{ggplot2}`</span> package. We will learn how to tweak them in <span class="co">[</span><span class="ot">Chapter 2</span><span class="co">](https://sciquest.netlify.app/tutorials/data_viz/ggplot_2.html)</span>.</span>
 <span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a>This tutorial is primarily focused on students who are beginners in R programming and wants to quickly plot their data without much of a hassle. So without further ado let's plot some graphs!</span>
 <span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a></span>
@@ -1058,7 +1058,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb16-288"><a href="#cb16-288" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-289"><a href="#cb16-289" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summary</span></span>
 <span id="cb16-290"><a href="#cb16-290" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-291"><a href="#cb16-291" aria-hidden="true" tabindex="-1"></a>I hope this tutorial helped you to get familiarize with the <span class="in">`{ggplot2}`</span> commands. The best way to learn R is by actually doing it yourself. So try to recreate the examples given in this tutorial and then try to apply what you learned using the different datasets available in R. In <span class="co">[</span><span class="ot">chapter 2</span><span class="co">](https://one-carat-blog.netlify.app/tutorials/data_viz/project2.html)</span>, we will learn how to customize the plots by tweaking the aesthetic mappings.</span>
+<span id="cb16-291"><a href="#cb16-291" aria-hidden="true" tabindex="-1"></a>I hope this tutorial helped you to get familiarize with the <span class="in">`{ggplot2}`</span> commands. The best way to learn R is by actually doing it yourself. So try to recreate the examples given in this tutorial and then try to apply what you learned using the different datasets available in R. In <span class="co">[</span><span class="ot">chapter 2</span><span class="co">](https://sciquest.netlify.app/tutorials/data_viz/ggplot_2.html)</span>, we will learn how to customize the plots by tweaking the aesthetic mappings.</span>
 <span id="cb16-292"><a href="#cb16-292" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-293"><a href="#cb16-293" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
 <span id="cb16-294"><a href="#cb16-294" aria-hidden="true" tabindex="-1"></a></span>
@@ -1105,7 +1105,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer><div class="page-columns page-rows-contents page-layout-article"><div class="social-share">
-<a href="https://twitter.com/share?url=https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_1.html&amp;text=Data%20visualization%20using%20ggplot2" target="_blank" class="twitter"><i class="fab fa-twitter fa-fw fa-lg"></i></a><a href="https://www.linkedin.com/shareArticle?url=https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_1.html&amp;title=Data%20visualization%20using%20ggplot2" target="_blank" class="linkedin"><i class="fa-brands fa-linkedin-in fa-fw fa-lg"></i></a>  <a href="mailto:?subject=Data%20visualization%20using%20ggplot2&amp;body=Check%20out%20this%20link:https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_1.html" target="_blank" class="email"><i class="fa-solid fa-envelope fa-fw fa-lg"></i></a><a href="https://www.facebook.com/sharer.php?u=https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_1.html" target="_blank" class="facebook"><i class="fab fa-facebook-f fa-fw fa-lg"></i></a><a href="https://reddit.com/submit?url=https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_1.html&amp;title=Data%20visualization%20using%20ggplot2" target="_blank" class="reddit">   <i class="fa-brands fa-reddit-alien fa-fw fa-lg"></i></a><a href="https://www.stumbleupon.com/submit?url=https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_1.html&amp;title=Data%20visualization%20using%20ggplot2" target="_blank" class="stumbleupon"><i class="fa-brands fa-stumbleupon fa-fw fa-lg"></i></a><a href="https://www.tumblr.com/share/link?url=https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_1.html&amp;name=Data%20visualization%20using%20ggplot2" target="_blank" class="tumblr"><i class="fa-brands fa-tumblr fa-fw fa-lg"></i></a>
+<a href="https://twitter.com/share?url=https://sciquest.netlify.app/tutorials/data_viz/ggplot_1.html&amp;text=Data%20visualization%20using%20ggplot2" target="_blank" class="twitter"><i class="fab fa-twitter fa-fw fa-lg"></i></a><a href="https://www.linkedin.com/shareArticle?url=https://sciquest.netlify.app/tutorials/data_viz/ggplot_1.html&amp;title=Data%20visualization%20using%20ggplot2" target="_blank" class="linkedin"><i class="fa-brands fa-linkedin-in fa-fw fa-lg"></i></a>  <a href="mailto:?subject=Data%20visualization%20using%20ggplot2&amp;body=Check%20out%20this%20link:https://sciquest.netlify.app/tutorials/data_viz/ggplot_1.html" target="_blank" class="email"><i class="fa-solid fa-envelope fa-fw fa-lg"></i></a><a href="https://www.facebook.com/sharer.php?u=https://sciquest.netlify.app/tutorials/data_viz/ggplot_1.html" target="_blank" class="facebook"><i class="fab fa-facebook-f fa-fw fa-lg"></i></a><a href="https://reddit.com/submit?url=https://sciquest.netlify.app/tutorials/data_viz/ggplot_1.html&amp;title=Data%20visualization%20using%20ggplot2" target="_blank" class="reddit">   <i class="fa-brands fa-reddit-alien fa-fw fa-lg"></i></a><a href="https://www.stumbleupon.com/submit?url=https://sciquest.netlify.app/tutorials/data_viz/ggplot_1.html&amp;title=Data%20visualization%20using%20ggplot2" target="_blank" class="stumbleupon"><i class="fa-brands fa-stumbleupon fa-fw fa-lg"></i></a><a href="https://www.tumblr.com/share/link?url=https://sciquest.netlify.app/tutorials/data_viz/ggplot_1.html&amp;name=Data%20visualization%20using%20ggplot2" target="_blank" class="tumblr"><i class="fa-brands fa-tumblr fa-fw fa-lg"></i></a>
 </div></div>
 
 

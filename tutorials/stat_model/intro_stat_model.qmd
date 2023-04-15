@@ -14,7 +14,7 @@ categories: [statistical modelling]
 filters:
    - social-share
 share:
-  permalink: "https://one-carat-blog.netlify.app/tutorials/stat_model/intro_stat_model.html"
+  permalink: "https://sciquest.netlify.app/tutorials/stat_model/intro_stat_model.html"
   description: "Introduction to statistical modelling in R"
   twitter: true
   facebook: true

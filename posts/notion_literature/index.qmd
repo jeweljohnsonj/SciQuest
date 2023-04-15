@@ -13,7 +13,7 @@ categories: [PhD, Notion, Zotero]
 
 As Notion has been updated, they have moved the plugin integration to a new menu option called 'Add connections'. Therefore you won't find the integration from the 'Share' menu as before. So what does this mean to you?
 
-1.    If you are a returning user to this article, then please see the new 'Notero in action' video which is given in step 6 under [Configure Notero plugin](https://one-carat-blog.netlify.app/posts/notion_literature/#configure-notero-plugin) section.
+1.    If you are a returning user to this article, then please see the new 'Notero in action' video which is given in step 6 under [Configure Notero plugin](https://sciquest.netlify.app/posts/notion_literature/#configure-notero-plugin) section.
 
 2.    If you are a new user, reading this article for the first time, then don't worry about anything and please follow the steps given below.
 :::
@@ -26,7 +26,7 @@ As Notion has been updated, they have moved the plugin integration to a new menu
 
 ## Literature tracker using Notion and Zotero
 
-This is a follow-up article from my earlier post on [My Notion story](https://jeweljohnsonj.github.io/one-carat-blog/posts/notion_intro/). If you don't know what Notion is or how to install it, please refer to my [earlier article](https://jeweljohnsonj.github.io/one-carat-blog/posts/notion_intro/#installing-notion) for the background information.
+This is a follow-up article from my earlier post on [My Notion story](https://sciquest.netlify.app/posts/notion_intro/). If you don't know what Notion is or how to install it, please refer to my [earlier article](https://sciquest.netlify.app/posts/notion_intro/#installing-notion) for the background information.
 
 In this article, we will aim to build a literature tracker that looks similar to the one below. It will be automated via the Notero plugin integrating Zotero with Notion.
 
@@ -47,7 +47,7 @@ Now we are going to install a plugin for Zotero, called [Notero](https://github.
 ::: {.callout-tip}
 ## Video: Downloading the plugin
 
-![](https://raw.githubusercontent.com/jeweljohnsonj/one-carat-blog/main/videos/notero_literature/notero.mp4)
+![](https://raw.githubusercontent.com/jeweljohnsonj/sciquest/main/videos/notero_literature/notero.mp4)
 :::
 
 2.  Go to the Zotero app and click on 'Tools' and then click 'Add-ons'. Then in the new window, click on the Settings button and then click on 'Install add-on from file'. Then browse to where you downloaded your `notero-0.3.5.xpi` file (or any newer file than the given version) and install it.
@@ -55,7 +55,7 @@ Now we are going to install a plugin for Zotero, called [Notero](https://github.
 ::: {.callout-tip}
 ## Video: Installing the plugin
 
-![](https://raw.githubusercontent.com/jeweljohnsonj/one-carat-blog/main/videos/notero_literature/notero_install.mp4)
+![](https://raw.githubusercontent.com/jeweljohnsonj/sciquest/main/videos/notero_literature/notero_install.mp4)
 :::
 
 ### Configure Notero plugin
@@ -67,7 +67,7 @@ Now we are going to install a plugin for Zotero, called [Notero](https://github.
 ::: {.callout-tip}
 ## Video: Getting the integration token
 
-![](https://raw.githubusercontent.com/jeweljohnsonj/one-carat-blog/main/videos/notero_literature/notion_integration.mp4)
+![](https://raw.githubusercontent.com/jeweljohnsonj/sciquest/main/videos/notero_literature/notion_integration.mp4)
 :::
 
 
@@ -92,7 +92,7 @@ Copy the {database_id} part
 ::: {.callout-tip}
 ## Video: Getting the database ID
 
-![](https://raw.githubusercontent.com/jeweljohnsonj/one-carat-blog/main/videos/notero_literature/notion_database.mp4)
+![](https://raw.githubusercontent.com/jeweljohnsonj/sciquest/main/videos/notero_literature/notion_database.mp4)
 :::
 
 5.  Then finally paste your 'integration token' and the 'database ID' into the 'Notero Preferences' window under the 'Tools' section in Zotero. Then select the directory in Zotero that you want to integrate with your Notion database. Now you have successfully configured the Notero plugin.
@@ -104,7 +104,7 @@ Copy the {database_id} part
 ::: {.callout-tip}
 ## Video: Notero in action
 
-![](https://raw.githubusercontent.com/jeweljohnsonj/one-carat-blog/main/videos/notero_literature/notion_notero.mp4)
+![](https://raw.githubusercontent.com/jeweljohnsonj/sciquest/main/videos/notero_literature/notion_notero.mp4)
 :::
 
 There is a reason why I said it's a one-time sync, any modifications that you do for already existing files won't be reflected in Notion. But this can be easily fixed by assigning the existing papers to a tag, you can also delete it if you dont want it to appear in the database.
@@ -112,7 +112,7 @@ There is a reason why I said it's a one-time sync, any modifications that you do
 ::: {.callout-tip}
 ## Video: Updating existing files with a new tag
 
-![](https://raw.githubusercontent.com/jeweljohnsonj/one-carat-blog/main/videos/notero_literature/notero_update.mp4)
+![](https://raw.githubusercontent.com/jeweljohnsonj/sciquest/main/videos/notero_literature/notero_update.mp4)
 :::
 
 There are some limitations on what the plugin is capable of doing, but it's still better than nothing. You can learn more about the plugin from its [Github repo page](https://github.com/dvanoni/notero).

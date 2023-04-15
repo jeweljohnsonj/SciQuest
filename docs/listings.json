@@ -17,20 +17,21 @@
   {
     "listing": "/tutorials.html",
     "items": [
-      "/tutorials/data_viz/ggplot_1.html",
-      "/tutorials/data_viz/ggplot_2.html",
-      "/tutorials/data_viz/ggplot_3.html",
       "/tutorials/data_viz/ggpubr.html",
-      "/tutorials/data_man/tidyr.html",
+      "/tutorials/data_viz/ggplot_3.html",
+      "/tutorials/data_viz/ggplot_2.html",
+      "/tutorials/data_viz/ggplot_1.html",
       "/tutorials/data_man/dplyr_1.html",
       "/tutorials/data_man/dplyr_2.html",
+      "/tutorials/data_man/tidyr.html",
       "/tutorials/stat_basic/inter_reg.html",
       "/tutorials/stat_basic/intro_reg.html",
       "/tutorials/stat_basic/intro_stat.html",
-      "/tutorials/stat_model/glm_stat_model.html",
       "/tutorials/stat_model/glmer_stat_model.html",
+      "/tutorials/stat_model/glm_stat_model.html",
       "/tutorials/stat_model/inter_stat_model.html",
-      "/tutorials/stat_model/intro_stat_model.html"
+      "/tutorials/stat_model/intro_stat_model.html",
+      "/tutorials/network_analysis/network_analysis.html"
     ]
   }
 ]

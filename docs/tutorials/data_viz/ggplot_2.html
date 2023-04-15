@@ -103,13 +103,13 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script><link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="SciQuest - Chapter 2: Customizing graphs in ggplot2">
 <meta property="og:description" content="Learn how to customize the aesthetics, labels and axes of a graph in ggplot2">
-<meta property="og:image" content="https://one-carat-blog.netlify.app/tutorials/data_viz/images/gg2.png">
+<meta property="og:image" content="https://sciquest.netlify.app/tutorials/data_viz/images/gg2.png">
 <meta property="og:site-name" content="SciQuest">
 <meta property="og:image:height" content="1080">
 <meta property="og:image:width" content="1920">
 <meta name="twitter:title" content="SciQuest - Chapter 2: Customizing graphs in ggplot2">
 <meta name="twitter:description" content="Learn how to customize the aesthetics, labels and axes of a graph in ggplot2">
-<meta name="twitter:image" content="https://one-carat-blog.netlify.app/tutorials/data_viz/images/gg2.png">
+<meta name="twitter:image" content="https://sciquest.netlify.app/tutorials/data_viz/images/gg2.png">
 <meta name="twitter:image-height" content="1080">
 <meta name="twitter:image-width" content="1920">
 <meta name="twitter:card" content="summary_large_image">
@@ -144,7 +144,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
  <span class="menu-text">About me</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/jeweljohnsonj/one-carat-blog" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/jeweljohnsonj/SciQuest" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -179,7 +179,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p><a href="https://jeweljohnsonj.github.io/one-carat-blog/">Jewel Johnson</a> </p>
+               <p><a href="https://sciquest.netlify.app/">Jewel Johnson</a> </p>
             </div>
     </div>
       
@@ -193,7 +193,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">April 14, 2023</p>
+        <p class="date-modified">April 15, 2023</p>
       </div>
     </div>
       
@@ -226,10 +226,10 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
   <li><a href="#typical-aesthetic-mappings" id="toc-typical-aesthetic-mappings" class="nav-link" data-scroll-target="#typical-aesthetic-mappings"><span class="header-section-number">3</span> Typical aesthetic mappings</a></li>
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">4</span> Summary</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">5</span> References</a></li>
-  </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/edit/main/tutorials/data_viz/ggplot_2.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/one-carat-blog/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+  </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/SciQuest/edit/main/tutorials/data_viz/ggplot_2.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/SciQuest/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content"><p>After going through <a href="https://jeweljohnsonj.github.io/one-carat-blog/project1.html">Chapter 1</a> you would be now familiar with the different types of graphs that you can plot using <a href="https://ggplot2.tidyverse.org">ggplot2</a>. So for this tutorial, we will be learning how to customize those ggplot graphs to our liking. We will learn how to tweak the aesthetics, how to change labels and how to modify and change the axes in a graph.</p>
+<main class="content quarto-banner-title-block" id="quarto-document-content"><p>After going through <a href="https://sciquest.netlify.app/tutorials/data_viz/ggplot_1.html">Chapter 1</a> you would be now familiar with the different types of graphs that you can plot using <a href="https://ggplot2.tidyverse.org">ggplot2</a>. So for this tutorial, we will be learning how to customize those ggplot graphs to our liking. We will learn how to tweak the aesthetics, how to change labels and how to modify and change the axes in a graph.</p>
 <p>So let us plot a graph from scratch and learn how to use different aesthetics available.</p>
 <section id="setting-up-the-prerequisites" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="setting-up-the-prerequisites">
 <span class="header-section-number">1</span> Setting up the prerequisites</h2>
@@ -314,7 +314,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <section id="changing-colour" class="level3" data-number="2.1"><h3 data-number="2.1" class="anchored" data-anchor-id="changing-colour">
 <span class="header-section-number">2.1</span> Changing colour</h3>
 <ul>
-<li>To change colour of the ‘element’ as a function species, we have to add <code>colour = Species</code> within the <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> of the ggplot command. I use the general term ‘element’ here to emphasize that the same change in aesthetics will work for most of other types of geometries in ggplot2 (something which you have seen extensively in <a href="https://jeweljohnsonj.github.io/one-carat-blog/project1.html">Chapter 1</a>. Like for a line graph, the ‘element’ would be lines. Here we have a scatter plot, so the ‘element’ would be points.</li>
+<li>To change colour of the ‘element’ as a function species, we have to add <code>colour = Species</code> within the <code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code> of the ggplot command. I use the general term ‘element’ here to emphasize that the same change in aesthetics will work for most of other types of geometries in ggplot2 (something which you have seen extensively in <a href="https://sciquest.netlify.app/tutorials/data_viz/ggplot_1.html">Chapter 1</a>. Like for a line graph, the ‘element’ would be lines. Here we have a scatter plot, so the ‘element’ would be points.</li>
 </ul>
 <p>Also note that, in addition to <code>colour</code>, R also recognizes <code>color</code> and <code>col</code> wordings and they function the same as <code>colour</code>.</p>
 <div class="cell">
@@ -762,12 +762,12 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
   author = {Johnson, Jewel},
   title = {Chapter 2: {Customizing} Graphs in Ggplot2},
   date = {2021-12-04},
-  url = {https://one-carat-blog.netlify.app//tutorials/data_viz/ggplot_2.html},
+  url = {https://sciquest.netlify.app//tutorials/data_viz/ggplot_2.html},
   langid = {en}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-johnson2021" class="csl-entry quarto-appendix-citeas" role="listitem">
 Johnson, Jewel. 2021. <span>“Chapter 2: Customizing Graphs in
-Ggplot2.”</span> December 4, 2021. <a href="https://one-carat-blog.netlify.app//tutorials/data_viz/ggplot_2.html">https://one-carat-blog.netlify.app//tutorials/data_viz/ggplot_2.html</a>.
+Ggplot2.”</span> December 4, 2021. <a href="https://sciquest.netlify.app//tutorials/data_viz/ggplot_2.html">https://sciquest.netlify.app//tutorials/data_viz/ggplot_2.html</a>.
 </div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1051,7 +1051,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><script src="https://giscus.app/client.js" data-repo="jeweljohnsonj/one-carat-blog" data-repo-id="R_kgDOHW124A" data-category="General" data-category-id="DIC_kwDOHW124M4CPNVL" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script><script src="https://giscus.app/client.js" data-repo="jeweljohnsonj/SciQuest" data-repo-id="R_kgDOHW124A" data-category="General" data-category-id="DIC_kwDOHW124M4CPNVL" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb31" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Chapter 2: Customizing graphs in ggplot2"</span></span>
@@ -1064,7 +1064,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="an">filters:</span></span>
 <span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="co">   - social-share</span></span>
 <span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="an">share:</span></span>
-<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="co">  permalink: "https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_2.html"</span></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="co">  permalink: "https://sciquest.netlify.app/tutorials/data_viz/ggplot_2.html"</span></span>
 <span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="co">  description: "Customizing graphs in ggplot2"</span></span>
 <span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a><span class="co">  twitter: true</span></span>
 <span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a><span class="co">  facebook: true</span></span>
@@ -1075,7 +1075,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a><span class="co">  email: true</span></span>
 <span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a>After going through <span class="co">[</span><span class="ot">Chapter 1</span><span class="co">](https://jeweljohnsonj.github.io/one-carat-blog/project1.html)</span> you would be now familiar with the different types of graphs that you can plot using <span class="in">`{ggplot2}`</span>. So for this tutorial, we will be learning how to customize those ggplot graphs to our liking. We will learn how to tweak the aesthetics, how to change labels and how to modify and change the axes in a graph.</span>
+<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a>After going through <span class="co">[</span><span class="ot">Chapter 1</span><span class="co">](https://sciquest.netlify.app/tutorials/data_viz/ggplot_1.html)</span> you would be now familiar with the different types of graphs that you can plot using <span class="in">`{ggplot2}`</span>. So for this tutorial, we will be learning how to customize those ggplot graphs to our liking. We will learn how to tweak the aesthetics, how to change labels and how to modify and change the axes in a graph.</span>
 <span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a>So let us plot a graph from scratch and learn how to use different aesthetics available.</span>
 <span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a></span>
@@ -1143,7 +1143,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb31-96"><a href="#cb31-96" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-97"><a href="#cb31-97" aria-hidden="true" tabindex="-1"></a><span class="fu">### Changing colour</span></span>
 <span id="cb31-98"><a href="#cb31-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-99"><a href="#cb31-99" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>To change colour of the 'element' as a function species, we have to add <span class="in">`colour = Species`</span> within the <span class="in">`aes()`</span> of the ggplot command. I use the general term 'element' here to emphasize that the same change in aesthetics will work for most of other types of geometries in ggplot2 (something which you have seen extensively in <span class="co">[</span><span class="ot">Chapter 1</span><span class="co">](https://jeweljohnsonj.github.io/one-carat-blog/project1.html)</span>. Like for a line graph, the 'element' would be lines. Here we have a scatter plot, so the 'element' would be points.</span>
+<span id="cb31-99"><a href="#cb31-99" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>To change colour of the 'element' as a function species, we have to add <span class="in">`colour = Species`</span> within the <span class="in">`aes()`</span> of the ggplot command. I use the general term 'element' here to emphasize that the same change in aesthetics will work for most of other types of geometries in ggplot2 (something which you have seen extensively in <span class="co">[</span><span class="ot">Chapter 1</span><span class="co">](https://sciquest.netlify.app/tutorials/data_viz/ggplot_1.html)</span>. Like for a line graph, the 'element' would be lines. Here we have a scatter plot, so the 'element' would be points.</span>
 <span id="cb31-100"><a href="#cb31-100" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-101"><a href="#cb31-101" aria-hidden="true" tabindex="-1"></a>Also note that, in addition to <span class="in">`colour`</span>, R also recognizes <span class="in">`color`</span> and <span class="in">`col`</span> wordings and they function the same as <span class="in">`colour`</span>.</span>
 <span id="cb31-102"><a href="#cb31-102" aria-hidden="true" tabindex="-1"></a></span>
@@ -1544,7 +1544,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer><div class="page-columns page-rows-contents page-layout-article"><div class="social-share">
-<a href="https://twitter.com/share?url=https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_2.html&amp;text=Customizing%20graphs%20in%20ggplot2" target="_blank" class="twitter"><i class="fab fa-twitter fa-fw fa-lg"></i></a><a href="https://www.linkedin.com/shareArticle?url=https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_2.html&amp;title=Customizing%20graphs%20in%20ggplot2" target="_blank" class="linkedin"><i class="fa-brands fa-linkedin-in fa-fw fa-lg"></i></a>  <a href="mailto:?subject=Customizing%20graphs%20in%20ggplot2&amp;body=Check%20out%20this%20link:https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_2.html" target="_blank" class="email"><i class="fa-solid fa-envelope fa-fw fa-lg"></i></a><a href="https://www.facebook.com/sharer.php?u=https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_2.html" target="_blank" class="facebook"><i class="fab fa-facebook-f fa-fw fa-lg"></i></a><a href="https://reddit.com/submit?url=https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_2.html&amp;title=Customizing%20graphs%20in%20ggplot2" target="_blank" class="reddit">   <i class="fa-brands fa-reddit-alien fa-fw fa-lg"></i></a><a href="https://www.stumbleupon.com/submit?url=https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_2.html&amp;title=Customizing%20graphs%20in%20ggplot2" target="_blank" class="stumbleupon"><i class="fa-brands fa-stumbleupon fa-fw fa-lg"></i></a><a href="https://www.tumblr.com/share/link?url=https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_2.html&amp;name=Customizing%20graphs%20in%20ggplot2" target="_blank" class="tumblr"><i class="fa-brands fa-tumblr fa-fw fa-lg"></i></a>
+<a href="https://twitter.com/share?url=https://sciquest.netlify.app/tutorials/data_viz/ggplot_2.html&amp;text=Customizing%20graphs%20in%20ggplot2" target="_blank" class="twitter"><i class="fab fa-twitter fa-fw fa-lg"></i></a><a href="https://www.linkedin.com/shareArticle?url=https://sciquest.netlify.app/tutorials/data_viz/ggplot_2.html&amp;title=Customizing%20graphs%20in%20ggplot2" target="_blank" class="linkedin"><i class="fa-brands fa-linkedin-in fa-fw fa-lg"></i></a>  <a href="mailto:?subject=Customizing%20graphs%20in%20ggplot2&amp;body=Check%20out%20this%20link:https://sciquest.netlify.app/tutorials/data_viz/ggplot_2.html" target="_blank" class="email"><i class="fa-solid fa-envelope fa-fw fa-lg"></i></a><a href="https://www.facebook.com/sharer.php?u=https://sciquest.netlify.app/tutorials/data_viz/ggplot_2.html" target="_blank" class="facebook"><i class="fab fa-facebook-f fa-fw fa-lg"></i></a><a href="https://reddit.com/submit?url=https://sciquest.netlify.app/tutorials/data_viz/ggplot_2.html&amp;title=Customizing%20graphs%20in%20ggplot2" target="_blank" class="reddit">   <i class="fa-brands fa-reddit-alien fa-fw fa-lg"></i></a><a href="https://www.stumbleupon.com/submit?url=https://sciquest.netlify.app/tutorials/data_viz/ggplot_2.html&amp;title=Customizing%20graphs%20in%20ggplot2" target="_blank" class="stumbleupon"><i class="fa-brands fa-stumbleupon fa-fw fa-lg"></i></a><a href="https://www.tumblr.com/share/link?url=https://sciquest.netlify.app/tutorials/data_viz/ggplot_2.html&amp;name=Customizing%20graphs%20in%20ggplot2" target="_blank" class="tumblr"><i class="fa-brands fa-tumblr fa-fw fa-lg"></i></a>
 </div></div>
 
 

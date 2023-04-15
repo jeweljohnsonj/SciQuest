@@ -10,11 +10,10 @@ format:
       - https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css
 image: images/network_analysis.png
 categories: [network analysis]
-draft: true
 filters:
    - social-share
 share:
-  permalink: "https://one-carat-blog.netlify.app/tutorials/stat_model/network_analysis.html"
+  permalink: "https://sciquest.netlify.app/tutorials/stat_model/network_analysis.html"
   description: "Introduction to Network Analysis in R"
   twitter: true
   facebook: true

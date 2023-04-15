@@ -103,10 +103,10 @@ Now I am aspiring to be a researcher, so naturally, that made me interested in u
 
 ## Tutorials on the templates
 
-1.  [Using Notion as a literature tracker](https://jeweljohnsonj.github.io/one-carat-blog/posts/notion_literature/).
-2.  [Using Notion to keep a research diary](https://jeweljohnsonj.github.io/one-carat-blog/posts/notion_research_journal/).
-3.  [Using Notion as a task management software](https://jeweljohnsonj.github.io/one-carat-blog/posts/notion_task_manager/).
-4.  [Using Notion as a reading list tracker and a movie list tracker](https://jeweljohnsonj.github.io/one-carat-blog/posts/notion_movie_books/).
+1.  [Using Notion as a literature tracker](https://sciquest.netlify.app/posts/notion_literature/).
+2.  [Using Notion to keep a research diary](https://sciquest.netlify.app/posts/notion_research_journal/).
+3.  [Using Notion as a task management software](https://sciquest.netlify.app/posts/notion_task_manager/).
+4.  [Using Notion as a reading list tracker and a movie list tracker](https://sciquest.netlify.app/posts/notion_movie_books/).
 5.  [Using Notion as a simple finance ledger](https://jeweljohnson.notion.site/Finances-f8beef2bca224a9d8d8d270e88ff8e39). (I am still in the process of developing it, you can download the current version from the link)
 
 If you want all these templates at once, then I have made a master template which has all of them together. You can get it [here](https://jeweljohnson.notion.site/Template-PhD-Dashboard-136e837c4f0b4e61bc34e2aad7fb05b5).

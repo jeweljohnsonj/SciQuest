@@ -9,7 +9,7 @@ categories: [dplyr, data wrangling]
 filters:
    - social-share
 share:
-  permalink: "https://one-carat-blog.netlify.app/tutorials/data_man/dplyr_2.html"
+  permalink: "https://sciquest.netlify.app/tutorials/data_man/dplyr_2.html"
   description: "Data manipulation using dplyr (part 2)"
   twitter: true
   facebook: true
@@ -22,7 +22,7 @@ share:
 
 ## Continuation from the previous chapter
 
-In the [previous chapter](https://jeweljohnsonj.github.io/jeweljohnson.github.io/project5.html) we have seen quite a lot of functions from the `{dplyr}` package. In this chapter, we will see the rest of the functions where we learn how to handle row names, how to join columns and rows and different set operations in the `{dplyr}` package.
+In the [previous chapter](https://sciquest.netlify.app/tutorials/data_man/dplyr_1.html) we have seen quite a lot of functions from the `{dplyr}` package. In this chapter, we will see the rest of the functions where we learn how to handle row names, how to join columns and rows and different set operations in the `{dplyr}` package.
 
 ```{r}
 #| eval: false

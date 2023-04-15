@@ -6,17 +6,26 @@ listing:
   - id: data-viz
     contents: "tutorials/data_viz/*.qmd"
     type: grid
+    sort:
+      - "date desc"
   - id: data-man
     contents: "tutorials/data_man/*.qmd"
     type: grid
+    sort:
+      - "date desc"
   - id: stat-basic
     contents: "tutorials/stat_basic/*.qmd"
     type: grid
+    sort:
+      - "date desc"
   - id: stat-model
     contents: "tutorials/stat_model/*.qmd"
     type: grid
+    sort:
+      - "date desc"
   - id: network-analysis
     contents: "tutorials/network_analysis/*.qmd"
+    type: grid
     sort:
       - "date desc"
     categories: numbered

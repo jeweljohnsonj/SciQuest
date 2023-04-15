@@ -9,7 +9,7 @@ categories: [ggpubr, data visualization]
 filters:
    - social-share
 share:
-  permalink: "https://one-carat-blog.netlify.app/tutorials/data_viz/ggpubr.html"
+  permalink: "https://sciquest.netlify.app/tutorials/data_viz/ggpubr.html"
   description: "Publication ready plots using ggpubr"
   twitter: true
   facebook: true

@@ -13,7 +13,7 @@ bibliography: intro_stat.bib
 filters:
    - social-share
 share:
-  permalink: "https://one-carat-blog.netlify.app/tutorials/stat_basic/intro_stat.html"
+  permalink: "https://sciquest.netlify.app/tutorials/stat_basic/intro_stat.html"
   description: "Introductory statistics with R"
   twitter: true
   facebook: true

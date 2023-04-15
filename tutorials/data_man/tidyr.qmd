@@ -11,7 +11,7 @@ categories: [tidyr, data wrangling]
 filters:
    - social-share
 share:
-  permalink: "https://one-carat-blog.netlify.app/tutorials/data_man/tidyr.html"
+  permalink: "https://sciquest.netlify.app/tutorials/data_man/tidyr.html"
   description: "Data tidying using tidyr"
   twitter: true
   facebook: true

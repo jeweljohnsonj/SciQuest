@@ -9,7 +9,7 @@ categories: [ggplot2, data visualization]
 filters:
    - social-share
 share:
-  permalink: "https://one-carat-blog.netlify.app/tutorials/data_viz/ggplot_1.html"
+  permalink: "https://sciquest.netlify.app/tutorials/data_viz/ggplot_1.html"
   description: "Data visualization using ggplot2"
   twitter: true
   facebook: true
@@ -32,7 +32,7 @@ A ggplot2 graph is made up of three components.
 
 1.  **Data**: Data of your choice that you want to visually summarise.
 2.  **Geometry** or **geoms**: Geometry dictates the type of graph that you want to plot and this information is conveyed to ggplot2 through the `geom()` command code. For e.g. using the `geom_boxplot()` command, you can plot a box plot with your data. Likewise, there are many types of geometry that you can plot using the ggplot2 package.
-3.  **Aesthetic** mappings: Aesthetics define the different kinds of information that you want to include in the plot. One fo the most important aesthetic is in choosing which data values to plot on the x-axis and the y-axis. Another example is changing the colour of the data points, which can be used to differentiate two different categories in the data. The use of aesthetics depends on the geometry that you are using. We use the command `aes()` for adding different types of aesthetics to the plot. We will learn more about `aes()` in [Chapter 2](https://one-carat-blog.netlify.app/tutorials/data_viz/project2.html). For now, we will only see what kind of plots can be made using the `{ggplot2}` package. We will learn how to tweak them in [Chapter 2](https://one-carat-blog.netlify.app/tutorials/data_viz/project2.html).
+3.  **Aesthetic** mappings: Aesthetics define the different kinds of information that you want to include in the plot. One fo the most important aesthetic is in choosing which data values to plot on the x-axis and the y-axis. Another example is changing the colour of the data points, which can be used to differentiate two different categories in the data. The use of aesthetics depends on the geometry that you are using. We use the command `aes()` for adding different types of aesthetics to the plot. We will learn more about `aes()` in [Chapter 2](https://sciquest.netlify.app/tutorials/data_viz/ggplot_2.html). For now, we will only see what kind of plots can be made using the `{ggplot2}` package. We will learn how to tweak them in [Chapter 2](https://sciquest.netlify.app/tutorials/data_viz/ggplot_2.html).
 
 This tutorial is primarily focused on students who are beginners in R programming and wants to quickly plot their data without much of a hassle. So without further ado let's plot some graphs!
 
@@ -260,7 +260,7 @@ ggsave(my_graph, filename = "your_graph_name.png", width = 20, height = 20,
 
 ## Summary
 
-I hope this tutorial helped you to get familiarize with the `{ggplot2}` commands. The best way to learn R is by actually doing it yourself. So try to recreate the examples given in this tutorial and then try to apply what you learned using the different datasets available in R. In [chapter 2](https://one-carat-blog.netlify.app/tutorials/data_viz/project2.html), we will learn how to customize the plots by tweaking the aesthetic mappings.
+I hope this tutorial helped you to get familiarize with the `{ggplot2}` commands. The best way to learn R is by actually doing it yourself. So try to recreate the examples given in this tutorial and then try to apply what you learned using the different datasets available in R. In [chapter 2](https://sciquest.netlify.app/tutorials/data_viz/ggplot_2.html), we will learn how to customize the plots by tweaking the aesthetic mappings.
 
 ## References
 

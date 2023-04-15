@@ -9,7 +9,7 @@ categories: [dplyr, data wrangling]
 filters:
    - social-share
 share:
-  permalink: "https://one-carat-blog.netlify.app/tutorials/data_man/dplyr_1.html"
+  permalink: "https://sciquest.netlify.app/tutorials/data_man/dplyr_1.html"
   description: "Data manipulation using dplyr (part 1)"
   twitter: true
   facebook: true

@@ -12,7 +12,7 @@ categories: [regression]
 filters:
    - social-share
 share:
-  permalink: "https://one-carat-blog.netlify.app/tutorials/stat_model/intro_reg.html"
+  permalink: "https://sciquest.netlify.app/tutorials/stat_model/intro_reg.html"
   description: "Introduction to Regression in R"
   twitter: true
   facebook: true
