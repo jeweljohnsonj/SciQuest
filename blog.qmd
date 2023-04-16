@@ -15,8 +15,7 @@ comments: false
 citation: false
 title-block-banner: true
 margin-header: |
-  <a class="twitter-timeline" data-width="500" data-height="500" data-theme="dark" href="https://twitter.com/jeweljohnsonj?ref_src=twsrc%5Etfw">Tweets by jeweljohnsonj</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  <a href="https://twitter.com/jeweljohnsonj?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @jeweljohnsonj</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <a class="twitter-timeline" data-width="500" data-height="500" href="https://twitter.com/jeweljohnsonj?ref_src=twsrc%5Etfw">Tweets by jeweljohnsonj</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 ---
 
 <a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>
