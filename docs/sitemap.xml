@@ -78,7 +78,7 @@
   </url>
   <url>
     <loc>https://sciquest.netlify.app/tutorials/network_analysis/network_analysis.html</loc>
-    <lastmod>2023-04-16T04:28:50.013Z</lastmod>
+    <lastmod>2023-04-16T07:40:03.608Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/tutorials/stat_basic/inter_reg.html</loc>
@@ -110,6 +110,14 @@
   </url>
   <url>
     <loc>https://sciquest.netlify.app/tutorials.html</loc>
-    <lastmod>2023-04-16T04:28:27.556Z</lastmod>
+    <lastmod>2023-04-16T07:39:25.188Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sciquest.netlify.app/docs/site_libs/d3v5-5.9.2/API.html</loc>
+    <lastmod>2023-04-16T07:15:15.102Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sciquest.netlify.app/docs/site_libs/d3v5-5.9.2/CHANGES.html</loc>
+    <lastmod>2023-04-16T07:15:24.703Z</lastmod>
   </url>
 </urlset>

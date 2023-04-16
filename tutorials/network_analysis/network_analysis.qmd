@@ -29,9 +29,9 @@ share:
 
 In this article we will learn;
 
-1.    What is a network and what are the different ways to denote the network data?
-2.    How to convert the network data into an igraph object to analyze and plot the network via the `{igraph}` package in R.
-3.    What are vertex and edge attributes and how do we add them to the igraph object?
+1.    What is a network and what are the different ways to denote a network data?
+2.    How to convert a network data into an igraph object a nd how to analyze and plot it via the `{igraph}` package in R.
+3.    What is network attributes and how to add them into an igraph object?
 4.    How do we filter network attributes and how to visualize them?
 5.    What are the different types of network visualizations?
 6.    What are directed networks?
@@ -39,9 +39,9 @@ In this article we will learn;
 8.    What are the different measures of network structure?
 9.    What is network randomization test and what is its purpose?
 10.   what are the different network substructures?
-11.   How to identify special relationships in the network?
+11.   How to identify special relationships in a network?
 12.   How to find communities in a network?
-13.   How to visualize the network in 3D using the `{threejs}` package
+13.   How to visualize the network in 3D using the `{threejs}` package?
 
 We will be using the `{igprah}` and `{threejs}` packages in this tutorial.
 :::
@@ -709,7 +709,7 @@ From the result, we can see that the average path length is slightly less than o
 So the pipeline that we will be following for network randomization is the following:
 
 ```{mermaid}
-%%{init: {'theme': 'default'}}%%
+%%{init: {'theme': 'forest'}}%%
 graph TD
     A[Generating 1000 random networks with the same number of vertices and with a similar edge density as that of the original network]
     B[Calculate the average path length of the original network]
@@ -1001,25 +1001,24 @@ With that, we have successfully learned the basics of network analysis using R.
 
 ## Conclusion
 
-In short, we learned about;
+By the end of this tutorial we should be able to answer all the questions given below;
 
-1.    What is a network and what are the different ways to denote the network data?
-2.    How to convert the network data into an igraph object to analyze and plot the network via the `{igraph}` package in R.
-3.    What are vertex and edge attributes and how do add them to the igraph object?
-4.    How do filter attributes and how can we visualize them?
+1.    What is a network and what are the different ways to denote a network data?
+2.    How to convert a network data into an igraph object a nd how to analyze and plot it via the `{igraph}` package in R.
+3.    What is network attributes and how to add them into an igraph object?
+4.    How do we filter network attributes and how to visualize them?
 5.    What are the different types of network visualizations?
 6.    What are directed networks?
 7.    What is path length?
 8.    What are the different measures of network structure?
-9.    What is network randomization test and why is its purpose?
+9.    What is network randomization test and what is its purpose?
 10.   what are the different network substructures?
-11.   How to identify special relationships in the network?
+11.   How to identify special relationships in a network?
 12.   How to find communities in a network?
-13.   How to visualize the network in 3D using the `{threejs}` package ?
+13.   How to visualize the network in 3D using the `{threejs}` package?
 
-This tutorial is based on my notes from attending the 'Network Analysis in R' course on DataCamp. As with any personal notes, there may be mistakes and some of the information presented may not accurately reflect the topic. If you notice any errors, please feel free to leave a comment in the section below.
+This tutorial is based on my notes from attending the 'Network Analysis in R' course on DataCamp. As with any personal notes, there may be mistakes and some of the information presented may not accurately reflect the topic. If you notice any errors, please feel free to leave a comment in the section below. The dummy dataset was created with the help of ChatGPT to save time.
 
 I am particularly interested in learning about 3D visualization techniques, which I find to be fascinating. If I am able to learn more about this topic, I will write a sequel to this tutorial. Thank you for reading!
-
 
 <a hidden href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"/></a>
