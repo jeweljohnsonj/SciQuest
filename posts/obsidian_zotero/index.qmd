@@ -22,7 +22,7 @@ Now that the organization part is taken care of, I was in search of software tha
 
 Before we begin, the picture given below shows my Obsidian interface. The interface is broken down into different panels, where each panel shows specific info.
 
-::: {layout="[[1, 1], [1]]"}
+::: {layout="[1, 1]"}
 ![A glimpse of my Obsidian interface](images/obsidian_interface.png){group="elsewhere"
 description="My Obsidian interface featuring different sections."}
 
@@ -38,9 +38,9 @@ We will first see how to create the interface that we saw earlier. For that let 
 
 1.    Installing Obsidian is very easy. Just visit their official [website](https://obsidian.md/) and download the version suited for your operating system. I assume that you already have Zotero on your computer. If not, then please visit [here](https://www.zotero.org/) and download the appropriate version for your system. Now that we have both Obsidian and Zotero, let us get started.
 
-![Initial message after opening Obsidian for the first time](images/obsidian_first.png){#fig-start}
+![Initial message after opening Obsidian for the first time](images/obsidian_first.png)
 
-When you first open Obsidian, it will ask you to create a vault as shown in the @fig-start below. The vault is a folder location that will contain all the markdown files you will be creating. Now instead of doing everything from scratch, for convenience, I will be sharing my vault [template](https://github.com/jeweljohnsonj/obsidian_template) folder so that you can get started quickly. The folder will also contain the necessary plugins and configurations to jump-start your Obsidian journey. 
+When you first open Obsidian, it will ask you to create a vault as shown above. The vault is a folder location that will contain all the markdown files you will be creating. Now instead of doing everything from scratch, for convenience, I will be sharing my vault [template](https://github.com/jeweljohnsonj/obsidian_template) folder so that you can get started quickly. The folder will also contain the necessary plugins and configurations to jump-start your Obsidian journey. 
 
 2.    Download the folder as a zip file from [here](https://github.com/jeweljohnsonj/obsidian_template/archive/refs/heads/main.zip).
 

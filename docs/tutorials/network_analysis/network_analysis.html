@@ -429,31 +429,31 @@ e . . . . . .</code></pre>
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="5" data-code-cell="annotated-cell-3" data-code-annotation="1">First, the code creates a dataframe called df_names with 10 names and their genders.</span>
+<span data-code-cell="annotated-cell-3" data-code-lines="5" data-code-annotation="1">First, the code creates a dataframe called df_names with 10 names and their genders.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="12" data-code-cell="annotated-cell-3" data-code-annotation="2">Then, an empty dataframe called df_rel is created to store the relationships.</span>
+<span data-code-cell="annotated-cell-3" data-code-lines="12" data-code-annotation="2">Then, an empty dataframe called df_rel is created to store the relationships.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="16" data-code-cell="annotated-cell-3" data-code-annotation="3">The while loop is used to generate random relationships between the names until df_rel has 20 rows.</span>
+<span data-code-cell="annotated-cell-3" data-code-lines="16" data-code-annotation="3">The while loop is used to generate random relationships between the names until df_rel has 20 rows.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-lines="18" data-code-cell="annotated-cell-3" data-code-annotation="4">Inside the while loop, two names are randomly selected from the name column of df_names using the sample function.</span>
+<span data-code-cell="annotated-cell-3" data-code-lines="18" data-code-annotation="4">Inside the while loop, two names are randomly selected from the name column of df_names using the sample function.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-lines="22" data-code-cell="annotated-cell-3" data-code-annotation="5">The if statement checks whether the two names are the same or whether they have already been added as a relationship to df_rel. If either of these conditions is true, the loop moves on to select a new pair of names.</span>
+<span data-code-cell="annotated-cell-3" data-code-lines="22" data-code-annotation="5">The if statement checks whether the two names are the same or whether they have already been added as a relationship to df_rel. If either of these conditions is true, the loop moves on to select a new pair of names.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-lines="25" data-code-cell="annotated-cell-3" data-code-annotation="6">If the two names are different and have not been added to df_rel, a new row is added to df_rel with the selected names and a randomly generated number between 1 and 10 as the number of call hours.</span>
+<span data-code-cell="annotated-cell-3" data-code-lines="25" data-code-annotation="6">If the two names are different and have not been added to df_rel, a new row is added to df_rel with the selected names and a randomly generated number between 1 and 10 as the number of call hours.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-lines="31" data-code-cell="annotated-cell-3" data-code-annotation="7">Once df_rel has 20 rows, the loop stops, and the final dataframe is printed using print(df_rel).</span>
+<span data-code-cell="annotated-cell-3" data-code-lines="31" data-code-annotation="7">Once df_rel has 20 rows, the loop stops, and the final dataframe is printed using print(df_rel).</span>
 </dd>
 </dl>
 </div>
@@ -482,9 +482,9 @@ e . . . . . .</code></pre>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Viewing the igraph object</span></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>df_rel_ig</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>IGRAPH bb2979d UN-- 10 20 -- 
+<pre><code>IGRAPH e989732 UN-- 10 20 -- 
 + attr: name (v/c)
-+ edges from bb2979d (vertex names):
++ edges from e989732 (vertex names):
  [1] John    --Bob      Eve     --David    John    --Isabelle Isabelle--Charlie 
  [5] John    --Henry    David   --Charlie  Eve     --Grace    Isabelle--Grace   
  [9] John    --Grace    Isabelle--Frank    Eve     --Henry    Isabelle--Alice   
@@ -509,7 +509,7 @@ e . . . . . .</code></pre>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Viewing the nodes/vertices</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(df_rel_ig)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>+ 10/10 vertices, named, from bb2979d:
+<pre><code>+ 10/10 vertices, named, from e989732:
  [1] John     Bob      Eve      David    Isabelle Charlie  Henry    Grace   
  [9] Frank    Alice   </code></pre>
 </div>
@@ -519,7 +519,7 @@ e . . . . . .</code></pre>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Viewing the edges</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(df_rel_ig)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>+ 20/20 edges from bb2979d (vertex names):
+<pre><code>+ 20/20 edges from e989732 (vertex names):
  [1] John    --Bob      Eve     --David    John    --Isabelle Isabelle--Charlie 
  [5] John    --Henry    David   --Charlie  Eve     --Grace    Isabelle--Grace   
  [9] John    --Grace    Isabelle--Frank    Eve     --Henry    Isabelle--Alice   
@@ -550,9 +550,9 @@ e . . . . . .</code></pre>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Viewing the igraph object</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>df_rel_ig</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>IGRAPH bb2979d UN-- 10 20 -- 
+<pre><code>IGRAPH e989732 UN-- 10 20 -- 
 + attr: name (v/c)
-+ edges from bb2979d (vertex names):
++ edges from e989732 (vertex names):
  [1] John    --Bob      Eve     --David    John    --Isabelle Isabelle--Charlie 
  [5] John    --Henry    David   --Charlie  Eve     --Grace    Isabelle--Grace   
  [9] John    --Grace    Isabelle--Frank    Eve     --Henry    Isabelle--Alice   
@@ -576,9 +576,9 @@ e . . . . . .</code></pre>
 <span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Viewing the igraph object</span></span>
 <span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>df_rel_ig_gender</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>IGRAPH bb2979d UN-- 10 20 -- 
+<pre><code>IGRAPH e989732 UN-- 10 20 -- 
 + attr: name (v/c), gender (v/c)
-+ edges from bb2979d (vertex names):
++ edges from e989732 (vertex names):
  [1] John    --Bob      Eve     --David    John    --Isabelle Isabelle--Charlie 
  [5] John    --Henry    David   --Charlie  Eve     --Grace    Isabelle--Grace   
  [9] John    --Grace    Isabelle--Frank    Eve     --Henry    Isabelle--Alice   
@@ -601,9 +601,9 @@ e . . . . . .</code></pre>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Viewing the igraph object</span></span>
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>df_rel_ig_call</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>IGRAPH bb2979d UN-- 10 20 -- 
+<pre><code>IGRAPH e989732 UN-- 10 20 -- 
 + attr: name (v/c), call_hours (e/n)
-+ edges from bb2979d (vertex names):
++ edges from e989732 (vertex names):
  [1] John    --Bob      Eve     --David    John    --Isabelle Isabelle--Charlie 
  [5] John    --Henry    David   --Charlie  Eve     --Grace    Isabelle--Grace   
  [9] John    --Grace    Isabelle--Frank    Eve     --Henry    Isabelle--Alice   
@@ -625,9 +625,9 @@ e . . . . . .</code></pre>
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Viewing the igraph object</span></span>
 <span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>drug_ig_complete</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>IGRAPH bba065d UN-- 10 20 -- 
+<pre><code>IGRAPH e9fd014 UN-- 10 20 -- 
 + attr: name (v/c), gender (v/c), call_hours (e/n)
-+ edges from bba065d (vertex names):
++ edges from e9fd014 (vertex names):
  [1] Bob     --John     David   --Eve      Isabelle--John     Charlie --Isabelle
  [5] Henry   --John     Charlie --David    Eve     --Grace    Grace   --Isabelle
  [9] Grace   --John     Frank   --Isabelle Eve     --Henry    Alice   --Isabelle
@@ -663,7 +663,7 @@ $gender
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Viewing all friends of John</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(drug_ig_complete)[[<span class="fu">.inc</span>(<span class="st">'John'</span>)]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>+ 5/20 edges from bba065d (vertex names):
+<pre><code>+ 5/20 edges from e9fd014 (vertex names):
        tail head tid hid call_hours
 1       Bob John   2  10          6
 3  Isabelle John   9  10          5
@@ -678,7 +678,7 @@ $gender
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Viewing relationships with call hours of more than 5 hours</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(drug_ig_complete)[[call_hours <span class="sc">&gt;</span> <span class="dv">5</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>+ 14/20 edges from bba065d (vertex names):
+<pre><code>+ 14/20 edges from e9fd014 (vertex names):
       tail     head tid hid call_hours
 1      Bob     John   2  10          6
 2    David      Eve   4   5          6
@@ -883,9 +883,9 @@ $gender
 <span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="co"># print output</span></span>
 <span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>graph</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>IGRAPH bdc2e1b DN-- 21 20 -- 
+<pre><code>IGRAPH ecf1e91 DN-- 21 20 -- 
 + attr: name (v/c)
-+ edges from bdc2e1b (vertex names):
++ edges from ecf1e91 (vertex names):
  [1] Patient Zero-&gt;Person 1  Patient Zero-&gt;Person 2  Person 2    -&gt;Person 3 
  [4] Person 1    -&gt;Person 4  Person 2    -&gt;Person 5  Person 1    -&gt;Person 6 
  [7] Person 1    -&gt;Person 7  Person 5    -&gt;Person 8  Person 4    -&gt;Person 9 
@@ -924,7 +924,7 @@ $gender
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># printing all edged going out from patient zero</span></span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">incident</span>(graph, <span class="st">'Patient Zero'</span>, <span class="at">mode =</span> <span class="fu">c</span>(<span class="st">"out"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>+ 2/20 edges from bdcda73 (vertex names):
+<pre><code>+ 2/20 edges from ed03b05 (vertex names):
 [1] Patient Zero-&gt;Person 2 Patient Zero-&gt;Person 1</code></pre>
 </div>
 </div>
@@ -933,7 +933,7 @@ $gender
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># printing all edges coming into person 3</span></span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">incident</span>(graph, <span class="st">'Person 3'</span>, <span class="at">mode =</span> <span class="fu">c</span>(<span class="st">"in"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>+ 1/20 edge from bdcda73 (vertex names):
+<pre><code>+ 1/20 edge from ed03b05 (vertex names):
 [1] Person 2-&gt;Person 3</code></pre>
 </div>
 </div>
@@ -942,7 +942,7 @@ $gender
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># printing all edges connected to person 5</span></span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">incident</span>(graph, <span class="st">'Person 5'</span>, <span class="at">mode =</span> <span class="fu">c</span>(<span class="st">"all"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>+ 3/20 edges from bdcda73 (vertex names):
+<pre><code>+ 3/20 edges from ed03b05 (vertex names):
 [1] Person 2-&gt;Person 5  Person 5-&gt;Person 8  Person 5-&gt;Person 11</code></pre>
 </div>
 </div>
@@ -952,7 +952,7 @@ $gender
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># printing all vertices that are connected to an edge</span></span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head_of</span>(graph, <span class="fu">E</span>(graph))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>+ 20/21 vertices, named, from bdcda73:
+<pre><code>+ 20/21 vertices, named, from ed03b05:
  [1] Person 1  Person 2  Person 3  Person 4  Person 5  Person 6  Person 7 
  [8] Person 8  Person 9  Person 10 Person 11 Person 12 Person 13 Person 14
 [15] Person 15 Person 16 Person 17 Person 18 Person 19 Person 20</code></pre>
@@ -968,7 +968,7 @@ $gender
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># finding the neighbors of patient zero</span></span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">neighbors</span>(graph, <span class="st">'Patient Zero'</span>, <span class="at">mode =</span> <span class="fu">c</span>(<span class="st">"all"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>+ 2/21 vertices, named, from bdcda73:
+<pre><code>+ 2/21 vertices, named, from ed03b05:
 [1] Person 2 Person 1</code></pre>
 </div>
 </div>
@@ -983,7 +983,7 @@ $gender
 <span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a><span class="co"># finding common neighbors between person 1 and person 2</span></span>
 <span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a><span class="fu">intersection</span>(x,y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>+ 1/21 vertex, named, from bdcda73:
+<pre><code>+ 1/21 vertex, named, from ed03b05:
 [1] Patient Zero</code></pre>
 </div>
 </div>
@@ -1008,7 +1008,7 @@ $gender
 <span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="fu">farthest_vertices</span>(graph)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$vertices
-+ 2/21 vertices, named, from be2d983:
++ 2/21 vertices, named, from ed76401:
 [1] Patient Zero Person 12   
 
 $distance
@@ -1020,7 +1020,7 @@ $distance
 <div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># finding the longest path in the network</span></span>
 <span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="fu">get_diameter</span>(graph)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>+ 5/21 vertices, named, from be2d983:
+<pre><code>+ 5/21 vertices, named, from ed76401:
 [1] Patient Zero Person 2     Person 5     Person 8     Person 12   </code></pre>
 </div>
 </div>
@@ -1046,7 +1046,7 @@ Patient Zero         3</code></pre>
 <span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ego</span>(graph, <span class="dv">2</span>, <span class="st">'Patient Zero'</span>, <span class="at">mode =</span> <span class="fu">c</span>(<span class="st">'all'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
-+ 10/21 vertices, named, from be2d983:
++ 10/21 vertices, named, from ed76401:
  [1] Patient Zero Person 2     Person 1     Person 5     Person 3    
  [6] Person 16    Person 18    Person 4     Person 7     Person 6    </code></pre>
 </div>
@@ -1211,9 +1211,9 @@ Patient Zero         3</code></pre>
 <div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generating a random network graph</span></span>
 <span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a><span class="fu">erdos.renyi.game</span>(<span class="at">n =</span> <span class="fu">gorder</span>(graph), <span class="at">p.or.m =</span> <span class="fu">edge_density</span>(graph), <span class="at">type =</span> <span class="st">'gnp'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>IGRAPH bf061d3 U--- 21 8 -- Erdos-Renyi (gnp) graph
+<pre><code>IGRAPH eed9a28 U--- 21 8 -- Erdos-Renyi (gnp) graph
 + attr: name (g/c), type (g/c), loops (g/l), p (g/n)
-+ edges from bf061d3:
++ edges from eed9a28:
 [1]  4-- 5  2-- 9 12--13  1--16 15--16 14--19 13--20  4--21</code></pre>
 </div>
 </div>
@@ -1272,15 +1272,15 @@ graph TD
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-47" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="5" data-code-cell="annotated-cell-47" data-code-annotation="1">First we generate an empty list with 1000 <code>NULL</code> entries which we will be using to store our 1000 random networks.</span>
+<span data-code-cell="annotated-cell-47" data-code-lines="5" data-code-annotation="1">First we generate an empty list with 1000 <code>NULL</code> entries which we will be using to store our 1000 random networks.</span>
 </dd>
 <dt data-target-cell="annotated-cell-47" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="8" data-code-cell="annotated-cell-47" data-code-annotation="2">The for loop generates 1000 random networks using the Erdős-Rényi model with the same number of vertices and edge density as the original network (which is got from the <code>graph</code> object, which we had saved earlier). The networks are then saved in the empty list created in the previous step.</span>
+<span data-code-cell="annotated-cell-47" data-code-lines="8" data-code-annotation="2">The for loop generates 1000 random networks using the Erdős-Rényi model with the same number of vertices and edge density as the original network (which is got from the <code>graph</code> object, which we had saved earlier). The networks are then saved in the empty list created in the previous step.</span>
 </dd>
 <dt data-target-cell="annotated-cell-47" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="14" data-code-cell="annotated-cell-47" data-code-annotation="3">This line uses the <code>lapply()</code> function to apply the <code>mean_distance()</code> function to each element in the <code>list_empty</code> list, which calculates the average path length for each of the 1000 random networks. The <code>unlist()</code> function is used to convert the resulting list of average path lengths into a vector.</span>
+<span data-code-cell="annotated-cell-47" data-code-lines="14" data-code-annotation="3">This line uses the <code>lapply()</code> function to apply the <code>mean_distance()</code> function to each element in the <code>list_empty</code> list, which calculates the average path length for each of the 1000 random networks. The <code>unlist()</code> function is used to convert the resulting list of average path lengths into a vector.</span>
 </dd>
 </dl>
 </div>
@@ -1293,7 +1293,7 @@ graph TD
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-49" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-lines="2" data-code-cell="annotated-cell-49" data-code-annotation="4">The above code generates a histogram of the distribution of average path lengths for the 1000 random networks using the <code>hist()</code> function. The second line adds a vertical line at the average path length of the original network using the <code>abline()</code> function. Finally, the last line calculates the proportion of random networks that have an average path length less than that of the original network using the <code>mean()</code> function. The comparison is done using the <code>&lt;</code> operator and the <code>average.path.length()</code> function calculates the average path length of the original network.</span>
+<span data-code-cell="annotated-cell-49" data-code-lines="2" data-code-annotation="4">The above code generates a histogram of the distribution of average path lengths for the 1000 random networks using the <code>hist()</code> function. The second line adds a vertical line at the average path length of the original network using the <code>abline()</code> function. Finally, the last line calculates the proportion of random networks that have an average path length less than that of the original network using the <code>mean()</code> function. The comparison is done using the <code>&lt;</code> operator and the <code>average.path.length()</code> function calculates the average path length of the original network.</span>
 </dd>
 </dl>
 </div>
@@ -1371,31 +1371,31 @@ graph TD
 <span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a><span class="fu">largest_cliques</span>(df_rel_ig)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
-+ 3/10 vertices, named, from bb2979d:
++ 3/10 vertices, named, from e989732:
 [1] Alice    Isabelle Grace   
 
 [[2]]
-+ 3/10 vertices, named, from bb2979d:
++ 3/10 vertices, named, from e989732:
 [1] David Frank Eve  
 
 [[3]]
-+ 3/10 vertices, named, from bb2979d:
++ 3/10 vertices, named, from e989732:
 [1] David   Frank   Charlie
 
 [[4]]
-+ 3/10 vertices, named, from bb2979d:
++ 3/10 vertices, named, from e989732:
 [1] Isabelle Frank    Charlie 
 
 [[5]]
-+ 3/10 vertices, named, from bb2979d:
++ 3/10 vertices, named, from e989732:
 [1] Isabelle John     Grace   
 
 [[6]]
-+ 3/10 vertices, named, from bb2979d:
++ 3/10 vertices, named, from e989732:
 [1] Henry Frank Eve  
 
 [[7]]
-+ 3/10 vertices, named, from bb2979d:
++ 3/10 vertices, named, from e989732:
 [1] Henry   Frank   Charlie</code></pre>
 </div>
 </div>
@@ -1406,51 +1406,51 @@ graph TD
 <span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a><span class="fu">max_cliques</span>(df_rel_ig)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
-+ 2/10 vertices, named, from bb2979d:
++ 2/10 vertices, named, from e989732:
 [1] Bob   Alice
 
 [[2]]
-+ 2/10 vertices, named, from bb2979d:
++ 2/10 vertices, named, from e989732:
 [1] Bob  John
 
 [[3]]
-+ 3/10 vertices, named, from bb2979d:
++ 3/10 vertices, named, from e989732:
 [1] Alice    Isabelle Grace   
 
 [[4]]
-+ 3/10 vertices, named, from bb2979d:
++ 3/10 vertices, named, from e989732:
 [1] David Frank Eve  
 
 [[5]]
-+ 3/10 vertices, named, from bb2979d:
++ 3/10 vertices, named, from e989732:
 [1] David   Frank   Charlie
 
 [[6]]
-+ 2/10 vertices, named, from bb2979d:
++ 2/10 vertices, named, from e989732:
 [1] David John 
 
 [[7]]
-+ 3/10 vertices, named, from bb2979d:
++ 3/10 vertices, named, from e989732:
 [1] Isabelle Frank    Charlie 
 
 [[8]]
-+ 3/10 vertices, named, from bb2979d:
++ 3/10 vertices, named, from e989732:
 [1] Isabelle John     Grace   
 
 [[9]]
-+ 2/10 vertices, named, from bb2979d:
++ 2/10 vertices, named, from e989732:
 [1] John  Henry
 
 [[10]]
-+ 3/10 vertices, named, from bb2979d:
++ 3/10 vertices, named, from e989732:
 [1] Henry Frank Eve  
 
 [[11]]
-+ 3/10 vertices, named, from bb2979d:
++ 3/10 vertices, named, from e989732:
 [1] Henry   Frank   Charlie
 
 [[12]]
-+ 2/10 vertices, named, from bb2979d:
++ 2/10 vertices, named, from e989732:
 [1] Grace Eve  </code></pre>
 </div>
 </div>
@@ -1517,6 +1517,13 @@ graph TD
 <section id="community-detection" class="level2" data-number="13">
 <h2 data-number="13" class="anchored" data-anchor-id="community-detection"><span class="header-section-number">13</span> Community detection</h2>
 <p>Networks sometimes form clusters or communities where a group of vertices with similar attributes form close connections compared to others. This is referred to as community defection. Community detection in network analysis refers to the process of identifying groups or clusters of nodes that are densely connected within a larger network. These groups are often referred to as communities, clusters, or modules, and can provide insights into the organization and function of the network.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/community.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">A network with three colour coded communities</figcaption><p></p>
+</figure>
+</div>
+<p>In the figure given above, we can see three distinct communities. These can represents communities of animals living in one place interacting with each other and with other communities in other places, or a relationship network where people with similar age groups form freinds relatively easily.</p>
 <p>There are many algorithms to identify communities in a network. We will be looking at two of them; greedy optimization algorithm (<code>cluster_fast_greedy()</code>) and Girvan-Newman algorithm (<code>cluster_edge_betweenness()</code>).</p>
 <p>The greedy optimization algorithm iteratively merges nodes or communities in the network to maximize the modularity of the resulting partition. Modularity is a measure of the density of edges within communities compared to the expected density of edges in a randomized network. Maximizing modularity is a common criterion for community detection in networks because it reflects the degree to which the network is organized into cohesive and densely connected communities. The greedy optimization algorithm starts with each node in its community and iteratively merges the most similar communities until the modularity of the resulting partition can no longer be increased.</p>
 <p>The Girvan-Newman algorithm iteratively removes the edges with the highest betweenness centrality in the network, which are the edges that are most frequently traversed by the shortest paths between pairs of nodes in the network. The removal of these edges gradually breaks the network into smaller and smaller clusters or communities. It is widely used for community detection in complex networks because it is relatively fast and can detect communities of varying sizes and shapes.</p>
@@ -1631,10 +1638,10 @@ graph TD
 <span id="cb121-13"><a href="#cb121-13" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">set_vertex_attr</span>(df_rel_ig_gender, <span class="st">"color"</span>, <span class="at">value =</span> <span class="fu">c</span>(<span class="st">"yellow"</span>, <span class="st">"blue"</span>)[i])</span>
 <span id="cb121-14"><a href="#cb121-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb121-15"><a href="#cb121-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the graph using threejs</span></span>
-<span id="cb121-16"><a href="#cb121-16" aria-hidden="true" tabindex="-1"></a><span class="fu">graphjs</span>(g, <span class="at">vertex.label =</span> df_names<span class="sc">$</span>name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb121-16"><a href="#cb121-16" aria-hidden="true" tabindex="-1"></a><span class="fu">graphjs</span>(g, <span class="at">vertex.label =</span> df_names<span class="sc">$</span>name, <span class="at">vertex.size =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="scatterplotThree html-widget html-fill-item-overflow-hidden html-fill-item" id="KRQh8YnEss" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="KRQh8YnEss">{"x":{"NROW":10,"height":null,"width":null,"axis":false,"numticks":[6,6,6],"xticklabs":null,"yticklabs":null,"zticklabs":null,"color":[["#FFFF00","#FFFF00","#FFFF00","#0000FF","#FFFF00","#0000FF","#0000FF","#FFFF00","#0000FF","#FFFF00"]],"size":2,"stroke":"black","flipy":true,"grid":false,"renderer":"auto","signif":8,"bg":"white","cexsymbols":1,"xlim":[-1,1],"ylim":[-1,1],"zlim":[-1,1],"axisscale":[1,1,1],"pch":["@","@","@","@","@","@","@","@","@","@"],"elementId":"KRQh8YnEss","from":[[0,2,0,4,0,3,2,4,0,4,2,4,2,0,6,7,1,5,3,5]],"to":[[1,3,4,5,6,5,7,7,7,8,6,9,8,3,8,9,9,8,8,6]],"lwd":1,"linealpha":1,"center":true,"main":[""],"labels":["Alice","Bob","Charlie","David","Eve","Frank","Grace","Henry","Isabelle","John"],"options":true,"alpha":[[1,1,1,1,1,1,1,1,1,1]],"vertices":[[-0.57488598,-0.034397014,-0.60417951,-0.79258009,1,-1,0.84281947,-0.75627011,-0.46899491,-0.21869611,-1,0.012123607,0.18791091,0.17498352,0.52810042,-0.84453286,-0.62833068,1,-1,-0.73242732,-0.13251548,1,0.21183803,-0.50057129,0.27437144,-0.72179706,0.6405584,0.54006203,0.99029912,-0.21659124]],"xticklab":["-1.00","-0.60","-0.20","0.20","0.60","1.00"],"yticklab":["-1.00","-0.60","-0.20","0.20","0.60","1.00"],"zticklab":["1.00","0.60","0.20","-0.20","-0.60","-1.00"],"xtick":[0,0.2,0.4,0.6,0.8,1],"ytick":[0,0.2,0.4,0.6,0.8,1],"ztick":[0,0.2,0.4,0.6,0.8,1],"axislength":[1,1,1]},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="KRQh8YnEss">{"x":{"NROW":10,"height":null,"width":null,"axis":false,"numticks":[6,6,6],"xticklabs":null,"yticklabs":null,"zticklabs":null,"color":[["#FFFF00","#FFFF00","#FFFF00","#0000FF","#FFFF00","#0000FF","#0000FF","#FFFF00","#0000FF","#FFFF00"]],"size":0.5,"stroke":"black","flipy":true,"grid":false,"renderer":"auto","signif":8,"bg":"white","cexsymbols":1,"xlim":[-1,1],"ylim":[-1,1],"zlim":[-1,1],"axisscale":[1,1,1],"pch":["@","@","@","@","@","@","@","@","@","@"],"elementId":"KRQh8YnEss","from":[[0,2,0,4,0,3,2,4,0,4,2,4,2,0,6,7,1,5,3,5]],"to":[[1,3,4,5,6,5,7,7,7,8,6,9,8,3,8,9,9,8,8,6]],"lwd":1,"linealpha":1,"center":true,"main":[""],"labels":["Alice","Bob","Charlie","David","Eve","Frank","Grace","Henry","Isabelle","John"],"options":true,"alpha":[[1,1,1,1,1,1,1,1,1,1]],"vertices":[[-0.57488598,-0.034397014,-0.60417951,-0.79258009,1,-1,0.84281947,-0.75627011,-0.46899491,-0.21869611,-1,0.012123607,0.18791091,0.17498352,0.52810042,-0.84453286,-0.62833068,1,-1,-0.73242732,-0.13251548,1,0.21183803,-0.50057129,0.27437144,-0.72179706,0.6405584,0.54006203,0.99029912,-0.21659124]],"xticklab":["-1.00","-0.60","-0.20","0.20","0.60","1.00"],"yticklab":["-1.00","-0.60","-0.20","0.20","0.60","1.00"],"zticklab":["1.00","0.60","0.20","-0.20","-0.60","-1.00"],"xtick":[0,0.2,0.4,0.6,0.8,1],"ytick":[0,0.2,0.4,0.6,0.8,1],"ztick":[0,0.2,0.4,0.6,0.8,1],"axislength":[1,1,1]},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>With that, we have successfully learned the basics of network analysis using R.</p>
@@ -1657,7 +1664,7 @@ graph TD
 <li>How to find communities in a network?</li>
 <li>How to visualize the network in 3D using the <code>{threejs}</code> package?</li>
 </ol>
-<p>This tutorial is based on my notes from attending the ‘Network Analysis in R’ course on DataCamp. As with any personal notes, there may be mistakes and some of the information presented may not accurately reflect the topic. If you notice any errors, please feel free to leave a comment in the section below. The dummy dataset was created with the help of ChatGPT to save time.</p>
+<p>This tutorial is based on my notes from attending the ‘Network Analysis in R’ course on DataCamp. As with any personal notes, there may be mistakes and some of the information presented may not accurately reflect the topic. If you notice any errors, please feel free to leave a comment in the section below. The dummy datasets that were used in this tutorial were created with the help of ChatGPT to save time.</p>
 <p>I am particularly interested in learning about 3D visualization techniques, which I find to be fascinating. If I am able to learn more about this topic, I will write a sequel to this tutorial. Thank you for reading!</p>
 <p><a hidden="" href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a></p>
 
@@ -2920,140 +2927,144 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb122-1008"><a href="#cb122-1008" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb122-1009"><a href="#cb122-1009" aria-hidden="true" tabindex="-1"></a>Networks sometimes form clusters or communities where a group of vertices with similar attributes form close connections compared to others. This is referred to as community defection. Community detection in network analysis refers to the process of identifying groups or clusters of nodes that are densely connected within a larger network. These groups are often referred to as communities, clusters, or modules, and can provide insights into the organization and function of the network.</span>
 <span id="cb122-1010"><a href="#cb122-1010" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1011"><a href="#cb122-1011" aria-hidden="true" tabindex="-1"></a>There are many algorithms to identify communities in a network. We will be looking at two of them; greedy optimization algorithm (<span class="in">`cluster_fast_greedy()`</span>) and Girvan-Newman algorithm (<span class="in">`cluster_edge_betweenness()`</span>).</span>
+<span id="cb122-1011"><a href="#cb122-1011" aria-hidden="true" tabindex="-1"></a><span class="al">![A network with three colour coded communities](images/community.png)</span></span>
 <span id="cb122-1012"><a href="#cb122-1012" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1013"><a href="#cb122-1013" aria-hidden="true" tabindex="-1"></a>The greedy optimization algorithm iteratively merges nodes or communities in the network to maximize the modularity of the resulting partition. Modularity is a measure of the density of edges within communities compared to the expected density of edges in a randomized network. Maximizing modularity is a common criterion for community detection in networks because it reflects the degree to which the network is organized into cohesive and densely connected communities. The greedy optimization algorithm starts with each node in its community and iteratively merges the most similar communities until the modularity of the resulting partition can no longer be increased.</span>
+<span id="cb122-1013"><a href="#cb122-1013" aria-hidden="true" tabindex="-1"></a>In the figure given above, we can see three distinct communities. These can represents communities of animals living in one place interacting with each other and with other communities in other places, or a relationship network where people with similar age groups form freinds relatively easily.</span>
 <span id="cb122-1014"><a href="#cb122-1014" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1015"><a href="#cb122-1015" aria-hidden="true" tabindex="-1"></a>The Girvan-Newman algorithm iteratively removes the edges with the highest betweenness centrality in the network, which are the edges that are most frequently traversed by the shortest paths between pairs of nodes in the network. The removal of these edges gradually breaks the network into smaller and smaller clusters or communities. It is widely used for community detection in complex networks because it is relatively fast and can detect communities of varying sizes and shapes.</span>
+<span id="cb122-1015"><a href="#cb122-1015" aria-hidden="true" tabindex="-1"></a>There are many algorithms to identify communities in a network. We will be looking at two of them; greedy optimization algorithm (<span class="in">`cluster_fast_greedy()`</span>) and Girvan-Newman algorithm (<span class="in">`cluster_edge_betweenness()`</span>).</span>
 <span id="cb122-1016"><a href="#cb122-1016" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1017"><a href="#cb122-1017" aria-hidden="true" tabindex="-1"></a><span class="fu">### Fast-greedy community detection</span></span>
+<span id="cb122-1017"><a href="#cb122-1017" aria-hidden="true" tabindex="-1"></a>The greedy optimization algorithm iteratively merges nodes or communities in the network to maximize the modularity of the resulting partition. Modularity is a measure of the density of edges within communities compared to the expected density of edges in a randomized network. Maximizing modularity is a common criterion for community detection in networks because it reflects the degree to which the network is organized into cohesive and densely connected communities. The greedy optimization algorithm starts with each node in its community and iteratively merges the most similar communities until the modularity of the resulting partition can no longer be increased.</span>
 <span id="cb122-1018"><a href="#cb122-1018" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1019"><a href="#cb122-1019" aria-hidden="true" tabindex="-1"></a>Using the <span class="in">`cluster_fast_greedy()`</span> function let us find if there exist any communities in our dataset <span class="in">`df_rel_ig_gender`</span></span>
+<span id="cb122-1019"><a href="#cb122-1019" aria-hidden="true" tabindex="-1"></a>The Girvan-Newman algorithm iteratively removes the edges with the highest betweenness centrality in the network, which are the edges that are most frequently traversed by the shortest paths between pairs of nodes in the network. The removal of these edges gradually breaks the network into smaller and smaller clusters or communities. It is widely used for community detection in complex networks because it is relatively fast and can detect communities of varying sizes and shapes.</span>
 <span id="cb122-1020"><a href="#cb122-1020" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1023"><a href="#cb122-1023" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb122-1024"><a href="#cb122-1024" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: true</span></span>
-<span id="cb122-1025"><a href="#cb122-1025" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1026"><a href="#cb122-1026" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform fast-greedy community detection on the network graph</span></span>
-<span id="cb122-1027"><a href="#cb122-1027" aria-hidden="true" tabindex="-1"></a>fg <span class="ot">=</span> <span class="fu">cluster_fast_greedy</span>(df_rel_ig_gender)</span>
-<span id="cb122-1028"><a href="#cb122-1028" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb122-1021"><a href="#cb122-1021" aria-hidden="true" tabindex="-1"></a><span class="fu">### Fast-greedy community detection</span></span>
+<span id="cb122-1022"><a href="#cb122-1022" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1023"><a href="#cb122-1023" aria-hidden="true" tabindex="-1"></a>Using the <span class="in">`cluster_fast_greedy()`</span> function let us find if there exist any communities in our dataset <span class="in">`df_rel_ig_gender`</span></span>
+<span id="cb122-1024"><a href="#cb122-1024" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1027"><a href="#cb122-1027" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb122-1028"><a href="#cb122-1028" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: true</span></span>
 <span id="cb122-1029"><a href="#cb122-1029" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1030"><a href="#cb122-1030" aria-hidden="true" tabindex="-1"></a>Using the <span class="in">`sizes()`</span> function, we can see the number of members in each of the communities.</span>
-<span id="cb122-1031"><a href="#cb122-1031" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1034"><a href="#cb122-1034" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb122-1035"><a href="#cb122-1035" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine the sizes of each community</span></span>
-<span id="cb122-1036"><a href="#cb122-1036" aria-hidden="true" tabindex="-1"></a><span class="fu">sizes</span>(fg)</span>
-<span id="cb122-1037"><a href="#cb122-1037" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb122-1038"><a href="#cb122-1038" aria-hidden="true" tabindex="-1"></a>The output shows that Community 1 has 6 members and Community 2 has 4 members.</span>
-<span id="cb122-1039"><a href="#cb122-1039" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1040"><a href="#cb122-1040" aria-hidden="true" tabindex="-1"></a>The <span class="in">`membership()`</span> function shows to which community each of the members belongs to.</span>
-<span id="cb122-1041"><a href="#cb122-1041" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1044"><a href="#cb122-1044" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb122-1045"><a href="#cb122-1045" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine which individuals belong to which community</span></span>
-<span id="cb122-1046"><a href="#cb122-1046" aria-hidden="true" tabindex="-1"></a><span class="fu">membership</span>(fg)</span>
-<span id="cb122-1047"><a href="#cb122-1047" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb122-1048"><a href="#cb122-1048" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1049"><a href="#cb122-1049" aria-hidden="true" tabindex="-1"></a>To plot the community structure, we can simply use input from the 'communities' object that we have created using the algorithm function.</span>
-<span id="cb122-1050"><a href="#cb122-1050" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1053"><a href="#cb122-1053" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb122-1054"><a href="#cb122-1054" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the community structure of the network</span></span>
-<span id="cb122-1055"><a href="#cb122-1055" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fg, df_rel_ig_gender)</span>
-<span id="cb122-1056"><a href="#cb122-1056" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb122-1057"><a href="#cb122-1057" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1058"><a href="#cb122-1058" aria-hidden="true" tabindex="-1"></a><span class="fu">### Edge-betweenness community detection</span></span>
-<span id="cb122-1059"><a href="#cb122-1059" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1060"><a href="#cb122-1060" aria-hidden="true" tabindex="-1"></a>Similar to the earlier case, we use the <span class="in">`cluster_edge_betweenness ()`</span> function to find the communities in our dataset <span class="in">`df_rel_ig_gender`</span>.</span>
+<span id="cb122-1030"><a href="#cb122-1030" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform fast-greedy community detection on the network graph</span></span>
+<span id="cb122-1031"><a href="#cb122-1031" aria-hidden="true" tabindex="-1"></a>fg <span class="ot">=</span> <span class="fu">cluster_fast_greedy</span>(df_rel_ig_gender)</span>
+<span id="cb122-1032"><a href="#cb122-1032" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb122-1033"><a href="#cb122-1033" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1034"><a href="#cb122-1034" aria-hidden="true" tabindex="-1"></a>Using the <span class="in">`sizes()`</span> function, we can see the number of members in each of the communities.</span>
+<span id="cb122-1035"><a href="#cb122-1035" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1038"><a href="#cb122-1038" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb122-1039"><a href="#cb122-1039" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine the sizes of each community</span></span>
+<span id="cb122-1040"><a href="#cb122-1040" aria-hidden="true" tabindex="-1"></a><span class="fu">sizes</span>(fg)</span>
+<span id="cb122-1041"><a href="#cb122-1041" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb122-1042"><a href="#cb122-1042" aria-hidden="true" tabindex="-1"></a>The output shows that Community 1 has 6 members and Community 2 has 4 members.</span>
+<span id="cb122-1043"><a href="#cb122-1043" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1044"><a href="#cb122-1044" aria-hidden="true" tabindex="-1"></a>The <span class="in">`membership()`</span> function shows to which community each of the members belongs to.</span>
+<span id="cb122-1045"><a href="#cb122-1045" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1048"><a href="#cb122-1048" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb122-1049"><a href="#cb122-1049" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine which individuals belong to which community</span></span>
+<span id="cb122-1050"><a href="#cb122-1050" aria-hidden="true" tabindex="-1"></a><span class="fu">membership</span>(fg)</span>
+<span id="cb122-1051"><a href="#cb122-1051" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb122-1052"><a href="#cb122-1052" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1053"><a href="#cb122-1053" aria-hidden="true" tabindex="-1"></a>To plot the community structure, we can simply use input from the 'communities' object that we have created using the algorithm function.</span>
+<span id="cb122-1054"><a href="#cb122-1054" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1057"><a href="#cb122-1057" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb122-1058"><a href="#cb122-1058" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the community structure of the network</span></span>
+<span id="cb122-1059"><a href="#cb122-1059" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fg, df_rel_ig_gender)</span>
+<span id="cb122-1060"><a href="#cb122-1060" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb122-1061"><a href="#cb122-1061" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1064"><a href="#cb122-1064" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb122-1065"><a href="#cb122-1065" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: true</span></span>
-<span id="cb122-1066"><a href="#cb122-1066" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1067"><a href="#cb122-1067" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform edge-betweenness community detection on the network graph</span></span>
-<span id="cb122-1068"><a href="#cb122-1068" aria-hidden="true" tabindex="-1"></a>eb <span class="ot">=</span> <span class="fu">cluster_edge_betweenness</span>(df_rel_ig_gender)</span>
-<span id="cb122-1069"><a href="#cb122-1069" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1070"><a href="#cb122-1070" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine sizes of each community</span></span>
-<span id="cb122-1071"><a href="#cb122-1071" aria-hidden="true" tabindex="-1"></a><span class="fu">sizes</span>(eb)</span>
-<span id="cb122-1072"><a href="#cb122-1072" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb122-1073"><a href="#cb122-1073" aria-hidden="true" tabindex="-1"></a>The output shows that Community 1 has 3 members community 2 has 2 members and Community 3 has 5 members.</span>
-<span id="cb122-1074"><a href="#cb122-1074" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1077"><a href="#cb122-1077" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb122-1078"><a href="#cb122-1078" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine which individuals belong to which community</span></span>
-<span id="cb122-1079"><a href="#cb122-1079" aria-hidden="true" tabindex="-1"></a><span class="fu">membership</span>(eb)</span>
-<span id="cb122-1080"><a href="#cb122-1080" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb122-1081"><a href="#cb122-1081" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1082"><a href="#cb122-1082" aria-hidden="true" tabindex="-1"></a>Let us now compare both graphs.</span>
-<span id="cb122-1083"><a href="#cb122-1083" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1086"><a href="#cb122-1086" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb122-1087"><a href="#cb122-1087" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting both graphs side-wise</span></span>
-<span id="cb122-1088"><a href="#cb122-1088" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
-<span id="cb122-1089"><a href="#cb122-1089" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fg, df_rel_ig_gender, <span class="at">main=</span> <span class="st">"Fast-greedy"</span>)</span>
-<span id="cb122-1090"><a href="#cb122-1090" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(eb, df_rel_ig_gender, <span class="at">main=</span> <span class="st">"Edge-betweenness"</span>)</span>
-<span id="cb122-1091"><a href="#cb122-1091" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb122-1092"><a href="#cb122-1092" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1093"><a href="#cb122-1093" aria-hidden="true" tabindex="-1"></a>In general, the cluster-fast greedy algorithm is faster and more scalable than the cluster_edge_betweenness algorithm and is a good choice for large networks with many nodes and edges. It can detect communities of varying sizes and shapes and is less sensitive to noise.</span>
-<span id="cb122-1094"><a href="#cb122-1094" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1095"><a href="#cb122-1095" aria-hidden="true" tabindex="-1"></a>On the other hand, the cluster edge betweenness algorithm is more computationally expensive and may be more appropriate for smaller networks. It can also be useful for identifying communities that are not well-separated or that overlap with each other.</span>
+<span id="cb122-1062"><a href="#cb122-1062" aria-hidden="true" tabindex="-1"></a><span class="fu">### Edge-betweenness community detection</span></span>
+<span id="cb122-1063"><a href="#cb122-1063" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1064"><a href="#cb122-1064" aria-hidden="true" tabindex="-1"></a>Similar to the earlier case, we use the <span class="in">`cluster_edge_betweenness ()`</span> function to find the communities in our dataset <span class="in">`df_rel_ig_gender`</span>.</span>
+<span id="cb122-1065"><a href="#cb122-1065" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1068"><a href="#cb122-1068" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb122-1069"><a href="#cb122-1069" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: true</span></span>
+<span id="cb122-1070"><a href="#cb122-1070" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1071"><a href="#cb122-1071" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform edge-betweenness community detection on the network graph</span></span>
+<span id="cb122-1072"><a href="#cb122-1072" aria-hidden="true" tabindex="-1"></a>eb <span class="ot">=</span> <span class="fu">cluster_edge_betweenness</span>(df_rel_ig_gender)</span>
+<span id="cb122-1073"><a href="#cb122-1073" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1074"><a href="#cb122-1074" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine sizes of each community</span></span>
+<span id="cb122-1075"><a href="#cb122-1075" aria-hidden="true" tabindex="-1"></a><span class="fu">sizes</span>(eb)</span>
+<span id="cb122-1076"><a href="#cb122-1076" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb122-1077"><a href="#cb122-1077" aria-hidden="true" tabindex="-1"></a>The output shows that Community 1 has 3 members community 2 has 2 members and Community 3 has 5 members.</span>
+<span id="cb122-1078"><a href="#cb122-1078" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1081"><a href="#cb122-1081" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb122-1082"><a href="#cb122-1082" aria-hidden="true" tabindex="-1"></a><span class="co"># Determine which individuals belong to which community</span></span>
+<span id="cb122-1083"><a href="#cb122-1083" aria-hidden="true" tabindex="-1"></a><span class="fu">membership</span>(eb)</span>
+<span id="cb122-1084"><a href="#cb122-1084" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb122-1085"><a href="#cb122-1085" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1086"><a href="#cb122-1086" aria-hidden="true" tabindex="-1"></a>Let us now compare both graphs.</span>
+<span id="cb122-1087"><a href="#cb122-1087" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1090"><a href="#cb122-1090" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb122-1091"><a href="#cb122-1091" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting both graphs side-wise</span></span>
+<span id="cb122-1092"><a href="#cb122-1092" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb122-1093"><a href="#cb122-1093" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(fg, df_rel_ig_gender, <span class="at">main=</span> <span class="st">"Fast-greedy"</span>)</span>
+<span id="cb122-1094"><a href="#cb122-1094" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(eb, df_rel_ig_gender, <span class="at">main=</span> <span class="st">"Edge-betweenness"</span>)</span>
+<span id="cb122-1095"><a href="#cb122-1095" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb122-1096"><a href="#cb122-1096" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1097"><a href="#cb122-1097" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interactive network visualizations</span></span>
+<span id="cb122-1097"><a href="#cb122-1097" aria-hidden="true" tabindex="-1"></a>In general, the cluster-fast greedy algorithm is faster and more scalable than the cluster_edge_betweenness algorithm and is a good choice for large networks with many nodes and edges. It can detect communities of varying sizes and shapes and is less sensitive to noise.</span>
 <span id="cb122-1098"><a href="#cb122-1098" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1099"><a href="#cb122-1099" aria-hidden="true" tabindex="-1"></a>One of the coolest things about network analysis is the visualization process. Up until now, we have only plotted static graphs. In this section, we will plot networks that can be physically (with a mouse pointer) interacted with using the <span class="in">`{threejs}`</span> package in R. We will only cover the basics of 3D visualization.</span>
+<span id="cb122-1099"><a href="#cb122-1099" aria-hidden="true" tabindex="-1"></a>On the other hand, the cluster edge betweenness algorithm is more computationally expensive and may be more appropriate for smaller networks. It can also be useful for identifying communities that are not well-separated or that overlap with each other.</span>
 <span id="cb122-1100"><a href="#cb122-1100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1101"><a href="#cb122-1101" aria-hidden="true" tabindex="-1"></a>Plotting the graph is as simple as using the function <span class="in">`graphjs()`</span> from the <span class="in">`{threejs}`</span> package.</span>
+<span id="cb122-1101"><a href="#cb122-1101" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interactive network visualizations</span></span>
 <span id="cb122-1102"><a href="#cb122-1102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1105"><a href="#cb122-1105" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb122-1106"><a href="#cb122-1106" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(threejs)) <span class="fu">install.packages</span>(<span class="st">'threejs'</span>)</span>
-<span id="cb122-1107"><a href="#cb122-1107" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(threejs)</span>
-<span id="cb122-1108"><a href="#cb122-1108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1109"><a href="#cb122-1109" aria-hidden="true" tabindex="-1"></a><span class="co"># plotting our previous network</span></span>
-<span id="cb122-1110"><a href="#cb122-1110" aria-hidden="true" tabindex="-1"></a><span class="fu">graphjs</span>(df_rel_ig_gender)</span>
-<span id="cb122-1111"><a href="#cb122-1111" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb122-1103"><a href="#cb122-1103" aria-hidden="true" tabindex="-1"></a>One of the coolest things about network analysis is the visualization process. Up until now, we have only plotted static graphs. In this section, we will plot networks that can be physically (with a mouse pointer) interacted with using the <span class="in">`{threejs}`</span> package in R. We will only cover the basics of 3D visualization.</span>
+<span id="cb122-1104"><a href="#cb122-1104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1105"><a href="#cb122-1105" aria-hidden="true" tabindex="-1"></a>Plotting the graph is as simple as using the function <span class="in">`graphjs()`</span> from the <span class="in">`{threejs}`</span> package.</span>
+<span id="cb122-1106"><a href="#cb122-1106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1109"><a href="#cb122-1109" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb122-1110"><a href="#cb122-1110" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(threejs)) <span class="fu">install.packages</span>(<span class="st">'threejs'</span>)</span>
+<span id="cb122-1111"><a href="#cb122-1111" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(threejs)</span>
 <span id="cb122-1112"><a href="#cb122-1112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1113"><a href="#cb122-1113" aria-hidden="true" tabindex="-1"></a>We can finally move our networks!</span>
-<span id="cb122-1114"><a href="#cb122-1114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1115"><a href="#cb122-1115" aria-hidden="true" tabindex="-1"></a>Let us re-plot the network we got after using the fast-greedy community algorithm. Since the size of the network is 2, we denote two colors to represent each of the two communities. You can also hover over the vertices to display its name on top.</span>
+<span id="cb122-1113"><a href="#cb122-1113" aria-hidden="true" tabindex="-1"></a><span class="co"># plotting our previous network</span></span>
+<span id="cb122-1114"><a href="#cb122-1114" aria-hidden="true" tabindex="-1"></a><span class="fu">graphjs</span>(df_rel_ig_gender)</span>
+<span id="cb122-1115"><a href="#cb122-1115" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb122-1116"><a href="#cb122-1116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1119"><a href="#cb122-1119" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb122-1120"><a href="#cb122-1120" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(threejs)</span>
-<span id="cb122-1121"><a href="#cb122-1121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1122"><a href="#cb122-1122" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform fast-greedy community detection on network graph</span></span>
-<span id="cb122-1123"><a href="#cb122-1123" aria-hidden="true" tabindex="-1"></a>fg <span class="ot">=</span> <span class="fu">cluster_fast_greedy</span>(df_rel_ig_gender)</span>
-<span id="cb122-1124"><a href="#cb122-1124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1125"><a href="#cb122-1125" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an object 'i' containing the memberships of the fast-greedy community detection</span></span>
-<span id="cb122-1126"><a href="#cb122-1126" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span>  <span class="fu">membership</span>(fg)</span>
-<span id="cb122-1127"><a href="#cb122-1127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1128"><a href="#cb122-1128" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the number of different communities</span></span>
-<span id="cb122-1129"><a href="#cb122-1129" aria-hidden="true" tabindex="-1"></a>size_fg <span class="ot">&lt;-</span> <span class="fu">sizes</span>(fg)</span>
-<span id="cb122-1130"><a href="#cb122-1130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1131"><a href="#cb122-1131" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a color attribute to each vertex, setting the vertex color based on community membership</span></span>
-<span id="cb122-1132"><a href="#cb122-1132" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">set_vertex_attr</span>(df_rel_ig_gender, <span class="st">"color"</span>, <span class="at">value =</span> <span class="fu">c</span>(<span class="st">"yellow"</span>, <span class="st">"blue"</span>)[i])</span>
-<span id="cb122-1133"><a href="#cb122-1133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1134"><a href="#cb122-1134" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the graph using threejs</span></span>
-<span id="cb122-1135"><a href="#cb122-1135" aria-hidden="true" tabindex="-1"></a><span class="fu">graphjs</span>(g, <span class="at">vertex.label =</span> df_names<span class="sc">$</span>name)</span>
-<span id="cb122-1136"><a href="#cb122-1136" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb122-1117"><a href="#cb122-1117" aria-hidden="true" tabindex="-1"></a>We can finally move our networks!</span>
+<span id="cb122-1118"><a href="#cb122-1118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1119"><a href="#cb122-1119" aria-hidden="true" tabindex="-1"></a>Let us re-plot the network we got after using the fast-greedy community algorithm. Since the size of the network is 2, we denote two colors to represent each of the two communities. You can also hover over the vertices to display its name on top.</span>
+<span id="cb122-1120"><a href="#cb122-1120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1123"><a href="#cb122-1123" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb122-1124"><a href="#cb122-1124" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(threejs)</span>
+<span id="cb122-1125"><a href="#cb122-1125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1126"><a href="#cb122-1126" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform fast-greedy community detection on network graph</span></span>
+<span id="cb122-1127"><a href="#cb122-1127" aria-hidden="true" tabindex="-1"></a>fg <span class="ot">=</span> <span class="fu">cluster_fast_greedy</span>(df_rel_ig_gender)</span>
+<span id="cb122-1128"><a href="#cb122-1128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1129"><a href="#cb122-1129" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an object 'i' containing the memberships of the fast-greedy community detection</span></span>
+<span id="cb122-1130"><a href="#cb122-1130" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span>  <span class="fu">membership</span>(fg)</span>
+<span id="cb122-1131"><a href="#cb122-1131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1132"><a href="#cb122-1132" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the number of different communities</span></span>
+<span id="cb122-1133"><a href="#cb122-1133" aria-hidden="true" tabindex="-1"></a>size_fg <span class="ot">&lt;-</span> <span class="fu">sizes</span>(fg)</span>
+<span id="cb122-1134"><a href="#cb122-1134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1135"><a href="#cb122-1135" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a color attribute to each vertex, setting the vertex color based on community membership</span></span>
+<span id="cb122-1136"><a href="#cb122-1136" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">set_vertex_attr</span>(df_rel_ig_gender, <span class="st">"color"</span>, <span class="at">value =</span> <span class="fu">c</span>(<span class="st">"yellow"</span>, <span class="st">"blue"</span>)[i])</span>
 <span id="cb122-1137"><a href="#cb122-1137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1138"><a href="#cb122-1138" aria-hidden="true" tabindex="-1"></a>With that, we have successfully learned the basics of network analysis using R.</span>
-<span id="cb122-1139"><a href="#cb122-1139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1140"><a href="#cb122-1140" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
+<span id="cb122-1138"><a href="#cb122-1138" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the graph using threejs</span></span>
+<span id="cb122-1139"><a href="#cb122-1139" aria-hidden="true" tabindex="-1"></a><span class="fu">graphjs</span>(g, <span class="at">vertex.label =</span> df_names<span class="sc">$</span>name, <span class="at">vertex.size =</span> <span class="fl">0.5</span>)</span>
+<span id="cb122-1140"><a href="#cb122-1140" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb122-1141"><a href="#cb122-1141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1142"><a href="#cb122-1142" aria-hidden="true" tabindex="-1"></a>By the end of this tutorial we should be able to answer all the questions given below;</span>
+<span id="cb122-1142"><a href="#cb122-1142" aria-hidden="true" tabindex="-1"></a>With that, we have successfully learned the basics of network analysis using R.</span>
 <span id="cb122-1143"><a href="#cb122-1143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1144"><a href="#cb122-1144" aria-hidden="true" tabindex="-1"></a><span class="ss">1.    </span>What is a network and what are the different ways to denote a network data?</span>
-<span id="cb122-1145"><a href="#cb122-1145" aria-hidden="true" tabindex="-1"></a><span class="ss">2.    </span>How to convert a network data into an igraph object a nd how to analyze and plot it via the <span class="in">`{igraph}`</span> package in R.</span>
-<span id="cb122-1146"><a href="#cb122-1146" aria-hidden="true" tabindex="-1"></a><span class="ss">3.    </span>What is network attributes and how to add them into an igraph object?</span>
-<span id="cb122-1147"><a href="#cb122-1147" aria-hidden="true" tabindex="-1"></a><span class="ss">4.    </span>How do we filter network attributes and how to visualize them?</span>
-<span id="cb122-1148"><a href="#cb122-1148" aria-hidden="true" tabindex="-1"></a><span class="ss">5.    </span>What are the different types of network visualizations?</span>
-<span id="cb122-1149"><a href="#cb122-1149" aria-hidden="true" tabindex="-1"></a><span class="ss">6.    </span>What are directed networks?</span>
-<span id="cb122-1150"><a href="#cb122-1150" aria-hidden="true" tabindex="-1"></a><span class="ss">7.    </span>What is path length?</span>
-<span id="cb122-1151"><a href="#cb122-1151" aria-hidden="true" tabindex="-1"></a><span class="ss">8.    </span>What are the different measures of network structure?</span>
-<span id="cb122-1152"><a href="#cb122-1152" aria-hidden="true" tabindex="-1"></a><span class="ss">9.    </span>What is network randomization test and what is its purpose?</span>
-<span id="cb122-1153"><a href="#cb122-1153" aria-hidden="true" tabindex="-1"></a><span class="ss">10.   </span>what are the different network substructures?</span>
-<span id="cb122-1154"><a href="#cb122-1154" aria-hidden="true" tabindex="-1"></a><span class="ss">11.   </span>How to identify special relationships in a network?</span>
-<span id="cb122-1155"><a href="#cb122-1155" aria-hidden="true" tabindex="-1"></a><span class="ss">12.   </span>How to find communities in a network?</span>
-<span id="cb122-1156"><a href="#cb122-1156" aria-hidden="true" tabindex="-1"></a><span class="ss">13.   </span>How to visualize the network in 3D using the <span class="in">`{threejs}`</span> package?</span>
-<span id="cb122-1157"><a href="#cb122-1157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1158"><a href="#cb122-1158" aria-hidden="true" tabindex="-1"></a>This tutorial is based on my notes from attending the 'Network Analysis in R' course on DataCamp. As with any personal notes, there may be mistakes and some of the information presented may not accurately reflect the topic. If you notice any errors, please feel free to leave a comment in the section below. The dummy dataset was created with the help of ChatGPT to save time.</span>
-<span id="cb122-1159"><a href="#cb122-1159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1160"><a href="#cb122-1160" aria-hidden="true" tabindex="-1"></a>I am particularly interested in learning about 3D visualization techniques, which I find to be fascinating. If I am able to learn more about this topic, I will write a sequel to this tutorial. Thank you for reading!</span>
+<span id="cb122-1144"><a href="#cb122-1144" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
+<span id="cb122-1145"><a href="#cb122-1145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1146"><a href="#cb122-1146" aria-hidden="true" tabindex="-1"></a>By the end of this tutorial we should be able to answer all the questions given below;</span>
+<span id="cb122-1147"><a href="#cb122-1147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1148"><a href="#cb122-1148" aria-hidden="true" tabindex="-1"></a><span class="ss">1.    </span>What is a network and what are the different ways to denote a network data?</span>
+<span id="cb122-1149"><a href="#cb122-1149" aria-hidden="true" tabindex="-1"></a><span class="ss">2.    </span>How to convert a network data into an igraph object a nd how to analyze and plot it via the <span class="in">`{igraph}`</span> package in R.</span>
+<span id="cb122-1150"><a href="#cb122-1150" aria-hidden="true" tabindex="-1"></a><span class="ss">3.    </span>What is network attributes and how to add them into an igraph object?</span>
+<span id="cb122-1151"><a href="#cb122-1151" aria-hidden="true" tabindex="-1"></a><span class="ss">4.    </span>How do we filter network attributes and how to visualize them?</span>
+<span id="cb122-1152"><a href="#cb122-1152" aria-hidden="true" tabindex="-1"></a><span class="ss">5.    </span>What are the different types of network visualizations?</span>
+<span id="cb122-1153"><a href="#cb122-1153" aria-hidden="true" tabindex="-1"></a><span class="ss">6.    </span>What are directed networks?</span>
+<span id="cb122-1154"><a href="#cb122-1154" aria-hidden="true" tabindex="-1"></a><span class="ss">7.    </span>What is path length?</span>
+<span id="cb122-1155"><a href="#cb122-1155" aria-hidden="true" tabindex="-1"></a><span class="ss">8.    </span>What are the different measures of network structure?</span>
+<span id="cb122-1156"><a href="#cb122-1156" aria-hidden="true" tabindex="-1"></a><span class="ss">9.    </span>What is network randomization test and what is its purpose?</span>
+<span id="cb122-1157"><a href="#cb122-1157" aria-hidden="true" tabindex="-1"></a><span class="ss">10.   </span>what are the different network substructures?</span>
+<span id="cb122-1158"><a href="#cb122-1158" aria-hidden="true" tabindex="-1"></a><span class="ss">11.   </span>How to identify special relationships in a network?</span>
+<span id="cb122-1159"><a href="#cb122-1159" aria-hidden="true" tabindex="-1"></a><span class="ss">12.   </span>How to find communities in a network?</span>
+<span id="cb122-1160"><a href="#cb122-1160" aria-hidden="true" tabindex="-1"></a><span class="ss">13.   </span>How to visualize the network in 3D using the <span class="in">`{threejs}`</span> package?</span>
 <span id="cb122-1161"><a href="#cb122-1161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-1162"><a href="#cb122-1162" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">hidden</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://info.flagcounter.com/ynrK"</span><span class="kw">&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"Flag Counter"</span> <span class="er">border</span><span class="ot">=</span><span class="st">"0"</span><span class="kw">/&gt;&lt;/a&gt;</span></span>
+<span id="cb122-1162"><a href="#cb122-1162" aria-hidden="true" tabindex="-1"></a>This tutorial is based on my notes from attending the 'Network Analysis in R' course on DataCamp. As with any personal notes, there may be mistakes and some of the information presented may not accurately reflect the topic. If you notice any errors, please feel free to leave a comment in the section below. The dummy datasets that were used in this tutorial were created with the help of ChatGPT to save time.</span>
+<span id="cb122-1163"><a href="#cb122-1163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1164"><a href="#cb122-1164" aria-hidden="true" tabindex="-1"></a>I am particularly interested in learning about 3D visualization techniques, which I find to be fascinating. If I am able to learn more about this topic, I will write a sequel to this tutorial. Thank you for reading!</span>
+<span id="cb122-1165"><a href="#cb122-1165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-1166"><a href="#cb122-1166" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">hidden</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://info.flagcounter.com/ynrK"</span><span class="kw">&gt;&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"Flag Counter"</span> <span class="er">border</span><span class="ot">=</span><span class="st">"0"</span><span class="kw">/&gt;&lt;/a&gt;</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

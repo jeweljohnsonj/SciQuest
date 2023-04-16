@@ -888,6 +888,10 @@ Since our original graph object is undirected, we get the value 1.
 
 Networks sometimes form clusters or communities where a group of vertices with similar attributes form close connections compared to others. This is referred to as community defection. Community detection in network analysis refers to the process of identifying groups or clusters of nodes that are densely connected within a larger network. These groups are often referred to as communities, clusters, or modules, and can provide insights into the organization and function of the network.
 
+![A network with three colour coded communities](images/community.png)
+
+In the figure given above, we can see three distinct communities. These can represents communities of animals living in one place interacting with each other and with other communities in other places, or a relationship network where people with similar age groups form freinds relatively easily.
+
 There are many algorithms to identify communities in a network. We will be looking at two of them; greedy optimization algorithm (`cluster_fast_greedy()`) and Girvan-Newman algorithm (`cluster_edge_betweenness()`).
 
 The greedy optimization algorithm iteratively merges nodes or communities in the network to maximize the modularity of the resulting partition. Modularity is a measure of the density of edges within communities compared to the expected density of edges in a randomized network. Maximizing modularity is a common criterion for community detection in networks because it reflects the degree to which the network is organized into cohesive and densely connected communities. The greedy optimization algorithm starts with each node in its community and iteratively merges the most similar communities until the modularity of the resulting partition can no longer be increased.
@@ -994,7 +998,7 @@ size_fg <- sizes(fg)
 g <- set_vertex_attr(df_rel_ig_gender, "color", value = c("yellow", "blue")[i])
 
 # Plot the graph using threejs
-graphjs(g, vertex.label = df_names$name)
+graphjs(g, vertex.label = df_names$name, vertex.size = 0.5)
 ```
 
 With that, we have successfully learned the basics of network analysis using R.
@@ -1017,7 +1021,7 @@ By the end of this tutorial we should be able to answer all the questions given 
 12.   How to find communities in a network?
 13.   How to visualize the network in 3D using the `{threejs}` package?
 
-This tutorial is based on my notes from attending the 'Network Analysis in R' course on DataCamp. As with any personal notes, there may be mistakes and some of the information presented may not accurately reflect the topic. If you notice any errors, please feel free to leave a comment in the section below. The dummy dataset was created with the help of ChatGPT to save time.
+This tutorial is based on my notes from attending the 'Network Analysis in R' course on DataCamp. As with any personal notes, there may be mistakes and some of the information presented may not accurately reflect the topic. If you notice any errors, please feel free to leave a comment in the section below. The dummy datasets that were used in this tutorial were created with the help of ChatGPT to save time.
 
 I am particularly interested in learning about 3D visualization techniques, which I find to be fascinating. If I am able to learn more about this topic, I will write a sequel to this tutorial. Thank you for reading!
 
