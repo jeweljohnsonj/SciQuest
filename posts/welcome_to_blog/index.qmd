@@ -1,5 +1,5 @@
 ---
-title: "The story behind one carat blog"
+title: "The story behind one carat blog (now called SciQuest)"
 description: "In this article, I share my experiences on how this blog was made. Spoiler alter: it involved a lot of R package hitchhiking"
 date: "07/01/2022"
 date-modified: last-modified
@@ -16,6 +16,10 @@ categories: [news]
 ![Cover photo of my new blog made using quarto](preview.png)
 :::
 :::
+
+## Update (April 15, 2023)
+
+I decided to change my blog name to 'SciQuest' from 'One-carat-blog'. I think the previous name was very childish 😖. I also decided to transition from a dark theme to a light theme just to see things in a new light. Much have changed, so coming to back to these posts is kind of funny for me!
 
 ## Making of one carat blog
 
