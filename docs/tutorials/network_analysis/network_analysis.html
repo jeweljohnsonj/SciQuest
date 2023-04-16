@@ -429,31 +429,31 @@ e . . . . . .</code></pre>
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="5" data-code-annotation="1">First, the code creates a dataframe called df_names with 10 names and their genders.</span>
+<span data-code-lines="5" data-code-annotation="1" data-code-cell="annotated-cell-3">First, the code creates a dataframe called df_names with 10 names and their genders.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="12" data-code-annotation="2">Then, an empty dataframe called df_rel is created to store the relationships.</span>
+<span data-code-lines="12" data-code-annotation="2" data-code-cell="annotated-cell-3">Then, an empty dataframe called df_rel is created to store the relationships.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="16" data-code-annotation="3">The while loop is used to generate random relationships between the names until df_rel has 20 rows.</span>
+<span data-code-lines="16" data-code-annotation="3" data-code-cell="annotated-cell-3">The while loop is used to generate random relationships between the names until df_rel has 20 rows.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="18" data-code-annotation="4">Inside the while loop, two names are randomly selected from the name column of df_names using the sample function.</span>
+<span data-code-lines="18" data-code-annotation="4" data-code-cell="annotated-cell-3">Inside the while loop, two names are randomly selected from the name column of df_names using the sample function.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="22" data-code-annotation="5">The if statement checks whether the two names are the same or whether they have already been added as a relationship to df_rel. If either of these conditions is true, the loop moves on to select a new pair of names.</span>
+<span data-code-lines="22" data-code-annotation="5" data-code-cell="annotated-cell-3">The if statement checks whether the two names are the same or whether they have already been added as a relationship to df_rel. If either of these conditions is true, the loop moves on to select a new pair of names.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="25" data-code-annotation="6">If the two names are different and have not been added to df_rel, a new row is added to df_rel with the selected names and a randomly generated number between 1 and 10 as the number of call hours.</span>
+<span data-code-lines="25" data-code-annotation="6" data-code-cell="annotated-cell-3">If the two names are different and have not been added to df_rel, a new row is added to df_rel with the selected names and a randomly generated number between 1 and 10 as the number of call hours.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="31" data-code-annotation="7">Once df_rel has 20 rows, the loop stops, and the final dataframe is printed using print(df_rel).</span>
+<span data-code-lines="31" data-code-annotation="7" data-code-cell="annotated-cell-3">Once df_rel has 20 rows, the loop stops, and the final dataframe is printed using print(df_rel).</span>
 </dd>
 </dl>
 </div>
@@ -1272,15 +1272,15 @@ graph TD
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-47" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-47" data-code-lines="5" data-code-annotation="1">First we generate an empty list with 1000 <code>NULL</code> entries which we will be using to store our 1000 random networks.</span>
+<span data-code-lines="5" data-code-annotation="1" data-code-cell="annotated-cell-47">First we generate an empty list with 1000 <code>NULL</code> entries which we will be using to store our 1000 random networks.</span>
 </dd>
 <dt data-target-cell="annotated-cell-47" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-47" data-code-lines="8" data-code-annotation="2">The for loop generates 1000 random networks using the Erdős-Rényi model with the same number of vertices and edge density as the original network (which is got from the <code>graph</code> object, which we had saved earlier). The networks are then saved in the empty list created in the previous step.</span>
+<span data-code-lines="8" data-code-annotation="2" data-code-cell="annotated-cell-47">The for loop generates 1000 random networks using the Erdős-Rényi model with the same number of vertices and edge density as the original network (which is got from the <code>graph</code> object, which we had saved earlier). The networks are then saved in the empty list created in the previous step.</span>
 </dd>
 <dt data-target-cell="annotated-cell-47" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-47" data-code-lines="14" data-code-annotation="3">This line uses the <code>lapply()</code> function to apply the <code>mean_distance()</code> function to each element in the <code>list_empty</code> list, which calculates the average path length for each of the 1000 random networks. The <code>unlist()</code> function is used to convert the resulting list of average path lengths into a vector.</span>
+<span data-code-lines="14" data-code-annotation="3" data-code-cell="annotated-cell-47">This line uses the <code>lapply()</code> function to apply the <code>mean_distance()</code> function to each element in the <code>list_empty</code> list, which calculates the average path length for each of the 1000 random networks. The <code>unlist()</code> function is used to convert the resulting list of average path lengths into a vector.</span>
 </dd>
 </dl>
 </div>
@@ -1293,7 +1293,7 @@ graph TD
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-49" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-49" data-code-lines="2" data-code-annotation="4">The above code generates a histogram of the distribution of average path lengths for the 1000 random networks using the <code>hist()</code> function. The second line adds a vertical line at the average path length of the original network using the <code>abline()</code> function. Finally, the last line calculates the proportion of random networks that have an average path length less than that of the original network using the <code>mean()</code> function. The comparison is done using the <code>&lt;</code> operator and the <code>average.path.length()</code> function calculates the average path length of the original network.</span>
+<span data-code-lines="2" data-code-annotation="4" data-code-cell="annotated-cell-49">The above code generates a histogram of the distribution of average path lengths for the 1000 random networks using the <code>hist()</code> function. The second line adds a vertical line at the average path length of the original network using the <code>abline()</code> function. Finally, the last line calculates the proportion of random networks that have an average path length less than that of the original network using the <code>mean()</code> function. The comparison is done using the <code>&lt;</code> operator and the <code>average.path.length()</code> function calculates the average path length of the original network.</span>
 </dd>
 </dl>
 </div>
