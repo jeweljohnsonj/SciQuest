@@ -3,10 +3,7 @@ title: "Hypothesis Testing in R"
 description: "Learn how to do hypothesis testing using R"
 date: "10/06/2022"
 date-modified: last-modified
-format:
-  html:
-    css:
-      - https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css
+format: html
 image: images/stat_model_4.png
 categories: [basic statistics]
 draft : true

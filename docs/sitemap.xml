@@ -2,114 +2,122 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sciquest.netlify.app/blog.html</loc>
-    <lastmod>2023-04-16T15:18:12.982Z</lastmod>
+    <lastmod>2023-04-22T03:30:49.132Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/index.html</loc>
-    <lastmod>2023-04-16T15:18:13.784Z</lastmod>
+    <lastmod>2023-04-22T03:40:08.430Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/posts/notion_intro/index.html</loc>
-    <lastmod>2023-04-16T15:18:17.637Z</lastmod>
+    <lastmod>2023-04-22T03:30:54.602Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/posts/notion_literature/index.html</loc>
-    <lastmod>2023-04-16T15:18:21.257Z</lastmod>
+    <lastmod>2023-04-22T03:30:57.860Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/posts/notion_movie_books/index.html</loc>
-    <lastmod>2023-04-16T15:18:23.562Z</lastmod>
+    <lastmod>2023-04-22T03:30:59.868Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/posts/notion_research_diary/index.html</loc>
-    <lastmod>2023-04-16T15:18:25.704Z</lastmod>
+    <lastmod>2023-04-22T03:31:01.988Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/posts/notion_task_manager/index.html</loc>
-    <lastmod>2023-04-16T15:18:28.667Z</lastmod>
+    <lastmod>2023-04-22T03:31:04.812Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/posts/obsidian_zotero/index.html</loc>
-    <lastmod>2023-04-16T15:18:32.235Z</lastmod>
+    <lastmod>2023-04-22T03:31:08.513Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/posts/research_article_biggest_bacterium/index_post.html</loc>
-    <lastmod>2023-04-16T15:18:36.147Z</lastmod>
+    <lastmod>2023-04-22T03:31:18.889Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/posts/research_article_embryonic_learning/index_post.html</loc>
-    <lastmod>2023-04-16T15:18:40.614Z</lastmod>
+    <lastmod>2023-04-22T03:31:23.238Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/posts/welcome_to_blog/index.html</loc>
-    <lastmod>2023-04-16T15:18:43.377Z</lastmod>
+    <lastmod>2023-04-22T03:31:25.904Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/posts/word_happy_2022/index.html</loc>
-    <lastmod>2023-04-16T15:19:00.127Z</lastmod>
+    <lastmod>2023-04-22T03:31:45.129Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/tutorials/data_man/dplyr_1.html</loc>
-    <lastmod>2023-04-16T15:20:19.001Z</lastmod>
+    <lastmod>2023-04-22T03:32:03.600Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/tutorials/data_man/dplyr_2.html</loc>
-    <lastmod>2023-04-16T15:20:36.552Z</lastmod>
+    <lastmod>2023-04-22T03:32:17.251Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/tutorials/data_man/tidyr.html</loc>
-    <lastmod>2023-04-16T15:20:47.919Z</lastmod>
+    <lastmod>2023-04-22T03:32:27.216Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/tutorials/data_viz/ggplot_1.html</loc>
-    <lastmod>2023-04-16T15:20:59.556Z</lastmod>
+    <lastmod>2023-04-22T03:32:37.690Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/tutorials/data_viz/ggplot_2.html</loc>
-    <lastmod>2023-04-16T15:21:35.316Z</lastmod>
+    <lastmod>2023-04-22T03:33:01.530Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/tutorials/data_viz/ggplot_3.html</loc>
-    <lastmod>2023-04-16T15:23:09.784Z</lastmod>
+    <lastmod>2023-04-22T03:33:27.270Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/tutorials/data_viz/ggpubr.html</loc>
-    <lastmod>2023-04-16T15:23:30.342Z</lastmod>
+    <lastmod>2023-04-22T03:33:45.333Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/tutorials/network_analysis/network_analysis.html</loc>
-    <lastmod>2023-04-16T15:23:42.345Z</lastmod>
+    <lastmod>2023-04-22T03:34:11.228Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/tutorials/stat_basic/inter_reg.html</loc>
-    <lastmod>2023-04-16T15:24:02.202Z</lastmod>
+    <lastmod>2023-04-22T03:34:29.974Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/tutorials/stat_basic/intro_reg.html</loc>
-    <lastmod>2023-04-16T15:24:36.449Z</lastmod>
+    <lastmod>2023-04-22T03:35:24.701Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/tutorials/stat_basic/intro_stat.html</loc>
-    <lastmod>2023-04-16T15:24:58.754Z</lastmod>
+    <lastmod>2023-04-22T03:35:46.746Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/tutorials/stat_model/glmer_stat_model.html</loc>
-    <lastmod>2023-04-16T15:26:43.722Z</lastmod>
+    <lastmod>2023-04-22T03:36:57.705Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/tutorials/stat_model/glm_stat_model.html</loc>
-    <lastmod>2023-04-16T15:27:06.697Z</lastmod>
+    <lastmod>2023-04-22T03:37:16.270Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/tutorials/stat_model/inter_stat_model.html</loc>
-    <lastmod>2023-04-16T15:27:41.153Z</lastmod>
+    <lastmod>2023-04-22T03:37:55.491Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/tutorials/stat_model/intro_stat_model.html</loc>
-    <lastmod>2023-04-16T15:28:12.722Z</lastmod>
+    <lastmod>2023-04-22T03:38:21.385Z</lastmod>
   </url>
   <url>
     <loc>https://sciquest.netlify.app/tutorials.html</loc>
-    <lastmod>2023-04-16T15:28:18.036Z</lastmod>
+    <lastmod>2023-04-22T03:38:25.312Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sciquest.netlify.app/docs/site_libs/d3v5-5.9.2/API.html</loc>
+    <lastmod>2023-04-22T03:39:56.950Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sciquest.netlify.app/docs/site_libs/d3v5-5.9.2/CHANGES.html</loc>
+    <lastmod>2023-04-22T03:40:05.390Z</lastmod>
   </url>
 </urlset>

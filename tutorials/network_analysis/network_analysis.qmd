@@ -295,7 +295,7 @@ There are 12 friendships where people call each other for more than 5 hours.
 
 There are various ways to visualize both vertex and edge attributes in a network. For numerical attributes, we can change the size of the vertices and the width of the edges. For categorical attributes, we can change the color and shape of the vertices, and the line type and color of the edges.
 
-![Different ways to visualize network attributes](images/network_attributes.jpg)
+![Different ways to visualize network attributes](images/network_attributes.png)
 
 ### Vertex attributes
 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.326">
+<meta name="generator" content="quarto-1.3.336">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -228,7 +228,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">April 16, 2023</p>
+        <p class="date-modified">April 22, 2023</p>
       </div>
     </div>
       
@@ -337,7 +337,7 @@ TL;DR
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/social_network.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">A graph depicting a social network</figcaption><p></p>
+<figcaption class="figure-caption">A graph depicting a social network</figcaption>
 </figure>
 </div>
 <p>If we take a closer look at the figure, we can see that individual A has some kind of relationship with individuals B, C, and F, but not with D and E. The individuals, such as A, B, C, and so on, are called nodes or vertices, while the connections between them are known as lines, edges, or ties.</p>
@@ -429,31 +429,31 @@ e . . . . . .</code></pre>
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="5" data-code-annotation="1" data-code-cell="annotated-cell-3">First, the code creates a dataframe called df_names with 10 names and their genders.</span>
+<span data-code-annotation="1" data-code-lines="5" data-code-cell="annotated-cell-3">First, the code creates a dataframe called df_names with 10 names and their genders.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="12" data-code-annotation="2" data-code-cell="annotated-cell-3">Then, an empty dataframe called df_rel is created to store the relationships.</span>
+<span data-code-annotation="2" data-code-lines="12" data-code-cell="annotated-cell-3">Then, an empty dataframe called df_rel is created to store the relationships.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="16" data-code-annotation="3" data-code-cell="annotated-cell-3">The while loop is used to generate random relationships between the names until df_rel has 20 rows.</span>
+<span data-code-annotation="3" data-code-lines="16" data-code-cell="annotated-cell-3">The while loop is used to generate random relationships between the names until df_rel has 20 rows.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-lines="18" data-code-annotation="4" data-code-cell="annotated-cell-3">Inside the while loop, two names are randomly selected from the name column of df_names using the sample function.</span>
+<span data-code-annotation="4" data-code-lines="18" data-code-cell="annotated-cell-3">Inside the while loop, two names are randomly selected from the name column of df_names using the sample function.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-lines="22" data-code-annotation="5" data-code-cell="annotated-cell-3">The if statement checks whether the two names are the same or whether they have already been added as a relationship to df_rel. If either of these conditions is true, the loop moves on to select a new pair of names.</span>
+<span data-code-annotation="5" data-code-lines="22" data-code-cell="annotated-cell-3">The if statement checks whether the two names are the same or whether they have already been added as a relationship to df_rel. If either of these conditions is true, the loop moves on to select a new pair of names.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-lines="25" data-code-annotation="6" data-code-cell="annotated-cell-3">If the two names are different and have not been added to df_rel, a new row is added to df_rel with the selected names and a randomly generated number between 1 and 10 as the number of call hours.</span>
+<span data-code-annotation="6" data-code-lines="25" data-code-cell="annotated-cell-3">If the two names are different and have not been added to df_rel, a new row is added to df_rel with the selected names and a randomly generated number between 1 and 10 as the number of call hours.</span>
 </dd>
 <dt data-target-cell="annotated-cell-3" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-lines="31" data-code-annotation="7" data-code-cell="annotated-cell-3">Once df_rel has 20 rows, the loop stops, and the final dataframe is printed using print(df_rel).</span>
+<span data-code-annotation="7" data-code-lines="31" data-code-cell="annotated-cell-3">Once df_rel has 20 rows, the loop stops, and the final dataframe is printed using print(df_rel).</span>
 </dd>
 </dl>
 </div>
@@ -482,9 +482,9 @@ e . . . . . .</code></pre>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Viewing the igraph object</span></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>df_rel_ig</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>IGRAPH e989732 UN-- 10 20 -- 
+<pre><code>IGRAPH 7f09da7 UN-- 10 20 -- 
 + attr: name (v/c)
-+ edges from e989732 (vertex names):
++ edges from 7f09da7 (vertex names):
  [1] John    --Bob      Eve     --David    John    --Isabelle Isabelle--Charlie 
  [5] John    --Henry    David   --Charlie  Eve     --Grace    Isabelle--Grace   
  [9] John    --Grace    Isabelle--Frank    Eve     --Henry    Isabelle--Alice   
@@ -509,7 +509,7 @@ e . . . . . .</code></pre>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Viewing the nodes/vertices</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">V</span>(df_rel_ig)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>+ 10/10 vertices, named, from e989732:
+<pre><code>+ 10/10 vertices, named, from 7f09da7:
  [1] John     Bob      Eve      David    Isabelle Charlie  Henry    Grace   
  [9] Frank    Alice   </code></pre>
 </div>
@@ -519,7 +519,7 @@ e . . . . . .</code></pre>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Viewing the edges</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(df_rel_ig)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>+ 20/20 edges from e989732 (vertex names):
+<pre><code>+ 20/20 edges from 7f09da7 (vertex names):
  [1] John    --Bob      Eve     --David    John    --Isabelle Isabelle--Charlie 
  [5] John    --Henry    David   --Charlie  Eve     --Grace    Isabelle--Grace   
  [9] John    --Grace    Isabelle--Frank    Eve     --Henry    Isabelle--Alice   
@@ -550,9 +550,9 @@ e . . . . . .</code></pre>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Viewing the igraph object</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>df_rel_ig</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>IGRAPH e989732 UN-- 10 20 -- 
+<pre><code>IGRAPH 7f09da7 UN-- 10 20 -- 
 + attr: name (v/c)
-+ edges from e989732 (vertex names):
++ edges from 7f09da7 (vertex names):
  [1] John    --Bob      Eve     --David    John    --Isabelle Isabelle--Charlie 
  [5] John    --Henry    David   --Charlie  Eve     --Grace    Isabelle--Grace   
  [9] John    --Grace    Isabelle--Frank    Eve     --Henry    Isabelle--Alice   
@@ -576,9 +576,9 @@ e . . . . . .</code></pre>
 <span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Viewing the igraph object</span></span>
 <span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>df_rel_ig_gender</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>IGRAPH e989732 UN-- 10 20 -- 
+<pre><code>IGRAPH 7f09da7 UN-- 10 20 -- 
 + attr: name (v/c), gender (v/c)
-+ edges from e989732 (vertex names):
++ edges from 7f09da7 (vertex names):
  [1] John    --Bob      Eve     --David    John    --Isabelle Isabelle--Charlie 
  [5] John    --Henry    David   --Charlie  Eve     --Grace    Isabelle--Grace   
  [9] John    --Grace    Isabelle--Frank    Eve     --Henry    Isabelle--Alice   
@@ -601,9 +601,9 @@ e . . . . . .</code></pre>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Viewing the igraph object</span></span>
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>df_rel_ig_call</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>IGRAPH e989732 UN-- 10 20 -- 
+<pre><code>IGRAPH 7f09da7 UN-- 10 20 -- 
 + attr: name (v/c), call_hours (e/n)
-+ edges from e989732 (vertex names):
++ edges from 7f09da7 (vertex names):
  [1] John    --Bob      Eve     --David    John    --Isabelle Isabelle--Charlie 
  [5] John    --Henry    David   --Charlie  Eve     --Grace    Isabelle--Grace   
  [9] John    --Grace    Isabelle--Frank    Eve     --Henry    Isabelle--Alice   
@@ -625,9 +625,9 @@ e . . . . . .</code></pre>
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Viewing the igraph object</span></span>
 <span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>drug_ig_complete</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>IGRAPH e9fd014 UN-- 10 20 -- 
+<pre><code>IGRAPH 7f6c707 UN-- 10 20 -- 
 + attr: name (v/c), gender (v/c), call_hours (e/n)
-+ edges from e9fd014 (vertex names):
++ edges from 7f6c707 (vertex names):
  [1] Bob     --John     David   --Eve      Isabelle--John     Charlie --Isabelle
  [5] Henry   --John     Charlie --David    Eve     --Grace    Grace   --Isabelle
  [9] Grace   --John     Frank   --Isabelle Eve     --Henry    Alice   --Isabelle
@@ -663,7 +663,7 @@ $gender
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Viewing all friends of John</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(drug_ig_complete)[[<span class="fu">.inc</span>(<span class="st">'John'</span>)]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>+ 5/20 edges from e9fd014 (vertex names):
+<pre><code>+ 5/20 edges from 7f6c707 (vertex names):
        tail head tid hid call_hours
 1       Bob John   2  10          6
 3  Isabelle John   9  10          5
@@ -678,7 +678,7 @@ $gender
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Viewing relationships with call hours of more than 5 hours</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">E</span>(drug_ig_complete)[[call_hours <span class="sc">&gt;</span> <span class="dv">5</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>+ 14/20 edges from e9fd014 (vertex names):
+<pre><code>+ 14/20 edges from 7f6c707 (vertex names):
       tail     head tid hid call_hours
 1      Bob     John   2  10          6
 2    David      Eve   4   5          6
@@ -703,8 +703,8 @@ $gender
 <p>There are various ways to visualize both vertex and edge attributes in a network. For numerical attributes, we can change the size of the vertices and the width of the edges. For categorical attributes, we can change the color and shape of the vertices, and the line type and color of the edges.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/network_attributes.jpg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Different ways to visualize network attributes</figcaption><p></p>
+<p><img src="images/network_attributes.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Different ways to visualize network attributes</figcaption>
 </figure>
 </div>
 <section id="vertex-attributes-1" class="level3" data-number="6.1">
@@ -883,9 +883,9 @@ $gender
 <span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="co"># print output</span></span>
 <span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>graph</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>IGRAPH ecf1e91 DN-- 21 20 -- 
+<pre><code>IGRAPH 813addf DN-- 21 20 -- 
 + attr: name (v/c)
-+ edges from ecf1e91 (vertex names):
++ edges from 813addf (vertex names):
  [1] Patient Zero-&gt;Person 1  Patient Zero-&gt;Person 2  Person 2    -&gt;Person 3 
  [4] Person 1    -&gt;Person 4  Person 2    -&gt;Person 5  Person 1    -&gt;Person 6 
  [7] Person 1    -&gt;Person 7  Person 5    -&gt;Person 8  Person 4    -&gt;Person 9 
@@ -924,7 +924,7 @@ $gender
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># printing all edged going out from patient zero</span></span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">incident</span>(graph, <span class="st">'Patient Zero'</span>, <span class="at">mode =</span> <span class="fu">c</span>(<span class="st">"out"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>+ 2/20 edges from ed03b05 (vertex names):
+<pre><code>+ 2/20 edges from 814687e (vertex names):
 [1] Patient Zero-&gt;Person 2 Patient Zero-&gt;Person 1</code></pre>
 </div>
 </div>
@@ -933,7 +933,7 @@ $gender
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># printing all edges coming into person 3</span></span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">incident</span>(graph, <span class="st">'Person 3'</span>, <span class="at">mode =</span> <span class="fu">c</span>(<span class="st">"in"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>+ 1/20 edge from ed03b05 (vertex names):
+<pre><code>+ 1/20 edge from 814687e (vertex names):
 [1] Person 2-&gt;Person 3</code></pre>
 </div>
 </div>
@@ -942,7 +942,7 @@ $gender
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># printing all edges connected to person 5</span></span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">incident</span>(graph, <span class="st">'Person 5'</span>, <span class="at">mode =</span> <span class="fu">c</span>(<span class="st">"all"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>+ 3/20 edges from ed03b05 (vertex names):
+<pre><code>+ 3/20 edges from 814687e (vertex names):
 [1] Person 2-&gt;Person 5  Person 5-&gt;Person 8  Person 5-&gt;Person 11</code></pre>
 </div>
 </div>
@@ -952,7 +952,7 @@ $gender
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># printing all vertices that are connected to an edge</span></span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head_of</span>(graph, <span class="fu">E</span>(graph))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>+ 20/21 vertices, named, from ed03b05:
+<pre><code>+ 20/21 vertices, named, from 814687e:
  [1] Person 1  Person 2  Person 3  Person 4  Person 5  Person 6  Person 7 
  [8] Person 8  Person 9  Person 10 Person 11 Person 12 Person 13 Person 14
 [15] Person 15 Person 16 Person 17 Person 18 Person 19 Person 20</code></pre>
@@ -968,7 +968,7 @@ $gender
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># finding the neighbors of patient zero</span></span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">neighbors</span>(graph, <span class="st">'Patient Zero'</span>, <span class="at">mode =</span> <span class="fu">c</span>(<span class="st">"all"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>+ 2/21 vertices, named, from ed03b05:
+<pre><code>+ 2/21 vertices, named, from 814687e:
 [1] Person 2 Person 1</code></pre>
 </div>
 </div>
@@ -983,7 +983,7 @@ $gender
 <span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a><span class="co"># finding common neighbors between person 1 and person 2</span></span>
 <span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a><span class="fu">intersection</span>(x,y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>+ 1/21 vertex, named, from ed03b05:
+<pre><code>+ 1/21 vertex, named, from 814687e:
 [1] Patient Zero</code></pre>
 </div>
 </div>
@@ -1008,7 +1008,7 @@ $gender
 <span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="fu">farthest_vertices</span>(graph)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$vertices
-+ 2/21 vertices, named, from ed76401:
++ 2/21 vertices, named, from 8192077:
 [1] Patient Zero Person 12   
 
 $distance
@@ -1020,7 +1020,7 @@ $distance
 <div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># finding the longest path in the network</span></span>
 <span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="fu">get_diameter</span>(graph)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>+ 5/21 vertices, named, from ed76401:
+<pre><code>+ 5/21 vertices, named, from 8192077:
 [1] Patient Zero Person 2     Person 5     Person 8     Person 12   </code></pre>
 </div>
 </div>
@@ -1046,7 +1046,7 @@ Patient Zero         3</code></pre>
 <span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ego</span>(graph, <span class="dv">2</span>, <span class="st">'Patient Zero'</span>, <span class="at">mode =</span> <span class="fu">c</span>(<span class="st">'all'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
-+ 10/21 vertices, named, from ed76401:
++ 10/21 vertices, named, from 8192077:
  [1] Patient Zero Person 2     Person 1     Person 5     Person 3    
  [6] Person 16    Person 18    Person 4     Person 7     Person 6    </code></pre>
 </div>
@@ -1091,7 +1091,7 @@ Patient Zero         3</code></pre>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/degree.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">In-degrees and Out-degrees</figcaption><p></p>
+<figcaption class="figure-caption">In-degrees and Out-degrees</figcaption>
 </figure>
 </div>
 <p>Vertices with a high number of connections or with a high degree can be important. We can check the degrees of all vertices with the <code>degree()</code> function.</p>
@@ -1211,9 +1211,9 @@ Patient Zero         3</code></pre>
 <div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generating a random network graph</span></span>
 <span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a><span class="fu">erdos.renyi.game</span>(<span class="at">n =</span> <span class="fu">gorder</span>(graph), <span class="at">p.or.m =</span> <span class="fu">edge_density</span>(graph), <span class="at">type =</span> <span class="st">'gnp'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>IGRAPH eed9a28 U--- 21 8 -- Erdos-Renyi (gnp) graph
+<pre><code>IGRAPH 8249549 U--- 21 8 -- Erdos-Renyi (gnp) graph
 + attr: name (g/c), type (g/c), loops (g/l), p (g/n)
-+ edges from eed9a28:
++ edges from 8249549:
 [1]  4-- 5  2-- 9 12--13  1--16 15--16 14--19 13--20  4--21</code></pre>
 </div>
 </div>
@@ -1272,15 +1272,15 @@ graph TD
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-47" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-lines="5" data-code-annotation="1" data-code-cell="annotated-cell-47">First we generate an empty list with 1000 <code>NULL</code> entries which we will be using to store our 1000 random networks.</span>
+<span data-code-annotation="1" data-code-lines="5" data-code-cell="annotated-cell-47">First we generate an empty list with 1000 <code>NULL</code> entries which we will be using to store our 1000 random networks.</span>
 </dd>
 <dt data-target-cell="annotated-cell-47" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-lines="8" data-code-annotation="2" data-code-cell="annotated-cell-47">The for loop generates 1000 random networks using the Erdős-Rényi model with the same number of vertices and edge density as the original network (which is got from the <code>graph</code> object, which we had saved earlier). The networks are then saved in the empty list created in the previous step.</span>
+<span data-code-annotation="2" data-code-lines="8" data-code-cell="annotated-cell-47">The for loop generates 1000 random networks using the Erdős-Rényi model with the same number of vertices and edge density as the original network (which is got from the <code>graph</code> object, which we had saved earlier). The networks are then saved in the empty list created in the previous step.</span>
 </dd>
 <dt data-target-cell="annotated-cell-47" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-lines="14" data-code-annotation="3" data-code-cell="annotated-cell-47">This line uses the <code>lapply()</code> function to apply the <code>mean_distance()</code> function to each element in the <code>list_empty</code> list, which calculates the average path length for each of the 1000 random networks. The <code>unlist()</code> function is used to convert the resulting list of average path lengths into a vector.</span>
+<span data-code-annotation="3" data-code-lines="14" data-code-cell="annotated-cell-47">This line uses the <code>lapply()</code> function to apply the <code>mean_distance()</code> function to each element in the <code>list_empty</code> list, which calculates the average path length for each of the 1000 random networks. The <code>unlist()</code> function is used to convert the resulting list of average path lengths into a vector.</span>
 </dd>
 </dl>
 </div>
@@ -1293,7 +1293,7 @@ graph TD
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-49" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-lines="2" data-code-annotation="4" data-code-cell="annotated-cell-49">The above code generates a histogram of the distribution of average path lengths for the 1000 random networks using the <code>hist()</code> function. The second line adds a vertical line at the average path length of the original network using the <code>abline()</code> function. Finally, the last line calculates the proportion of random networks that have an average path length less than that of the original network using the <code>mean()</code> function. The comparison is done using the <code>&lt;</code> operator and the <code>average.path.length()</code> function calculates the average path length of the original network.</span>
+<span data-code-annotation="4" data-code-lines="2" data-code-cell="annotated-cell-49">The above code generates a histogram of the distribution of average path lengths for the 1000 random networks using the <code>hist()</code> function. The second line adds a vertical line at the average path length of the original network using the <code>abline()</code> function. Finally, the last line calculates the proportion of random networks that have an average path length less than that of the original network using the <code>mean()</code> function. The comparison is done using the <code>&lt;</code> operator and the <code>average.path.length()</code> function calculates the average path length of the original network.</span>
 </dd>
 </dl>
 </div>
@@ -1371,31 +1371,31 @@ graph TD
 <span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a><span class="fu">largest_cliques</span>(df_rel_ig)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
-+ 3/10 vertices, named, from e989732:
++ 3/10 vertices, named, from 7f09da7:
 [1] Alice    Isabelle Grace   
 
 [[2]]
-+ 3/10 vertices, named, from e989732:
++ 3/10 vertices, named, from 7f09da7:
 [1] David Frank Eve  
 
 [[3]]
-+ 3/10 vertices, named, from e989732:
++ 3/10 vertices, named, from 7f09da7:
 [1] David   Frank   Charlie
 
 [[4]]
-+ 3/10 vertices, named, from e989732:
++ 3/10 vertices, named, from 7f09da7:
 [1] Isabelle Frank    Charlie 
 
 [[5]]
-+ 3/10 vertices, named, from e989732:
++ 3/10 vertices, named, from 7f09da7:
 [1] Isabelle John     Grace   
 
 [[6]]
-+ 3/10 vertices, named, from e989732:
++ 3/10 vertices, named, from 7f09da7:
 [1] Henry Frank Eve  
 
 [[7]]
-+ 3/10 vertices, named, from e989732:
++ 3/10 vertices, named, from 7f09da7:
 [1] Henry   Frank   Charlie</code></pre>
 </div>
 </div>
@@ -1406,51 +1406,51 @@ graph TD
 <span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a><span class="fu">max_cliques</span>(df_rel_ig)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
-+ 2/10 vertices, named, from e989732:
++ 2/10 vertices, named, from 7f09da7:
 [1] Bob   Alice
 
 [[2]]
-+ 2/10 vertices, named, from e989732:
++ 2/10 vertices, named, from 7f09da7:
 [1] Bob  John
 
 [[3]]
-+ 3/10 vertices, named, from e989732:
++ 3/10 vertices, named, from 7f09da7:
 [1] Alice    Isabelle Grace   
 
 [[4]]
-+ 3/10 vertices, named, from e989732:
++ 3/10 vertices, named, from 7f09da7:
 [1] David Frank Eve  
 
 [[5]]
-+ 3/10 vertices, named, from e989732:
++ 3/10 vertices, named, from 7f09da7:
 [1] David   Frank   Charlie
 
 [[6]]
-+ 2/10 vertices, named, from e989732:
++ 2/10 vertices, named, from 7f09da7:
 [1] David John 
 
 [[7]]
-+ 3/10 vertices, named, from e989732:
++ 3/10 vertices, named, from 7f09da7:
 [1] Isabelle Frank    Charlie 
 
 [[8]]
-+ 3/10 vertices, named, from e989732:
++ 3/10 vertices, named, from 7f09da7:
 [1] Isabelle John     Grace   
 
 [[9]]
-+ 2/10 vertices, named, from e989732:
++ 2/10 vertices, named, from 7f09da7:
 [1] John  Henry
 
 [[10]]
-+ 3/10 vertices, named, from e989732:
++ 3/10 vertices, named, from 7f09da7:
 [1] Henry Frank Eve  
 
 [[11]]
-+ 3/10 vertices, named, from e989732:
++ 3/10 vertices, named, from 7f09da7:
 [1] Henry   Frank   Charlie
 
 [[12]]
-+ 2/10 vertices, named, from e989732:
++ 2/10 vertices, named, from 7f09da7:
 [1] Grace Eve  </code></pre>
 </div>
 </div>
@@ -1520,7 +1520,7 @@ graph TD
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/community.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">A network with three colour coded communities</figcaption><p></p>
+<figcaption class="figure-caption">A network with three colour coded communities</figcaption>
 </figure>
 </div>
 <p>In the figure given above, we can see three distinct communities. These can represents communities of animals living in one place interacting with each other and with other communities in other places, or a relationship network where people with similar age groups form freinds relatively easily.</p>
@@ -2334,7 +2334,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb122-325"><a href="#cb122-325" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb122-326"><a href="#cb122-326" aria-hidden="true" tabindex="-1"></a>There are various ways to visualize both vertex and edge attributes in a network. For numerical attributes, we can change the size of the vertices and the width of the edges. For categorical attributes, we can change the color and shape of the vertices, and the line type and color of the edges.</span>
 <span id="cb122-327"><a href="#cb122-327" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb122-328"><a href="#cb122-328" aria-hidden="true" tabindex="-1"></a><span class="al">![Different ways to visualize network attributes](images/network_attributes.jpg)</span></span>
+<span id="cb122-328"><a href="#cb122-328" aria-hidden="true" tabindex="-1"></a><span class="al">![Different ways to visualize network attributes](images/network_attributes.png)</span></span>
 <span id="cb122-329"><a href="#cb122-329" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb122-330"><a href="#cb122-330" aria-hidden="true" tabindex="-1"></a><span class="fu">### Vertex attributes</span></span>
 <span id="cb122-331"><a href="#cb122-331" aria-hidden="true" tabindex="-1"></a></span>
@@ -3089,7 +3089,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
     <li class="nav-item compact">
-    <a class="nav-link" href="mailto:jewel15@alumni.iisertvm.ac.in">
+    <a class="nav-link" href="mailto:jewel.johnson@bsu.edu">
       <i class="bi bi-briefcase" role="img">
 </i> 
     </a>

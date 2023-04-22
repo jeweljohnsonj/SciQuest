@@ -13,7 +13,7 @@ format:
 ---
 
 ::: {.column-screen-inset}
-<iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1x140XobOdXwflXTyN53o_0udhJAOW8SVnPgRX5iXtxE&font=Default&lang=en&initial_zoom=2&height=650' width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
+<iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1x140XobOdXwflXTyN53o_0udhJAOW8SVnPgRX5iXtxE&font=Default&lang=en&initial_zoom=4&height=650' width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
 :::
 
 Hey there! My name is Jewel Johnson, and this is my blog showcasing my journey in exploring science. I am interested in studying animal behavior and am currently an incoming PhD student at Ball State University in Indiana, where I will be studying embryonic social learning in fathead minnow fish.

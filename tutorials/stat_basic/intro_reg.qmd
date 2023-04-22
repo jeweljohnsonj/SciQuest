@@ -361,7 +361,7 @@ HorsePrices %>%
 
 ### Root mean square error (RMSE)
 
-The root mean square error is another metric which is similar to that of the residual standard error value and functions the same way in quantifying how inaccurate model predictions are. It is typically not preferred but it is another metric that is sometimes used. The only difference in the calculation between RSE and RMSE is that instead of divining by the degrees of freedom, RMSE is calculated by dividing the total number of observations.
+The root mean square error is another metric which is similar to that of the residual standard error value and functions the same way in quantifying how inaccurate model predictions are. It is typically not preferred but it is another metric that is sometimes used. The only difference in the calculation between RSE and RMSE is that instead of dividing by the degrees of freedom, RMSE is calculated by dividing the total number of observations.
 
 ```{r}
 library(Stat2Data)
@@ -1003,7 +1003,7 @@ We have around very 2% false negatives (100 - 98).
 
 Sensitivity tells us the proportion of true negatives. Higher values suggest that there are fewer false positives.
 
-$$Sensitivity = \frac{true\,negatives}{false\,positives + true\,negatives}$$
+$$Specificity = \frac{true\,negatives}{false\,positives + true\,negatives}$$
 
 ```{r}
 library(AER)
