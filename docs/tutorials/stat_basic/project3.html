@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.336">
+<meta name="generator" content="quarto-1.3.353">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="author" content="Jewel Johnson">
 <meta name="dcterms.date" content="2022-05-21">
 <meta name="description" content="Learn about standard error and standard deviation, and get to know the standard normal distribution">
+
 <title>SciQuest - Chapter 3: Standard error and standard deviation</title>
 <style>
 code{white-space: pre-wrap;}
@@ -56,6 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
@@ -72,7 +76,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -90,15 +95,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EVCS615JQR"></script><script type="text/javascript">
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EVCS615JQR"></script>
+
+<script type="text/javascript">
 
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
-</script><style>html{ scroll-behavior: smooth; }</style>
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
 <link href="../../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
-<script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script><script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script><script>document.addEventListener("DOMContentLoaded", function () {
+<script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
  for (var i = 0; i < mathElements.length; i++) {
@@ -111,7 +124,9 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
     fleqn: false
    });
 }}});
-  </script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="SciQuest - Chapter 3: Standard error and standard deviation">
 <meta property="og:description" content="Learn about standard error and standard deviation, and get to know the standard normal distribution">
@@ -122,13 +137,17 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <meta name="twitter:image" content="https://images.unsplash.com/photo-1613905780946-26b73b6f6e11?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1172&amp;q=80">
 <meta name="twitter:card" content="summary_large_image">
 </head>
+
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../favicon.png" alt="" class="navbar-logo"></a>
+    <img src="../../favicon.png" alt="" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">SciQuest</span>
     </a>
@@ -139,7 +158,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-<li class="nav-item">
+  <li class="nav-item">
     <a class="nav-link" href="../../blog.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
@@ -162,11 +181,15 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-<div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
-    </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <div class="quarto-title-block"><div><h1 class="title">Chapter 3: Standard error and standard deviation</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
                   <div>
@@ -206,66 +229,79 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#standard-error" id="toc-standard-error" class="nav-link active" data-scroll-target="#standard-error"><span class="header-section-number">1</span> Standard error</a></li>
+  <li><a href="#standard-error" id="toc-standard-error" class="nav-link active" data-scroll-target="#standard-error"><span class="header-section-number">1</span> Standard error</a></li>
   <li><a href="#standard-deviation" id="toc-standard-deviation" class="nav-link" data-scroll-target="#standard-deviation"><span class="header-section-number">2</span> Standard deviation</a></li>
   <li><a href="#standard-normal-distribution" id="toc-standard-normal-distribution" class="nav-link" data-scroll-target="#standard-normal-distribution"><span class="header-section-number">3</span> Standard normal distribution</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">4</span> References</a></li>
-  </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/SciQuest/edit/main/tutorials/stat_basic/project3.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/SciQuest/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/SciQuest/edit/main/tutorials/stat_basic/project3.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/SciQuest/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content"><div class="quarto-layout-panel">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="https://images.unsplash.com/photo-1613905780946-26b73b6f6e11?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1172&amp;q=80" class="preview-image img-fluid figure-img"></p>
-<figcaption class="figure-caption">Image by <a href="https://unsplash.com/@michalmatlon">Michal Matlon</a> on <a href="https://unsplash.com">Unsplash</a></figcaption></figure>
+<figure class="figure">
+<p><img src="https://images.unsplash.com/photo-1613905780946-26b73b6f6e11?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1172&amp;q=80" class="preview-image img-fluid figure-img"></p>
+<figcaption class="figure-caption">Image by <a href="https://unsplash.com/@michalmatlon">Michal Matlon</a> on <a href="https://unsplash.com">Unsplash</a></figcaption>
+</figure>
 </div>
 </div>
 </div>
 </div>
-<section id="standard-error" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="standard-error">
-<span class="header-section-number">1</span> Standard error</h2>
+<section id="standard-error" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="standard-error"><span class="header-section-number">1</span> Standard error</h2>
 <p>The standard error or more accurately called the <code>standard error of mean</code> is a measure of spread that calculates how far the sample mean is different from the population mean. It calculates the error in a sample statistic compared to the corresponding population parameter.</p>
 <p>The formula to calculate the standard error of mean is;</p>
 <p><span class="math display">\sigma_{\bar{X}} = \frac{s}{\sqrt{N}}</span></p>
 <p>where <span class="math inline">\sigma_{\bar{X}}</span> is standard error of mean, <span class="math inline">s</span> is sample standard deviation and <span class="math inline">N</span> is sample size.</p>
 <p>As you can see from the formula, if we increase our sampling size, the standard error of the mean decreases, and therefore our sample mean will closely resemble the population mean.</p>
-</section><section id="standard-deviation" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="standard-deviation">
-<span class="header-section-number">2</span> Standard deviation</h2>
+</section>
+<section id="standard-deviation" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="standard-deviation"><span class="header-section-number">2</span> Standard deviation</h2>
 <p>The equivalent of standard error, but for a sample in a population. Simply put, it tells us how much spread is there within a data, more precisely speaking, how much each of our data points are spread around the mean.</p>
 <p>The formula to calculate the standard deviation of the mean is;</p>
 <p><span class="math display">s = \sqrt{s^{2}} = \sqrt{\frac{\sum (x_{i} - \bar{x})^{2}}{N - 1}}</span> where <span class="math inline">s</span> is standard deviation, <span class="math inline">\sqrt{s^{2}}</span> is variance, <span class="math inline">x_{i}</span> is your data point, <span class="math inline">\bar{x}</span> is sample mean and <span class="math inline">N</span> is sample size.</p>
 <p>Because of this sometimes researchers cheat out by using standard error of the mean in the results, rather than using standard deviation, which leads to a false idea that their measurements are accurate.</p>
-</section><section id="standard-normal-distribution" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="standard-normal-distribution">
-<span class="header-section-number">3</span> Standard normal distribution</h2>
+</section>
+<section id="standard-normal-distribution" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="standard-normal-distribution"><span class="header-section-number">3</span> Standard normal distribution</h2>
 <p>A normal distribution with mean(<span class="math inline">\mu</span>) = 1 and variance(<span class="math inline">\sigma^{2}</span>) = 1 is called as a <code>standard normal distribution</code> or a <code>z-distribution</code>. With the help of standard deviation, we can split the area under the curve of standard normal distribution into three parts. This partitioning of the area is known as the <code>68–95–99.7 rule</code>. What it means is that;</p>
 <ul>
-<li>68% of the data will lie within <span class="math inline">±\sigma</span> from <span class="math inline">\mu</span>
-</li>
-<li>95% of the data will lie within <span class="math inline">±2\sigma</span> from <span class="math inline">\mu</span>
-</li>
-<li>99.7% of the data will lie within <span class="math inline">±3\sigma</span> from <span class="math inline">\mu</span>
-</li>
+<li>68% of the data will lie within <span class="math inline">±\sigma</span> from <span class="math inline">\mu</span></li>
+<li>95% of the data will lie within <span class="math inline">±2\sigma</span> from <span class="math inline">\mu</span></li>
+<li>99.7% of the data will lie within <span class="math inline">±3\sigma</span> from <span class="math inline">\mu</span></li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="https://www.nagwa.com/en/explainers/378184608718/"><img src="https://images.nagwa.com/figures/explainers/378184608718/2.svg" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Fig1: 68–95–99.7 rule. Credits: www.nagwa.com</figcaption></figure>
+<figure class="figure">
+<p><a href="https://www.nagwa.com/en/explainers/378184608718/"><img src="https://images.nagwa.com/figures/explainers/378184608718/2.svg" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Fig1: 68–95–99.7 rule. Credits: www.nagwa.com</figcaption>
+</figure>
 </div>
 <p>As previously mentioned, the width of the curve tells us about the variance/standard deviation of the data.</p>
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><a href="https://www.varsitytutors.com/hotmath/hotmath_help/topics/normal-distribution-of-data"><img src="https://www.varsitytutors.com/assets/vt-hotmath-legacy/hotmath_help/topics/normal-distribution-of-data/normal-distribution-1.gif" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Fig2: Area under the curve for different standard deviations. Credits: www.varsitytutors.com</figcaption></figure>
+<figure class="figure">
+<p><a href="https://www.varsitytutors.com/hotmath/hotmath_help/topics/normal-distribution-of-data"><img src="https://www.varsitytutors.com/assets/vt-hotmath-legacy/hotmath_help/topics/normal-distribution-of-data/normal-distribution-1.gif" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Fig2: Area under the curve for different standard deviations. Credits: www.varsitytutors.com</figcaption>
+</figure>
 </div>
-</section><section id="references" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="references">
-<span class="header-section-number">4</span> References</h2>
+</section>
+<section id="references" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="references"><span class="header-section-number">4</span> References</h2>
 <ol type="1">
-<li>Livingston EH. The mean and standard deviation: what does it all mean? J Surg Res. 2004 Jun 15;119(2):117-23. doi: 10.1016/j.jss.2004.02.008. PMID: 15145692. <a href="https://www.journalofsurgicalresearch.com/article/S0022-4804(04)00055-1/fulltext">Source</a>
-</li>
+<li>Livingston EH. The mean and standard deviation: what does it all mean? J Surg Res. 2004 Jun 15;119(2):117-23. doi: 10.1016/j.jss.2004.02.008. PMID: 15145692. <a href="https://www.journalofsurgicalresearch.com/article/S0022-4804(04)00055-1/fulltext">Source</a></li>
 </ol>
-<section id="last-updated-on" class="level4 unnumbered unlisted"><h4 class="unnumbered unlisted anchored" data-anchor-id="last-updated-on">Last updated on</h4>
+<section id="last-updated-on" class="level4 unnumbered unlisted">
+<h4 class="unnumbered unlisted anchored" data-anchor-id="last-updated-on">Last updated on</h4>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "2023-04-03 21:33:35 IST"</code></pre>
@@ -276,7 +312,10 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 
 <!-- -->
 
-</section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{johnson2022,
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{johnson2022,
   author = {Johnson, Jewel and Johnson, Jewel},
   title = {Chapter 3: {Standard} Error and Standard Deviation},
   date = {2022-05-21},
@@ -286,7 +325,8 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-johnson2022" class="csl-entry quarto-appendix-citeas" role="listitem">
 Johnson, Jewel, and Jewel Johnson. 2022. <span>“Chapter 3: Standard
 Error and Standard Deviation.”</span> May 21, 2022. <a href="https://sciquest.netlify.app//tutorials/stat_basic/project3.html">https://sciquest.netlify.app//tutorials/stat_basic/project3.html</a>.
-</div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -569,7 +609,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><script src="https://giscus.app/client.js" data-repo="jeweljohnsonj/SciQuest" data-repo-id="R_kgDOHW124A" data-category="General" data-category-id="DIC_kwDOHW124M4CPNVL" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<script src="https://giscus.app/client.js" data-repo="jeweljohnsonj/SciQuest" data-repo-id="R_kgDOHW124A" data-category="General" data-category-id="DIC_kwDOHW124M4CPNVL" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Chapter 3: Standard error and standard deviation"</span></span>
@@ -654,14 +695,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">Blog made using <a href="https://quarto.org/">Quarto®</a> with ❤️, by Jewel Johnson.</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-<li class="nav-item compact">
+    <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/jeweljohnsonj">
       <i class="bi bi-github" role="img">
 </i> 
@@ -686,9 +728,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
 </ul>
-</div>
+    </div>
   </div>
 </footer>
+
 
 
 <script src="../../site_libs/quarto-html/zenscroll-min.js"></script>

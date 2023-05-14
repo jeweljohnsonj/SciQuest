@@ -16,14 +16,20 @@ format:
 <iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1x140XobOdXwflXTyN53o_0udhJAOW8SVnPgRX5iXtxE&font=Default&lang=en&initial_zoom=4&height=650' width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
 :::
 
-Hey there! My name is Jewel Johnson, and this is my blog showcasing my journey in exploring science. I am interested in studying animal behavior and am currently an incoming PhD student at Ball State University in Indiana, where I will be studying embryonic social learning in fathead minnow fish.
+Hey there! My name is Jewel Johnson, and this is my blog showcasing my journey in exploring science.
 
-*   [Past] I completed my Master's in Biology from the [Indian Institute of Science Education and Research, Thiruvananthapuram](https://www.iisertvm.ac.in/) (IISER-TVM). My Master's thesis was on understanding the visual ecology of the giant honeybee (Apis dorsata), under the guidance of [Prof. Hema Somanathan](https://faculty.iisertvm.ac.in/beelab/) at IISER-TVM.
+I am interested in studying animal behavior and am curious to know how and why animals behave in a certain way. Currently, I am a PhD student in [Dr. Jessica Ward's lab](https://www.animalbehaviorlab.com/) at [Ball State University](https://www.bsu.edu/), where I will be studying embryonic learning using the fathead minnow fish.
 
-*   [Future] I am now an incoming PhD student in [Dr. Jessica Ward's lab](https://www.animalbehaviorlab.com/) at [Ball State University](https://www.bsu.edu/) and will be studying embryonic social learning using the fathead minnow as a model organism.
+I completed a dual degree program in biological sciences at the [Indian Institute of Science Education and Research, Thiruvananthapuram](https://www.iisertvm.ac.in/) (IISER-TVM), earning both my bachelor's and master's degrees. During my master's thesis, I worked in [Prof. Hema Somanathan's lab](https://faculty.iisertvm.ac.in/beelab/) at IISER-TVM, investigating how the giant honeybee (*Apis dorsata*) is able to forage during the twilight period despite having day-adapted apposition eyes.
 
-I created this blog using the [quarto](https://quarto.org/) package. My blog posts generally focus on science communication and R programming. I also believe that teaching refines one's ability to learn and comprehend. Therefore, I document my learning experience by writing extensive tutorials on the topics I am learning. You can find them in the "Tutorials" section in the navigation bar.
+I created this blog using the [quarto](https://quarto.org/) package. My blog posts primarily focus on science communication and R programming. Additionally, I firmly believe that teaching refines one's ability to learn and comprehend. Therefore, I document my learning experiences by writing extensive tutorials on the topics I am studying. You can find them in the "Tutorials" section on the navigation bar.
+
+
 
 <center>        
 <a href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_3/maxflags_9/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+</center>
+
+<center>
+**Thanks for visiting my blog!**
 </center>

@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.336">
+<meta name="generator" content="quarto-1.3.353">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
 <meta name="author" content="Jewel Johnson">
 <meta name="dcterms.date" content="2022-09-19">
 <meta name="description" content="Level up your regression knowledge using multiple explanatory variables">
+
 <title>SciQuest - Intermediate Regression in R</title>
 <style>
 code{white-space: pre-wrap;}
@@ -56,6 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
@@ -74,7 +78,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/quarto-contrib/social-share-0.1.0/social-share.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/social-share-0.1.0/all.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/quarto-contrib/social-share-0.1.0/all.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -92,16 +97,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EVCS615JQR"></script><script type="text/javascript">
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EVCS615JQR"></script>
+
+<script type="text/javascript">
 
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
-</script><style>html{ scroll-behavior: smooth; }</style>
-<script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script><link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
 <link href="../../site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
-<script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script><script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script><script>document.addEventListener("DOMContentLoaded", function () {
+<script src="../../site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
  for (var i = 0; i < mathElements.length; i++) {
@@ -114,7 +128,9 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
     fleqn: false
    });
 }}});
-  </script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+
 <link rel="stylesheet" href="../../styles.css">
 <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
 <meta property="og:title" content="SciQuest - Intermediate Regression in R">
@@ -130,13 +146,17 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <meta name="twitter:image-width" content="1920">
 <meta name="twitter:card" content="summary_large_image">
 </head>
+
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../favicon.png" alt="" class="navbar-logo"></a>
+    <img src="../../favicon.png" alt="" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">SciQuest</span>
     </a>
@@ -147,7 +167,7 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-<li class="nav-item">
+  <li class="nav-item">
     <a class="nav-link" href="../../blog.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
@@ -170,11 +190,15 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-<div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
-    </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <div class="quarto-title-block"><div><h1 class="title">Intermediate Regression in R</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
                   <div>
@@ -219,29 +243,34 @@ gtag('config', 'G-EVCS615JQR', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
   <li><a href="#linear-regression-using-multiple-variables" id="toc-linear-regression-using-multiple-variables" class="nav-link" data-scroll-target="#linear-regression-using-multiple-variables"><span class="header-section-number">2</span> Linear regression using multiple variables</a></li>
   <li><a href="#understanding-the-summary-of-a-multivariate-linear-model" id="toc-understanding-the-summary-of-a-multivariate-linear-model" class="nav-link" data-scroll-target="#understanding-the-summary-of-a-multivariate-linear-model"><span class="header-section-number">3</span> Understanding the summary of a multivariate linear model</a></li>
   <li><a href="#making-predictions-using-a-multivariate-linear-model" id="toc-making-predictions-using-a-multivariate-linear-model" class="nav-link" data-scroll-target="#making-predictions-using-a-multivariate-linear-model"><span class="header-section-number">4</span> Making predictions using a multivariate linear model</a></li>
-  <li>
-<a href="#assessing-a-multivariate-linear-model-fit" id="toc-assessing-a-multivariate-linear-model-fit" class="nav-link" data-scroll-target="#assessing-a-multivariate-linear-model-fit"><span class="header-section-number">5</span> Assessing a multivariate linear model fit</a>
+  <li><a href="#assessing-a-multivariate-linear-model-fit" id="toc-assessing-a-multivariate-linear-model-fit" class="nav-link" data-scroll-target="#assessing-a-multivariate-linear-model-fit"><span class="header-section-number">5</span> Assessing a multivariate linear model fit</a>
   <ul class="collapse">
-<li><a href="#adjusted-r-square-value" id="toc-adjusted-r-square-value" class="nav-link" data-scroll-target="#adjusted-r-square-value"><span class="header-section-number">5.1</span> Adjusted R square value</a></li>
-  </ul>
-</li>
+  <li><a href="#adjusted-r-square-value" id="toc-adjusted-r-square-value" class="nav-link" data-scroll-target="#adjusted-r-square-value"><span class="header-section-number">5.1</span> Adjusted R square value</a></li>
+  </ul></li>
   <li><a href="#linear-regression-with-interacting-terms" id="toc-linear-regression-with-interacting-terms" class="nav-link" data-scroll-target="#linear-regression-with-interacting-terms"><span class="header-section-number">6</span> Linear regression with interacting terms</a></li>
   <li><a href="#plotting-linear-model-with-an-interaction-term" id="toc-plotting-linear-model-with-an-interaction-term" class="nav-link" data-scroll-target="#plotting-linear-model-with-an-interaction-term"><span class="header-section-number">7</span> Plotting linear model with an interaction term</a></li>
   <li><a href="#simpsons-paradox" id="toc-simpsons-paradox" class="nav-link" data-scroll-target="#simpsons-paradox"><span class="header-section-number">8</span> Simpson’s Paradox</a></li>
   <li><a href="#visualizing-linear-models-with-two-numerical-explanatory-variables" id="toc-visualizing-linear-models-with-two-numerical-explanatory-variables" class="nav-link" data-scroll-target="#visualizing-linear-models-with-two-numerical-explanatory-variables"><span class="header-section-number">9</span> Visualizing linear models with two numerical explanatory variables</a></li>
   <li><a href="#visualizing-logistic-models-with-two-numerical-explanatory-variables" id="toc-visualizing-logistic-models-with-two-numerical-explanatory-variables" class="nav-link" data-scroll-target="#visualizing-logistic-models-with-two-numerical-explanatory-variables"><span class="header-section-number">10</span> Visualizing logistic models with two numerical explanatory variables</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">11</span> Conclusion</a></li>
-  </ul><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/SciQuest/edit/main/tutorials/stat_basic/inter_reg.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/SciQuest/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jeweljohnsonj/SciQuest/edit/main/tutorials/stat_basic/inter_reg.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/jeweljohnsonj/SciQuest/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content"><div class="cell">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<div class="cell">
 <div class="sourceCode cell-code hidden" id="cb1" data-startfrom="28" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 27;"><span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="pp">require</span>(<span class="st">"https://cdn.jsdelivr.net/npm/juxtaposejs@1.1.6/build/js/juxtapose.min.js"</span>)</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">catch</span>(() <span class="kw">=&gt;</span> <span class="kw">null</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display hidden">
@@ -272,42 +301,43 @@ TL;DR
 </ol>
 </div>
 </div>
-<section id="introduction" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="introduction">
-<span class="header-section-number">1</span> Introduction</h2>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
 <p>This tutorial is a sequel to the previous tutorial which covered the basics of regression. Here we will extend our knowledge to build models using more than one explanatory variable, how to visualise them and how to interpret the model summaries.</p>
-</section><section id="linear-regression-using-multiple-variables" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="linear-regression-using-multiple-variables">
-<span class="header-section-number">2</span> Linear regression using multiple variables</h2>
+</section>
+<section id="linear-regression-using-multiple-variables" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="linear-regression-using-multiple-variables"><span class="header-section-number">2</span> Linear regression using multiple variables</h2>
 <p>In the previous tutorial, we have seen how to build a linear model with a single exploratory variable. Now we will see how to build linear models using two variables.</p>
-<p>We will use the <code>HorsePrices</code> dataset from the <a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a> package in R. The dataset contains the price and related characteristics of horses listed for sale on the internet. Using the dataset, we will see how the price of a horse (<code>Price</code>) changes according to its age (<code>Age</code>) and also dues to its sex (<code>Sex</code>) using a linear model. Here, we have a numerical and a categorical variable as the explanatory variables. First, let us plot the data.</p>
+<p>We will use the <code>HorsePrices</code> dataset from the <code>{Stat2Data}</code> package in R. The dataset contains the price and related characteristics of horses listed for sale on the internet. Using the dataset, we will see how the price of a horse (<code>Price</code>) changes according to its age (<code>Age</code>) and also dues to its sex (<code>Sex</code>) using a linear model. Here, we have a numerical and a categorical variable as the explanatory variables. First, let us plot the data.</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">'Stat2Data'</span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"HorsePrices"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Plotting the data</span></span>
-<span><span class="va">HorsePrices</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Age</span>, <span class="va">Price</span>, col <span class="op">=</span> <span class="va">Sex</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Change in the price of the horse as a function of age and sex?"</span>,</span>
-<span>       x <span class="op">=</span> <span class="st">"Age (years)"</span>,</span>
-<span>       y <span class="op">=</span> <span class="st">"Price (dollars)"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(Stat2Data)) <span class="fu">install.packages</span>(<span class="st">'Stat2Data'</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"HorsePrices"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the data</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>HorsePrices <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(Age, Price, <span class="at">col =</span> Sex)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Change in the price of the horse as a function of age and sex?"</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Age (years)"</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Price (dollars)"</span>) <span class="sc">+</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="inter_reg_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>At a glance, for intermediately aged horses, the price is high compared to the rest of the age range. Also, female horses seem to have to be priced less compared to males. Let us see if that is the case by building a linear model. To predict the response variable using multiple explanatory variables, we will append them using the <code>+</code> sign.</p>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"HorsePrices"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Building a linear model</span></span>
-<span><span class="va">model_lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Price</span> <span class="op">~</span> <span class="va">Age</span> <span class="op">+</span> <span class="va">Sex</span>, data <span class="op">=</span> <span class="va">HorsePrices</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Printing model output</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">model_lm</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"HorsePrices"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Building a linear model</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>model_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Price <span class="sc">~</span> Age <span class="sc">+</span> Sex, <span class="at">data =</span> HorsePrices)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Printing model output</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -331,29 +361,30 @@ F-statistic: 11.48 on 2 and 47 DF,  p-value: 8.695e-05</code></pre>
 </div>
 </div>
 <p>Unlike the earlier case with one explanatory variable, we now have two coefficient values and an intercept value. We will soon see how to interpret the coefficient values. But for now, we can see that their age does not significantly explain the variance seen in price but sex does.</p>
-<p>Now let us try plotting the model. Instead of using the <code><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth()</a></code> function in the <a href="https://ggplot2.tidyverse.org">ggplot2</a> package in R, we will use the <code><a href="moderndive.github.io/moderndive/reference/geom_parallel_slopes.html">geom_parallel_slopes()</a></code> function from the <a href="https://moderndive.github.io/moderndive/">moderndive</a> package in R. We will later see why we did not use the <code><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth()</a></code> function.</p>
+<p>Now let us try plotting the model. Instead of using the <code>geom_smooth()</code> function in the <code>{ggplot2}</code> package in R, we will use the <code>geom_parallel_slopes()</code> function from the <code>{moderndive}</code> package in R. We will later see why we did not use the <code>geom_smooth()</code> function.</p>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va"><a href="https://moderndive.github.io/moderndive/">moderndive</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">'moderndive'</span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"HorsePrices"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Plotting the data</span></span>
-<span><span class="va">HorsePrices</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Age</span>, <span class="va">Price</span>, col <span class="op">=</span> <span class="va">Sex</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Change in the price of the horse as a function of age and sex?"</span>,</span>
-<span>       x <span class="op">=</span> <span class="st">"Age (years)"</span>,</span>
-<span>       y <span class="op">=</span> <span class="st">"Price (dollars)"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="moderndive.github.io/moderndive/reference/geom_parallel_slopes.html">geom_parallel_slopes</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(moderndive)) <span class="fu">install.packages</span>(<span class="st">'moderndive'</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"HorsePrices"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the data</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>HorsePrices <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(Age, Price, <span class="at">col =</span> Sex)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Change in the price of the horse as a function of age and sex?"</span>,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Age (years)"</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Price (dollars)"</span>) <span class="sc">+</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_parallel_slopes</span>() <span class="sc">+</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="inter_reg_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>There is a difference in price between male and female horses but their prices are not changing across age. This is exactly what we saw in the model summary results. You can also see that the lines are parallel to each other.</p>
-</section><section id="understanding-the-summary-of-a-multivariate-linear-model" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="understanding-the-summary-of-a-multivariate-linear-model">
-<span class="header-section-number">3</span> Understanding the summary of a multivariate linear model</h2>
+</section>
+<section id="understanding-the-summary-of-a-multivariate-linear-model" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="understanding-the-summary-of-a-multivariate-linear-model"><span class="header-section-number">3</span> Understanding the summary of a multivariate linear model</h2>
 <p>Given below is the summary output of the multivariate model we built earlier.</p>
 <p><img src="images/lm_summary_multi.png" class="img-fluid"></p>
 <ol type="1">
@@ -361,82 +392,83 @@ F-statistic: 11.48 on 2 and 47 DF,  p-value: 8.695e-05</code></pre>
 <li><p>In section 2, we have the first quartile, median and third quartile of the residuals of the model. This tells us whether the residuals are normally distributed if the median value is close to zero and, the first and third quartile values are approximately the same in magnitude.</p></li>
 <li><p>In section 3, we have the coefficient values of the exploratory variables. Please remember that the variable ‘sex’ has two levels; female and male. By default, R calculates the intercept value for the first level in the first categorical response variable in the model formula. Here, in our case, that first level is female. Therefore, the intercept value gives us the average price value for female horses when age is 0. So here, the y-intercept value of 18199 corresponds to the average price of female horses when age is 0. The second value is the slope of Age, which is -220.1, which corresponds to a decrease in the price by a value of 220.1 dollars when the age of the horse increases by 1 year. The third value corresponds to the difference in the y-intercept value for males as compared to the main intercept value, which is for females and is 18199. In short, it tells us that male horses with age 0 are priced 17008 dollars more on average when compared to female horses. If we want to see the individual averages of the levels in the categorical exploratory variables, then we should use <code>-1</code> in the model formula, which is something we saw in the earlier tutorial.</p></li>
 <li><p>Section 4 contains metrics which assess model performance. In the earlier tutorial, we saw what residual standard error and R squared values means. Adjusted R square value is a metric similar to R squared value but is calculated for models with multiple explanatory variables. Like R squared, it tells us how much variance seen in the response variable is explained by the explanatory variables and the value lies between 0 and 1. Here we have around 30% variance seen in price explained by both age and sex of the horses.</p></li>
-</ol></section><section id="making-predictions-using-a-multivariate-linear-model" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="making-predictions-using-a-multivariate-linear-model">
-<span class="header-section-number">4</span> Making predictions using a multivariate linear model</h2>
-<p>As seen earlier, we can use the models to predict values outside the dataset. We will use the <code><a href="https://tidyr.tidyverse.org/reference/expand_grid.html">expand_grid()</a></code> function to make a data frame containing the values for which we want the model to predict.</p>
+</ol>
+</section>
+<section id="making-predictions-using-a-multivariate-linear-model" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="making-predictions-using-a-multivariate-linear-model"><span class="header-section-number">4</span> Making predictions using a multivariate linear model</h2>
+<p>As seen earlier, we can use the models to predict values outside the dataset. We will use the <code>expand_grid()</code> function to make a data frame containing the values for which we want the model to predict.</p>
 <p>Let us predict the price of a 20-year-old male horse.</p>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"HorsePrices"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Building a linear model</span></span>
-<span><span class="va">model_lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Price</span> <span class="op">~</span> <span class="va">Age</span> <span class="op">+</span> <span class="va">Sex</span>, data <span class="op">=</span> <span class="va">HorsePrices</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Making a exploratory data frame</span></span>
-<span><span class="va">explorartory_values</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/expand_grid.html">expand_grid</a></span><span class="op">(</span>Sex <span class="op">=</span> <span class="st">"m"</span>,</span>
-<span>                                   Age <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Predicting values</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">model_lm</span>, <span class="va">explorartory_values</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"HorsePrices"</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Building a linear model</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>model_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Price <span class="sc">~</span> Age <span class="sc">+</span> Sex, <span class="at">data =</span> HorsePrices)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Making a exploratory data frame</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>explorartory_values <span class="ot">&lt;-</span> <span class="fu">expand_grid</span>(<span class="at">Sex =</span> <span class="st">"m"</span>,</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">Age =</span> <span class="dv">20</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Predicting values</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(model_lm, explorartory_values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       1 
 30806.54 </code></pre>
 </div>
 </div>
 <p>The model predicts that the price of such a horse would be 30806 dollars.</p>
-</section><section id="assessing-a-multivariate-linear-model-fit" class="level2" data-number="5"><h2 data-number="5" class="anchored" data-anchor-id="assessing-a-multivariate-linear-model-fit">
-<span class="header-section-number">5</span> Assessing a multivariate linear model fit</h2>
-<section id="adjusted-r-square-value" class="level3" data-number="5.1"><h3 data-number="5.1" class="anchored" data-anchor-id="adjusted-r-square-value">
-<span class="header-section-number">5.1</span> Adjusted R square value</h3>
+</section>
+<section id="assessing-a-multivariate-linear-model-fit" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="assessing-a-multivariate-linear-model-fit"><span class="header-section-number">5</span> Assessing a multivariate linear model fit</h2>
+<section id="adjusted-r-square-value" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="adjusted-r-square-value"><span class="header-section-number">5.1</span> Adjusted R square value</h3>
 <p>For a simple linear model, we have seen how to interpret the R-squared value, Residual standard error (RSE) value and the Root mean square error (RMSE) value. For a multivariate linear model, the R squared value will be greater compared to a simple linear model and this is because as you add more variables to explain the response variable, the model tends to best fit the available dataset. And in doing so, the model will no longer be useful to make inferences about the general population. So the adjusted R-square value is a metric that describes the percentage of variance explained by the explanatory variable but is measured by penalising the model with multiple explanatory variables by assigning a small penalty term for each additional explanatory variable. The formula for calculating the adjusted R square value is as follows;</p>
 <p><span class="math display">\bar{R^2} = 1-(1-R^2)\frac{n_{obs}-1}{n_{obs}-n_{var}-1} </span></p>
 <ul>
-<li>
-<span class="math inline">\bar{R^2}</span> = Adjusted R squared value</li>
-<li>
-<span class="math inline">R^2</span> = R squared value</li>
-<li>
-<span class="math inline">n_{obs}</span> = Number of observations</li>
-<li>
-<span class="math inline">n_{var}</span> = Number of variables in the model</li>
+<li><span class="math inline">\bar{R^2}</span> = Adjusted R squared value</li>
+<li><span class="math inline">R^2</span> = R squared value</li>
+<li><span class="math inline">n_{obs}</span> = Number of observations</li>
+<li><span class="math inline">n_{var}</span> = Number of variables in the model</li>
 </ul>
 <p>Please note that the adjusted R square value is always lower than the R squared value.</p>
-<p>In R, we can extract the adjusted R square value of a model using the <code><a href="https://generics.r-lib.org/reference/glance.html">glance()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/pull.html">pull()</a></code> functions in the <a href="https://broom.tidymodels.org/">broom</a> and <a href="https://dplyr.tidyverse.org">dplyr</a> packages in R. The adjusted R square in the table would be under the <code>adj.r.squared</code> column.</p>
+<p>In R, we can extract the adjusted R square value of a model using the <code>glance()</code> and <code>pull()</code> functions in the <code>{broom}</code> and <code>{dplyr}</code> packages in R. The adjusted R square in the table would be under the <code>adj.r.squared</code> column.</p>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://broom.tidymodels.org/">broom</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"HorsePrices"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Building a linear model</span></span>
-<span><span class="va">model_lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Price</span> <span class="op">~</span> <span class="va">Age</span> <span class="op">+</span> <span class="va">Sex</span>, data <span class="op">=</span> <span class="va">HorsePrices</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Extracting adjusted R square value</span></span>
-<span><span class="va">model_lm</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://generics.r-lib.org/reference/glance.html">glance</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">adj.r.squared</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"HorsePrices"</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Building a linear model</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>model_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Price <span class="sc">~</span> Age <span class="sc">+</span> Sex, <span class="at">data =</span> HorsePrices)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Extracting adjusted R square value</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>model_lm <span class="sc">%&gt;%</span> <span class="fu">glance</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(adj.r.squared)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.2996728</code></pre>
 </div>
 </div>
-</section></section><section id="linear-regression-with-interacting-terms" class="level2" data-number="6"><h2 data-number="6" class="anchored" data-anchor-id="linear-regression-with-interacting-terms">
-<span class="header-section-number">6</span> Linear regression with interacting terms</h2>
+</section>
+</section>
+<section id="linear-regression-with-interacting-terms" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="linear-regression-with-interacting-terms"><span class="header-section-number">6</span> Linear regression with interacting terms</h2>
 <p>So far we have built linear models using the <code>HorsePrices</code> dataset where we looked at the association between age and sex on the price of the horses. Now consider another variable, which is the height of the horses (<code>Height</code>). First, let us visualize the heights of the horses of their respective sex.</p>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"HorsePrices"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Plotting the data</span></span>
-<span><span class="va">HorsePrices</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Sex</span>, <span class="va">Height</span>, col <span class="op">=</span> <span class="va">Sex</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Height of horses with respect to their sex"</span>,</span>
-<span>       x <span class="op">=</span> <span class="st">"Sex"</span>,</span>
-<span>       y <span class="op">=</span> <span class="st">"Height (in hands)"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"HorsePrices"</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the data</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>HorsePrices <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(Sex, Height, <span class="at">col =</span> Sex)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Height of horses with respect to their sex"</span>,</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Sex"</span>,</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Height (in hands)"</span>) <span class="sc">+</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="inter_reg_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -444,22 +476,22 @@ F-statistic: 11.48 on 2 and 47 DF,  p-value: 8.695e-05</code></pre>
 <p>From the graph, it seems like male horses are typically taller when compared to female horses according to the dataset at hand. Now if we are building a linear model, where we are interested to see the association of height and sex of horses on the price of the horses, we will have to take into consideration that female and male horses have different height distribution, as seen with the box plot above.</p>
 <p>One way to account for this is to build separate models using a filtered dataset for each the sex.</p>
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"HorsePrices"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Filtering horses by their sex</span></span>
-<span><span class="va">male_horses</span> <span class="op">&lt;-</span> <span class="va">HorsePrices</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Sex</span> <span class="op">==</span> <span class="st">"m"</span><span class="op">)</span></span>
-<span><span class="va">female_horses</span> <span class="op">&lt;-</span> <span class="va">HorsePrices</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Sex</span> <span class="op">==</span> <span class="st">"f"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Building linear models</span></span>
-<span><span class="va">male_lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Price</span> <span class="op">~</span> <span class="va">Height</span>, data <span class="op">=</span> <span class="va">male_horses</span><span class="op">)</span></span>
-<span><span class="va">female_lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Price</span> <span class="op">~</span> <span class="va">Height</span>, data <span class="op">=</span> <span class="va">female_horses</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Printing model outputs</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">male_lm</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"HorsePrices"</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtering horses by their sex</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>male_horses <span class="ot">&lt;-</span> HorsePrices <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Sex <span class="sc">==</span> <span class="st">"m"</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>female_horses <span class="ot">&lt;-</span> HorsePrices <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Sex <span class="sc">==</span> <span class="st">"f"</span>)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Building linear models</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>male_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Price <span class="sc">~</span> Height, <span class="at">data =</span> male_horses)</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>female_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(Price <span class="sc">~</span> Height, <span class="at">data =</span> female_horses)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Printing model outputs</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(male_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -481,7 +513,7 @@ Residual standard error: 11830 on 27 degrees of freedom
 Multiple R-squared:  0.1671,    Adjusted R-squared:  0.1362 
 F-statistic: 5.416 on 1 and 27 DF,  p-value: 0.0277</code></pre>
 </div>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">female_lm</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(female_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -504,20 +536,20 @@ F-statistic: 0.2851 on 1 and 16 DF,  p-value: 0.6007</code></pre>
 </div>
 <p>The coefficient values for the two models are very different. For male horses, a unit change in height contributes to a 9346 dollar increase in the price of the horse, but for female horses, the opposite occurs, a unit change in height decreases the price by 2515 dollars (though this difference is not significantly different). Thus we can say that the height of a horse depends on its sex. In other words, the variable height and the variable sex interact with each other. Instead of making separate models like this, R has an easy way to show interacting terms. Instead of using the <code>+</code>, we can use the <code>*</code> sign to indicate an interaction between two variables. The <code>:</code> sign can also be used to explicitly mention which terms interact. The codes given below show how to account for interaction between height and sex for the given dataset.</p>
 <div class="cell">
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"HorsePrices"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Building linear model with interaction</span></span>
-<span><span class="va">lm_model_1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Price</span> <span class="op">~</span> <span class="va">Height</span> <span class="op">*</span> <span class="va">Sex</span>, data <span class="op">=</span> <span class="va">HorsePrices</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Same model as above but explicitly mentioning interaction terms</span></span>
-<span><span class="va">lm_model_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">Price</span> <span class="op">~</span> <span class="va">Height</span> <span class="op">+</span> <span class="va">Sex</span> <span class="op">+</span> <span class="va">Height</span><span class="op">:</span><span class="va">Sex</span>, data <span class="op">=</span> <span class="va">HorsePrices</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Printing model outputs</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">lm_model_1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"HorsePrices"</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Building linear model with interaction</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>lm_model_1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Price <span class="sc">~</span> Height <span class="sc">*</span> Sex, <span class="at">data =</span> HorsePrices)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Same model as above but explicitly mentioning interaction terms</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>lm_model_2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(Price <span class="sc">~</span> Height <span class="sc">+</span> Sex <span class="sc">+</span> Height<span class="sc">:</span>Sex, <span class="at">data =</span> HorsePrices)</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Printing model outputs</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm_model_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -541,7 +573,7 @@ Residual standard error: 11730 on 43 degrees of freedom
 Multiple R-squared:  0.4086,    Adjusted R-squared:  0.3673 
 F-statistic: 9.901 on 3 and 43 DF,  p-value: 4.377e-05</code></pre>
 </div>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">lm_model_2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm_model_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -567,44 +599,46 @@ F-statistic: 9.901 on 3 and 43 DF,  p-value: 4.377e-05</code></pre>
 </div>
 </div>
 <p>Since the female is the first level in the variable <code>Sex</code>, the intercept is estimated for female horses. This is the same value that we got from the <code>female_lm</code> model we made earlier. We also got the slope value for height, which is calculated for female horses (the same value as that from the <code>female_lm</code> model). The value for male horses is given as <code>Sexm</code> as is -177876, this value is relative to female horses and is given as the difference between the y-intercepts. We can find the actual y-intercept value for males by adding the <code>Sexm</code> value and the <code>(Intercept)</code> value which is -120546 ( = 57330 + -177876). This is the intercept value for male horses which we got from the <code>male_lm</code> model earlier. Now let us look at the <code>Height:Sexm</code> value, which is given as 11861. This is the slope value showing how the price change when height change for male horses, but it is calculated relative to female horses. To get the actual slope for male horses, we have to add the slope of <code>Height</code> and <code>Height:Sexm</code> values. In doing so we get a value of 9346 ( = -2515 + 11861) which is the slope of <code>Height</code>, which we got from the <code>male_lm</code> model earlier.</p>
-</section><section id="plotting-linear-model-with-an-interaction-term" class="level2" data-number="7"><h2 data-number="7" class="anchored" data-anchor-id="plotting-linear-model-with-an-interaction-term">
-<span class="header-section-number">7</span> Plotting linear model with an interaction term</h2>
-<p>When we were using the <code><a href="moderndive.github.io/moderndive/reference/geom_parallel_slopes.html">geom_parallel_slopes()</a></code> function from the <a href="https://moderndive.github.io/moderndive/">moderndive</a> package, I mentioned that we will not use <code><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth()</a></code> function from the <a href="https://ggplot2.tidyverse.org">ggplot2</a> package. This is because when we specify the <code>col</code> variable, the <code><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth()</a></code> function automatically plots the trend line by considering the x-axis variable and the colour variable to be interacting.</p>
+</section>
+<section id="plotting-linear-model-with-an-interaction-term" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="plotting-linear-model-with-an-interaction-term"><span class="header-section-number">7</span> Plotting linear model with an interaction term</h2>
+<p>When we were using the <code>geom_parallel_slopes()</code> function from the <code>{moderndive}</code> package, I mentioned that we will not use <code>geom_smooth()</code> function from the <code>{ggplot2}</code> package. This is because when we specify the <code>col</code> variable, the <code>geom_smooth()</code> function automatically plots the trend line by considering the x-axis variable and the colour variable to be interacting.</p>
 <div class="cell">
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/statmanrobin/Stat2Data">Stat2Data</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"HorsePrices"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Plotting linear model with interaction terms</span></span>
-<span><span class="va">HorsePrices</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Height</span>, <span class="va">Price</span>, col <span class="op">=</span> <span class="va">Sex</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Price of horses with respect to their height and sex"</span>,</span>
-<span>       x <span class="op">=</span> <span class="st">"Height (in hands)"</span>,</span>
-<span>       y <span class="op">=</span> <span class="st">"Price (in dollars)"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"HorsePrices"</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting linear model with interaction terms</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>HorsePrices <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(Height, Price, <span class="at">col =</span> Sex)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Price of horses with respect to their height and sex"</span>,</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Height (in hands)"</span>,</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Price (in dollars)"</span>) <span class="sc">+</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="inter_reg_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>The slope for male horses is steeper than for female horses. This indicates that male horses have their price increased significantly as their height increased. Whereas female horses have their price change non significantly when their height change. This is exactly what we see in the <code>male_lm</code> and <code>female_lm</code> model coefficients.</p>
-</section><section id="simpsons-paradox" class="level2" data-number="8"><h2 data-number="8" class="anchored" data-anchor-id="simpsons-paradox">
-<span class="header-section-number">8</span> Simpson’s Paradox</h2>
+</section>
+<section id="simpsons-paradox" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="simpsons-paradox"><span class="header-section-number">8</span> Simpson’s Paradox</h2>
 <p>Simpson’s paradox occurs when a result conveyed using the whole dataset is different from the results conveyed using the different groups within the same dataset. In simple words, the results of the model change drastically due to the inclusion of a variable which was previously not included in the model. Let’s see what this means.</p>
-<p>We will use the <code>penguins</code> dataset from the <a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a> package in R. The dataset contains body measurements taken from three different species of penguins from Antarctica. Let us build a model where the body mass (<code>body_mass_g</code>) is predicted by bill depth (<code>bill_depth_mm</code>) alone. Let us also build another build with the same model formula as before but this time, we will include an interaction term between bill depth and species (<code>species</code>).</p>
+<p>We will use the <code>penguins</code> dataset from the <code>{palmerpenguins}</code> package in R. The dataset contains body measurements taken from three different species of penguins from Antarctica. Let us build a model where the body mass (<code>body_mass_g</code>) is predicted by bill depth (<code>bill_depth_mm</code>) alone. Let us also build another build with the same model formula as before but this time, we will include an interaction term between bill depth and species (<code>species</code>).</p>
 <div class="cell">
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">'palmerpenguins'</span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Building linear model</span></span>
-<span><span class="va">model_lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">body_mass_g</span>  <span class="op">~</span> <span class="va">bill_depth_mm</span>, data <span class="op">=</span> <span class="va">penguins</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Building linear model with interaction term</span></span>
-<span><span class="va">model_lm_interaction</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">body_mass_g</span>  <span class="op">~</span> <span class="va">bill_depth_mm</span> <span class="op">*</span> <span class="va">species</span>, data <span class="op">=</span> <span class="va">penguins</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Printing model outputs</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">model_lm</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(palmerpenguins)) <span class="fu">install.packages</span>(<span class="st">'palmerpenguins'</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Building linear model</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>model_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass_g  <span class="sc">~</span> bill_depth_mm, <span class="at">data =</span> penguins)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Building linear model with interaction term</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>model_lm_interaction <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass_g  <span class="sc">~</span> bill_depth_mm <span class="sc">*</span> species, <span class="at">data =</span> penguins)</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Printing model outputs</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -626,7 +660,7 @@ Residual standard error: 708.1 on 340 degrees of freedom
 Multiple R-squared:  0.2227,    Adjusted R-squared:  0.2204 
 F-statistic: 97.41 on 1 and 340 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">model_lm_interaction</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model_lm_interaction)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -656,116 +690,117 @@ F-statistic:   281 on 5 and 336 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>We get a rather interesting and contradicting set of results when we compare the summary outputs for both models. In the model without the species variable, greater bill depth predicts lower body mass in penguins. But, when we add the species variable, the trend reverses, increasing bill depth is associated with an increase in body mass.</p>
 <p>It is easier to plot the models and see. Use the slider to see the difference between the plots.</p>
 <div class="cell">
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Plotting the model wihtout interaction term</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">bill_depth_mm</span>, <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Body mass predcited by bill depth in three different species of penguins"</span>,</span>
-<span>       subtitle <span class="op">=</span> <span class="st">"body_mass_g  ~ bill_depth_mm + species"</span>,</span>
-<span>       x <span class="op">=</span> <span class="st">"Bill depth (mm)"</span>,</span>
-<span>       y <span class="op">=</span> <span class="st">"Body mass (g)"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Plotting the model with interaction term</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">bill_depth_mm</span>, <span class="va">body_mass_g</span>, col <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Body mass predcited by bill depth in three different species of penguins"</span>,</span>
-<span>       subtitle <span class="op">=</span> <span class="st">"body_mass_g  ~ bill_depth_mm * species"</span>,</span>
-<span>       x <span class="op">=</span> <span class="st">"Bill depth (mm)"</span>,</span>
-<span>       y <span class="op">=</span> <span class="st">"Body mass (g)"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the model wihtout interaction term</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(bill_depth_mm, body_mass_g)) <span class="sc">+</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Body mass predcited by bill depth in three different species of penguins"</span>,</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"body_mass_g  ~ bill_depth_mm + species"</span>,</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Bill depth (mm)"</span>,</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Body mass (g)"</span>) <span class="sc">+</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the model with interaction term</span></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(bill_depth_mm, body_mass_g, <span class="at">col =</span> species)) <span class="sc">+</span></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Body mass predcited by bill depth in three different species of penguins"</span>,</span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"body_mass_g  ~ bill_depth_mm * species"</span>,</span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Bill depth (mm)"</span>,</span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Body mass (g)"</span>) <span class="sc">+</span></span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="juxtapose" data-startingposition="50%">
 <div class="cell">
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Plotting the model wihtout interaction term</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">bill_depth_mm</span>, <span class="va">body_mass_g</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Body mass predcited by bill depth in three different species of penguins"</span>,</span>
-<span>       subtitle <span class="op">=</span> <span class="st">"body_mass_g  ~ bill_depth_mm + species"</span>,</span>
-<span>       x <span class="op">=</span> <span class="st">"Bill depth (mm)"</span>,</span>
-<span>       y <span class="op">=</span> <span class="st">"Body mass (g)"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the model wihtout interaction term</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(bill_depth_mm, body_mass_g)) <span class="sc">+</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Body mass predcited by bill depth in three different species of penguins"</span>,</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"body_mass_g  ~ bill_depth_mm + species"</span>,</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Bill depth (mm)"</span>,</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Body mass (g)"</span>) <span class="sc">+</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="inter_reg_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Plotting the model with interaction term</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">penguins</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">bill_depth_mm</span>, <span class="va">body_mass_g</span>, col <span class="op">=</span> <span class="va">species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Body mass predcited by bill depth in three different species of penguins"</span>,</span>
-<span>       subtitle <span class="op">=</span> <span class="st">"body_mass_g  ~ bill_depth_mm * species"</span>,</span>
-<span>       x <span class="op">=</span> <span class="st">"Bill depth (mm)"</span>,</span>
-<span>       y <span class="op">=</span> <span class="st">"Body mass (g)"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the model with interaction term</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(bill_depth_mm, body_mass_g, <span class="at">col =</span> species)) <span class="sc">+</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Body mass predcited by bill depth in three different species of penguins"</span>,</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"body_mass_g  ~ bill_depth_mm * species"</span>,</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Bill depth (mm)"</span>,</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Body mass (g)"</span>) <span class="sc">+</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="inter_reg_files/figure-html/unnamed-chunk-13-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </div>
 <p>So it is always better to visualize the dataset and build models according to the question at hand.</p>
-</section><section id="visualizing-linear-models-with-two-numerical-explanatory-variables" class="level2" data-number="9"><h2 data-number="9" class="anchored" data-anchor-id="visualizing-linear-models-with-two-numerical-explanatory-variables">
-<span class="header-section-number">9</span> Visualizing linear models with two numerical explanatory variables</h2>
+</section>
+<section id="visualizing-linear-models-with-two-numerical-explanatory-variables" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="visualizing-linear-models-with-two-numerical-explanatory-variables"><span class="header-section-number">9</span> Visualizing linear models with two numerical explanatory variables</h2>
 <p>Often you will be building models with two or more two explanatory variables. If some of those explanatory variables are categorical then it is easier to plot them as we can assign different colour or shape variables and we can also use faceting. But if they are all numerical variables then it is kind of difficult to plot them. We can either rely on three-dimensional plots or use a continuous colour scale gradient in a two-dimensional plot. Let us see how to plot the graphs.</p>
-<p>We will again use the <code>penguins</code> dataset from the <a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a> package in R. We will build a model to predict body mass (<code>body_mass_g</code>) using bill length (<code>bill_length_mm</code>) and bill depth (<code>bill_depth_mm</code>). Let us first try to plot a 3D plot using the <code><a href="https://rdrr.io/pkg/plot3D/man/scatter.html">scatter3D()</a></code> function from the <code>{plot3D}</code> package in R.</p>
+<p>We will again use the <code>penguins</code> dataset from the <code>{palmerpenguins}</code> package in R. We will build a model to predict body mass (<code>body_mass_g</code>) using bill length (<code>bill_length_mm</code>) and bill depth (<code>bill_depth_mm</code>). Let us first try to plot a 3D plot using the <code>scatter3D()</code> function from the <code>{plot3D}</code> package in R.</p>
 <div class="cell">
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va">plot3D</span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">'plot3D'</span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">plot3D</span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Plotting a 3D plot</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/plot3D/man/scatter.html">scatter3D</a></span><span class="op">(</span><span class="va">penguins</span><span class="op">$</span><span class="va">body_mass_g</span>, <span class="va">penguins</span><span class="op">$</span><span class="va">bill_depth_mm</span>, <span class="va">penguins</span><span class="op">$</span><span class="va">bill_length_mm</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(plot3D)) <span class="fu">install.packages</span>(<span class="st">'plot3D'</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plot3D)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting a 3D plot</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="fu">scatter3D</span>(penguins<span class="sc">$</span>body_mass_g, penguins<span class="sc">$</span>bill_depth_mm, penguins<span class="sc">$</span>bill_length_mm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="inter_reg_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Well, 3D plotting is a mess, as you can see from the above plot. It is very hard to make out any useful findings using the graph above. So instead of this, we can return to our conventional 2D plot where we can use a continuous colour gradient to visualize the third numerical variable.</p>
 <div class="cell">
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"penguins"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Plotting the graph</span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">bill_depth_mm</span>, <span class="va">body_mass_g</span>, col <span class="op">=</span> <span class="va">bill_length_mm</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Body mass predcited by bill depth and bill length in three different species of penguins"</span>,</span>
-<span>       subtitle <span class="op">=</span> <span class="st">"body_mass_g  ~ bill_depth_mm * species"</span>,</span>
-<span>       x <span class="op">=</span> <span class="st">"Bill depth (mm)"</span>,</span>
-<span>       y <span class="op">=</span> <span class="st">"Body mass (g)"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_color_viridis_c</a></span><span class="op">(</span>option <span class="op">=</span> <span class="st">"inferno"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"penguins"</span>)</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the graph</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(bill_depth_mm, body_mass_g, <span class="at">col =</span> bill_length_mm)) <span class="sc">+</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Body mass predcited by bill depth and bill length in three different species of penguins"</span>,</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"body_mass_g  ~ bill_depth_mm * species"</span>,</span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Bill depth (mm)"</span>,</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Body mass (g)"</span>) <span class="sc">+</span></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>(<span class="at">option =</span> <span class="st">"inferno"</span>) <span class="sc">+</span></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="inter_reg_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>From the graph, it roughly seems like penguins with greater body mass have a longer and narrower bill. We can further subdivide this plot by the species category using faceting.</p>
 <div class="cell">
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"penguins"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Making a function to make line breaks in text</span></span>
-<span><span class="va">addline_format</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>,<span class="va">...</span><span class="op">)</span><span class="op">{</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/grep.html">gsub</a></span><span class="op">(</span><span class="st">','</span>,<span class="st">'\n'</span>,<span class="va">x</span><span class="op">)</span><span class="op">}</span></span>
-<span></span>
-<span><span class="co"># Plotting the graph</span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">bill_depth_mm</span>, <span class="va">body_mass_g</span>, col <span class="op">=</span> <span class="va">bill_length_mm</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="fu">addline_format</span><span class="op">(</span><span class="st">"Body mass predcited by bill depth and bill length,in three different species of penguins"</span><span class="op">)</span>,</span>
-<span>       x <span class="op">=</span> <span class="st">"Bill depth (mm)"</span>,</span>
-<span>       y <span class="op">=</span> <span class="st">"Body mass (g)"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_color_viridis_c</a></span><span class="op">(</span>option <span class="op">=</span> <span class="st">"inferno"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span> <span class="va">species</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"penguins"</span>)</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Making a function to make line breaks in text</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>addline_format <span class="ot">&lt;-</span> <span class="cf">function</span>(x,...){</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gsub</span>(<span class="st">','</span>,<span class="st">'</span><span class="sc">\n</span><span class="st">'</span>,x)}</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the graph</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(bill_depth_mm, body_mass_g, <span class="at">col =</span> bill_length_mm)) <span class="sc">+</span></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">addline_format</span>(<span class="st">"Body mass predcited by bill depth and bill length,in three different species of penguins"</span>),</span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Bill depth (mm)"</span>,</span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Body mass (g)"</span>) <span class="sc">+</span></span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>(<span class="at">option =</span> <span class="st">"inferno"</span>) <span class="sc">+</span></span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> species) <span class="sc">+</span></span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="inter_reg_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -773,82 +808,84 @@ F-statistic:   281 on 5 and 336 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>When we group the data according to different species, we get the opposite result as compared before. Here, we can see that penguins with heavier body mass have broader and longer bills.</p>
 <p>Now let us plot the predicted values from the linear models to see the general trend of the data.</p>
 <div class="cell">
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://allisonhorst.github.io/palmerpenguins/">palmerpenguins</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"penguins"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Making prediction</span></span>
-<span><span class="va">model_lm</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">body_mass_g</span> <span class="op">~</span> <span class="va">bill_depth_mm</span> <span class="op">*</span> <span class="va">bill_length_mm</span>, data <span class="op">=</span> <span class="va">penguins</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">explorartory_values</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/expand_grid.html">expand_grid</a></span><span class="op">(</span></span>
-<span>  bill_depth_mm <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">15</span>,<span class="fl">25</span>,<span class="fl">1</span><span class="op">)</span>,</span>
-<span>  bill_length_mm <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">30</span>,<span class="fl">60</span>,<span class="fl">1</span><span class="op">)</span>,</span>
-<span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">predicted_values</span> <span class="op">&lt;-</span> <span class="va">explorartory_values</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
-<span>  body_mass_g <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">model_lm</span>, <span class="va">explorartory_values</span><span class="op">)</span></span>
-<span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Plotting the graph with predicted values</span></span>
-<span><span class="va">penguins</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">bill_depth_mm</span>, <span class="va">body_mass_g</span>, col <span class="op">=</span> <span class="va">bill_length_mm</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Body mass predcited by bill depth and bill length </span></span>
-<span><span class="st">in three different species of penguins"</span>,</span>
-<span>       x <span class="op">=</span> <span class="st">"Bill depth (mm)"</span>,</span>
-<span>       y <span class="op">=</span> <span class="st">"Body mass (g)"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_color_viridis_c</a></span><span class="op">(</span>option <span class="op">=</span> <span class="st">"inferno"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span> <span class="va">species</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">predicted_values</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">body_mass_g</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">3</span>, shape <span class="op">=</span> <span class="fl">15</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"penguins"</span>)</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Making prediction</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>model_lm <span class="ot">&lt;-</span> <span class="fu">lm</span>(body_mass_g <span class="sc">~</span> bill_depth_mm <span class="sc">*</span> bill_length_mm, <span class="at">data =</span> penguins)</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>explorartory_values <span class="ot">&lt;-</span> <span class="fu">expand_grid</span>(</span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">bill_depth_mm =</span> <span class="fu">seq</span>(<span class="dv">15</span>,<span class="dv">25</span>,<span class="dv">1</span>),</span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">bill_length_mm =</span> <span class="fu">seq</span>(<span class="dv">30</span>,<span class="dv">60</span>,<span class="dv">1</span>),</span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>predicted_values <span class="ot">&lt;-</span> explorartory_values <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(</span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">body_mass_g =</span> <span class="fu">predict</span>(model_lm, explorartory_values)</span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the graph with predicted values</span></span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(bill_depth_mm, body_mass_g, <span class="at">col =</span> bill_length_mm)) <span class="sc">+</span></span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Body mass predcited by bill depth and bill length </span></span>
+<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a><span class="st">in three different species of penguins"</span>,</span>
+<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Bill depth (mm)"</span>,</span>
+<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Body mass (g)"</span>) <span class="sc">+</span></span>
+<span id="cb30-27"><a href="#cb30-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>(<span class="at">option =</span> <span class="st">"inferno"</span>) <span class="sc">+</span></span>
+<span id="cb30-28"><a href="#cb30-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> species) <span class="sc">+</span></span>
+<span id="cb30-29"><a href="#cb30-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> predicted_values, <span class="fu">aes</span>(<span class="at">y =</span> body_mass_g), <span class="at">size =</span> <span class="dv">3</span>, <span class="at">shape =</span> <span class="dv">15</span>) <span class="sc">+</span></span>
+<span id="cb30-30"><a href="#cb30-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="inter_reg_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>We got a nice gradient-coloured graph. From the predicted values we got from the model we can understand how body mass changes with bill depth and bill length. We can see two clear patterns. For penguins with lower bill length values, the body mass increases as bill depth increases. The opposite is true for penguins with larger values for bill length. For these penguins, body mass decreases as bill depth increases.</p>
-</section><section id="visualizing-logistic-models-with-two-numerical-explanatory-variables" class="level2" data-number="10"><h2 data-number="10" class="anchored" data-anchor-id="visualizing-logistic-models-with-two-numerical-explanatory-variables">
-<span class="header-section-number">10</span> Visualizing logistic models with two numerical explanatory variables</h2>
+</section>
+<section id="visualizing-logistic-models-with-two-numerical-explanatory-variables" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="visualizing-logistic-models-with-two-numerical-explanatory-variables"><span class="header-section-number">10</span> Visualizing logistic models with two numerical explanatory variables</h2>
 <p>We have seen how to include two or more variables in a linear model. The same procedure applies to logistic models. Now we will see how to visualize a logistic model with two or more numerical variables.</p>
 <p>We will use the <code>CreditCard</code> dataset in the <code>{AER}</code> package in R. The dataset contains the credit history of a sample of applicants for a type of credit card. We will predict to see the success of the acceptance of the credit card application (<code>card</code>) using the yearly income (<code>income</code>) and age (<code>age</code>) of the applicant. The code for making the plot is very similar to that we have seen earlier.</p>
 <div class="cell">
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va">AER</span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">'AER'</span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">AER</span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"CreditCard"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Making prediction</span></span>
-<span><span class="va">model_logistic</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html">glm</a></span><span class="op">(</span><span class="va">card</span> <span class="op">~</span> <span class="va">income</span> <span class="op">*</span> <span class="va">age</span>, data <span class="op">=</span> <span class="va">CreditCard</span>, family <span class="op">=</span> <span class="st">"binomial"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">explorartory_values</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/expand_grid.html">expand_grid</a></span><span class="op">(</span></span>
-<span>  income <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">20</span>,<span class="fl">1</span><span class="op">)</span>,</span>
-<span>  age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">18</span>,<span class="fl">90</span>,<span class="fl">1</span><span class="op">)</span>,</span>
-<span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">predicted_values</span> <span class="op">&lt;-</span> <span class="va">explorartory_values</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span></span>
-<span>  card <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">model_logistic</span>, <span class="va">explorartory_values</span>, type <span class="op">=</span> <span class="st">"response"</span><span class="op">)</span></span>
-<span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Plotting the graph with predicted values</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">CreditCard</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">income</span>, <span class="fu"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span><span class="op">(</span><span class="va">card</span><span class="op">)</span><span class="op">-</span><span class="fl">1</span>, col <span class="op">=</span> <span class="va">age</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Does income and age affect the success in accepting a credit card application?"</span>,</span>
-<span>       x <span class="op">=</span> <span class="st">"Yearly income (in USD 10,000)"</span>,</span>
-<span>       y <span class="op">=</span> <span class="st">"Probability of success in accepting a credit card application"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html">scale_color_gradient2</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">predicted_values</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">card</span><span class="op">)</span>, size <span class="op">=</span> <span class="fl">3</span>, shape <span class="op">=</span> <span class="fl">15</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(AER)) <span class="fu">install.packages</span>(<span class="st">'AER'</span>)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(AER)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"CreditCard"</span>)</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Making prediction</span></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>model_logistic <span class="ot">&lt;-</span> <span class="fu">glm</span>(card <span class="sc">~</span> income <span class="sc">*</span> age, <span class="at">data =</span> CreditCard, <span class="at">family =</span> <span class="st">"binomial"</span>)</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>explorartory_values <span class="ot">&lt;-</span> <span class="fu">expand_grid</span>(</span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">income =</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">20</span>,<span class="dv">1</span>),</span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> <span class="fu">seq</span>(<span class="dv">18</span>,<span class="dv">90</span>,<span class="dv">1</span>),</span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>predicted_values <span class="ot">&lt;-</span> explorartory_values <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(</span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">card =</span> <span class="fu">predict</span>(model_logistic, explorartory_values, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the graph with predicted values</span></span>
+<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(CreditCard, <span class="fu">aes</span>(income, <span class="fu">as.integer</span>(card)<span class="sc">-</span><span class="dv">1</span>, <span class="at">col =</span> age)) <span class="sc">+</span></span>
+<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Does income and age affect the success in accepting a credit card application?"</span>,</span>
+<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Yearly income (in USD 10,000)"</span>,</span>
+<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Probability of success in accepting a credit card application"</span>) <span class="sc">+</span></span>
+<span id="cb31-27"><a href="#cb31-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradient2</span>() <span class="sc">+</span></span>
+<span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> predicted_values, <span class="fu">aes</span>(<span class="at">y =</span> card), <span class="at">size =</span> <span class="dv">3</span>, <span class="at">shape =</span> <span class="dv">15</span>) <span class="sc">+</span></span>
+<span id="cb31-29"><a href="#cb31-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="inter_reg_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>We get some interesting results. People with higher yearly incomes have a higher chance of getting a credit card. But for age, younger people with lower yearly income have more chance of getting a credit card as compared to older people with the same level of yearly income. But this trend reverses when yearly income crosses 50,000 dollars.</p>
-</section><section id="conclusion" class="level2" data-number="11"><h2 data-number="11" class="anchored" data-anchor-id="conclusion">
-<span class="header-section-number">11</span> Conclusion</h2>
+</section>
+<section id="conclusion" class="level2" data-number="11">
+<h2 data-number="11" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">11</span> Conclusion</h2>
 <p>It is time to wrap up! In this tutorial we have learned the following things;</p>
 <ol type="1">
 <li><p>How to build models with two or more explanatory variables</p></li>
@@ -859,12 +896,15 @@ F-statistic:   281 on 5 and 336 DF,  p-value: &lt; 2.2e-16</code></pre>
 <li><p>What is Simpson’s paradox</p></li>
 <li><p>Visualising models with two numerical explanatory variables</p></li>
 </ol>
-<!-- Do not forget to put flag counter --><p><a hidden="" href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a></p>
+<!-- Do not forget to put flag counter -->
+<p><a hidden="" href="https://info.flagcounter.com/ynrK"><img src="https://s11.flagcounter.com/count2/ynrK/bg_000000/txt_FFFFFF/border_F0F0F0/columns_5/maxflags_25/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0"></a></p>
 
 
 <!-- -->
 
-</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{johnson2022,
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{johnson2022,
   author = {Johnson, Jewel},
   title = {Intermediate {Regression} in {R}},
   date = {2022-09-19},
@@ -874,16 +914,19 @@ F-statistic:   281 on 5 and 336 DF,  p-value: &lt; 2.2e-16</code></pre>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-johnson2022" class="csl-entry quarto-appendix-citeas" role="listitem">
 Johnson, Jewel. 2022. <span>“Intermediate Regression in R.”</span>
 September 19, 2022. <a href="https://sciquest.netlify.app//tutorials/stat_basic/inter_reg.html">https://sciquest.netlify.app//tutorials/stat_basic/inter_reg.html</a>.
-</div></div></section></div></main><!-- /main --><script type="ojs-module-contents">
+</div></div></section></div></main> <!-- /main -->
+<script type="ojs-module-contents">
 {"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"require(\"https://cdn.jsdelivr.net/npm/juxtaposejs@1.1.6/build/js/juxtapose.min.js\")\n  .catch(() => null)\n"}]}
-</script><script type="module">
+</script>
+<script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
 window._ojs.paths.runtimeToDoc = "../../tutorials/stat_basic";
 window._ojs.paths.runtimeToRoot = "../..";
 window._ojs.paths.docToRoot = "../..";
 window._ojs.selfContained = false;
 window._ojs.runtime.interpretFromScriptTags();
-</script><script id="quarto-html-after-body" type="application/javascript">
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1166,7 +1209,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><script src="https://giscus.app/client.js" data-repo="jeweljohnsonj/SciQuest" data-repo-id="R_kgDOHW124A" data-category="General" data-category-id="DIC_kwDOHW124M4CPNVL" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<script src="https://giscus.app/client.js" data-repo="jeweljohnsonj/SciQuest" data-repo-id="R_kgDOHW124A" data-category="General" data-category-id="DIC_kwDOHW124M4CPNVL" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb32" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Intermediate Regression in R"</span></span>
@@ -1683,14 +1727,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">Blog made using <a href="https://quarto.org/">Quarto®</a> with ❤️, by Jewel Johnson.</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-<li class="nav-item compact">
+    <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/jeweljohnsonj">
       <i class="bi bi-github" role="img">
 </i> 
@@ -1715,11 +1760,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
 </ul>
-</div>
+    </div>
   </div>
-</footer><div class="page-columns page-rows-contents page-layout-article"><div class="social-share">
-<a href="https://twitter.com/share?url=https://sciquest.netlify.app/tutorials/stat_model/inter_reg.html&amp;text=Intermediate%20Regression%20in%20R" target="_blank" class="twitter"><i class="fab fa-twitter fa-fw fa-lg"></i></a><a href="https://www.linkedin.com/shareArticle?url=https://sciquest.netlify.app/tutorials/stat_model/inter_reg.html&amp;title=Intermediate%20Regression%20in%20R" target="_blank" class="linkedin"><i class="fa-brands fa-linkedin-in fa-fw fa-lg"></i></a>  <a href="mailto:?subject=Intermediate%20Regression%20in%20R&amp;body=Check%20out%20this%20link:https://sciquest.netlify.app/tutorials/stat_model/inter_reg.html" target="_blank" class="email"><i class="fa-solid fa-envelope fa-fw fa-lg"></i></a><a href="https://www.facebook.com/sharer.php?u=https://sciquest.netlify.app/tutorials/stat_model/inter_reg.html" target="_blank" class="facebook"><i class="fab fa-facebook-f fa-fw fa-lg"></i></a><a href="https://reddit.com/submit?url=https://sciquest.netlify.app/tutorials/stat_model/inter_reg.html&amp;title=Intermediate%20Regression%20in%20R" target="_blank" class="reddit">   <i class="fa-brands fa-reddit-alien fa-fw fa-lg"></i></a><a href="https://www.stumbleupon.com/submit?url=https://sciquest.netlify.app/tutorials/stat_model/inter_reg.html&amp;title=Intermediate%20Regression%20in%20R" target="_blank" class="stumbleupon"><i class="fa-brands fa-stumbleupon fa-fw fa-lg"></i></a><a href="https://www.tumblr.com/share/link?url=https://sciquest.netlify.app/tutorials/stat_model/inter_reg.html&amp;name=Intermediate%20Regression%20in%20R" target="_blank" class="tumblr"><i class="fa-brands fa-tumblr fa-fw fa-lg"></i></a>
-</div></div>
+</footer>
+<div class="page-columns page-rows-contents page-layout-article"><div class="social-share"><a href="https://twitter.com/share?url=https://sciquest.netlify.app/tutorials/stat_model/inter_reg.html&amp;text=Intermediate Regression in R" target="_blank" class="twitter"><i class="fab fa-twitter fa-fw fa-lg"></i></a><a href="https://www.linkedin.com/shareArticle?url=https://sciquest.netlify.app/tutorials/stat_model/inter_reg.html&amp;title=Intermediate Regression in R" target="_blank" class="linkedin"><i class="fa-brands fa-linkedin-in fa-fw fa-lg"></i></a>  <a href="mailto:?subject=Intermediate Regression in R&amp;body=Check out this link:https://sciquest.netlify.app/tutorials/stat_model/inter_reg.html" target="_blank" class="email"><i class="fa-solid fa-envelope fa-fw fa-lg"></i></a><a href="https://www.facebook.com/sharer.php?u=https://sciquest.netlify.app/tutorials/stat_model/inter_reg.html" target="_blank" class="facebook"><i class="fab fa-facebook-f fa-fw fa-lg"></i></a><a href="https://reddit.com/submit?url=https://sciquest.netlify.app/tutorials/stat_model/inter_reg.html&amp;title=Intermediate Regression in R" target="_blank" class="reddit">   <i class="fa-brands fa-reddit-alien fa-fw fa-lg"></i></a><a href="https://www.stumbleupon.com/submit?url=https://sciquest.netlify.app/tutorials/stat_model/inter_reg.html&amp;title=Intermediate Regression in R" target="_blank" class="stumbleupon"><i class="fa-brands fa-stumbleupon fa-fw fa-lg"></i></a><a href="https://www.tumblr.com/share/link?url=https://sciquest.netlify.app/tutorials/stat_model/inter_reg.html&amp;name=Intermediate Regression in R" target="_blank" class="tumblr"><i class="fa-brands fa-tumblr fa-fw fa-lg"></i></a></div></div>
 
 
 
